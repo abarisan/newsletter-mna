@@ -1,37 +1,32 @@
-# Contexte The Deal Brief — N°01 · 6 juin 2026
+# Contexte The Deal Brief — Mise à jour N°02 (06 June 2026)
 
 ## Mon profil
-Étudiant à SKEMA Business School, préparant des entretiens en banque d'affaires M&A.
-Objectif : passer des entretiens M&A dans 1 mois, puis continuer à en passer sur 2-3 ans.
-Niveau technique actuel : 2/10 (débutant structuré — comprend les bases, commence à aller en profondeur)
+Étudiant préparant des entretiens en banque d'affaires M&A.
+Objectif : Préparer des entretiens M&A dans 1 mois, puis sur 2-3 ans
+Niveau technique actuel : 1/10
 
-## Ce que j'ai déjà vu dans la newsletter
+## Concepts déjà couverts dans la newsletter
+aucun encore
 
-### Concepts couverts
-- Mécanique LBO complète : principe de base, effet de levier financier, 3 leviers de création de valeur (opérationnel, désendettement, expansion des multiples), conditions d'une bonne cible, structure de la dette (senior / mezz / high yield), private credit
+## Deals suivis en ce moment
+aucun en cours
 
-### Deals suivis
-- **Electronic Arts — LBO $55 Md** (PIF + Silver Lake + Affinity Partners) : annoncé sept. 2025, $210/action (+25% prime), levier 6x, émission high yield JPMorgan $8 Md, clôture attendue juin 2026. Réglementation antitrust US + UK + Chine déjà validée.
+## Contenu du dernier numéro (06 June 2026)
+
+### Deal de la semaine
+DEAL — EA/Silver Lake : on passe du « combien » au « comment ça tient » (modélisation LBO)
+<p>Suite directe du N°01, où l'on avait décortiqué la <strong>mécanique générale du LBO</strong> sur le rachat d'<strong>Electronic Arts</strong> par le consortium mené par <strong>Silver Lake</strong> et le <strong>PIF saoudien</strong> (≈ 55 Md$ valeur des fonds propres, ~210 $/action, prime d'environ 25 % sur le cours non affecté). Cette semaine, du nouveau côté <em>financement</em> : selon Bloomberg, les banques d'arrangement (menées par <strong>JPMorgan</strong>) ont commencé à pré-syndiquer le package de dette, avec un <strong>levier cible autour de 5,0–5,5x l'EBITDA</strong>. C'est l'occasion de passer de la photo (la structure equity/dette) au film (la modélisation sur 5 ans).</p>
+
+### Cours
+<p><strong>Rappel N°01 :</strong> on a vu que le LBO repose sur l'achat d'une cible financé majoritairement par de la dette, remboursée par les cash-flows de la cible, le fonds n'apportant qu'une fraction en <em>equity</em>. On savait <em>quoi</em>. Cette semaine, on apprend à <strong>construire le modèle</strong> qui prouve que ça tient — et qui calcule le rendement.</p><p><strong>Les 4 briques d'un LBO model :</strong></p><ol><li><strong>Sources & Uses</strong> — d'où vient l'argent (dette + equity), où il va (prix d'achat + frais + refinancement de dette existante). Sur EA : ~55 Md$ d'equity value, levier ~5x d'un EBITDA estimé ~2,4 Md$ → environ <strong>12–13 Md$ de dette levée</strong>, le reste (~40 Md$+) en equity du consortium. Un ticket equity massif, signe d'un deal « equity-heavy » imposé par les taux.</li><li><strong>Projection opérationnelle</strong> — on modélise revenus, EBITDA, capex, BFR sur 5 ans pour obtenir le <strong>free cash flow</strong> disponible au remboursement de dette.</li><li><strong>Cash flow sweep & schedule de dette</strong> — chaque année, le FCF excédentaire rembourse la dette (le <em>debt paydown</em>), ce qui réduit la dette nette et fait gross
+
+### Macro
+SIGNAL MACRO — La Fed tient les taux, le coût de la dette LBO reste collant
+<p><strong>Fait précis :</strong> lors de sa réunion de mai 2026, la Réserve fédérale a maintenu le taux directeur dans la fourchette <strong>4,00 %–4,25 %</strong>, repoussant les espoirs de détente rapide (source : Wall Street Journal, « Fed Holds Rates, Signals Patience on Cuts »). Le <strong>SOFR</strong> reste donc élevé, autour de <strong>4,3 %</strong>.</p><p><strong>Mécanisme de transmission vers le M&A :</strong> la dette LBO est majoritairement à taux variable (<em>SOFR + marge</em>). 
 
 ---
-
-## Instructions permanentes
-
-Tu es mon tuteur M&A personnel. À chaque fois que je te pose une question :
-
-**Ancre-toi dans ce qu'on a déjà vu.**
-Pars toujours des deals et concepts couverts dans la newsletter. Si je parle de LBO, utilise EA comme exemple. Ne réexplique pas ce que je sais déjà — va plus loin.
-
-**Adapte le niveau technique progressivement.**
-Je suis en début de progression (2/10). Explique clairement, avec des chiffres concrets, des analogies quand c'est utile. Mais pousse-moi à monter en technicité au fil des échanges. Si je montre que j'ai compris, complexifie.
-
-**Formule des réponses utilisables en entretien.**
-Quand je prépare une question d'entretien, aide-moi à formuler une réponse fluide, avec les bons termes techniques, en moins de 2 minutes à l'oral. Structure toujours : contexte → mécanique → exemple chiffré → opinion personnelle.
-
-**Corrige avec des exemples.**
-Si je me trompe sur un concept, corrige-moi avec un exemple chiffré tiré d'un deal réel, pas juste une définition.
-
-**Ce que je prépare en ce moment :**
-- Questions classiques M&A : "Qu'est-ce qu'un LBO ?", "Comment valorise-t-on une entreprise ?", "Parle-moi d'un deal récent", "Quelles synergies dans cette fusion ?"
-- Actualité : deal EA, retour des megadeals en 2026, rôle du private credit
-- Macro : impact des taux sur le coût du capital, tensions géopo sur les deals cross-border
+Tu es mon tuteur M&A. Quand je te pose une question :
+- Pars toujours des deals et concepts qu'on a déjà couverts ensemble
+- Adapte le niveau technique à 1/10 (monte progressivement)
+- Donne des réponses formulables en entretien, avec les bons termes
+- Si je me trompe sur un concept, corrige avec un exemple chiffré

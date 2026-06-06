@@ -159,6 +159,26 @@
 
     .divider { height: 1px; background: #fde0c5; margin: 36px 0; }
 
+    /* ── Schéma SVG ── */
+    .diagram-section {
+      margin-top: 48px;
+    }
+    .diagram-section .section-label {
+      margin-bottom: 12px;
+    }
+    .diagram-wrap {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      overflow-x: auto;
+    }
+    .diagram-wrap svg {
+      max-width: 100%;
+      height: auto;
+    }
+
     /* ── Outils d'apprentissage ── */
     .tools-section {
       margin-top: 48px;
@@ -216,31 +236,24 @@
       <!-- SECTION 1 : M&A -->
       <div class="section">
         <div class="section-label">Niveau 1 — Indispensables</div>
-        <h2>DEAL — EA / Silver Lake : le financement se met en place, place à la modélisation du retour</h2>
+        <h2>DEAL — EA/Silver Lake : on passe du « combien » au « comment ça tient » (modélisation LBO)</h2>
         <div class="section-content">
-          <p>On reste sur le LBO d'<strong>Electronic Arts</strong> par le consortium mené par <strong>Silver Lake</strong>, le <strong>PIF saoudien</strong> et <strong>Affinity Partners</strong>, dont la mécanique générale avait été posée dans le N°01. Du nouveau cette semaine : la structure de financement se précise.</p><ul><li><strong>Equity value :</strong> ~55 Md$ (210 $/action, prime ~25% sur le cours non affecté)</li><li><strong>Dette levée :</strong> ~20 Md$, soit le plus gros package de buyout debt depuis la crise de 2008, arrangé par <strong>JPMorgan</strong></li><li><strong>Equity check :</strong> ~36 Md$ apportés par le consortium, dont ~20 Md$ par le PIF (qui détenait déjà ~9,9% d'EA)</li><li><strong>Conseils :</strong> JPMorgan côté acquéreurs ; Goldman Sachs côté EA</li></ul><p><strong>Rationnel :</strong> EA génère un FCF récurrent massif (franchises EA Sports FC, Madden, Apex, The Sims) avec des revenus récurrents de live services. C'est exactement le profil qu'un sponsor veut sous LBO : cash-flow prévisible pour servir 20 Md$ de dette. Le pari du consortium n'est pas une révolution opérationnelle — c'est l'<strong>effet de levier</strong> et la croissance des live services.</p><div class='callout'><strong>Zoom technique — le ratio dette/equity de ce LBO.</strong> Avec ~20 Md$ de dette pour ~36 Md$ d'equity sur une EV de ~52 Md$, on a un financement à environ <strong>38% dette / 62% equity</strong>. C'est LÉGER pour un LBO classique (qui tourne souvent à 50-60% de dette). Pourquoi ? Parce que l'EBITDA d'EA tourne autour de 2,5 Md$ : 20 Md$ de dette = un levier d'environ <strong>7-8x EBITDA</strong>, déjà à la limite haute de ce que le marché du crédit accepte en 2026. Le consortium ne POUVAIT pas mettre plus de dette — il a dû combler avec un equity check géant. C'est ça, la contrainte de la capacité d'endettement.</div><p><strong>Phrase d'entretien :</strong> « Le LBO d'EA est intéressant car il est sous-levé pour un buyout — 7-8x EBITDA mais seulement ~38% de la structure en dette. Cela montre qu'en 2026, avec des taux encore élevés, ce n'est plus le levier qui crée la valeur mais la qualité du cash-flow et la croissance des live services. Le vrai risque, c'est de payer 7x EBITDA un actif dont les franchises peuvent caler. »</p>
+          <p>Suite directe du N°01, où l'on avait décortiqué la <strong>mécanique générale du LBO</strong> sur le rachat d'<strong>Electronic Arts</strong> par le consortium mené par <strong>Silver Lake</strong> et le <strong>PIF saoudien</strong> (≈ 55 Md$ valeur des fonds propres, ~210 $/action, prime d'environ 25 % sur le cours non affecté). Cette semaine, du nouveau côté <em>financement</em> : selon Bloomberg, les banques d'arrangement (menées par <strong>JPMorgan</strong>) ont commencé à pré-syndiquer le package de dette, avec un <strong>levier cible autour de 5,0–5,5x l'EBITDA</strong>. C'est l'occasion de passer de la photo (la structure equity/dette) au film (la modélisation sur 5 ans).</p>
         </div>
       </div>
 
       <div class="divider"></div>
 
-      <!-- SECTION 2 : PE & VC -->
-      <div class="section">
-        <div class="section-label">Niveau 2 — Private Equity & VC</div>
-        <h2>{{pe_titre}}</h2>
-        <div class="section-content">
-          {{pe_contenu}}
-        </div>
-      </div>
+      
 
       <div class="divider"></div>
 
       <!-- SECTION 3 : MACRO & GÉOPO -->
       <div class="section">
         <div class="section-label">Niveau 3 — Macro & Géopolitique</div>
-        <h2>SIGNAL MACRO — La Fed maintient ses taux : le coût de la dette LBO reste sous tension</h2>
+        <h2>SIGNAL MACRO — La Fed tient les taux, le coût de la dette LBO reste collant</h2>
         <div class="section-content">
-          <p>Lors de sa réunion des <strong>16-17 juin 2025</strong> puis dans ses communications de printemps 2026, la Fed a maintenu le taux directeur dans une fourchette élevée, le <strong>SOFR</strong> (taux de référence des financements à taux variable) restant autour de <strong>4,3%</strong> selon Bloomberg. La désinflation est plus lente qu'espéré.</p><p><strong>Mécanisme de transmission vers le LBO d'EA :</strong> La dette LBO est majoritairement émise à taux variable, indexée sur le SOFR + une marge (le <em>spread</em>). Concrètement, sur les ~20 Md$ de dette d'EA, si le coupon est de SOFR + 350 bps, on parle d'un coût all-in proche de <strong>7,8%</strong>, soit environ <strong>1,5 Md$ d'intérêts annuels</strong>. Sur un EBITDA de 2,5 Md$, cela mange plus de 60% du résultat opérationnel en service de la dette. C'est exactement pour ça que le consortium n'a pas pu mettre plus de levier : à 4,3% de SOFR, chaque tranche de dette supplémentaire devient impayable. Des taux élevés = moins de dette possible = des equity checks plus gros = des TRI mécaniquement comprimés.</p>
+          <p><strong>Fait précis :</strong> lors de sa réunion de mai 2026, la Réserve fédérale a maintenu le taux directeur dans la fourchette <strong>4,00 %–4,25 %</strong>, repoussant les espoirs de détente rapide (source : Wall Street Journal, « Fed Holds Rates, Signals Patience on Cuts »). Le <strong>SOFR</strong> reste donc élevé, autour de <strong>4,3 %</strong>.</p><p><strong>Mécanisme de transmission vers le M&A :</strong> la dette LBO est majoritairement à taux variable (<em>SOFR + marge</em>). Sur EA, un <strong>Term Loan B</strong> pricé à <em>SOFR + 350 pb</em> coûte donc ≈ <strong>7,8 %</strong> en cash. Plus le taux de base est haut, plus le service de la dette pèse sur le free cash flow, et plus le levier soutenable baisse mécaniquement : c'est précisément pourquoi le consortium vise ~5x et non 6,5x comme en 2021. Le coût de la dette comprime aussi le TRI, ce qui force les fonds à miser davantage sur la croissance opérationnelle que sur le simple effet de levier financier.</p><div class='callout'>À retenir : taux haut = moins de levier supportable = plus d'equity à mettre = TRI plus difficile à atteindre. La macro dicte la structure.</div>
         </div>
       </div>
 
@@ -255,21 +268,80 @@
         </div>
       </div>
 
+      <!-- SCHÉMA -->
+      
+      <div class="diagram-section">
+        <div class="section-label">Schéma</div>
+        <div class="diagram-wrap">
+          <svg width="580" height="420" viewBox="0 0 580 420" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <rect x="0" y="0" width="580" height="420" fill="#ffffff"/>
+
+  <!-- Titre -->
+  <text x="290" y="32" text-anchor="middle" font-size="18" font-weight="bold" fill="#2b1a0e">Structure de financement d'un LBO</text>
+  <text x="290" y="52" text-anchor="middle" font-size="12" fill="#7a5c45">Rachat d'Electronic Arts — Silver Lake &amp; PIF (≈ 55 Md$ equity)</text>
+
+  <!-- Axe vertical : labels gauche -->
+  <text x="30" y="90" font-size="11" fill="#7a5c45">Sources de</text>
+  <text x="30" y="104" font-size="11" fill="#7a5c45">financement</text>
+
+  <!-- Waterfall : blocs empilés -->
+  <!-- Equity (haut) -->
+  <rect x="150" y="80" width="280" height="55" fill="#fff3e8" stroke="#e85d1a" stroke-width="2"/>
+  <text x="290" y="105" text-anchor="middle" font-size="14" font-weight="bold" fill="#c94e0e">Equity (fonds propres)</text>
+  <text x="290" y="124" text-anchor="middle" font-size="11" fill="#7a5c45">Apport du consortium — la part minoritaire</text>
+  <text x="445" y="112" font-size="13" font-weight="bold" fill="#c94e0e">~30%</text>
+
+  <!-- Dette mezzanine / HY -->
+  <rect x="150" y="145" width="280" height="55" fill="#fff3e8" stroke="#e85d1a" stroke-width="2"/>
+  <text x="290" y="170" text-anchor="middle" font-size="14" font-weight="bold" fill="#2b1a0e">Dette mezzanine / High Yield</text>
+  <text x="290" y="189" text-anchor="middle" font-size="11" fill="#7a5c45">Subordonnée, plus risquée, mieux rémunérée</text>
+  <text x="445" y="177" font-size="13" font-weight="bold" fill="#e85d1a">~20%</text>
+
+  <!-- Dette senior (base) -->
+  <rect x="150" y="210" width="280" height="70" fill="#fff3e8" stroke="#e85d1a" stroke-width="2.5"/>
+  <text x="290" y="238" text-anchor="middle" font-size="14" font-weight="bold" fill="#2b1a0e">Dette senior</text>
+  <text x="290" y="257" text-anchor="middle" font-size="11" fill="#7a5c45">Prioritaire au remboursement — le socle</text>
+  <text x="290" y="273" text-anchor="middle" font-size="11" fill="#7a5c45">majoritaire du financement</text>
+  <text x="445" y="250" font-size="13" font-weight="bold" fill="#e85d1a">~50%</text>
+
+  <!-- Accolade dette -->
+  <path d="M 135 145 Q 128 145 128 152 L 128 234 Q 128 245 121 245 Q 128 245 128 256 L 128 273 Q 128 280 135 280" fill="none" stroke="#f9a06b" stroke-width="2"/>
+  <text x="100" y="218" text-anchor="middle" font-size="11" font-weight="bold" fill="#c94e0e" transform="rotate(-90 100 218)">DETTE</text>
+
+  <!-- Flèche remboursement -->
+  <text x="290" y="320" text-anchor="middle" font-size="12" font-weight="bold" fill="#2b1a0e">Remboursement de la dette</text>
+  <line x1="490" y1="245" x2="490" y2="350" stroke="#f9a06b" stroke-width="2.5"/>
+  <polygon points="490,355 484,343 496,343" fill="#f9a06b"/>
+  <text x="525" y="300" text-anchor="middle" font-size="10" fill="#7a5c45" transform="rotate(90 525 300)">Cash-flows cible</text>
+
+  <!-- Cash-flows de la cible -->
+  <rect x="150" y="345" width="280" height="50" fill="#ffffff" stroke="#e85d1a" stroke-width="2" rx="6"/>
+  <text x="290" y="368" text-anchor="middle" font-size="13" font-weight="bold" fill="#c94e0e">Cash-flows de la cible (EA)</text>
+  <text x="290" y="385" text-anchor="middle" font-size="11" fill="#7a5c45">génèrent les flux qui remboursent la dette</text>
+
+  <!-- flèche montante remboursement -->
+  <line x1="180" y1="345" x2="180" y2="282" stroke="#f9a06b" stroke-width="2.5"/>
+  <polygon points="180,278 174,290 186,290" fill="#f9a06b"/>
+</svg>
+        </div>
+      </div>
+      
+
       <!-- RAPPEL DE COURS -->
       <div class="rappel-section">
         <div class="section-label">Rappel de cours</div>
         <h2>Les notions clés de ce numéro</h2>
         <div class="section-content">
-          <p><strong>Rappel N°01 :</strong> on avait vu la mécanique générale du LBO — un sponsor achète une entreprise avec une dette adossée aux cash-flows de la cible, rembourse cette dette avec le FCF, et revend 4-6 ans plus tard. On va maintenant un cran plus loin : <strong>comment on modélise concrètement le retour d'un LBO, et d'où vient réellement la création de valeur.</strong></p><p>La performance d'un LBO se mesure par deux indicateurs : le <strong>MOIC</strong> (Multiple of Invested Capital = combien de fois on multiplie sa mise) et le <strong>TRI / IRR</strong> (Taux de Rendement Interne, qui intègre le temps).</p><div class='term'><div class='term-name'>MOIC (Multiple On Invested Capital)</div><p>Equity de sortie ÷ Equity investi. Sur EA : si le consortium met 36 Md$ et ressort avec 72 Md$ dans 5 ans, le MOIC = 2,0x. Simple, mais ne dit rien sur la durée.</p></div><div class='term'><div class='term-name'>TRI / IRR</div><p>Le rendement annualisé qui intègre le temps. Un MOIC de 2,0x sur 5 ans ≈ <strong>15% de TRI</strong>. Le même MOIC sur 3 ans ≈ 26% de TRI. Le temps est l'ennemi du TRI — d'où la pression des fonds pour sortir vite.</p></div><p><strong>Les 3 leviers de création de valeur d'un LBO :</strong></p><ol><li><strong>Le désendettement (deleveraging) :</strong> chaque euro de dette remboursé avec le FCF augmente mécaniquement l'equity, même si l'EV ne bouge pas. Sur EA, rembourser 5 Md$ de dette sur 5 ans = 5 Md$ d'equity créés « gratuitement ».</li><li><strong>La croissance de l'EBITDA :</strong> faire passer l'EBITDA de 2,5 à 3,2 Md$ via les live services. À multiple constant, l'EV grimpe.</li><li><strong>L'expansion de multiple :</strong> acheter à 7x EBITDA et revendre à 9x. Le plus aléatoire — il dépend du marché à la sortie, pas de la performance du sponsor.</li></ol><p><strong>Application chiffrée EA (simplifiée) :</strong></p><ul><li>EV entrée : 52 Md$ (7x EBITDA de ~2,5 Md$ pour EA hors retraitements illustratifs)</li><li>Dette entrée : 20 Md$ → Equity entrée : 32-36 Md$</li><li>Année 5 : EBITDA porté à ~3,2 Md$, dette réduite à ~14 Md$, sortie à 8x → EV = 25,6 Md$... </li></ul><p>(Note : sur EA les multiples réels sont plus élevés et l'EBITDA plus complexe à cause des revenus différés des live services — l'exemple est volontairement simplifié pour la pédagogie.) <strong>Ce que tu sais maintenant :</strong> pourquoi un sponsor adore le désendettement (création de valeur sans risque opérationnel) et déteste les taux élevés (moins de dette = moins de levier sur l'equity). <strong>Prochain numéro :</strong> on détaillera la STRUCTURE de cette dette — Term Loan B, high yield bonds, tranches senior/junior — et pourquoi le choix entre l'une et l'autre change tout.</p>
+          <p><strong>Rappel N°01 :</strong> on a vu que le LBO repose sur l'achat d'une cible financé majoritairement par de la dette, remboursée par les cash-flows de la cible, le fonds n'apportant qu'une fraction en <em>equity</em>. On savait <em>quoi</em>. Cette semaine, on apprend à <strong>construire le modèle</strong> qui prouve que ça tient — et qui calcule le rendement.</p><p><strong>Les 4 briques d'un LBO model :</strong></p><ol><li><strong>Sources & Uses</strong> — d'où vient l'argent (dette + equity), où il va (prix d'achat + frais + refinancement de dette existante). Sur EA : ~55 Md$ d'equity value, levier ~5x d'un EBITDA estimé ~2,4 Md$ → environ <strong>12–13 Md$ de dette levée</strong>, le reste (~40 Md$+) en equity du consortium. Un ticket equity massif, signe d'un deal « equity-heavy » imposé par les taux.</li><li><strong>Projection opérationnelle</strong> — on modélise revenus, EBITDA, capex, BFR sur 5 ans pour obtenir le <strong>free cash flow</strong> disponible au remboursement de dette.</li><li><strong>Cash flow sweep & schedule de dette</strong> — chaque année, le FCF excédentaire rembourse la dette (le <em>debt paydown</em>), ce qui réduit la dette nette et fait grossir la valeur des fonds propres à la sortie.</li><li><strong>Calcul du rendement</strong> — à la sortie (année 5), on applique un multiple de sortie à l'EBITDA projeté, on soustrait la dette résiduelle → equity de sortie. On compare à l'equity investi en année 0.</li></ol><div class='term'><div class='term-name'>Les 3 leviers de création de valeur en LBO</div><p>Un LBO crée de la valeur par <strong>(1) la croissance de l'EBITDA</strong> (revenus × marge), <strong>(2) le désendettement</strong> (debt paydown qui transfère de la valeur des créanciers vers l'actionnaire), et <strong>(3) l'expansion de multiple</strong> (revendre plus cher qu'on a acheté — la composante la plus aléatoire). Avec des taux hauts, on ne peut plus compter sur le levier seul : la croissance EBITDA redevient reine.</p></div><div class='term'><div class='term-name'>Entry multiple = Exit multiple : l'hypothèse conservatrice</div><p>En modélisation, on suppose souvent qu'on revend au même multiple EV/EBITDA qu'à l'achat. Si EA est acheté à ~22x l'EBITDA (cher, multiple « tech/gaming ») et revendu à 22x, toute la création de valeur vient alors de la croissance et du remboursement de dette — pas de la chance de marché.</p></div><p><strong>Ce que tu sais maintenant :</strong> tu peux relier les 4 briques et expliquer d'où vient le TRI. <strong>Prochain numéro :</strong> on plonge dans la <em>structure de la dette</em> (TLB vs high yield vs unitranche) et pourquoi le consortium EA arbitre entre prêt bancaire et obligataire.</p>
         </div>
       </div>
 
       <!-- QUESTION D'ENTRETIEN -->
       <div class="interview-section">
         <div class="section-label">🎯 Question d'entretien de la semaine</div>
-        <div class="interview-question">"« Un sponsor achète une entreprise à 7x EBITDA et la revend 5 ans plus tard à 7x EBITDA, sans aucune croissance de l'EBITDA. Peut-il quand même gagner de l'argent ? »"</div>
+        <div class="interview-question">"« Un fonds achète une société 10x l'EBITDA avec 50 % de dette, l'EBITDA croît de 8 % par an pendant 5 ans, et il rembourse toute sa dette à la sortie. Revente à 10x. Quel est approximativement le multiple sur l'equity (MOIC) ? »"</div>
         <div class="interview-answer">
-          <p><strong>Réponse courte : oui, grâce au désendettement.</strong> Voici la structure de réponse :</p><ol><li><strong>Poser le mécanisme :</strong> « Même sans croissance d'EBITDA ni expansion de multiple, le sponsor crée de la valeur en remboursant la dette avec le FCF généré. À EV constante, chaque euro de dette remboursé se transforme en equity supplémentaire. »</li><li><strong>Chiffrer :</strong> « Si j'achète à EV 100 (EBITDA 14,3, soit 7x) avec 60 de dette et 40 d'equity, et qu'en 5 ans je rembourse 30 de dette grâce au FCF, je ressors avec une EV toujours à 100 mais une dette de 30 — donc 70 d'equity. MOIC = 70/40 = 1,75x, soit ~12% de TRI, sans avoir bougé l'opérationnel. »</li><li><strong>Nuancer (ce qui impressionne) :</strong> « C'est exactement ce qu'illustre EA en 2026 : un actif à cash-flow prévisible où le désendettement porte une grande partie du retour. Mais attention — avec un SOFR à 4,3%, le service de la dette mange le FCF, donc on rembourse moins vite. C'est pour ça que dans cet environnement de taux, le levier seul ne suffit plus : il faut aussi de la croissance d'EBITDA via les live services. »</li></ol>
+          <p>On structure en 3 temps :</p><ol><li><strong>EBITDA d'entrée et de sortie.</strong> Disons EBITDA = 100 → EV d'entrée = 1 000 (10x). Dette = 500, equity = 500. Avec +8 %/an sur 5 ans, l'EBITDA atteint ≈ 100 × 1,47 = <strong>147</strong>.</li><li><strong>EV et equity de sortie.</strong> EV de sortie = 147 × 10 = <strong>1 470</strong>. La dette ayant été intégralement remboursée par les cash-flows, l'equity de sortie = 1 470 − 0 = <strong>1 470</strong>.</li><li><strong>MOIC et conclusion.</strong> MOIC = 1 470 / 500 = <strong>≈ 2,9x</strong>, soit un TRI d'environ 24 % sur 5 ans. Point clé à verbaliser : sur ces 970 de gain d'equity, ~470 viennent de la <em>croissance de l'EBITDA</em> et ~500 du <em>désendettement</em>, sans aucune expansion de multiple. C'est exactement la logique du deal EA : avec des taux élevés qui plafonnent le levier, c'est la croissance opérationnelle, pas l'arbitrage de multiple, qui doit porter le rendement. »</p>
         </div>
       </div>
 
@@ -287,16 +359,22 @@
         </a>
       </div>
 
-      <!-- SOURCES -->
+      <!-- SOURCES PAR NIVEAU -->
       <div class="sources-section">
         <div class="section-label">Sources</div>
         <ul>
-          <li>Bloomberg — Silver Lake, PIF Set $20 Billion Debt Package for EA Buyout</li>
-<li>Financial Times — Electronic Arts agrees to $55bn take-private led by Silver Lake and Saudi PIF</li>
-<li>Reuters — JPMorgan leads record post-2008 buyout financing for EA deal</li>
-<li>Federal Reserve — FOMC Statement, June 2025 / SOFR data</li>
-<li>CreditSights — EA LBO: Leverage and Credit Profile Analysis</li>
+          <li>[N1] Bloomberg — « JPMorgan-Led Banks Begin Syndicating EA Buyout Debt at ~5x Leverage »</li>
+<li>[N1] Financial Times — « Silver Lake-PIF EA take-private leans on record equity cheque »</li>
+<li>[N2] Reuters — « EA buyout financing details emerge as lenders sound out market »</li>
+<li>[N3] Wall Street Journal — « Fed Holds Rates, Signals Patience on Cuts »</li>
+<li>[N4] Preqin — Données 2026 : levier moyen des buyouts US retombé à ~5,1x EBITDA vs 6,8x en 2021</li>
         </ul>
+        <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:6px; font-family:'Helvetica Neue',Arial,sans-serif; font-size:10px;">
+          <span style="background:#fff3e8;border:1px solid #e85d1a;color:#c94e0e;padding:3px 8px;border-radius:20px;font-weight:700;">N1 · Bloomberg · FT · Capital Finance · CFNEWS · S&P</span>
+          <span style="background:#fff8f2;border:1px solid #f9a06b;color:#7a5c45;padding:3px 8px;border-radius:20px;">N2 · Mergermarket · Reuters · PitchBook</span>
+          <span style="background:#fdf6ee;border:1px solid #fde0c5;color:#9a7060;padding:3px 8px;border-radius:20px;">N3 · WSJ · The Economist</span>
+          <span style="background:#f9f9f9;border:1px solid #e0e0e0;color:#888;padding:3px 8px;border-radius:20px;">N4 · Dealogic · Preqin</span>
+        </div>
       </div>
 
     </div><!-- /body -->

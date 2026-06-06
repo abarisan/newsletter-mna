@@ -70,5 +70,41 @@
     "verso": "Le SOFR est le taux de référence des financements à taux variable. À ~4,3% (Fed maintenant des taux élevés en juin 2025), le coût de la dette de 20 Md$ est élevé, ce qui alourdit le service de la dette, réduit le FCF disponible pour le désendettement et comprime le rendement (IRR) du deal.",
     "numero": "02",
     "id": 1612416046
+  },
+  {
+    "recto": "Quels sont les paramètres clés du rachat d'Electronic Arts par le consortium Silver Lake / PIF ?",
+    "verso": "L'opération valorise les fonds propres d'EA à environ 55 Md$, soit ~210 $/action, ce qui représente une prime d'environ 25 % sur le cours non affecté. Le consortium est mené par Silver Lake et le fonds souverain saoudien PIF.",
+    "numero": "02",
+    "id": 1372119363
+  },
+  {
+    "recto": "Qu'est-ce qu'un LBO (Leveraged Buy-Out) ?",
+    "verso": "Un LBO est l'achat d'une cible financé majoritairement par de la dette, remboursée par les cash-flows futurs de la cible. Le fonds n'apporte qu'une fraction du prix sous forme d'equity, ce qui amplifie le rendement sur les fonds propres.",
+    "numero": "02",
+    "id": 2129279837
+  },
+  {
+    "recto": "Quelles sont les 4 briques d'un LBO model ?",
+    "verso": "1) Sources & Uses (d'où vient l'argent et où il va), 2) la projection des cash-flows et du remboursement de dette, 3) la structure de financement/levier, et 4) le calcul du rendement (TRI/MOIC). La première brique formalise dette + equity en sources, prix d'achat + frais + refinancement en emplois.",
+    "numero": "02",
+    "id": 1753591265
+  },
+  {
+    "recto": "Sur le deal EA, comment estime-t-on le montant de dette levée à partir du levier et de l'EBITDA ?",
+    "verso": "Avec un EBITDA estimé à ~2,4 Md$ et un levier d'environ 5x, la dette levée atteint environ 12–13 Md$ (5 × 2,4 ≈ 12 Md$). Le levier (Dette/EBITDA) est un indicateur central pour dimensionner la capacité d'endettement de la cible.",
+    "numero": "02",
+    "id": 2082608857
+  },
+  {
+    "recto": "À quoi sert le tableau 'Sources & Uses' dans un LBO ?",
+    "verso": "Il recense d'un côté les Sources de financement (dette + equity du fonds) et de l'autre les Uses (emplois) : prix d'achat des actions, frais de transaction et refinancement de la dette existante. L'égalité Sources = Uses garantit l'équilibre du montage financier.",
+    "numero": "02",
+    "id": 1177219470
+  },
+  {
+    "recto": "Quel était le niveau du taux directeur de la Fed à sa réunion de mai 2026, et quelle implication pour un LBO ?",
+    "verso": "La Fed a maintenu son taux directeur dans la fourchette 4,00 %–4,25 %, signalant sa patience avant toute baisse (source : WSJ). Des taux élevés renchérissent le coût de la dette (souvent indexée sur le SOFR), ce qui pèse sur les cash-flows disponibles et donc sur le rendement du LBO.",
+    "numero": "02",
+    "id": 1450716833
   }
 ]
