@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Deal Brief — Preview</title>
+  <style>
+    /* ── Palette : clair / nuances d'orange ── */
+    /* Fond page    : #fdf6ee  (crème chaud)         */
+    /* Fond carte   : #ffffff                         */
+    /* Header bg    : #ff6b2b  (orange vif)           */
+    /* Accent 1     : #e85d1a  (orange foncé)         */
+    /* Accent 2     : #f9a06b  (orange doux/pastel)   */
+    /* Texte        : #2b1a0e  (brun très foncé)      */
+    /* Texte sec    : #7a5c45  (brun moyen)           */
+    /* Rappel bg    : #fff3e8  (orange très clair)    */
+    /* Divider      : #fde0c5                         */
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #fdf6ee;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      color: #2b1a0e;
+      line-height: 1.75;
+    }
+    .wrapper {
+      max-width: 680px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(232,93,26,0.10);
+    }
+    .header {
+      background: linear-gradient(135deg, #ff6b2b 0%, #e85d1a 100%);
+      padding: 48px 48px 36px;
+      text-align: center;
+    }
+    .header .eyebrow {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ffe8d6;
+      margin-bottom: 16px;
+    }
+    .header h1 {
+      font-size: 36px;
+      font-weight: 400;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .header .subtitle {
+      font-size: 13px;
+      color: #ffd4b8;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      letter-spacing: 0.5px;
+    }
+    .header .issue-line {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.25);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #ffe8d6;
+      letter-spacing: 1px;
+    }
+    .body { padding: 0 48px 48px; }
+    .section { margin-top: 48px; }
+    .section-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #e85d1a;
+      margin-bottom: 6px;
+    }
+    .section h2 {
+      font-size: 22px;
+      font-weight: 400;
+      color: #2b1a0e;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #f9a06b;
+    }
+    .section-content { font-size: 15px; color: #3d2510; }
+    .section-content p { margin-bottom: 14px; }
+    .section-content strong { color: #c94e0e; font-weight: 700; }
+    .section-content ul, .section-content ol { padding-left: 20px; margin-bottom: 14px; }
+    .section-content li { margin-bottom: 6px; }
+    .callout {
+      background: #fff3e8;
+      border-left: 3px solid #e85d1a;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 14px;
+      color: #5a3520;
+      font-style: italic;
+      border-radius: 0 4px 4px 0;
+    }
+    .callout strong { font-style: normal; color: #c94e0e; }
+    .rappel-section {
+      margin-top: 48px;
+      background: #fff3e8;
+      margin-left: -48px;
+      margin-right: -48px;
+      padding: 36px 48px;
+      border-top: 3px solid #f9a06b;
+      border-bottom: 3px solid #f9a06b;
+    }
+    .rappel-section .section-label { color: #e85d1a; }
+    .rappel-section h2 { color: #2b1a0e; border-bottom-color: #fde0c5; font-size: 20px; }
+    .rappel-section .section-content { color: #5a3520; }
+    .rappel-section .section-content strong { color: #c94e0e; }
+    .rappel-section .term { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid #fde0c5; }
+    .rappel-section .term:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .rappel-section .term-name {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+    .interview-section {
+      margin-top: 48px;
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 28px 32px;
+    }
+    .interview-section .section-label { color: #e85d1a; }
+    .interview-question { font-size: 18px; font-style: italic; color: #2b1a0e; margin: 12px 0 20px; line-height: 1.4; }
+    .interview-answer { font-size: 14px; color: #5a3520; }
+    .interview-answer p { margin-bottom: 10px; }
+    .sources-section { margin-top: 48px; padding-top: 24px; border-top: 1px solid #fde0c5; }
+    .sources-section .section-label { margin-bottom: 12px; }
+    .sources-section ul { list-style: none; padding: 0; }
+    .sources-section li {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #7a5c45;
+      margin-bottom: 6px;
+      padding-left: 12px;
+      position: relative;
+    }
+    .sources-section li::before { content: '→'; position: absolute; left: 0; color: #e85d1a; }
+    .footer {
+      background: #fdf6ee;
+      padding: 28px 48px;
+      text-align: center;
+      border-top: 1px solid #fde0c5;
+    }
+    .footer p { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; color: #9a7060; line-height: 1.8; }
+    .footer .next { color: #c94e0e; font-weight: 600; }
+    .divider { height: 1px; background: #fde0c5; margin: 36px 0; }
+    @media (max-width: 600px) {
+      .wrapper { margin: 0; border-radius: 0; }
+      .header { padding: 32px 24px 24px; }
+      .body { padding: 0 24px 32px; }
+      .rappel-section { margin-left: -24px; margin-right: -24px; padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <div class="header">
+      <div class="eyebrow">Newsletter M&A · Finance · IA · Géopolitique</div>
+      <h1>The Deal Brief</h1>
+      <div class="subtitle">Comprendre la finance, pas juste la suivre</div>
+      <div class="issue-line">N° 01 &nbsp;·&nbsp; 6 juin 2026</div>
+    </div>
+
+    <div class="body">
+
+      <div class="section">
+        <div class="section-label">Niveau 1 — Deal de la semaine</div>
+        <h2>Electronic Arts racheté $55 Md : le plus grand LBO de l'histoire du jeu vidéo</h2>
+        <div class="section-content">
+
+          <p><strong>Ce qui s'est passé.</strong> En septembre 2025, EA a signé un accord de rachat par un consortium composé du fonds souverain saoudien <strong>PIF</strong> (via Savvy Games Group), du fonds PE américain <strong>Silver Lake</strong> et du family office <strong>Affinity Partners</strong> (Jared Kushner). Prix : <strong>$210 par action</strong>, soit une prime de 25% sur le cours non-affecté, pour une valeur d'entreprise totale de <strong>$55 milliards</strong>. C'est le plus grand LBO d'une société cotée de toute l'histoire.</p>
+
+          <p><strong>La structure financière.</strong> Le deal est financé par <strong>$36 Md de fonds propres</strong> apportés par le consortium et <strong>$20 Md de dette</strong>, soit un levier brut de ~6x EBITDA à la clôture. JPMorgan a lancé une émission obligataire de <strong>$8 milliards</strong> — la plus importante sur le marché high yield depuis 2008. Résultat : EA sortira de la bourse avec un ratio dette nette/EBITDA de ~10x, avec <strong>$1,4 Md de charges d'intérêts annuelles</strong> qui absorbent 75% de son free cash flow.</p>
+
+          <p><strong>Pourquoi EA est une cible LBO idéale.</strong> 70% des revenus d'EA viennent de <em>live services</em> numériques — des abonnements, passes de saison et microtransactions dans des jeux comme <strong>EA Sports FC</strong> ou <strong>Apex Legends</strong>. Ce sont des revenus récurrents, prévisibles, à très faible coût marginal : exactement le type de cash flows que les fonds PE cherchent pour rembourser leur dette. Développer un AAA comme Battlefield coûte $300 M+ sur 6 ans — des horizons incompatibles avec les résultats trimestriels de Wall Street. Sortir de la bourse, c'est se libérer de cette pression court-termiste.</p>
+
+          <p><strong>Le rationnel stratégique côté PIF.</strong> L'Arabie Saoudite investit massivement dans le gaming via sa Vision 2030 : PIF possède déjà des participations dans Nintendo, Activision, Capcom, et ESports. EA lui donne un catalogue de licences sportives (FIFA/FC, Madden, NBA Live) et une présence mondiale dans le gaming mobile. C'est un pari sur la convergence entre sport réel, eSport et divertissement digital.</p>
+
+          <div class="callout">
+            <strong>Ce que tu peux dire en entretien :</strong> <em>"Le rachat d'EA par Silver Lake et PIF m'a marqué car c'est un LBO atypique — une société de $55 Md dont le modèle repose sur des revenus digitaux récurrents plutôt que des actifs physiques. Le levier à 6x est rendu possible par la visibilité des cash flows des live services. C'est aussi un signal fort sur la stratégie de diversification économique saoudienne dans le soft power culturel."</em>
+          </div>
+
+          <p><strong>Où en est-on.</strong> La période HSR (antitrust américain) a expiré en février 2026. Les régulateurs britanniques et chinois ont validé en mars 2026. La clôture est attendue au <strong>Q1 FY2027</strong> d'EA, soit vers juin 2026.</p>
+
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="section">
+        <div class="section-label">Niveau 2 — Private Equity & VC</div>
+        <h2>PE : les continuation vehicles comme nouvelle norme de sortie</h2>
+        <div class="section-content">
+          <p>Sans IPO accessible, les fonds PE ont massivement recours aux <strong>continuation vehicles</strong> en 2026. Le principe : transférer un actif prometteur d'un fonds arrivé à maturité vers un nouveau véhicule, plutôt que de vendre à perte dans un marché défavorable.</p>
+
+          <p><strong>Côté VC</strong>, le financement repart mais se concentre. Les secteurs qui lèvent en juin 2026 : IA appliquée avec défensibilité technique prouvée, cybersécurité, HealthTech avec métriques réelles, infrastructure digitale. Les valorisations "vague" reviennent à des multiples plus raisonnables (10-15x ARR contre 50x en 2021).</p>
+
+          <p>Le <strong>private credit</strong> joue un rôle croissant : il finance des deals que les banques ne peuvent plus toucher post-Bâle IV, avec des rendements de 10-12% pour les prêteurs.</p>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="section">
+        <div class="section-label">Niveau 3 — Macro & Géopolitique</div>
+        <h2>Croissance à 2,6% : la résilience de façade cache des fractures profondes</h2>
+        <div class="section-content">
+          <p>La Banque Mondiale projette une croissance mondiale de <strong>2,6% en 2026</strong>. L'inflation recule vers 2,6% — les banques centrales soufflent. Mais cette stabilité apparente masque trois fragilités structurelles.</p>
+
+          <p><strong>1. La fragmentation du commerce mondial.</strong> Le découplage technologique USA-Chine s'accélère. Les chaînes d'approvisionnement se reconfigurent (nearshoring, friendshoring), ce qui génère des coûts cachés considérables pour les multinationales.</p>
+
+          <p><strong>2. Le détroit de Taïwan.</strong> 44% des investisseurs institutionnels citent les tensions géopolitiques comme premier risque. Un scénario de blocage autour de Taïwan paralyserait 90% de la production mondiale de semi-conducteurs avancés — impact direct sur toute deal d'acquisition tech.</p>
+
+          <p><strong>3. La fin du mandat du président de la Fed.</strong> L'incertitude sur la politique monétaire américaine crée de la volatilité sur les taux longs, donc sur le coût du capital des LBO.</p>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="section">
+        <div class="section-label">Transversal — Intelligence Artificielle</div>
+        <h2>L'IA comme infrastructure : quand la technologie devient un actif à acquérir</h2>
+        <div class="section-content">
+          <p>En 2026, <strong>80% des grandes entreprises</strong> déploient de l'IA générative. Cette adoption massive crée une nouvelle logique M&A : on n'achète plus une entreprise pour ses produits, mais pour ses <strong>données d'entraînement</strong>, ses <strong>modèles propriétaires</strong> et ses <strong>ingénieurs spécialisés</strong>.</p>
+
+          <p>Conséquence directe sur les valorisations : les multiples des cibles IA restent élevés (20-40x EBITDA) même dans un contexte de normalisation, car la rareté des actifs prime sur les fondamentaux traditionnels.</p>
+
+          <div class="callout">
+            <strong>Point de vigilance :</strong> L'empreinte carbone des modèles IA fait son entrée dans les due diligences ESG. Un datacenter qui consomme l'équivalent d'une ville moyenne devient un passif potentiel dans certaines juridictions européennes.
+          </div>
+        </div>
+      </div>
+
+      <div class="rappel-section">
+        <div class="section-label">Rappel de cours</div>
+        <h2>Le LBO — mécanique complète</h2>
+        <div class="section-content">
+
+          <p>Le <strong>Leveraged Buyout (LBO)</strong> est la transaction fondamentale du Private Equity. Comprendre sa mécanique en profondeur, c'est comprendre pourquoi les fonds PE existent, comment ils gagnent de l'argent, et pourquoi certaines entreprises sont de meilleures cibles que d'autres.</p>
+
+          <p><strong>Le principe de base.</strong> Un fonds PE rachète une entreprise en finançant l'acquisition majoritairement par de la dette (60 à 80% du prix d'achat). Cette dette est portée non pas par le fonds, mais par la société cible elle-même — ou par une holding créée pour l'occasion (le <em>NewCo</em>). Les cash flows futurs de l'entreprise servent à rembourser cette dette. À la sortie (revente 4-7 ans plus tard), le fonds récupère la valeur résiduelle — qui a mécaniquement augmenté parce que la dette a été remboursée.</p>
+
+          <p><strong>Pourquoi la dette crée de la valeur.</strong> Imagine acheter un immeuble à 1 M€ avec 200 K€ de fonds propres et 800 K€ de crédit. Si l'immeuble vaut 1,2 M€ à la revente, tu as doublé ta mise (200 K€ → 400 K€ après remboursement de la dette), alors que l'actif n'a progressé que de 20%. C'est <strong>l'effet de levier financier</strong> : amplifier le rendement des fonds propres grâce à la dette.</p>
+
+          <p><strong>Les trois leviers de création de valeur.</strong> En entretien, tu dois les citer dans l'ordre de noblesse :</p>
+          <ol>
+            <li><strong>Amélioration opérationnelle</strong> — croissance du chiffre d'affaires, expansion des marges, réduction des coûts. C'est le levier le plus valorisé car il crée de la valeur réelle, indépendamment du marché.</li>
+            <li><strong>Désendettement</strong> — les cash flows remboursent la dette, ce qui augmente mécaniquement la part de valeur qui revient aux actionnaires. Levier certain mais plafonné par la capacité de remboursement.</li>
+            <li><strong>Expansion des multiples</strong> — acheter à 8x EBITDA, revendre à 11x. Dépend des conditions de marché au moment de la sortie. Le moins contrôlable des trois ; les meilleurs fonds s'appuient peu dessus.</li>
+          </ol>
+
+          <p><strong>Les conditions d'une bonne cible LBO.</strong> Pas toutes les entreprises se prêtent à un LBO. Les caractéristiques recherchées : <em>cash flows stables et prévisibles</em> (pour rembourser la dette), <em>faible intensité capitalistique</em> (peu d'investissements obligatoires), <em>position de marché défendable</em> (pricing power), <em>management solide</em> (le fonds n'opère pas lui-même l'entreprise). Les secteurs cycliques, très capitalistiques ou à haute incertitude réglementaire sont évités.</p>
+
+          <p><strong>La structure typique.</strong> Le fonds crée un <em>NewCo</em> (holding) qui emprunte, puis rachète la cible. La dette est structurée en plusieurs tranches : dette senior (la moins risquée, remboursée en premier, taux le plus bas), dette mezzanine (intermédiaire, souvent convertible en actions), et parfois des obligations à haut rendement (<em>high yield bonds</em>). En 2026, le <em>private credit</em> remplace souvent les banques sur les tranches les plus risquées.</p>
+
+          <p><strong>Le lien avec l'actu de ce numéro.</strong> La vague de megadeals 2026 s'explique en partie par la stabilisation des taux : quand les taux montent, le coût de la dette augmente, l'effet de levier devient moins rentable et les deals se raréfient. Quand ils se stabilisent, les LBO redeviennent attractifs. C'est exactement ce cycle que l'on observe en ce moment.</p>
+
+        </div>
+      </div>
+
+      <div class="interview-section">
+        <div class="section-label">🎯 Question d'entretien de la semaine</div>
+        <div class="interview-question">"Quels sont les trois principaux leviers de création de valeur dans un LBO ?"</div>
+        <div class="interview-answer">
+          <p><strong>Structure de réponse (1'30 max) :</strong></p>
+          <p><strong>1. Croissance des bénéfices (operational improvement)</strong> — amélioration des marges, augmentation du chiffre d'affaires, optimisation des coûts. C'est le levier le plus sain, mais aussi le plus long à matérialiser.</p>
+          <p><strong>2. Désendettement (debt paydown)</strong> — les cash flows de la société remboursent la dette d'acquisition. Mécaniquement, la valeur des fonds propres augmente même sans croissance de l'EBITDA. C'est l'effet de levier financier.</p>
+          <p><strong>3. Expansion des multiples (multiple expansion)</strong> — acheter à 8x EBITDA et revendre à 12x. Dépend des conditions de marché et de la capacité à repositionner l'actif (secteur, taille, profil de croissance). Le moins contrôlable des trois leviers.</p>
+          <p><em>Pour briller : précise que ces trois leviers peuvent se combiner, et que les meilleurs fonds PE créent de la valeur principalement via l'amélioration opérationnelle, pas juste l'effet de levier financier.</em></p>
+        </div>
+      </div>
+
+      <div class="sources-section">
+        <div class="section-label">Sources</div>
+        <ul>
+          <li>PwC — Global M&A Industry Trends 2026</li>
+          <li>BCG — M&A Outlook 2026: Expectations Are High Again</li>
+          <li>S&P Global — PE & VC Outlook 2026</li>
+          <li>Banque Mondiale — Global Economic Prospects, janvier 2026</li>
+          <li>RTBF — Marchés financiers : quand la géopolitique pulvérise les prévisions</li>
+          <li>Futura Sciences — IA Générative : passage à la vitesse supérieure en 2026</li>
+          <li>Goldman Sachs AM — Perspectives d'investissement 2026</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer">
+      <p>
+        <span class="next">Prochain numéro : vendredi 13 juin 2026</span><br>
+        Tu prépares des entretiens M&A · The Deal Brief est généré automatiquement chaque semaine<br>
+        <a href="https://github.com/sooriyakumar/newsletter-mna" style="color:#c9a84c; text-decoration:none;">Voir le code source</a>
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>

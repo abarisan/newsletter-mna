@@ -1,0 +1,41 @@
+name: Newsletter hebdomadaire — The Deal Brief
+
+on:
+  schedule:
+    # Chaque vendredi à 7h00 (heure Paris = UTC+2 en été → 05:00 UTC)
+    - cron: '0 5 * * 5'
+  workflow_dispatch:
+    # Permet aussi de lancer manuellement depuis GitHub Actions
+
+jobs:
+  send-newsletter:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # pour pousser l'archive HTML
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Generate & send newsletter
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GMAIL_ADDRESS:     ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: python generate_newsletter.py
+
+      - name: Commit newsletter archive
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add archives/
+          git diff --staged --quiet || git commit -m "📰 Newsletter $(date +%Y-%m-%d)"
+          git push
