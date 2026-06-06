@@ -355,6 +355,69 @@ def save_level(level: dict):
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# SCHÉMA SVG PÉDAGOGIQUE
+# ─────────────────────────────────────────────────────────────────────────────
+
+DIAGRAM_PROMPT = """Tu dois générer un schéma SVG pédagogique qui illustre visuellement le concept
+enseigné dans le cours de cette newsletter.
+
+Palette de couleurs à respecter :
+- Fond des boîtes : #fff3e8 ou #ffffff
+- Bordures et accents : #e85d1a (orange)
+- Texte principal : #2b1a0e
+- Texte secondaire : #7a5c45
+- Flèches et connecteurs : #f9a06b
+- Mise en avant : #c94e0e (orange foncé)
+
+Contraintes techniques (email) :
+- SVG auto-contenu, PAS d'images externes, PAS de CSS externe
+- Largeur fixe : 580px, hauteur adaptée au contenu (300-450px max)
+- Police : Arial, sans-serif uniquement
+- Tous les styles en attributs SVG inline (fill, stroke, font-family, etc.)
+- Pas de foreignObject, pas de <style>, pas de clipPath complexe
+
+Types de schémas selon le concept :
+- LBO / structure de financement → waterfall vertical avec blocs empilés (equity / dette senior / mezz / HY)
+- Processus M&A → timeline horizontale avec étapes numérotées
+- Création de valeur PE → 3 colonnes côte à côte (levier opérationnel / financier / multiples)
+- Macro / taux → graphique en barres ou courbe simple
+- Deal flow → diagramme avec acquéreur → cible avec annotations
+
+Concept à illustrer :
+{concept}
+
+Chiffres réels du deal à intégrer si pertinent :
+{chiffres}
+
+Retourne UNIQUEMENT le code SVG complet, rien d'autre. Commence par <svg et termine par </svg>.
+"""
+
+def generate_diagram(client: anthropic.Anthropic, content: dict) -> str:
+    """Génère un schéma SVG illustrant le concept du cours."""
+    concept = content.get("rappel_cours", "")[:300] or content.get("ma_titre", "")
+    chiffres = content.get("ma_contenu", "")[:400]
+
+    if not concept.strip():
+        return ""
+
+    msg = client.messages.create(
+        model="claude-opus-4-8",
+        max_tokens=2000,
+        messages=[{"role": "user", "content": DIAGRAM_PROMPT.format(
+            concept=concept,
+            chiffres=chiffres
+        )}]
+    )
+    text = msg.content[0].text.strip()
+    # Extraire uniquement le SVG
+    start = text.find("<svg")
+    end   = text.rfind("</svg>") + 6
+    if start == -1 or end <= 6:
+        return ""
+    return text[start:end]
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # QUIZ (GitHub Pages)
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -612,9 +675,19 @@ Tu es mon tuteur M&A. Quand je te pose une question :
 
 def render_html(content: dict, template_path: Path, quiz_url: str = "") -> str:
     """Injecte le contenu dans le template HTML."""
+    import re
     html = template_path.read_text(encoding="utf-8")
-    content_with_extras = {**content, "quiz_url": quiz_url}
-    for key, value in content_with_extras.items():
+    data = {**content, "quiz_url": quiz_url}
+
+    # Blocs conditionnels {{#key}}...{{/key}} — affichés seulement si valeur non vide
+    def replace_block(m):
+        key, inner = m.group(1), m.group(2)
+        val = data.get(key, "")
+        return inner.replace(f"{{{{{key}}}}}", str(val)) if val else ""
+    html = re.sub(r"\{\{#(\w+)\}\}(.*?)\{\{/\1\}\}", replace_block, html, flags=re.DOTALL)
+
+    # Variables simples {{key}}
+    for key, value in data.items():
         if isinstance(value, list):
             items = "\n".join(f'<li>{s}</li>' for s in value)
             html = html.replace(f"{{{{{key}}}}}", items)
@@ -712,7 +785,12 @@ def main():
     content = generate_content(client, date_str, archive_dir, weekday)
     numero  = content.get("numero", "XX")
 
-    # 2. Quiz (GitHub Pages)
+    # 2. Schéma SVG
+    print("📊 Génération du schéma...")
+    diagram_svg = generate_diagram(client, content)
+    content["diagram_svg"] = diagram_svg
+
+    # 3. Quiz (GitHub Pages)
     print("❓ Génération du quiz...")
     questions = generate_quiz(client, content)
     quiz_html = render_quiz_page(questions, date_str, numero)
@@ -721,30 +799,30 @@ def main():
     quiz_file.write_text(quiz_html, encoding="utf-8")
     quiz_url  = f"https://abarisan.github.io/newsletter-mna/quiz/quiz_{today.strftime('%Y-%m-%d')}.html"
 
-    # 3. Anki deck cumulatif
+    # 4. Anki deck cumulatif
     print("🎴 Génération des flashcards Anki...")
     anki_cards = generate_anki_cards(client, content)
     anki_path  = archive_dir / "the_deal_brief.apkg"
     build_anki_deck(anki_cards, numero, anki_path)
 
-    # 4. Contexte Claude Project
+    # 5. Contexte Claude Project
     print("🤖 Génération du contexte Claude Project...")
     claude_ctx      = generate_claude_context(content, level, numero, date_str)
     ctx_file        = root / "claude_project_context.md"
     ctx_file.write_text(claude_ctx, encoding="utf-8")
 
-    # 5. Mise à jour du niveau
+    # 6. Mise à jour du niveau
     print("📈 Mise à jour du niveau...")
     new_level = update_level(client, content, level)
     save_level(new_level)
 
-    # 6. Rendu HTML et archive
+    # 7. Rendu HTML et archive
     print("🎨 Rendu HTML...")
     html         = render_html(content, template, quiz_url)
     archive_file = archive_dir / f"newsletter_{today.strftime('%Y-%m-%d')}.html"
     archive_file.write_text(html, encoding="utf-8")
 
-    # 7. Envoi email avec Anki en pièce jointe
+    # 8. Envoi email avec Anki en pièce jointe
     subject_prefix = {"LUNDI": "📌 Deal", "MERCREDI": "📚 Cours", "VENDREDI": "🌍 Macro"}.get(jour, "📰")
     print("📧 Envoi par email...")
     send_email(html, f"{subject_prefix} — The Deal Brief N°{numero} · {date_str}",

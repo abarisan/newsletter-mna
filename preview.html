@@ -159,6 +159,17 @@
     .footer p { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; color: #9a7060; line-height: 1.8; }
     .footer .next { color: #c94e0e; font-weight: 600; }
     .divider { height: 1px; background: #fde0c5; margin: 36px 0; }
+    .diagram-section { margin-top: 48px; }
+    .diagram-section .section-label { margin-bottom: 12px; }
+    .diagram-wrap {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      overflow-x: auto;
+    }
+    .diagram-wrap svg { max-width: 100%; height: auto; }
     .tools-section {
       margin-top: 48px;
       display: grid;
@@ -271,6 +282,50 @@
           <div class="callout">
             <strong>Point de vigilance :</strong> L'empreinte carbone des modèles IA fait son entrée dans les due diligences ESG. Un datacenter qui consomme l'équivalent d'une ville moyenne devient un passif potentiel dans certaines juridictions européennes.
           </div>
+        </div>
+      </div>
+
+      <!-- SCHÉMA -->
+      <div class="diagram-section">
+        <div class="section-label">Schéma</div>
+        <div class="diagram-wrap">
+          <svg width="580" height="360" viewBox="0 0 580 360" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+            <text x="290" y="26" text-anchor="middle" font-size="13" font-weight="bold" fill="#2b1a0e">Structure de financement — LBO Electronic Arts ($55 Md)</text>
+            <!-- Sources -->
+            <text x="110" y="52" text-anchor="middle" font-size="10" fill="#7a5c45" font-weight="bold">SOURCES</text>
+            <rect x="20" y="60" width="180" height="64" rx="6" fill="#fff3e8" stroke="#e85d1a" stroke-width="1.5"/>
+            <text x="110" y="82" text-anchor="middle" font-size="12" font-weight="bold" fill="#c94e0e">Equity — $36 Md (65%)</text>
+            <text x="110" y="99" text-anchor="middle" font-size="10" fill="#5a3520">PIF · Silver Lake · Affinity</text>
+            <text x="110" y="114" text-anchor="middle" font-size="10" fill="#7a5c45">Fonds propres apportés</text>
+            <rect x="20" y="136" width="180" height="48" rx="6" fill="#fdebd8" stroke="#f9a06b" stroke-width="1.5"/>
+            <text x="110" y="157" text-anchor="middle" font-size="12" font-weight="bold" fill="#c94e0e">High Yield — $8 Md</text>
+            <text x="110" y="174" text-anchor="middle" font-size="10" fill="#5a3520">JPMorgan (lead underwriter)</text>
+            <rect x="20" y="196" width="180" height="48" rx="6" fill="#fdebd8" stroke="#f9a06b" stroke-width="1.5"/>
+            <text x="110" y="217" text-anchor="middle" font-size="12" font-weight="bold" fill="#c94e0e">Prêts syndiqués — $12 Md</text>
+            <text x="110" y="234" text-anchor="middle" font-size="10" fill="#5a3520">Dette senior sécurisée</text>
+            <!-- Flèche -->
+            <defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#f9a06b"/></marker></defs>
+            <line x1="200" y1="170" x2="244" y2="170" stroke="#f9a06b" stroke-width="2" marker-end="url(#arr)"/>
+            <text x="222" y="163" text-anchor="middle" font-size="9" fill="#7a5c45">flux</text>
+            <!-- Emplois -->
+            <text x="400" y="52" text-anchor="middle" font-size="10" fill="#7a5c45" font-weight="bold">EMPLOIS</text>
+            <rect x="250" y="60" width="310" height="64" rx="6" fill="#fff3e8" stroke="#e85d1a" stroke-width="2"/>
+            <text x="405" y="82" text-anchor="middle" font-size="13" font-weight="bold" fill="#c94e0e">Rachat d'EA à $210 / action</text>
+            <text x="405" y="99" text-anchor="middle" font-size="10" fill="#5a3520">Prime +25% sur cours non-affecté</text>
+            <text x="405" y="114" text-anchor="middle" font-size="10" fill="#7a5c45">Valeur d'entreprise totale : $55 Md</text>
+            <rect x="250" y="136" width="310" height="48" rx="6" fill="#fff8f2" stroke="#f9a06b" stroke-width="1.5"/>
+            <text x="405" y="157" text-anchor="middle" font-size="12" font-weight="bold" fill="#2b1a0e">Levier à la clôture : ~6x EBITDA</text>
+            <text x="405" y="174" text-anchor="middle" font-size="10" fill="#5a3520">$20 Md dette / ~$3,3 Md EBITDA</text>
+            <rect x="250" y="196" width="310" height="48" rx="6" fill="#fff8f2" stroke="#f9a06b" stroke-width="1.5"/>
+            <text x="405" y="217" text-anchor="middle" font-size="12" font-weight="bold" fill="#2b1a0e">$1,4 Md intérêts / an</text>
+            <text x="405" y="234" text-anchor="middle" font-size="10" fill="#5a3520">= 75% du free cash flow absorbé</text>
+            <!-- Ligne verticale -->
+            <line x1="228" y1="46" x2="228" y2="320" stroke="#fde0c5" stroke-width="1" stroke-dasharray="4,3"/>
+            <!-- Encadré remboursement -->
+            <rect x="20" y="266" width="540" height="52" rx="6" fill="#2b1a0e"/>
+            <text x="290" y="285" text-anchor="middle" font-size="11" fill="#ffe8d6" font-weight="bold">Moteur du remboursement : live services numériques (EA Sports FC, Apex…)</text>
+            <text x="290" y="304" text-anchor="middle" font-size="10" fill="#f9a06b">Revenus récurrents et prévisibles → idéal pour servir une dette à ~10x EBITDA net</text>
+          </svg>
         </div>
       </div>
 
