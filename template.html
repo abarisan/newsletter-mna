@@ -159,6 +159,39 @@
 
     .divider { height: 1px; background: #fde0c5; margin: 36px 0; }
 
+    /* ── Outils d'apprentissage ── */
+    .tools-section {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .tool-card {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      transition: box-shadow .15s;
+    }
+    .tool-card:hover { box-shadow: 0 4px 16px rgba(232,93,26,0.15); }
+    .tool-card .icon { font-size: 28px; display: block; margin-bottom: 8px; }
+    .tool-card .tool-title {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .tool-card .tool-desc {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      color: #7a5c45;
+    }
+
     @media (max-width: 600px) {
       .wrapper { margin: 0; border-radius: 0; }
       .header { padding: 32px 24px 24px; }
@@ -240,6 +273,20 @@
         </div>
       </div>
 
+      <!-- OUTILS D'APPRENTISSAGE -->
+      <div class="tools-section">
+        <a class="tool-card" href="{{quiz_url}}" target="_blank">
+          <span class="icon">❓</span>
+          <span class="tool-title">Quiz ce numéro</span>
+          <span class="tool-desc">4 questions pour vérifier que tu as compris</span>
+        </a>
+        <a class="tool-card" href="https://claude.ai/new" target="_blank">
+          <span class="icon">🤖</span>
+          <span class="tool-title">Poser une question</span>
+          <span class="tool-desc">Ouvre ton Claude Project M&A pour aller plus loin</span>
+        </a>
+      </div>
+
       <!-- SOURCES -->
       <div class="sources-section">
         <div class="section-label">Sources</div>
@@ -253,9 +300,8 @@
     <!-- FOOTER -->
     <div class="footer">
       <p>
-        <span class="next">Prochain numéro : vendredi prochain</span><br>
-        Tu prépares des entretiens M&A · The Deal Brief est généré automatiquement chaque semaine<br>
-        <a href="https://github.com/sooriyakumar/newsletter-mna" style="color:#c9a84c; text-decoration:none;">Voir le code source</a>
+        <span class="next">Deck Anki mis à jour en pièce jointe</span><br>
+        The Deal Brief · 3× par semaine · <a href="https://github.com/abarisan/newsletter-mna" style="color:#e85d1a;text-decoration:none;">Code source</a>
       </p>
     </div>
 
