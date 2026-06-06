@@ -11,6 +11,13 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from pathlib import Path
 
+# Rythme : lundi = deal, mercredi = cours, vendredi = macro + question
+DAY_FORMAT = {
+    0: "LUNDI",    # Monday
+    2: "MERCREDI", # Wednesday
+    4: "VENDREDI", # Friday
+}
+
 
 RECIPIENT_EMAIL = "sooriyakumar.abarisan@gmail.com"
 SENDER_EMAIL    = os.environ["GMAIL_ADDRESS"]
@@ -44,6 +51,138 @@ retour sur un deal est l'occasion d'approfondir un point technique différent.
 - Langue : français, ton direct et pédagogique, jamais condescendant
 - Chiffres précis, sources nommées (Bloomberg, FT, CreditSights, SEC, Mergermarket...)
 - Jamais de généralités : toujours un acteur nommé, un chiffre, une date
+"""
+
+CONTENT_PROMPT_LUNDI = """Génère le contenu du LUNDI pour THE DEAL BRIEF N°{numero} — {date}.
+
+## Contexte des numéros précédents
+{previous_issues}
+
+## Objectif du lundi : poser le deal de la semaine
+
+Le lundi sert à introduire UN deal réel et récent qui sera le fil conducteur de la semaine.
+Le mercredi, on creusera le concept technique qu'il illustre. Le vendredi, on prendra du recul macro.
+
+### Structure
+
+**1. DEAL DE LA SEMAINE**
+- Ce qui vient de se passer (ou une avancée sur un deal précédent encore ouvert)
+- Chiffres précis : prix, prime, levier, structure, banques conseil
+- Rationnel côté acquéreur et côté cible
+- 1 point technique à retenir (sera approfondi mercredi)
+- Phrase d'entretien prête à l'emploi
+
+**2. POURQUOI CE DEAL CETTE SEMAINE**
+- Ce qu'il dit sur l'état du marché M&A en ce moment
+- Le concept clé qu'il illustre et qu'on creusera mercredi (annonce ce qui vient)
+
+Retourne UNIQUEMENT ce JSON :
+{{
+  "numero": "{numero}",
+  "date": "{date}",
+  "jour": "Lundi",
+  "ma_titre": "...",
+  "ma_contenu": "HTML...",
+  "macro_titre": "À creuser mercredi : [nom du concept]",
+  "macro_contenu": "<p>Ce deal pose une question technique centrale : <strong>[concept]</strong>. Mercredi, on décortique exactement comment ça fonctionne à partir des chiffres de ce deal.</p>",
+  "ia_titre": "",
+  "ia_contenu": "",
+  "rappel_cours": "",
+  "question_entretien": "...",
+  "reponse_structuree": "HTML...",
+  "sources": ["..."]
+}}
+"""
+
+CONTENT_PROMPT_MERCREDI = """Génère le contenu du MERCREDI pour THE DEAL BRIEF N°{numero} — {date}.
+
+## Contexte des numéros précédents
+{previous_issues}
+
+## Objectif du mercredi : cours en profondeur ancré dans le deal du lundi
+
+Tu reprends le deal introduit lundi et tu l'utilises comme terrain d'apprentissage pour
+expliquer UN concept technique en profondeur. Le lecteur connaît déjà le deal — maintenant
+il comprend POURQUOI les choses ont été structurées ainsi.
+
+La progression technique doit être un cran au-dessus du dernier cours publié.
+
+### Structure
+
+**1. RAPPEL DU DEAL** (3 lignes max — le lecteur sait déjà)
+- Juste assez pour contextualiser le cours
+
+**2. COURS — [titre = concept précis, pas "rappel de cours"]**
+- Début : "Dans le deal X, on a vu que Y. Pourquoi ?"
+- Mécanique de base → complexification → chiffres réels tirés du deal → cas limite ou erreur classique
+- Lien avec la progression des semaines précédentes (cite ce qu'on a déjà couvert)
+- Fin : "La semaine prochaine / vendredi, on verra comment le signal macro de cette semaine
+  change l'équation"
+
+**3. QUESTION D'ENTRETIEN TECHNIQUE**
+- Question précise sur le concept enseigné ce jour
+- Réponse structurée avec les bons termes
+
+Retourne UNIQUEMENT ce JSON :
+{{
+  "numero": "{numero}",
+  "date": "{date}",
+  "jour": "Mercredi",
+  "ma_titre": "Retour sur [nom du deal] : [concept à expliquer]",
+  "ma_contenu": "<p>Rappel rapide du deal...</p>",
+  "macro_titre": "",
+  "macro_contenu": "",
+  "ia_titre": "",
+  "ia_contenu": "",
+  "rappel_cours": "HTML du cours complet et profond...",
+  "question_entretien": "...",
+  "reponse_structuree": "HTML...",
+  "sources": ["..."]
+}}
+"""
+
+CONTENT_PROMPT_VENDREDI = """Génère le contenu du VENDREDI pour THE DEAL BRIEF N°{numero} — {date}.
+
+## Contexte des numéros précédents
+{previous_issues}
+
+## Objectif du vendredi : recul macro + question d'entretien de fin de semaine
+
+Le vendredi, on prend de la hauteur. On connecte le signal macro de la semaine au deal
+qu'on a suivi lundi et mercredi. L'objectif : montrer que la macro n'est pas abstraite,
+elle change concrètement le prix des deals, le coût de la dette, l'appétit des acheteurs.
+
+### Structure
+
+**1. SIGNAL MACRO / GÉOPOLITIQUE**
+- 1 fait précis de cette semaine (chiffre, décision de banque centrale, tension géopo)
+- Mécanisme de transmission direct vers le M&A : comment ça change les deals concrètement ?
+- Lien avec le deal de cette semaine si possible
+
+**2. IA & FINANCE** (uniquement si un fait marquant cette semaine directement lié au M&A)
+
+**3. QUESTION D'ENTRETIEN DE FIN DE SEMAINE**
+- Question qui connecte le deal de lundi, le cours de mercredi et la macro de vendredi
+- Ex : "Comment la hausse des taux de la Fed affecte-t-elle la capacité d'endettement
+  dans un LBO comme celui d'EA ?"
+- Réponse complète et structurée
+
+Retourne UNIQUEMENT ce JSON :
+{{
+  "numero": "{numero}",
+  "date": "{date}",
+  "jour": "Vendredi",
+  "ma_titre": "",
+  "ma_contenu": "",
+  "macro_titre": "...",
+  "macro_contenu": "HTML...",
+  "ia_titre": "...",
+  "ia_contenu": "HTML ou vide",
+  "rappel_cours": "",
+  "question_entretien": "...",
+  "reponse_structuree": "HTML...",
+  "sources": ["..."]
+}}
 """
 
 CONTENT_PROMPT = """Génère le contenu complet pour THE DEAL BRIEF N°{numero} — {date}.
@@ -148,14 +287,27 @@ def get_next_issue_number(archive_dir: Path) -> str:
     return str(len(archives) + 1).zfill(2)
 
 
-def generate_content(client: anthropic.Anthropic, date_str: str, archive_dir: Path) -> dict:
+def get_day_prompt(weekday: int) -> str:
+    """Retourne le prompt adapté au jour de la semaine."""
+    if weekday == 0:
+        return CONTENT_PROMPT_LUNDI
+    elif weekday == 2:
+        return CONTENT_PROMPT_MERCREDI
+    elif weekday == 4:
+        return CONTENT_PROMPT_VENDREDI
+    else:
+        return CONTENT_PROMPT  # fallback format complet
+
+
+def generate_content(client: anthropic.Anthropic, date_str: str, archive_dir: Path, weekday: int) -> dict:
     """Appelle Claude pour générer le contenu de la newsletter."""
     import json
 
     numero          = get_next_issue_number(archive_dir)
     previous_issues = load_previous_issues(archive_dir)
+    prompt_template = get_day_prompt(weekday)
 
-    prompt = CONTENT_PROMPT.format(
+    prompt = prompt_template.format(
         date=date_str,
         numero=numero,
         previous_issues=previous_issues
@@ -190,7 +342,7 @@ def render_html(content: dict, template_path: Path) -> str:
 def send_email(html_body: str, date_str: str):
     """Envoie la newsletter via Gmail SMTP."""
     msg = MIMEMultipart("alternative")
-    msg["Subject"] = f"📊 The Deal Brief — {date_str}"
+    msg["Subject"] = f"📊 The Deal Brief — {date_str}"  # date_str contient déjà le préfixe
     msg["From"]    = SENDER_EMAIL
     msg["To"]      = RECIPIENT_EMAIL
 
@@ -206,12 +358,14 @@ def send_email(html_body: str, date_str: str):
 def main():
     today    = datetime.date.today()
     date_str = today.strftime("%d %B %Y")
+    weekday  = today.weekday()  # 0=lundi, 2=mercredi, 4=vendredi
+    jour     = DAY_FORMAT.get(weekday, "")
 
     client   = anthropic.Anthropic(api_key=ANTHROPIC_KEY)
     template = Path(__file__).parent / "template.html"
 
-    print(f"📝 Génération du contenu pour le {date_str}...")
-    content = generate_content(client, date_str, archive_dir)
+    print(f"📝 Génération du contenu {jour} pour le {date_str}...")
+    content = generate_content(client, date_str, archive_dir, weekday)
 
     print("🎨 Rendu HTML...")
     html = render_html(content, template)
@@ -223,8 +377,9 @@ def main():
     archive_file.write_text(html, encoding="utf-8")
     print(f"💾 Archivée : {archive_file}")
 
+    subject_prefix = {"LUNDI": "📌 Deal", "MERCREDI": "📚 Cours", "VENDREDI": "🌍 Macro"}.get(jour, "📰")
     print("📧 Envoi par email...")
-    send_email(html, date_str)
+    send_email(html, f"{subject_prefix} — {date_str}")
 
 
 if __name__ == "__main__":
