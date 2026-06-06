@@ -19,88 +19,156 @@ ANTHROPIC_KEY   = os.environ["ANTHROPIC_API_KEY"]
 
 
 SYSTEM_PROMPT = """Tu es un analyste M&A senior qui rédige une newsletter hebdomadaire pour un étudiant
-préparant des entretiens en banque d'affaires (M&A). Ton objectif : lui faire comprendre la finance
-en profondeur, pas juste lister des actu sans contexte.
+préparant des entretiens en banque d'affaires (M&A).
 
-Règles absolues :
-- Explique TOUJOURS le contexte et les mécanismes derrière chaque info
-- Cite les sources (Bloomberg, FT, Reuters, PwC, BCG, S&P Global, Mergermarket...)
-- Inclus un rappel de cours à la fin avec les notions complexes utilisées
-- Langue : français, ton professionnel mais pédagogique
-- Structure : respecte exactement le format HTML fourni
+## Ta philosophie éditoriale
+
+**La news illustre le cours, jamais l'inverse.**
+Tu ne choisis pas une actu pour remplir la newsletter. Tu choisis l'actu qui permet d'enseigner
+un concept précis cette semaine. Si le deal EA permet d'expliquer la mécanique LBO, c'est lui
+qu'on prend. Si une décision de la Fed permet d'expliquer le WACC, c'est ça le fil directeur.
+Le cours et la news sont la même chose — l'un explique l'autre.
+
+**Progression technique stricte.**
+Chaque numéro part du principe que le lecteur a lu les précédents. On ne réexplique pas ce
+qui a déjà été couvert. On va plus loin, on affine, on complexifie. La progression doit
+ressembler à celle d'un cours : semaine 1 = mécanique LBO, semaine 2 = modélisation LBO,
+semaine 3 = structure de la dette dans un LBO, semaine 4 = covenants et credit agreement.
+
+**Suivi des deals dans le temps.**
+Un deal annoncé reste vivant jusqu'à sa clôture. Tu reviens dessus quand il y a du nouveau :
+approbation réglementaire, émission obligataire, révision de prix, réaction du marché. Chaque
+retour sur un deal est l'occasion d'approfondir un point technique différent.
+
+**Règles absolues :**
+- Langue : français, ton direct et pédagogique, jamais condescendant
+- Chiffres précis, sources nommées (Bloomberg, FT, CreditSights, SEC, Mergermarket...)
+- Jamais de généralités : toujours un acteur nommé, un chiffre, une date
 """
 
-CONTENT_PROMPT = """Génère le contenu complet pour la newsletter THE DEAL BRIEF de cette semaine ({date}).
+CONTENT_PROMPT = """Génère le contenu complet pour THE DEAL BRIEF N°{numero} — {date}.
 
-## Philosophie éditoriale — à respecter absolument
+## Contexte des numéros précédents
+{previous_issues}
 
-**Moins, mais mieux.** Tu ne fais pas un agrégateur d'actu. Tu choisis avec exigence :
-- 1 seul deal M&A, le plus instructif de la semaine (pas forcément le plus grand)
-- 1 seul signal macro ou géopo vraiment significatif
-- 1 seul sujet IA s'il est directement lié à la finance ou au M&A
-- Le rappel de cours approfondit UN concept qui revient dans l'actu récente — et peut
-  reprendre un thème d'un numéro précédent pour aller plus loin (ex : N°1 = mécanique LBO,
-  N°2 = comment modéliser un LBO, N°3 = les covenants de dette dans un LBO)
+---
 
-**Progression d'un numéro à l'autre.** Chaque rappel de cours doit s'inscrire dans un arc
-pédagogique cohérent sur plusieurs semaines. Indique toujours en intro du rappel si c'est
-la suite d'un sujet précédent et ce que le lecteur doit déjà savoir.
+## Construction du numéro — raisonne dans cet ordre
+
+**Étape 1 : choisis le fil directeur.**
+Quelle est l'actu M&A/finance la plus instructive de cette semaine ? Pas la plus grosse —
+la plus utile pédagogiquement. C'est elle qui détermine TOUT le reste du numéro.
+
+Si un deal précédent a du nouveau (avancée réglementaire, émission de dette, réaction des
+marchés, révision de prix), reviens dessus plutôt que de chercher un nouveau deal. La continuité
+est plus précieuse que la nouveauté.
+
+**Étape 2 : identifie le concept à enseigner.**
+Quelle notion technique cette actu permet-elle d'illustrer parfaitement ? C'est ton cours de
+la semaine. Il doit être la suite logique du cours précédent — un cran plus technique, une
+couche supplémentaire sur le même édifice. Si le N°1 a couvert la mécanique LBO, le N°2
+modélise, le N°3 détaille la dette, le N°4 explique les covenants.
+
+**Étape 3 : construis le signal macro.**
+Y a-t-il un fait macro ou géopo cette semaine qui éclaire directement le deal choisi ?
+(ex : si le deal est un LBO, une décision de la Fed sur les taux est directement pertinente)
+Si oui, 1 paragraphe de lien explicite. Si non, choisis le signal macro le plus impactant
+pour le M&A en général cette semaine.
+
+---
 
 ## Structure du numéro
 
-1. **DEAL DE LA SEMAINE**
-   - 1 deal réel, récent, nommé et chiffré (acquéreur, cible, prix, prime, levier, banques)
-   - Rationnel stratégique côté acquéreur ET côté cible
-   - Statut réglementaire si pertinent
-   - 1 phrase clé à sortir en entretien, formulée et prête à l'emploi
+### 1. DEAL — [titre accrocheur]
+- Ce qui s'est passé cette semaine sur ce deal (nouveau ou suivi d'un précédent)
+- Chiffres précis : prix, prime, levier, structure equity/dette, banques conseil
+- Rationnel stratégique : pourquoi maintenant, pourquoi ces acteurs
+- Point technique zoom : 1 aspect précis du deal qui mérite d'être décortiqué
+  (ex : pourquoi l'émission high yield plutôt que du prêt bancaire ? comment la prime
+  de 25% a-t-elle été justifiée ? quel est le plan de sortie du fonds ?)
+- Phrase d'entretien : 2-3 lignes prêtes à l'emploi, avec une opinion personnelle
 
-2. **SIGNAL MACRO / GÉOPOLITIQUE**
-   - 1 donnée ou événement qui change vraiment quelque chose pour les marchés ou le M&A
-   - Explication du mécanisme de transmission (comment ça impacte concrètement les deals ?)
+### 2. SIGNAL MACRO
+- 1 fait précis (chiffre, décision, événement) avec date et source
+- Mécanisme de transmission vers le M&A : comment ça affecte le coût de la dette,
+  les valorisations, l'appétit des acheteurs stratégiques ou financiers ?
 
-3. **IA & FINANCE** (uniquement si un fait marquant cette semaine, sinon à sauter)
-   - 1 mouvement stratégique IA avec impact direct sur les valorisations ou les deals tech
+### 3. COURS — [titre = concept précis, pas générique]
+- Intro : lien explicite avec le deal et les numéros précédents ("on a vu X, on va maintenant
+  comprendre Y qui est ce qui explique pourquoi dans le deal EA...")
+- Corps : progression claire du simple vers le complexe, avec chiffres tirés du deal réel
+- Fin : ce que le lecteur sait maintenant qu'il ne savait pas avant, et ce qu'on verra ensuite
 
-4. **RAPPEL DE COURS — 1 sujet, en profondeur**
-   - Principe de base → mécanique chiffrée → analogie concrète → lien avec le deal du numéro
-   - Arc progressif : chaque numéro va plus loin que le précédent sur le même grand thème
+### 4. QUESTION D'ENTRETIEN
+- Directement inspirée du cours et du deal de CE numéro
+- Structure de réponse en 2-3 points, avec les bons termes techniques
 
-5. **QUESTION D'ENTRETIEN**
-   - 1 question en lien direct avec le contenu de CE numéro, avec structure de réponse
+---
 
-Retourne UNIQUEMENT le contenu JSON structuré ainsi :
+Retourne UNIQUEMENT le contenu JSON suivant :
 {{
-  "numero": "XX",
+  "numero": "{numero}",
   "date": "{date}",
   "ma_titre": "...",
-  "ma_contenu": "HTML...",
+  "ma_contenu": "HTML avec balises <p> <strong> <em> <ol> <ul> <li> et class='callout'",
   "macro_titre": "...",
   "macro_contenu": "HTML...",
   "ia_titre": "...",
-  "ia_contenu": "HTML... ou vide si rien de pertinent",
-  "rappel_cours": "HTML...",
-  "question_entretien": "...",
+  "ia_contenu": "HTML ou chaîne vide si pas pertinent cette semaine",
+  "rappel_cours": "HTML avec balises <p> <strong> <em> <ol> <ul> et <div class='term'><div class='term-name'>...</div>",
+  "question_entretien": "La question entre guillemets",
   "reponse_structuree": "HTML...",
-  "sources": ["source1", "source2", ...]
+  "sources": ["Bloomberg — titre article", "FT — titre article", ...]
 }}
 """
 
 
-def generate_content(client: anthropic.Anthropic, date_str: str) -> dict:
+def load_previous_issues(archive_dir: Path, max_issues: int = 3) -> str:
+    """Résume les derniers numéros pour assurer la continuité éditoriale."""
+    archives = sorted(archive_dir.glob("newsletter_*.html"), reverse=True)[:max_issues]
+    if not archives:
+        return "Aucun numéro précédent — c'est le N°1. Commence par les bases."
+
+    summaries = []
+    for path in archives:
+        # Extrait le numéro et la date du nom de fichier (newsletter_2026-06-06.html)
+        date_part = path.stem.replace("newsletter_", "")
+        summaries.append(f"- {date_part} : {path.name} (disponible en archive)")
+
+    return (
+        "Numéros précédents publiés :\n" + "\n".join(summaries) + "\n\n"
+        "Assure-toi que le cours de ce numéro va un cran plus loin que le précédent "
+        "et que tu reviens sur les deals encore ouverts si du nouveau est disponible."
+    )
+
+
+def get_next_issue_number(archive_dir: Path) -> str:
+    """Calcule le numéro du prochain numéro."""
+    archives = list(archive_dir.glob("newsletter_*.html"))
+    return str(len(archives) + 1).zfill(2)
+
+
+def generate_content(client: anthropic.Anthropic, date_str: str, archive_dir: Path) -> dict:
     """Appelle Claude pour générer le contenu de la newsletter."""
     import json
 
+    numero          = get_next_issue_number(archive_dir)
+    previous_issues = load_previous_issues(archive_dir)
+
+    prompt = CONTENT_PROMPT.format(
+        date=date_str,
+        numero=numero,
+        previous_issues=previous_issues
+    )
+
     message = client.messages.create(
         model="claude-opus-4-8",
-        max_tokens=4096,
+        max_tokens=5000,
         system=SYSTEM_PROMPT,
-        messages=[
-            {"role": "user", "content": CONTENT_PROMPT.format(date=date_str)}
-        ]
+        messages=[{"role": "user", "content": prompt}]
     )
 
     text = message.content[0].text
-    # Extraire le JSON de la réponse
     start = text.find("{")
     end   = text.rfind("}") + 1
     return json.loads(text[start:end])
@@ -143,7 +211,7 @@ def main():
     template = Path(__file__).parent / "template.html"
 
     print(f"📝 Génération du contenu pour le {date_str}...")
-    content = generate_content(client, date_str)
+    content = generate_content(client, date_str, archive_dir)
 
     print("🎨 Rendu HTML...")
     html = render_html(content, template)
