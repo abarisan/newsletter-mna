@@ -1,0 +1,38 @@
+[
+  {
+    "recto": "Quel est le montant et la nature du rachat d'Electronic Arts annoncé le 29 septembre 2025 ?",
+    "verso": "EA a accepté une offre de rachat par LBO valorisant l'entreprise à 55 milliards de dollars en équité, soit environ 210 $ par action. C'est le plus gros rachat par effet de levier (LBO) de l'histoire.",
+    "numero": "01",
+    "id": 2145174406
+  },
+  {
+    "recto": "Quelle prime offrait l'offre de rachat d'EA par rapport au cours non affecté ?",
+    "verso": "L'offre de 210 $ par action représentait une prime d'environ 25 % sur le cours non affecté du 25 septembre 2025.",
+    "numero": "01",
+    "id": 1198779124
+  },
+  {
+    "recto": "Quels sont les trois membres du consortium acquéreur d'EA ?",
+    "verso": "Le consortium réunit Silver Lake (fonds de private equity), le fonds souverain saoudien PIF (Public Investment Fund) et Affinity Partners, le fonds dirigé par Jared Kushner.",
+    "numero": "01",
+    "id": 1075463708
+  },
+  {
+    "recto": "Comment était structuré le financement du LBO d'EA (dette vs équité) ?",
+    "verso": "Le LBO repose sur environ 56 Md$ de valeur d'entreprise, financés par 36 Md$ d'équité et 20 Md$ de dette. La part importante d'équité reflète le niveau de levier déjà élevé.",
+    "numero": "01",
+    "id": 1205068069
+  },
+  {
+    "recto": "Comment calcule-t-on le levier (dette/EBITDA) du LBO d'EA, et quel est-il ?",
+    "verso": "Avec une dette nette de ~20 Md$ et un EBITDA d'EA d'environ 2,5 Md$, le levier atteint environ 8x. C'est élevé pour un LBO classique, mais jugé soutenable grâce à la stabilité des cash-flows d'EA.",
+    "numero": "01",
+    "id": 1250929263
+  },
+  {
+    "recto": "Quel taux directeur le FOMC a-t-il maintenu en mai 2026, et pourquoi est-ce déterminant pour les LBO ?",
+    "verso": "La Fed a maintenu sa fourchette de taux à 4,00 %–4,25 %, signalant des baisses plus lentes qu'espéré. Des taux élevés renchérissent le coût de la dette, réduisant le rendement et la capacité d'endettement des opérations de LBO.",
+    "numero": "01",
+    "id": 1727244174
+  }
+]

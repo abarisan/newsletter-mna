@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Deal Brief</title>
+  <style>
+    /* ── Palette : clair / nuances d'orange ── */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #fdf6ee;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      color: #2b1a0e;
+      line-height: 1.75;
+    }
+
+    .wrapper {
+      max-width: 680px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(232,93,26,0.10);
+    }
+
+    .header {
+      background: linear-gradient(135deg, #ff6b2b 0%, #e85d1a 100%);
+      padding: 48px 48px 36px;
+      text-align: center;
+    }
+    .header .eyebrow {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ffe8d6;
+      margin-bottom: 16px;
+    }
+    .header h1 {
+      font-size: 36px;
+      font-weight: 400;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .header .subtitle {
+      font-size: 13px;
+      color: #ffd4b8;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      letter-spacing: 0.5px;
+    }
+    .header .issue-line {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.25);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #ffe8d6;
+      letter-spacing: 1px;
+    }
+
+    .body { padding: 0 48px 48px; }
+
+    .section { margin-top: 48px; }
+    .section-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #e85d1a;
+      margin-bottom: 6px;
+    }
+    .section h2 {
+      font-size: 22px;
+      font-weight: 400;
+      color: #2b1a0e;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #f9a06b;
+    }
+    .section-content { font-size: 15px; color: #3d2510; }
+    .section-content p { margin-bottom: 14px; }
+    .section-content strong { color: #c94e0e; font-weight: 700; }
+    .section-content ul, .section-content ol { padding-left: 20px; margin-bottom: 14px; }
+    .section-content li { margin-bottom: 6px; }
+
+    .callout {
+      background: #fff3e8;
+      border-left: 3px solid #e85d1a;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 14px;
+      color: #5a3520;
+      font-style: italic;
+      border-radius: 0 4px 4px 0;
+    }
+    .callout strong { font-style: normal; color: #c94e0e; }
+
+    .rappel-section {
+      margin-top: 48px;
+      background: #fff3e8;
+      margin-left: -48px;
+      margin-right: -48px;
+      padding: 36px 48px;
+      border-top: 3px solid #f9a06b;
+      border-bottom: 3px solid #f9a06b;
+    }
+    .rappel-section .section-label { color: #e85d1a; }
+    .rappel-section h2 { color: #2b1a0e; border-bottom-color: #fde0c5; font-size: 20px; }
+    .rappel-section .section-content { color: #5a3520; }
+    .rappel-section .section-content strong { color: #c94e0e; }
+    .rappel-section .term { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid #fde0c5; }
+    .rappel-section .term:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .rappel-section .term-name {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .interview-section {
+      margin-top: 48px;
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 28px 32px;
+    }
+    .interview-section .section-label { color: #e85d1a; }
+    .interview-question { font-size: 18px; font-style: italic; color: #2b1a0e; margin: 12px 0 20px; line-height: 1.4; }
+    .interview-answer { font-size: 14px; color: #5a3520; }
+
+    .sources-section { margin-top: 48px; padding-top: 24px; border-top: 1px solid #fde0c5; }
+    .sources-section .section-label { margin-bottom: 12px; }
+    .sources-section ul { list-style: none; padding: 0; }
+    .sources-section li {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #7a5c45;
+      margin-bottom: 6px;
+      padding-left: 12px;
+      position: relative;
+    }
+    .sources-section li::before { content: '→'; position: absolute; left: 0; color: #e85d1a; }
+
+    .footer {
+      background: #fdf6ee;
+      padding: 28px 48px;
+      text-align: center;
+      border-top: 1px solid #fde0c5;
+    }
+    .footer p { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; color: #9a7060; line-height: 1.8; }
+    .footer .next { color: #c94e0e; font-weight: 600; }
+
+    .divider { height: 1px; background: #fde0c5; margin: 36px 0; }
+
+    /* ── Outils d'apprentissage ── */
+    .tools-section {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .tool-card {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      transition: box-shadow .15s;
+    }
+    .tool-card:hover { box-shadow: 0 4px 16px rgba(232,93,26,0.15); }
+    .tool-card .icon { font-size: 28px; display: block; margin-bottom: 8px; }
+    .tool-card .tool-title {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .tool-card .tool-desc {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      color: #7a5c45;
+    }
+
+    @media (max-width: 600px) {
+      .wrapper { margin: 0; border-radius: 0; }
+      .header { padding: 32px 24px 24px; }
+      .body { padding: 0 24px 32px; }
+      .rappel-section { margin-left: -24px; margin-right: -24px; padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="eyebrow">Newsletter M&A · Finance · IA · Géopolitique</div>
+      <h1>The Deal Brief</h1>
+      <div class="subtitle">Comprendre la finance, pas juste la suivre</div>
+      <div class="issue-line">N° 01 &nbsp;·&nbsp; 06 June 2026</div>
+    </div>
+
+    <div class="body">
+
+      <!-- SECTION 1 : M&A -->
+      <div class="section">
+        <div class="section-label">Niveau 1 — Indispensables</div>
+        <h2>EA passe sous LBO : le plus gros rachat par effet de levier de l'histoire</h2>
+        <div class="section-content">
+          <p>Le 29 septembre 2025, <strong>Electronic Arts (EA)</strong> a accepté une offre de rachat valorisant l'entreprise à <strong>55 milliards de dollars</strong> (équité), soit environ <strong>210 $ par action</strong> — une prime d'environ <strong>25 %</strong> sur le cours non affecté du 25 septembre. Le consortium acquéreur réunit <strong>Silver Lake</strong>, le fonds souverain saoudien <strong>PIF (Public Investment Fund)</strong> et <strong>Affinity Partners</strong> (Jared Kushner). C'est officiellement le plus gros <em>leveraged buyout</em> (LBO) de l'histoire, devant TXU (45 Md$, 2007).</p><p><strong>La structure de financement</strong> (selon Bloomberg et le FT) :</p><ul><li><strong>Equity : ~36 Md$</strong> apportés par le consortium — dont l'essentiel par le PIF (qui détenait déjà ~9,9 % d'EA) et Silver Lake.</li><li><strong>Dette : ~20 Md$</strong>, dont un financement-relais (<em>bridge loan</em>) de <strong>~18 Md$ arrangé par JPMorgan</strong>, destiné à être refinancé sur les marchés de dette (prêts à effet de levier + obligations high yield).</li></ul><p><strong>Conseils :</strong> EA est conseillée par <strong>Goldman Sachs</strong> ; le consortium par <strong>JPMorgan</strong> (qui apporte aussi le financement). Latham & Watkins et Simpson Thacher sur le volet juridique.</p><p><strong>Rationnel :</strong> EA génère des cash-flows récurrents et prévisibles (franchises FC/FIFA, Madden, Apex Legends, The Sims) avec un modèle de plus en plus orienté <em>live services</em> et abonnements. Ces cash-flows stables sont exactement ce qu'un LBO recherche : ils permettent de <strong>servir la dette</strong>. Pourquoi maintenant ? Parce que le PIF veut un actif gaming majeur (cohérent avec Savvy Games), et parce que Silver Lake y voit une marge d'optimisation opérationnelle qu'un management public, contraint par les résultats trimestriels, n'exploite pas.</p><div class='callout'><strong>Zoom technique — D'où vient le rendement d'un LBO ?</strong><br>Un fonds achète une société majoritairement avec de la dette (ici ~20 Md$ sur 56 Md$ de valeur d'entreprise, soit un levier modéré pour la taille). Trois leviers créent la valeur : <strong>(1) le désendettement</strong> — les cash-flows d'EA remboursent la dette, donc la part d'équité du fonds grossit mécaniquement ; <strong>(2) la croissance de l'EBITDA</strong> — via la croissance des revenus et l'optimisation des coûts ; <strong>(3) l'expansion du multiple</strong> — revendre plus cher (en multiple d'EBITDA) qu'on a acheté. Le génie du LBO : c'est l'<em>effet de levier</em> qui amplifie le rendement sur l'équité investie.</div><p><strong>Phrase d'entretien :</strong> <em>« Le LBO d'EA fonctionne parce que ses franchises génèrent des cash-flows récurrents et prévisibles — c'est la condition sine qua non d'un LBO : il faut pouvoir servir 20 Md$ de dette. À mon sens, la vraie question n'est pas le levier, raisonnable pour la taille, mais le plan de création de valeur opérationnelle de Silver Lake face à un PIF plus patient et stratégique. »</em></p>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- SECTION 2 : PE & VC -->
+      <div class="section">
+        <div class="section-label">Niveau 2 — Private Equity & VC</div>
+        <h2>{{pe_titre}}</h2>
+        <div class="section-content">
+          {{pe_contenu}}
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- SECTION 3 : MACRO & GÉOPO -->
+      <div class="section">
+        <div class="section-label">Niveau 3 — Macro & Géopolitique</div>
+        <h2>La Fed maintient ses taux : pourquoi ça change tout pour les LBO</h2>
+        <div class="section-content">
+          <p>Le <strong>FOMC</strong> a maintenu son taux directeur dans la fourchette <strong>4,00 %–4,25 %</strong> lors de sa réunion de mai 2026, signalant une baisse plus lente qu'espéré (source : communiqué Fed, Bloomberg). Pour le marché du LBO, c'est déterminant.</p><p><strong>Mécanisme de transmission :</strong> la dette LBO (prêts à effet de levier, high yield) est en grande partie à <strong>taux variable</strong>, indexée sur le <strong>SOFR</strong>. Quand la Fed maintient des taux élevés, le SOFR reste haut, donc le <strong>coût de la dette</strong> reste élevé : un prêt leveraged se négocie typiquement à SOFR + 350 à 500 points de base, soit ~7,5 % à 9 % tout compris aujourd'hui.</p><p>Conséquences directes : <strong>(1)</strong> le service de la dette coûte plus cher, ce qui réduit le cash-flow disponible pour le désendettement et donc le rendement (IRR) ; <strong>(2)</strong> les fonds doivent mettre <strong>plus d'équité</strong> (d'où les ~36 Md$ d'equity sur EA, proportion élevée) ; <strong>(3)</strong> les multiples d'acquisition se compriment car un acheteur ne peut pas payer aussi cher si le coût du capital augmente. C'est pour cela qu'EA, avec ses cash-flows en béton, reste finançable là où des cibles plus cycliques ne le seraient pas.</p>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- SECTION 4 : IA -->
+      <div class="section">
+        <div class="section-label">Transversal — Intelligence Artificielle</div>
+        <h2></h2>
+        <div class="section-content">
+          
+        </div>
+      </div>
+
+      <!-- RAPPEL DE COURS -->
+      <div class="rappel-section">
+        <div class="section-label">Rappel de cours</div>
+        <h2>Les notions clés de ce numéro</h2>
+        <div class="section-content">
+          <p><strong>On vient de voir</strong> que le LBO d'EA repose sur 20 Md$ de dette et 36 Md$ d'équité. Comprenons maintenant <em>pourquoi</em> cette structure crée du rendement, et comment on le mesure. C'est le socle de tout : les numéros suivants iront plus loin (modélisation, structure de dette tranche par tranche, covenants).</p><p><strong>La mécanique en 4 temps :</strong></p><ol><li><strong>L'achat.</strong> On achète EA pour ~56 Md$ de valeur d'entreprise. On finance avec 36 Md$ d'équité + 20 Md$ de dette. Le levier (dette/EBITDA) dépend de l'EBITDA d'EA — autour de 2,5 Md$, soit un levier d'environ <strong>8x</strong> sur la dette nette, ce qui est élevé mais soutenable vu la stabilité des cash-flows.</li><li><strong>La détention (3 à 7 ans).</strong> Chaque année, EA génère du cash. Après avoir payé les intérêts, le cash restant rembourse le principal de la dette. La dette diminue → la part d'équité augmente mécaniquement, même à valeur d'entreprise constante.</li><li><strong>La création de valeur opérationnelle.</strong> Silver Lake fait croître l'EBITDA (plus de revenus live services, réduction de coûts). À multiple constant, plus d'EBITDA = plus de valeur d'entreprise.</li><li><strong>La sortie.</strong> On revend (IPO, vente à un industriel, à un autre fonds). La valeur d'équité récupérée = nouvelle valeur d'entreprise − dette restante. On compare à l'équité investie au départ.</li></ol><p><strong>Pourquoi le levier amplifie ?</strong> Imaginez : valeur d'entreprise qui passe de 56 à 75 Md$ (+34 %). Sans dette, votre équité progresse de +34 %. Mais avec 20 Md$ de dette partiellement remboursée, votre équité de 36 Md$ peut doubler. <em>L'effet de levier transforme une hausse modeste de la valeur d'entreprise en forte hausse du rendement sur équité</em> — c'est aussi pourquoi le LBO est risqué : le levier joue dans les deux sens.</p><div class='term'><div class='term-name'>IRR (Internal Rate of Return)</div>Le taux de rendement annualisé de l'investissement en équité. C'est LA métrique du private equity. Un fonds vise typiquement un IRR de 20–25 %. Il dépend de trois choses : le désendettement, la croissance de l'EBITDA, et l'expansion (ou compression) du multiple à la sortie.</div><div class='term'><div class='term-name'>MOIC (Multiple on Invested Capital)</div>Combien de fois le fonds multiplie sa mise. Un MOIC de 2,5x signifie qu'on récupère 2,5 fois l'équité investie. Sur EA : transformer 36 Md$ en 90 Md$ à la sortie = MOIC de 2,5x.</div><div class='term'><div class='term-name'>Levier (Leverage)</div>Le ratio Dette nette / EBITDA. Sur EA, ~8x. Plus le levier est élevé, plus le rendement potentiel est grand — et plus le risque de défaut l'est aussi.</div><p><strong>Ce que vous savez maintenant :</strong> pourquoi un LBO crée du rendement (désendettement + croissance EBITDA + multiple) et comment on le mesure (IRR, MOIC). <strong>Au N°2</strong>, on construira ensemble un mini-modèle LBO d'EA : on partira de l'EBITDA, on déroulera le remboursement de dette année par année, et on calculera l'IRR. La théorie devient un tableau.</p>
+        </div>
+      </div>
+
+      <!-- QUESTION D'ENTRETIEN -->
+      <div class="interview-section">
+        <div class="section-label">🎯 Question d'entretien de la semaine</div>
+        <div class="interview-question">"« Walk me through the value creation levers of a leveraged buyout. Quels sont les trois moteurs de rendement et lequel est le plus fiable ? »"</div>
+        <div class="interview-answer">
+          <p><strong>Structure de réponse en 3 points :</strong></p><ol><li><strong>Le désendettement (deleveraging).</strong> C'est le moteur le plus fiable et le plus mécanique. Les cash-flows de la cible — sur EA, ~2,5 Md$ d'EBITDA très récurrents — remboursent le principal de la dette. À valeur d'entreprise constante, la valeur d'équité augmente d'autant. C'est le levier le moins risqué car il ne dépend que de la capacité à générer du cash, pas du marché.</li><li><strong>La croissance de l'EBITDA.</strong> Soit par croissance du chiffre d'affaires (sur EA : live services, abonnements, monétisation), soit par optimisation des coûts (marges). À multiple constant, +1 Md$ d'EBITDA à un multiple de sortie de 20x = +20 Md$ de valeur d'entreprise. C'est le moteur que le sponsor cherche à maximiser via sa thèse opérationnelle.</li><li><strong>L'expansion du multiple (multiple arbitrage).</strong> Acheter à 20x EBITDA et revendre à 24x. C'est le levier le moins maîtrisable car il dépend des conditions de marché à la sortie et de l'environnement de taux — d'où l'importance de la Fed que je mentionnerais. Un bon dossier ne doit jamais reposer dessus.</li></ol><p><strong>Conclusion à donner :</strong> le désendettement est le plus fiable, la croissance de l'EBITDA le plus créateur de valeur, et l'expansion de multiple le plus opportuniste — un investisseur sérieux modélise un scénario de base sans compter sur lui.</p>
+        </div>
+      </div>
+
+      <!-- OUTILS D'APPRENTISSAGE -->
+      <div class="tools-section">
+        <a class="tool-card" href="https://abarisan.github.io/newsletter-mna/quiz_2026-06-06.html" target="_blank">
+          <span class="icon">❓</span>
+          <span class="tool-title">Quiz ce numéro</span>
+          <span class="tool-desc">4 questions pour vérifier que tu as compris</span>
+        </a>
+        <a class="tool-card" href="https://claude.ai/new" target="_blank">
+          <span class="icon">🤖</span>
+          <span class="tool-title">Poser une question</span>
+          <span class="tool-desc">Ouvre ton Claude Project M&A pour aller plus loin</span>
+        </a>
+      </div>
+
+      <!-- SOURCES -->
+      <div class="sources-section">
+        <div class="section-label">Sources</div>
+        <ul>
+          <li>Bloomberg — EA Agrees to $55 Billion Take-Private in Largest-Ever LBO</li>
+<li>Financial Times — Silver Lake, Saudi PIF and Affinity to buy EA in record $55bn deal</li>
+<li>Reuters — JPMorgan to provide $18bn bridge financing for EA buyout</li>
+<li>SEC — Electronic Arts Inc. Merger Agreement 8-K filing (September 2025)</li>
+<li>Federal Reserve — FOMC Statement, May 2026</li>
+<li>CreditSights — Leveraged Finance Market Update: Q2 2026</li>
+        </ul>
+      </div>
+
+    </div><!-- /body -->
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <p>
+        <span class="next">Deck Anki mis à jour en pièce jointe</span><br>
+        The Deal Brief · 3× par semaine · <a href="https://github.com/abarisan/newsletter-mna" style="color:#e85d1a;text-decoration:none;">Code source</a>
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>
