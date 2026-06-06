@@ -234,66 +234,54 @@
     <div class="body">
 
       <!-- SECTION 1 : M&A -->
+      <!-- DEAL -->
       <div class="section">
-        <div class="section-label">Niveau 1 — Indispensables</div>
+        <div class="section-label">Niveau 1 — Deal de la semaine</div>
         <h2>{{ma_titre}}</h2>
-        <div class="section-content">
-          {{ma_contenu}}
-        </div>
+        <div class="section-content">{{ma_contenu}}</div>
       </div>
+
+      {{#diagram_deal}}
+      <div class="diagram-wrap" style="margin-top:20px;">{{diagram_deal}}</div>
+      {{/diagram_deal}}
 
       <div class="divider"></div>
 
-      {{#pe_titre}}
-      <div class="section">
-        <div class="section-label">Niveau 2 — Private Equity & VC</div>
-        <h2>{{pe_titre}}</h2>
-        <div class="section-content">
-          {{pe_contenu}}
-        </div>
-      </div>
-      {{/pe_titre}}
-
-      <div class="divider"></div>
-
-      <!-- SECTION 3 : MACRO & GÉOPO -->
+      <!-- MACRO & GÉOPO -->
       <div class="section">
         <div class="section-label">Niveau 3 — Macro & Géopolitique</div>
         <h2>{{macro_titre}}</h2>
-        <div class="section-content">
-          {{macro_contenu}}
-        </div>
+        <div class="section-content">{{macro_contenu}}</div>
       </div>
+
+      {{#diagram_macro}}
+      <div class="diagram-wrap" style="margin-top:20px;">{{diagram_macro}}</div>
+      {{/diagram_macro}}
 
       <div class="divider"></div>
 
-      <!-- SECTION 4 : IA -->
+      <!-- IA -->
+      {{#ia_titre}}
       <div class="section">
         <div class="section-label">Transversal — Intelligence Artificielle</div>
         <h2>{{ia_titre}}</h2>
-        <div class="section-content">
-          {{ia_contenu}}
-        </div>
+        <div class="section-content">{{ia_contenu}}</div>
       </div>
-
-      <!-- SCHÉMA -->
-      {{#diagram_svg}}
-      <div class="diagram-section">
-        <div class="section-label">Schéma</div>
-        <div class="diagram-wrap">
-          {{diagram_svg}}
-        </div>
-      </div>
-      {{/diagram_svg}}
+      <div class="divider"></div>
+      {{/ia_titre}}
 
       <!-- RAPPEL DE COURS -->
       <div class="rappel-section">
         <div class="section-label">Rappel de cours</div>
         <h2>Les notions clés de ce numéro</h2>
-        <div class="section-content">
-          {{rappel_cours}}
-        </div>
+        <div class="section-content">{{rappel_cours}}</div>
       </div>
+
+      {{#diagram_cours}}
+      <div class="diagram-wrap" style="margin: 0 -48px; padding: 24px 48px; background:#fff3e8; border-top:1px solid #fde0c5; border-bottom:1px solid #fde0c5;">
+        {{diagram_cours}}
+      </div>
+      {{/diagram_cours}}
 
       <!-- QUESTION D'ENTRETIEN -->
       <div class="interview-section">
