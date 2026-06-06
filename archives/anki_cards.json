@@ -34,5 +34,41 @@
     "verso": "La Fed a maintenu sa fourchette de taux à 4,00 %–4,25 %, signalant des baisses plus lentes qu'espéré. Des taux élevés renchérissent le coût de la dette, réduisant le rendement et la capacité d'endettement des opérations de LBO.",
     "numero": "01",
     "id": 1727244174
+  },
+  {
+    "recto": "Qu'est-ce que le MOIC (Multiple On Invested Capital) ?",
+    "verso": "Le MOIC mesure combien de fois un fonds multiplie sa mise initiale (equity de sortie / equity investie). C'est un multiple brut qui ne tient pas compte du temps : un MOIC de 2x signifie qu'on a doublé son capital, peu importe la durée de détention.",
+    "numero": "02",
+    "id": 2108148132
+  },
+  {
+    "recto": "Quelle est la différence entre MOIC et TRI/IRR dans un LBO ?",
+    "verso": "Le MOIC mesure le multiple brut de la mise (combien de fois on multiplie son capital), sans notion de temps. Le TRI/IRR intègre la dimension temporelle : un même MOIC de 2x donne un IRR bien plus élevé sur 3 ans que sur 6 ans. Les deux indicateurs sont complémentaires.",
+    "numero": "02",
+    "id": 1571479629
+  },
+  {
+    "recto": "Quelle est l'equity value du LBO d'Electronic Arts par le consortium Silver Lake ?",
+    "verso": "L'equity value est d'environ 55 Md$, soit 210 $/action, représentant une prime d'environ 25% sur le cours non affecté. Le consortium est mené par Silver Lake, le PIF saoudien et Affinity Partners.",
+    "numero": "02",
+    "id": 1502873837
+  },
+  {
+    "recto": "Quel est le montant de dette levée dans le LBO d'EA et pourquoi est-il remarquable ?",
+    "verso": "La dette levée s'élève à environ 20 Md$, ce qui constitue le plus gros package de financement jamais structuré pour un buyout. Cette dette est adossée aux cash-flows de la cible et sera remboursée par le FCF généré.",
+    "numero": "02",
+    "id": 1903468469
+  },
+  {
+    "recto": "Quelle est la mécanique générale d'un LBO (rappel des fondamentaux) ?",
+    "verso": "Un sponsor (fonds de PE) achète une entreprise en finançant l'acquisition majoritairement par de la dette adossée aux cash-flows de la cible. Cette dette est remboursée progressivement grâce au free cash-flow (FCF), puis la société est revendue 4 à 6 ans plus tard pour matérialiser le retour.",
+    "numero": "02",
+    "id": 1809943718
+  },
+  {
+    "recto": "Pourquoi le niveau du SOFR (~4,3% mi-2025) est-il un facteur clé pour un LBO comme celui d'EA ?",
+    "verso": "Le SOFR est le taux de référence des financements à taux variable. À ~4,3% (Fed maintenant des taux élevés en juin 2025), le coût de la dette de 20 Md$ est élevé, ce qui alourdit le service de la dette, réduit le FCF disponible pour le désendettement et comprime le rendement (IRR) du deal.",
+    "numero": "02",
+    "id": 1612416046
   }
 ]
