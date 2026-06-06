@@ -699,7 +699,7 @@ def main():
 
     root        = Path(__file__).parent
     archive_dir = root / "archives"
-    quiz_dir    = root / "docs"        # GitHub Pages sert le dossier /docs
+    quiz_dir    = root / "quiz"        # GitHub Pages sert depuis la racine
     archive_dir.mkdir(exist_ok=True)
     quiz_dir.mkdir(exist_ok=True)
 
@@ -717,8 +717,9 @@ def main():
     questions = generate_quiz(client, content)
     quiz_html = render_quiz_page(questions, date_str, numero)
     quiz_file = quiz_dir / f"quiz_{today.strftime('%Y-%m-%d')}.html"
+    quiz_dir.mkdir(exist_ok=True)
     quiz_file.write_text(quiz_html, encoding="utf-8")
-    quiz_url  = f"https://abarisan.github.io/newsletter-mna/quiz_{today.strftime('%Y-%m-%d')}.html"
+    quiz_url  = f"https://abarisan.github.io/newsletter-mna/quiz/quiz_{today.strftime('%Y-%m-%d')}.html"
 
     # 3. Anki deck cumulatif
     print("🎴 Génération des flashcards Anki...")
