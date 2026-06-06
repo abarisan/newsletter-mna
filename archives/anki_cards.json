@@ -106,5 +106,41 @@
     "verso": "La Fed a maintenu son taux directeur dans la fourchette 4,00 %–4,25 %, signalant sa patience avant toute baisse (source : WSJ). Des taux élevés renchérissent le coût de la dette (souvent indexée sur le SOFR), ce qui pèse sur les cash-flows disponibles et donc sur le rendement du LBO.",
     "numero": "02",
     "id": 1450716833
+  },
+  {
+    "recto": "Qu'est-ce qu'un LBO (Leveraged Buy-Out) ?",
+    "verso": "C'est un montage où un sponsor (fonds de PE) achète une cible en utilisant peu d'equity et beaucoup de dette. Les cash-flows de la cible servent à rembourser cette dette, et le désendettement progressif crée de la valeur à la sortie.",
+    "numero": "02",
+    "id": 1127050133
+  },
+  {
+    "recto": "Quelle est la valeur d'entreprise du rachat d'Electronic Arts et pourquoi ce deal est-il marquant ?",
+    "verso": "L'EV est d'environ 55 Md$, ce qui en fait le plus gros LBO de l'histoire. Le consortium est mené par Silver Lake, le fonds souverain saoudien PIF et Affinity Partners.",
+    "numero": "02",
+    "id": 1271618642
+  },
+  {
+    "recto": "Dans le deal EA, quelle est la répartition dette/equity à l'entrée ?",
+    "verso": "Sur une EV de 55 Md$, la dette représente 20 Md$ et l'equity 35 Md$. Le sponsor apporte donc environ 64 % du financement en fonds propres et 36 % en dette.",
+    "numero": "02",
+    "id": 1838014041
+  },
+  {
+    "recto": "Comment calcule-t-on le multiple d'entrée du LBO EA ?",
+    "verso": "Le multiple d'entrée = EV / EBITDA = 55 Md$ / 2,5 Md$ = 22x. C'est un multiple élevé qui reflète la qualité et la stabilité des cash-flows d'EA.",
+    "numero": "02",
+    "id": 1731333175
+  },
+  {
+    "recto": "Qu'est-ce que la syndication de la dette dans un LBO ?",
+    "verso": "C'est le processus par lequel le pool de banques arrangeuses place la dette du financement auprès d'autres investisseurs (banques, fonds de dette). Cela permet de répartir le risque et de boucler le financement réel après la signature du deal.",
+    "numero": "02",
+    "id": 1674701016
+  },
+  {
+    "recto": "Pourquoi le levier (la dette) amplifie-t-il le TRI d'un LBO ?",
+    "verso": "Avec moins d'equity investie au départ, toute création de valeur (croissance de l'EBITDA, désendettement, expansion du multiple) se rapporte à une base d'equity plus faible, ce qui mécaniquement augmente le rendement pour les actionnaires. En contrepartie, le levier amplifie aussi les pertes en cas de baisse.",
+    "numero": "02",
+    "id": 1729580346
   }
 ]

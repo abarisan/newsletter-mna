@@ -1,12 +1,13 @@
 {
-  "numero": 2,
-  "depth": 2,
+  "numero": 3,
+  "depth": 3,
   "concepts_vus": [
     "LBO : achat d'une cible financé majoritairement par dette",
-    "Modélisation LBO : comment la structure tient"
+    "Modélisation LBO : comment la structure tient",
+    "Structuration de la dette LBO : passage du modèle au financement réel"
   ],
   "deals_ouverts": [
-    "EA/Silver Lake : modélisation LBO (du « combien » au « comment ça tient »)"
+    "EA/Silver Lake : la dette arrive, on passe du modèle au financement réel"
   ],
   "objectif": "Préparer des entretiens M&A dans 1 mois, puis sur 2-3 ans"
 }

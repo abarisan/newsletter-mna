@@ -3,30 +3,41 @@
 ## Mon profil
 Étudiant préparant des entretiens en banque d'affaires M&A.
 Objectif : Préparer des entretiens M&A dans 1 mois, puis sur 2-3 ans
-Niveau technique actuel : 1/10
+Niveau technique actuel : 2/10
 
 ## Concepts déjà couverts dans la newsletter
-aucun encore
+LBO : achat d'une cible financé majoritairement par dette, Modélisation LBO : comment la structure tient
 
 ## Deals suivis en ce moment
-aucun en cours
+EA/Silver Lake : modélisation LBO (du « combien » au « comment ça tient »)
 
 ## Contenu du dernier numéro (06 June 2026)
 
 ### Deal de la semaine
-DEAL — EA/Silver Lake : on passe du « combien » au « comment ça tient » (modélisation LBO)
-<p>Suite directe du N°01, où l'on avait décortiqué la <strong>mécanique générale du LBO</strong> sur le rachat d'<strong>Electronic Arts</strong> par le consortium mené par <strong>Silver Lake</strong> et le <strong>PIF saoudien</strong> (≈ 55 Md$ valeur des fonds propres, ~210 $/action, prime d'environ 25 % sur le cours non affecté). Cette semaine, du nouveau côté <em>financement</em> : selon Bloomberg, les banques d'arrangement (menées par <strong>JPMorgan</strong>) ont commencé à pré-syndiquer le package de dette, avec un <strong>levier cible autour de 5,0–5,5x l'EBITDA</strong>. C'est l'occasion de passer de la photo (la structure equity/dette) au film (la modélisation sur 5 ans).</p>
+DEAL — EA/Silver Lake : la dette arrive, on passe du modèle au financement réel
+<p>La semaine dernière (N°01), on a décortiqué la <strong>mécanique générale du LBO</strong> à travers le rachat d'Electronic Arts par le consortium mené par <strong>Silver Lake</strong>, le fonds souverain saoudien <strong>PIF</strong> et <strong>Affinity Partners</strong>, pour une valeur d'entreprise d'environ <strong>55 Md$</strong> (le plus gros LBO de l'histoire). Cette semaine, le deal avance : le pool de banques arrangeuses a commencé la <strong>syndication de la dette</strong>.</p>
+<p>Selon Bloomberg, le financement repose sur un package d'environ <strong>20 Md$ de dette</strong>, dont une tranche de <strong>term loan B (TLB)</strong> et une émission obligataire <strong>high yield</strong>. <strong>JPMorgan</strong> mène l'arrangement aux côtés de banques qui ont pré-engagé le financement (« committed financing »). L'equity apporté par le consortium tourne autour de <strong>35 Md$</strong>, dont une part majoritaire venant du PIF qui roule sa participation existante (~9,9 %).<
 
 ### Cours
-<p><strong>Rappel N°01 :</strong> on a vu que le LBO repose sur l'achat d'une cible financé majoritairement par de la dette, remboursée par les cash-flows de la cible, le fonds n'apportant qu'une fraction en <em>equity</em>. On savait <em>quoi</em>. Cette semaine, on apprend à <strong>construire le modèle</strong> qui prouve que ça tient — et qui calcule le rendement.</p><p><strong>Les 4 briques d'un LBO model :</strong></p><ol><li><strong>Sources & Uses</strong> — d'où vient l'argent (dette + equity), où il va (prix d'achat + frais + refinancement de dette existante). Sur EA : ~55 Md$ d'equity value, levier ~5x d'un EBITDA estimé ~2,4 Md$ → environ <strong>12–13 Md$ de dette levée</strong>, le reste (~40 Md$+) en equity du consortium. Un ticket equity massif, signe d'un deal « equity-heavy » imposé par les taux.</li><li><strong>Projection opérationnelle</strong> — on modélise revenus, EBITDA, capex, BFR sur 5 ans pour obtenir le <strong>free cash flow</strong> disponible au remboursement de dette.</li><li><strong>Cash flow sweep & schedule de dette</strong> — chaque année, le FCF excédentaire rembourse la dette (le <em>debt paydown</em>), ce qui réduit la dette nette et fait gross
+<p><strong>Rappel N°01 :</strong> on a vu la mécanique du LBO — un sponsor achète une cible avec peu d'equity et beaucoup de dette, puis utilise les cash-flows de la cible pour rembourser cette dette ; à la sortie, le désendettement crée la valeur. On va maintenant <strong>modéliser ce TRI</strong> : montrer chiffres à l'appui pourquoi le levier amplifie le rendement.</p>
+<p><strong>Le cas EA simplifié.</strong> Prenons les ordres de grandeur du deal :</p>
+<ul>
+<li>Valeur d'entreprise (EV) à l'entrée : <strong>55 Md$</strong></li>
+<li>Dette : <strong>20 Md$</strong> — Equity : <strong>35 Md$</strong></li>
+<li>EBITDA d'entrée : <strong>2,5 Md$</strong> → multiple d'entrée = 55 / 2,5 = <strong>22x</strong> (multiple élevé typique d'un actif premium)</li>
+</ul>
+<p><strong>Étape 1 — le désendettement.</strong> Supposons que sur 5 ans, les cash-flows libres permettent de rembourser <strong>10 Md$</strong> de dette. La dette passe de 20 à 10 Md$.</p>
+<p><strong>Étape 2 — la croissance de l'EBITDA.</strong> Disons que l'EBITDA croît de 2,5 à <strong>3,2 Md$</strong> en 5 ans (croissance + optimisation des coûts).</p>
+<p><strong>Étape 3 — la sortie.</strong> Si on sort au <em>même multiple
 
 ### Macro
-SIGNAL MACRO — La Fed tient les taux, le coût de la dette LBO reste collant
-<p><strong>Fait précis :</strong> lors de sa réunion de mai 2026, la Réserve fédérale a maintenu le taux directeur dans la fourchette <strong>4,00 %–4,25 %</strong>, repoussant les espoirs de détente rapide (source : Wall Street Journal, « Fed Holds Rates, Signals Patience on Cuts »). Le <strong>SOFR</strong> reste donc élevé, autour de <strong>4,3 %</strong>.</p><p><strong>Mécanisme de transmission vers le M&A :</strong> la dette LBO est majoritairement à taux variable (<em>SOFR + marge</em>). 
+SIGNAL MACRO — La Fed tient ses taux, le high yield respire
+<p>Lors de sa réunion de fin mai 2026, la <strong>Réserve fédérale</strong> a maintenu son taux directeur dans la fourchette <strong>3,75 %–4,00 %</strong>, tout en signalant via les <em>dot plots</em> qu'une baisse supplémentaire restait possible au second semestre si l'inflation cœur poursuit sa décrue (source WSJ). Les marchés de crédit ont réagi : le spread moyen du high yield US s'est resserré sous les <strong>300 points de base</strong>, un plus bas de cycle.</p>
+<p><strong>Mécanisme de tr
 
 ---
 Tu es mon tuteur M&A. Quand je te pose une question :
 - Pars toujours des deals et concepts qu'on a déjà couverts ensemble
-- Adapte le niveau technique à 1/10 (monte progressivement)
+- Adapte le niveau technique à 2/10 (monte progressivement)
 - Donne des réponses formulables en entretien, avec les bons termes
 - Si je me trompe sur un concept, corrige avec un exemple chiffré
