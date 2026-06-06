@@ -52,9 +52,23 @@ Un deal annoncé reste vivant jusqu'à sa clôture. Tu reviens dessus quand il y
 approbation réglementaire, émission obligataire, révision de prix, réaction du marché. Chaque
 retour sur un deal est l'occasion d'approfondir un point technique différent.
 
+**Sources obligatoires — au moins une par niveau chaque semaine :**
+
+| Niveau | Publications | Usage |
+|--------|-------------|-------|
+| 1 — Indispensables | Capital Finance, Bloomberg, CFNEWS, Financial Times, S&P Global | Deals, marchés, tendances sectorielles |
+| 2 — Pour aller plus loin | Mergermarket, Reuters, PitchBook | Détails transactions, PE, VC, mouvements stratégiques |
+| 3 — Pour briller | Wall Street Journal, The Economist | Macro, géopolitique, grands cycles |
+| 4 — Niche & data | Dealogic, Preqin | Données PE/M&A, fundraising, statistiques |
+
+Tu dois citer explicitement au moins une source de chaque niveau dans le numéro.
+Pour le deal principal, cite au minimum une source N1 + une source N2.
+Pour la macro/géopo, cite au minimum une source N3.
+Pour les données chiffrées sur le marché, cite au minimum une source N4 si disponible.
+
 **Règles absolues :**
 - Langue : français, ton direct et pédagogique, jamais condescendant
-- Chiffres précis, sources nommées (Bloomberg, FT, CreditSights, SEC, Mergermarket...)
+- Chiffres précis, sources nommées avec titre d'article si possible
 - Jamais de généralités : toujours un acteur nommé, un chiffre, une date
 """
 
@@ -95,7 +109,7 @@ Retourne UNIQUEMENT ce JSON :
   "rappel_cours": "",
   "question_entretien": "...",
   "reponse_structuree": "HTML...",
-  "sources": ["..."]
+  "sources": ["[N1] Bloomberg — ...", "[N2] Mergermarket — ...", "[N3] WSJ ou The Economist — ...", "[N4] Dealogic ou Preqin — ... (si dispo)"]
 }}
 """
 
@@ -142,7 +156,7 @@ Retourne UNIQUEMENT ce JSON :
   "rappel_cours": "HTML du cours complet et profond...",
   "question_entretien": "...",
   "reponse_structuree": "HTML...",
-  "sources": ["..."]
+  "sources": ["[N1] Bloomberg — ...", "[N2] Mergermarket — ...", "[N3] WSJ ou The Economist — ...", "[N4] Dealogic ou Preqin — ... (si dispo)"]
 }}
 """
 
@@ -186,7 +200,7 @@ Retourne UNIQUEMENT ce JSON :
   "rappel_cours": "",
   "question_entretien": "...",
   "reponse_structuree": "HTML...",
-  "sources": ["..."]
+  "sources": ["[N1] Bloomberg — ...", "[N2] Mergermarket — ...", "[N3] WSJ ou The Economist — ...", "[N4] Dealogic ou Preqin — ... (si dispo)"]
 }}
 """
 
@@ -262,7 +276,7 @@ Retourne UNIQUEMENT le contenu JSON suivant :
   "rappel_cours": "HTML avec balises <p> <strong> <em> <ol> <ul> et <div class='term'><div class='term-name'>...</div>",
   "question_entretien": "La question entre guillemets",
   "reponse_structuree": "HTML...",
-  "sources": ["Bloomberg — titre article", "FT — titre article", ...]
+  "sources": ["[N1] Bloomberg — titre", "[N1] FT ou Capital Finance — titre", "[N2] Mergermarket ou Reuters — titre", "[N3] WSJ ou The Economist — titre", "[N4] Dealogic ou Preqin — donnée (si disponible)"]
 }}
 """
 
