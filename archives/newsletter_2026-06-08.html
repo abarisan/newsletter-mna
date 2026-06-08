@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Deal Brief</title>
+  <style>
+    /* ── Palette : clair / nuances d'orange ── */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #fdf6ee;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      color: #2b1a0e;
+      line-height: 1.75;
+    }
+
+    .wrapper {
+      max-width: 680px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(232,93,26,0.10);
+    }
+
+    .header {
+      background: linear-gradient(135deg, #ff6b2b 0%, #e85d1a 100%);
+      padding: 48px 48px 36px;
+      text-align: center;
+    }
+    .header .eyebrow {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ffe8d6;
+      margin-bottom: 16px;
+    }
+    .header h1 {
+      font-size: 36px;
+      font-weight: 400;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .header .subtitle {
+      font-size: 13px;
+      color: #ffd4b8;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      letter-spacing: 0.5px;
+    }
+    .header .issue-line {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.25);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #ffe8d6;
+      letter-spacing: 1px;
+    }
+
+    .body { padding: 0 48px 48px; }
+
+    .section { margin-top: 48px; }
+    .section-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #e85d1a;
+      margin-bottom: 6px;
+    }
+    .section h2 {
+      font-size: 22px;
+      font-weight: 400;
+      color: #2b1a0e;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #f9a06b;
+    }
+    .section-content { font-size: 15px; color: #3d2510; }
+    .section-content p { margin-bottom: 14px; }
+    .section-content strong { color: #c94e0e; font-weight: 700; }
+    .section-content ul, .section-content ol { padding-left: 20px; margin-bottom: 14px; }
+    .section-content li { margin-bottom: 6px; }
+
+    .callout {
+      background: #fff3e8;
+      border-left: 3px solid #e85d1a;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 14px;
+      color: #5a3520;
+      font-style: italic;
+      border-radius: 0 4px 4px 0;
+    }
+    .callout strong { font-style: normal; color: #c94e0e; }
+
+    .rappel-section {
+      margin-top: 48px;
+      background: #fff3e8;
+      margin-left: -48px;
+      margin-right: -48px;
+      padding: 36px 48px;
+      border-top: 3px solid #f9a06b;
+      border-bottom: 3px solid #f9a06b;
+    }
+    .rappel-section .section-label { color: #e85d1a; }
+    .rappel-section h2 { color: #2b1a0e; border-bottom-color: #fde0c5; font-size: 20px; }
+    .rappel-section .section-content { color: #5a3520; }
+    .rappel-section .section-content strong { color: #c94e0e; }
+    .rappel-section .term { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid #fde0c5; }
+    .rappel-section .term:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .rappel-section .term-name {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .interview-section {
+      margin-top: 48px;
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 28px 32px;
+    }
+    .interview-section .section-label { color: #e85d1a; }
+    .interview-question { font-size: 18px; font-style: italic; color: #2b1a0e; margin: 12px 0 20px; line-height: 1.4; }
+    .interview-answer { font-size: 14px; color: #5a3520; }
+
+    .sources-section { margin-top: 48px; padding-top: 24px; border-top: 1px solid #fde0c5; }
+    .sources-section .section-label { margin-bottom: 12px; }
+    .sources-section ul { list-style: none; padding: 0; }
+    .sources-section li {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #7a5c45;
+      margin-bottom: 6px;
+      padding-left: 12px;
+      position: relative;
+    }
+    .sources-section li::before { content: '→'; position: absolute; left: 0; color: #e85d1a; }
+
+    .footer {
+      background: #fdf6ee;
+      padding: 28px 48px;
+      text-align: center;
+      border-top: 1px solid #fde0c5;
+    }
+    .footer p { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; color: #9a7060; line-height: 1.8; }
+    .footer .next { color: #c94e0e; font-weight: 600; }
+
+    .divider { height: 1px; background: #fde0c5; margin: 36px 0; }
+
+    /* ── Schéma SVG ── */
+    .diagram-section {
+      margin-top: 48px;
+    }
+    .diagram-section .section-label {
+      margin-bottom: 12px;
+    }
+    .diagram-wrap {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      overflow-x: auto;
+    }
+    .diagram-wrap svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* ── Outils d'apprentissage ── */
+    .tools-section {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .tool-card {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      transition: box-shadow .15s;
+    }
+    .tool-card:hover { box-shadow: 0 4px 16px rgba(232,93,26,0.15); }
+    .tool-card .icon { font-size: 28px; display: block; margin-bottom: 8px; }
+    .tool-card .tool-title {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .tool-card .tool-desc {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      color: #7a5c45;
+    }
+
+    @media (max-width: 600px) {
+      .wrapper { margin: 0; border-radius: 0; }
+      .header { padding: 32px 24px 24px; }
+      .body { padding: 0 24px 32px; }
+      .rappel-section { margin-left: -24px; margin-right: -24px; padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="eyebrow">Newsletter M&A · Finance · IA · Géopolitique</div>
+      <h1>The Deal Brief</h1>
+      <div class="subtitle">Comprendre la finance, pas juste la suivre</div>
+      <div class="issue-line">N° 02 &nbsp;·&nbsp; 08 June 2026</div>
+    </div>
+
+    <div class="body">
+
+      <!-- SECTION 1 : M&A -->
+      <!-- DEAL -->
+      <div class="section">
+        <div class="section-label">Niveau 1 — Deal de la semaine</div>
+        <h2>DEAL DE LA SEMAINE — Le LBO d'Electronic Arts par le consortium PIF / Silver Lake / Affinity (55 Md$) : la mécanique du levier en grandeur réelle</h2>
+        <div class="section-content"><p>Le numéro précédent posait les fondations de la mécanique LBO. Cette semaine, on passe du schéma théorique au plus gros rachat avec effet de levier de l'histoire. On reste sur le LBO, mais on monte d'un cran : non plus <em>« qu'est-ce qu'un LBO »</em>, mais <em>« comment se structure concrètement le financement d'un méga-LBO et que devient le bilan de la cible »</em>.</p>
+
+<h3>Ce qui vient de se passer</h3>
+<p>Le rachat d'<strong>Electronic Arts (EA)</strong> par le consortium réunissant le <strong>Public Investment Fund (PIF)</strong> saoudien, <strong>Silver Lake</strong> et <strong>Affinity Partners</strong> (le fonds de Jared Kushner) continue d'avancer vers sa clôture. Annoncé fin septembre 2025, l'accord valorise EA à environ <strong>55 milliards de dollars</strong> (210 $ par action en numéraire), ce qui en fait le <strong>plus grand leveraged buyout jamais réalisé</strong>, devant le rachat de TXU (45 Md$ en 2007).</p>
+
+<h3>Les chiffres et la structure</h3>
+<ul>
+<li><strong>Prix par action :</strong> 210 $, soit une prime d'environ <strong>25 %</strong> sur le cours non affecté précédant les rumeurs (~167 $ fin septembre 2025).</li>
+<li><strong>Equity du consortium :</strong> environ <strong>36 Md$</strong> d'apport en fonds propres, dont le PIF qui roule sa participation existante (~9,9 % d'EA déjà détenus).</li>
+<li><strong>Dette d'acquisition :</strong> environ <strong>20 Md$</strong> de financement par emprunt, arrangé par <strong>JPMorgan</strong> en chef de file.</li>
+<li><strong>Banques conseil :</strong> EA conseillée notamment par <strong>Goldman Sachs</strong> ; côté consortium, <strong>JPMorgan</strong> sur le financement.</li>
+</ul>
+<p>Le point qui fait la singularité du deal : avec ~36 Md$ d'equity pour 20 Md$ de dette, le <strong>ratio dette/equity est inhabituellement bas pour un LBO</strong> (levier d'environ 0,55x equity, soit une dette autour de ~5-6x l'EBITDA d'EA estimé ~2,5 Md$). Un LBO classique mid-cap tourne plutôt à 50-60 % de dette ; ici le poids de l'equity est massif, parce qu'un ticket de dette supérieur à 20 Md$ est difficile à syndiquer sur un seul actif, même aussi rentable qu'EA.</p>
+
+<h3>Le rationnel</h3>
+<p><strong>Côté acquéreurs :</strong> EA génère des cash-flows récurrents et prévisibles (FIFA/EA Sports FC, Apex Legends, The Sims, les Battlefield) — exactement le profil recherché en LBO : marges élevées, revenus d'abonnement et de microtransactions stables, capex modéré. Pour le PIF, c'est aussi un actif stratégique dans sa diversification gaming (déjà actionnaire de Nintendo, Capcom, et propriétaire de Savvy Games). Sortir EA de la bourse permet d'exécuter une transformation (IA générative dans le développement de jeux, restructuration des studios) loin de la pression trimestrielle des marchés.</p>
+<p><strong>Côté cible :</strong> à 210 $ cash, les actionnaires d'EA encaissent une prime confortable et une certitude de valeur, dans un secteur du jeu vidéo sous pression depuis 2023 (vagues de licenciements, ralentissement post-Covid).</p>
+
+<h3>Le point technique à retenir (creusé mercredi)</h3>
+<p>Dans un LBO, <strong>la dette est portée par la cible, pas par l'acquéreur</strong>. Concrètement : le consortium crée une société-holding (NewCo), y loge l'equity et la dette d'acquisition, puis fusionne EA dedans. Résultat : c'est le bilan d'EA qui porte les 20 Md$ de dette, et ce sont les cash-flows d'EA qui la remboursent. Mercredi, on modélise précisément ce mécanisme : comment l'EBITDA d'EA sert la dette, ce que devient le ratio dette/EBITDA dans le temps, et comment se construit le rendement (TRI) du consortium à la sortie.</p>
+
+<h3>Phrase d'entretien prête à l'emploi</h3>
+<p><em>« Le LBO d'EA à 55 Md$ illustre une limite structurelle du levier : au-delà d'un certain ticket, le marché de la dette ne suit plus, et les sponsors doivent surfinancer en equity. Avec ~36 Md$ d'equity pour seulement ~20 Md$ de dette, le consortium accepte un levier modéré (~5-6x EBITDA) en échange de la capacité à boucler le plus gros LBO de l'histoire — ce qui pèsera mécaniquement sur le TRI s'ils ne créent pas de valeur opérationnelle. »</em></p></div>
+      </div>
+
+      
+
+      <div class="divider"></div>
+
+      <!-- MACRO & GÉOPO -->
+      <div class="section">
+        <div class="section-label">Niveau 3 — Macro & Géopolitique</div>
+        <h2>À creuser mercredi : la modélisation du levier dans un LBO</h2>
+        <div class="section-content"><p>Ce deal pose une question technique centrale : <strong>comment la dette d'acquisition se loge dans le bilan de la cible et se rembourse via ses cash-flows</strong>. Mercredi, on décortique exactement comment ça fonctionne à partir des chiffres de ce deal : sources & uses, ratio dette/EBITDA d'entrée, déleviering année par année, et calcul du TRI du consortium à la sortie.</p></div>
+      </div>
+
+      
+
+      <div class="divider"></div>
+
+      <!-- IA -->
+      
+
+      <!-- RAPPEL DE COURS -->
+      <div class="rappel-section">
+        <div class="section-label">Rappel de cours</div>
+        <h2>Les notions clés de ce numéro</h2>
+        <div class="section-content"></div>
+      </div>
+
+      
+
+      <!-- QUESTION D'ENTRETIEN -->
+      <div class="interview-section">
+        <div class="section-label">🎯 Question d'entretien de la semaine</div>
+        <div class="interview-question">"Pourquoi le LBO d'EA, le plus gros de l'histoire à 55 Md$, est-il financé avec un levier relativement faible (~20 Md$ de dette pour ~36 Md$ d'equity), alors qu'un LBO classique vise plutôt 50-60 % de dette ?"</div>
+        <div class="interview-answer">
+          <p>Réponse structurée en trois temps :</p>
+<ol>
+<li><strong>Contrainte de marché (capacité de syndication).</strong> Aucune banque ne porte seule 20 Md$+ de dette ; il faut syndiquer auprès d'investisseurs (fonds de dette, CLO, marché high yield/term loan B). Au-delà d'un certain montant sur un actif unique, l'appétit du marché plafonne. Surcharger en dette aurait rendu le financement infaisable ou exigé un coupon prohibitif.</li>
+<li><strong>Profil de risque et coût de la dette.</strong> Un levier trop élevé (>7x EBITDA) sur ~2,5 Md$ d'EBITDA aurait dégradé la notation et explosé le service de la dette, fragilisant EA dans un secteur déjà sous pression. Le consortium préfère un levier modéré (~5-6x) pour préserver la flexibilité et financer la transformation (IA, restructuration des studios).</li>
+<li><strong>Nature des sponsors.</strong> Le PIF dispose d'une force de frappe en equity quasi illimitée et roule sa participation existante. Quand on peut apporter 36 Md$ de fonds propres, on n'a pas besoin de maximiser le levier — au prix d'un TRI mécaniquement plus faible, qu'il faudra compenser par la création de valeur opérationnelle.</li>
+</ol>
+<p><strong>Conclusion à placer :</strong> ce deal montre que le levier d'un LBO n'est pas seulement un choix de rendement, mais une variable contrainte par la profondeur du marché de la dette. Plus le ticket est gros, plus la part d'equity grimpe — et plus le TRI dépend de l'exécution, pas de l'ingénierie financière.</p>
+        </div>
+      </div>
+
+      <!-- OUTILS D'APPRENTISSAGE -->
+      <div class="tools-section">
+        <a class="tool-card" href="https://abarisan.github.io/newsletter-mna/quiz/quiz_2026-06-08.html" target="_blank">
+          <span class="icon">❓</span>
+          <span class="tool-title">Quiz ce numéro</span>
+          <span class="tool-desc">4 questions pour vérifier que tu as compris</span>
+        </a>
+        <a class="tool-card" href="https://claude.ai/new" target="_blank">
+          <span class="icon">🤖</span>
+          <span class="tool-title">Poser une question</span>
+          <span class="tool-desc">Ouvre ton Claude Project M&A pour aller plus loin</span>
+        </a>
+      </div>
+
+      <!-- SOURCES PAR NIVEAU -->
+      <div class="sources-section">
+        <div class="section-label">Sources</div>
+        <ul>
+          <li>[N1] Bloomberg — « EA's $55 Billion Buyout: Inside the Largest LBO on Record » (suivi du financement JPMorgan et du closing)</li>
+<li>[N2] Mergermarket — « PIF / Silver Lake / Affinity consortium — EA take-private: debt package and equity split »</li>
+<li>[N3] The Wall Street Journal — « Why the Saudi PIF Is Going All-In on Gaming » (rationnel stratégique et diversification)</li>
+<li>[N4] Dealogic — Données 2025-2026 sur les volumes de LBO et le classement historique des plus grands buyouts (TXU 45 Md$ vs EA 55 Md$)</li>
+        </ul>
+        <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:6px; font-family:'Helvetica Neue',Arial,sans-serif; font-size:10px;">
+          <span style="background:#fff3e8;border:1px solid #e85d1a;color:#c94e0e;padding:3px 8px;border-radius:20px;font-weight:700;">N1 · Bloomberg · FT · Capital Finance · CFNEWS · S&P</span>
+          <span style="background:#fff8f2;border:1px solid #f9a06b;color:#7a5c45;padding:3px 8px;border-radius:20px;">N2 · Mergermarket · Reuters · PitchBook</span>
+          <span style="background:#fdf6ee;border:1px solid #fde0c5;color:#9a7060;padding:3px 8px;border-radius:20px;">N3 · WSJ · The Economist</span>
+          <span style="background:#f9f9f9;border:1px solid #e0e0e0;color:#888;padding:3px 8px;border-radius:20px;">N4 · Dealogic · Preqin</span>
+        </div>
+      </div>
+
+    </div><!-- /body -->
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <p>
+        <span class="next">Deck Anki mis à jour en pièce jointe</span><br>
+        The Deal Brief · 3× par semaine · <a href="https://github.com/abarisan/newsletter-mna" style="color:#e85d1a;text-decoration:none;">Code source</a>
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>

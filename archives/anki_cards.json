@@ -142,5 +142,41 @@
     "verso": "Avec moins d'equity investie au départ, toute création de valeur (croissance de l'EBITDA, désendettement, expansion du multiple) se rapporte à une base d'equity plus faible, ce qui mécaniquement augmente le rendement pour les actionnaires. En contrepartie, le levier amplifie aussi les pertes en cas de baisse.",
     "numero": "02",
     "id": 1729580346
+  },
+  {
+    "recto": "Qu'est-ce qu'un LBO (Leveraged Buy-Out) ?",
+    "verso": "Un LBO est le rachat d'une entreprise (la cible) financé majoritairement par de la dette d'acquisition. Cette dette est ensuite remboursée grâce aux cash-flows générés par la cible elle-même, ce qui permet d'amplifier le rendement sur les fonds propres investis.",
+    "numero": "02",
+    "id": 1087559963
+  },
+  {
+    "recto": "Quel est le montant et la nature du deal Electronic Arts (2024) ?",
+    "verso": "Il s'agit du rachat d'Electronic Arts (EA) pour 55 Md$ par un consortium réunissant le PIF (fonds souverain saoudien), Silver Lake et Affinity. C'est le plus gros LBO (rachat avec effet de levier) de l'histoire.",
+    "numero": "02",
+    "id": 1139415368
+  },
+  {
+    "recto": "Qui compose le consortium acquéreur d'Electronic Arts ?",
+    "verso": "Le consortium réunit trois acteurs : le PIF (Public Investment Fund, fonds souverain d'Arabie saoudite), Silver Lake (fonds de private equity spécialisé tech) et Affinity Partners.",
+    "numero": "02",
+    "id": 1523506400
+  },
+  {
+    "recto": "Où se loge la dette d'acquisition dans un LBO et comment est-elle remboursée ?",
+    "verso": "La dette d'acquisition se loge dans le bilan de la cible (et non chez l'acquéreur). Elle est ensuite remboursée via les cash-flows opérationnels générés par la cible elle-même, qui doit donc produire des flux de trésorerie suffisamment réguliers et prévisibles.",
+    "numero": "02",
+    "id": 1966838062
+  },
+  {
+    "recto": "Qu'est-ce qu'un tableau 'Sources & Uses' dans un LBO ?",
+    "verso": "Le tableau Sources & Uses présente d'un côté les sources de financement (dette d'acquisition + apport en fonds propres / equity) et de l'autre les emplois (uses : prix d'achat des actions, refinancement de la dette existante, frais de transaction). Les deux colonnes doivent s'équilibrer.",
+    "numero": "02",
+    "id": 1472669935
+  },
+  {
+    "recto": "Pourquoi le ratio Dette / EBITDA est-il central dans la structuration d'un LBO ?",
+    "verso": "Le ratio Dette/EBITDA mesure le niveau de levier : il indique combien d'années d'EBITDA seraient nécessaires pour rembourser la dette. Plus il est élevé, plus le LBO est risqué. Les prêteurs imposent généralement des plafonds (souvent autour de 5-7x selon les conditions de marché) pour s'assurer que la cible peut servir sa dette.",
+    "numero": "02",
+    "id": 1393268406
   }
 ]

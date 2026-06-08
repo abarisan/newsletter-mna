@@ -1,13 +1,14 @@
 {
-  "numero": 3,
-  "depth": 3,
+  "numero": 4,
+  "depth": 4,
   "concepts_vus": [
     "LBO : achat d'une cible financé majoritairement par dette",
     "Modélisation LBO : comment la structure tient",
-    "Structuration de la dette LBO : passage du modèle au financement réel"
+    "Structuration de la dette LBO : passage du modèle au financement réel",
+    "Mécanique du levier en grandeur réelle : application à un LBO de 55 Md$"
   ],
   "deals_ouverts": [
-    "EA/Silver Lake : la dette arrive, on passe du modèle au financement réel"
+    "EA / Consortium PIF / Silver Lake / Affinity (55 Md$) : la mécanique du levier en grandeur réelle"
   ],
   "objectif": "Préparer des entretiens M&A dans 1 mois, puis sur 2-3 ans"
 }
