@@ -372,63 +372,66 @@ def save_level(level: dict):
 # SCHÉMA SVG PÉDAGOGIQUE
 # ─────────────────────────────────────────────────────────────────────────────
 
-DIAGRAM_PROMPT = """Tu dois générer un schéma SVG pédagogique qui illustre visuellement le concept
-enseigné dans le cours de cette newsletter.
+DIAGRAM_PROMPT = """Génère un schéma SVG simple et lisible pour illustrer ce point précis d'une newsletter M&A.
 
-Palette de couleurs à respecter :
-- Fond des boîtes : #fff3e8 ou #ffffff
-- Bordures et accents : #e85d1a (orange)
+STYLE : minimaliste, aéré, 2-4 éléments maximum. Pas de surcharge. Des boîtes, des flèches, des chiffres clés.
+
+Palette :
+- Fond boîtes : #fff3e8 ou #ffffff
+- Bordures / accents : #e85d1a
 - Texte principal : #2b1a0e
 - Texte secondaire : #7a5c45
-- Flèches et connecteurs : #f9a06b
-- Mise en avant : #c94e0e (orange foncé)
+- Flèches : #f9a06b
+- Mise en avant : #c94e0e
 
-Contraintes techniques (email) :
-- SVG auto-contenu, PAS d'images externes, PAS de CSS externe
-- Largeur fixe : 580px, hauteur adaptée au contenu (300-450px max)
-- Police : Arial, sans-serif uniquement
-- Tous les styles en attributs SVG inline (fill, stroke, font-family, etc.)
-- Pas de foreignObject, pas de <style>, pas de clipPath complexe
+Contraintes techniques strictes (email HTML) :
+- SVG inline, AUCUNE ressource externe
+- Largeur : 540px — hauteur : 160px à 220px MAX (schéma compact)
+- Police Arial ou sans-serif uniquement, attributs inline
+- PAS de <style>, PAS de foreignObject, PAS de clipPath
+- Flèches : utilise <line> + <polygon> ou <marker> simple
 
-Types de schémas selon le concept :
-- LBO / structure de financement → waterfall vertical avec blocs empilés (equity / dette senior / mezz / HY)
-- Processus M&A → timeline horizontale avec étapes numérotées
-- Création de valeur PE → 3 colonnes côte à côte (levier opérationnel / financier / multiples)
-- Macro / taux → graphique en barres ou courbe simple
-- Deal flow → diagramme avec acquéreur → cible avec annotations
+Type de schéma selon le sujet :
+- Deal / structure → 2-3 boîtes reliées par flèches avec chiffres clés
+- Processus → timeline 3-4 étapes horizontale
+- Concept financier → formule visuelle ou comparaison avant/après
+- Macro → 2 cases cause → effet avec flèche
 
-Concept à illustrer :
-{concept}
+Sujet à illustrer : {sujet}
+Données clés à inclure : {donnees}
 
-Chiffres réels du deal à intégrer si pertinent :
-{chiffres}
-
-Retourne UNIQUEMENT le code SVG complet, rien d'autre. Commence par <svg et termine par </svg>.
+Retourne UNIQUEMENT le SVG. Commence par <svg et termine par </svg>.
 """
 
-def generate_diagram(client: anthropic.Anthropic, content: dict) -> str:
-    """Génère un schéma SVG illustrant le concept du cours."""
-    concept = content.get("rappel_cours", "")[:300] or content.get("ma_titre", "")
-    chiffres = content.get("ma_contenu", "")[:400]
-
-    if not concept.strip():
-        return ""
-
-    msg = client.messages.create(
-        model="claude-opus-4-8",
-        max_tokens=2000,
-        messages=[{"role": "user", "content": DIAGRAM_PROMPT.format(
-            concept=concept,
-            chiffres=chiffres
-        )}]
-    )
-    text = msg.content[0].text.strip()
-    # Extraire uniquement le SVG
+def _extract_svg(text: str) -> str:
     start = text.find("<svg")
     end   = text.rfind("</svg>") + 6
-    if start == -1 or end <= 6:
-        return ""
-    return text[start:end]
+    return text[start:end] if start != -1 and end > 6 else ""
+
+def generate_diagrams(client: anthropic.Anthropic, content: dict) -> dict:
+    """Génère 2-3 schémas SVG simples pour le deal, le cours et la macro."""
+    diagrams = {}
+
+    specs = [
+        ("diagram_deal", content.get("ma_titre", ""), content.get("ma_contenu", "")[:300]),
+        ("diagram_cours", content.get("rappel_cours", "")[:200], content.get("ma_contenu", "")[:200]),
+        ("diagram_macro", content.get("macro_titre", ""), content.get("macro_contenu", "")[:250]),
+    ]
+
+    for key, sujet, donnees in specs:
+        if not sujet.strip():
+            diagrams[key] = ""
+            continue
+        msg = client.messages.create(
+            model="claude-opus-4-8",
+            max_tokens=1200,
+            messages=[{"role": "user", "content": DIAGRAM_PROMPT.format(
+                sujet=sujet, donnees=donnees
+            )}]
+        )
+        diagrams[key] = _extract_svg(msg.content[0].text.strip())
+
+    return diagrams
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -590,13 +593,18 @@ ANKI_MODEL = genanki.Model(
 )
 
 ANKI_PROMPT = """À partir du contenu de cette newsletter, génère 6 flashcards Anki.
-Mélange : définitions, mécaniques chiffrées, raisonnements d'entretien, faits précis sur le deal.
-Les cartes doivent être progressives : certaines basiques, d'autres plus techniques.
+
+RÈGLES :
+- Les cartes portent sur des CONCEPTS, MÉCANIQUES et RAISONNEMENTS — jamais sur des chiffres spécifiques à un deal.
+- Bons rectos : "Pourquoi un LBO amplifie-t-il le rendement des fonds propres ?", "Qu'est-ce que le goodwill ?", "Différence entre EV et equity value ?", "Quand utilise-t-on une dette mezzanine ?"
+- Mauvais rectos (à éviter) : "Quel est le montant de la dette dans le deal X ?", "À quel prix a été racheté Y ?"
+- Le verso explique le mécanisme en 2-4 phrases, avec un exemple générique si utile.
+- Répartition : 2 cartes définition (qu'est-ce que X), 2 cartes mécanique (comment fonctionne X), 2 cartes raisonnement d'entretien (pourquoi / dans quel cas).
 
 Retourne UNIQUEMENT ce JSON :
 {{
   "cards": [
-    {{"recto": "Question ou concept au recto", "verso": "Réponse complète au verso (2-4 phrases, chiffres si pertinent)"}},
+    {{"recto": "Question conceptuelle", "verso": "Explication du mécanisme (2-4 phrases)"}},
     ...
   ]
 }}
@@ -799,10 +807,10 @@ def main():
     content = generate_content(client, date_str, archive_dir, weekday)
     numero  = content.get("numero", "XX")
 
-    # 2. Schéma SVG
-    print("📊 Génération du schéma...")
-    diagram_svg = generate_diagram(client, content)
-    content["diagram_svg"] = diagram_svg
+    # 2. Schémas SVG (deal + cours + macro)
+    print("📊 Génération des schémas...")
+    diagrams = generate_diagrams(client, content)
+    content.update(diagrams)
 
     # 3. Quiz (GitHub Pages)
     print("❓ Génération du quiz...")
