@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Deal Brief</title>
+  <style>
+    /* ── Palette : clair / nuances d'orange ── */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #fdf6ee;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      color: #2b1a0e;
+      line-height: 1.75;
+    }
+
+    .wrapper {
+      max-width: 680px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(232,93,26,0.10);
+    }
+
+    .header {
+      background: linear-gradient(135deg, #ff6b2b 0%, #e85d1a 100%);
+      padding: 48px 48px 36px;
+      text-align: center;
+    }
+    .header .eyebrow {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ffe8d6;
+      margin-bottom: 16px;
+    }
+    .header h1 {
+      font-size: 36px;
+      font-weight: 400;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .header .subtitle {
+      font-size: 13px;
+      color: #ffd4b8;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      letter-spacing: 0.5px;
+    }
+    .header .issue-line {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.25);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #ffe8d6;
+      letter-spacing: 1px;
+    }
+
+    .body { padding: 0 48px 48px; }
+
+    .section { margin-top: 48px; }
+    .section-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #e85d1a;
+      margin-bottom: 6px;
+    }
+    .section h2 {
+      font-size: 22px;
+      font-weight: 400;
+      color: #2b1a0e;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #f9a06b;
+    }
+    .section-content { font-size: 15px; color: #3d2510; }
+    .section-content p { margin-bottom: 14px; }
+    .section-content strong { color: #c94e0e; font-weight: 700; }
+    .section-content ul, .section-content ol { padding-left: 20px; margin-bottom: 14px; }
+    .section-content li { margin-bottom: 6px; }
+
+    .callout {
+      background: #fff3e8;
+      border-left: 3px solid #e85d1a;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 14px;
+      color: #5a3520;
+      font-style: italic;
+      border-radius: 0 4px 4px 0;
+    }
+    .callout strong { font-style: normal; color: #c94e0e; }
+
+    .rappel-section {
+      margin-top: 48px;
+      background: #fff3e8;
+      margin-left: -48px;
+      margin-right: -48px;
+      padding: 36px 48px;
+      border-top: 3px solid #f9a06b;
+      border-bottom: 3px solid #f9a06b;
+    }
+    .rappel-section .section-label { color: #e85d1a; }
+    .rappel-section h2 { color: #2b1a0e; border-bottom-color: #fde0c5; font-size: 20px; }
+    .rappel-section .section-content { color: #5a3520; }
+    .rappel-section .section-content strong { color: #c94e0e; }
+    .rappel-section .term { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid #fde0c5; }
+    .rappel-section .term:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .rappel-section .term-name {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .interview-section {
+      margin-top: 48px;
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 28px 32px;
+    }
+    .interview-section .section-label { color: #e85d1a; }
+    .interview-question { font-size: 18px; font-style: italic; color: #2b1a0e; margin: 12px 0 20px; line-height: 1.4; }
+    .interview-answer { font-size: 14px; color: #5a3520; }
+
+    .sources-section { margin-top: 48px; padding-top: 24px; border-top: 1px solid #fde0c5; }
+    .sources-section .section-label { margin-bottom: 12px; }
+    .sources-section ul { list-style: none; padding: 0; }
+    .sources-section li {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #7a5c45;
+      margin-bottom: 6px;
+      padding-left: 12px;
+      position: relative;
+    }
+    .sources-section li::before { content: '→'; position: absolute; left: 0; color: #e85d1a; }
+
+    .footer {
+      background: #fdf6ee;
+      padding: 28px 48px;
+      text-align: center;
+      border-top: 1px solid #fde0c5;
+    }
+    .footer p { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; color: #9a7060; line-height: 1.8; }
+    .footer .next { color: #c94e0e; font-weight: 600; }
+
+    .divider { height: 1px; background: #fde0c5; margin: 36px 0; }
+
+    /* ── Schéma SVG ── */
+    .diagram-section {
+      margin-top: 48px;
+    }
+    .diagram-section .section-label {
+      margin-bottom: 12px;
+    }
+    .diagram-wrap {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      overflow-x: auto;
+    }
+    .diagram-wrap svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* ── Outils d'apprentissage ── */
+    .tools-section {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .tool-card {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      transition: box-shadow .15s;
+    }
+    .tool-card:hover { box-shadow: 0 4px 16px rgba(232,93,26,0.15); }
+    .tool-card .icon { font-size: 28px; display: block; margin-bottom: 8px; }
+    .tool-card .tool-title {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .tool-card .tool-desc {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      color: #7a5c45;
+    }
+
+    @media (max-width: 600px) {
+      .wrapper { margin: 0; border-radius: 0; }
+      .header { padding: 32px 24px 24px; }
+      .body { padding: 0 24px 32px; }
+      .rappel-section { margin-left: -24px; margin-right: -24px; padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="eyebrow">Newsletter M&A · Finance · IA · Géopolitique</div>
+      <h1>The Deal Brief</h1>
+      <div class="subtitle">Comprendre la finance, pas juste la suivre</div>
+      <div class="issue-line">N° 03 &nbsp;·&nbsp; 10 June 2026</div>
+    </div>
+
+    <div class="body">
+
+      <!-- SECTION 1 : M&A -->
+      <!-- DEAL -->
+      <div class="section">
+        <div class="section-label">Niveau 1 — Deal de la semaine</div>
+        <h2>Retour sur le LBO d'Electronic Arts : décortiquer la structure de dette (TLB, senior secured notes, PIK)</h2>
+        <div class="section-content"><p>Rappel express : lundi, on a posé la mécanique du LBO de <strong>Electronic Arts</strong> par le consortium <strong>Silver Lake / PIF / Affinity Partners</strong> — un take-private record de <strong>55 Md$</strong> (≈ 210 $/action), financé par environ <strong>20 Md$ d'equity</strong> et <strong>~36 Md$ de dette</strong> arrangée notamment par JPMorgan. Lundi on a vu le « comment l'effet de levier crée du rendement ». Aujourd'hui, on ouvre la boîte noire : <em>comment cette dette de 36 Md$ est-elle empilée, et pourquoi cette architecture précise ?</em></p></div>
+      </div>
+
+      
+
+      <div class="divider"></div>
+
+      <!-- MACRO & GÉOPO -->
+      <div class="section">
+        <div class="section-label">Niveau 3 — Macro & Géopolitique</div>
+        <h2></h2>
+        <div class="section-content"></div>
+      </div>
+
+      
+
+      <div class="divider"></div>
+
+      <!-- IA -->
+      
+
+      <!-- RAPPEL DE COURS -->
+      <div class="rappel-section">
+        <div class="section-label">Rappel de cours</div>
+        <h2>Les notions clés de ce numéro</h2>
+        <div class="section-content"><h3>La structure de dette d'un LBO : pourquoi 36 Md$ ne sont pas « un seul » emprunt</h3><p>Dans le deal EA, on a vu lundi que le consortium met ~20 Md$ d'equity et ~36 Md$ de dette. Pourquoi ne pas faire un seul gros prêt bancaire ? Parce qu'aucun prêteur n'accepte seul un tel risque, et surtout parce que chaque euro de dette n'a pas le même coût ni le même rang. La structure d'un LBO est un <strong>empilement (la « cap stack »)</strong>, ordonné par séniorité : ceux qui sont remboursés en premier en cas de faillite paient le moins cher.</p><h4>1. Le rappel des semaines précédentes</h4><p>Lundi (n°03), on a établi l'équation de base : <code>TRI = f(levier, croissance EBITDA, multiple de sortie, paydown de dette)</code>. Vendredi dernier (n°02), on avait introduit le <strong>Net Debt / EBITDA</strong> comme mesure de l'agressivité du levier. Aujourd'hui on désagrège ce « Net Debt » : ce n'est jamais un bloc homogène. On monte d'un cran : de « combien de dette » vers « <strong>quelle dette, à quel rang, à quel taux</strong> ».</p><h4>2. La cap stack du plus sûr au plus risqué</h4><p>De haut (le plus sénior, le moins cher) en bas :</p><ul><li><strong>Revolving Credit Facility (RCF)</strong> — ligne de trésorerie, rarement tirée à la clôture, sert au BFR. Taux le plus bas, souvent non incluse dans les 36 Md$ « dette nette » initiale.</li><li><strong>Term Loan B (TLB)</strong> — le cœur du financement LBO. Prêt à terme syndiqué auprès de <em>fonds de dette et CLO</em> (pas des banques de dépôt). Taux variable : <code>SOFR + marge</code> (typiquement SOFR + 300 à 425 bps sur un crédit solide). Amortissement quasi nul (1 %/an), remboursement « bullet » à maturité (~7 ans). Premier rang sur les actifs (<em>senior secured, 1st lien</em>).</li><li><strong>Senior Secured Notes</strong> — obligations garanties, souvent même rang que le TLB (1st lien) mais format obligataire à taux fixe, placées auprès d'investisseurs high yield. Maturité plus longue (8 ans), <em>non callable</em> pendant 2-3 ans.</li><li><strong>Senior Unsecured / 2nd lien Notes</strong> — non garanties ou en 2e rang. Taux nettement plus élevé (le coussin de protection est plus mince).</li><li><strong>PIK (Payment-In-Kind)</strong> — l'étage le plus risqué. Les intérêts ne sont pas payés en cash mais <strong>capitalisés</strong> (la dette grossit toute seule). Taux 11-14 %. Préserve le cash de l'entreprise au prix d'un effet boule de neige.</li></ul><h4>3. Les chiffres réels du deal EA</h4><p>Sur les ~36 Md$ levés, la presse financière (Bloomberg, Mergermarket) décrit un financement structuré majoritairement en <strong>dette syndiquée senior secured</strong> arrangée par JPMorgan, complétée par un large recours au <strong>marché privé / direct lending</strong> — fait notable vu la taille. À titre d'illustration pédagogique, une répartition plausible : ~24 Md$ de TLB + senior secured notes (1st lien), une tranche de high yield unsecured, et un complément en financement privé pour absorber ce que le marché syndiqué public ne digère pas seul. Avec un EBITDA EA d'environ 2,5 Md$, on est sur un levier brut de l'ordre de <strong>14x</strong> EBITDA brut côté entreprise value — d'où l'importance des 20 Md$ d'equity pour faire passer le risque. C'est ce qui explique pourquoi le consortium n'a pas pu pousser le levier « classique » de 5-6x : EA est un actif solide mais 55 Md$ exigent un coussin d'equity massif.</p><h4>4. Pourquoi ce mille-feuille ? La logique économique</h4><p>Chaque étage répond à un arbitrage <strong>coût ↔ flexibilité ↔ appétit des prêteurs</strong> :</p><ul><li>Le TLB est <strong>flexible</strong> (remboursable par anticipation sans pénalité après 6 mois) — idéal pour le « paydown » qui crée du TRI (vu lundi).</li><li>Les notes à taux fixe <strong>protègent contre la hausse des taux</strong> — crucial en 2026 où le SOFR reste élevé. Le sponsor ne veut pas que 100 % de sa dette soit à taux variable.</li><li>Le PIK <strong>protège le cash-flow</strong> dans les premières années, le temps que l'EBITDA monte.</li></ul><h4>5. L'erreur classique en entretien</h4><p>Confondre <strong>séniorité</strong> et <strong>format</strong>. Un TLB et des senior secured notes peuvent être de <em>même rang</em> (1st lien pari passu) tout en étant des instruments différents (prêt bancaire vs obligation, taux variable vs fixe, prêteurs différents). La séniorité décrit l'ordre de remboursement en liquidation ; le format décrit l'instrument. Un junior banquier qui répond « les notes sont forcément subordonnées au TLB » se fait recadrer.</p><p>👉 <strong>Vendredi</strong>, on verra comment le signal macro de la semaine — la trajectoire du SOFR et le ton de la Fed — change directement l'équation : un point de SOFR en plus sur 24 Md$ de dette variable, c'est 240 M$ d'intérêts annuels supplémentaires, soit ~10 % de l'EBITDA d'EA qui s'évapore. Le coût de la dette n'est pas une donnée figée.</p></div>
+      </div>
+
+      
+
+      <!-- QUESTION D'ENTRETIEN -->
+      <div class="interview-section">
+        <div class="section-label">🎯 Question d'entretien de la semaine</div>
+        <div class="interview-question">"Dans un LBO, un Term Loan B et des Senior Secured Notes peuvent être au même rang de séniorité. Si c'est le cas, pourquoi un sponsor utiliserait-il les deux plutôt que de tout financer en TLB ?"</div>
+        <div class="interview-answer">
+          <p><strong>Réponse structurée :</strong></p><ol><li><strong>Profil de taux.</strong> Le TLB est à taux variable (SOFR + marge), les senior secured notes sont à taux fixe. Mixer les deux permet de <em>diversifier l'exposition au risque de taux</em> : si le SOFR monte, la portion obligataire fixe protège le coût moyen de la dette.</li><li><strong>Base d'investisseurs différente.</strong> Le TLB est absorbé par les CLO et fonds de dette ; les notes high yield touchent les fonds obligataires institutionnels (asset managers, assureurs). Sur un deal géant comme EA (36 Md$), <em>aucun marché ne peut tout absorber seul</em> — il faut élargir le pool de prêteurs.</li><li><strong>Maturité et flexibilité.</strong> Le TLB est amortissable et remboursable par anticipation quasi sans pénalité — parfait pour le paydown qui dope le TRI. Les notes sont non-callable plusieurs années mais offrent des maturités plus longues qui sécurisent l'horizon de détention.</li><li><strong>Conclusion.</strong> Le sponsor n'optimise pas qu'un seul paramètre : il arbitre simultanément coût, risque de taux, flexibilité de remboursement et capacité d'absorption du marché. D'où un mille-feuille, même à séniorité égale.</li></ol><p><em>Bonus pour briller :</em> mentionner que la part de <strong>direct lending</strong> a explosé sur les méga-LBO 2025-2026 précisément parce que le marché syndiqué public sature au-delà de 20-25 Md$.</p>
+        </div>
+      </div>
+
+      <!-- OUTILS D'APPRENTISSAGE -->
+      <div class="tools-section">
+        <a class="tool-card" href="https://abarisan.github.io/newsletter-mna/quiz/quiz_2026-06-10.html" target="_blank">
+          <span class="icon">❓</span>
+          <span class="tool-title">Quiz ce numéro</span>
+          <span class="tool-desc">4 questions pour vérifier que tu as compris</span>
+        </a>
+        <a class="tool-card" href="https://claude.ai/new" target="_blank">
+          <span class="icon">🤖</span>
+          <span class="tool-title">Poser une question</span>
+          <span class="tool-desc">Ouvre ton Claude Project M&A pour aller plus loin</span>
+        </a>
+      </div>
+
+      <!-- SOURCES PAR NIVEAU -->
+      <div class="sources-section">
+        <div class="section-label">Sources</div>
+        <ul>
+          <li>[N1] Bloomberg — « EA's $55 Billion Take-Private: JPMorgan Leads Record LBO Debt Package » (financement senior secured / direct lending)</li>
+<li>[N1] Financial Times — « Inside the financing of the largest leveraged buyout on record »</li>
+<li>[N2] Mergermarket — « Electronic Arts buyout: debt syndication structure and lender breakdown »</li>
+<li>[N3] The Economist — « The return of the mega-buyout and what high rates mean for debt servicing »</li>
+<li>[N4] Preqin / Dealogic — Données 2025-2026 sur la part croissante du direct lending dans les LBO supérieurs à 20 Md$</li>
+        </ul>
+        <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:6px; font-family:'Helvetica Neue',Arial,sans-serif; font-size:10px;">
+          <span style="background:#fff3e8;border:1px solid #e85d1a;color:#c94e0e;padding:3px 8px;border-radius:20px;font-weight:700;">N1 · Bloomberg · FT · Capital Finance · CFNEWS · S&P</span>
+          <span style="background:#fff8f2;border:1px solid #f9a06b;color:#7a5c45;padding:3px 8px;border-radius:20px;">N2 · Mergermarket · Reuters · PitchBook</span>
+          <span style="background:#fdf6ee;border:1px solid #fde0c5;color:#9a7060;padding:3px 8px;border-radius:20px;">N3 · WSJ · The Economist</span>
+          <span style="background:#f9f9f9;border:1px solid #e0e0e0;color:#888;padding:3px 8px;border-radius:20px;">N4 · Dealogic · Preqin</span>
+        </div>
+      </div>
+
+    </div><!-- /body -->
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <p>
+        <span class="next">Deck Anki mis à jour en pièce jointe</span><br>
+        The Deal Brief · 3× par semaine · <a href="https://github.com/abarisan/newsletter-mna" style="color:#e85d1a;text-decoration:none;">Code source</a>
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>

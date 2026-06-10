@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz — The Deal Brief N°03</title>
+  <style>
+    body { font-family: 'Helvetica Neue', Arial, sans-serif; background: #fdf6ee; color: #2b1a0e;
+           margin: 0; padding: 40px 20px; }
+    .container { max-width: 640px; margin: 0 auto; }
+    h1 { font-size: 24px; color: #e85d1a; margin-bottom: 4px; }
+    .subtitle { color: #7a5c45; font-size: 13px; margin-bottom: 40px; }
+    .question { background: #fff; border-radius: 8px; padding: 24px; margin-bottom: 20px;
+                 box-shadow: 0 2px 8px rgba(232,93,26,0.08); }
+    .question h3 { font-size: 16px; margin-bottom: 16px; line-height: 1.5; }
+    .option { display: block; width: 100%; text-align: left; background: #fff8f2;
+               border: 1px solid #fde0c5; border-radius: 6px; padding: 12px 16px;
+               margin-bottom: 8px; cursor: pointer; font-size: 14px; transition: all .15s; }
+    .option:hover { background: #fff3e8; border-color: #f9a06b; }
+    .option.correct { background: #e6f9ec; border-color: #2ecc71; color: #1a6b3a; }
+    .option.wrong   { background: #fdecea; border-color: #e74c3c; color: #7b1c1c; }
+    .explanation { display: none; margin-top: 12px; padding: 12px 16px; background: #fff3e8;
+                    border-left: 3px solid #e85d1a; font-size: 13px; color: #5a3520;
+                    border-radius: 0 6px 6px 0; line-height: 1.6; }
+    .score { display: none; text-align: center; padding: 32px; background: #fff;
+              border-radius: 8px; box-shadow: 0 2px 8px rgba(232,93,26,0.08); }
+    .score h2 { font-size: 28px; color: #e85d1a; }
+    .score p { color: #5a3520; }
+    #submit { display: block; width: 100%; padding: 16px; background: #e85d1a; color: #fff;
+               border: none; border-radius: 8px; font-size: 16px; cursor: pointer; margin-top: 8px; }
+    #submit:hover { background: #c94e0e; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Quiz — N°03</h1>
+  <p class="subtitle">The Deal Brief · 10 June 2026 · 4 questions</p>
+  <div id="quiz"></div>
+  <button id="submit" onclick="submitQuiz()">Voir mes résultats</button>
+  <div class="score" id="score"></div>
+</div>
+<script>
+const questions = [{"question": "Quel est le montant total de la transaction (take-private) du LBO d'Electronic Arts ?", "options": ["A. 36 Md$", "B. 20 Md$", "C. 55 Md$", "D. 210 Md$"], "correct": 2, "explanation": "Le deal représente un take-private record de 55 Md$ (≈ 210 $/action). Le 36 Md$ correspond à la dette seule, le 20 Md$ à l'equity apportée par le consortium, et 210 $ est le prix par action (et non le montant total de la transaction)."}, {"question": "Comment se répartit le financement du LBO d'Electronic Arts ?", "options": ["A. ~36 Md$ d'equity et ~20 Md$ de dette", "B. ~20 Md$ d'equity et ~36 Md$ de dette", "C. 55 Md$ entièrement en dette", "D. 28 Md$ d'equity et 28 Md$ de dette"], "correct": 1, "explanation": "Le financement combine environ 20 Md$ d'equity apportée par le consortium Silver Lake / PIF / Affinity Partners et environ 36 Md$ de dette. L'option A inverse les montants, l'option C ignore l'equity, et l'option D propose une répartition incorrecte."}, {"question": "Pourquoi la dette d'un LBO est-elle structurée en plusieurs tranches plutôt qu'en un seul emprunt ?", "options": ["A. Pour réduire les frais juridiques", "B. Parce qu'aucun prêteur n'accepte seul un tel risque et que chaque euro de dette n'a pas le même coût ni le même rang", "C. Pour éviter de payer des impôts", "D. Parce que la réglementation l'impose obligatoirement"], "correct": 1, "explanation": "La structure en plusieurs tranches (la « cap stack ») s'explique par le fait qu'aucun prêteur n'accepte seul un risque aussi important, et parce que chaque tranche a un coût et un rang de séniorité différents. Les autres réponses ne correspondent pas aux raisons évoquées dans le cours."}, {"question": "Dans la « cap stack » d'un LBO, quel est le principe qui régit le coût de la dette selon la séniorité ?", "options": ["A. Les prêteurs remboursés en premier en cas de faillite paient le moins cher", "B. Tous les prêteurs paient le même taux", "C. Les prêteurs les plus risqués sont remboursés en premier", "D. Le coût dépend uniquement de la durée du prêt"], "correct": 0, "explanation": "La structure est ordonnée par séniorité : ceux qui sont remboursés en premier en cas de faillite (les plus séniors, donc les moins risqués) paient le moins cher. L'option B est fausse car les taux varient selon le rang, l'option C inverse la logique (les plus risqués sont remboursés en dernier), et l'option D ignore le critère de séniorité qui est central."}];
+let answered = {};
+
+function buildQuiz() {
+  const quiz = document.getElementById('quiz');
+  questions.forEach((q, qi) => {
+    const div = document.createElement('div');
+    div.className = 'question';
+    div.innerHTML = `<h3>${qi+1}. ${q.question}</h3>` +
+      q.options.map((o, oi) =>
+        `<button class="option" id="q${qi}_${oi}" onclick="answer(${qi},${oi},${q.correct})">${o}</button>`
+      ).join('') +
+      `<div class="explanation" id="exp${qi}">${q.explanation}</div>`;
+    quiz.appendChild(div);
+  });
+}
+
+function answer(qi, oi, correct) {
+  if (answered[qi] !== undefined) return;
+  answered[qi] = oi;
+  const btn = document.getElementById(`q${qi}_${oi}`);
+  const correctBtn = document.getElementById(`q${qi}_${correct}`);
+  btn.classList.add(oi === correct ? 'correct' : 'wrong');
+  if (oi !== correct) correctBtn.classList.add('correct');
+  document.getElementById(`exp${qi}`).style.display = 'block';
+}
+
+function submitQuiz() {
+  const score = Object.values(answered).filter((a, i) => a === questions[i].correct).length;
+  const total = questions.length;
+  const msg = score === total ? "🏆 Parfait ! Tu maîtrises ce numéro." :
+              score >= total/2 ? "👍 Bien, relis les explications des questions ratées." :
+              "📖 Relis le cours — ces notions vont revenir en entretien.";
+  document.getElementById('score').innerHTML =
+    `<h2>${score} / ${total}</h2><p>${msg}</p>`;
+  document.getElementById('score').style.display = 'block';
+  document.getElementById('submit').style.display = 'none';
+  window.scrollTo(0, document.getElementById('score').offsetTop - 20);
+}
+
+buildQuiz();
+</script>
+</body>
+</html>

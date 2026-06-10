@@ -178,5 +178,41 @@
     "verso": "Le ratio Dette/EBITDA mesure le niveau de levier : il indique combien d'années d'EBITDA seraient nécessaires pour rembourser la dette. Plus il est élevé, plus le LBO est risqué. Les prêteurs imposent généralement des plafonds (souvent autour de 5-7x selon les conditions de marché) pour s'assurer que la cible peut servir sa dette.",
     "numero": "02",
     "id": 1393268406
+  },
+  {
+    "recto": "Qu'est-ce que la « cap stack » (structure de capital) dans un LBO ?",
+    "verso": "C'est l'empilement des différentes sources de financement d'une opération, ordonné par séniorité (rang de remboursement). En cas de faillite, les créanciers les plus seniors sont remboursés en premier ; ils assument donc moins de risque et exigent un coût plus faible. La dette d'un LBO n'est jamais un emprunt unique mais une combinaison de tranches aux coûts et risques différents.",
+    "numero": "03",
+    "id": 1555174311
+  },
+  {
+    "recto": "Qu'est-ce qu'une dette PIK (Payment In Kind) ?",
+    "verso": "C'est une dette dont les intérêts ne sont pas payés en cash périodiquement mais capitalisés : ils s'ajoutent au principal et sont remboursés à l'échéance. Elle préserve la trésorerie de l'entreprise pendant le LBO, mais coûte cher car elle est très junior et son montant croît dans le temps (intérêts composés).",
+    "numero": "03",
+    "id": 1461193083
+  },
+  {
+    "recto": "Comment fonctionne la hiérarchie de séniorité dans une structure de dette de LBO ?",
+    "verso": "Les tranches sont classées par ordre de remboursement en cas de défaut : la dette senior secured (ex. TLB, senior secured notes) est garantie par les actifs et remboursée en premier, donc moins chère. Viennent ensuite les tranches plus juniors (subordonnée, mezzanine, PIK), qui assument plus de risque et exigent un rendement plus élevé. Plus on descend dans la cap stack, plus le coût augmente.",
+    "numero": "03",
+    "id": 1680173348
+  },
+  {
+    "recto": "Comment l'effet de levier crée-t-il du rendement pour les fonds propres dans un LBO ?",
+    "verso": "En finançant l'acquisition majoritairement par de la dette plutôt que par de l'equity, le fonds engage moins de capital propre. À la revente, après remboursement de la dette, la plus-value se concentre sur une base d'equity réduite, ce qui amplifie le TRI. Le TRI dépend ainsi du levier, de la croissance de l'EBITDA et de l'évolution du multiple de sortie.",
+    "numero": "03",
+    "id": 1409435361
+  },
+  {
+    "recto": "Pourquoi un LBO de grande taille mobilise-t-il plusieurs tranches de dette plutôt qu'un seul prêt ?",
+    "verso": "Aucun prêteur n'accepte seul d'assumer un risque aussi important. De plus, fractionner la dette en tranches (TLB, senior notes, PIK) permet d'optimiser le coût global : chaque tranche cible un type d'investisseur avec son appétit pour le risque et son rendement attendu. On élargit ainsi le pool de capital disponible tout en minimisant le coût pondéré de la dette.",
+    "numero": "03",
+    "id": 2001742635
+  },
+  {
+    "recto": "Dans quel cas utilise-t-on une dette mezzanine ou PIK plutôt qu'une dette senior ?",
+    "verso": "On y recourt lorsque la capacité d'endettement senior est saturée mais qu'il faut encore boucler le financement sans diluer davantage l'equity. La mezzanine/PIK comble l'écart entre dette senior et fonds propres : plus risquée et plus chère, elle est aussi plus flexible (intérêts capitalisés) et utile quand on veut préserver le cash-flow opérationnel les premières années.",
+    "numero": "03",
+    "id": 1742288472
   }
 ]

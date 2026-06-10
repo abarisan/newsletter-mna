@@ -1,14 +1,18 @@
 {
-  "numero": 4,
-  "depth": 4,
+  "numero": 5,
+  "depth": 5,
   "concepts_vus": [
     "LBO : achat d'une cible financé majoritairement par dette",
     "Modélisation LBO : comment la structure tient",
     "Structuration de la dette LBO : passage du modèle au financement réel",
-    "Mécanique du levier en grandeur réelle : application à un LBO de 55 Md$"
+    "Mécanique du levier en grandeur réelle : application à un LBO de 55 Md$",
+    "Tranches de dette LBO : pourquoi un financement se décompose en plusieurs instruments",
+    "Term Loan B (TLB) : caractéristiques et rôle dans la structure",
+    "Senior secured notes : place dans la hiérarchie de la dette",
+    "PIK (Payment In Kind) : mécanisme et positionnement dans la structure"
   ],
   "deals_ouverts": [
-    "EA / Consortium PIF / Silver Lake / Affinity (55 Md$) : la mécanique du levier en grandeur réelle"
+    "EA / Consortium PIF / Silver Lake / Affinity (55 Md$) : décortiquer la structure de dette (TLB, senior secured notes, PIK)"
   ],
   "objectif": "Préparer des entretiens M&A dans 1 mois, puis sur 2-3 ans"
 }
