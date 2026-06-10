@@ -1,6 +1,6 @@
 {
-  "numero": 5,
-  "depth": 5,
+  "numero": 6,
+  "depth": 6,
   "concepts_vus": [
     "LBO : achat d'une cible financé majoritairement par dette",
     "Modélisation LBO : comment la structure tient",
@@ -9,11 +9,14 @@
     "Tranches de dette LBO : pourquoi un financement se décompose en plusieurs instruments",
     "Term Loan B (TLB) : caractéristiques et rôle dans la structure",
     "Senior secured notes : place dans la hiérarchie de la dette",
-    "PIK (Payment In Kind) : mécanisme et positionnement dans la structure"
+    "PIK (Payment In Kind) : mécanisme et positionnement dans la structure",
+    "Financial Disclosure : importance du reporting financier, illustrée par EA",
+    "10-K : contenu et rôle du rapport annuel SEC",
+    "Delisting : sortie de cote et fin du reporting public US lors d'un passage en privé"
   ],
   "deals_ouverts": [
-    "EA / Consortium PIF / Silver Lake / Affinity (55 Md$) : décortiquer la structure de dette (TLB, senior secured notes, PIK)"
+    "EA / Consortium PIF / Silver Lake / Affinity (55 Md$) : analyse du 10-K final avant delisting, dernier reporting US avant passage en privé"
   ],
   "objectif": "Préparer des entretiens M&A dans 1 mois, puis sur 2-3 ans",
-  "trainy_index": 0
+  "trainy_index": 1
 }

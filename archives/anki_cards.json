@@ -214,5 +214,41 @@
     "verso": "On y recourt lorsque la capacité d'endettement senior est saturée mais qu'il faut encore boucler le financement sans diluer davantage l'equity. La mezzanine/PIK comble l'écart entre dette senior et fonds propres : plus risquée et plus chère, elle est aussi plus flexible (intérêts capitalisés) et utile quand on veut préserver le cash-flow opérationnel les premières années.",
     "numero": "03",
     "id": 1742288472
+  },
+  {
+    "recto": "Qu'est-ce que le financial disclosure (information financière obligatoire) ?",
+    "verso": "Le disclosure désigne l'ensemble des informations qu'une entreprise est légalement obligée de rendre publiques. Son étendue ne dépend pas que de la taille, mais surtout du régime (cotée vs privée) et de la géographie (US vs Europe). Une société cotée aux US est soumise au régime de disclosure parmi les plus exigeants au monde via la SEC.",
+    "numero": "04",
+    "id": 1812888322
+  },
+  {
+    "recto": "Qu'est-ce qu'un Form 10-K et un Form 10-Q ?",
+    "verso": "Ce sont les rapports périodiques qu'une société cotée doit déposer auprès de la SEC américaine. Le 10-K est le rapport annuel détaillé (états financiers audités, risques, activité), tandis que le 10-Q est le rapport trimestriel, plus léger et non audité. Ils constituent le cœur du disclosure d'une entreprise publique.",
+    "numero": "04",
+    "id": 2086650143
+  },
+  {
+    "recto": "Comment le statut d'une entreprise change-t-il ses obligations de publication lors d'un delisting ?",
+    "verso": "En passant de cotée à privée (delisting), une entreprise perd l'essentiel de ses obligations de reporting public envers le régulateur. Le dernier 10-K avant delisting est donc le dernier document complet accessible aux investisseurs externes. Ensuite, l'information devient quasi inexistante pour le public, réservée aux actionnaires privés et créanciers.",
+    "numero": "04",
+    "id": 2007412723
+  },
+  {
+    "recto": "Comment un consortium d'investisseurs structure-t-il l'acquisition d'un grand groupe coté ?",
+    "verso": "Plusieurs investisseurs (fonds de PE, fonds souverains, family offices) s'associent en consortium pour mutualiser les capitaux nécessaires à une opération de très grande taille. Ils apportent ensemble les fonds propres (equity), complétés par de la dette, afin de racheter 100% des actions et retirer la société de la cote (take-private).",
+    "numero": "04",
+    "id": 1767734983
+  },
+  {
+    "recto": "Pourquoi un fonds de PE retire-t-il une entreprise de la cote (take-private) dans un LBO ?",
+    "verso": "Sortir une entreprise de la bourse permet d'échapper aux contraintes de reporting trimestriel et à la pression du marché, d'agir sur le long terme et de restructurer librement. Le fonds peut piloter la création de valeur sans transparence imposée, puis revendre ou réintroduire en bourse quelques années plus tard. La réduction du disclosure protège aussi la stratégie de la concurrence.",
+    "numero": "04",
+    "id": 1778034073
+  },
+  {
+    "recto": "Pourquoi comparer les régimes de disclosure US et européen est-il pertinent en entretien ?",
+    "verso": "Les deux systèmes n'imposent pas la même information, ni au même rythme, ni dans le même format. Comprendre ces différences montre qu'on sait où trouver l'information financière selon la juridiction et le statut de l'entreprise. C'est crucial pour analyser un deal cross-border ou évaluer la qualité des données disponibles sur une cible.",
+    "numero": "04",
+    "id": 2032579447
   }
 ]
