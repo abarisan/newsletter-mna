@@ -32,6 +32,44 @@ GMAIL_APP_PASS  = os.environ["GMAIL_APP_PASSWORD"]
 ANTHROPIC_KEY   = os.environ["ANTHROPIC_API_KEY"]
 
 
+import feedparser
+
+# ─────────────────────────────────────────────────────────────────────────────
+# SCRAPING RSS — actus M&A en temps réel
+# ─────────────────────────────────────────────────────────────────────────────
+
+RSS_FEEDS = [
+    ("CNBC Finance",    "N1", "https://www.cnbc.com/id/10000049/device/rss/rss.html"),
+    ("FT",              "N1", "https://www.ft.com/rss/home"),
+    ("WSJ Markets",     "N3", "https://feeds.content.dowjones.io/public/rss/mw_realtimeheadlines"),
+    ("MarketWatch",     "N1", "https://feeds.marketwatch.com/marketwatch/marketpulse/"),
+    ("NYT DealBook",    "N2", "https://rss.nytimes.com/services/xml/rss/nyt/Business.xml"),
+]
+
+def fetch_recent_news(max_per_feed: int = 5) -> str:
+    """Récupère les dernières actus M&A/finance via RSS et retourne un résumé texte."""
+    items = []
+    for name, level, url in RSS_FEEDS:
+        try:
+            feed = feedparser.parse(url)
+            for entry in feed.entries[:max_per_feed]:
+                title   = entry.get("title", "").strip()
+                summary = entry.get("summary", entry.get("description", "")).strip()
+                # Nettoie le HTML basique dans le summary
+                import re
+                summary = re.sub(r"<[^>]+>", " ", summary)[:200].strip()
+                published = entry.get("published", "")[:16]
+                if title:
+                    items.append(f"[{level} · {name}] {title} ({published})\n  → {summary}")
+        except Exception:
+            pass  # On ignore les feeds qui tombent
+
+    if not items:
+        return "Aucune actu récupérée via RSS (feeds indisponibles)."
+
+    return "## Actus M&A récentes — flux RSS en temps réel\n\n" + "\n\n".join(items[:25])
+
+
 SYSTEM_PROMPT = """Tu es un analyste M&A senior qui rédige une newsletter hebdomadaire pour un étudiant
 préparant des entretiens en banque d'affaires (M&A).
 
@@ -389,6 +427,10 @@ def generate_content(client: anthropic.Anthropic, date_str: str, archive_dir: Pa
     previous_issues = load_previous_issues(archive_dir)
     prompt_template = get_day_prompt(weekday)
 
+    # Actus RSS en temps réel
+    print("📡 Récupération des actus RSS...")
+    live_news = fetch_recent_news()
+
     # Chapitre TRAINY en cours
     idx     = level.get("trainy_index", 0)
     lesson  = get_lesson(idx)
@@ -408,7 +450,7 @@ def generate_content(client: anthropic.Anthropic, date_str: str, archive_dir: Pa
         date=date_str,
         numero=numero,
         jour=jour,
-        previous_issues=previous_issues + trainy_context
+        previous_issues=previous_issues + trainy_context + "\n\n" + live_news
     )
 
     message = client.messages.create(
