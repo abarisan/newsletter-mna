@@ -76,34 +76,51 @@ Pour les données chiffrées sur le marché, cite au minimum une source N4 si di
 
 CONTENT_PROMPT_DAILY = """Génère le contenu de THE DEAL BRIEF N°{numero} — {date} ({jour}).
 
-## Contexte
+## Contexte des numéros précédents
 {previous_issues}
 
 ---
 
-## Format quotidien — concis et dense
+## Construction du numéro
 
-Chaque numéro = 1 chapitre du programme + 1 deal réel qui l'illustre + 1 question d'entretien.
-Pas de remplissage. Chaque phrase doit apporter quelque chose d'utile pour un entretien M&A.
+**Étape 1 : le chapitre du jour est fixé** (voir section "Programme de cours" dans le contexte).
+Choisis le deal réel le plus récent qui illustre CE chapitre précisément.
+Si un deal déjà ouvert a du nouveau ET colle au chapitre, reviens dessus.
 
-### 1. DEAL — fil conducteur
-- 1 deal réel récent (ou avancée sur un deal ouvert) qui illustre PARFAITEMENT le chapitre du jour
-- 3-4 paragraphes : ce qui s'est passé, les chiffres clés, le rationnel, le point technique lié au cours
-- Phrase d'entretien prête à l'emploi
+**Étape 2 : cours en profondeur.**
+Le chapitre TRAINY est le fil directeur. Va aussi loin que possible techniquement.
+Lien explicite avec le deal : "dans ce deal, on voit que X — voilà pourquoi".
+Progression : mécanique de base → complexification → chiffres réels → cas limite ou erreur classique en entretien.
+Annonce ce qu'on verra demain (prochain chapitre).
 
-### 2. COURS — chapitre TRAINY du jour
-- Titre = le concept précis (pas "rappel de cours")
-- Intro : lien explicite avec le deal ("dans ce deal, on voit que X — voilà pourquoi")
-- Corps : mécanique de base → complexification → cas limite ou erreur classique en entretien
-- 1 schéma mental ou formule à retenir
-- Ce qu'on verra demain (annonce le prochain chapitre)
+**Étape 3 : signal macro.**
+Y a-t-il un fait macro/géopo cette semaine qui éclaire directement le deal ou le concept du jour ?
+Si oui, 1 paragraphe de lien explicite. Sinon, le signal macro le plus impactant pour le M&A.
 
-### 3. SIGNAL MACRO (vendredi uniquement ou si fort lien avec le cours)
-- 1 fait macro de la semaine qui change concrètement la donne pour le M&A
+---
+
+## Structure complète
+
+### 1. DEAL — [titre accrocheur]
+- Ce qui s'est passé (deal nouveau ou avancée sur un deal ouvert)
+- Chiffres précis : prix, prime, levier, structure equity/dette, banques conseil
+- Rationnel stratégique : pourquoi maintenant, pourquoi ces acteurs
+- Zoom technique : l'aspect du deal qui illustre directement le chapitre du jour
+- Phrase d'entretien prête à l'emploi (2-3 lignes avec opinion personnelle)
+
+### 2. SIGNAL MACRO & GÉOPOLITIQUE
+- 1 fait précis avec date et source
+- Mécanisme de transmission vers le M&A : coût de la dette, valorisations, appétit acheteurs
+
+### 3. COURS — [titre = concept précis du chapitre TRAINY, jamais "rappel de cours"]
+- Intro : lien avec le deal et les numéros précédents
+- Corps complet et profond : progression simple → complexe, chiffres tirés du deal réel
+- Encadrés de définitions pour les termes techniques clés
+- Fin : ce que le lecteur sait maintenant + ce qu'on verra demain
 
 ### 4. QUESTION D'ENTRETIEN
-- Directement tirée du cours du jour
-- Réponse structurée en 2-3 points avec les bons termes
+- Directement inspirée du cours et du deal de CE numéro
+- Réponse structurée en 2-3 points avec les bons termes techniques
 
 ---
 
@@ -115,13 +132,13 @@ Retourne UNIQUEMENT ce JSON :
   "ma_titre": "...",
   "ma_contenu": "HTML avec <p> <strong> <em> <ul> <ol> et class='callout'",
   "macro_titre": "...",
-  "macro_contenu": "HTML ou chaîne vide si pas pertinent aujourd'hui",
-  "ia_titre": "",
-  "ia_contenu": "",
-  "rappel_cours": "HTML du cours avec <p> <strong> <em> <ul> <ol> et <div class='term'><div class='term-name'>...</div>",
+  "macro_contenu": "HTML...",
+  "ia_titre": "...",
+  "ia_contenu": "HTML ou chaîne vide si pas pertinent",
+  "rappel_cours": "HTML avec <p> <strong> <em> <ul> <ol> et <div class='term'><div class='term-name'>...</div>",
   "question_entretien": "...",
   "reponse_structuree": "HTML...",
-  "sources": ["[N1] ...", "[N2] ...", "[N3] ...", "[N4] ... (si dispo)"]
+  "sources": ["[N1] Bloomberg ou FT ou Capital Finance — titre", "[N2] Mergermarket ou Reuters — titre", "[N3] WSJ ou The Economist — titre", "[N4] Dealogic ou Preqin — donnée (si dispo)"]
 }}
 """
 
