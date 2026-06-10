@@ -318,7 +318,7 @@ def get_day_prompt(weekday: int) -> str:
         return CONTENT_PROMPT  # fallback format complet
 
 
-def generate_content(client: anthropic.Anthropic, date_str: str, archive_dir: Path, weekday: int) -> dict:
+def generate_content(client: anthropic.Anthropic, date_str: str, archive_dir: Path, weekday: int, level: dict) -> dict:
     """Appelle Claude pour générer le contenu de la newsletter."""
     import json
 
@@ -326,10 +326,24 @@ def generate_content(client: anthropic.Anthropic, date_str: str, archive_dir: Pa
     previous_issues = load_previous_issues(archive_dir)
     prompt_template = get_day_prompt(weekday)
 
+    # Chapitre TRAINY en cours
+    idx     = level.get("trainy_index", 0)
+    lesson  = get_lesson(idx)
+    next_l  = get_next_lesson(idx)
+    trainy_context = (
+        f"\n## Programme de cours (TRAINY)\n"
+        f"Chapitre en cours — Module {lesson['module']} · {lesson['titre_module']} : "
+        f"**{lesson['titre']}** ({lesson['duree']})\n"
+        f"Prochain chapitre : Module {next_l['module']} · {next_l['titre']} ({next_l['duree']})\n\n"
+        f"Le cours du mercredi DOIT couvrir ce chapitre précisément. "
+        f"Le deal du lundi et la question d'entretien doivent l'illustrer concrètement. "
+        f"Ne couvre pas le prochain chapitre cette semaine.\n"
+    )
+
     prompt = prompt_template.format(
         date=date_str,
         numero=numero,
-        previous_issues=previous_issues
+        previous_issues=previous_issues + trainy_context
     )
 
     message = client.messages.create(
@@ -351,12 +365,56 @@ def generate_content(client: anthropic.Anthropic, date_str: str, archive_dir: Pa
 
 LEVEL_FILE = Path(__file__).parent / "level.json"
 
+# ─── Plan de cours TRAINY ───────────────────────────────────────────────────
+TRAINY_CURRICULUM = [
+    # MODULE 1 — Accounting Fundamentals
+    {"module": 1, "titre_module": "Accounting Fundamentals", "video": 1, "titre": "Financial Disclosure (US vs Europe)", "duree": "3 min"},
+    {"module": 1, "titre_module": "Accounting Fundamentals", "video": 2, "titre": "Income Statement (P&L, EBITDA, EBIT, D&A, COGS, OPEX)", "duree": "40 min"},
+    {"module": 1, "titre_module": "Accounting Fundamentals", "video": 3, "titre": "Cash Flow Statement (Operating / Investing / Financing)", "duree": "31 min"},
+    {"module": 1, "titre_module": "Accounting Fundamentals", "video": 4, "titre": "Balance Sheet (Assets & Liabilities)", "duree": "46 min"},
+    {"module": 1, "titre_module": "Accounting Fundamentals", "video": 5, "titre": "Links between the 3 financial statements", "duree": "25 min"},
+    {"module": 1, "titre_module": "Accounting Fundamentals", "video": 6, "titre": "Working Capital (variations, BS vs CFS)", "duree": "19 min"},
+    {"module": 1, "titre_module": "Accounting Fundamentals", "video": 7, "titre": "Goodwill", "duree": "10 min"},
+    {"module": 1, "titre_module": "Accounting Fundamentals", "video": 8, "titre": "EPS & Diluted EPS", "duree": "10 min"},
+    # MODULE 2 — Advanced Accounting
+    {"module": 2, "titre_module": "Advanced Accounting", "video": 1, "titre": "Consolidation Methods & Group Accounts (full / proportionate / equity)", "duree": "31 min"},
+    {"module": 2, "titre_module": "Advanced Accounting", "video": 2, "titre": "Calendarisation (LTM, NTM, YTD, FY, CY)", "duree": "10 min"},
+    {"module": 2, "titre_module": "Advanced Accounting", "video": 3, "titre": "Financial Projections (drivers, business plan)", "duree": "8 min"},
+    {"module": 2, "titre_module": "Advanced Accounting", "video": 4, "titre": "Focus on Inventories (LIFO, FIFO, WAC)", "duree": "8 min"},
+    # MODULE 3 — The EV/Equity Bridge
+    {"module": 3, "titre_module": "The EV/Equity Bridge", "video": 1, "titre": "What is the EV/EqV Bridge (net debt, step by step)", "duree": "32 min"},
+    {"module": 3, "titre_module": "The EV/Equity Bridge", "video": 2, "titre": "Diluted Equity Value & Treasury Stock Method", "duree": "14 min"},
+    {"module": 3, "titre_module": "The EV/Equity Bridge", "video": 3, "titre": "Dette vs Equity (coût, types, séniorité, faillite)", "duree": "33 min"},
+    # MODULE 4 — Valuation Methods
+    {"module": 4, "titre_module": "Valuation Methods", "video": 1, "titre": "Overview of all valuation methods (comparaison, cas d'usage)", "duree": "19 min"},
+    {"module": 4, "titre_module": "Valuation Methods", "video": 2, "titre": "Trading Comparables (peers cotés, multiples)", "duree": "28 min"},
+    {"module": 4, "titre_module": "Valuation Methods", "video": 3, "titre": "Precedent Transactions", "duree": "18 min"},
+    {"module": 4, "titre_module": "Valuation Methods", "video": 4, "titre": "Walk me through a DCF", "duree": "31 min"},
+    {"module": 4, "titre_module": "Valuation Methods", "video": 5, "titre": "Focus on WACC (calcul détaillé)", "duree": "24 min"},
+    {"module": 4, "titre_module": "Valuation Methods", "video": 6, "titre": "The LBO Method (étapes complètes)", "duree": "25 min"},
+    {"module": 4, "titre_module": "Valuation Methods", "video": 7, "titre": "Paper LBO (cas numérique, MoM & IRR)", "duree": "14 min"},
+    # MODULE 5 — Focus on M&A Operations
+    {"module": 5, "titre_module": "Focus on M&A Operations", "video": 1, "titre": "Mergers & Acquisitions Operations (synergies, accretive/dilutive)", "duree": "19 min"},
+    {"module": 5, "titre_module": "Focus on M&A Operations", "video": 2, "titre": "Buy-Side & Sell-Side Processes", "duree": "9 min"},
+    # MODULE 6 — Fit, Brainteasers & Calculus
+    {"module": 6, "titre_module": "Fit, Brainteasers & Calculus", "video": 1, "titre": "Brainteasers & Market Sizing", "duree": "2 min"},
+    {"module": 6, "titre_module": "Fit, Brainteasers & Calculus", "video": 2, "titre": "Fit Preparation (motivation, 'why you?', deal récent)", "duree": "11 min"},
+]
+
+def get_lesson(index: int) -> dict:
+    """Retourne le chapitre TRAINY à l'index donné (modulo si on a tout fini)."""
+    return TRAINY_CURRICULUM[index % len(TRAINY_CURRICULUM)]
+
+def get_next_lesson(index: int) -> dict:
+    return TRAINY_CURRICULUM[(index + 1) % len(TRAINY_CURRICULUM)]
+
 DEFAULT_LEVEL = {
     "numero": 0,
-    "depth": 1,          # 1=débutant → 10=expert
-    "concepts_vus": [],  # concepts déjà couverts
-    "deals_ouverts": [], # deals à suivre
+    "depth": 1,             # 1=débutant → 10=expert
+    "concepts_vus": [],     # concepts déjà couverts
+    "deals_ouverts": [],    # deals à suivre
     "objectif": "Préparer des entretiens M&A dans 1 mois, puis sur 2-3 ans",
+    "trainy_index": 0,      # position dans TRAINY_CURRICULUM (0-based)
 }
 
 def load_level() -> dict:
@@ -760,12 +818,17 @@ Retourne UNIQUEMENT ce JSON mis à jour (même structure, valeurs mises à jour)
   "depth": <entre 1 et 10, augmente très progressivement>,
   "concepts_vus": <liste mise à jour avec les nouveaux concepts>,
   "deals_ouverts": <liste mise à jour — retire les deals clôturés, ajoute les nouveaux>,
-  "objectif": "{objectif}"
+  "objectif": "{objectif}",
+  "trainy_index": {trainy_index}
 }}
 """
 
-def update_level(client: anthropic.Anthropic, content: dict, level: dict) -> dict:
+def update_level(client: anthropic.Anthropic, content: dict, level: dict, weekday: int) -> dict:
     numero = int(content.get("numero", level["numero"] + 1))
+    # On avance dans le programme TRAINY uniquement le mercredi (jour de cours)
+    current_idx = level.get("trainy_index", 0)
+    new_idx = current_idx + 1 if weekday == 2 else current_idx
+
     msg = client.messages.create(
         model="claude-opus-4-8", max_tokens=500,
         messages=[{"role": "user", "content": LEVEL_UPDATE_PROMPT.format(
@@ -774,12 +837,16 @@ def update_level(client: anthropic.Anthropic, content: dict, level: dict) -> dic
             deal_titre=content.get("ma_titre", ""),
             numero=numero,
             numero_int=numero,
-            objectif=level["objectif"]
+            objectif=level["objectif"],
+            trainy_index=new_idx,
         )}]
     )
     text = msg.content[0].text
     start, end = text.find("{"), text.rfind("}") + 1
-    return json.loads(text[start:end])
+    result = json.loads(text[start:end])
+    # Sécurité : on force l'index si Claude l'oublie
+    result.setdefault("trainy_index", new_idx)
+    return result
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -804,7 +871,7 @@ def main():
 
     # 1. Génération du contenu principal
     print(f"📝 [{jour}] Génération du contenu pour le {date_str}...")
-    content = generate_content(client, date_str, archive_dir, weekday)
+    content = generate_content(client, date_str, archive_dir, weekday, level)
     numero  = content.get("numero", "XX")
 
     # 2. Schémas SVG (deal + cours + macro)
@@ -835,7 +902,7 @@ def main():
 
     # 6. Mise à jour du niveau
     print("📈 Mise à jour du niveau...")
-    new_level = update_level(client, content, level)
+    new_level = update_level(client, content, level, weekday)
     save_level(new_level)
 
     # 7. Rendu HTML et archive
