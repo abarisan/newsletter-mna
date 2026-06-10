@@ -16,11 +16,13 @@ from email.mime.base import MIMEBase
 from email import encoders
 from pathlib import Path
 
-# Rythme : lundi = deal, mercredi = cours, vendredi = macro + question
+# Rythme quotidien lun-ven
 DAY_FORMAT = {
-    0: "LUNDI",    # Monday
-    2: "MERCREDI", # Wednesday
-    4: "VENDREDI", # Friday
+    0: "LUNDI",
+    1: "MARDI",
+    2: "MERCREDI",
+    3: "JEUDI",
+    4: "VENDREDI",
 }
 
 
@@ -70,6 +72,57 @@ Pour les données chiffrées sur le marché, cite au minimum une source N4 si di
 - Langue : français, ton direct et pédagogique, jamais condescendant
 - Chiffres précis, sources nommées avec titre d'article si possible
 - Jamais de généralités : toujours un acteur nommé, un chiffre, une date
+"""
+
+CONTENT_PROMPT_DAILY = """Génère le contenu de THE DEAL BRIEF N°{numero} — {date} ({jour}).
+
+## Contexte
+{previous_issues}
+
+---
+
+## Format quotidien — concis et dense
+
+Chaque numéro = 1 chapitre du programme + 1 deal réel qui l'illustre + 1 question d'entretien.
+Pas de remplissage. Chaque phrase doit apporter quelque chose d'utile pour un entretien M&A.
+
+### 1. DEAL — fil conducteur
+- 1 deal réel récent (ou avancée sur un deal ouvert) qui illustre PARFAITEMENT le chapitre du jour
+- 3-4 paragraphes : ce qui s'est passé, les chiffres clés, le rationnel, le point technique lié au cours
+- Phrase d'entretien prête à l'emploi
+
+### 2. COURS — chapitre TRAINY du jour
+- Titre = le concept précis (pas "rappel de cours")
+- Intro : lien explicite avec le deal ("dans ce deal, on voit que X — voilà pourquoi")
+- Corps : mécanique de base → complexification → cas limite ou erreur classique en entretien
+- 1 schéma mental ou formule à retenir
+- Ce qu'on verra demain (annonce le prochain chapitre)
+
+### 3. SIGNAL MACRO (vendredi uniquement ou si fort lien avec le cours)
+- 1 fait macro de la semaine qui change concrètement la donne pour le M&A
+
+### 4. QUESTION D'ENTRETIEN
+- Directement tirée du cours du jour
+- Réponse structurée en 2-3 points avec les bons termes
+
+---
+
+Retourne UNIQUEMENT ce JSON :
+{{
+  "numero": "{numero}",
+  "date": "{date}",
+  "jour": "{jour}",
+  "ma_titre": "...",
+  "ma_contenu": "HTML avec <p> <strong> <em> <ul> <ol> et class='callout'",
+  "macro_titre": "...",
+  "macro_contenu": "HTML ou chaîne vide si pas pertinent aujourd'hui",
+  "ia_titre": "",
+  "ia_contenu": "",
+  "rappel_cours": "HTML du cours avec <p> <strong> <em> <ul> <ol> et <div class='term'><div class='term-name'>...</div>",
+  "question_entretien": "...",
+  "reponse_structuree": "HTML...",
+  "sources": ["[N1] ...", "[N2] ...", "[N3] ...", "[N4] ... (si dispo)"]
+}}
 """
 
 CONTENT_PROMPT_LUNDI = """Génère le contenu du LUNDI pour THE DEAL BRIEF N°{numero} — {date}.
@@ -307,15 +360,8 @@ def get_next_issue_number(archive_dir: Path) -> str:
 
 
 def get_day_prompt(weekday: int) -> str:
-    """Retourne le prompt adapté au jour de la semaine."""
-    if weekday == 0:
-        return CONTENT_PROMPT_LUNDI
-    elif weekday == 2:
-        return CONTENT_PROMPT_MERCREDI
-    elif weekday == 4:
-        return CONTENT_PROMPT_VENDREDI
-    else:
-        return CONTENT_PROMPT  # fallback format complet
+    """Retourne le prompt du jour — quotidien par défaut."""
+    return CONTENT_PROMPT_DAILY
 
 
 def generate_content(client: anthropic.Anthropic, date_str: str, archive_dir: Path, weekday: int, level: dict) -> dict:
@@ -340,9 +386,11 @@ def generate_content(client: anthropic.Anthropic, date_str: str, archive_dir: Pa
         f"Ne couvre pas le prochain chapitre cette semaine.\n"
     )
 
+    jour = DAY_FORMAT.get(weekday, "LUNDI")
     prompt = prompt_template.format(
         date=date_str,
         numero=numero,
+        jour=jour,
         previous_issues=previous_issues + trainy_context
     )
 
@@ -825,9 +873,9 @@ Retourne UNIQUEMENT ce JSON mis à jour (même structure, valeurs mises à jour)
 
 def update_level(client: anthropic.Anthropic, content: dict, level: dict, weekday: int) -> dict:
     numero = int(content.get("numero", level["numero"] + 1))
-    # On avance dans le programme TRAINY uniquement le mercredi (jour de cours)
+    # On avance dans le programme TRAINY chaque jour (rythme quotidien)
     current_idx = level.get("trainy_index", 0)
-    new_idx = current_idx + 1 if weekday == 2 else current_idx
+    new_idx = current_idx + 1
 
     msg = client.messages.create(
         model="claude-opus-4-8", max_tokens=500,
@@ -912,7 +960,8 @@ def main():
     archive_file.write_text(html, encoding="utf-8")
 
     # 8. Envoi email avec Anki en pièce jointe
-    subject_prefix = {"LUNDI": "📌 Deal", "MERCREDI": "📚 Cours", "VENDREDI": "🌍 Macro"}.get(jour, "📰")
+    lesson = get_lesson(level.get("trainy_index", 0))
+    subject_prefix = f"📚 M{lesson['module']}·{lesson['video']} {lesson['titre'][:40]}"
     print("📧 Envoi par email...")
     send_email(html, f"{subject_prefix} — The Deal Brief N°{numero} · {date_str}",
                attachments=[anki_path])

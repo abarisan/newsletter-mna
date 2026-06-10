@@ -1,11 +1,13 @@
-name: Newsletter hebdomadaire — The Deal Brief
+name: Newsletter quotidienne — The Deal Brief
 
 on:
   schedule:
-    # Lundi, mercredi, vendredi à 7h00 Paris (UTC+2 en été → 05:00 UTC)
-    - cron: '0 5 * * 1'   # lundi   — deal de la semaine
-    - cron: '0 5 * * 3'   # mercredi — cours en profondeur
-    - cron: '0 5 * * 5'   # vendredi — macro + question d'entretien
+    # Lundi → vendredi à 7h00 Paris (UTC+2 en été → 05:00 UTC)
+    - cron: '0 5 * * 1'   # lundi
+    - cron: '0 5 * * 2'   # mardi
+    - cron: '0 5 * * 3'   # mercredi
+    - cron: '0 5 * * 4'   # jeudi
+    - cron: '0 5 * * 5'   # vendredi
   workflow_dispatch:
     # Permet aussi de lancer manuellement depuis GitHub Actions
 
