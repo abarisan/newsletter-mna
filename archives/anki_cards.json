@@ -250,5 +250,41 @@
     "verso": "Les deux systèmes n'imposent pas la même information, ni au même rythme, ni dans le même format. Comprendre ces différences montre qu'on sait où trouver l'information financière selon la juridiction et le statut de l'entreprise. C'est crucial pour analyser un deal cross-border ou évaluer la qualité des données disponibles sur une cible.",
     "numero": "04",
     "id": 2032579447
+  },
+  {
+    "recto": "Qu'est-ce que le compte de résultat (Income Statement / P&L) ?",
+    "verso": "C'est l'un des trois états financiers principaux. Il répond à la question : l'entreprise a-t-elle gagné ou perdu de l'argent sur une période donnée ? On le lit de haut en bas comme un entonnoir, en partant du chiffre d'affaires et en retirant les coûts par couches successives jusqu'au résultat net.",
+    "numero": "04",
+    "id": 1665760606
+  },
+  {
+    "recto": "Qu'est-ce que l'EBITDA et que mesure-t-il ?",
+    "verso": "L'EBITDA (Earnings Before Interest, Taxes, Depreciation and Amortization) mesure la rentabilité opérationnelle avant la structure de financement, la fiscalité et les charges non-cash d'amortissement. Il sert de proxy de la performance d'exploitation, mais peut masquer des éléments essentiels comme l'intensité capitalistique d'une entreprise (capex lourds non reflétés).",
+    "numero": "04",
+    "id": 1404173937
+  },
+  {
+    "recto": "Comment lit-on un compte de résultat de haut en bas ?",
+    "verso": "On part du chiffre d'affaires (Revenue) au sommet, puis on soustrait successivement le coût des ventes pour obtenir la marge brute, les charges opérationnelles pour l'EBIT, les intérêts et les impôts, jusqu'au résultat net en bas. Chaque ligne retire une couche de coûts, comme un entonnoir.",
+    "numero": "04",
+    "id": 1802362682
+  },
+  {
+    "recto": "Comment une hausse des taux directeurs d'une banque centrale (ex. BCE) impacte-t-elle les valorisations boursières ?",
+    "verso": "Une hausse des taux augmente le taux d'actualisation utilisé dans les modèles de valorisation (DCF), ce qui réduit la valeur actuelle des flux futurs. Elle renchérit aussi le coût de la dette des entreprises et rend les placements obligataires plus attractifs face aux actions, pesant ainsi sur les valorisations.",
+    "numero": "04",
+    "id": 1570377477
+  },
+  {
+    "recto": "Pourquoi l'EBITDA peut-il 'cacher l'essentiel' lors de l'analyse d'une entreprise ?",
+    "verso": "Parce qu'il exclut l'amortissement et les charges d'intérêts : une entreprise très capitalistique (forts investissements en équipements) affichera un EBITDA flatteur tout en consommant énormément de cash en capex. En entretien, il faut donc compléter l'EBITDA par le free cash flow et l'examen des investissements pour juger de la vraie rentabilité.",
+    "numero": "04",
+    "id": 1905729599
+  },
+  {
+    "recto": "Pourquoi une entreprise structure-t-elle son IPO pour ouvrir son capital aux épargnants particuliers (retail) ?",
+    "verso": "Ouvrir l'IPO au retail élargit la base d'investisseurs et la demande, ce qui peut soutenir la valorisation et la liquidité du titre. Cela renforce aussi l'adhésion publique à la marque, mais expose ces épargnants à des sociétés parfois peu profitables ou volatiles, d'où une attention réglementaire accrue.",
+    "numero": "04",
+    "id": 1865178826
   }
 ]

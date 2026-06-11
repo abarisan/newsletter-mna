@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Deal Brief</title>
+  <style>
+    /* ── Palette : clair / nuances d'orange ── */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #fdf6ee;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      color: #2b1a0e;
+      line-height: 1.75;
+    }
+
+    .wrapper {
+      max-width: 680px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(232,93,26,0.10);
+    }
+
+    .header {
+      background: linear-gradient(135deg, #ff6b2b 0%, #e85d1a 100%);
+      padding: 48px 48px 36px;
+      text-align: center;
+    }
+    .header .eyebrow {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ffe8d6;
+      margin-bottom: 16px;
+    }
+    .header h1 {
+      font-size: 36px;
+      font-weight: 400;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .header .subtitle {
+      font-size: 13px;
+      color: #ffd4b8;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      letter-spacing: 0.5px;
+    }
+    .header .issue-line {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.25);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #ffe8d6;
+      letter-spacing: 1px;
+    }
+
+    .body { padding: 0 48px 48px; }
+
+    .section { margin-top: 48px; }
+    .section-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #e85d1a;
+      margin-bottom: 6px;
+    }
+    .section h2 {
+      font-size: 22px;
+      font-weight: 400;
+      color: #2b1a0e;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #f9a06b;
+    }
+    .section-content { font-size: 15px; color: #3d2510; }
+    .section-content p { margin-bottom: 14px; }
+    .section-content strong { color: #c94e0e; font-weight: 700; }
+    .section-content ul, .section-content ol { padding-left: 20px; margin-bottom: 14px; }
+    .section-content li { margin-bottom: 6px; }
+
+    .callout {
+      background: #fff3e8;
+      border-left: 3px solid #e85d1a;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 14px;
+      color: #5a3520;
+      font-style: italic;
+      border-radius: 0 4px 4px 0;
+    }
+    .callout strong { font-style: normal; color: #c94e0e; }
+
+    .rappel-section {
+      margin-top: 48px;
+      background: #fff3e8;
+      margin-left: -48px;
+      margin-right: -48px;
+      padding: 36px 48px;
+      border-top: 3px solid #f9a06b;
+      border-bottom: 3px solid #f9a06b;
+    }
+    .rappel-section .section-label { color: #e85d1a; }
+    .rappel-section h2 { color: #2b1a0e; border-bottom-color: #fde0c5; font-size: 20px; }
+    .rappel-section .section-content { color: #5a3520; }
+    .rappel-section .section-content strong { color: #c94e0e; }
+    .rappel-section .term { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid #fde0c5; }
+    .rappel-section .term:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .rappel-section .term-name {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .interview-section {
+      margin-top: 48px;
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 28px 32px;
+    }
+    .interview-section .section-label { color: #e85d1a; }
+    .interview-question { font-size: 18px; font-style: italic; color: #2b1a0e; margin: 12px 0 20px; line-height: 1.4; }
+    .interview-answer { font-size: 14px; color: #5a3520; }
+
+    .sources-section { margin-top: 48px; padding-top: 24px; border-top: 1px solid #fde0c5; }
+    .sources-section .section-label { margin-bottom: 12px; }
+    .sources-section ul { list-style: none; padding: 0; }
+    .sources-section li {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #7a5c45;
+      margin-bottom: 6px;
+      padding-left: 12px;
+      position: relative;
+    }
+    .sources-section li::before { content: '→'; position: absolute; left: 0; color: #e85d1a; }
+
+    .footer {
+      background: #fdf6ee;
+      padding: 28px 48px;
+      text-align: center;
+      border-top: 1px solid #fde0c5;
+    }
+    .footer p { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; color: #9a7060; line-height: 1.8; }
+    .footer .next { color: #c94e0e; font-weight: 600; }
+
+    .divider { height: 1px; background: #fde0c5; margin: 36px 0; }
+
+    /* ── Schéma SVG ── */
+    .diagram-section {
+      margin-top: 48px;
+    }
+    .diagram-section .section-label {
+      margin-bottom: 12px;
+    }
+    .diagram-wrap {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      overflow-x: auto;
+    }
+    .diagram-wrap svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* ── Outils d'apprentissage ── */
+    .tools-section {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .tool-card {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      transition: box-shadow .15s;
+    }
+    .tool-card:hover { box-shadow: 0 4px 16px rgba(232,93,26,0.15); }
+    .tool-card .icon { font-size: 28px; display: block; margin-bottom: 8px; }
+    .tool-card .tool-title {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .tool-card .tool-desc {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      color: #7a5c45;
+    }
+
+    @media (max-width: 600px) {
+      .wrapper { margin: 0; border-radius: 0; }
+      .header { padding: 32px 24px 24px; }
+      .body { padding: 0 24px 32px; }
+      .rappel-section { margin-left: -24px; margin-right: -24px; padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="eyebrow">Newsletter M&A · Finance · IA · Géopolitique</div>
+      <h1>The Deal Brief</h1>
+      <div class="subtitle">Comprendre la finance, pas juste la suivre</div>
+      <div class="issue-line">N° 04 &nbsp;·&nbsp; 11 June 2026</div>
+    </div>
+
+    <div class="body">
+
+      <!-- SECTION 1 : M&A -->
+      <!-- DEAL -->
+      <div class="section">
+        <div class="section-label">Niveau 1 — Deal de la semaine</div>
+        <h2>DEAL — SpaceX vise les bourses : comment lire un compte de résultat dont l'EBITDA cache l'essentiel</h2>
+        <div class="section-content"><p>Cette semaine, le <strong>Financial Times</strong> (« How SpaceX could pull millions of savers into Musk's orbit », 11 juin 2026) et le <strong>NYT DealBook</strong> (« How Tesla's Stock Listing in 2010 Enabled SpaceX's I.P.O. », 11 juin 2026) confirment ce que le marché attendait : <strong>SpaceX</strong> structure son entrée en bourse pour ouvrir son capital à des millions d'épargnants particuliers. Valorisation de référence discutée dans les tours secondaires : autour de <strong>350 Md$</strong>, ce qui en ferait l'une des plus grosses IPO jamais montées.</p>
+<p>Pourquoi ce deal sert notre chapitre du jour (le compte de résultat) ? Parce qu'une IPO oblige l'émetteur à <strong>publier un P&L normé</strong> — et que SpaceX est l'exemple parfait d'une boîte où l'<strong>EBITDA</strong> et le <strong>résultat net</strong> racontent deux histoires totalement différentes.</p>
+<ul><li><strong>Deux moteurs de revenus</strong> : le lancement (Falcon 9, Starship) et surtout <strong>Starlink</strong>, la connectivité satellite, qui serait passée le cap de la rentabilité opérationnelle.</li><li><strong>Banques conseil</strong> : selon le FT, le tour de table réunit les bookrunners habituels des méga-IPO tech (Goldman Sachs, Morgan Stanley) — la structure exacte n'est pas figée.</li><li><strong>Le piège comptable</strong> : SpaceX est une entreprise massivement capitalistique. Construire des fusées et déployer une constellation de milliers de satellites, c'est du <strong>CAPEX</strong> colossal, donc des <strong>D&A</strong> (amortissements) énormes qui écrasent l'EBIT bien en dessous de l'EBITDA.</li></ul>
+<div class='callout'><strong>Zoom technique — pourquoi l'EBITDA séduit et trompe.</strong> Si SpaceX affiche un EBITDA largement positif mais un EBIT proche de zéro, ce n'est pas du maquillage : c'est la signature d'un modèle où les <strong>D&A</strong> représentent une part énorme des coûts. L'investisseur qui ne regarde que l'EBITDA croit voir une machine à cash ; celui qui descend jusqu'à l'EBIT comprend que le capital investi pèse lourd chaque année. Dans un dossier comme Starlink, la vraie question d'analyste est : <em>l'EBITDA couvre-t-il le CAPEX de maintenance de la constellation ?</em></div>
+<p><strong>Phrase d'entretien prête à l'emploi :</strong> « Sur un dossier capitalistique comme SpaceX, je ne me fie jamais à l'EBITDA seul : je descends jusqu'à l'EBIT pour mesurer le poids réel des D&A. Un EBITDA flatteur avec un EBIT écrasé, c'est le signe d'une intensité capitalistique forte — et donc d'un besoin de réinvestissement permanent que la marge brute ne dit pas. »</p></div>
+      </div>
+
+      
+
+      <div class="divider"></div>
+
+      <!-- MACRO & GÉOPO -->
+      <div class="section">
+        <div class="section-label">Niveau 3 — Macro & Géopolitique</div>
+        <h2>SIGNAL MACRO — La BCE relève ses taux à cause de la guerre Iran-US : le coût du capital remonte</h2>
+        <div class="section-content"><p><strong>NYT DealBook</strong> (« With Inflation Bearing Down, Europe Is Facing Higher Interest Rates », 11 juin 2026) : la <strong>BCE</strong> s'apprête à relever ses taux pour la première fois depuis septembre 2023, sous l'effet de la flambée des prix de l'énergie provoquée par <strong>l'escalade militaire entre les États-Unis et l'Iran</strong> (FT, « US and Iran exchange fresh wave of strikes », 11 juin 2026).</p>
+<p><strong>Mécanisme de transmission vers le M&A :</strong> une hausse des taux directeurs renchérit le coût de la dette. Pour une IPO comme SpaceX, le lien est indirect mais réel — quand le taux sans risque monte, le <strong>taux d'actualisation</strong> appliqué aux cash-flows futurs grimpe, ce qui <strong>comprime mécaniquement les valorisations</strong> des sociétés de croissance dont la valeur repose sur des flux lointains. Une boîte qui investit massivement aujourd'hui pour des profits dans 5-10 ans (Starlink, Starship) est précisément le profil le plus pénalisé par une remontée des taux. C'est aussi pourquoi Musk se dépêche d'ouvrir le capital tant que la fenêtre est encore favorable.</p></div>
+      </div>
+
+      
+
+      <div class="divider"></div>
+
+      <!-- IA -->
+      
+
+      <!-- RAPPEL DE COURS -->
+      <div class="rappel-section">
+        <div class="section-label">Rappel de cours</div>
+        <h2>Les notions clés de ce numéro</h2>
+        <div class="section-content"><p>Depuis lundi on a posé les bases de l'analyse fondamentale. Aujourd'hui on attaque le premier des trois états financiers : le <strong>compte de résultat</strong> (Income Statement, ou P&L). C'est le document qui répond à une seule question : <em>l'entreprise a-t-elle gagné ou perdu de l'argent sur une période ?</em></p>
+<p>Le compte de résultat se lit <strong>de haut en bas</strong>, comme un entonnoir. On part du chiffre d'affaires et on retire les coûts par couches successives jusqu'au résultat net. Reprenons l'exemple SpaceX pour le rendre concret.</p>
+<p><strong>1. Le sommet : le chiffre d'affaires (Revenue).</strong> Tout ce que SpaceX facture : contrats de lancement + abonnements Starlink. C'est la ligne du haut, le « top line ».</p>
+<p><strong>2. On retire les COGS</strong> → on obtient la <strong>marge brute</strong>. Les COGS, ce sont les coûts <em>directement</em> liés à la production du service vendu : carburant, pièces consommées dans un lancement, coût des terminaux Starlink livrés.</p>
+<div class='term'><div class='term-name'>COGS (Cost of Goods Sold)</div>Coûts directement attribuables à la production de ce qui est vendu. Pour SpaceX : matériaux d'un lanceur, énergie d'un tir. Pas les salaires du siège, pas le marketing.</div>
+<p><strong>3. On retire les OPEX</strong> → on obtient l'<strong>EBITDA</strong>, puis l'<strong>EBIT</strong>. Les OPEX sont les coûts d'exploitation <em>indirects</em> : R&D, salaires administratifs, marketing, frais généraux.</p>
+<div class='term'><div class='term-name'>OPEX (Operating Expenses)</div>Coûts de fonctionnement non directement liés à la production : R&D, SG&A (frais commerciaux et administratifs), marketing.</div>
+<div class='term'><div class='term-name'>EBITDA</div>Earnings Before Interest, Taxes, Depreciation & Amortization. Le résultat d'exploitation <strong>avant</strong> de déduire les amortissements. C'est l'indicateur préféré des banquiers car il neutralise les choix de financement et d'amortissement → il permet de comparer deux entreprises entre elles.</div>
+<div class='term'><div class='term-name'>D&A (Depreciation & Amortization)</div>L'étalement comptable du coût des actifs dans le temps. Une fusée à 100 M$ utilisable 5 ans génère ~20 M$ de D&A par an. Aucune sortie de cash cette année-là : c'est une charge purement comptable.</div>
+<div class='term'><div class='term-name'>EBIT (Operating Income)</div>EBITDA moins les D&A. C'est le vrai résultat d'exploitation, après avoir reconnu l'usure du capital. Sur un modèle capitalistique comme SpaceX, l'écart EBITDA → EBIT est énorme.</div>
+<p><strong>4. On retire les intérêts et les impôts</strong> → on arrive au <strong>résultat net</strong> (« bottom line »), ce qui revient réellement à l'actionnaire.</p>
+<p>L'enchaînement complet : <strong>CA − COGS = Marge brute − OPEX = EBITDA − D&A = EBIT − Intérêts − Impôts = Résultat net</strong>.</p>
+<div class='callout'><strong>Erreur classique en entretien :</strong> confondre EBITDA et cash. L'EBITDA n'est PAS du cash. Il ignore le CAPEX, la variation du BFR et les remboursements de dette. Une entreprise peut afficher un EBITDA superbe et pourtant brûler du cash chaque mois si son CAPEX dévore tout. C'est exactement le risque qu'un analyste doit traquer chez SpaceX.</div>
+<p><strong>Ce que tu sais maintenant :</strong> lire un P&L de haut en bas, distinguer COGS et OPEX, comprendre pourquoi EBITDA ≠ EBIT ≠ résultat net, et pourquoi l'EBITDA ne dit rien du cash réel. <strong>Demain :</strong> on enchaîne précisément là-dessus avec le <strong>tableau de flux de trésorerie</strong> (Cash Flow Statement) — où l'on verra où passe vraiment le cash que le P&L ne montre pas.</p></div>
+      </div>
+
+      
+
+      <!-- QUESTION D'ENTRETIEN -->
+      <div class="interview-section">
+        <div class="section-label">🎯 Question d'entretien de la semaine</div>
+        <div class="interview-question">"Une entreprise affiche un EBITDA positif et en croissance, mais un résultat net négatif. Comment l'expliques-tu, et est-ce un signal d'alarme ?"</div>
+        <div class="interview-answer">
+          <p><strong>Structure de réponse en 3 points :</strong></p><ol><li><strong>Identifier ce qui sépare l'EBITDA du résultat net.</strong> Entre les deux, il y a trois postes : les <strong>D&A</strong>, les <strong>intérêts</strong> et les <strong>impôts</strong>. Un EBITDA positif et un résultat net négatif signifie que l'un de ces trois postes (ou plusieurs) écrase le résultat. Le cas le plus fréquent : des D&A massives.</li><li><strong>Lier au modèle économique.</strong> C'est typique d'une entreprise capitalistique en phase d'investissement — comme SpaceX avec sa constellation Starlink. L'entreprise génère un cash d'exploitation positif (EBITDA), mais le poids comptable des actifs (D&A) et/ou une dette importante (intérêts) ramènent le résultat net dans le rouge. Ce n'est pas forcément alarmant : c'est la signature d'un business en construction.</li><li><strong>Trancher avec le bon réflexe.</strong> Le vrai juge de paix n'est pas le résultat net, c'est le <strong>cash-flow</strong>. Je vérifierais si l'EBITDA couvre le CAPEX de maintenance et le service de la dette. Si oui, le résultat net négatif est juste un artefact comptable d'amortissement → pas alarmant. Si l'EBITDA ne couvre même pas le CAPEX, là le modèle brûle du cash et le signal devient sérieux.</li></ol>
+        </div>
+      </div>
+
+      <!-- OUTILS D'APPRENTISSAGE -->
+      <div class="tools-section">
+        <a class="tool-card" href="https://abarisan.github.io/newsletter-mna/quiz/quiz_2026-06-11.html" target="_blank">
+          <span class="icon">❓</span>
+          <span class="tool-title">Quiz ce numéro</span>
+          <span class="tool-desc">4 questions pour vérifier que tu as compris</span>
+        </a>
+        <a class="tool-card" href="https://claude.ai/new" target="_blank">
+          <span class="icon">🤖</span>
+          <span class="tool-title">Poser une question</span>
+          <span class="tool-desc">Ouvre ton Claude Project M&A pour aller plus loin</span>
+        </a>
+      </div>
+
+      <!-- SOURCES PAR NIVEAU -->
+      <div class="sources-section">
+        <div class="section-label">Sources</div>
+        <ul>
+          <li>[N1] Financial Times — How SpaceX could pull millions of savers into Musk's orbit (11 juin 2026)</li>
+<li>[N2] NYT DealBook — How Tesla's Stock Listing in 2010 Enabled SpaceX's I.P.O. (11 juin 2026)</li>
+<li>[N3] NYT DealBook — With Inflation Bearing Down, Europe Is Facing Higher Interest Rates (11 juin 2026)</li>
+<li>[N4] Données de marché : valorisation secondaire SpaceX ~350 Md$ (référence des tours de table rapportée par le FT)</li>
+        </ul>
+        <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:6px; font-family:'Helvetica Neue',Arial,sans-serif; font-size:10px;">
+          <span style="background:#fff3e8;border:1px solid #e85d1a;color:#c94e0e;padding:3px 8px;border-radius:20px;font-weight:700;">N1 · Bloomberg · FT · Capital Finance · CFNEWS · S&P</span>
+          <span style="background:#fff8f2;border:1px solid #f9a06b;color:#7a5c45;padding:3px 8px;border-radius:20px;">N2 · Mergermarket · Reuters · PitchBook</span>
+          <span style="background:#fdf6ee;border:1px solid #fde0c5;color:#9a7060;padding:3px 8px;border-radius:20px;">N3 · WSJ · The Economist</span>
+          <span style="background:#f9f9f9;border:1px solid #e0e0e0;color:#888;padding:3px 8px;border-radius:20px;">N4 · Dealogic · Preqin</span>
+        </div>
+      </div>
+
+    </div><!-- /body -->
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <p>
+        <span class="next">Deck Anki mis à jour en pièce jointe</span><br>
+        The Deal Brief · 3× par semaine · <a href="https://github.com/abarisan/newsletter-mna" style="color:#e85d1a;text-decoration:none;">Code source</a>
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>

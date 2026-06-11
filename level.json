@@ -1,5 +1,5 @@
 {
-  "numero": 6,
+  "numero": 4,
   "depth": 6,
   "concepts_vus": [
     "LBO : achat d'une cible financé majoritairement par dette",
@@ -18,5 +18,5 @@
     "EA / Consortium PIF / Silver Lake / Affinity (55 Md$) : analyse du 10-K final avant delisting, dernier reporting US avant passage en privé"
   ],
   "objectif": "Préparer des entretiens M&A dans 1 mois, puis sur 2-3 ans",
-  "trainy_index": 1
+  "trainy_index": 2
 }
