@@ -463,7 +463,10 @@ def generate_content(client: anthropic.Anthropic, date_str: str, archive_dir: Pa
     text = message.content[0].text
     start = text.find("{")
     end   = text.rfind("}") + 1
-    return json.loads(text[start:end])
+    try:
+        return json.loads(text[start:end])
+    except (json.JSONDecodeError, ValueError) as e:
+        raise RuntimeError(f"Claude n'a pas retourné de JSON valide : {e}\n{text[:500]}")
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -640,7 +643,10 @@ Macro : {content.get('macro_titre', '')}
     )
     text = msg.content[0].text
     start, end = text.find("{"), text.rfind("}") + 1
-    return json.loads(text[start:end])["questions"]
+    try:
+        return json.loads(text[start:end])["questions"]
+    except (json.JSONDecodeError, ValueError, KeyError):
+        return []  # Pas de quiz ce numéro si Claude rate le format
 
 
 def render_quiz_page(questions: list, date_str: str, numero: str) -> str:
@@ -790,7 +796,10 @@ def generate_anki_cards(client: anthropic.Anthropic, content: dict) -> list:
     )
     text = msg.content[0].text
     start, end = text.find("{"), text.rfind("}") + 1
-    return json.loads(text[start:end])["cards"]
+    try:
+        return json.loads(text[start:end])["cards"]
+    except (json.JSONDecodeError, ValueError, KeyError):
+        return []  # Pas de cartes ce numéro si Claude rate le format
 
 
 def build_anki_deck(new_cards: list, numero: str, deck_path: Path) -> Path:
@@ -950,8 +959,11 @@ def update_level(client: anthropic.Anthropic, content: dict, level: dict, weekda
     )
     text = msg.content[0].text
     start, end = text.find("{"), text.rfind("}") + 1
-    result = json.loads(text[start:end])
-    # Sécurité : on force l'index si Claude l'oublie
+    try:
+        result = json.loads(text[start:end])
+    except (json.JSONDecodeError, ValueError):
+        # Fallback : on garde le niveau actuel et on avance juste l'index
+        result = {**level, "numero": numero, "trainy_index": new_idx}
     result.setdefault("trainy_index", new_idx)
     return result
 
