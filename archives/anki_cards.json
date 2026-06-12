@@ -322,5 +322,41 @@
     "verso": "Le montant levé ne représente que la fraction du capital vendue au marché, pas la valeur totale. La valorisation (equity value) s'obtient en multipliant le prix par action par le nombre total d'actions en circulation, pas seulement celles vendues. Une société peut lever une somme importante tout en ne cédant qu'une petite part de son capital, signe d'une valorisation bien supérieure au produit de l'IPO.",
     "numero": "05",
     "id": 1983412765
+  },
+  {
+    "recto": "Qu'est-ce qu'un bilan (Balance Sheet) ?",
+    "verso": "C'est une photographie de la situation financière d'une entreprise à un instant T. Il répond à deux questions : ce que l'entreprise possède (les actifs) et comment elle l'a financé (les passifs, qui regroupent dettes et capitaux propres). Par construction, total des actifs = total des passifs.",
+    "numero": "06",
+    "id": 1787047872
+  },
+  {
+    "recto": "Qu'est-ce qu'une IPO (Initial Public Offering) ?",
+    "verso": "C'est l'introduction en bourse d'une entreprise, c'est-à-dire la première mise en vente de ses actions sur un marché public. Elle permet de lever des fonds propres auprès d'investisseurs et donne une valorisation de marché à l'entreprise. Par exemple, une société peut lever plusieurs milliards en émettant de nouvelles actions cotées.",
+    "numero": "06",
+    "id": 1361809450
+  },
+  {
+    "recto": "Comment une levée de fonds en IPO impacte-t-elle le bilan ?",
+    "verso": "Quand du cash entre via une IPO, l'actif augmente du côté de la trésorerie (cash). En contrepartie, au passif, les capitaux propres (equity) augmentent du même montant, puisque ce cash provient de l'émission de nouvelles actions. Le bilan reste donc équilibré : actif et passif progressent simultanément.",
+    "numero": "06",
+    "id": 1932836156
+  },
+  {
+    "recto": "Comment distingue-t-on les actifs des passifs dans un bilan ?",
+    "verso": "Les actifs représentent ce que l'entreprise possède et utilise pour générer de la valeur (cash, stocks, immobilisations, créances). Les passifs représentent comment ces actifs ont été financés : par de la dette (passifs externes) ou par les capitaux propres (apports des actionnaires et bénéfices conservés). Les deux côtés s'équilibrent toujours.",
+    "numero": "06",
+    "id": 1210719949
+  },
+  {
+    "recto": "Pourquoi une entreprise choisit-elle de s'introduire en bourse plutôt que de lever de la dette ?",
+    "verso": "L'IPO lève des fonds propres sans créer d'obligation de remboursement ni d'intérêts à payer, ce qui réduit le risque financier par rapport à la dette. Elle apporte aussi de la liquidité aux actionnaires existants et une valorisation publique. En revanche, elle dilue le contrôle et expose l'entreprise aux contraintes réglementaires des marchés cotés.",
+    "numero": "06",
+    "id": 1170594191
+  },
+  {
+    "recto": "Pourquoi des actions records peuvent-elles coexister avec une hausse des rendements obligataires ('bond and equity conundrum') ?",
+    "verso": "Classiquement, une hausse des rendements obligataires rend les obligations plus attractives et pèse sur les actions, en augmentant le taux d'actualisation des flux futurs. Quand les deux montent ensemble, la logique financière habituelle est 'mise sur la tête', signalant souvent des anticipations de croissance forte ou des dynamiques de marché atypiques. Cela complique l'allocation d'actifs et la valorisation relative entre classes d'actifs.",
+    "numero": "06",
+    "id": 1320235125
   }
 ]
