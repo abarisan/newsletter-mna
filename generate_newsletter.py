@@ -162,20 +162,27 @@ Si oui, 1 paragraphe de lien explicite. Sinon, le signal macro le plus impactant
 
 ---
 
+RÈGLES ABSOLUES SUR LE JSON :
+- `ma_contenu` : minimum 4 paragraphes <p> avec chiffres précis, rationnel, zoom technique, phrase d'entretien
+- `rappel_cours` : OBLIGATOIRE et LONG — c'est le cœur du numéro. Minimum 600 mots. Mécanique complète du chapitre TRAINY du jour, avec définitions encadrées (<div class='term'>), exemples chiffrés, cas limites, erreurs classiques en entretien.
+- `macro_titre` + `macro_contenu` : toujours remplis, jamais vides
+- `question_entretien` : une vraie question précise entre guillemets, jamais vide
+- `reponse_structuree` : réponse complète en 3 points minimum avec les bons termes techniques
+
 Retourne UNIQUEMENT ce JSON :
 {{
   "numero": "{numero}",
   "date": "{date}",
   "jour": "{jour}",
   "ma_titre": "...",
-  "ma_contenu": "HTML avec <p> <strong> <em> <ul> <ol> et class='callout'",
+  "ma_contenu": "HTML avec <p> <strong> <em> <ul> <ol> et class='callout' — MINIMUM 4 paragraphes",
   "macro_titre": "...",
-  "macro_contenu": "HTML...",
+  "macro_contenu": "HTML — toujours rempli",
   "ia_titre": "...",
   "ia_contenu": "HTML ou chaîne vide si pas pertinent",
-  "rappel_cours": "HTML avec <p> <strong> <em> <ul> <ol> et <div class='term'><div class='term-name'>...</div>",
-  "question_entretien": "...",
-  "reponse_structuree": "HTML...",
+  "rappel_cours": "HTML LONG avec <p> <strong> <em> <ul> <ol> et <div class='term'><div class='term-name'>TERME</div>Définition...</div> — MINIMUM 600 mots",
+  "question_entretien": "Question précise entre guillemets — jamais vide",
+  "reponse_structuree": "HTML avec 3 points minimum — jamais vide",
   "sources": ["[N1] Bloomberg ou FT ou Capital Finance — titre", "[N2] Mergermarket ou Reuters — titre", "[N3] WSJ ou The Economist — titre", "[N4] Dealogic ou Preqin — donnée (si dispo)"]
 }}
 """
@@ -464,9 +471,35 @@ def generate_content(client: anthropic.Anthropic, date_str: str, archive_dir: Pa
     start = text.find("{")
     end   = text.rfind("}") + 1
     try:
-        return json.loads(text[start:end])
+        content = json.loads(text[start:end])
     except (json.JSONDecodeError, ValueError) as e:
         raise RuntimeError(f"Claude n'a pas retourné de JSON valide : {e}\n{text[:500]}")
+
+    # Validation : les champs critiques ne doivent pas être vides
+    required = ["ma_titre", "ma_contenu", "rappel_cours", "question_entretien", "reponse_structuree"]
+    missing  = [k for k in required if not str(content.get(k, "")).strip()]
+    if missing:
+        # Retry une fois avec un rappel explicite
+        print(f"⚠️  Champs vides : {missing} — retry...")
+        retry_prompt = (
+            prompt + f"\n\nATTENTION : ta réponse précédente avait ces champs vides : {missing}. "
+            "Tu DOIS remplir TOUS les champs, notamment rappel_cours (cours complet du chapitre), "
+            "question_entretien et reponse_structuree. Regenere un JSON complet."
+        )
+        message2 = client.messages.create(
+            model="claude-opus-4-8", max_tokens=5000,
+            system=SYSTEM_PROMPT,
+            messages=[{"role": "user", "content": retry_prompt}]
+        )
+        text2  = message2.content[0].text
+        start2 = text2.find("{")
+        end2   = text2.rfind("}") + 1
+        try:
+            content = json.loads(text2[start2:end2])
+        except (json.JSONDecodeError, ValueError):
+            pass  # On garde le premier si le retry rate aussi
+
+    return content
 
 
 # ─────────────────────────────────────────────────────────────────────────────
