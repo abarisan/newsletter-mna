@@ -613,24 +613,36 @@ def generate_diagrams(client: anthropic.Anthropic, content: dict) -> dict:
     """Génère 2-3 schémas SVG simples pour le deal, le cours et la macro."""
     diagrams = {}
 
+    # Sujets avec fallback pour éviter les champs vides
+    deal_sujet  = content.get("ma_titre", "") or "Structure d'un deal M&A"
+    deal_data   = content.get("ma_contenu", "")[:300] or content.get("macro_contenu", "")[:300]
+    cours_sujet = content.get("rappel_cours", "")[:200] or content.get("ma_titre", "") or "Concept financier clé"
+    cours_data  = content.get("rappel_cours", "")[:300] or content.get("ma_contenu", "")[:300]
+    macro_sujet = content.get("macro_titre", "") or "Signal macro et impact M&A"
+    macro_data  = content.get("macro_contenu", "")[:250] or content.get("ma_contenu", "")[:250]
+
     specs = [
-        ("diagram_deal", content.get("ma_titre", ""), content.get("ma_contenu", "")[:300]),
-        ("diagram_cours", content.get("rappel_cours", "")[:200], content.get("ma_contenu", "")[:200]),
-        ("diagram_macro", content.get("macro_titre", ""), content.get("macro_contenu", "")[:250]),
+        ("diagram_deal",  deal_sujet,  deal_data),
+        ("diagram_cours", cours_sujet, cours_data),
+        ("diagram_macro", macro_sujet, macro_data),
     ]
 
     for key, sujet, donnees in specs:
-        if not sujet.strip():
+        print(f"  → {key} : sujet='{sujet[:60]}'")
+        try:
+            msg = client.messages.create(
+                model="claude-opus-4-8",
+                max_tokens=1200,
+                messages=[{"role": "user", "content": DIAGRAM_PROMPT.format(
+                    sujet=sujet, donnees=donnees
+                )}]
+            )
+            svg = _extract_svg(msg.content[0].text.strip())
+            diagrams[key] = svg if svg else ""
+            print(f"    {'OK' if svg else 'VIDE — pas de SVG retourné'}")
+        except Exception as e:
+            print(f"    ERREUR : {e}")
             diagrams[key] = ""
-            continue
-        msg = client.messages.create(
-            model="claude-opus-4-8",
-            max_tokens=1200,
-            messages=[{"role": "user", "content": DIAGRAM_PROMPT.format(
-                sujet=sujet, donnees=donnees
-            )}]
-        )
-        diagrams[key] = _extract_svg(msg.content[0].text.strip())
 
     return diagrams
 
