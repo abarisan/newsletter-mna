@@ -1,5 +1,5 @@
 {
-  "numero": 4,
+  "numero": 5,
   "depth": 6,
   "concepts_vus": [
     "LBO : achat d'une cible financé majoritairement par dette",
@@ -12,11 +12,13 @@
     "PIK (Payment In Kind) : mécanisme et positionnement dans la structure",
     "Financial Disclosure : importance du reporting financier, illustrée par EA",
     "10-K : contenu et rôle du rapport annuel SEC",
-    "Delisting : sortie de cote et fin du reporting public US lors d'un passage en privé"
+    "Delisting : sortie de cote et fin du reporting public US lors d'un passage en privé",
+    "IPO : introduction en bourse comme mécanisme de levée de capitaux",
+    "Cash flow : analyse des flux de trésorerie comme cas d'école"
   ],
   "deals_ouverts": [
-    "EA / Consortium PIF / Silver Lake / Affinity (55 Md$) : analyse du 10-K final avant delisting, dernier reporting US avant passage en privé"
+    "SpaceX : IPO de 75 Md$, la plus grosse de l'histoire, cas d'école de cash flow"
   ],
   "objectif": "Préparer des entretiens M&A dans 1 mois, puis sur 2-3 ans",
-  "trainy_index": 2
+  "trainy_index": 3
 }

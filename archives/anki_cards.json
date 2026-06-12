@@ -286,5 +286,41 @@
     "verso": "Ouvrir l'IPO au retail élargit la base d'investisseurs et la demande, ce qui peut soutenir la valorisation et la liquidité du titre. Cela renforce aussi l'adhésion publique à la marque, mais expose ces épargnants à des sociétés parfois peu profitables ou volatiles, d'où une attention réglementaire accrue.",
     "numero": "04",
     "id": 1865178826
+  },
+  {
+    "recto": "Qu'est-ce qu'une IPO (Initial Public Offering) ?",
+    "verso": "Une IPO est l'introduction en bourse d'une société : elle vend pour la première fois ses actions au public sur un marché réglementé. Cela permet de lever des capitaux propres auprès d'investisseurs externes et offre une liquidité aux actionnaires existants. Le prix d'introduction est fixé après un processus de book-building avec les banques.",
+    "numero": "05",
+    "id": 1604842651
+  },
+  {
+    "recto": "Qu'est-ce que le free cash flow et pourquoi est-il central dans la valorisation d'une entreprise ?",
+    "verso": "Le free cash flow est la trésorerie générée par l'activité après les dépenses d'investissement (capex), disponible pour rémunérer les apporteurs de capitaux. Il est central car la valeur d'une entreprise se fonde sur sa capacité future à générer du cash, et non sur son bénéfice comptable. Un DCF actualise ces flux pour estimer la valeur intrinsèque.",
+    "numero": "05",
+    "id": 1299648632
+  },
+  {
+    "recto": "Comment se détermine le prix d'une action lors d'une IPO (book-building) ?",
+    "verso": "Les banques placent l'opération auprès d'investisseurs institutionnels et recueillent leurs ordres dans une fourchette de prix indicative. En fonction de la demande exprimée (le carnet d'ordres), le prix final est fixé : forte demande, prix au haut de la fourchette voire au-dessus. Le nombre d'actions multiplié par ce prix donne le montant total levé.",
+    "numero": "05",
+    "id": 1086445754
+  },
+  {
+    "recto": "Comment relie-t-on le montant levé, le prix par action et le nombre d'actions dans une IPO ?",
+    "verso": "Le produit de l'opération se calcule simplement : montant levé = prix par action × nombre d'actions émises. Ce montant correspond aux capitaux apportés à l'entreprise (actions nouvelles) ou aux actionnaires cédants (actions existantes). Il ne reflète pas la valorisation totale, qui dépend du nombre total d'actions en circulation.",
+    "numero": "05",
+    "id": 1082505773
+  },
+  {
+    "recto": "Pourquoi une entreprise très généreuse en cash flow peut-elle néanmoins choisir de faire une IPO ?",
+    "verso": "Même avec de forts cash flows, une IPO permet de lever des fonds massifs pour financer une croissance ou des investissements capitalistiques (R&D, infrastructure). Elle offre aussi une liquidité aux fondateurs et premiers investisseurs, et crée une monnaie d'échange (actions cotées) pour des acquisitions. La cotation accroît enfin la visibilité et l'accès aux marchés.",
+    "numero": "05",
+    "id": 1949920026
+  },
+  {
+    "recto": "En entretien, comment distingue-t-on la valeur d'une entreprise du montant levé lors de son IPO ?",
+    "verso": "Le montant levé ne représente que la fraction du capital vendue au marché, pas la valeur totale. La valorisation (equity value) s'obtient en multipliant le prix par action par le nombre total d'actions en circulation, pas seulement celles vendues. Une société peut lever une somme importante tout en ne cédant qu'une petite part de son capital, signe d'une valorisation bien supérieure au produit de l'IPO.",
+    "numero": "05",
+    "id": 1983412765
   }
 ]
