@@ -6,6 +6,7 @@ Génère le contenu via Claude API + envoie par email chaque vendredi.
 import anthropic
 import smtplib
 import os
+import re
 import json
 import datetime
 import genanki
@@ -462,16 +463,25 @@ def generate_content(client: anthropic.Anthropic, date_str: str, archive_dir: Pa
 
     message = client.messages.create(
         model="claude-opus-4-8",
-        max_tokens=5000,
+        max_tokens=8000,
         system=SYSTEM_PROMPT,
         messages=[{"role": "user", "content": prompt}]
     )
 
+    def extract_json(text: str) -> dict:
+        """Extrait et parse le premier JSON valide dans le texte."""
+        # Retire les blocs markdown ```json ... ```
+        text = re.sub(r"```json\s*", "", text)
+        text = re.sub(r"```\s*", "", text)
+        start = text.find("{")
+        end   = text.rfind("}") + 1
+        if start == -1 or end == 0:
+            raise ValueError("Aucun JSON trouvé dans la réponse")
+        return json.loads(text[start:end])
+
     text = message.content[0].text
-    start = text.find("{")
-    end   = text.rfind("}") + 1
     try:
-        content = json.loads(text[start:end])
+        content = extract_json(text)
     except (json.JSONDecodeError, ValueError) as e:
         raise RuntimeError(f"Claude n'a pas retourné de JSON valide : {e}\n{text[:500]}")
 
@@ -479,25 +489,21 @@ def generate_content(client: anthropic.Anthropic, date_str: str, archive_dir: Pa
     required = ["ma_titre", "ma_contenu", "rappel_cours", "question_entretien", "reponse_structuree"]
     missing  = [k for k in required if not str(content.get(k, "")).strip()]
     if missing:
-        # Retry une fois avec un rappel explicite
-        print(f"⚠️  Champs vides : {missing} — retry...")
+        print(f"  Champs vides : {missing} — retry...")
         retry_prompt = (
             prompt + f"\n\nATTENTION : ta réponse précédente avait ces champs vides : {missing}. "
             "Tu DOIS remplir TOUS les champs, notamment rappel_cours (cours complet du chapitre), "
             "question_entretien et reponse_structuree. Regenere un JSON complet."
         )
         message2 = client.messages.create(
-            model="claude-opus-4-8", max_tokens=5000,
+            model="claude-opus-4-8", max_tokens=8000,
             system=SYSTEM_PROMPT,
             messages=[{"role": "user", "content": retry_prompt}]
         )
-        text2  = message2.content[0].text
-        start2 = text2.find("{")
-        end2   = text2.rfind("}") + 1
         try:
-            content = json.loads(text2[start2:end2])
+            content = extract_json(message2.content[0].text)
         except (json.JSONDecodeError, ValueError):
-            pass  # On garde le premier si le retry rate aussi
+            pass  # On garde le premier résultat si le retry rate aussi
 
     return content
 
