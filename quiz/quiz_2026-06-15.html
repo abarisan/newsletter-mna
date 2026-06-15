@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz — The Deal Brief N°06</title>
+  <style>
+    body { font-family: 'Helvetica Neue', Arial, sans-serif; background: #fdf6ee; color: #2b1a0e;
+           margin: 0; padding: 40px 20px; }
+    .container { max-width: 640px; margin: 0 auto; }
+    h1 { font-size: 24px; color: #e85d1a; margin-bottom: 4px; }
+    .subtitle { color: #7a5c45; font-size: 13px; margin-bottom: 40px; }
+    .question { background: #fff; border-radius: 8px; padding: 24px; margin-bottom: 20px;
+                 box-shadow: 0 2px 8px rgba(232,93,26,0.08); }
+    .question h3 { font-size: 16px; margin-bottom: 16px; line-height: 1.5; }
+    .option { display: block; width: 100%; text-align: left; background: #fff8f2;
+               border: 1px solid #fde0c5; border-radius: 6px; padding: 12px 16px;
+               margin-bottom: 8px; cursor: pointer; font-size: 14px; transition: all .15s; }
+    .option:hover { background: #fff3e8; border-color: #f9a06b; }
+    .option.correct { background: #e6f9ec; border-color: #2ecc71; color: #1a6b3a; }
+    .option.wrong   { background: #fdecea; border-color: #e74c3c; color: #7b1c1c; }
+    .explanation { display: none; margin-top: 12px; padding: 12px 16px; background: #fff3e8;
+                    border-left: 3px solid #e85d1a; font-size: 13px; color: #5a3520;
+                    border-radius: 0 6px 6px 0; line-height: 1.6; }
+    .score { display: none; text-align: center; padding: 32px; background: #fff;
+              border-radius: 8px; box-shadow: 0 2px 8px rgba(232,93,26,0.08); }
+    .score h2 { font-size: 28px; color: #e85d1a; }
+    .score p { color: #5a3520; }
+    #submit { display: block; width: 100%; padding: 16px; background: #e85d1a; color: #fff;
+               border: none; border-radius: 8px; font-size: 16px; cursor: pointer; margin-top: 8px; }
+    #submit:hover { background: #c94e0e; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Quiz — N°06</h1>
+  <p class="subtitle">The Deal Brief · 15 June 2026 · 4 questions</p>
+  <div id="quiz"></div>
+  <button id="submit" onclick="submitQuiz()">Voir mes résultats</button>
+  <div class="score" id="score"></div>
+</div>
+<script>
+const questions = [{"question": "Quels sont les trois états financiers indissociables abordés dans ce numéro ?", "options": ["A. Compte de résultat, bilan, tableau de flux de trésorerie", "B. Bilan, budget prévisionnel, compte de résultat", "C. Tableau de flux de trésorerie, ratio d'endettement, bilan", "D. Compte de résultat, plan de financement, annexe comptable"], "correct": 0, "explanation": "Les trois états financiers indissociables sont l'Income Statement (compte de résultat), le Balance Sheet (bilan) et le Cash Flow Statement (tableau de flux de trésorerie). Les autres options mélangent ces documents avec des outils de gestion (budget prévisionnel, plan de financement) ou des indicateurs (ratio d'endettement) qui ne sont pas des états financiers à proprement parler."}, {"question": "Que représente le bilan (Balance Sheet) selon le cours ?", "options": ["A. La performance sur une période donnée", "B. Une photo à un instant T où actifs = passifs + capitaux propres", "C. Les seuls flux de trésorerie de l'entreprise", "D. La projection des revenus futurs"], "correct": 1, "explanation": "Le bilan est une photo à un instant T qui respecte l'équation fondamentale : actifs = passifs + capitaux propres. L'option A décrit le compte de résultat (performance sur une période). L'option C décrit le tableau de flux de trésorerie. L'option D évoque une prévision, ce qui n'est pas la nature d'un bilan."}, {"question": "Pourquoi l'IPO de SpaceX sert-elle d'exemple dans ce numéro ?", "options": ["A. Pour montrer que les états financiers doivent être lus isolément", "B. Parce que SpaceX ne publie pas de prospectus", "C. Parce qu'un investisseur lisant le prospectus doit lire les trois états financiers ensemble", "D. Pour illustrer le coût du capital uniquement"], "correct": 2, "explanation": "L'IPO SpaceX illustre qu'un investisseur analysant le prospectus doit lire les trois états financiers ensemble, jamais isolément. L'option A dit l'inverse du message clé. L'option B est fausse car une IPO implique justement un prospectus. L'option D est incorrecte : le coût du capital a été vu les jours précédents, mais le cas SpaceX porte sur la connexion des trois états."}, {"question": "Quel impact a eu l'accord Iran-US sur la réouverture du détroit d'Ormuz sur les marchés ?", "options": ["A. Le pétrole a bondi et les actions ont chuté", "B. Le pétrole a chuté et les actions ont bondi", "C. Les deux ont chuté simultanément", "D. Aucun effet notable sur les marchés"], "correct": 1, "explanation": "Suite à l'annonce de l'accord, le pétrole a chuté (réduction du risque sur l'approvisionnement, le détroit d'Ormuz représentant environ 20 % du pétrole mondial) et les actions ont bondi (détente géopolitique favorable au 'risk on'). L'option A inverse les deux mouvements. Les options C et D contredisent les sources citées (NYT DealBook et FT) qui décrivent un mouvement opposé entre pétrole et actions."}];
+let answered = {};
+
+function buildQuiz() {
+  const quiz = document.getElementById('quiz');
+  questions.forEach((q, qi) => {
+    const div = document.createElement('div');
+    div.className = 'question';
+    div.innerHTML = `<h3>${qi+1}. ${q.question}</h3>` +
+      q.options.map((o, oi) =>
+        `<button class="option" id="q${qi}_${oi}" onclick="answer(${qi},${oi},${q.correct})">${o}</button>`
+      ).join('') +
+      `<div class="explanation" id="exp${qi}">${q.explanation}</div>`;
+    quiz.appendChild(div);
+  });
+}
+
+function answer(qi, oi, correct) {
+  if (answered[qi] !== undefined) return;
+  answered[qi] = oi;
+  const btn = document.getElementById(`q${qi}_${oi}`);
+  const correctBtn = document.getElementById(`q${qi}_${correct}`);
+  btn.classList.add(oi === correct ? 'correct' : 'wrong');
+  if (oi !== correct) correctBtn.classList.add('correct');
+  document.getElementById(`exp${qi}`).style.display = 'block';
+}
+
+function submitQuiz() {
+  const score = Object.values(answered).filter((a, i) => a === questions[i].correct).length;
+  const total = questions.length;
+  const msg = score === total ? "🏆 Parfait ! Tu maîtrises ce numéro." :
+              score >= total/2 ? "👍 Bien, relis les explications des questions ratées." :
+              "📖 Relis le cours — ces notions vont revenir en entretien.";
+  document.getElementById('score').innerHTML =
+    `<h2>${score} / ${total}</h2><p>${msg}</p>`;
+  document.getElementById('score').style.display = 'block';
+  document.getElementById('submit').style.display = 'none';
+  window.scrollTo(0, document.getElementById('score').offsetTop - 20);
+}
+
+buildQuiz();
+</script>
+</body>
+</html>

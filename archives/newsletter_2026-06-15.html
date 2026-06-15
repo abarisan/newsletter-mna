@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Deal Brief</title>
+  <style>
+    /* ── Palette : clair / nuances d'orange ── */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #fdf6ee;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      color: #2b1a0e;
+      line-height: 1.75;
+    }
+
+    .wrapper {
+      max-width: 680px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(232,93,26,0.10);
+    }
+
+    .header {
+      background: linear-gradient(135deg, #ff6b2b 0%, #e85d1a 100%);
+      padding: 48px 48px 36px;
+      text-align: center;
+    }
+    .header .eyebrow {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ffe8d6;
+      margin-bottom: 16px;
+    }
+    .header h1 {
+      font-size: 36px;
+      font-weight: 400;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .header .subtitle {
+      font-size: 13px;
+      color: #ffd4b8;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      letter-spacing: 0.5px;
+    }
+    .header .issue-line {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.25);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #ffe8d6;
+      letter-spacing: 1px;
+    }
+
+    .body { padding: 0 48px 48px; }
+
+    .section { margin-top: 48px; }
+    .section-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #e85d1a;
+      margin-bottom: 6px;
+    }
+    .section h2 {
+      font-size: 22px;
+      font-weight: 400;
+      color: #2b1a0e;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #f9a06b;
+    }
+    .section-content { font-size: 15px; color: #3d2510; }
+    .section-content p { margin-bottom: 14px; }
+    .section-content strong { color: #c94e0e; font-weight: 700; }
+    .section-content ul, .section-content ol { padding-left: 20px; margin-bottom: 14px; }
+    .section-content li { margin-bottom: 6px; }
+
+    .callout {
+      background: #fff3e8;
+      border-left: 3px solid #e85d1a;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 14px;
+      color: #5a3520;
+      font-style: italic;
+      border-radius: 0 4px 4px 0;
+    }
+    .callout strong { font-style: normal; color: #c94e0e; }
+
+    .rappel-section {
+      margin-top: 48px;
+      background: #fff3e8;
+      margin-left: -48px;
+      margin-right: -48px;
+      padding: 36px 48px;
+      border-top: 3px solid #f9a06b;
+      border-bottom: 3px solid #f9a06b;
+    }
+    .rappel-section .section-label { color: #e85d1a; }
+    .rappel-section h2 { color: #2b1a0e; border-bottom-color: #fde0c5; font-size: 20px; }
+    .rappel-section .section-content { color: #5a3520; }
+    .rappel-section .section-content strong { color: #c94e0e; }
+    .rappel-section .term { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid #fde0c5; }
+    .rappel-section .term:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .rappel-section .term-name {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .interview-section {
+      margin-top: 48px;
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 28px 32px;
+    }
+    .interview-section .section-label { color: #e85d1a; }
+    .interview-question { font-size: 18px; font-style: italic; color: #2b1a0e; margin: 12px 0 20px; line-height: 1.4; }
+    .interview-answer { font-size: 14px; color: #5a3520; }
+
+    .sources-section { margin-top: 48px; padding-top: 24px; border-top: 1px solid #fde0c5; }
+    .sources-section .section-label { margin-bottom: 12px; }
+    .sources-section ul { list-style: none; padding: 0; }
+    .sources-section li {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #7a5c45;
+      margin-bottom: 6px;
+      padding-left: 12px;
+      position: relative;
+    }
+    .sources-section li::before { content: '→'; position: absolute; left: 0; color: #e85d1a; }
+
+    .footer {
+      background: #fdf6ee;
+      padding: 28px 48px;
+      text-align: center;
+      border-top: 1px solid #fde0c5;
+    }
+    .footer p { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; color: #9a7060; line-height: 1.8; }
+    .footer .next { color: #c94e0e; font-weight: 600; }
+
+    .divider { height: 1px; background: #fde0c5; margin: 36px 0; }
+
+    /* ── Schéma SVG ── */
+    .diagram-section {
+      margin-top: 48px;
+    }
+    .diagram-section .section-label {
+      margin-bottom: 12px;
+    }
+    .diagram-wrap {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      overflow-x: auto;
+    }
+    .diagram-wrap svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* ── Outils d'apprentissage ── */
+    .tools-section {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .tool-card {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      transition: box-shadow .15s;
+    }
+    .tool-card:hover { box-shadow: 0 4px 16px rgba(232,93,26,0.15); }
+    .tool-card .icon { font-size: 28px; display: block; margin-bottom: 8px; }
+    .tool-card .tool-title {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .tool-card .tool-desc {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      color: #7a5c45;
+    }
+
+    @media (max-width: 600px) {
+      .wrapper { margin: 0; border-radius: 0; }
+      .header { padding: 32px 24px 24px; }
+      .body { padding: 0 24px 32px; }
+      .rappel-section { margin-left: -24px; margin-right: -24px; padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="eyebrow">Newsletter M&A · Finance · IA · Géopolitique</div>
+      <h1>The Deal Brief</h1>
+      <div class="subtitle">Comprendre la finance, pas juste la suivre</div>
+      <div class="issue-line">N° 06 &nbsp;·&nbsp; 15 June 2026</div>
+    </div>
+
+    <div class="body">
+
+      <!-- SECTION 1 : M&A -->
+      <!-- DEAL -->
+      <div class="section">
+        <div class="section-label">Niveau 1 — Deal de la semaine</div>
+        <h2>SpaceX entre en Bourse : l'IPO historique qui rappelle pourquoi les 3 états financiers sont indissociables</h2>
+        <div class="section-content"><p>Ce lundi 15 juin 2026, les marchés mondiaux ont touché des records (<strong>FT, 'Global stocks power to record highs as deal ignites risk on rally'</strong>), portés par deux catalyseurs : l'accord Iran-US sur la réouverture du détroit d'Ormuz et, surtout pour nous, <strong>l'introduction en Bourse historique de SpaceX</strong>. C'est le plus gros IPO de l'année et l'occasion parfaite d'illustrer le chapitre du jour : comment les trois états financiers (compte de résultat, bilan, tableau de flux de trésorerie) sont reliés mécaniquement.</p></div>
+      </div>
+
+      
+
+      <div class="divider"></div>
+
+      <!-- MACRO & GÉOPO -->
+      <div class="section">
+        <div class="section-label">Niveau 3 — Macro & Géopolitique</div>
+        <h2>Ormuz rouvre : l'oxygène géopolitique des valorisations</h2>
+        <div class="section-content"><p>Lundi 15 juin 2026, le pétrole a chuté et les actions ont bondi après l'annonce d'un accord Iran-US sur la réouverture du détroit d'Ormuz (<strong>NYT DealBook, 'Oil Tumbles and Stocks Surge After Trump Announces Deal With Iran'</strong> ; <strong>FT, 'Iran and US agree deal to open Strait of Hormuz'</strong>). Le détroit d'Ormuz, c'est environ 20 % du pétrole mondial qui transite par voie maritime. Le blocus naval américain et le conflit avaient provoqué un 'physical supply crunch' en Asie depuis des mois (<strong>NYT DealBook, 'Hormuz Reopening Would Offer Relief for Asia'</strong>).</p><p><strong>Mécanisme de transmission vers le M&A :</strong> la baisse du baril désinflationne mécaniquement (le pétrole est un intrant de quasiment tout). Une inflation plus basse ouvre la porte à des taux directeurs plus bas, donc un <em>WACC</em> en repli et des valorisations DCF plus élevées. Résultat immédiat : appétit pour le risque ('risk on'), réouverture de la fenêtre IPO — d'où le timing de SpaceX. Quand l'incertitude géopolitique tombe, la prime de risque actions tombe avec elle, et les banquiers ressortent les dossiers d'introduction restés au tiroir. Mais attention au point soulevé par <strong>The Economist</strong> et le <strong>WSJ Markets</strong> : ces scars économiques (chaînes d'appro) mettront des mois à se résorber. Un 'risk on' n'efface pas les dégâts au bilan des entreprises exposées.</p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin-top:20px;"><svg xmlns="http://www.w3.org/2000/svg" width="540" height="200" viewBox="0 0 540 200">
+  <rect width="540" height="200" fill="#ffffff"/>
+  <text x="270" y="28" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#2b1a0e">Ormuz rouvre : l'oxygène géopolitique des valorisations</text>
+  <text x="270" y="46" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#7a5c45">Accord Iran–US, lundi 15 juin 2026</text>
+
+  <!-- Cause box -->
+  <rect x="30" y="75" width="160" height="90" rx="8" fill="#fff3e8" stroke="#e85d1a" stroke-width="1.5"/>
+  <text x="110" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2b1a0e">Réouverture</text>
+  <text x="110" y="116" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2b1a0e">du détroit</text>
+  <text x="110" y="142" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#7a5c45">Détente</text>
+  <text x="110" y="156" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#7a5c45">géopolitique</text>
+
+  <!-- Arrow -->
+  <line x1="195" y1="120" x2="345" y2="120" stroke="#f9a06b" stroke-width="3"/>
+  <polygon points="345,113 360,120 345,127" fill="#f9a06b"/>
+
+  <!-- Effect box 1 : pétrole -->
+  <rect x="365" y="62" width="145" height="48" rx="8" fill="#fff3e8" stroke="#e85d1a" stroke-width="1.5"/>
+  <text x="437" y="82" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#2b1a0e">Pétrole</text>
+  <text x="437" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#c94e0e">▼ Chute</text>
+
+  <!-- Effect box 2 : actions -->
+  <rect x="365" y="130" width="145" height="48" rx="8" fill="#fff3e8" stroke="#e85d1a" stroke-width="1.5"/>
+  <text x="437" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#2b1a0e">Actions</text>
+  <text x="437" y="168" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#c94e0e">▲ Bondissent</text>
+</svg></div>
+      
+
+      <div class="divider"></div>
+
+      <!-- IA -->
+      
+
+      <!-- RAPPEL DE COURS -->
+      <div class="rappel-section">
+        <div class="section-label">Rappel de cours</div>
+        <h2>Les notions clés de ce numéro</h2>
+        <div class="section-content"><p>On a vu les jours précédents les notions de levier, de structure de capital et de coût du capital. Aujourd'hui on revient aux fondations : <strong>comment les trois états financiers communiquent entre eux</strong>. C'est LA question qui tombe dans 90 % des entretiens en M&A, et c'est le socle de tout modèle financier. Avec l'IPO SpaceX, on a un cas concret : un investisseur qui regarde le prospectus doit savoir lire ces trois documents <em>ensemble</em>, jamais isolément.</p><div class='term'><div class='term-name'>LES 3 ÉTATS FINANCIERS</div><strong>1. Income Statement (compte de résultat)</strong> : performance sur une période (revenus, coûts, résultat net). <strong>2. Balance Sheet (bilan)</strong> : photo à un instant T (actifs = passifs + capitaux propres). <strong>3. Cash Flow Statement (tableau de flux)</strong> : mouvements de cash réel sur la période, réparti en opérationnel, investissement, financement.</div><p><strong>Le point de départ : le résultat net.</strong> Le <em>net income</em> est calculé en bas du compte de résultat. Il devient la première ligne du tableau de flux (section opérationnelle) ET il alimente les capitaux propres au bilan via les <em>retained earnings</em> (résultats non distribués). Une même ligne, le net income, touche donc les trois états. C'est le premier pont.</p><div class='term'><div class='term-name'>RETAINED EARNINGS</div>Bénéfices accumulés non distribués en dividendes. Formule : Retained Earnings (fin) = Retained Earnings (début) + Net Income − Dividendes. C'est le lien direct entre P&L et bilan.</div><p><strong>Le deuxième pont : la dépréciation (D&A).</strong> La <em>depreciation & amortization</em> est une charge au compte de résultat (elle réduit le résultat) mais elle ne fait sortir aucun cash. On la rajoute donc dans le tableau de flux opérationnel (add-back). Au bilan, elle réduit la valeur nette des immobilisations. Pour SpaceX, qui a des actifs colossaux (rampes de lancement, usines, flotte de fusées), la D&A est massive : elle écrase le résultat comptable tout en laissant le cash intact. C'est pour ça qu'on regarde l'EBITDA et le cash-flow plutôt que le seul net income pour une entreprise capex-intensive.</p><div class='term'><div class='term-name'>D&A (Depreciation & Amortization)</div>Charge non-cash répartissant le coût d'un actif sur sa durée de vie. Réduit le net income (P&L), est rajoutée au cash-flow opérationnel (add-back), et diminue la valeur des actifs au bilan. Le concept le plus fréquemment testé en entretien.</div><p><strong>Le troisième pont : le CAPEX et le financement.</strong> Quand SpaceX achète des actifs (capex), le cash sort dans la section investissement du tableau de flux, et l'actif apparaît au bilan. Quand SpaceX lève des fonds via l'IPO, le cash entre dans la section financement, et les capitaux propres montent au bilan. Tout mouvement de cash se retrouve quelque part au bilan.</p><p><strong>La boucle finale, la plus importante :</strong> le <em>cash flow statement</em> calcule la variation nette de trésorerie sur la période. Ce montant vient modifier la ligne 'Cash' à l'actif du bilan. Trésorerie de fin = Trésorerie de début + Variation nette de cash. <strong>Et c'est cette ligne qui fait que le bilan s'équilibre.</strong> Si votre modèle ne boucle pas, c'est presque toujours ici que ça coince.</p><p><strong>La séquence à connaître par cœur pour un modèle :</strong></p><ol><li>Construire le compte de résultat → on obtient le net income.</li><li>Net income → ligne de départ du cash-flow statement.</li><li>Ajouter D&A, ajuster le BFR, soustraire le capex, ajouter/retirer le financement → on obtient la variation nette de cash.</li><li>Net income → retained earnings au bilan ; variation de cash → ligne cash au bilan.</li><li>Vérifier : Actif = Passif + Capitaux propres. Si oui, le modèle est correct.</li></ol><p><strong>Erreur classique en entretien :</strong> oublier que la D&A est non-cash et la traiter comme une vraie sortie d'argent. Autre piège : oublier que les dividendes réduisent les retained earnings au bilan mais sortent du cash-flow de financement. Et le grand classique : 'si la dépréciation augmente de 10, qu'arrive-t-il aux 3 états ?' — il faut savoir dérouler les trois en intégrant l'impact fiscal.</p><p><strong>Cas limite :</strong> SpaceX peut afficher un net income faible ou négatif (à cause de la D&A et des R&D) tout en générant un cash-flow opérationnel solide. C'est exactement pourquoi un investisseur IPO ne s'arrête jamais au bas du compte de résultat : il faut les trois états ensemble. Demain, on approfondira un cas précis de ces ponts : <strong>le Working Capital (BFR)</strong> — comment ses variations relient le bilan au tableau de flux.</p></div>
+      </div>
+
+      
+
+      <!-- QUESTION D'ENTRETIEN -->
+      <div class="interview-section">
+        <div class="section-label">🎯 Question d'entretien de la semaine</div>
+        <div class="interview-question">""Si la dépréciation augmente de 10 €, comment les trois états financiers sont-ils impactés ? Assume un taux d'impôt de 25 %.""</div>
+        <div class="interview-answer">
+          <p><strong>1. Compte de résultat (Income Statement) :</strong> la dépréciation est une charge, elle augmente de 10, donc le résultat avant impôt baisse de 10. Avec un taux d'impôt de 25 %, l'impôt baisse de 2,5. Le net income baisse donc de 10 − 2,5 = <strong>7,5</strong>.</p><p><strong>2. Tableau de flux (Cash Flow Statement) :</strong> on part du net income, qui baisse de 7,5. Mais on rajoute la D&A (non-cash) de +10. Effet net sur le cash opérationnel : −7,5 + 10 = <strong>+2,5</strong>. La trésorerie augmente donc de 2,5 — c'est l'économie d'impôt (le 'tax shield' de la dépréciation).</p><p><strong>3. Bilan (Balance Sheet) :</strong> à l'actif, le cash monte de +2,5 et les immobilisations nettes baissent de −10 (effet de la dépréciation), soit un actif net de −7,5. Côté capitaux propres, les retained earnings baissent de −7,5 (le net income réduit). Les deux côtés baissent de 7,5 : <strong>le bilan reste équilibré.</strong> La clé : citer le tax shield et montrer que le bilan boucle.</p>
+        </div>
+      </div>
+
+      <!-- OUTILS D'APPRENTISSAGE -->
+      <div class="tools-section">
+        <a class="tool-card" href="https://abarisan.github.io/newsletter-mna/quiz/quiz_2026-06-15.html" target="_blank">
+          <span class="icon">❓</span>
+          <span class="tool-title">Quiz ce numéro</span>
+          <span class="tool-desc">4 questions pour vérifier que tu as compris</span>
+        </a>
+        <a class="tool-card" href="https://claude.ai/new" target="_blank">
+          <span class="icon">🤖</span>
+          <span class="tool-title">Poser une question</span>
+          <span class="tool-desc">Ouvre ton Claude Project M&A pour aller plus loin</span>
+        </a>
+      </div>
+
+      <!-- SOURCES PAR NIVEAU -->
+      <div class="sources-section">
+        <div class="section-label">Sources</div>
+        <ul>
+          <li>[N1] FT — 'Global stocks power to record highs as deal ignites risk on rally' (SpaceX IPO historique)</li>
+<li>[N2] NYT DealBook — 'Oil Tumbles and Stocks Surge After Trump Announces Deal With Iran'</li>
+<li>[N3] WSJ Markets / The Economist — fallout du conflit Iran et impact sur les chaînes d'approvisionnement</li>
+<li>[N4] Dealogic — données IPO 2026 (volumes de l'année, fenêtre d'introduction réouverte)</li>
+        </ul>
+        <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:6px; font-family:'Helvetica Neue',Arial,sans-serif; font-size:10px;">
+          <span style="background:#fff3e8;border:1px solid #e85d1a;color:#c94e0e;padding:3px 8px;border-radius:20px;font-weight:700;">N1 · Bloomberg · FT · Capital Finance · CFNEWS · S&P</span>
+          <span style="background:#fff8f2;border:1px solid #f9a06b;color:#7a5c45;padding:3px 8px;border-radius:20px;">N2 · Mergermarket · Reuters · PitchBook</span>
+          <span style="background:#fdf6ee;border:1px solid #fde0c5;color:#9a7060;padding:3px 8px;border-radius:20px;">N3 · WSJ · The Economist</span>
+          <span style="background:#f9f9f9;border:1px solid #e0e0e0;color:#888;padding:3px 8px;border-radius:20px;">N4 · Dealogic · Preqin</span>
+        </div>
+      </div>
+
+    </div><!-- /body -->
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <p>
+        <span class="next">Deck Anki mis à jour en pièce jointe</span><br>
+        The Deal Brief · 5× par semaine · <a href="https://github.com/abarisan/newsletter-mna" style="color:#e85d1a;text-decoration:none;">Code source</a>
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>

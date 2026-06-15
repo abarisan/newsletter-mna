@@ -358,5 +358,41 @@
     "verso": "Classiquement, une hausse des rendements obligataires rend les obligations plus attractives et pèse sur les actions, en augmentant le taux d'actualisation des flux futurs. Quand les deux montent ensemble, la logique financière habituelle est 'mise sur la tête', signalant souvent des anticipations de croissance forte ou des dynamiques de marché atypiques. Cela complique l'allocation d'actifs et la valorisation relative entre classes d'actifs.",
     "numero": "06",
     "id": 1320235125
+  },
+  {
+    "recto": "Quels sont les trois états financiers et que mesure chacun ?",
+    "verso": "Le compte de résultat (income statement) mesure la performance sur une période (revenus, coûts, résultat net). Le bilan (balance sheet) photographie le patrimoine à un instant donné (actifs, passifs, capitaux propres). Le tableau des flux de trésorerie (cash flow statement) retrace les mouvements réels de cash sur la période. Ils sont indissociables et doivent toujours se lire ensemble.",
+    "numero": "06",
+    "id": 1624167989
+  },
+  {
+    "recto": "Qu'est-ce qu'une IPO (introduction en Bourse) ?",
+    "verso": "Une IPO est la première mise en vente d'actions d'une entreprise sur un marché public. Elle permet à la société de lever des capitaux et aux actionnaires existants de monétiser une partie de leur participation. L'opération s'accompagne d'un prospectus détaillant notamment les trois états financiers que les investisseurs analysent pour valoriser l'entreprise.",
+    "numero": "06",
+    "id": 2052338194
+  },
+  {
+    "recto": "Comment le résultat net du compte de résultat se relie-t-il au bilan et au tableau de flux ?",
+    "verso": "Le résultat net est le point de départ : il alimente les capitaux propres au bilan (via les bénéfices non distribués) et constitue la première ligne du tableau de flux de trésorerie. On le retraite ensuite des éléments non-cash (amortissements) et des variations du bilan (BFR) pour reconstituer le cash réellement généré. C'est ainsi que les trois documents s'articulent.",
+    "numero": "06",
+    "id": 1551331963
+  },
+  {
+    "recto": "Pourquoi un résultat net positif ne garantit-il pas que l'entreprise génère du cash ?",
+    "verso": "Le compte de résultat suit la comptabilité d'engagement : il enregistre des produits et charges qui ne correspondent pas forcément à des flux de cash immédiats. Une entreprise peut afficher un bénéfice tout en manquant de trésorerie si ses clients paient tard (créances) ou si elle immobilise du capital dans les stocks et les investissements. Seul le tableau de flux révèle la trésorerie réellement disponible.",
+    "numero": "06",
+    "id": 1535162103
+  },
+  {
+    "recto": "En entretien M&A, pourquoi ne faut-il jamais analyser un état financier isolément ?",
+    "verso": "Chaque document ne donne qu'une vue partielle : la rentabilité, le patrimoine ou la liquidité. Les analyser ensemble permet de détecter des incohérences (bénéfices sans cash, croissance financée par la dette) et de comprendre la santé réelle d'une entreprise. C'est la question qui revient dans la majorité des entretiens car elle est le socle de tout modèle financier.",
+    "numero": "06",
+    "id": 1579427490
+  },
+  {
+    "recto": "Dans quel cas un investisseur regardant un prospectus d'IPO doit-il se méfier malgré une croissance forte du chiffre d'affaires ?",
+    "verso": "Quand la croissance du revenu s'accompagne d'une consommation massive de cash ou d'un endettement croissant au bilan. Une entreprise capitalistique (forte intensité d'investissements) peut croître vite tout en brûlant de la trésorerie. Croiser le compte de résultat, le bilan et le tableau de flux permet de juger si la croissance est soutenable ou financée artificiellement.",
+    "numero": "06",
+    "id": 1628958815
   }
 ]
