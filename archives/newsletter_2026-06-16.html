@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Deal Brief</title>
+  <style>
+    /* ── Palette : clair / nuances d'orange ── */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #fdf6ee;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      color: #2b1a0e;
+      line-height: 1.75;
+    }
+
+    .wrapper {
+      max-width: 680px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(232,93,26,0.10);
+    }
+
+    .header {
+      background: linear-gradient(135deg, #ff6b2b 0%, #e85d1a 100%);
+      padding: 48px 48px 36px;
+      text-align: center;
+    }
+    .header .eyebrow {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ffe8d6;
+      margin-bottom: 16px;
+    }
+    .header h1 {
+      font-size: 36px;
+      font-weight: 400;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .header .subtitle {
+      font-size: 13px;
+      color: #ffd4b8;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      letter-spacing: 0.5px;
+    }
+    .header .issue-line {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.25);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #ffe8d6;
+      letter-spacing: 1px;
+    }
+
+    .body { padding: 0 48px 48px; }
+
+    .section { margin-top: 48px; }
+    .section-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #e85d1a;
+      margin-bottom: 6px;
+    }
+    .section h2 {
+      font-size: 22px;
+      font-weight: 400;
+      color: #2b1a0e;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #f9a06b;
+    }
+    .section-content { font-size: 15px; color: #3d2510; }
+    .section-content p { margin-bottom: 14px; }
+    .section-content strong { color: #c94e0e; font-weight: 700; }
+    .section-content ul, .section-content ol { padding-left: 20px; margin-bottom: 14px; }
+    .section-content li { margin-bottom: 6px; }
+
+    .callout {
+      background: #fff3e8;
+      border-left: 3px solid #e85d1a;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 14px;
+      color: #5a3520;
+      font-style: italic;
+      border-radius: 0 4px 4px 0;
+    }
+    .callout strong { font-style: normal; color: #c94e0e; }
+
+    .rappel-section {
+      margin-top: 48px;
+      background: #fff3e8;
+      margin-left: -48px;
+      margin-right: -48px;
+      padding: 36px 48px;
+      border-top: 3px solid #f9a06b;
+      border-bottom: 3px solid #f9a06b;
+    }
+    .rappel-section .section-label { color: #e85d1a; }
+    .rappel-section h2 { color: #2b1a0e; border-bottom-color: #fde0c5; font-size: 20px; }
+    .rappel-section .section-content { color: #5a3520; }
+    .rappel-section .section-content strong { color: #c94e0e; }
+    .rappel-section .term { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid #fde0c5; }
+    .rappel-section .term:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .rappel-section .term-name {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .interview-section {
+      margin-top: 48px;
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 28px 32px;
+    }
+    .interview-section .section-label { color: #e85d1a; }
+    .interview-question { font-size: 18px; font-style: italic; color: #2b1a0e; margin: 12px 0 20px; line-height: 1.4; }
+    .interview-answer { font-size: 14px; color: #5a3520; }
+
+    .sources-section { margin-top: 48px; padding-top: 24px; border-top: 1px solid #fde0c5; }
+    .sources-section .section-label { margin-bottom: 12px; }
+    .sources-section ul { list-style: none; padding: 0; }
+    .sources-section li {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #7a5c45;
+      margin-bottom: 6px;
+      padding-left: 12px;
+      position: relative;
+    }
+    .sources-section li::before { content: '→'; position: absolute; left: 0; color: #e85d1a; }
+
+    .footer {
+      background: #fdf6ee;
+      padding: 28px 48px;
+      text-align: center;
+      border-top: 1px solid #fde0c5;
+    }
+    .footer p { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; color: #9a7060; line-height: 1.8; }
+    .footer .next { color: #c94e0e; font-weight: 600; }
+
+    .divider { height: 1px; background: #fde0c5; margin: 36px 0; }
+
+    /* ── Schéma SVG ── */
+    .diagram-section {
+      margin-top: 48px;
+    }
+    .diagram-section .section-label {
+      margin-bottom: 12px;
+    }
+    .diagram-wrap {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      overflow-x: auto;
+    }
+    .diagram-wrap svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* ── Outils d'apprentissage ── */
+    .tools-section {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .tool-card {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      transition: box-shadow .15s;
+    }
+    .tool-card:hover { box-shadow: 0 4px 16px rgba(232,93,26,0.15); }
+    .tool-card .icon { font-size: 28px; display: block; margin-bottom: 8px; }
+    .tool-card .tool-title {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .tool-card .tool-desc {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      color: #7a5c45;
+    }
+
+    @media (max-width: 600px) {
+      .wrapper { margin: 0; border-radius: 0; }
+      .header { padding: 32px 24px 24px; }
+      .body { padding: 0 24px 32px; }
+      .rappel-section { margin-left: -24px; margin-right: -24px; padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="eyebrow">Newsletter M&A · Finance · IA · Géopolitique</div>
+      <h1>The Deal Brief</h1>
+      <div class="subtitle">Comprendre la finance, pas juste la suivre</div>
+      <div class="issue-line">N° 07 &nbsp;·&nbsp; 16 June 2026</div>
+    </div>
+
+    <div class="body">
+
+      <!-- SECTION 1 : M&A -->
+      <!-- DEAL -->
+      <div class="section">
+        <div class="section-label">Niveau 1 — Deal de la semaine</div>
+        <h2>KNDS s'apprête à entrer en Bourse à 20 Md€ : pourquoi le BFR d'un fabricant de chars est une bombe à retardement comptable</h2>
+        <div class="section-content"><p>Le Financial Times révèle ce mardi 16 juin (« <em>The reclusive heirs in line for billions when Europe's top tankmaker lists</em> ») que <strong>KNDS</strong> — le franco-allemand né de la fusion de Nexter et Krauss-Maffei Wegmann — se prépare à une introduction en Bourse à une valorisation pouvant atteindre <strong>20 Md€</strong>. Berlin s'apprête à monter au capital dans le cadre de l'opération, tandis que les héritiers familiaux qui détiennent la moitié du groupe (côté Wegmann) s'apprêtent à empocher un windfall colossal. Conseils financiers attendus : un syndicat bancaire mené sur la partie ECM, avec les valorisations adossées à un carnet de commandes record dopé par le réarmement européen.</p></div>
+      </div>
+
+      
+
+      <div class="divider"></div>
+
+      <!-- MACRO & GÉOPO -->
+      <div class="section">
+        <div class="section-label">Niveau 3 — Macro & Géopolitique</div>
+        <h2>Iran : le pétrole décroche et redessine la prime de risque des deals</h2>
+        <div class="section-content"><p>Lundi 15 et mardi 16 juin, le FT (« <em>How the US-Iran deal came together</em> ») et le NYT DealBook (« <em>Oil Prices Continue to Fall as Traders Assess U.S.-Iran Deal</em> ») confirment qu'un accord USA-Iran prend forme, avec un fonds d'incitation pouvant atteindre <strong>300 Md$</strong> conditionné à la réouverture du détroit d'Ormuz. Résultat immédiat : le brut recule.</p><p><strong>Mécanisme de transmission vers le M&A.</strong> Un pétrole plus bas, c'est de l'inflation importée en moins. Or le NYT (« <em>Warsh Faces Tenuous Balancing Act in First Fed Meeting as Chairman</em> ») rappelle que Kevin Warsh entame son premier FOMC sous une inflation encore élevée. Moins de pression sur les prix de l'énergie = marge de manœuvre accrue pour la Fed = anticipation de coût de la dette plus stable. Pour un acquéreur qui finance un deal par effet de levier, chaque point de baisse du taux sans risque allège le WACC et soutient les valorisations.</p><p>Mais attention au revers : le DealBook (« <em>The Iran War Permanently Altered the Global Economy</em> ») souligne que les chaînes d'approvisionnement ont durablement changé. Pour un industriel comme KNDS, cela signifie des stocks de matières premières gonflés par précaution — directement notre sujet du jour : le besoin en fonds de roulement.</p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin-top:20px;"><svg xmlns="http://www.w3.org/2000/svg" width="540" height="200" viewBox="0 0 540 200">
+  <rect width="540" height="200" fill="#ffffff"/>
+  <text x="20" y="30" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#2b1a0e">Iran : le pétrole décroche, la prime de risque se réajuste</text>
+
+  <!-- Cause box -->
+  <rect x="20" y="60" width="200" height="90" rx="6" fill="#fff3e8" stroke="#e85d1a" stroke-width="2"/>
+  <text x="120" y="88" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#c94e0e" text-anchor="middle">Accord USA–Iran</text>
+  <text x="120" y="110" font-family="Arial, sans-serif" font-size="11" fill="#7a5c45" text-anchor="middle">en cours de formation</text>
+  <text x="120" y="132" font-family="Arial, sans-serif" font-size="11" fill="#7a5c45" text-anchor="middle">+ fonds d'incitation</text>
+
+  <!-- Arrow -->
+  <line x1="225" y1="105" x2="310" y2="105" stroke="#f9a06b" stroke-width="3"/>
+  <polygon points="310,98 325,105 310,112" fill="#f9a06b"/>
+
+  <!-- Effect box -->
+  <rect x="325" y="60" width="195" height="90" rx="6" fill="#fff3e8" stroke="#e85d1a" stroke-width="2"/>
+  <text x="422" y="88" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#c94e0e" text-anchor="middle">Prix du pétrole ▼</text>
+  <text x="422" y="110" font-family="Arial, sans-serif" font-size="11" fill="#7a5c45" text-anchor="middle">détente géopolitique</text>
+  <text x="422" y="132" font-family="Arial, sans-serif" font-size="11" fill="#7a5c45" text-anchor="middle">prime de risque deals ▼</text>
+
+  <text x="20" y="185" font-family="Arial, sans-serif" font-size="10" fill="#7a5c45">Sources : FT, NYT DealBook — 15-16 juin</text>
+</svg></div>
+      
+
+      <div class="divider"></div>
+
+      <!-- IA -->
+      
+
+      <!-- RAPPEL DE COURS -->
+      <div class="rappel-section">
+        <div class="section-label">Rappel de cours</div>
+        <h2>Les notions clés de ce numéro</h2>
+        <div class="section-content"><p>Hier, on a posé la mécanique générale des trois états financiers. Aujourd'hui on entre dans le poste le plus mal compris en entretien : le <strong>working capital</strong> (besoin en fonds de roulement, BFR). C'est précisément ce qui distingue un débutant d'un candidat sérieux, parce que le BFR vit à la fois au bilan (en niveau) et dans le tableau de flux (en variation). Mal manier la distinction, c'est l'élimination directe.</p><div class='term'><div class='term-name'>WORKING CAPITAL (BFR)</div>Différence entre les actifs courants d'exploitation (créances clients + stocks) et les passifs courants d'exploitation (dettes fournisseurs + autres dettes d'exploitation). On exclut la trésorerie et la dette financière court terme : ce n'est PAS du working capital opérationnel. Formule : <strong>BFR = Stocks + Créances clients − Dettes fournisseurs</strong>.</div><p><strong>Étape 1 — le niveau au bilan.</strong> Prenez KNDS, fabricant de chars. Un industriel de défense a un cycle de production long : un char Leopard ou un canon Caesar passe des mois en production. Conséquence : des <strong>stocks énormes</strong> (matières premières blindées, composants électroniques, en-cours de production) et des <strong>créances clients</strong> importantes car les États paient avec des délais. Le BFR d'un tel groupe est structurellement élevé et positif. À l'inverse, un distributeur comme Bed Bath & Beyond (cité par MarketWatch) encaisse cash en caisse et paie ses fournisseurs à 60 jours : BFR faible, parfois négatif.</p><div class='term'><div class='term-name'>BFR POSITIF vs NÉGATIF</div><strong>BFR positif</strong> : l'entreprise finance son cycle d'exploitation, elle immobilise du cash (cas KNDS). <strong>BFR négatif</strong> : les fournisseurs et clients financent l'activité — l'entreprise encaisse avant de payer (grande distribution, plateformes). Un BFR négatif est une machine à cash.</div><p><strong>Étape 2 — la variation au tableau de flux (le piège).</strong> Au compte de résultat et au bilan, on voit le <em>niveau</em>. Mais dans le tableau de flux de trésorerie (CFS), seule compte la <strong>variation</strong> du BFR sur la période. La règle d'or, à connaître par cœur :</p><ul><li>Une <strong>augmentation du BFR</strong> (les stocks gonflent, les créances grimpent) = <strong>sortie de cash</strong> → impact NÉGATIF sur le flux de trésorerie d'exploitation.</li><li>Une <strong>diminution du BFR</strong> = <strong>entrée de cash</strong> → impact POSITIF.</li></ul><p>Intuition : si vos stocks augmentent de 100, c'est que vous avez dépensé 100 de cash pour les constituer, sans encore les avoir vendus. Le profit comptable existe, mais le cash est parti.</p><div class='term'><div class='term-name'>RÈGLE DES SIGNES (CFS)</div>↑ Actif courant (stocks, créances) → emploi de cash → flux NÉGATIF. ↑ Passif courant (dettes fournisseurs) → source de cash → flux POSITIF. On raisonne TOUJOURS sur la variation entre deux bilans, jamais sur le niveau.</div><p><strong>Étape 3 — chiffres appliqués à KNDS.</strong> Imaginons que le réarmement européen fasse exploser le carnet de commandes de KNDS. Le groupe doit produire plus : il achète massivement des matières premières et constitue des en-cours. Disons que les stocks passent de 1 500 M€ à 2 100 M€ (+600) et les créances clients de 800 à 1 000 (+200), tandis que les dettes fournisseurs ne montent que de 400 à 500 (+100). Variation du BFR = (+600 + 200) − 100 = <strong>+700 M€</strong>. Au CFS, cela représente une <strong>sortie de cash de 700 M€</strong>. Voilà le paradoxe que tout investisseur en IPO doit comprendre : KNDS peut afficher un EBITDA en forte croissance ET brûler du cash, parce que sa croissance dévore du BFR. C'est exactement pourquoi le contexte géopolitique (Iran, chaînes d'appro perturbées) rend ce poste si sensible : un industriel qui sur-stocke par précaution gonfle mécaniquement son BFR.</p><div class='term'><div class='term-name'>FREE CASH FLOW & BFR</div>Le FCF = flux d'exploitation − capex. Or le flux d'exploitation intègre la variation de BFR. Un groupe en hyper-croissance peut donc avoir un FCF faible voire négatif malgré une marge brute confortable, simplement parce que sa croissance immobilise du working capital. C'est LE point que les acheteurs LBO scrutent.</div><p><strong>Cas limite et erreur classique en entretien.</strong> L'erreur n°1 : confondre niveau et variation. Si l'examinateur dit « les créances clients sont de 200 », ce n'est PAS un impact cash de −200 ; il faut connaître le niveau de l'année précédente pour calculer la variation. Erreur n°2 : inclure la trésorerie ou la dette financière dans le BFR — non, ce sont des éléments financiers, pas opérationnels. Erreur n°3 : oublier que dans un build de modèle, on projette souvent le BFR via les ratios DSO (jours de créances), DIO (jours de stock) et DPO (jours de fournisseurs). Maîtriser ces trois ratios, c'est savoir piloter le cash d'un business model.</p><p><strong>Ce que vous savez maintenant :</strong> distinguer niveau (bilan) et variation (CFS), connaître la règle des signes, comprendre pourquoi un BFR positif est un dévoreur de cash en croissance. <strong>Demain</strong>, on enchaîne sur le <strong>Goodwill</strong> : ce qui se passe au bilan de l'acquéreur le jour où il paie KNDS plus cher que sa valeur comptable.</p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin: 0 -48px; padding: 24px 48px; background:#fff3e8; border-top:1px solid #fde0c5; border-bottom:1px solid #fde0c5;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="540" height="200" viewBox="0 0 540 200">
+  <rect width="540" height="200" fill="#ffffff"/>
+  <text x="270" y="28" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#c94e0e">Working Capital (BFR)</text>
+
+  <!-- Box 1 : Stocks + Créances -->
+  <rect x="20" y="60" width="150" height="90" rx="6" fill="#fff3e8" stroke="#e85d1a" stroke-width="2"/>
+  <text x="95" y="88" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2b1a0e">Actif circulant</text>
+  <text x="95" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#7a5c45">Stocks</text>
+  <text x="95" y="128" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#7a5c45">+ Créances clients</text>
+
+  <!-- Signe moins -->
+  <text x="200" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#c94e0e">−</text>
+
+  <!-- Box 2 : Dettes fournisseurs -->
+  <rect x="230" y="60" width="150" height="90" rx="6" fill="#fff3e8" stroke="#e85d1a" stroke-width="2"/>
+  <text x="305" y="88" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2b1a0e">Passif circulant</text>
+  <text x="305" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#7a5c45">Dettes fournisseurs</text>
+
+  <!-- Flèche égale -->
+  <line x1="390" y1="105" x2="430" y2="105" stroke="#f9a06b" stroke-width="3"/>
+  <polygon points="430,98 446,105 430,112" fill="#f9a06b"/>
+
+  <!-- Box 3 : BFR -->
+  <rect x="450" y="60" width="80" height="90" rx="6" fill="#ffffff" stroke="#c94e0e" stroke-width="2.5"/>
+  <text x="490" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#c94e0e">BFR</text>
+  <text x="490" y="122" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#7a5c45">cash immobilisé</text>
+
+  <text x="270" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#7a5c45">Plus le BFR augmente, plus il consomme de trésorerie</text>
+</svg>
+      </div>
+      
+
+      <!-- QUESTION D'ENTRETIEN -->
+      <div class="interview-section">
+        <div class="section-label">🎯 Question d'entretien de la semaine</div>
+        <div class="interview-question">"« Une entreprise affiche un EBITDA en hausse de 30 % cette année mais son flux de trésorerie d'exploitation est en baisse. Comment l'expliquez-vous, et où regardez-vous en premier ? »"</div>
+        <div class="interview-answer">
+          <ol><li><strong>Le suspect n°1 : la variation du BFR.</strong> Une forte croissance d'activité gonfle généralement les stocks et les créances clients plus vite que les dettes fournisseurs. Cette augmentation du besoin en fonds de roulement constitue une sortie de cash qui vient amputer le flux d'exploitation, indépendamment de la performance affichée en EBITDA. Cas typique : KNDS qui produit à plein pour honorer un carnet de commandes record et immobilise du cash dans ses en-cours.</li><li><strong>Je remonte au tableau de flux.</strong> Je regarde la ligne « variation du BFR » dans la section opérationnelle. Si les stocks ont augmenté de, disons, +600 M€ et les créances de +200 M€ pour seulement +100 M€ de dettes fournisseurs, on a une consommation de 700 M€ de cash qui explique le décalage. Je vérifie ensuite les ratios DSO, DIO et DPO pour voir si c'est de la croissance saine ou un signal de stress (clients qui paient moins vite, stocks invendus).</li><li><strong>Les autres pistes à écarter.</strong> Variation des impôts différés, éléments non-cash exceptionnels passés dans l'EBITDA, ou un changement de politique de paiement fournisseurs. Mais dans 80 % des cas en entretien, la bonne réponse attendue est la dégradation du BFR liée à la croissance — c'est le pont entre rentabilité comptable et génération de cash.</li></ol>
+        </div>
+      </div>
+
+      <!-- OUTILS D'APPRENTISSAGE -->
+      <div class="tools-section">
+        <a class="tool-card" href="https://abarisan.github.io/newsletter-mna/quiz/quiz_2026-06-16.html" target="_blank">
+          <span class="icon">❓</span>
+          <span class="tool-title">Quiz ce numéro</span>
+          <span class="tool-desc">4 questions pour vérifier que tu as compris</span>
+        </a>
+        <a class="tool-card" href="https://claude.ai/new" target="_blank">
+          <span class="icon">🤖</span>
+          <span class="tool-title">Poser une question</span>
+          <span class="tool-desc">Ouvre ton Claude Project M&A pour aller plus loin</span>
+        </a>
+      </div>
+
+      <!-- SOURCES PAR NIVEAU -->
+      <div class="sources-section">
+        <div class="section-label">Sources</div>
+        <ul>
+          <li>[N1] FT — « The reclusive heirs in line for billions when Europe's top tankmaker lists » (16 juin 2026)</li>
+<li>[N2] NYT DealBook — « Oil Prices Continue to Fall as Traders Assess U.S.-Iran Deal » & « Warsh Faces Tenuous Balancing Act in First Fed Meeting as Chairman » (16 juin 2026)</li>
+<li>[N3] WSJ Markets — Swiss National Bank cuts interest rates / suivi des décisions de banques centrales</li>
+<li>[N1] FT — « Trump administration considers $300bn fund for Iran if deal is upheld » (15 juin 2026)</li>
+        </ul>
+        <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:6px; font-family:'Helvetica Neue',Arial,sans-serif; font-size:10px;">
+          <span style="background:#fff3e8;border:1px solid #e85d1a;color:#c94e0e;padding:3px 8px;border-radius:20px;font-weight:700;">N1 · Bloomberg · FT · Capital Finance · CFNEWS · S&P</span>
+          <span style="background:#fff8f2;border:1px solid #f9a06b;color:#7a5c45;padding:3px 8px;border-radius:20px;">N2 · Mergermarket · Reuters · PitchBook</span>
+          <span style="background:#fdf6ee;border:1px solid #fde0c5;color:#9a7060;padding:3px 8px;border-radius:20px;">N3 · WSJ · The Economist</span>
+          <span style="background:#f9f9f9;border:1px solid #e0e0e0;color:#888;padding:3px 8px;border-radius:20px;">N4 · Dealogic · Preqin</span>
+        </div>
+      </div>
+
+    </div><!-- /body -->
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <p>
+        <span class="next">Deck Anki mis à jour en pièce jointe</span><br>
+        The Deal Brief · 5× par semaine · <a href="https://github.com/abarisan/newsletter-mna" style="color:#e85d1a;text-decoration:none;">Code source</a>
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>

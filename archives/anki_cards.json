@@ -394,5 +394,41 @@
     "verso": "Quand la croissance du revenu s'accompagne d'une consommation massive de cash ou d'un endettement croissant au bilan. Une entreprise capitalistique (forte intensité d'investissements) peut croître vite tout en brûlant de la trésorerie. Croiser le compte de résultat, le bilan et le tableau de flux permet de juger si la croissance est soutenable ou financée artificiellement.",
     "numero": "06",
     "id": 1628958815
+  },
+  {
+    "recto": "Qu'est-ce que le besoin en fonds de roulement (BFR / working capital) ?",
+    "verso": "Le BFR correspond à la différence entre les actifs courants d'exploitation (créances clients + stocks) et les passifs courants d'exploitation (dettes fournisseurs + autres dettes d'exploitation). On exclut la trésorerie et la dette financière. Il représente l'argent immobilisé dans le cycle d'exploitation pour financer l'activité courante.",
+    "numero": "07",
+    "id": 1144345700
+  },
+  {
+    "recto": "Pourquoi distingue-t-on le BFR en niveau (bilan) et en variation (tableau de flux) ?",
+    "verso": "Au bilan, le BFR apparaît comme un niveau à une date donnée (somme des postes d'exploitation). Dans le tableau de flux de trésorerie, c'est la variation du BFR d'une période à l'autre qui impacte le cash. Une hausse du BFR consomme de la trésorerie, une baisse en libère. Confondre niveau et variation est une erreur classique en entretien.",
+    "numero": "07",
+    "id": 1922802081
+  },
+  {
+    "recto": "Comment une variation du BFR affecte-t-elle la trésorerie d'une entreprise ?",
+    "verso": "Une augmentation du BFR (plus de stocks ou de créances clients, moins de dettes fournisseurs) consomme du cash car l'argent est immobilisé dans le cycle d'exploitation. Inversement, une diminution du BFR libère de la trésorerie. C'est pourquoi, dans le tableau de flux, la variation du BFR vient en déduction (ou ajout) au flux opérationnel.",
+    "numero": "07",
+    "id": 1219225881
+  },
+  {
+    "recto": "Comment une croissance forte du chiffre d'affaires peut-elle dégrader la trésorerie via le BFR ?",
+    "verso": "Une croissance rapide oblige l'entreprise à augmenter ses stocks et ses créances clients pour soutenir les ventes, ce qui gonfle le BFR. Si les paiements clients arrivent après les décaissements fournisseurs, l'entreprise doit financer ce décalage. Une société rentable peut ainsi manquer de cash : c'est l'effet de ciseau du BFR en forte croissance.",
+    "numero": "07",
+    "id": 1214393694
+  },
+  {
+    "recto": "Pourquoi le BFR d'un fabricant industriel à cycle long (ex : chars, défense) peut-il être un risque comptable ?",
+    "verso": "Les industries à cycle de production long immobilisent énormément de capital dans les stocks et en-cours, avec des paiements clients souvent décalés sur plusieurs années. Le BFR devient massif et volatil, consommant beaucoup de trésorerie. Lors d'une introduction en Bourse, les investisseurs scrutent ce poste car une variation brutale peut masquer ou révéler une fragilité de liquidité.",
+    "numero": "07",
+    "id": 1428238821
+  },
+  {
+    "recto": "En entretien, comment expliquer pourquoi on exclut la trésorerie et la dette du calcul du BFR ?",
+    "verso": "Le BFR vise à mesurer le besoin de financement généré par le cycle d'exploitation courant uniquement. La trésorerie et la dette financière relèvent de la structure de financement, pas de l'exploitation. Les inclure mélangerait décisions opérationnelles et décisions financières, faussant l'analyse de l'efficacité du cycle d'activité.",
+    "numero": "07",
+    "id": 1646621908
   }
 ]
