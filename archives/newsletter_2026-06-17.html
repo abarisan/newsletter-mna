@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Deal Brief</title>
+  <style>
+    /* ── Palette : clair / nuances d'orange ── */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #fdf6ee;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      color: #2b1a0e;
+      line-height: 1.75;
+    }
+
+    .wrapper {
+      max-width: 680px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(232,93,26,0.10);
+    }
+
+    .header {
+      background: linear-gradient(135deg, #ff6b2b 0%, #e85d1a 100%);
+      padding: 48px 48px 36px;
+      text-align: center;
+    }
+    .header .eyebrow {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ffe8d6;
+      margin-bottom: 16px;
+    }
+    .header h1 {
+      font-size: 36px;
+      font-weight: 400;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .header .subtitle {
+      font-size: 13px;
+      color: #ffd4b8;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      letter-spacing: 0.5px;
+    }
+    .header .issue-line {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.25);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #ffe8d6;
+      letter-spacing: 1px;
+    }
+
+    .body { padding: 0 48px 48px; }
+
+    .section { margin-top: 48px; }
+    .section-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #e85d1a;
+      margin-bottom: 6px;
+    }
+    .section h2 {
+      font-size: 22px;
+      font-weight: 400;
+      color: #2b1a0e;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #f9a06b;
+    }
+    .section-content { font-size: 15px; color: #3d2510; }
+    .section-content p { margin-bottom: 14px; }
+    .section-content strong { color: #c94e0e; font-weight: 700; }
+    .section-content ul, .section-content ol { padding-left: 20px; margin-bottom: 14px; }
+    .section-content li { margin-bottom: 6px; }
+
+    .callout {
+      background: #fff3e8;
+      border-left: 3px solid #e85d1a;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 14px;
+      color: #5a3520;
+      font-style: italic;
+      border-radius: 0 4px 4px 0;
+    }
+    .callout strong { font-style: normal; color: #c94e0e; }
+
+    .rappel-section {
+      margin-top: 48px;
+      background: #fff3e8;
+      margin-left: -48px;
+      margin-right: -48px;
+      padding: 36px 48px;
+      border-top: 3px solid #f9a06b;
+      border-bottom: 3px solid #f9a06b;
+    }
+    .rappel-section .section-label { color: #e85d1a; }
+    .rappel-section h2 { color: #2b1a0e; border-bottom-color: #fde0c5; font-size: 20px; }
+    .rappel-section .section-content { color: #5a3520; }
+    .rappel-section .section-content strong { color: #c94e0e; }
+    .rappel-section .term { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid #fde0c5; }
+    .rappel-section .term:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .rappel-section .term-name {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .interview-section {
+      margin-top: 48px;
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 28px 32px;
+    }
+    .interview-section .section-label { color: #e85d1a; }
+    .interview-question { font-size: 18px; font-style: italic; color: #2b1a0e; margin: 12px 0 20px; line-height: 1.4; }
+    .interview-answer { font-size: 14px; color: #5a3520; }
+
+    .sources-section { margin-top: 48px; padding-top: 24px; border-top: 1px solid #fde0c5; }
+    .sources-section .section-label { margin-bottom: 12px; }
+    .sources-section ul { list-style: none; padding: 0; }
+    .sources-section li {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #7a5c45;
+      margin-bottom: 6px;
+      padding-left: 12px;
+      position: relative;
+    }
+    .sources-section li::before { content: '→'; position: absolute; left: 0; color: #e85d1a; }
+
+    .footer {
+      background: #fdf6ee;
+      padding: 28px 48px;
+      text-align: center;
+      border-top: 1px solid #fde0c5;
+    }
+    .footer p { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; color: #9a7060; line-height: 1.8; }
+    .footer .next { color: #c94e0e; font-weight: 600; }
+
+    .divider { height: 1px; background: #fde0c5; margin: 36px 0; }
+
+    /* ── Schéma SVG ── */
+    .diagram-section {
+      margin-top: 48px;
+    }
+    .diagram-section .section-label {
+      margin-bottom: 12px;
+    }
+    .diagram-wrap {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      overflow-x: auto;
+    }
+    .diagram-wrap svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* ── Outils d'apprentissage ── */
+    .tools-section {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .tool-card {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      transition: box-shadow .15s;
+    }
+    .tool-card:hover { box-shadow: 0 4px 16px rgba(232,93,26,0.15); }
+    .tool-card .icon { font-size: 28px; display: block; margin-bottom: 8px; }
+    .tool-card .tool-title {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .tool-card .tool-desc {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      color: #7a5c45;
+    }
+
+    @media (max-width: 600px) {
+      .wrapper { margin: 0; border-radius: 0; }
+      .header { padding: 32px 24px 24px; }
+      .body { padding: 0 24px 32px; }
+      .rappel-section { margin-left: -24px; margin-right: -24px; padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="eyebrow">Newsletter M&A · Finance · IA · Géopolitique</div>
+      <h1>The Deal Brief</h1>
+      <div class="subtitle">Comprendre la finance, pas juste la suivre</div>
+      <div class="issue-line">N° 08 &nbsp;·&nbsp; 17 June 2026</div>
+    </div>
+
+    <div class="body">
+
+      <!-- SECTION 1 : M&A -->
+      <!-- DEAL -->
+      <div class="section">
+        <div class="section-label">Niveau 1 — Deal de la semaine</div>
+        <h2>Le goodwill du LBO d'Electronic Arts : pourquoi 33 Md$ de prime vont gonfler le bilan</h2>
+        <div class="section-content"><p>On revient sur le dossier ouvert lundi (N°05 — la mécanique LBO sur <strong>Electronic Arts</strong>) et approfondi mardi (N°06/07 — modélisation et structure de dette). Aujourd'hui, on prend le deal sous un angle comptable rarement abordé en entretien junior mais qui sépare ceux qui ont compris des autres : <strong>le goodwill généré à la clôture</strong>. Pour mémoire, le consortium (Silver Lake, PIF, Affinity Partners) rachète EA à environ <strong>55 Md$ de valeur d'entreprise</strong>, financé par ~36 Md$ d'equity et ~20 Md$ de dette (term loan + senior notes). La transaction se fait à une prime d'environ <strong>25 % sur le cours non affecté</strong>.</p></div>
+      </div>
+
+      
+
+      <div class="divider"></div>
+
+      <!-- MACRO & GÉOPO -->
+      <div class="section">
+        <div class="section-label">Niveau 3 — Macro & Géopolitique</div>
+        <h2>La Fed de Kevin Warsh tient les taux : l'« US exceptionalism » revient et tend le marché du LBO</h2>
+        <div class="section-content"><p>D'après le <strong>NYT DealBook</strong> (« What to Watch at the Federal Reserve's June Meeting », 17 juin 2026), la Fed devrait <strong>maintenir ses taux inchangés</strong> lors de la première réunion présidée par <strong>Kevin M. Warsh</strong>. Le <strong>Financial Times</strong> (« Investors pile into bullish dollar bets as 'US exceptionalism' trade returns », 17 juin 2026) confirme : les traders parient sur une économie américaine robuste qui <strong>empêche la Fed de couper</strong>, malgré la baisse du pétrole.</p><p><strong>Mécanisme de transmission vers le M&A.</strong> Des taux qui restent hauts renchérissent la dette LBO : le coupon des senior notes d'EA reste calé sur un SOFR élevé, ce qui comprime l'IRR du sponsor. Mais paradoxalement, des taux fermes signalent une croissance solide — donc des EBITDA prévisionnels plus confiants. Le vrai effet ici est sur la <strong>valorisation à l'entrée</strong> : plus on paie cher (prime de 25 %), plus l'écart entre prix payé et juste valeur des actifs nets crée du <strong>goodwill</strong> — exactement le sujet du jour.</p></div>
+      </div>
+
+      
+
+      <div class="divider"></div>
+
+      <!-- IA -->
+      
+
+      <!-- RAPPEL DE COURS -->
+      <div class="rappel-section">
+        <div class="section-label">Rappel de cours</div>
+        <h2>Les notions clés de ce numéro</h2>
+        <div class="section-content"><p>Lundi on a vu la mécanique LBO, mardi la modélisation et la dette. Aujourd'hui on plonge dans la <strong>comptabilité de l'acquisition</strong> : quand un acheteur paie plus que la valeur des actifs nets identifiables d'une cible, l'excédent atterrit au bilan sous un nom que tout banquier doit maîtriser — <strong>le goodwill</strong> (survaleur).</p><div class='term'><div class='term-name'>GOODWILL</div>Actif incorporel inscrit au bilan de l'acquéreur, égal au prix payé pour la cible moins la juste valeur de ses actifs nets identifiables (actifs - passifs réévalués). Il représente ce qu'on paie « en plus » : marque, base clients, synergies attendues, capital humain — des choses réelles mais non comptabilisables individuellement.</div><p><strong>La formule de base.</strong> Goodwill = Prix d'acquisition (de l'equity) − Juste valeur des actifs nets identifiables acquis. En logique « purchase price allocation » (PPA), on procède en plusieurs étapes :</p><ol><li>On part du <strong>prix payé pour les capitaux propres</strong> (equity purchase price).</li><li>On <strong>réévalue les actifs et passifs</strong> de la cible à leur juste valeur (fair value), pas à leur valeur comptable historique. Un immeuble acheté il y a 20 ans peut valoir bien plus.</li><li>On <strong>identifie les actifs incorporels</strong> qu'on peut isoler : marques, technologie, relations clients, brevets. Eux sont amortissables.</li><li>Tout le résidu non allouable = <strong>goodwill</strong>.</li></ol><div class='term'><div class='term-name'>ACTIFS NETS IDENTIFIABLES</div>Total des actifs réévalués à la juste valeur, moins l'ensemble des passifs réévalués. C'est la « substance comptable » réelle de la cible au jour de l'acquisition.</div><p><strong>Appliquons à Electronic Arts.</strong> Supposons (chiffres illustratifs cohérents avec le deal) qu'EA soit racheté pour ~52 Md$ d'equity value, et que la juste valeur de ses actifs nets identifiables — après réévaluation des incorporels comme les franchises FIFA/EA Sports FC, Battlefield, Sims, et la technologie de moteur de jeu — ressorte à ~19 Md$. Le goodwill généré serait alors d'environ <strong>33 Md$</strong>. Concrètement : le consortium paie 52 pour des actifs nets qui « valent » 19 au sens comptable strict. L'écart de 33 reflète la <strong>valeur de la marque EA Sports FC, l'engagement des joueurs et les synergies attendues</strong> — du réel, mais immatériel.</p><p><strong>Pourquoi le LBO amplifie le goodwill.</strong> Dans un LBO, on paie une <strong>prime de contrôle</strong> (ici ~25 %). Plus la prime est haute, plus le prix dépasse la valeur des actifs nets, plus le goodwill explose. C'est pour ça qu'un buyout d'une société asset-light comme un éditeur de jeux génère un goodwill énorme : EA n'a quasiment pas d'usines, ses actifs « durs » sont faibles, mais sa valeur est dans l'immatériel.</p><div class='term'><div class='term-name'>IMPAIRMENT (DÉPRÉCIATION)</div>Le goodwill n'est PAS amorti (en US GAAP et IFRS). Il est testé chaque année pour dépréciation. Si la valeur recouvrable de l'unité génératrice de trésorerie tombe sous sa valeur comptable, on passe une charge d'impairment au compte de résultat — irréversible.</div><p><strong>Le piège classique en entretien : goodwill amorti ou non ?</strong> Erreur ultra-fréquente. <strong>Le goodwill n'est jamais amorti</strong> en normes US GAAP / IFRS pour les grands groupes. Il est soumis à un <strong>test d'impairment annuel</strong>. En revanche, les <strong>actifs incorporels identifiables à durée de vie définie</strong> (relations clients, technologie) sont, eux, amortis sur leur durée d'usage. Confondre les deux est une faute éliminatoire.</p><p><strong>Deuxième piège : l'impact sur les trois états financiers.</strong> Lors d'une acquisition financée par dette :</p><ul><li><strong>Bilan :</strong> on crée du goodwill à l'actif, on ajoute la dette au passif, l'equity de la cible est éliminé (consolidation).</li><li><strong>Compte de résultat :</strong> pas de charge d'amortissement du goodwill — mais l'amortissement des <strong>incorporels identifiables</strong> réduit l'EBIT et le net income. C'est pourquoi on ajoute souvent cet amortissement dans les ajustements pour calculer l'« adjusted EBITDA ».</li><li><strong>Cash-flow :</strong> l'amortissement des incorporels et un éventuel impairment sont des charges <strong>non-cash</strong> qu'on réintègre.</li></ul><p><strong>Cas limite : le badwill (negative goodwill).</strong> Si on paie MOINS que la juste valeur des actifs nets (bargain purchase), on génère un goodwill négatif, reconnu immédiatement en <strong>profit au compte de résultat</strong>. Rarissime — typiquement dans des ventes en détresse.</p><p><strong>Ce que tu sais maintenant :</strong> calculer le goodwill via la PPA, distinguer goodwill (non amorti, testé) des incorporels identifiables (amortis), tracer l'impact sur les trois états, et expliquer pourquoi un LBO sur une société asset-light comme EA gonfle massivement la survaleur. <strong>Demain :</strong> on enchaîne sur l'<strong>EPS et le Diluted EPS</strong> — comment une acquisition est relutive ou dilutive sur le bénéfice par action, et pourquoi c'est le premier réflexe d'un analyste.</p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin: 0 -48px; padding: 24px 48px; background:#fff3e8; border-top:1px solid #fde0c5; border-bottom:1px solid #fde0c5;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="540" height="200" viewBox="0 0 540 200">
+  <rect width="540" height="200" fill="#ffffff"/>
+  <text x="270" y="28" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#2b1a0e" text-anchor="middle">Comptabilité de l'acquisition</text>
+
+  <!-- Prix payé -->
+  <rect x="20" y="60" width="150" height="90" rx="6" fill="#fff3e8" stroke="#e85d1a" stroke-width="2"/>
+  <text x="95" y="88" font-family="Arial, sans-serif" font-size="12" fill="#7a5c45" text-anchor="middle">Prix payé</text>
+  <text x="95" y="118" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#2b1a0e" text-anchor="middle">100</text>
+  <text x="95" y="138" font-family="Arial, sans-serif" font-size="11" fill="#7a5c45" text-anchor="middle">(acquisition)</text>
+
+  <!-- moins -->
+  <text x="190" y="112" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#c94e0e" text-anchor="middle">−</text>
+
+  <!-- Actifs nets -->
+  <rect x="210" y="60" width="150" height="90" rx="6" fill="#fff3e8" stroke="#e85d1a" stroke-width="2"/>
+  <text x="285" y="88" font-family="Arial, sans-serif" font-size="12" fill="#7a5c45" text-anchor="middle">Actifs nets</text>
+  <text x="285" y="118" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#2b1a0e" text-anchor="middle">70</text>
+  <text x="285" y="138" font-family="Arial, sans-serif" font-size="11" fill="#7a5c45" text-anchor="middle">(identifiables)</text>
+
+  <!-- égal -->
+  <text x="380" y="112" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#c94e0e" text-anchor="middle">=</text>
+
+  <!-- Goodwill -->
+  <rect x="400" y="60" width="120" height="90" rx="6" fill="#c94e0e" stroke="#c94e0e" stroke-width="2"/>
+  <text x="460" y="88" font-family="Arial, sans-serif" font-size="12" fill="#fff3e8" text-anchor="middle">Goodwill</text>
+  <text x="460" y="118" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#ffffff" text-anchor="middle">30</text>
+  <text x="460" y="138" font-family="Arial, sans-serif" font-size="11" fill="#fff3e8" text-anchor="middle">au bilan</text>
+
+  <text x="270" y="185" font-family="Arial, sans-serif" font-size="11" fill="#7a5c45" text-anchor="middle">L'excédent payé au-dessus des actifs nets devient l'écart d'acquisition</text>
+</svg>
+      </div>
+      
+
+      <!-- QUESTION D'ENTRETIEN -->
+      <div class="interview-section">
+        <div class="section-label">🎯 Question d'entretien de la semaine</div>
+        <div class="interview-question">"« Le consortium rachète Electronic Arts pour 52 Md$ d'equity value, et la juste valeur de ses actifs nets identifiables est de 19 Md$. Quel goodwill est créé, comment évolue-t-il dans le temps, et quel est son impact sur les trois états financiers ? »"</div>
+        <div class="interview-answer">
+          <p><strong>1. Calcul du goodwill.</strong> Goodwill = prix d'acquisition de l'equity − juste valeur des actifs nets identifiables = 52 − 19 = <strong>33 Md$</strong>. Ce montant est inscrit à l'actif du bilan consolidé de l'acquéreur. Il reflète la valeur des incorporels non isolables et des synergies — ici essentiellement la marque EA Sports FC et l'engagement des joueurs. La PPA (purchase price allocation) consiste d'abord à réévaluer actifs et passifs à la juste valeur et à isoler les incorporels identifiables (marques, technologie), le résidu étant le goodwill.</p><p><strong>2. Évolution dans le temps.</strong> Le goodwill <strong>n'est pas amorti</strong> (US GAAP / IFRS) — c'est l'erreur classique à éviter. Il fait l'objet d'un <strong>test d'impairment annuel</strong> : si la valeur recouvrable de l'unité génératrice de trésorerie passe sous sa valeur comptable, on passe une charge de dépréciation irréversible au compte de résultat. En revanche, les incorporels identifiables à durée de vie définie (relations clients, technologie) sont, eux, amortis.</p><p><strong>3. Impact sur les trois états.</strong> Au <strong>bilan</strong> : +33 Md$ de goodwill à l'actif, +20 Md$ de dette au passif, l'equity historique de la cible est éliminé. Au <strong>compte de résultat</strong> : pas de charge sur le goodwill, mais l'amortissement des incorporels identifiables réduit l'EBIT et le net income — qu'on réintègre souvent en adjusted EBITDA. Au <strong>tableau de flux</strong> : amortissement des incorporels et impairment éventuel sont des charges non-cash réintégrées au cash-flow opérationnel. Point d'opinion : sur un actif asset-light comme EA, ce goodwill massif est un signal — la création de valeur du LBO repose entièrement sur la capacité à monétiser l'immatériel, pas à optimiser des actifs durs.</p>
+        </div>
+      </div>
+
+      <!-- OUTILS D'APPRENTISSAGE -->
+      <div class="tools-section">
+        <a class="tool-card" href="https://abarisan.github.io/newsletter-mna/quiz/quiz_2026-06-17.html" target="_blank">
+          <span class="icon">❓</span>
+          <span class="tool-title">Quiz ce numéro</span>
+          <span class="tool-desc">4 questions pour vérifier que tu as compris</span>
+        </a>
+        <a class="tool-card" href="https://claude.ai/new" target="_blank">
+          <span class="icon">🤖</span>
+          <span class="tool-title">Poser une question</span>
+          <span class="tool-desc">Ouvre ton Claude Project M&A pour aller plus loin</span>
+        </a>
+      </div>
+
+      <!-- SOURCES PAR NIVEAU -->
+      <div class="sources-section">
+        <div class="section-label">Sources</div>
+        <ul>
+          <li>[N1] Financial Times — « Investors pile into bullish dollar bets as 'US exceptionalism' trade returns » (17 juin 2026)</li>
+<li>[N2] NYT DealBook — « What to Watch at the Federal Reserve's June Meeting » (17 juin 2026)</li>
+<li>[N3] WSJ Markets — Suivi des décisions de banques centrales et mouvements de change</li>
+<li>[N4] Dealogic — Volumes de LBO sponsor-led et primes de contrôle sur le secteur technologie/gaming 2026</li>
+        </ul>
+        <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:6px; font-family:'Helvetica Neue',Arial,sans-serif; font-size:10px;">
+          <span style="background:#fff3e8;border:1px solid #e85d1a;color:#c94e0e;padding:3px 8px;border-radius:20px;font-weight:700;">N1 · Bloomberg · FT · Capital Finance · CFNEWS · S&P</span>
+          <span style="background:#fff8f2;border:1px solid #f9a06b;color:#7a5c45;padding:3px 8px;border-radius:20px;">N2 · Mergermarket · Reuters · PitchBook</span>
+          <span style="background:#fdf6ee;border:1px solid #fde0c5;color:#9a7060;padding:3px 8px;border-radius:20px;">N3 · WSJ · The Economist</span>
+          <span style="background:#f9f9f9;border:1px solid #e0e0e0;color:#888;padding:3px 8px;border-radius:20px;">N4 · Dealogic · Preqin</span>
+        </div>
+      </div>
+
+    </div><!-- /body -->
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <p>
+        <span class="next">Deck Anki mis à jour en pièce jointe</span><br>
+        The Deal Brief · 5× par semaine · <a href="https://github.com/abarisan/newsletter-mna" style="color:#e85d1a;text-decoration:none;">Code source</a>
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>

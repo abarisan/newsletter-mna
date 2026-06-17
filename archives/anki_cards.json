@@ -430,5 +430,41 @@
     "verso": "Le BFR vise à mesurer le besoin de financement généré par le cycle d'exploitation courant uniquement. La trésorerie et la dette financière relèvent de la structure de financement, pas de l'exploitation. Les inclure mélangerait décisions opérationnelles et décisions financières, faussant l'analyse de l'efficacité du cycle d'activité.",
     "numero": "07",
     "id": 1646621908
+  },
+  {
+    "recto": "Qu'est-ce que le goodwill (survaleur) ?",
+    "verso": "C'est un actif incorporel inscrit au bilan de l'acquéreur, égal au prix payé pour la cible moins la juste valeur de ses actifs nets identifiables (actifs moins passifs réévalués). Il représente ce qu'on paie « en plus » : marque, base clients, synergies attendues, capital humain. Par exemple, payer 100 pour une entreprise dont les actifs nets valent 70 crée 30 de goodwill.",
+    "numero": "08",
+    "id": 1414787176
+  },
+  {
+    "recto": "Que sont les actifs nets identifiables dans une acquisition ?",
+    "verso": "Ce sont les actifs et passifs de la cible réévalués à leur juste valeur à la date d'acquisition (et non leur valeur comptable historique). On y inclut aussi des incorporels identifiables comme les brevets ou les marques. Le goodwill correspond à l'excédent du prix payé sur ces actifs nets identifiables.",
+    "numero": "08",
+    "id": 1588925950
+  },
+  {
+    "recto": "Comment le goodwill est-il généré à la clôture d'une acquisition ?",
+    "verso": "À la clôture, on réalise un Purchase Price Allocation : on réévalue tous les actifs et passifs de la cible à leur juste valeur, puis on compare le prix d'acquisition à ces actifs nets. La différence positive est comptabilisée en goodwill au bilan du nouvel ensemble. Plus la prime payée au-dessus des actifs nets est élevée, plus le goodwill gonfle.",
+    "numero": "08",
+    "id": 1894440683
+  },
+  {
+    "recto": "Comment le goodwill évolue-t-il au bilan après l'acquisition (amortissement vs impairment) ?",
+    "verso": "En normes IFRS et US GAAP, le goodwill n'est pas amorti linéairement mais soumis à un test de dépréciation annuel (impairment test). Si la valeur recouvrable de l'unité génératrice de trésorerie tombe en dessous de sa valeur comptable, on enregistre une dépréciation en charge. Cette charge réduit le résultat net mais n'est pas une sortie de cash.",
+    "numero": "08",
+    "id": 1383276204
+  },
+  {
+    "recto": "Pourquoi un goodwill important peut-il être un signal de risque dans un LBO ?",
+    "verso": "Un goodwill élevé signifie qu'une forte prime a été payée au-dessus des actifs nets, pariant sur des synergies ou une croissance future. Si ces hypothèses ne se réalisent pas, un impairment vient réduire les capitaux propres et peut dégrader les ratios financiers et les covenants. Cela révèle la sensibilité du deal aux attentes de performance.",
+    "numero": "08",
+    "id": 1766477176
+  },
+  {
+    "recto": "En entretien, pourquoi le goodwill n'a-t-il pas d'impact direct sur la trésorerie ou la valeur d'entreprise de la cible ?",
+    "verso": "Le goodwill est une écriture comptable purement non-cash issue de l'allocation du prix d'achat : sa création comme sa dépréciation ne génèrent aucun flux de trésorerie. Il apparaît au bilan de l'acquéreur, pas dans le calcul de l'EV de la cible qui repose sur capitalisation, dette nette et éléments opérationnels. C'est pourquoi on le retraite (ajout) dans les calculs de flux et qu'il ne change pas le free cash flow disponible pour rembourser la dette.",
+    "numero": "08",
+    "id": 1778942277
   }
 ]

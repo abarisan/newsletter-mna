@@ -1,5 +1,5 @@
 {
-  "numero": 7,
+  "numero": 8,
   "depth": 6,
   "concepts_vus": [
     "LBO : achat d'une cible financé majoritairement par dette",
@@ -20,5 +20,5 @@
     "SpaceX : IPO de 75 Md$, la plus grosse de l'histoire, cas d'école de cash flow"
   ],
   "objectif": "Préparer des entretiens M&A dans 1 mois, puis sur 2-3 ans",
-  "trainy_index": 6
+  "trainy_index": 7
 }
