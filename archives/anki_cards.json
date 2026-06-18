@@ -466,5 +466,41 @@
     "verso": "Le goodwill est une écriture comptable purement non-cash issue de l'allocation du prix d'achat : sa création comme sa dépréciation ne génèrent aucun flux de trésorerie. Il apparaît au bilan de l'acquéreur, pas dans le calcul de l'EV de la cible qui repose sur capitalisation, dette nette et éléments opérationnels. C'est pourquoi on le retraite (ajout) dans les calculs de flux et qu'il ne change pas le free cash flow disponible pour rembourser la dette.",
     "numero": "08",
     "id": 1778942277
+  },
+  {
+    "recto": "Qu'est-ce que l'EPS (BPA de base) ?",
+    "verso": "L'EPS (Earnings Per Share) correspond au résultat net attribuable aux actionnaires ordinaires divisé par le nombre moyen pondéré d'actions ordinaires en circulation. Formule : EPS = (Net Income − Dividendes préférentiels) / Weighted Average Shares Outstanding. Il mesure la part de bénéfice revenant à chaque action.",
+    "numero": "09",
+    "id": 1878128537
+  },
+  {
+    "recto": "Qu'est-ce que le Diluted EPS (BPA dilué) ?",
+    "verso": "Le Diluted EPS est le bénéfice par action calculé en intégrant tous les instruments potentiellement convertibles en actions (stock-options, warrants, obligations convertibles, RSU). Il reflète le scénario le plus défavorable pour l'actionnaire existant en supposant que toutes ces dilutions se matérialisent, donnant une image plus prudente que l'EPS de base.",
+    "numero": "09",
+    "id": 1812312924
+  },
+  {
+    "recto": "Comment passe-t-on de l'EPS de base à l'EPS dilué ?",
+    "verso": "On augmente le dénominateur (nombre d'actions) en ajoutant les actions potentielles issues des instruments dilutifs, souvent via la méthode du Treasury Stock Method pour les options. On ajuste aussi parfois le numérateur (ex : réintégration des intérêts d'obligations convertibles, nets d'impôt). Le résultat est un EPS plus faible ou égal à l'EPS de base.",
+    "numero": "09",
+    "id": 1197610476
+  },
+  {
+    "recto": "Pourquoi le pondéré moyen d'actions est-il utilisé plutôt que le nombre d'actions en fin de période pour calculer l'EPS ?",
+    "verso": "Parce que le nombre d'actions varie au cours de l'exercice (émissions, rachats, IPO). Utiliser une moyenne pondérée par le temps reflète fidèlement le capital réellement mobilisé pour générer le résultat net sur la période, évitant de fausser le BPA si une grande émission a lieu juste en fin d'année.",
+    "numero": "09",
+    "id": 2003023520
+  },
+  {
+    "recto": "Pourquoi le Diluted EPS est-il souvent le chiffre qui compte le plus en entretien et pour les investisseurs ?",
+    "verso": "Parce qu'il représente le pire scénario de dilution et donne donc une mesure conservatrice de la rentabilité par action. Les sociétés tech ou nouvellement cotées émettent beaucoup de stock-options et instruments convertibles, ce qui peut significativement diluer les actionnaires existants. Le Diluted EPS révèle l'impact réel de ces engagements sur la valeur par action.",
+    "numero": "09",
+    "id": 1873522658
+  },
+  {
+    "recto": "Dans quel cas une IPO modifie-t-elle structurellement le calcul de l'EPS d'une société ?",
+    "verso": "Lors d'une IPO, l'émission de nouvelles actions augmente le nombre d'actions en circulation et donc le dénominateur de l'EPS, diluant mécaniquement le bénéfice par action si le capital levé ne génère pas un rendement immédiat. L'IPO ajoute aussi souvent de nouveaux instruments dilutifs (options accordées aux salariés), renforçant l'écart entre EPS de base et EPS dilué.",
+    "numero": "09",
+    "id": 2137983313
   }
 ]

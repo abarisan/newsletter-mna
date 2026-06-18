@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Deal Brief</title>
+  <style>
+    /* ── Palette : clair / nuances d'orange ── */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #fdf6ee;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      color: #2b1a0e;
+      line-height: 1.75;
+    }
+
+    .wrapper {
+      max-width: 680px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(232,93,26,0.10);
+    }
+
+    .header {
+      background: linear-gradient(135deg, #ff6b2b 0%, #e85d1a 100%);
+      padding: 48px 48px 36px;
+      text-align: center;
+    }
+    .header .eyebrow {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ffe8d6;
+      margin-bottom: 16px;
+    }
+    .header h1 {
+      font-size: 36px;
+      font-weight: 400;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .header .subtitle {
+      font-size: 13px;
+      color: #ffd4b8;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      letter-spacing: 0.5px;
+    }
+    .header .issue-line {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.25);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #ffe8d6;
+      letter-spacing: 1px;
+    }
+
+    .body { padding: 0 48px 48px; }
+
+    .section { margin-top: 48px; }
+    .section-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #e85d1a;
+      margin-bottom: 6px;
+    }
+    .section h2 {
+      font-size: 22px;
+      font-weight: 400;
+      color: #2b1a0e;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #f9a06b;
+    }
+    .section-content { font-size: 15px; color: #3d2510; }
+    .section-content p { margin-bottom: 14px; }
+    .section-content strong { color: #c94e0e; font-weight: 700; }
+    .section-content ul, .section-content ol { padding-left: 20px; margin-bottom: 14px; }
+    .section-content li { margin-bottom: 6px; }
+
+    .callout {
+      background: #fff3e8;
+      border-left: 3px solid #e85d1a;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 14px;
+      color: #5a3520;
+      font-style: italic;
+      border-radius: 0 4px 4px 0;
+    }
+    .callout strong { font-style: normal; color: #c94e0e; }
+
+    .rappel-section {
+      margin-top: 48px;
+      background: #fff3e8;
+      margin-left: -48px;
+      margin-right: -48px;
+      padding: 36px 48px;
+      border-top: 3px solid #f9a06b;
+      border-bottom: 3px solid #f9a06b;
+    }
+    .rappel-section .section-label { color: #e85d1a; }
+    .rappel-section h2 { color: #2b1a0e; border-bottom-color: #fde0c5; font-size: 20px; }
+    .rappel-section .section-content { color: #5a3520; }
+    .rappel-section .section-content strong { color: #c94e0e; }
+    .rappel-section .term { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid #fde0c5; }
+    .rappel-section .term:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .rappel-section .term-name {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .interview-section {
+      margin-top: 48px;
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 28px 32px;
+    }
+    .interview-section .section-label { color: #e85d1a; }
+    .interview-question { font-size: 18px; font-style: italic; color: #2b1a0e; margin: 12px 0 20px; line-height: 1.4; }
+    .interview-answer { font-size: 14px; color: #5a3520; }
+
+    .sources-section { margin-top: 48px; padding-top: 24px; border-top: 1px solid #fde0c5; }
+    .sources-section .section-label { margin-bottom: 12px; }
+    .sources-section ul { list-style: none; padding: 0; }
+    .sources-section li {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #7a5c45;
+      margin-bottom: 6px;
+      padding-left: 12px;
+      position: relative;
+    }
+    .sources-section li::before { content: '→'; position: absolute; left: 0; color: #e85d1a; }
+
+    .footer {
+      background: #fdf6ee;
+      padding: 28px 48px;
+      text-align: center;
+      border-top: 1px solid #fde0c5;
+    }
+    .footer p { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; color: #9a7060; line-height: 1.8; }
+    .footer .next { color: #c94e0e; font-weight: 600; }
+
+    .divider { height: 1px; background: #fde0c5; margin: 36px 0; }
+
+    /* ── Schéma SVG ── */
+    .diagram-section {
+      margin-top: 48px;
+    }
+    .diagram-section .section-label {
+      margin-bottom: 12px;
+    }
+    .diagram-wrap {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      overflow-x: auto;
+    }
+    .diagram-wrap svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* ── Outils d'apprentissage ── */
+    .tools-section {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .tool-card {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      transition: box-shadow .15s;
+    }
+    .tool-card:hover { box-shadow: 0 4px 16px rgba(232,93,26,0.15); }
+    .tool-card .icon { font-size: 28px; display: block; margin-bottom: 8px; }
+    .tool-card .tool-title {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .tool-card .tool-desc {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      color: #7a5c45;
+    }
+
+    @media (max-width: 600px) {
+      .wrapper { margin: 0; border-radius: 0; }
+      .header { padding: 32px 24px 24px; }
+      .body { padding: 0 24px 32px; }
+      .rappel-section { margin-left: -24px; margin-right: -24px; padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="eyebrow">Newsletter M&A · Finance · IA · Géopolitique</div>
+      <h1>The Deal Brief</h1>
+      <div class="subtitle">Comprendre la finance, pas juste la suivre</div>
+      <div class="issue-line">N° 09 &nbsp;·&nbsp; 18 June 2026</div>
+    </div>
+
+    <div class="body">
+
+      <!-- SECTION 1 : M&A -->
+      <!-- DEAL -->
+      <div class="section">
+        <div class="section-label">Niveau 1 — Deal de la semaine</div>
+        <h2>SpaceX entre en bourse : le retail s'emballe, et l'EPS dilué devient le nerf de la guerre</h2>
+        <div class="section-content"><p>Coup de tonnerre sur les marchés actions ce 18 juin : <strong>SpaceX</strong> a réalisé un début de cotation explosif, porté massivement par les investisseurs particuliers, selon le NYT DealBook (<em>« Retail Investors Help Send SpaceX Shares Soaring »</em>, 18 juin 2026). Le titre s'est envolé dès l'ouverture, propulsant la société parmi <strong>les entreprises les plus valorisées au monde</strong>. Pour un étudiant en M&A, ce n'est pas l'engouement retail qui compte — c'est ce qu'une IPO de cette ampleur fait à la mécanique du <strong>BPA (EPS) et surtout du BPA dilué (Diluted EPS)</strong>.</p></div>
+      </div>
+
+      
+
+      <div class="divider"></div>
+
+      <!-- MACRO & GÉOPO -->
+      <div class="section">
+        <div class="section-label">Niveau 3 — Macro & Géopolitique</div>
+        <h2>Accord USA-Iran : le pétrole ne baisse pas, et le coût du capital reste tendu</h2>
+        <div class="section-content"><p>Fait majeur du jour : les <strong>États-Unis et l'Iran ont signé un accord</strong> (FT, <em>« US and Iran sign deal as Trump vows to release frozen funds and ease sanctions »</em>, 18 juin 2026). Trump promet la levée partielle des sanctions et le déblocage de fonds gelés. Intuitivement, on attend une détente du prix du brut. Mais le NYT DealBook tempère immédiatement (<em>« Why Flight Prices Might Not Fall After the U.S.-Iran Deal »</em>, 18 juin 2026) : le kérosène pourrait rester cher des mois, le retour de l'offre iranienne étant lent et politiquement conditionné (Trump ayant déjà reculé sur un fonds de 300 Md$, FT 17 juin).</p><p><strong>Mécanisme de transmission vers le M&A :</strong> un pétrole qui ne reflue pas, c'est une inflation importée qui résiste, donc des banques centrales qui hésitent à baisser les taux. Pour les acquéreurs, cela maintient un <strong>coût de la dette élevé</strong> et pèse sur les valorisations actualisées. Mais pour une IPO comme SpaceX, l'effet est différent : un environnement de taux élevé pousse paradoxalement le retail vers les <strong>actions de croissance vedettes</strong>, faute de rendement obligataire suffisamment attractif sur le segment risqué. D'où l'emballement observé.</p></div>
+      </div>
+
+      
+
+      <div class="divider"></div>
+
+      <!-- IA -->
+      
+
+      <!-- RAPPEL DE COURS -->
+      <div class="rappel-section">
+        <div class="section-label">Rappel de cours</div>
+        <h2>Les notions clés de ce numéro</h2>
+        <div class="section-content"><p>Cette semaine, on a posé les fondamentaux comptables. Aujourd'hui, fil directeur imposé par TRAINY : <strong>l'EPS et le Diluted EPS</strong>. Et le timing est parfait — l'IPO SpaceX est un cas d'école pour comprendre pourquoi le BPA <em>dilué</em> est presque toujours le chiffre qui compte vraiment en entretien.</p><div class='term'><div class='term-name'>EPS (Earnings Per Share / BPA de base)</div>Résultat net attribuable aux actionnaires ordinaires, divisé par le nombre <strong>moyen pondéré</strong> d'actions ordinaires en circulation sur la période. Formule : <strong>EPS = (Net Income − Dividendes préférentiels) / Weighted Average Shares Outstanding</strong>.</div><p>Décortiquons chaque terme, car c'est là que les candidats se trompent.</p><p><strong>1. Pourquoi soustraire les dividendes préférentiels ?</strong> L'EPS mesure ce qui revient aux <em>actionnaires ordinaires</em>. Les détenteurs d'actions de préférence (preferred shares) sont servis avant. Si une société dégage 500 M$ de résultat net et verse 50 M$ de dividendes préférentiels, le numérateur de l'EPS ordinaire n'est que de 450 M$. Erreur classique en entretien : utiliser le résultat net brut sans retraiter.</p><p><strong>2. Pourquoi un nombre MOYEN PONDÉRÉ d'actions ?</strong> Parce que le nombre d'actions varie dans l'année — IPO, rachats, émissions. On ne peut pas prendre le chiffre de clôture. Exemple concret SpaceX : si la société avait 900 millions d'actions toute l'année, puis émet 100 millions d'actions nouvelles lors de l'IPO à 3 mois de la fin de l'exercice, le weighted average n'est PAS 1 000 millions. Il est de : 900 + (100 × 3/12) = <strong>925 millions d'actions</strong>. C'est ce dénominateur qu'on utilise.</p><div class='term'><div class='term-name'>Diluted EPS (BPA dilué)</div>EPS recalculé en supposant que <strong>tous les instruments dilutifs</strong> (stock-options, warrants, RSU, obligations convertibles, actions de préférence convertibles) sont convertis en actions ordinaires. C'est le scénario « pire cas » pour l'actionnaire existant.</div><p><strong>3. La mécanique de la dilution — le cœur du chapitre.</strong> Une entreprise comme SpaceX, financée pendant des années par du capital-risque et des plans de stock-options massifs pour ses ingénieurs, traîne un énorme stock d'instruments dilutifs. Au moment de l'IPO, le marché veut savoir : <em>si tous ces options et convertibles deviennent des actions, combien vaut réellement une action ?</em></p><p>On utilise deux méthodes selon l'instrument :</p><ul><li><strong>Treasury Stock Method (TSM)</strong> — pour les options et warrants. On suppose que les détenteurs exercent leurs options au strike, que la société encaisse ce cash, et le réutilise pour racheter ses propres actions au cours de marché. Le nombre net d'actions ajoutées = actions créées − actions rachetées.</li><li><strong>If-Converted Method</strong> — pour les obligations convertibles et préférentielles convertibles. On suppose la conversion : on ajoute les actions au dénominateur ET on rajoute au numérateur les intérêts après impôts (ou dividendes préférentiels) qu'on n'aurait plus à payer.</li></ul><p><strong>Exemple chiffré (TSM).</strong> SpaceX a 925 M d'actions (weighted average). Supposons 50 M d'options au strike de 20 $, cours de marché à 100 $. <br>— Cash encaissé à l'exercice : 50 M × 20 $ = 1 000 M$.<br>— Actions rachetées avec ce cash : 1 000 M$ / 100 $ = 10 M actions.<br>— Actions nettes ajoutées : 50 − 10 = <strong>40 M actions</strong>.<br>Nouveau dénominateur dilué : 925 + 40 = <strong>965 M actions</strong>. Si le résultat net ordinaire est 450 M$ :<br>— EPS de base = 450 / 925 = <strong>0,486 $</strong><br>— Diluted EPS = 450 / 965 = <strong>0,466 $</strong>.<br>La dilution coûte environ 4 % de BPA. Sur une valorisation à 40-50× les bénéfices, ce n'est pas anecdotique.</p><p><strong>4. Le cas limite que les recruteurs adorent : l'anti-dilution.</strong> Un instrument n'est inclus dans le calcul dilué QUE s'il est dilutif (s'il <em>réduit</em> l'EPS). Si une option « out of the money » (strike au-dessus du cours) ou une convertible faisait <em>monter</em> l'EPS, on l'EXCLUT. Règle d'or : <strong>on ne prend jamais un instrument anti-dilutif dans le Diluted EPS</strong>. Beaucoup de candidats les incluent mécaniquement — faute éliminatoire.</p><p><strong>5. Lien direct avec SpaceX.</strong> Le retail qui fait flamber le titre (NYT DealBook) raisonne en capitalisation totale. Le pro M&A, lui, regarde le <em>fully diluted share count</em> : combien d'actions existeront vraiment quand tous les ingénieurs auront exercé leurs RSU et options ? C'est ce dénominateur dilué qui sert à calculer la <strong>market cap fully diluted</strong>, base de tout calcul de valeur d'entreprise. Confondre share count basique et dilué, c'est sous-estimer la valorisation de plusieurs milliards.</p><p><strong>Ce que tu sais maintenant :</strong> calculer un EPS de base avec weighted average, appliquer la Treasury Stock Method et l'If-Converted Method, et reconnaître un instrument anti-dilutif. <strong>Demain</strong>, on passe au Module 2 : les <strong>méthodes de consolidation</strong> (intégration globale, proportionnelle, mise en équivalence) — comment le résultat net qu'on vient de diviser est lui-même construit selon le % de détention.</p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin: 0 -48px; padding: 24px 48px; background:#fff3e8; border-top:1px solid #fde0c5; border-bottom:1px solid #fde0c5;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="540" height="200" viewBox="0 0 540 200">
+  <rect width="540" height="200" fill="#ffffff"/>
+  <text x="270" y="28" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#2b1a0e">EPS vs Diluted EPS</text>
+
+  <!-- Boîte EPS de base -->
+  <rect x="30" y="60" width="200" height="100" rx="8" fill="#fff3e8" stroke="#e85d1a" stroke-width="2"/>
+  <text x="130" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#c94e0e">EPS de base</text>
+  <text x="130" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#7a5c45">Résultat net</text>
+  <line x1="80" y1="120" x2="180" y2="120" stroke="#f9a06b" stroke-width="1.5"/>
+  <text x="130" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#7a5c45">Actions en circulation</text>
+
+  <!-- Flèche -->
+  <line x1="240" y1="110" x2="300" y2="110" stroke="#f9a06b" stroke-width="3"/>
+  <polygon points="300,103 314,110 300,117" fill="#f9a06b"/>
+
+  <!-- Boîte Diluted EPS -->
+  <rect x="320" y="60" width="200" height="100" rx="8" fill="#fff3e8" stroke="#c94e0e" stroke-width="2.5"/>
+  <text x="420" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#c94e0e">Diluted EPS</text>
+  <text x="420" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#7a5c45">Résultat net</text>
+  <line x1="365" y1="120" x2="475" y2="120" stroke="#f9a06b" stroke-width="1.5"/>
+  <text x="420" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#7a5c45">Actions + dilution</text>
+  <text x="420" y="152" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#7a5c45">(stock-options, convertibles)</text>
+
+  <!-- Note bas -->
+  <text x="270" y="186" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-style="italic" fill="#e85d1a">Le chiffre qui compte vraiment → cas IPO SpaceX</text>
+</svg>
+      </div>
+      
+
+      <!-- QUESTION D'ENTRETIEN -->
+      <div class="interview-section">
+        <div class="section-label">🎯 Question d'entretien de la semaine</div>
+        <div class="interview-question">"« Une société publie un résultat net de 600 M$, verse 60 M$ de dividendes préférentiels, et a 200 millions d'actions ordinaires. Elle a aussi 20 millions d'options au strike de 10 $ alors que le cours est à 50 $. Calcule l'EPS de base et l'EPS dilué, et explique-moi pourquoi ils diffèrent. »"</div>
+        <div class="interview-answer">
+          <p><strong>1. EPS de base.</strong> On retire d'abord les dividendes préférentiels du numérateur car l'EPS mesure ce qui revient aux seuls actionnaires ordinaires : 600 − 60 = 540 M$. Puis on divise par le nombre d'actions ordinaires : <strong>EPS de base = 540 / 200 = 2,70 $</strong>.</p><p><strong>2. Calcul de la dilution par Treasury Stock Method.</strong> Les options sont « in the money » (strike 10 $ < cours 50 $), donc dilutives, on les inclut. Cash encaissé à l'exercice : 20 M × 10 $ = 200 M$. Actions rachetées avec ce cash au cours de marché : 200 M$ / 50 $ = 4 M actions. Actions nettes ajoutées : 20 − 4 = <strong>16 M actions</strong>. Nouveau dénominateur : 200 + 16 = 216 M.</p><p><strong>3. EPS dilué et explication de l'écart.</strong> EPS dilué = 540 / 216 = <strong>2,50 $</strong>, soit ~7,4 % de dilution. La différence vient du fait que le dilué intègre les actions potentielles que créeraient les options, après neutralisation par le rachat. Point clé à mentionner : si les options avaient été « out of the money » (anti-dilutives), on les aurait exclues, car la règle comptable interdit qu'un instrument <em>augmente</em> l'EPS dilué. C'est exactement l'enjeu d'une IPO comme SpaceX, où le stock d'options ingénieurs gonfle le fully diluted share count utilisé pour la valorisation.</p>
+        </div>
+      </div>
+
+      <!-- OUTILS D'APPRENTISSAGE -->
+      <div class="tools-section">
+        <a class="tool-card" href="https://abarisan.github.io/newsletter-mna/quiz/quiz_2026-06-18.html" target="_blank">
+          <span class="icon">❓</span>
+          <span class="tool-title">Quiz ce numéro</span>
+          <span class="tool-desc">4 questions pour vérifier que tu as compris</span>
+        </a>
+        <a class="tool-card" href="https://claude.ai/new" target="_blank">
+          <span class="icon">🤖</span>
+          <span class="tool-title">Poser une question</span>
+          <span class="tool-desc">Ouvre ton Claude Project M&A pour aller plus loin</span>
+        </a>
+      </div>
+
+      <!-- SOURCES PAR NIVEAU -->
+      <div class="sources-section">
+        <div class="section-label">Sources</div>
+        <ul>
+          <li>[N2] NYT DealBook — « Retail Investors Help Send SpaceX Shares Soaring » (18 juin 2026)</li>
+<li>[N2] NYT DealBook — « What to Know Before Buying SpaceX Stock, According to Financial Advisers » (18 juin 2026)</li>
+<li>[N1] FT — « US and Iran sign deal as Trump vows to release frozen funds and ease sanctions » (18 juin 2026)</li>
+<li>[N3] WSJ Markets — Swiss National Bank cuts interest rates by a half point to 0.5% (contexte taux directeurs)</li>
+        </ul>
+        <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:6px; font-family:'Helvetica Neue',Arial,sans-serif; font-size:10px;">
+          <span style="background:#fff3e8;border:1px solid #e85d1a;color:#c94e0e;padding:3px 8px;border-radius:20px;font-weight:700;">N1 · Bloomberg · FT · Capital Finance · CFNEWS · S&P</span>
+          <span style="background:#fff8f2;border:1px solid #f9a06b;color:#7a5c45;padding:3px 8px;border-radius:20px;">N2 · Mergermarket · Reuters · PitchBook</span>
+          <span style="background:#fdf6ee;border:1px solid #fde0c5;color:#9a7060;padding:3px 8px;border-radius:20px;">N3 · WSJ · The Economist</span>
+          <span style="background:#f9f9f9;border:1px solid #e0e0e0;color:#888;padding:3px 8px;border-radius:20px;">N4 · Dealogic · Preqin</span>
+        </div>
+      </div>
+
+    </div><!-- /body -->
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <p>
+        <span class="next">Deck Anki mis à jour en pièce jointe</span><br>
+        The Deal Brief · 5× par semaine · <a href="https://github.com/abarisan/newsletter-mna" style="color:#e85d1a;text-decoration:none;">Code source</a>
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>

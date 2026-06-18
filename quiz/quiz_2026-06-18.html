@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz — The Deal Brief N°09</title>
+  <style>
+    body { font-family: 'Helvetica Neue', Arial, sans-serif; background: #fdf6ee; color: #2b1a0e;
+           margin: 0; padding: 40px 20px; }
+    .container { max-width: 640px; margin: 0 auto; }
+    h1 { font-size: 24px; color: #e85d1a; margin-bottom: 4px; }
+    .subtitle { color: #7a5c45; font-size: 13px; margin-bottom: 40px; }
+    .question { background: #fff; border-radius: 8px; padding: 24px; margin-bottom: 20px;
+                 box-shadow: 0 2px 8px rgba(232,93,26,0.08); }
+    .question h3 { font-size: 16px; margin-bottom: 16px; line-height: 1.5; }
+    .option { display: block; width: 100%; text-align: left; background: #fff8f2;
+               border: 1px solid #fde0c5; border-radius: 6px; padding: 12px 16px;
+               margin-bottom: 8px; cursor: pointer; font-size: 14px; transition: all .15s; }
+    .option:hover { background: #fff3e8; border-color: #f9a06b; }
+    .option.correct { background: #e6f9ec; border-color: #2ecc71; color: #1a6b3a; }
+    .option.wrong   { background: #fdecea; border-color: #e74c3c; color: #7b1c1c; }
+    .explanation { display: none; margin-top: 12px; padding: 12px 16px; background: #fff3e8;
+                    border-left: 3px solid #e85d1a; font-size: 13px; color: #5a3520;
+                    border-radius: 0 6px 6px 0; line-height: 1.6; }
+    .score { display: none; text-align: center; padding: 32px; background: #fff;
+              border-radius: 8px; box-shadow: 0 2px 8px rgba(232,93,26,0.08); }
+    .score h2 { font-size: 28px; color: #e85d1a; }
+    .score p { color: #5a3520; }
+    #submit { display: block; width: 100%; padding: 16px; background: #e85d1a; color: #fff;
+               border: none; border-radius: 8px; font-size: 16px; cursor: pointer; margin-top: 8px; }
+    #submit:hover { background: #c94e0e; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Quiz — N°09</h1>
+  <p class="subtitle">The Deal Brief · 18 June 2026 · 4 questions</p>
+  <div id="quiz"></div>
+  <button id="submit" onclick="submitQuiz()">Voir mes résultats</button>
+  <div class="score" id="score"></div>
+</div>
+<script>
+const questions = [{"question": "Quelle est la formule correcte du BPA de base (EPS) telle que présentée dans la newsletter ?", "options": ["A. EPS = Net Income / Nombre total d'actions à la fin de la période", "B. EPS = (Net Income − Dividendes préférentiels) / Weighted Average Shares Outstanding", "C. EPS = (Net Income + Dividendes préférentiels) / Nombre d'actions diluées", "D. EPS = Net Income / Weighted Average Shares Outstanding, sans ajustement"], "correct": 1, "explanation": "La bonne réponse est B : l'EPS de base se calcule en prenant le résultat net attribuable aux actionnaires ordinaires, donc après soustraction des dividendes préférentiels, divisé par le nombre MOYEN PONDÉRÉ d'actions ordinaires. A est faux car on utilise le nombre moyen pondéré et non le nombre total en fin de période, et on ne soustrait pas les dividendes préférentiels. C est faux car on ajoute (au lieu de soustraire) les dividendes préférentiels et utilise le mauvais dénominateur. D est faux car il omet la soustraction des dividendes préférentiels."}, {"question": "Selon la newsletter, pourquoi le BPA dilué (Diluted EPS) est-il considéré comme le chiffre qui compte vraiment, notamment en entretien M&A ?", "options": ["A. Parce qu'il est toujours supérieur à l'EPS de base", "B. Parce qu'il ignore les instruments convertibles en actions", "C. Parce qu'il prend en compte l'effet dilutif potentiel sur le nombre d'actions", "D. Parce qu'il exclut le résultat net des calculs"], "correct": 2, "explanation": "La bonne réponse est C : le BPA dilué intègre l'effet dilutif potentiel (options, instruments convertibles, etc.) sur le nombre d'actions, ce qui en fait un indicateur plus prudent et pertinent, surtout lors d'une IPO de grande ampleur comme SpaceX. A est faux car la dilution tend généralement à réduire l'EPS, le rendant inférieur ou égal à l'EPS de base. B est l'inverse de la réalité : il intègre justement ces instruments. D est absurde car le résultat net reste au numérateur."}, {"question": "Quel événement de marché sert de cas d'école pour illustrer l'importance du BPA dilué dans ce numéro ?", "options": ["A. La faillite d'une grande banque américaine", "B. L'IPO (entrée en bourse) de SpaceX le 18 juin 2026", "C. La fusion de deux constructeurs automobiles", "D. Un rachat d'actions massif par Apple"], "correct": 1, "explanation": "La bonne réponse est B : l'IPO explosive de SpaceX, portée par les investisseurs particuliers, sert de cas d'école pour comprendre la mécanique du BPA et du BPA dilué. Les autres options (A, C, D) ne sont mentionnées nulle part dans la newsletter et ne correspondent pas à l'actualité traitée."}, {"question": "Concernant l'accord USA-Iran, quelle observation paradoxale la newsletter met-elle en avant ?", "options": ["A. Le prix du pétrole s'effondre immédiatement après la levée des sanctions", "B. L'Iran refuse finalement de signer l'accord", "C. Malgré l'accord, le pétrole ne baisse pas et le coût du capital reste tendu", "D. Les États-Unis augmentent leurs sanctions contre l'Iran"], "correct": 2, "explanation": "La bonne réponse est C : intuitivement, un accord avec levée partielle des sanctions et déblocage de fonds devrait détendre le prix du brut, mais la newsletter (citant le NYT DealBook) souligne le paradoxe : le pétrole ne baisse pas et le coût du capital reste tendu. A est faux car c'est précisément ce qui NE se produit PAS. B est faux car l'accord a bien été signé. D contredit la promesse de Trump de lever les sanctions."}];
+let answered = {};
+
+function buildQuiz() {
+  const quiz = document.getElementById('quiz');
+  questions.forEach((q, qi) => {
+    const div = document.createElement('div');
+    div.className = 'question';
+    div.innerHTML = `<h3>${qi+1}. ${q.question}</h3>` +
+      q.options.map((o, oi) =>
+        `<button class="option" id="q${qi}_${oi}" onclick="answer(${qi},${oi},${q.correct})">${o}</button>`
+      ).join('') +
+      `<div class="explanation" id="exp${qi}">${q.explanation}</div>`;
+    quiz.appendChild(div);
+  });
+}
+
+function answer(qi, oi, correct) {
+  if (answered[qi] !== undefined) return;
+  answered[qi] = oi;
+  const btn = document.getElementById(`q${qi}_${oi}`);
+  const correctBtn = document.getElementById(`q${qi}_${correct}`);
+  btn.classList.add(oi === correct ? 'correct' : 'wrong');
+  if (oi !== correct) correctBtn.classList.add('correct');
+  document.getElementById(`exp${qi}`).style.display = 'block';
+}
+
+function submitQuiz() {
+  const score = Object.values(answered).filter((a, i) => a === questions[i].correct).length;
+  const total = questions.length;
+  const msg = score === total ? "🏆 Parfait ! Tu maîtrises ce numéro." :
+              score >= total/2 ? "👍 Bien, relis les explications des questions ratées." :
+              "📖 Relis le cours — ces notions vont revenir en entretien.";
+  document.getElementById('score').innerHTML =
+    `<h2>${score} / ${total}</h2><p>${msg}</p>`;
+  document.getElementById('score').style.display = 'block';
+  document.getElementById('submit').style.display = 'none';
+  window.scrollTo(0, document.getElementById('score').offsetTop - 20);
+}
+
+buildQuiz();
+</script>
+</body>
+</html>

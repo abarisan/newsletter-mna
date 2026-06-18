@@ -1,4 +1,4 @@
-# Contexte The Deal Brief — Mise à jour N°08 (17 June 2026)
+# Contexte The Deal Brief — Mise à jour N°09 (18 June 2026)
 
 ## Mon profil
 Étudiant préparant des entretiens en banque d'affaires M&A.
@@ -11,18 +11,18 @@ PIK (Payment In Kind) : mécanisme et positionnement dans la structure, Financia
 ## Deals suivis en ce moment
 SpaceX : IPO de 75 Md$, la plus grosse de l'histoire, cas d'école de cash flow
 
-## Contenu du dernier numéro (17 June 2026)
+## Contenu du dernier numéro (18 June 2026)
 
 ### Deal de la semaine
-Le goodwill du LBO d'Electronic Arts : pourquoi 33 Md$ de prime vont gonfler le bilan
-<p>On revient sur le dossier ouvert lundi (N°05 — la mécanique LBO sur <strong>Electronic Arts</strong>) et approfondi mardi (N°06/07 — modélisation et structure de dette). Aujourd'hui, on prend le deal sous un angle comptable rarement abordé en entretien junior mais qui sépare ceux qui ont compris des autres : <strong>le goodwill généré à la clôture</strong>. Pour mémoire, le consortium (Silver Lake, PIF, Affinity Partners) rachète EA à environ <strong>55 Md$ de valeur d'entreprise</strong>, financé par ~36 Md$ d'equity et ~20 Md$ de dette (term loan + senior notes). La transaction se fait à une prime d'environ <strong>25 % sur le cours non affecté</strong>.</p>
+SpaceX entre en bourse : le retail s'emballe, et l'EPS dilué devient le nerf de la guerre
+<p>Coup de tonnerre sur les marchés actions ce 18 juin : <strong>SpaceX</strong> a réalisé un début de cotation explosif, porté massivement par les investisseurs particuliers, selon le NYT DealBook (<em>« Retail Investors Help Send SpaceX Shares Soaring »</em>, 18 juin 2026). Le titre s'est envolé dès l'ouverture, propulsant la société parmi <strong>les entreprises les plus valorisées au monde</strong>. Pour un étudiant en M&A, ce n'est pas l'engouement retail qui compte — c'est ce qu'une IPO de cette ampleur fait à la mécanique du <strong>BPA (EPS) et surtout du BPA dilué (Diluted EPS)</strong>.</p>
 
 ### Cours
-<p>Lundi on a vu la mécanique LBO, mardi la modélisation et la dette. Aujourd'hui on plonge dans la <strong>comptabilité de l'acquisition</strong> : quand un acheteur paie plus que la valeur des actifs nets identifiables d'une cible, l'excédent atterrit au bilan sous un nom que tout banquier doit maîtriser — <strong>le goodwill</strong> (survaleur).</p><div class='term'><div class='term-name'>GOODWILL</div>Actif incorporel inscrit au bilan de l'acquéreur, égal au prix payé pour la cible moins la juste valeur de ses actifs nets identifiables (actifs - passifs réévalués). Il représente ce qu'on paie « en plus » : marque, base clients, synergies attendues, capital humain — des choses réelles mais non comptabilisables individuellement.</div><p><strong>La formule de base.</strong> Goodwill = Prix d'acquisition (de l'equity) − Juste valeur des actifs nets identifiables acquis. En logique « purchase price allocation » (PPA), on procède en plusieurs étapes :</p><ol><li>On part du <strong>prix payé pour les capitaux propres</strong> (equity purchase price).</li><li>On <strong>réévalue les actifs et passifs</strong> de la cible à leur juste valeur (fair value), pas à leur valeur comptable hi
+<p>Cette semaine, on a posé les fondamentaux comptables. Aujourd'hui, fil directeur imposé par TRAINY : <strong>l'EPS et le Diluted EPS</strong>. Et le timing est parfait — l'IPO SpaceX est un cas d'école pour comprendre pourquoi le BPA <em>dilué</em> est presque toujours le chiffre qui compte vraiment en entretien.</p><div class='term'><div class='term-name'>EPS (Earnings Per Share / BPA de base)</div>Résultat net attribuable aux actionnaires ordinaires, divisé par le nombre <strong>moyen pondéré</strong> d'actions ordinaires en circulation sur la période. Formule : <strong>EPS = (Net Income − Dividendes préférentiels) / Weighted Average Shares Outstanding</strong>.</div><p>Décortiquons chaque terme, car c'est là que les candidats se trompent.</p><p><strong>1. Pourquoi soustraire les dividendes préférentiels ?</strong> L'EPS mesure ce qui revient aux <em>actionnaires ordinaires</em>. Les détenteurs d'actions de préférence (preferred shares) sont servis avant. Si une société dégage 500 M$ de résultat net et verse 50 M$ de dividendes préférentiels, le numérateur de l'EPS ordinaire n'est que de 450 M$. Erreur classique en entretien : utiliser le résultat net brut sans retraiter.</p><
 
 ### Macro
-La Fed de Kevin Warsh tient les taux : l'« US exceptionalism » revient et tend le marché du LBO
-<p>D'après le <strong>NYT DealBook</strong> (« What to Watch at the Federal Reserve's June Meeting », 17 juin 2026), la Fed devrait <strong>maintenir ses taux inchangés</strong> lors de la première réunion présidée par <strong>Kevin M. Warsh</strong>. Le <strong>Financial Times</strong> (« Investors pile into bullish dollar bets as 'US exceptionalism' trade returns », 17 juin 2026) confirme : les traders parient sur une économie américaine robuste qui <strong>empêche la Fed de couper</strong>, m
+Accord USA-Iran : le pétrole ne baisse pas, et le coût du capital reste tendu
+<p>Fait majeur du jour : les <strong>États-Unis et l'Iran ont signé un accord</strong> (FT, <em>« US and Iran sign deal as Trump vows to release frozen funds and ease sanctions »</em>, 18 juin 2026). Trump promet la levée partielle des sanctions et le déblocage de fonds gelés. Intuitivement, on attend une détente du prix du brut. Mais le NYT DealBook tempère immédiatement (<em>« Why Flight Prices Might Not Fall After the U.S.-Iran Deal »</em>, 18 juin 2026) : le kérosène pourrait rester cher des
 
 ---
 Tu es mon tuteur M&A. Quand je te pose une question :
