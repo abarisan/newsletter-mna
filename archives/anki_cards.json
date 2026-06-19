@@ -502,5 +502,41 @@
     "verso": "Lors d'une IPO, l'émission de nouvelles actions augmente le nombre d'actions en circulation et donc le dénominateur de l'EPS, diluant mécaniquement le bénéfice par action si le capital levé ne génère pas un rendement immédiat. L'IPO ajoute aussi souvent de nouveaux instruments dilutifs (options accordées aux salariés), renforçant l'écart entre EPS de base et EPS dilué.",
     "numero": "09",
     "id": 2137983313
+  },
+  {
+    "recto": "Quelles sont les trois méthodes de consolidation comptable ?",
+    "verso": "L'intégration globale (full consolidation), l'intégration proportionnelle (proportionate consolidation) et la mise en équivalence (equity method). Le choix dépend du niveau de contrôle exercé par la société mère sur l'entité détenue, et non du simple pourcentage de détention.",
+    "numero": "10",
+    "id": 1319432217
+  },
+  {
+    "recto": "Qu'est-ce que la mise en équivalence (equity method) ?",
+    "verso": "C'est la méthode utilisée lorsqu'une société exerce une influence notable (généralement 20% à 50%) sans contrôle. On n'intègre pas les comptes ligne à ligne : la participation figure sur une seule ligne au bilan, ajustée de la quote-part du résultat de l'entité. Elle s'applique typiquement aux entreprises associées.",
+    "numero": "10",
+    "id": 1604681041
+  },
+  {
+    "recto": "Comment fonctionne l'intégration globale (full consolidation) ?",
+    "verso": "On agrège 100% des actifs, passifs, produits et charges de la filiale dans les comptes de la mère, ligne à ligne. La part détenue par les autres actionnaires est ensuite isolée via les intérêts minoritaires (minority interests) au bilan et au compte de résultat. Elle s'applique en cas de contrôle exclusif.",
+    "numero": "10",
+    "id": 1766817370
+  },
+  {
+    "recto": "Comment un actionnaire peut-il contrôler une société sans détenir la majorité du capital ?",
+    "verso": "Le contrôle découle des droits de vote et du pouvoir de décision, pas uniquement du pourcentage de capital. Via des actions à droits de vote multiples, des pactes d'actionnaires ou un actionnariat très dispersé, un actionnaire peut détenir une minorité du capital (ex. 42%) tout en disposant d'une majorité des droits de vote, donc d'un contrôle exclusif.",
+    "numero": "10",
+    "id": 2059008319
+  },
+  {
+    "recto": "Pourquoi consolide-t-on selon le contrôle et non selon la simple détention ?",
+    "verso": "Parce que la comptabilité cherche à refléter la réalité économique du pouvoir de décision. Une entité réellement pilotée par la mère doit voir ses comptes intégrés intégralement, même si la détention est minoritaire. À l'inverse, une participation passive même importante ne justifie qu'une mise en équivalence. C'est une erreur classique en entretien de raisonner uniquement en pourcentage de capital.",
+    "numero": "10",
+    "id": 1106921116
+  },
+  {
+    "recto": "Dans quel cas utilise-t-on l'intégration proportionnelle ?",
+    "verso": "Elle s'applique historiquement aux co-entreprises (joint-ventures) sous contrôle conjoint, où l'on n'intègre que la quote-part détenue des actifs, passifs, produits et charges (ex. 50% d'une JV détenue à parité). Sous les normes IFRS récentes, elle a largement été remplacée par la mise en équivalence pour les joint-ventures.",
+    "numero": "10",
+    "id": 1423774478
   }
 ]

@@ -1,4 +1,4 @@
-# Contexte The Deal Brief — Mise à jour N°09 (18 June 2026)
+# Contexte The Deal Brief — Mise à jour N°10 (19 June 2026)
 
 ## Mon profil
 Étudiant préparant des entretiens en banque d'affaires M&A.
@@ -11,18 +11,18 @@ PIK (Payment In Kind) : mécanisme et positionnement dans la structure, Financia
 ## Deals suivis en ce moment
 SpaceX : IPO de 75 Md$, la plus grosse de l'histoire, cas d'école de cash flow
 
-## Contenu du dernier numéro (18 June 2026)
+## Contenu du dernier numéro (19 June 2026)
 
 ### Deal de la semaine
-SpaceX entre en bourse : le retail s'emballe, et l'EPS dilué devient le nerf de la guerre
-<p>Coup de tonnerre sur les marchés actions ce 18 juin : <strong>SpaceX</strong> a réalisé un début de cotation explosif, porté massivement par les investisseurs particuliers, selon le NYT DealBook (<em>« Retail Investors Help Send SpaceX Shares Soaring »</em>, 18 juin 2026). Le titre s'est envolé dès l'ouverture, propulsant la société parmi <strong>les entreprises les plus valorisées au monde</strong>. Pour un étudiant en M&A, ce n'est pas l'engouement retail qui compte — c'est ce qu'une IPO de cette ampleur fait à la mécanique du <strong>BPA (EPS) et surtout du BPA dilué (Diluted EPS)</strong>.</p>
+SpaceX à 350 Md$ : pourquoi la valorisation cache un casse-tête de consolidation comptable
+<p><strong>Ce qui s'est passé.</strong> Le NYT DealBook publie ce 19 juin 2026 une analyse au vitriol — « How Much Is SpaceX Really Worth? » — sur la valorisation de SpaceX, désormais évoquée autour de <strong>350 Md$</strong> sur le marché secondaire selon les tender offers internes. Le columnist du Times pointe deux choses : le pari ultra-spéculatif sur la colonisation de Mars, et surtout le <strong>contrôle quasi-total d'Elon Musk</strong>, qui détient environ 42% du capital mais une majorité des droits de vote via une structure d'actions à droits multiples. Pour un analyste M&A, cette histoire de contrôle est exactement le point d'entrée du chapitre du jour : <em>quelle méthode de consolidation appliquer ?</em></p>
 
 ### Cours
-<p>Cette semaine, on a posé les fondamentaux comptables. Aujourd'hui, fil directeur imposé par TRAINY : <strong>l'EPS et le Diluted EPS</strong>. Et le timing est parfait — l'IPO SpaceX est un cas d'école pour comprendre pourquoi le BPA <em>dilué</em> est presque toujours le chiffre qui compte vraiment en entretien.</p><div class='term'><div class='term-name'>EPS (Earnings Per Share / BPA de base)</div>Résultat net attribuable aux actionnaires ordinaires, divisé par le nombre <strong>moyen pondéré</strong> d'actions ordinaires en circulation sur la période. Formule : <strong>EPS = (Net Income − Dividendes préférentiels) / Weighted Average Shares Outstanding</strong>.</div><p>Décortiquons chaque terme, car c'est là que les candidats se trompent.</p><p><strong>1. Pourquoi soustraire les dividendes préférentiels ?</strong> L'EPS mesure ce qui revient aux <em>actionnaires ordinaires</em>. Les détenteurs d'actions de préférence (preferred shares) sont servis avant. Si une société dégage 500 M$ de résultat net et verse 50 M$ de dividendes préférentiels, le numérateur de l'EPS ordinaire n'est que de 450 M$. Erreur classique en entretien : utiliser le résultat net brut sans retraiter.</p><
+<p><strong>Le fil de la semaine.</strong> Mercredi nous avons posé les bases des comptes de groupe. Aujourd'hui on attaque le cœur du chapitre TRAINY : <strong>les trois méthodes de consolidation — intégration globale (full), intégration proportionnelle (proportionate), mise en équivalence (equity method)</strong>. Et le cas SpaceX/Musk est parfait pour comprendre que <em>tout dépend du niveau de contrôle</em>, pas seulement du pourcentage de détention.</p><p><strong>Le principe fondateur : on consolide selon le CONTRÔLE, pas selon la simple détention.</strong> C'est l'erreur n°1 en entretien. Un actionnaire à 42% du capital peut très bien <em>contrôler</em> une société s'il a la majorité des droits de vote — exactement le cas Musk chez SpaceX via ses super-voting shares. À l'inverse, on peut détenir 30% sans contrôler. La norme (IFRS 10 / IFRS 11 / IAS 28) raisonne en pouvoir, pas en arithmétique.</p><div class='term'><div class='term-name'>INTÉGRATION GLOBALE (Full Consolidation)</div>S'applique quand la mère a le <strong>contrôle</strong> de la filiale (généralement >50% des droits de vote, ou contrôle de fait). On agrège 100% des actifs, passifs, produits et charges de la filia
 
 ### Macro
-Accord USA-Iran : le pétrole ne baisse pas, et le coût du capital reste tendu
-<p>Fait majeur du jour : les <strong>États-Unis et l'Iran ont signé un accord</strong> (FT, <em>« US and Iran sign deal as Trump vows to release frozen funds and ease sanctions »</em>, 18 juin 2026). Trump promet la levée partielle des sanctions et le déblocage de fonds gelés. Intuitivement, on attend une détente du prix du brut. Mais le NYT DealBook tempère immédiatement (<em>« Why Flight Prices Might Not Fall After the U.S.-Iran Deal »</em>, 18 juin 2026) : le kérosène pourrait rester cher des
+Réouverture du détroit d'Ormuz : le risque géopolitique se dégonfle, les valorisations respirent
+<p><strong>Le fait (NYT DealBook, 19 juin 2026).</strong> Après un accord pour rouvrir le détroit d'Ormuz, les navires recommencent à circuler — prudemment, entre mines non déminées et coordination défaillante. Parallèlement, un accord États-Unis/Iran pourrait <em>reconnecter l'Iran à l'économie mondiale</em> en levant une partie des sanctions. C'est le signal macro de la semaine.</p><p><strong>Mécanisme de transmission vers le M&A.</strong> Ormuz, c'est ~20% du pétrole mondial transporté. Tant 
 
 ---
 Tu es mon tuteur M&A. Quand je te pose une question :

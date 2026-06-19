@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Deal Brief</title>
+  <style>
+    /* ── Palette : clair / nuances d'orange ── */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #fdf6ee;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      color: #2b1a0e;
+      line-height: 1.75;
+    }
+
+    .wrapper {
+      max-width: 680px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(232,93,26,0.10);
+    }
+
+    .header {
+      background: linear-gradient(135deg, #ff6b2b 0%, #e85d1a 100%);
+      padding: 48px 48px 36px;
+      text-align: center;
+    }
+    .header .eyebrow {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ffe8d6;
+      margin-bottom: 16px;
+    }
+    .header h1 {
+      font-size: 36px;
+      font-weight: 400;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .header .subtitle {
+      font-size: 13px;
+      color: #ffd4b8;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      letter-spacing: 0.5px;
+    }
+    .header .issue-line {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.25);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #ffe8d6;
+      letter-spacing: 1px;
+    }
+
+    .body { padding: 0 48px 48px; }
+
+    .section { margin-top: 48px; }
+    .section-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #e85d1a;
+      margin-bottom: 6px;
+    }
+    .section h2 {
+      font-size: 22px;
+      font-weight: 400;
+      color: #2b1a0e;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #f9a06b;
+    }
+    .section-content { font-size: 15px; color: #3d2510; }
+    .section-content p { margin-bottom: 14px; }
+    .section-content strong { color: #c94e0e; font-weight: 700; }
+    .section-content ul, .section-content ol { padding-left: 20px; margin-bottom: 14px; }
+    .section-content li { margin-bottom: 6px; }
+
+    .callout {
+      background: #fff3e8;
+      border-left: 3px solid #e85d1a;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 14px;
+      color: #5a3520;
+      font-style: italic;
+      border-radius: 0 4px 4px 0;
+    }
+    .callout strong { font-style: normal; color: #c94e0e; }
+
+    .rappel-section {
+      margin-top: 48px;
+      background: #fff3e8;
+      margin-left: -48px;
+      margin-right: -48px;
+      padding: 36px 48px;
+      border-top: 3px solid #f9a06b;
+      border-bottom: 3px solid #f9a06b;
+    }
+    .rappel-section .section-label { color: #e85d1a; }
+    .rappel-section h2 { color: #2b1a0e; border-bottom-color: #fde0c5; font-size: 20px; }
+    .rappel-section .section-content { color: #5a3520; }
+    .rappel-section .section-content strong { color: #c94e0e; }
+    .rappel-section .term { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid #fde0c5; }
+    .rappel-section .term:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .rappel-section .term-name {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .interview-section {
+      margin-top: 48px;
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 28px 32px;
+    }
+    .interview-section .section-label { color: #e85d1a; }
+    .interview-question { font-size: 18px; font-style: italic; color: #2b1a0e; margin: 12px 0 20px; line-height: 1.4; }
+    .interview-answer { font-size: 14px; color: #5a3520; }
+
+    .sources-section { margin-top: 48px; padding-top: 24px; border-top: 1px solid #fde0c5; }
+    .sources-section .section-label { margin-bottom: 12px; }
+    .sources-section ul { list-style: none; padding: 0; }
+    .sources-section li {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #7a5c45;
+      margin-bottom: 6px;
+      padding-left: 12px;
+      position: relative;
+    }
+    .sources-section li::before { content: '→'; position: absolute; left: 0; color: #e85d1a; }
+
+    .footer {
+      background: #fdf6ee;
+      padding: 28px 48px;
+      text-align: center;
+      border-top: 1px solid #fde0c5;
+    }
+    .footer p { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; color: #9a7060; line-height: 1.8; }
+    .footer .next { color: #c94e0e; font-weight: 600; }
+
+    .divider { height: 1px; background: #fde0c5; margin: 36px 0; }
+
+    /* ── Schéma SVG ── */
+    .diagram-section {
+      margin-top: 48px;
+    }
+    .diagram-section .section-label {
+      margin-bottom: 12px;
+    }
+    .diagram-wrap {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      overflow-x: auto;
+    }
+    .diagram-wrap svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* ── Outils d'apprentissage ── */
+    .tools-section {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .tool-card {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      transition: box-shadow .15s;
+    }
+    .tool-card:hover { box-shadow: 0 4px 16px rgba(232,93,26,0.15); }
+    .tool-card .icon { font-size: 28px; display: block; margin-bottom: 8px; }
+    .tool-card .tool-title {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .tool-card .tool-desc {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      color: #7a5c45;
+    }
+
+    @media (max-width: 600px) {
+      .wrapper { margin: 0; border-radius: 0; }
+      .header { padding: 32px 24px 24px; }
+      .body { padding: 0 24px 32px; }
+      .rappel-section { margin-left: -24px; margin-right: -24px; padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="eyebrow">Newsletter M&A · Finance · IA · Géopolitique</div>
+      <h1>The Deal Brief</h1>
+      <div class="subtitle">Comprendre la finance, pas juste la suivre</div>
+      <div class="issue-line">N° 10 &nbsp;·&nbsp; 19 June 2026</div>
+    </div>
+
+    <div class="body">
+
+      <!-- SECTION 1 : M&A -->
+      <!-- DEAL -->
+      <div class="section">
+        <div class="section-label">Niveau 1 — Deal de la semaine</div>
+        <h2>SpaceX à 350 Md$ : pourquoi la valorisation cache un casse-tête de consolidation comptable</h2>
+        <div class="section-content"><p><strong>Ce qui s'est passé.</strong> Le NYT DealBook publie ce 19 juin 2026 une analyse au vitriol — « How Much Is SpaceX Really Worth? » — sur la valorisation de SpaceX, désormais évoquée autour de <strong>350 Md$</strong> sur le marché secondaire selon les tender offers internes. Le columnist du Times pointe deux choses : le pari ultra-spéculatif sur la colonisation de Mars, et surtout le <strong>contrôle quasi-total d'Elon Musk</strong>, qui détient environ 42% du capital mais une majorité des droits de vote via une structure d'actions à droits multiples. Pour un analyste M&A, cette histoire de contrôle est exactement le point d'entrée du chapitre du jour : <em>quelle méthode de consolidation appliquer ?</em></p></div>
+      </div>
+
+      
+
+      <div class="divider"></div>
+
+      <!-- MACRO & GÉOPO -->
+      <div class="section">
+        <div class="section-label">Niveau 3 — Macro & Géopolitique</div>
+        <h2>Réouverture du détroit d'Ormuz : le risque géopolitique se dégonfle, les valorisations respirent</h2>
+        <div class="section-content"><p><strong>Le fait (NYT DealBook, 19 juin 2026).</strong> Après un accord pour rouvrir le détroit d'Ormuz, les navires recommencent à circuler — prudemment, entre mines non déminées et coordination défaillante. Parallèlement, un accord États-Unis/Iran pourrait <em>reconnecter l'Iran à l'économie mondiale</em> en levant une partie des sanctions. C'est le signal macro de la semaine.</p><p><strong>Mécanisme de transmission vers le M&A.</strong> Ormuz, c'est ~20% du pétrole mondial transporté. Tant que le détroit était sous tension, la prime de risque pétrolière dopait les anticipations d'inflation, donc les taux longs, donc le coût de la dette d'acquisition — et donc comprimait les multiples payables en LBO. La réouverture détend cette prime : baisse attendue du Brent, désinflation importée, conditions de financement plus douces pour les sponsors. Pour les fonds qui ont gelé des dossiers énergie/logistique au Moyen-Orient, c'est le signal de redémarrage. À surveiller en parallèle : la deadline du 4 juillet sur le pacte commercial UE/US (CNBC, 11 mai 2026), qui conditionne l'appétit transatlantique.</p></div>
+      </div>
+
+      
+
+      <div class="divider"></div>
+
+      <!-- IA -->
+      
+
+      <!-- RAPPEL DE COURS -->
+      <div class="rappel-section">
+        <div class="section-label">Rappel de cours</div>
+        <h2>Les notions clés de ce numéro</h2>
+        <div class="section-content"><p><strong>Le fil de la semaine.</strong> Mercredi nous avons posé les bases des comptes de groupe. Aujourd'hui on attaque le cœur du chapitre TRAINY : <strong>les trois méthodes de consolidation — intégration globale (full), intégration proportionnelle (proportionate), mise en équivalence (equity method)</strong>. Et le cas SpaceX/Musk est parfait pour comprendre que <em>tout dépend du niveau de contrôle</em>, pas seulement du pourcentage de détention.</p><p><strong>Le principe fondateur : on consolide selon le CONTRÔLE, pas selon la simple détention.</strong> C'est l'erreur n°1 en entretien. Un actionnaire à 42% du capital peut très bien <em>contrôler</em> une société s'il a la majorité des droits de vote — exactement le cas Musk chez SpaceX via ses super-voting shares. À l'inverse, on peut détenir 30% sans contrôler. La norme (IFRS 10 / IFRS 11 / IAS 28) raisonne en pouvoir, pas en arithmétique.</p><div class='term'><div class='term-name'>INTÉGRATION GLOBALE (Full Consolidation)</div>S'applique quand la mère a le <strong>contrôle</strong> de la filiale (généralement >50% des droits de vote, ou contrôle de fait). On agrège 100% des actifs, passifs, produits et charges de la filiale, ligne par ligne. La part qui ne revient pas à la mère apparaît en <strong>intérêts minoritaires (minority interests / NCI)</strong>, au passif (capitaux propres) et en déduction du résultat net.</div><p><strong>Exemple chiffré.</strong> Supposons que la holding de Musk consolide SpaceX en intégration globale (contrôle avéré). Si SpaceX a un chiffre d'affaires de 14 Md$ et que Musk détient économiquement 42%, on intègre malgré tout <strong>100% du CA = 14 Md$</strong> dans le compte de groupe. Puis on retranche 58% du résultat net en intérêts minoritaires. C'est contre-intuitif : le pourcentage de détention ne change RIEN au montant agrégé en haut du compte de résultat — il n'intervient qu'en bas, pour répartir le résultat.</p><div class='term'><div class='term-name'>INTÉGRATION PROPORTIONNELLE (Proportionate Consolidation)</div>Réservée aux <strong>coentreprises (joint ventures)</strong> sous IFRS 11 — et en réalité largement supprimée en IFRS au profit de la mise en équivalence. On agrège la <strong>quote-part</strong> des actifs/passifs/produits/charges. Si on détient 50% d'une JV à 10 Md$ de CA, on n'intègre que 5 Md$. Pas d'intérêts minoritaires, puisqu'on n'a intégré que sa part.</div><p><strong>Attention, piège d'entretien.</strong> En IFRS, depuis 2013, l'intégration proportionnelle est quasi morte : les JV passent en equity method. Elle survit surtout en référentiel local (US GAAP pour certaines JV pétrolières/immobilières, par ex. l'extraction conjointe). Si un examinateur vous demande « comment consolide-t-on une JV 50/50 ? », la bonne réponse en 2026 sous IFRS est : <strong>mise en équivalence</strong>, pas proportionnelle.</p><div class='term'><div class='term-name'>MISE EN ÉQUIVALENCE (Equity Method)</div>S'applique en cas d'<strong>influence notable</strong> (généralement 20% à 50% des droits de vote, sans contrôle). On n'agrège AUCUNE ligne du compte de résultat ni du bilan de la participation. On inscrit une seule ligne à l'actif : « Titres mis en équivalence », valorisée au coût d'acquisition + quote-part des résultats accumulés − dividendes reçus. Au compte de résultat, une seule ligne : « Quote-part de résultat des sociétés mises en équivalence ».</div><p><strong>Exemple chiffré.</strong> Imaginons qu'un fonds détienne 25% d'une participation valorisée initialement 1 000 M$. L'année N, cette participation fait 200 M$ de résultat net et verse 80 M$ de dividendes. La valeur des titres mis en équivalence devient : 1 000 + (25% × 200) − (25% × 80) = 1 000 + 50 − 20 = <strong>1 030 M$</strong>. Et on remonte 50 M$ au compte de résultat. Aucune ligne de CA, aucun actif détaillé : c'est une consolidation « en une ligne ».</p><p><strong>Le tableau de décision à mémoriser :</strong></p><ul><li><strong>Contrôle (>50% droits de vote ou contrôle de fait)</strong> → intégration globale → 100% agrégé + intérêts minoritaires</li><li><strong>Contrôle conjoint (JV)</strong> → mise en équivalence (IFRS 11) ou proportionnelle (résiduel, US GAAP)</li><li><strong>Influence notable (20-50%)</strong> → mise en équivalence</li><li><strong>Pas d'influence (<20%)</strong> → simple placement financier (juste valeur / coût)</li></ul><p><strong>Les erreurs classiques en entretien :</strong> (1) confondre détention et contrôle — Musk à 42% peut consolider en intégration globale grâce aux droits de vote ; (2) croire qu'en intégration globale on agrège seulement sa quote-part — non, c'est 100% ; (3) oublier que les intérêts minoritaires se déduisent du résultat net mais s'ajoutent aux capitaux propres ; (4) appliquer l'intégration proportionnelle à une JV en IFRS alors que la norme impose la mise en équivalence depuis 2013.</p><p><strong>Ce que vous savez maintenant :</strong> distinguer les trois méthodes selon le niveau de contrôle, calculer les intérêts minoritaires et la valeur des titres mis en équivalence. <strong>Demain</strong>, on attaque la <em>calendarisation (LTM, NTM, YTD, FY, CY)</em> — comment normaliser les périodes pour comparer deux sociétés dont les exercices fiscaux ne coïncident pas.</p></div>
+      </div>
+
+      
+
+      <!-- QUESTION D'ENTRETIEN -->
+      <div class="interview-section">
+        <div class="section-label">🎯 Question d'entretien de la semaine</div>
+        <div class="interview-question">"« Un actionnaire détient 42% du capital d'une société mais 60% des droits de vote via des actions à droit de vote multiple. Quelle méthode de consolidation applique-t-il, et comment apparaissent les 58% qu'il ne possède pas économiquement ? »"</div>
+        <div class="interview-answer">
+          <p><strong>1. Méthode : intégration globale.</strong> Le critère déterminant n'est pas le pourcentage de capital (42%) mais le <strong>contrôle</strong>, mesuré par les droits de vote (60%). Avec une majorité des droits de vote, l'actionnaire contrôle la société : on applique l'<em>intégration globale</em> (full consolidation), comme le ferait potentiellement la holding de Musk pour SpaceX.</p><p><strong>2. Traitement au bilan et au compte de résultat.</strong> On agrège <strong>100%</strong> des actifs, passifs, produits et charges de la filiale — pas 42%. La fraction non détenue économiquement (58%) apparaît en <strong>intérêts minoritaires (NCI)</strong> : au passif, dans les capitaux propres consolidés ; et au compte de résultat, en déduction sous la ligne « résultat net consolidé » pour isoler le « résultat net part du groupe ».</p><p><strong>3. Le piège à éviter.</strong> Ne jamais consolider proportionnellement (42%) en cas de contrôle — c'est l'erreur classique. L'intégration proportionnelle est réservée à de rares JV en US GAAP ; en IFRS, une JV passe en mise en équivalence. Ici, contrôle = 100% agrégé + minoritaires. Mon avis : ce cas illustre pourquoi un analyste doit toujours vérifier la structure de gouvernance (super-voting shares) avant de regarder le simple cap table.</p>
+        </div>
+      </div>
+
+      <!-- OUTILS D'APPRENTISSAGE -->
+      <div class="tools-section">
+        <a class="tool-card" href="https://abarisan.github.io/newsletter-mna/quiz/quiz_2026-06-19.html" target="_blank">
+          <span class="icon">❓</span>
+          <span class="tool-title">Quiz ce numéro</span>
+          <span class="tool-desc">4 questions pour vérifier que tu as compris</span>
+        </a>
+        <a class="tool-card" href="https://claude.ai/new" target="_blank">
+          <span class="icon">🤖</span>
+          <span class="tool-title">Poser une question</span>
+          <span class="tool-desc">Ouvre ton Claude Project M&A pour aller plus loin</span>
+        </a>
+      </div>
+
+      <!-- SOURCES PAR NIVEAU -->
+      <div class="sources-section">
+        <div class="section-label">Sources</div>
+        <ul>
+          <li>[N2] NYT DealBook — « How Much Is SpaceX Really Worth? » (19 juin 2026)</li>
+<li>[N2] NYT DealBook — « After Deal to Reopen Strait of Hormuz, Ships Begin to Move Cautiously » (19 juin 2026)</li>
+<li>[N1] FT — « Xi wants China to boost demand. Why isn't it working? » (19 juin 2026)</li>
+<li>[N3] WSJ Markets — Swiss National Bank cuts interest rates to 0.5% (référence taux/coût de la dette)</li>
+<li>[N1] CNBC Finance — « Trump threatens EU with higher tariffs if no trade deal signed by new deadline » (11 mai 2026)</li>
+        </ul>
+        <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:6px; font-family:'Helvetica Neue',Arial,sans-serif; font-size:10px;">
+          <span style="background:#fff3e8;border:1px solid #e85d1a;color:#c94e0e;padding:3px 8px;border-radius:20px;font-weight:700;">N1 · Bloomberg · FT · Capital Finance · CFNEWS · S&P</span>
+          <span style="background:#fff8f2;border:1px solid #f9a06b;color:#7a5c45;padding:3px 8px;border-radius:20px;">N2 · Mergermarket · Reuters · PitchBook</span>
+          <span style="background:#fdf6ee;border:1px solid #fde0c5;color:#9a7060;padding:3px 8px;border-radius:20px;">N3 · WSJ · The Economist</span>
+          <span style="background:#f9f9f9;border:1px solid #e0e0e0;color:#888;padding:3px 8px;border-radius:20px;">N4 · Dealogic · Preqin</span>
+        </div>
+      </div>
+
+    </div><!-- /body -->
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <p>
+        <span class="next">Deck Anki mis à jour en pièce jointe</span><br>
+        The Deal Brief · 5× par semaine · <a href="https://github.com/abarisan/newsletter-mna" style="color:#e85d1a;text-decoration:none;">Code source</a>
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>
