@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz — The Deal Brief N°11</title>
+  <style>
+    body { font-family: 'Helvetica Neue', Arial, sans-serif; background: #fdf6ee; color: #2b1a0e;
+           margin: 0; padding: 40px 20px; }
+    .container { max-width: 640px; margin: 0 auto; }
+    h1 { font-size: 24px; color: #e85d1a; margin-bottom: 4px; }
+    .subtitle { color: #7a5c45; font-size: 13px; margin-bottom: 40px; }
+    .question { background: #fff; border-radius: 8px; padding: 24px; margin-bottom: 20px;
+                 box-shadow: 0 2px 8px rgba(232,93,26,0.08); }
+    .question h3 { font-size: 16px; margin-bottom: 16px; line-height: 1.5; }
+    .option { display: block; width: 100%; text-align: left; background: #fff8f2;
+               border: 1px solid #fde0c5; border-radius: 6px; padding: 12px 16px;
+               margin-bottom: 8px; cursor: pointer; font-size: 14px; transition: all .15s; }
+    .option:hover { background: #fff3e8; border-color: #f9a06b; }
+    .option.correct { background: #e6f9ec; border-color: #2ecc71; color: #1a6b3a; }
+    .option.wrong   { background: #fdecea; border-color: #e74c3c; color: #7b1c1c; }
+    .explanation { display: none; margin-top: 12px; padding: 12px 16px; background: #fff3e8;
+                    border-left: 3px solid #e85d1a; font-size: 13px; color: #5a3520;
+                    border-radius: 0 6px 6px 0; line-height: 1.6; }
+    .score { display: none; text-align: center; padding: 32px; background: #fff;
+              border-radius: 8px; box-shadow: 0 2px 8px rgba(232,93,26,0.08); }
+    .score h2 { font-size: 28px; color: #e85d1a; }
+    .score p { color: #5a3520; }
+    #submit { display: block; width: 100%; padding: 16px; background: #e85d1a; color: #fff;
+               border: none; border-radius: 8px; font-size: 16px; cursor: pointer; margin-top: 8px; }
+    #submit:hover { background: #c94e0e; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Quiz — N°11</h1>
+  <p class="subtitle">The Deal Brief · 22 June 2026 · 4 questions</p>
+  <div id="quiz"></div>
+  <button id="submit" onclick="submitQuiz()">Voir mes résultats</button>
+  <div class="score" id="score"></div>
+</div>
+<script>
+const questions = [{"question": "Pourquoi la calendarisation est-elle cruciale lors de la valorisation d'un studio comme Disney-Pixar avec 'Toy Story 5' ?", "options": ["A. Parce qu'elle détermine la date de sortie optimale du film", "B. Parce que la même franchise vue en LTM, NTM ou FY donne trois EBITDA différents, donc trois prix", "C. Parce qu'elle permet de calculer les recettes du box-office en temps réel", "D. Parce qu'elle fixe la durée d'amortissement comptable du film"], "correct": 1, "explanation": "La bonne réponse est B : la newsletter souligne que selon la période de référence choisie (LTM, NTM ou FY), le même studio génère trois EBITDA différents, et donc trois valorisations distinctes. C'est tout l'enjeu de la calendarisation en M&A. A est faux car la calendarisation concerne le référencement temporel d'un chiffre financier, pas le marketing de sortie. C est faux car le box-office est une donnée brute, non liée à la convention temporelle de valorisation. D confond calendarisation et traitement comptable d'amortissement."}, {"question": "Que signifie l'acronyme 'LTM' dans le contexte de la calendarisation financière ?", "options": ["A. Long-Term Maturity (échéance long terme)", "B. Latest Twelve Months / Last Twelve Months (les douze derniers mois)", "C. Limited Trading Margin (marge commerciale limitée)", "D. Local Tax Multiple (multiple fiscal local)"], "correct": 1, "explanation": "La bonne réponse est B : LTM signifie 'Last Twelve Months' (les douze derniers mois), une convention qui mesure la performance sur la période glissante de douze mois précédant une date donnée. Cela s'oppose au NTM (Next Twelve Months, les douze mois à venir) et au FY (Fiscal Year, exercice fiscal). Les options A, C et D sont des inventions sans rapport avec les conventions de calendarisation financière abordées dans le cours."}, {"question": "Quel chiffre la newsletter cite-t-elle concernant le box-office estival cumulé à Hollywood ?", "options": ["A. 160 M$, le meilleur été depuis 2019", "B. 1,85 Md$, le meilleur été depuis 2019", "C. 1,85 Md$, le meilleur été de tous les temps", "D. 160 Md$, un record historique"], "correct": 1, "explanation": "La bonne réponse est B : le box-office estival cumulé atteint 1,85 Md$, qualifié de meilleur été depuis 2019. L'option A confond ce cumul avec les 160 M$ de recettes générées spécifiquement par 'Toy Story 5' sur trois jours en Amérique du Nord. C est faux car le texte précise 'depuis 2019', pas 'de tous les temps'. D combine une erreur d'unité (160 Md$) et de qualification."}, {"question": "Selon le signal macro, quel est l'événement politique britannique du 22 juin 2026 et son impact sur le M&A ?", "options": ["A. L'élection de Keir Starmer, créant une stabilité favorable aux deals", "B. La démission de Keir Starmer, générant une prime de risque politique sur les actifs UK", "C. La nomination d'Andy Burnham comme PM, réduisant l'incertitude", "D. Une réforme fiscale de Wes Streeting boostant les valorisations"], "correct": 1, "explanation": "La bonne réponse est B : Keir Starmer a démissionné de son poste de Premier ministre (devenant le PM le plus éphémère de l'histoire du Labour), ce qui crée une prime de risque politique pesant sur les actifs UK et constitue un mécanisme de transmission vers le M&A. A est faux car il s'agit d'une démission, non d'une élection. C est faux car Burnham n'est que soutenu pour succéder (par Wes Streeting), il n'est pas encore nommé. D est une invention sans fondement dans le texte."}];
+let answered = {};
+
+function buildQuiz() {
+  const quiz = document.getElementById('quiz');
+  questions.forEach((q, qi) => {
+    const div = document.createElement('div');
+    div.className = 'question';
+    div.innerHTML = `<h3>${qi+1}. ${q.question}</h3>` +
+      q.options.map((o, oi) =>
+        `<button class="option" id="q${qi}_${oi}" onclick="answer(${qi},${oi},${q.correct})">${o}</button>`
+      ).join('') +
+      `<div class="explanation" id="exp${qi}">${q.explanation}</div>`;
+    quiz.appendChild(div);
+  });
+}
+
+function answer(qi, oi, correct) {
+  if (answered[qi] !== undefined) return;
+  answered[qi] = oi;
+  const btn = document.getElementById(`q${qi}_${oi}`);
+  const correctBtn = document.getElementById(`q${qi}_${correct}`);
+  btn.classList.add(oi === correct ? 'correct' : 'wrong');
+  if (oi !== correct) correctBtn.classList.add('correct');
+  document.getElementById(`exp${qi}`).style.display = 'block';
+}
+
+function submitQuiz() {
+  const score = Object.values(answered).filter((a, i) => a === questions[i].correct).length;
+  const total = questions.length;
+  const msg = score === total ? "🏆 Parfait ! Tu maîtrises ce numéro." :
+              score >= total/2 ? "👍 Bien, relis les explications des questions ratées." :
+              "📖 Relis le cours — ces notions vont revenir en entretien.";
+  document.getElementById('score').innerHTML =
+    `<h2>${score} / ${total}</h2><p>${msg}</p>`;
+  document.getElementById('score').style.display = 'block';
+  document.getElementById('submit').style.display = 'none';
+  window.scrollTo(0, document.getElementById('score').offsetTop - 20);
+}
+
+buildQuiz();
+</script>
+</body>
+</html>

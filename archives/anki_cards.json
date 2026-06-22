@@ -538,5 +538,41 @@
     "verso": "Elle s'applique historiquement aux co-entreprises (joint-ventures) sous contrôle conjoint, où l'on n'intègre que la quote-part détenue des actifs, passifs, produits et charges (ex. 50% d'une JV détenue à parité). Sous les normes IFRS récentes, elle a largement été remplacée par la mise en équivalence pour les joint-ventures.",
     "numero": "10",
     "id": 1423774478
+  },
+  {
+    "recto": "Qu'est-ce que la calendarisation (calendarization) en finance ?",
+    "verso": "C'est l'art de définir quelle période de temps sert de référence à un chiffre financier. Comme les entreprises publient par exercice fiscal mais les deals se font à n'importe quel moment de l'année, il faut des conventions pour exprimer une performance à une date donnée. Le choix de la période change la valeur calculée d'une même entreprise.",
+    "numero": "11",
+    "id": 1698659104
+  },
+  {
+    "recto": "Que signifient les acronymes LTM, NTM et FY ?",
+    "verso": "FY (Fiscal Year) désigne l'exercice fiscal publié. LTM (Last Twelve Months) couvre les douze derniers mois glissants jusqu'à la date d'analyse. NTM (Next Twelve Months) couvre les douze prochains mois, basés sur des prévisions. Chacun donne un chiffre différent pour la même entreprise.",
+    "numero": "11",
+    "id": 1631769552
+  },
+  {
+    "recto": "Comment calcule-t-on un chiffre LTM à partir de comptes annuels et trimestriels ?",
+    "verso": "On part du dernier exercice fiscal complet, on ajoute les trimestres écoulés de l'année en cours, puis on retranche les mêmes trimestres de l'année précédente. Formule : LTM = Dernier FY + cumul de l'année en cours − cumul correspondant de l'année passée. Cela reconstitue une fenêtre glissante de 12 mois actualisée.",
+    "numero": "11",
+    "id": 1115802272
+  },
+  {
+    "recto": "Comment la calendarisation affecte-t-elle un multiple de valorisation ?",
+    "verso": "Un multiple comme EV/EBITDA dépend de la période du dénominateur. Avec un EBITDA LTM (historique), le multiple paraît plus élevé ; avec un EBITDA NTM (prévisionnel, souvent plus haut si croissance), le multiple paraît plus bas. Pour comparer des sociétés, il faut impérativement aligner toutes sur la même base temporelle.",
+    "numero": "11",
+    "id": 2112157234
+  },
+  {
+    "recto": "Pourquoi une même entreprise peut-elle 'valoir' trois prix différents selon la période choisie ?",
+    "verso": "Parce que les revenus et l'EBITDA varient dans le temps (saisonnalité, croissance, événements ponctuels comme la sortie d'un film). Selon qu'on regarde le passé (LTM), l'exercice publié (FY) ou les prévisions (NTM), le chiffre de référence change, et donc la valeur dérivée d'un multiple change aussi. Le choix de la fenêtre est un levier de cadrage.",
+    "numero": "11",
+    "id": 1168717846
+  },
+  {
+    "recto": "En entretien, pourquoi privilégier des multiples forward (NTM) plutôt que trailing (LTM) dans certains cas ?",
+    "verso": "Les multiples forward reflètent les attentes de performance future et sont pertinents pour des sociétés en forte croissance ou cycliques, où le passé n'est pas représentatif. Les multiples trailing reposent sur des chiffres certains et audités, plus fiables mais moins prospectifs. Le bon analyste justifie son choix selon le profil de l'entreprise et la disponibilité de prévisions crédibles.",
+    "numero": "11",
+    "id": 1479076428
   }
 ]

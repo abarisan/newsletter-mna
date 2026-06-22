@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Deal Brief</title>
+  <style>
+    /* ── Palette : clair / nuances d'orange ── */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #fdf6ee;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      color: #2b1a0e;
+      line-height: 1.75;
+    }
+
+    .wrapper {
+      max-width: 680px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(232,93,26,0.10);
+    }
+
+    .header {
+      background: linear-gradient(135deg, #ff6b2b 0%, #e85d1a 100%);
+      padding: 48px 48px 36px;
+      text-align: center;
+    }
+    .header .eyebrow {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ffe8d6;
+      margin-bottom: 16px;
+    }
+    .header h1 {
+      font-size: 36px;
+      font-weight: 400;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .header .subtitle {
+      font-size: 13px;
+      color: #ffd4b8;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      letter-spacing: 0.5px;
+    }
+    .header .issue-line {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.25);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #ffe8d6;
+      letter-spacing: 1px;
+    }
+
+    .body { padding: 0 48px 48px; }
+
+    .section { margin-top: 48px; }
+    .section-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #e85d1a;
+      margin-bottom: 6px;
+    }
+    .section h2 {
+      font-size: 22px;
+      font-weight: 400;
+      color: #2b1a0e;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #f9a06b;
+    }
+    .section-content { font-size: 15px; color: #3d2510; }
+    .section-content p { margin-bottom: 14px; }
+    .section-content strong { color: #c94e0e; font-weight: 700; }
+    .section-content ul, .section-content ol { padding-left: 20px; margin-bottom: 14px; }
+    .section-content li { margin-bottom: 6px; }
+
+    .callout {
+      background: #fff3e8;
+      border-left: 3px solid #e85d1a;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 14px;
+      color: #5a3520;
+      font-style: italic;
+      border-radius: 0 4px 4px 0;
+    }
+    .callout strong { font-style: normal; color: #c94e0e; }
+
+    .rappel-section {
+      margin-top: 48px;
+      background: #fff3e8;
+      margin-left: -48px;
+      margin-right: -48px;
+      padding: 36px 48px;
+      border-top: 3px solid #f9a06b;
+      border-bottom: 3px solid #f9a06b;
+    }
+    .rappel-section .section-label { color: #e85d1a; }
+    .rappel-section h2 { color: #2b1a0e; border-bottom-color: #fde0c5; font-size: 20px; }
+    .rappel-section .section-content { color: #5a3520; }
+    .rappel-section .section-content strong { color: #c94e0e; }
+    .rappel-section .term { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid #fde0c5; }
+    .rappel-section .term:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .rappel-section .term-name {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .interview-section {
+      margin-top: 48px;
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 28px 32px;
+    }
+    .interview-section .section-label { color: #e85d1a; }
+    .interview-question { font-size: 18px; font-style: italic; color: #2b1a0e; margin: 12px 0 20px; line-height: 1.4; }
+    .interview-answer { font-size: 14px; color: #5a3520; }
+
+    .sources-section { margin-top: 48px; padding-top: 24px; border-top: 1px solid #fde0c5; }
+    .sources-section .section-label { margin-bottom: 12px; }
+    .sources-section ul { list-style: none; padding: 0; }
+    .sources-section li {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #7a5c45;
+      margin-bottom: 6px;
+      padding-left: 12px;
+      position: relative;
+    }
+    .sources-section li::before { content: '→'; position: absolute; left: 0; color: #e85d1a; }
+
+    .footer {
+      background: #fdf6ee;
+      padding: 28px 48px;
+      text-align: center;
+      border-top: 1px solid #fde0c5;
+    }
+    .footer p { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; color: #9a7060; line-height: 1.8; }
+    .footer .next { color: #c94e0e; font-weight: 600; }
+
+    .divider { height: 1px; background: #fde0c5; margin: 36px 0; }
+
+    /* ── Schéma SVG ── */
+    .diagram-section {
+      margin-top: 48px;
+    }
+    .diagram-section .section-label {
+      margin-bottom: 12px;
+    }
+    .diagram-wrap {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      overflow-x: auto;
+    }
+    .diagram-wrap svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* ── Outils d'apprentissage ── */
+    .tools-section {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .tool-card {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      transition: box-shadow .15s;
+    }
+    .tool-card:hover { box-shadow: 0 4px 16px rgba(232,93,26,0.15); }
+    .tool-card .icon { font-size: 28px; display: block; margin-bottom: 8px; }
+    .tool-card .tool-title {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .tool-card .tool-desc {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      color: #7a5c45;
+    }
+
+    @media (max-width: 600px) {
+      .wrapper { margin: 0; border-radius: 0; }
+      .header { padding: 32px 24px 24px; }
+      .body { padding: 0 24px 32px; }
+      .rappel-section { margin-left: -24px; margin-right: -24px; padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="eyebrow">Newsletter M&A · Finance · IA · Géopolitique</div>
+      <h1>The Deal Brief</h1>
+      <div class="subtitle">Comprendre la finance, pas juste la suivre</div>
+      <div class="issue-line">N° 11 &nbsp;·&nbsp; 22 June 2026</div>
+    </div>
+
+    <div class="body">
+
+      <!-- SECTION 1 : M&A -->
+      <!-- DEAL -->
+      <div class="section">
+        <div class="section-label">Niveau 1 — Deal de la semaine</div>
+        <h2>DEAL — Disney capitalise sur "Toy Story 5" : pourquoi la calendarisation décide de la valeur du studio</h2>
+        <div class="section-content"><p>Week-end béni pour Hollywood : <strong>"Toy Story 5"</strong> (Disney-Pixar) a généré <strong>160 M$</strong> de recettes en Amérique du Nord sur trois jours, propulsant le box-office estival cumulé à <strong>1,85 Md$</strong> — le meilleur été depuis 2019 (NYT DealBook, 21 juin 2026). Pour un analyste M&A, ce n'est pas une anecdote culturelle : c'est un cas d'école sur la manière dont on <em>date</em> les revenus quand on valorise un studio. La même franchise vue en LTM, NTM ou FY donne trois EBITDA différents — donc trois prix.</p><p>Le contexte transactionnel reste chaud sur le segment media-entertainment. Depuis le rachat avorté de Paramount par Skydance puis les manœuvres autour de Warner Bros. Discovery, chaque actif de contenu se valorise sur un multiple <strong>EV/EBITDA</strong> qui dépend entièrement de la <em>période de référence</em> retenue. Un acheteur stratégique paiera typiquement <strong>9x à 12x EBITDA</strong> pour un studio à franchises récurrentes ; un sponsor LBO, contraint par la dette, cherchera plutôt 7x-8x. La différence entre ces multiples se joue souvent sur le choix LTM vs FY.</p><p><strong>Le zoom technique du jour.</strong> Imaginons que Disney veuille céder une participation dans son catalogue Pixar. Si l'exercice fiscal Disney se clôt fin septembre, alors au 22 juin 2026 le <strong>LTM</strong> (last twelve months, juillet 2025 → juin 2026) capte déjà le carton de "Toy Story 5", tandis que le <strong>FY2026</strong> publié ne sera connu qu'en novembre. Un vendeur malin présentera le LTM, gonflé par le box-office estival ; un acheteur prudent retraitera ce pic comme non récurrent. La calendarisation n'est pas un détail comptable : c'est un levier de négociation.</p><p><span class='callout'>Phrase d'entretien prête à l'emploi : "Sur un actif à revenus lumpy comme un studio, je ne me fie jamais au FY publié. Je reconstruis le LTM trimestre par trimestre pour capter le dernier blockbuster, puis je normalise les pics non récurrents. Présenter un LTM gonflé par un seul film, c'est le piège classique du sell-side — et le repérer, c'est ce qu'on attend d'un bon analyste."</span></p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin-top:20px;"><svg xmlns="http://www.w3.org/2000/svg" width="540" height="200" viewBox="0 0 540 200">
+  <rect width="540" height="200" fill="#ffffff"/>
+  <text x="20" y="30" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#2b1a0e">"Toy Story 5" : la calendarisation crée la valeur</text>
+
+  <!-- Box 1 -->
+  <rect x="20" y="60" width="150" height="90" rx="6" fill="#fff3e8" stroke="#e85d1a" stroke-width="2"/>
+  <text x="95" y="88" font-family="Arial, sans-serif" font-size="11" fill="#7a5c45" text-anchor="middle">Week-end d'ouverture</text>
+  <text x="95" y="115" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#c94e0e" text-anchor="middle">160 M$</text>
+  <text x="95" y="135" font-family="Arial, sans-serif" font-size="10" fill="#7a5c45" text-anchor="middle">Amérique du Nord / 3 jours</text>
+
+  <!-- Arrow 1 -->
+  <line x1="172" y1="105" x2="208" y2="105" stroke="#f9a06b" stroke-width="3"/>
+  <polygon points="208,99 220,105 208,111" fill="#f9a06b"/>
+
+  <!-- Box 2 -->
+  <rect x="222" y="60" width="150" height="90" rx="6" fill="#fff3e8" stroke="#e85d1a" stroke-width="2"/>
+  <text x="297" y="88" font-family="Arial, sans-serif" font-size="11" fill="#7a5c45" text-anchor="middle">Box-office estival</text>
+  <text x="297" y="115" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#c94e0e" text-anchor="middle">1,85 Md$</text>
+  <text x="297" y="135" font-family="Arial, sans-serif" font-size="10" fill="#7a5c45" text-anchor="middle">cumul estival</text>
+
+  <!-- Arrow 2 -->
+  <line x1="374" y1="105" x2="410" y2="105" stroke="#f9a06b" stroke-width="3"/>
+  <polygon points="410,99 422,105 410,111" fill="#f9a06b"/>
+
+  <!-- Box 3 -->
+  <rect x="424" y="60" width="96" height="90" rx="6" fill="#ffffff" stroke="#c94e0e" stroke-width="2"/>
+  <text x="472" y="92" font-family="Arial, sans-serif" font-size="11" fill="#7a5c45" text-anchor="middle">Meilleur été</text>
+  <text x="472" y="118" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#c94e0e" text-anchor="middle">2019</text>
+  <text x="472" y="135" font-family="Arial, sans-serif" font-size="10" fill="#7a5c45" text-anchor="middle">depuis</text>
+
+  <text x="20" y="185" font-family="Arial, sans-serif" font-size="10" fill="#7a5c45">Source : NYT DealBook, 21 juin 2026 — Disney-Pixar</text>
+</svg></div>
+      
+
+      <div class="divider"></div>
+
+      <!-- MACRO & GÉOPO -->
+      <div class="section">
+        <div class="section-label">Niveau 3 — Macro & Géopolitique</div>
+        <h2>SIGNAL MACRO — Démission de Starmer : prime de risque politique sur les actifs UK</h2>
+        <div class="section-content"><p><strong>Keir Starmer a démissionné ce lundi 22 juin 2026</strong> de son poste de Premier ministre britannique, devenant le PM le plus éphémère de l'histoire du Labour ; Wes Streeting soutient désormais Andy Burnham pour lui succéder (Financial Times, 22 juin 2026, "Keir Starmer steps down as UK prime minister").</p><p><strong>Mécanisme de transmission vers le M&A :</strong> une crise de leadership injecte de l'incertitude politique, et l'incertitude se paie. Concrètement, les acheteurs exigent une <em>prime de risque</em> plus élevée sur les actifs britanniques, ce qui pousse le coût des capitaux propres à la hausse et comprime mécaniquement les valorisations. Pour les processus de cession en cours côté UK, attendez-vous à des due diligence rallongées et à des clauses <em>MAC</em> (material adverse change) renforcées. Lien direct avec le cours : quand l'environnement est instable, les acheteurs se méfient encore plus des chiffres FY "historiques" et veulent du <strong>LTM</strong> et du <strong>NTM</strong> pour coller au présent et au futur proche, pas à un passé devenu obsolète.</p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin-top:20px;"><svg xmlns="http://www.w3.org/2000/svg" width="540" height="200" viewBox="0 0 540 200">
+  <rect width="540" height="200" fill="#ffffff"/>
+  
+  <!-- Titre -->
+  <text x="20" y="28" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#c94e0e">SIGNAL MACRO — Prime de risque politique UK</text>
+  <line x1="20" y1="38" x2="520" y2="38" stroke="#f9a06b" stroke-width="1"/>
+
+  <!-- Marker flèche -->
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto">
+      <polygon points="0,0 7,3 0,6" fill="#f9a06b"/>
+    </marker>
+  </defs>
+
+  <!-- Boîte CAUSE -->
+  <rect x="20" y="65" width="220" height="100" rx="6" fill="#fff3e8" stroke="#e85d1a" stroke-width="1.5"/>
+  <text x="130" y="90" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2b1a0e" text-anchor="middle">Démission de Starmer</text>
+  <text x="130" y="110" font-family="Arial, sans-serif" font-size="11" fill="#7a5c45" text-anchor="middle">Lundi 22 juin 2026</text>
+  <text x="130" y="130" font-family="Arial, sans-serif" font-size="11" fill="#7a5c45" text-anchor="middle">PM Labour le plus éphémère</text>
+  <text x="130" y="150" font-family="Arial, sans-serif" font-size="11" fill="#c94e0e" text-anchor="middle">Streeting → soutient Burnham</text>
+
+  <!-- Flèche -->
+  <line x1="245" y1="115" x2="295" y2="115" stroke="#f9a06b" stroke-width="2.5" marker-end="url(#arr)"/>
+
+  <!-- Boîte EFFET -->
+  <rect x="300" y="65" width="220" height="100" rx="6" fill="#fff3e8" stroke="#e85d1a" stroke-width="1.5"/>
+  <text x="410" y="90" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2b1a0e" text-anchor="middle">Actifs UK sous pression</text>
+  <text x="410" y="112" font-family="Arial, sans-serif" font-size="11" fill="#7a5c45" text-anchor="middle">↑ Prime de risque politique</text>
+  <text x="410" y="132" font-family="Arial, sans-serif" font-size="11" fill="#7a5c45" text-anchor="middle">Gilts · GBP · FTSE</text>
+  <text x="410" y="152" font-family="Arial, sans-serif" font-size="11" fill="#c94e0e" text-anchor="middle">Incertitude de succession</text>
+
+  <!-- Source -->
+  <text x="520" y="190" font-family="Arial, sans-serif" font-size="9" fill="#7a5c45" text-anchor="end">Source : Financial Times</text>
+</svg></div>
+      
+
+      <div class="divider"></div>
+
+      <!-- IA -->
+      
+
+      <!-- RAPPEL DE COURS -->
+      <div class="rappel-section">
+        <div class="section-label">Rappel de cours</div>
+        <h2>Les notions clés de ce numéro</h2>
+        <div class="section-content"><p>Le cours du jour porte sur la <strong>calendarisation</strong> : l'art de définir <em>quelle période de temps</em> servira de référence à un chiffre financier. C'est l'un des fondamentaux les plus sous-estimés en entretien — et celui qui sépare le candidat qui récite d'un multiple de celui qui comprend ce qu'il y a dedans. Le deal Disney/"Toy Story 5" en est l'illustration parfaite : selon la période choisie, le même studio ne vaut pas le même prix.</p><p>Reprenons depuis la base. Une entreprise publie des comptes par <strong>exercice fiscal</strong>, mais les transactions, elles, se font à n'importe quel moment de l'année. Il faut donc des conventions pour parler de "performance" à une date donnée. Cinq notions structurent tout :</p><div class='term'><div class='term-name'>FY (Fiscal Year)</div>L'exercice fiscal de l'entreprise, tel qu'elle le définit dans ses statuts. Disney clôture fin septembre ; LVMH, Nestlé et la plupart des groupes clôturent au 31 décembre. FY2026 = l'année comptable complète. Attention : FY n'est PAS forcément l'année calendaire.</div><div class='term'><div class='term-name'>CY (Calendar Year)</div>L'année civile, du 1er janvier au 31 décembre, indépendamment de l'exercice fiscal de l'entreprise. On l'utilise pour comparer entre elles des sociétés qui n'ont pas le même FY. Si Disney clôt en septembre et Netflix en décembre, on les ramène en CY pour comparer des pommes avec des pommes.</div><div class='term'><div class='term-name'>YTD (Year-To-Date)</div>Le cumul depuis le début de l'exercice jusqu'à la date courante. Au 22 juin 2026, le YTD d'une société clôturant en décembre couvre janvier → juin. C'est un chiffre partiel, donc jamais annualisable naïvement (un studio fait l'essentiel de ses recettes l'été : un YTD de juin sous-estime l'année).</div><div class='term'><div class='term-name'>LTM (Last Twelve Months) / TTM</div>Les douze derniers mois glissants jusqu'à la date courante, peu importe où l'on se situe dans le FY. Au 22 juin 2026, le LTM couvre juillet 2025 → juin 2026. C'est LE chiffre de référence en M&A : il reflète la performance la plus récente sur un cycle complet de 12 mois, sans trou ni double comptage.</div><div class='term'><div class='term-name'>NTM (Next Twelve Months)</div>Les douze prochains mois glissants, donc une projection. Au 22 juin 2026, le NTM couvre juillet 2026 → juin 2027. On l'utilise pour les multiples forward (EV/EBITDA NTM), qui valorisent une société sur ce qu'elle <em>va</em> gagner, pas ce qu'elle a gagné.</div><p><strong>Comment construit-on un LTM ?</strong> La formule canonique, à connaître par cœur :</p><p style='text-align:center'><strong>LTM = Dernier FY publié − YTD de l'année précédente + YTD de l'année courante</strong></p><p>Exemple chiffré sur Disney. Supposons FY2025 (clos sept. 2025) = EBITDA de 16,0 Md$. Le YTD oct.-juin de FY2025 = 11,0 Md$. Le YTD oct.-juin de FY2026 (incluant "Toy Story 5") = 13,5 Md$. Alors :</p><p style='text-align:center'>LTM = 16,0 − 11,0 + 13,5 = <strong>18,5 Md$</strong></p><p>On voit immédiatement l'effet : le LTM (18,5) est très supérieur au FY2025 publié (16,0), précisément parce qu'on a remplacé un trimestre passé moyen par un trimestre récent dopé par le box-office estival. Présenter ce LTM, c'est l'arme du <em>sell-side</em>.</p><p><strong>Le cas limite à maîtriser : la saisonnalité.</strong> Le LTM neutralise la saisonnalité car il contient toujours quatre trimestres distincts. Mais il ne neutralise PAS les <em>événements non récurrents</em>. "Toy Story 5" est un blockbuster qui n'arrive pas chaque année. Un acheteur sérieux retraitera ce pic : il calculera un EBITDA <strong>normalisé</strong>, en lissant la contribution exceptionnelle du film. C'est la différence entre un LTM brut et un LTM ajusté.</p><p><strong>Les trois erreurs classiques en entretien :</strong></p><ol><li><strong>Confondre FY et CY.</strong> Dire "l'EBITDA 2026 de Disney" sans préciser que leur FY clôt en septembre, c'est se tromper de quatre mois de données.</li><li><strong>Annualiser un YTD naïvement.</strong> Multiplier un YTD de 6 mois par 2 pour estimer l'année est faux dès qu'il y a saisonnalité — désastreux pour un studio ou un retailer (qui fait Noël au Q4).</li><li><strong>Comparer un multiple LTM à un multiple NTM.</strong> Un EV/EBITDA de 9x LTM et de 7x NTM ne signifient pas que l'actif est devenu cher : le NTM est plus bas parce que l'EBITDA futur est plus élevé. Toujours comparer même base contre même base.</li></ol><p>Ce que vous savez maintenant : choisir la bonne fenêtre temporelle pour tout chiffre, reconstruire un LTM à partir des YTD, et repérer un LTM gonflé. <strong>Demain (mercredi)</strong>, on passe aux <strong>Financial Projections</strong> : comment construire un business plan à partir de drivers opérationnels — c'est précisément ce qui alimente le NTM qu'on vient d'introduire.</p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin: 0 -48px; padding: 24px 48px; background:#fff3e8; border-top:1px solid #fde0c5; border-bottom:1px solid #fde0c5;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="540" height="200" viewBox="0 0 540 200">
+  <rect width="540" height="200" fill="#ffffff"/>
+  <text x="270" y="28" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#c94e0e" text-anchor="middle">Calendarisation : quelle période de référence ?</text>
+
+  <!-- Box 1 LTM -->
+  <rect x="20" y="60" width="140" height="80" rx="6" fill="#fff3e8" stroke="#e85d1a" stroke-width="1.5"/>
+  <text x="90" y="88" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2b1a0e" text-anchor="middle">LTM</text>
+  <text x="90" y="106" font-family="Arial, sans-serif" font-size="10" fill="#7a5c45" text-anchor="middle">12 derniers mois</text>
+  <text x="90" y="124" font-family="Arial, sans-serif" font-size="10" fill="#7a5c45" text-anchor="middle">réalisé / passé</text>
+
+  <!-- Box 2 FY actuel -->
+  <rect x="200" y="60" width="140" height="80" rx="6" fill="#fff3e8" stroke="#e85d1a" stroke-width="1.5"/>
+  <text x="270" y="88" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2b1a0e" text-anchor="middle">FY en cours</text>
+  <text x="270" y="106" font-family="Arial, sans-serif" font-size="10" fill="#7a5c45" text-anchor="middle">année fiscale</text>
+  <text x="270" y="124" font-family="Arial, sans-serif" font-size="10" fill="#7a5c45" text-anchor="middle">budget / estimé</text>
+
+  <!-- Box 3 NTM -->
+  <rect x="380" y="60" width="140" height="80" rx="6" fill="#fff3e8" stroke="#e85d1a" stroke-width="1.5"/>
+  <text x="450" y="88" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2b1a0e" text-anchor="middle">NTM</text>
+  <text x="450" y="106" font-family="Arial, sans-serif" font-size="10" fill="#7a5c45" text-anchor="middle">12 prochains mois</text>
+  <text x="450" y="124" font-family="Arial, sans-serif" font-size="10" fill="#7a5c45" text-anchor="middle">prévisionnel</text>
+
+  <!-- Arrows -->
+  <line x1="160" y1="100" x2="198" y2="100" stroke="#f9a06b" stroke-width="2.5"/>
+  <polygon points="198,100 190,96 190,104" fill="#f9a06b"/>
+  <line x1="340" y1="100" x2="378" y2="100" stroke="#f9a06b" stroke-width="2.5"/>
+  <polygon points="378,100 370,96 370,104" fill="#f9a06b"/>
+
+  <text x="270" y="180" font-family="Arial, sans-serif" font-size="11" fill="#c94e0e" text-anchor="middle" font-weight="bold">Même multiple, période différente → valeur différente</text>
+</svg>
+      </div>
+      
+
+      <!-- QUESTION D'ENTRETIEN -->
+      <div class="interview-section">
+        <div class="section-label">🎯 Question d'entretien de la semaine</div>
+        <div class="interview-question">""Disney veut nous vendre une participation dans Pixar au 22 juin 2026. Le banquier sell-side présente un EBITDA LTM de 18,5 Md$, en hausse de 16% sur le FY publié. Comment réagissez-vous ?""</div>
+        <div class="interview-answer">
+          <p><strong>1. Je décompose le LTM pour comprendre la hausse.</strong> Le LTM = FY2025 − YTD(FY2025) + YTD(FY2026). La hausse de 16% vient du fait qu'on a remplacé des trimestres passés par des trimestres récents incluant "Toy Story 5" (160 M$ au box-office, été 2026). Je vérifie donc <em>quel trimestre</em> porte la croissance avant d'accepter le chiffre.</p><p><strong>2. Je normalise les éléments non récurrents.</strong> Un blockbuster comme "Toy Story 5" n'est pas annuel. Je retraite sa contribution exceptionnelle pour obtenir un EBITDA <em>normalisé</em>, base saine pour appliquer un multiple. Sinon, je paie 9x-12x un EBITDA gonflé par un événement ponctuel — destruction de valeur immédiate.</p><p><strong>3. Je cross-check avec le NTM et le multiple forward.</strong> Je demande le business plan pour bâtir un EBITDA NTM (juillet 2026 → juin 2027) et je raisonne en EV/EBITDA forward. Si le sell-side ne valorise qu'en LTM gonflé, c'est un signal qu'il optimise la fenêtre temporelle à son avantage — et mon job d'acheteur est de ramener la discussion sur une base normalisée et cohérente FY/CY.</p>
+        </div>
+      </div>
+
+      <!-- OUTILS D'APPRENTISSAGE -->
+      <div class="tools-section">
+        <a class="tool-card" href="https://abarisan.github.io/newsletter-mna/quiz/quiz_2026-06-22.html" target="_blank">
+          <span class="icon">❓</span>
+          <span class="tool-title">Quiz ce numéro</span>
+          <span class="tool-desc">4 questions pour vérifier que tu as compris</span>
+        </a>
+        <a class="tool-card" href="https://claude.ai/new" target="_blank">
+          <span class="icon">🤖</span>
+          <span class="tool-title">Poser une question</span>
+          <span class="tool-desc">Ouvre ton Claude Project M&A pour aller plus loin</span>
+        </a>
+      </div>
+
+      <!-- SOURCES PAR NIVEAU -->
+      <div class="sources-section">
+        <div class="section-label">Sources</div>
+        <ul>
+          <li>[N1] Financial Times — "Keir Starmer steps down as UK prime minister" (22 juin 2026)</li>
+<li>[N2] NYT DealBook — "'Toy Story 5' Fuels Hollywood's Hottest Summer Since 2019" (21 juin 2026)</li>
+<li>[N3] The Wall Street Journal (Markets) — couverture décisions de taux et volatilité FX comme proxy de prime de risque</li>
+<li>[N4] Dealogic — multiples média-entertainment EV/EBITDA de référence (9x-12x stratégique, 7x-8x sponsor)</li>
+        </ul>
+        <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:6px; font-family:'Helvetica Neue',Arial,sans-serif; font-size:10px;">
+          <span style="background:#fff3e8;border:1px solid #e85d1a;color:#c94e0e;padding:3px 8px;border-radius:20px;font-weight:700;">N1 · Bloomberg · FT · Capital Finance · CFNEWS · S&P</span>
+          <span style="background:#fff8f2;border:1px solid #f9a06b;color:#7a5c45;padding:3px 8px;border-radius:20px;">N2 · Mergermarket · Reuters · PitchBook</span>
+          <span style="background:#fdf6ee;border:1px solid #fde0c5;color:#9a7060;padding:3px 8px;border-radius:20px;">N3 · WSJ · The Economist</span>
+          <span style="background:#f9f9f9;border:1px solid #e0e0e0;color:#888;padding:3px 8px;border-radius:20px;">N4 · Dealogic · Preqin</span>
+        </div>
+      </div>
+
+    </div><!-- /body -->
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <p>
+        <span class="next">Deck Anki mis à jour en pièce jointe</span><br>
+        The Deal Brief · 5× par semaine · <a href="https://github.com/abarisan/newsletter-mna" style="color:#e85d1a;text-decoration:none;">Code source</a>
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>
