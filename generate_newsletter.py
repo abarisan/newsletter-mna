@@ -3,7 +3,8 @@ Newsletter M&A · Finance · IA · Géopolitique
 Génère le contenu via Claude API + envoie par email chaque vendredi.
 """
 
-import google.generativeai as genai
+from google import genai
+from google.genai import types
 import smtplib
 import os
 import re
@@ -40,14 +41,17 @@ import feedparser
 # ─────────────────────────────────────────────────────────────────────────────
 
 def gemini_call(prompt: str, system: str = "", max_tokens: int = 8000) -> str:
-    """Appelle Gemini 2.0 Flash et retourne le texte de la réponse."""
-    genai.configure(api_key=GEMINI_KEY)
-    model = genai.GenerativeModel(
-        model_name="gemini-1.5-flash",
+    """Appelle Gemini 2.0 Flash via la nouvelle SDK google-genai."""
+    client = genai.Client(api_key=GEMINI_KEY)
+    config = types.GenerateContentConfig(
         system_instruction=system if system else None,
-        generation_config=genai.GenerationConfig(max_output_tokens=max_tokens)
+        max_output_tokens=max_tokens,
     )
-    response = model.generate_content(prompt)
+    response = client.models.generate_content(
+        model="gemini-2.0-flash",
+        contents=prompt,
+        config=config,
+    )
     return response.text
 
 
@@ -1020,7 +1024,6 @@ def main():
     archive_dir.mkdir(exist_ok=True)
     quiz_dir.mkdir(exist_ok=True)
 
-    genai.configure(api_key=GEMINI_KEY)
     template = root / "template.html"
     level    = load_level()
 
