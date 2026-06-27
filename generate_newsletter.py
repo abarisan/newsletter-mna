@@ -28,6 +28,19 @@ DAY_FORMAT = {
 
 
 RECIPIENT_EMAIL = "sooriyakumar.abarisan@gmail.com"
+
+
+def extract_json(text: str) -> dict:
+    """Extrait et parse le premier objet JSON dans une réponse LLM."""
+    text = re.sub(r"```json\s*", "", text)
+    text = re.sub(r"```\s*", "", text)
+    start = text.find("{")
+    end   = text.rfind("}") + 1
+    if start == -1 or end == 0:
+        raise ValueError("Aucun JSON trouvé dans la réponse")
+    raw = text[start:end]
+    raw = re.sub(r'[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]', '', raw)
+    return json.loads(raw)
 SENDER_EMAIL    = os.environ["GMAIL_ADDRESS"]
 GMAIL_APP_PASS  = os.environ["GMAIL_APP_PASSWORD"]
 GROQ_KEY        = os.environ["GROQ_API_KEY"]
@@ -480,19 +493,6 @@ def generate_content(date_str: str, archive_dir: Path, weekday: int, level: dict
         previous_issues=previous_issues + trainy_context + "\n\n" + live_news
     )
 
-    def extract_json(text: str) -> dict:
-        """Extrait et parse le premier JSON valide dans le texte."""
-        text = re.sub(r"```json\s*", "", text)
-        text = re.sub(r"```\s*", "", text)
-        start = text.find("{")
-        end   = text.rfind("}") + 1
-        if start == -1 or end == 0:
-            raise ValueError("Aucun JSON trouvé dans la réponse")
-        raw = text[start:end]
-        # Supprime les caractères de contrôle invalides dans JSON (hors \n \t \r)
-        raw = re.sub(r'[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]', '', raw)
-        return json.loads(raw)
-
     text = gemini_call(prompt, system=SYSTEM_PROMPT, max_tokens=8000)
     try:
         content = extract_json(text)
@@ -690,10 +690,8 @@ Macro : {content.get('macro_titre', '')}
 {content.get('macro_contenu', '')[:400]}
 """
     text = gemini_call(QUIZ_PROMPT.format(newsletter_summary=summary), max_tokens=2000)
-    text = re.sub(r"```json\s*", "", text); text = re.sub(r"```\s*", "", text)
-    start, end = text.find("{"), text.rfind("}") + 1
     try:
-        return json.loads(text[start:end])["questions"]
+        return extract_json(text)["questions"]
     except (json.JSONDecodeError, ValueError, KeyError):
         return []
 
@@ -840,10 +838,8 @@ def generate_anki_cards(content: dict) -> list:
         f"Macro : {content.get('macro_contenu','')[:300]}"
     )
     text = gemini_call(ANKI_PROMPT.format(newsletter_summary=summary), max_tokens=2000)
-    text = re.sub(r"```json\s*", "", text); text = re.sub(r"```\s*", "", text)
-    start, end = text.find("{"), text.rfind("}") + 1
     try:
-        return json.loads(text[start:end])["cards"]
+        return extract_json(text)["cards"]
     except (json.JSONDecodeError, ValueError, KeyError):
         return []
 
@@ -1000,9 +996,8 @@ def update_level(content: dict, level: dict, weekday: int) -> dict:
         objectif=level["objectif"],
         trainy_index=new_idx,
     ), max_tokens=500)
-    start, end = text.find("{"), text.rfind("}") + 1
     try:
-        result = json.loads(text[start:end])
+        result = extract_json(text)
     except (json.JSONDecodeError, ValueError):
         # Fallback : on garde le niveau actuel et on avance juste l'index
         result = {**level, "numero": numero, "trainy_index": new_idx}

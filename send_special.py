@@ -2,10 +2,10 @@
 Édition Spéciale The Deal Brief — articles IESE + MSCI
 """
 from groq import Groq
+from generate_newsletter import extract_json
 import smtplib
 import os
 import re
-import json
 import datetime
 from pathlib import Path
 from email.mime.multipart import MIMEMultipart
@@ -139,13 +139,7 @@ def main():
         messages=[{"role": "user", "content": PROMPT}]
     )
 
-    text = response.choices[0].message.content
-    text = re.sub(r"```json\s*", "", text)
-    text = re.sub(r"```\s*", "", text)
-    start, end = text.find("{"), text.rfind("}") + 1
-    raw = text[start:end]
-    raw = re.sub(r'[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]', '', raw)
-    content = json.loads(raw)
+    content = extract_json(response.choices[0].message.content)
     content.update({"diagram_deal": "", "diagram_cours": "", "diagram_macro": ""})
 
     html = render_html(content, root / "template.html")
