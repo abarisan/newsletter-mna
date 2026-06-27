@@ -43,7 +43,7 @@ def gemini_call(prompt: str, system: str = "", max_tokens: int = 8000) -> str:
     """Appelle Gemini 2.0 Flash et retourne le texte de la réponse."""
     genai.configure(api_key=GEMINI_KEY)
     model = genai.GenerativeModel(
-        model_name="gemini-2.0-flash",
+        model_name="gemini-1.5-flash",
         system_instruction=system if system else None,
         generation_config=genai.GenerationConfig(max_output_tokens=max_tokens)
     )
