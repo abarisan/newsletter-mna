@@ -3,7 +3,7 @@ Newsletter M&A · Finance · IA · Géopolitique
 Génère le contenu via Claude API + envoie par email chaque vendredi.
 """
 
-import anthropic
+import google.generativeai as genai
 import smtplib
 import os
 import re
@@ -30,10 +30,26 @@ DAY_FORMAT = {
 RECIPIENT_EMAIL = "sooriyakumar.abarisan@gmail.com"
 SENDER_EMAIL    = os.environ["GMAIL_ADDRESS"]
 GMAIL_APP_PASS  = os.environ["GMAIL_APP_PASSWORD"]
-ANTHROPIC_KEY   = os.environ["ANTHROPIC_API_KEY"]
+GEMINI_KEY      = os.environ["GEMINI_API_KEY"]
 
 
 import feedparser
+
+# ─────────────────────────────────────────────────────────────────────────────
+# GEMINI CLIENT
+# ─────────────────────────────────────────────────────────────────────────────
+
+def gemini_call(prompt: str, system: str = "", max_tokens: int = 8000) -> str:
+    """Appelle Gemini 2.0 Flash et retourne le texte de la réponse."""
+    genai.configure(api_key=GEMINI_KEY)
+    model = genai.GenerativeModel(
+        model_name="gemini-2.0-flash",
+        system_instruction=system if system else None,
+        generation_config=genai.GenerationConfig(max_output_tokens=max_tokens)
+    )
+    response = model.generate_content(prompt)
+    return response.text
+
 
 # ─────────────────────────────────────────────────────────────────────────────
 # SCRAPING RSS — actus M&A en temps réel
@@ -427,7 +443,7 @@ def get_day_prompt(weekday: int) -> str:
     return CONTENT_PROMPT_DAILY
 
 
-def generate_content(client: anthropic.Anthropic, date_str: str, archive_dir: Path, weekday: int, level: dict) -> dict:
+def generate_content(date_str: str, archive_dir: Path, weekday: int, level: dict) -> dict:
     """Appelle Claude pour générer le contenu de la newsletter."""
     import json
 
@@ -461,16 +477,8 @@ def generate_content(client: anthropic.Anthropic, date_str: str, archive_dir: Pa
         previous_issues=previous_issues + trainy_context + "\n\n" + live_news
     )
 
-    message = client.messages.create(
-        model="claude-opus-4-8",
-        max_tokens=8000,
-        system=SYSTEM_PROMPT,
-        messages=[{"role": "user", "content": prompt}]
-    )
-
     def extract_json(text: str) -> dict:
         """Extrait et parse le premier JSON valide dans le texte."""
-        # Retire les blocs markdown ```json ... ```
         text = re.sub(r"```json\s*", "", text)
         text = re.sub(r"```\s*", "", text)
         start = text.find("{")
@@ -479,11 +487,11 @@ def generate_content(client: anthropic.Anthropic, date_str: str, archive_dir: Pa
             raise ValueError("Aucun JSON trouvé dans la réponse")
         return json.loads(text[start:end])
 
-    text = message.content[0].text
+    text = gemini_call(prompt, system=SYSTEM_PROMPT, max_tokens=8000)
     try:
         content = extract_json(text)
     except (json.JSONDecodeError, ValueError) as e:
-        raise RuntimeError(f"Claude n'a pas retourné de JSON valide : {e}\n{text[:500]}")
+        raise RuntimeError(f"Gemini n'a pas retourné de JSON valide : {e}\n{text[:500]}")
 
     # Validation : les champs critiques ne doivent pas être vides
     required = ["ma_titre", "ma_contenu", "rappel_cours", "question_entretien", "reponse_structuree"]
@@ -495,13 +503,8 @@ def generate_content(client: anthropic.Anthropic, date_str: str, archive_dir: Pa
             "Tu DOIS remplir TOUS les champs, notamment rappel_cours (cours complet du chapitre), "
             "question_entretien et reponse_structuree. Regenere un JSON complet."
         )
-        message2 = client.messages.create(
-            model="claude-opus-4-8", max_tokens=8000,
-            system=SYSTEM_PROMPT,
-            messages=[{"role": "user", "content": retry_prompt}]
-        )
         try:
-            content = extract_json(message2.content[0].text)
+            content = extract_json(gemini_call(retry_prompt, system=SYSTEM_PROMPT, max_tokens=8000))
         except (json.JSONDecodeError, ValueError):
             pass  # On garde le premier résultat si le retry rate aussi
 
@@ -615,7 +618,7 @@ def _extract_svg(text: str) -> str:
     end   = text.rfind("</svg>") + 6
     return text[start:end] if start != -1 and end > 6 else ""
 
-def generate_diagrams(client: anthropic.Anthropic, content: dict) -> dict:
+def generate_diagrams(content: dict) -> dict:
     """Génère 2-3 schémas SVG simples pour le deal, le cours et la macro."""
     diagrams = {}
 
@@ -636,14 +639,7 @@ def generate_diagrams(client: anthropic.Anthropic, content: dict) -> dict:
     for key, sujet, donnees in specs:
         print(f"  → {key} : sujet='{sujet[:60]}'")
         try:
-            msg = client.messages.create(
-                model="claude-opus-4-8",
-                max_tokens=1200,
-                messages=[{"role": "user", "content": DIAGRAM_PROMPT.format(
-                    sujet=sujet, donnees=donnees
-                )}]
-            )
-            svg = _extract_svg(msg.content[0].text.strip())
+            svg = _extract_svg(gemini_call(DIAGRAM_PROMPT.format(sujet=sujet, donnees=donnees), max_tokens=1200).strip())
             diagrams[key] = svg if svg else ""
             print(f"    {'OK' if svg else 'VIDE — pas de SVG retourné'}")
         except Exception as e:
@@ -676,7 +672,7 @@ Contexte newsletter :
 {newsletter_summary}
 """
 
-def generate_quiz(client: anthropic.Anthropic, content: dict) -> list:
+def generate_quiz(content: dict) -> list:
     """Génère 4 questions QCM à partir du contenu de la newsletter."""
     summary = f"""
 Deal : {content.get('ma_titre', '')}
@@ -687,17 +683,13 @@ Cours : {content.get('rappel_cours', '')[:800]}
 Macro : {content.get('macro_titre', '')}
 {content.get('macro_contenu', '')[:400]}
 """
-    msg = client.messages.create(
-        model="claude-opus-4-8",
-        max_tokens=2000,
-        messages=[{"role": "user", "content": QUIZ_PROMPT.format(newsletter_summary=summary)}]
-    )
-    text = msg.content[0].text
+    text = gemini_call(QUIZ_PROMPT.format(newsletter_summary=summary), max_tokens=2000)
+    text = re.sub(r"```json\s*", "", text); text = re.sub(r"```\s*", "", text)
     start, end = text.find("{"), text.rfind("}") + 1
     try:
         return json.loads(text[start:end])["questions"]
     except (json.JSONDecodeError, ValueError, KeyError):
-        return []  # Pas de quiz ce numéro si Claude rate le format
+        return []
 
 
 def render_quiz_page(questions: list, date_str: str, numero: str) -> str:
@@ -835,22 +827,19 @@ Contexte newsletter :
 {newsletter_summary}
 """
 
-def generate_anki_cards(client: anthropic.Anthropic, content: dict) -> list:
+def generate_anki_cards(content: dict) -> list:
     summary = (
         f"Deal : {content.get('ma_titre','')}. {content.get('ma_contenu','')[:500]}\n"
         f"Cours : {content.get('rappel_cours','')[:700]}\n"
         f"Macro : {content.get('macro_contenu','')[:300]}"
     )
-    msg = client.messages.create(
-        model="claude-opus-4-8", max_tokens=2000,
-        messages=[{"role": "user", "content": ANKI_PROMPT.format(newsletter_summary=summary)}]
-    )
-    text = msg.content[0].text
+    text = gemini_call(ANKI_PROMPT.format(newsletter_summary=summary), max_tokens=2000)
+    text = re.sub(r"```json\s*", "", text); text = re.sub(r"```\s*", "", text)
     start, end = text.find("{"), text.rfind("}") + 1
     try:
         return json.loads(text[start:end])["cards"]
     except (json.JSONDecodeError, ValueError, KeyError):
-        return []  # Pas de cartes ce numéro si Claude rate le format
+        return []
 
 
 def build_anki_deck(new_cards: list, numero: str, deck_path: Path) -> Path:
@@ -990,25 +979,21 @@ Retourne UNIQUEMENT ce JSON mis à jour (même structure, valeurs mises à jour)
 }}
 """
 
-def update_level(client: anthropic.Anthropic, content: dict, level: dict, weekday: int) -> dict:
+def update_level(content: dict, level: dict, weekday: int) -> dict:
     numero = int(content.get("numero", level["numero"] + 1))
     # On avance dans le programme TRAINY chaque jour (rythme quotidien)
     current_idx = level.get("trainy_index", 0)
     new_idx = current_idx + 1
 
-    msg = client.messages.create(
-        model="claude-opus-4-8", max_tokens=500,
-        messages=[{"role": "user", "content": LEVEL_UPDATE_PROMPT.format(
-            level=json.dumps(level, ensure_ascii=False),
-            cours_titre=content.get("rappel_cours", "")[:100],
-            deal_titre=content.get("ma_titre", ""),
-            numero=numero,
-            numero_int=numero,
-            objectif=level["objectif"],
-            trainy_index=new_idx,
-        )}]
-    )
-    text = msg.content[0].text
+    text = gemini_call(LEVEL_UPDATE_PROMPT.format(
+        level=json.dumps(level, ensure_ascii=False),
+        cours_titre=content.get("rappel_cours", "")[:100],
+        deal_titre=content.get("ma_titre", ""),
+        numero=numero,
+        numero_int=numero,
+        objectif=level["objectif"],
+        trainy_index=new_idx,
+    ), max_tokens=500)
     start, end = text.find("{"), text.rfind("}") + 1
     try:
         result = json.loads(text[start:end])
@@ -1035,23 +1020,23 @@ def main():
     archive_dir.mkdir(exist_ok=True)
     quiz_dir.mkdir(exist_ok=True)
 
-    client   = anthropic.Anthropic(api_key=ANTHROPIC_KEY)
+    genai.configure(api_key=GEMINI_KEY)
     template = root / "template.html"
     level    = load_level()
 
     # 1. Génération du contenu principal
     print(f"📝 [{jour}] Génération du contenu pour le {date_str}...")
-    content = generate_content(client, date_str, archive_dir, weekday, level)
+    content = generate_content(date_str, archive_dir, weekday, level)
     numero  = content.get("numero", "XX")
 
     # 2. Schémas SVG (deal + cours + macro)
     print("📊 Génération des schémas...")
-    diagrams = generate_diagrams(client, content)
+    diagrams = generate_diagrams(content)
     content.update(diagrams)
 
     # 3. Quiz (GitHub Pages)
     print("❓ Génération du quiz...")
-    questions = generate_quiz(client, content)
+    questions = generate_quiz(content)
     quiz_html = render_quiz_page(questions, date_str, numero)
     quiz_file = quiz_dir / f"quiz_{today.strftime('%Y-%m-%d')}.html"
     quiz_dir.mkdir(exist_ok=True)
@@ -1060,7 +1045,7 @@ def main():
 
     # 4. Anki deck cumulatif
     print("🎴 Génération des flashcards Anki...")
-    anki_cards = generate_anki_cards(client, content)
+    anki_cards = generate_anki_cards(content)
     anki_path  = archive_dir / "the_deal_brief.apkg"
     build_anki_deck(anki_cards, numero, anki_path)
 
@@ -1072,7 +1057,7 @@ def main():
 
     # 6. Mise à jour du niveau
     print("📈 Mise à jour du niveau...")
-    new_level = update_level(client, content, level, weekday)
+    new_level = update_level(content, level, weekday)
     save_level(new_level)
 
     # 7. Rendu HTML et archive
