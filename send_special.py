@@ -1,7 +1,7 @@
 """
 Édition Spéciale The Deal Brief — articles IESE + MSCI
 """
-import anthropic
+from groq import Groq
 import smtplib
 import os
 import re
@@ -14,7 +14,7 @@ from email.mime.text import MIMEText
 RECIPIENT_EMAIL = "sooriyakumar.abarisan@gmail.com"
 SENDER_EMAIL    = os.environ["GMAIL_ADDRESS"]
 GMAIL_APP_PASS  = os.environ["GMAIL_APP_PASSWORD"]
-ANTHROPIC_KEY   = os.environ["ANTHROPIC_API_KEY"]
+GROQ_KEY        = os.environ["GROQ_API_KEY"]
 
 ARTICLE_1 = """
 ARTICLE 1 — IESE Insight : "How institutional investors changed governance mechanisms around the world"
@@ -129,21 +129,23 @@ def send_email(html_body: str, subject: str):
     print(f"Envoye a {RECIPIENT_EMAIL}")
 
 def main():
-    client = anthropic.Anthropic(api_key=ANTHROPIC_KEY)
+    client = Groq(api_key=GROQ_KEY)
     root   = Path(__file__).parent
 
     print("Generation edition speciale...")
-    msg = client.messages.create(
-        model="claude-opus-4-8",
+    response = client.chat.completions.create(
+        model="llama-3.3-70b-versatile",
         max_tokens=8000,
         messages=[{"role": "user", "content": PROMPT}]
     )
 
-    text = msg.content[0].text
+    text = response.choices[0].message.content
     text = re.sub(r"```json\s*", "", text)
     text = re.sub(r"```\s*", "", text)
     start, end = text.find("{"), text.rfind("}") + 1
-    content = json.loads(text[start:end])
+    raw = text[start:end]
+    raw = re.sub(r'[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]', '', raw)
+    content = json.loads(raw)
     content.update({"diagram_deal": "", "diagram_cours": "", "diagram_macro": ""})
 
     html = render_html(content, root / "template.html")

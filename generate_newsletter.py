@@ -488,7 +488,10 @@ def generate_content(date_str: str, archive_dir: Path, weekday: int, level: dict
         end   = text.rfind("}") + 1
         if start == -1 or end == 0:
             raise ValueError("Aucun JSON trouvé dans la réponse")
-        return json.loads(text[start:end])
+        raw = text[start:end]
+        # Supprime les caractères de contrôle invalides dans JSON (hors \n \t \r)
+        raw = re.sub(r'[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]', '', raw)
+        return json.loads(raw)
 
     text = gemini_call(prompt, system=SYSTEM_PROMPT, max_tokens=8000)
     try:
