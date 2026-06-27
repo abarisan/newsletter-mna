@@ -54,6 +54,7 @@ import feedparser
 
 def gemini_call(prompt: str, system: str = "", max_tokens: int = 8000, json_mode: bool = False) -> str:
     """Appelle Llama 3.3 70B via Groq (gratuit, 1000 req/jour)."""
+    from groq import BadRequestError
     client = Groq(api_key=GROQ_KEY)
     messages = []
     if system:
@@ -62,7 +63,12 @@ def gemini_call(prompt: str, system: str = "", max_tokens: int = 8000, json_mode
     kwargs = dict(model="llama-3.3-70b-versatile", messages=messages, max_tokens=max_tokens)
     if json_mode:
         kwargs["response_format"] = {"type": "json_object"}
-    response = client.chat.completions.create(**kwargs)
+    try:
+        response = client.chat.completions.create(**kwargs)
+    except BadRequestError:
+        # JSON mode failed (model produced malformed JSON) — retry without constraint
+        kwargs.pop("response_format", None)
+        response = client.chat.completions.create(**kwargs)
     return response.choices[0].message.content
 
 
@@ -688,7 +694,7 @@ Cours : {content.get('rappel_cours', '')[:800]}
 Macro : {content.get('macro_titre', '')}
 {content.get('macro_contenu', '')[:400]}
 """
-    text = gemini_call(QUIZ_PROMPT.format(newsletter_summary=summary), max_tokens=2000, json_mode=True)
+    text = gemini_call(QUIZ_PROMPT.format(newsletter_summary=summary), max_tokens=2000)
     try:
         return extract_json(text)["questions"]
     except (json.JSONDecodeError, ValueError, KeyError):
@@ -836,7 +842,7 @@ def generate_anki_cards(content: dict) -> list:
         f"Cours : {content.get('rappel_cours','')[:700]}\n"
         f"Macro : {content.get('macro_contenu','')[:300]}"
     )
-    text = gemini_call(ANKI_PROMPT.format(newsletter_summary=summary), max_tokens=2000, json_mode=True)
+    text = gemini_call(ANKI_PROMPT.format(newsletter_summary=summary), max_tokens=2000)
     try:
         return extract_json(text)["cards"]
     except (json.JSONDecodeError, ValueError, KeyError):
@@ -994,7 +1000,7 @@ def update_level(content: dict, level: dict, weekday: int) -> dict:
         numero_int=numero,
         objectif=level["objectif"],
         trainy_index=new_idx,
-    ), max_tokens=500, json_mode=True)
+    ), max_tokens=500)
     try:
         result = extract_json(text)
     except (json.JSONDecodeError, ValueError):
