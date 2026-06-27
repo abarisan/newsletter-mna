@@ -1,4 +1,4 @@
-# Contexte The Deal Brief — Mise à jour N°11 (22 June 2026)
+# Contexte The Deal Brief — Mise à jour N°12 (27 June 2026)
 
 ## Mon profil
 Étudiant préparant des entretiens en banque d'affaires M&A.
@@ -11,18 +11,32 @@ PIK (Payment In Kind) : mécanisme et positionnement dans la structure, Financia
 ## Deals suivis en ce moment
 SpaceX : IPO de 75 Md$, la plus grosse de l'histoire, cas d'école de cash flow
 
-## Contenu du dernier numéro (22 June 2026)
+## Contenu du dernier numéro (27 June 2026)
 
 ### Deal de la semaine
-DEAL — Disney capitalise sur "Toy Story 5" : pourquoi la calendarisation décide de la valeur du studio
-<p>Week-end béni pour Hollywood : <strong>"Toy Story 5"</strong> (Disney-Pixar) a généré <strong>160 M$</strong> de recettes en Amérique du Nord sur trois jours, propulsant le box-office estival cumulé à <strong>1,85 Md$</strong> — le meilleur été depuis 2019 (NYT DealBook, 21 juin 2026). Pour un analyste M&A, ce n'est pas une anecdote culturelle : c'est un cas d'école sur la manière dont on <em>date</em> les revenus quand on valorise un studio. La même franchise vue en LTM, NTM ou FY donne trois EBITDA différents — donc trois prix.</p><p>Le contexte transactionnel reste chaud sur le segment media-entertainment. Depuis le rachat avorté de Paramount par Skydance puis les manœuvres autour de Warner Bros. Discovery, chaque actif de contenu se valorise sur un multiple <strong>EV/EBITDA</strong> qui dépend entièrement de la <em>période de référence</em> retenue. Un acheteur stratégique paiera typiquement <strong>9x à 12x EBITDA</strong> pour un studio à franchises récurrentes ; un sponsor L
+Apple cherche à acheter des puces mémoire à une entreprise chinoise sous embargo
+
+      <p>Apple tente d’obtenir l’approbation de l’administration Trump pour acheter des puces mémoire à une entreprise chinoise sous embargo, selon une source proche du dossier. Cette décision pourrait contribuer à réduire les pressions exercées sur les prix des semi-conducteurs.</p>
+      <p>Le <strong>rational stratégique</strong> derrière cette décision est de diversifier les sources d’approvisionnement en composants critiques pour les produits d’Apple, tout en minimisant les risques liés aux fluctuations du marché et aux tensions commerciales.</p>
+      <p>Sur le plan technique, cette opération illustre parfaitement le concept de <em>Financial Projections</em> abordé dans notre chapitre TRAINY du jour. En effet, Apple doit prendre en compte les <strong>drivers</strong> de sa chaîne d’approvisionnement, les coûts associés à la reconfiguration de sa production, ainsi que les <strong>business plans</strong> pour chaque scénario possible.</p>
+      <p>En termes d’opportunité d’entreti
 
 ### Cours
-<p>Le cours du jour porte sur la <strong>calendarisation</strong> : l'art de définir <em>quelle période de temps</em> servira de référence à un chiffre financier. C'est l'un des fondamentaux les plus sous-estimés en entretien — et celui qui sépare le candidat qui récite d'un multiple de celui qui comprend ce qu'il y a dedans. Le deal Disney/"Toy Story 5" en est l'illustration parfaite : selon la période choisie, le même studio ne vaut pas le même prix.</p><p>Reprenons depuis la base. Une entreprise publie des comptes par <strong>exercice fiscal</strong>, mais les transactions, elles, se font à n'importe quel moment de l'année. Il faut donc des conventions pour parler de "performance" à une date donnée. Cinq notions structurent tout :</p><div class='term'><div class='term-name'>FY (Fiscal Year)</div>L'exercice fiscal de l'entreprise, tel qu'elle le définit dans ses statuts. Disney clôture fin septembre ; LVMH, Nestlé et la plupart des groupes clôturent au 31 décembre. FY2026 = l'année comptable complète. Attention : FY n'est PAS forcément l'année calendaire.</div><div class='term'><div class='term-name'>CY (Calendar Year)</div>L'année civile, du 1er janvier au 31 décembre, indépenda
+
+      <p>Notre chapitre TRAINY du jour se concentre sur les <strong>Financial Projections</strong>, qui sont essentielles pour comprendre les décisions stratégiques des entreprises comme Apple.</p>
+      <p>Les <strong>drivers</strong> d’une chaîne d’approvisionnement incluent les coûts des matériaux, la disponibilité des composants, ainsi que les capacités de production. Ces facteurs ont un impact direct sur les <strong>business plans</strong> et les projections financières.</p>
+      <div class='term'>
+         <div class='term-name'>Financial Projections</div>
+         Les prévisions financières sont des estimations des résultats futurs d’une entreprise, basées sur des hypothèses concernant les ventes, les coûts, les dépenses d’investissement et la structure financière.
+      </div>
+      <p>En évaluant les risques et les opportunités, les entreprises peuvent élaborer des scénarios de projection financière qui leur permettent de prendre des décisions éclairées concernant leur stratégie d’approvisionnement, leur allocation de ressources et leurs investissements.</p>
+      <p>Demain, nous explorerons les inventaires et la manière dont les différentes méthodes de comptabilisation 
 
 ### Macro
-SIGNAL MACRO — Démission de Starmer : prime de risque politique sur les actifs UK
-<p><strong>Keir Starmer a démissionné ce lundi 22 juin 2026</strong> de son poste de Premier ministre britannique, devenant le PM le plus éphémère de l'histoire du Labour ; Wes Streeting soutient désormais Andy Burnham pour lui succéder (Financial Times, 22 juin 2026, "Keir Starmer steps down as UK prime minister").</p><p><strong>Mécanisme de transmission vers le M&A :</strong> une crise de leadership injecte de l'incertitude politique, et l'incertitude se paie. Concrètement, les acheteurs exige
+L'UE autorise un accord commercial avec les États-Unis
+
+      <p>L’Union européenne a franchi une étape importante vers la finalisation d’un accord commercial avec les États-Unis, ce qui pourrait contribuer à désamorcer les hausses de tarifs douaniers imposées par l’administration Trump.</p>
+   
 
 ---
 Tu es mon tuteur M&A. Quand je te pose une question :
