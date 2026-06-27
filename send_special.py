@@ -136,7 +136,8 @@ def main():
     response = client.chat.completions.create(
         model="llama-3.3-70b-versatile",
         max_tokens=8000,
-        messages=[{"role": "user", "content": PROMPT}]
+        messages=[{"role": "user", "content": PROMPT}],
+        response_format={"type": "json_object"},
     )
 
     content = extract_json(response.choices[0].message.content)

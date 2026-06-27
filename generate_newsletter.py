@@ -52,18 +52,17 @@ import feedparser
 # GEMINI CLIENT
 # ─────────────────────────────────────────────────────────────────────────────
 
-def gemini_call(prompt: str, system: str = "", max_tokens: int = 8000) -> str:
+def gemini_call(prompt: str, system: str = "", max_tokens: int = 8000, json_mode: bool = False) -> str:
     """Appelle Llama 3.3 70B via Groq (gratuit, 1000 req/jour)."""
     client = Groq(api_key=GROQ_KEY)
     messages = []
     if system:
         messages.append({"role": "system", "content": system})
     messages.append({"role": "user", "content": prompt})
-    response = client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
-        messages=messages,
-        max_tokens=max_tokens,
-    )
+    kwargs = dict(model="llama-3.3-70b-versatile", messages=messages, max_tokens=max_tokens)
+    if json_mode:
+        kwargs["response_format"] = {"type": "json_object"}
+    response = client.chat.completions.create(**kwargs)
     return response.choices[0].message.content
 
 
@@ -493,7 +492,7 @@ def generate_content(date_str: str, archive_dir: Path, weekday: int, level: dict
         previous_issues=previous_issues + trainy_context + "\n\n" + live_news
     )
 
-    text = gemini_call(prompt, system=SYSTEM_PROMPT, max_tokens=8000)
+    text = gemini_call(prompt, system=SYSTEM_PROMPT, max_tokens=8000, json_mode=True)
     try:
         content = extract_json(text)
     except (json.JSONDecodeError, ValueError) as e:
@@ -510,7 +509,7 @@ def generate_content(date_str: str, archive_dir: Path, weekday: int, level: dict
             "question_entretien et reponse_structuree. Regenere un JSON complet."
         )
         try:
-            content = extract_json(gemini_call(retry_prompt, system=SYSTEM_PROMPT, max_tokens=8000))
+            content = extract_json(gemini_call(retry_prompt, system=SYSTEM_PROMPT, max_tokens=8000, json_mode=True))
         except (json.JSONDecodeError, ValueError):
             pass  # On garde le premier résultat si le retry rate aussi
 
@@ -689,7 +688,7 @@ Cours : {content.get('rappel_cours', '')[:800]}
 Macro : {content.get('macro_titre', '')}
 {content.get('macro_contenu', '')[:400]}
 """
-    text = gemini_call(QUIZ_PROMPT.format(newsletter_summary=summary), max_tokens=2000)
+    text = gemini_call(QUIZ_PROMPT.format(newsletter_summary=summary), max_tokens=2000, json_mode=True)
     try:
         return extract_json(text)["questions"]
     except (json.JSONDecodeError, ValueError, KeyError):
@@ -837,7 +836,7 @@ def generate_anki_cards(content: dict) -> list:
         f"Cours : {content.get('rappel_cours','')[:700]}\n"
         f"Macro : {content.get('macro_contenu','')[:300]}"
     )
-    text = gemini_call(ANKI_PROMPT.format(newsletter_summary=summary), max_tokens=2000)
+    text = gemini_call(ANKI_PROMPT.format(newsletter_summary=summary), max_tokens=2000, json_mode=True)
     try:
         return extract_json(text)["cards"]
     except (json.JSONDecodeError, ValueError, KeyError):
@@ -995,7 +994,7 @@ def update_level(content: dict, level: dict, weekday: int) -> dict:
         numero_int=numero,
         objectif=level["objectif"],
         trainy_index=new_idx,
-    ), max_tokens=500)
+    ), max_tokens=500, json_mode=True)
     try:
         result = extract_json(text)
     except (json.JSONDecodeError, ValueError):
