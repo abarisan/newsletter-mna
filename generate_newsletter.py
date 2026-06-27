@@ -3,8 +3,7 @@ Newsletter M&A · Finance · IA · Géopolitique
 Génère le contenu via Claude API + envoie par email chaque vendredi.
 """
 
-from google import genai
-from google.genai import types
+from groq import Groq
 import smtplib
 import os
 import re
@@ -31,7 +30,7 @@ DAY_FORMAT = {
 RECIPIENT_EMAIL = "sooriyakumar.abarisan@gmail.com"
 SENDER_EMAIL    = os.environ["GMAIL_ADDRESS"]
 GMAIL_APP_PASS  = os.environ["GMAIL_APP_PASSWORD"]
-GEMINI_KEY      = os.environ["GEMINI_API_KEY"]
+GROQ_KEY        = os.environ["GROQ_API_KEY"]
 
 
 import feedparser
@@ -41,18 +40,18 @@ import feedparser
 # ─────────────────────────────────────────────────────────────────────────────
 
 def gemini_call(prompt: str, system: str = "", max_tokens: int = 8000) -> str:
-    """Appelle Gemini 2.0 Flash via la nouvelle SDK google-genai."""
-    client = genai.Client(api_key=GEMINI_KEY)
-    config = types.GenerateContentConfig(
-        system_instruction=system if system else None,
-        max_output_tokens=max_tokens,
+    """Appelle Llama 3.3 70B via Groq (gratuit, 1000 req/jour)."""
+    client = Groq(api_key=GROQ_KEY)
+    messages = []
+    if system:
+        messages.append({"role": "system", "content": system})
+    messages.append({"role": "user", "content": prompt})
+    response = client.chat.completions.create(
+        model="llama-3.3-70b-versatile",
+        messages=messages,
+        max_tokens=max_tokens,
     )
-    response = client.models.generate_content(
-        model="gemini-2.0-flash",
-        contents=prompt,
-        config=config,
-    )
-    return response.text
+    return response.choices[0].message.content
 
 
 # ─────────────────────────────────────────────────────────────────────────────

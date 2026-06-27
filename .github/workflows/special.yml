@@ -14,7 +14,7 @@ jobs:
       - run: pip install -r requirements.txt
       - name: Send special edition
         env:
-          GEMINI_API_KEY:    ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY:      ${{ secrets.GROQ_API_KEY }}
           GMAIL_ADDRESS:     ${{ secrets.GMAIL_ADDRESS }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
         run: python send_special.py
