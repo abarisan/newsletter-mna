@@ -54,7 +54,8 @@ import feedparser
 
 def gemini_call(prompt: str, system: str = "", max_tokens: int = 8000, json_mode: bool = False) -> str:
     """Appelle Llama 3.3 70B via Groq (gratuit, 1000 req/jour)."""
-    from groq import BadRequestError
+    import time
+    from groq import BadRequestError, RateLimitError
     client = Groq(api_key=GROQ_KEY)
     messages = []
     if system:
@@ -63,13 +64,20 @@ def gemini_call(prompt: str, system: str = "", max_tokens: int = 8000, json_mode
     kwargs = dict(model="llama-3.3-70b-versatile", messages=messages, max_tokens=max_tokens)
     if json_mode:
         kwargs["response_format"] = {"type": "json_object"}
-    try:
-        response = client.chat.completions.create(**kwargs)
-    except BadRequestError:
-        # JSON mode failed (model produced malformed JSON) — retry without constraint
-        kwargs.pop("response_format", None)
-        response = client.chat.completions.create(**kwargs)
-    return response.choices[0].message.content
+    for attempt in range(5):
+        try:
+            response = client.chat.completions.create(**kwargs)
+            return response.choices[0].message.content
+        except RateLimitError as e:
+            wait = 10 * (attempt + 1)   # 10s, 20s, 30s, 40s, 50s
+            print(f"  ⏳ Rate limit Groq — attente {wait}s ({e})")
+            time.sleep(wait)
+        except BadRequestError:
+            # JSON mode failed — retry without constraint
+            kwargs.pop("response_format", None)
+            response = client.chat.completions.create(**kwargs)
+            return response.choices[0].message.content
+    raise RuntimeError("Groq rate limit dépassé après 5 tentatives")
 
 
 # ─────────────────────────────────────────────────────────────────────────────
