@@ -1,6 +1,6 @@
 {
-  "numero": 12,
-  "depth": 7,
+  "numero": 13,
+  "depth": 8,
   "concepts_vus": [
     "LBO : achat d'une cible financé majoritairement par dette",
     "Modélisation LBO : comment la structure tient",
@@ -15,12 +15,14 @@
     "Delisting : sortie de cote et fin du reporting public US lors d'un passage en privé",
     "IPO : introduction en bourse comme mécanisme de levée de capitaux",
     "Cash flow : analyse des flux de trésorerie comme cas d'école",
-    "Financial Projections"
+    "Financial Projections",
+    "Comptabilisation des inventaires"
   ],
   "deals_ouverts": [
+    "Volkswagen's Restructuring Plans and Inventory Management",
     "SpaceX : IPO de 75 Md$, la plus grosse de l'histoire, cas d'école de cash flow",
     "Apple : achat de puces mémoire à une entreprise chinoise sous embargo"
   ],
   "objectif": "Préparer des entretiens M&A dans 1 mois, puis sur 2-3 ans",
-  "trainy_index": 11
+  "trainy_index": 12
 }

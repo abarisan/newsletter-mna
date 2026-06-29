@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Deal Brief</title>
+  <style>
+    /* ── Palette : clair / nuances d'orange ── */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #fdf6ee;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      color: #2b1a0e;
+      line-height: 1.75;
+    }
+
+    .wrapper {
+      max-width: 680px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(232,93,26,0.10);
+    }
+
+    .header {
+      background: linear-gradient(135deg, #ff6b2b 0%, #e85d1a 100%);
+      padding: 48px 48px 36px;
+      text-align: center;
+    }
+    .header .eyebrow {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ffe8d6;
+      margin-bottom: 16px;
+    }
+    .header h1 {
+      font-size: 36px;
+      font-weight: 400;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .header .subtitle {
+      font-size: 13px;
+      color: #ffd4b8;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      letter-spacing: 0.5px;
+    }
+    .header .issue-line {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.25);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #ffe8d6;
+      letter-spacing: 1px;
+    }
+
+    .body { padding: 0 48px 48px; }
+
+    .section { margin-top: 48px; }
+    .section-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #e85d1a;
+      margin-bottom: 6px;
+    }
+    .section h2 {
+      font-size: 22px;
+      font-weight: 400;
+      color: #2b1a0e;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #f9a06b;
+    }
+    .section-content { font-size: 15px; color: #3d2510; }
+    .section-content p { margin-bottom: 14px; }
+    .section-content strong { color: #c94e0e; font-weight: 700; }
+    .section-content ul, .section-content ol { padding-left: 20px; margin-bottom: 14px; }
+    .section-content li { margin-bottom: 6px; }
+
+    .callout {
+      background: #fff3e8;
+      border-left: 3px solid #e85d1a;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 14px;
+      color: #5a3520;
+      font-style: italic;
+      border-radius: 0 4px 4px 0;
+    }
+    .callout strong { font-style: normal; color: #c94e0e; }
+
+    .rappel-section {
+      margin-top: 48px;
+      background: #fff3e8;
+      margin-left: -48px;
+      margin-right: -48px;
+      padding: 36px 48px;
+      border-top: 3px solid #f9a06b;
+      border-bottom: 3px solid #f9a06b;
+    }
+    .rappel-section .section-label { color: #e85d1a; }
+    .rappel-section h2 { color: #2b1a0e; border-bottom-color: #fde0c5; font-size: 20px; }
+    .rappel-section .section-content { color: #5a3520; }
+    .rappel-section .section-content strong { color: #c94e0e; }
+    .rappel-section .term { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid #fde0c5; }
+    .rappel-section .term:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .rappel-section .term-name {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .interview-section {
+      margin-top: 48px;
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 28px 32px;
+    }
+    .interview-section .section-label { color: #e85d1a; }
+    .interview-question { font-size: 18px; font-style: italic; color: #2b1a0e; margin: 12px 0 20px; line-height: 1.4; }
+    .interview-answer { font-size: 14px; color: #5a3520; }
+
+    .sources-section { margin-top: 48px; padding-top: 24px; border-top: 1px solid #fde0c5; }
+    .sources-section .section-label { margin-bottom: 12px; }
+    .sources-section ul { list-style: none; padding: 0; }
+    .sources-section li {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #7a5c45;
+      margin-bottom: 6px;
+      padding-left: 12px;
+      position: relative;
+    }
+    .sources-section li::before { content: '→'; position: absolute; left: 0; color: #e85d1a; }
+
+    .footer {
+      background: #fdf6ee;
+      padding: 28px 48px;
+      text-align: center;
+      border-top: 1px solid #fde0c5;
+    }
+    .footer p { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; color: #9a7060; line-height: 1.8; }
+    .footer .next { color: #c94e0e; font-weight: 600; }
+
+    .divider { height: 1px; background: #fde0c5; margin: 36px 0; }
+
+    /* ── Schéma SVG ── */
+    .diagram-section {
+      margin-top: 48px;
+    }
+    .diagram-section .section-label {
+      margin-bottom: 12px;
+    }
+    .diagram-wrap {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      overflow-x: auto;
+    }
+    .diagram-wrap svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* ── Outils d'apprentissage ── */
+    .tools-section {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .tool-card {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      transition: box-shadow .15s;
+    }
+    .tool-card:hover { box-shadow: 0 4px 16px rgba(232,93,26,0.15); }
+    .tool-card .icon { font-size: 28px; display: block; margin-bottom: 8px; }
+    .tool-card .tool-title {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .tool-card .tool-desc {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      color: #7a5c45;
+    }
+
+    @media (max-width: 600px) {
+      .wrapper { margin: 0; border-radius: 0; }
+      .header { padding: 32px 24px 24px; }
+      .body { padding: 0 24px 32px; }
+      .rappel-section { margin-left: -24px; margin-right: -24px; padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="eyebrow">Newsletter M&A · Finance · IA · Géopolitique</div>
+      <h1>The Deal Brief</h1>
+      <div class="subtitle">Comprendre la finance, pas juste la suivre</div>
+      <div class="issue-line">N° 13 &nbsp;·&nbsp; 29 June 2026</div>
+    </div>
+
+    <div class="body">
+
+      <!-- SECTION 1 : M&A -->
+      <!-- DEAL -->
+      <div class="section">
+        <div class="section-label">Niveau 1 — Deal de la semaine</div>
+        <h2>Volkswagen's Restructuring Plans and Inventory Management</h2>
+        <div class="section-content"><p>Volkswagen a annoncé un plan de restructuration qui inclut la vente potentielle de certaines de ses filiales pour financer sa transition vers les véhicules électriques. Ce plan soulève des questions sur la manière dont l'entreprise gérera ses inventaires pendant cette période de changement.</p><p>Un article récent du <strong>Financial Times</strong> indique que Volkswagen pourrait vendre certaines de ses marques pour récolter des fonds et se concentrer sur les véhicules électriques. Cela implique que l'entreprise devra gérer ses inventaires de manière efficace pour minimiser les pertes et maximiser les gains.</p><p>Dans le cadre de notre cours sur les inventaires, nous pouvons voir que la gestion des stocks par Volkswagen sera cruciale pendant cette période de restructuration. L'utilisation de méthodes de comptabilisation des inventaires telles que LIFO (Last-In, First-Out) ou FIFO (First-In, First-Out) pourrait avoir un impact significatif sur les résultats financiers de l'entreprise.</p><p>En termes de phrase d'entretien prête à l'emploi, on pourrait dire : « La gestion des inventaires est un aspect clé de la restructuration de Volkswagen, car elle peut aider l'entreprise à minimiser les pertes et à maximiser les gains. »</p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin-top:20px;"><svg width="540" height="180" viewBox="0 0 540 180">
+  <rect x="50" y="50" width="100" height="50" fill="#fff3e8" rx="5" stroke="#e85d1a" stroke-width="2"/>
+  <text x="70" y="90" font-family="Arial" font-size="14" fill="#2b1a0e">Volkswagen</text>
+  <line x1="150" y1="80" x2="250" y2="80" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="250,75 260,80 250,85" fill="#f9a06b"/>
+  <rect x="250" y="50" width="100" height="50" fill="#fff3e8" rx="5" stroke="#e85d1a" stroke-width="2"/>
+  <text x="270" y="90" font-family="Arial" font-size="14" fill="#2b1a0e">Restructuration</text>
+  <text x="270" y="110" font-family="Arial" font-size="12" fill="#7a5c45">Vente de filiales</text>
+  <line x1="350" y1="80" x2="450" y2="80" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="450,75 460,80 450,85" fill="#f9a06b"/>
+  <rect x="450" y="50" width="100" height="50" fill="#fff3e8" rx="5" stroke="#e85d1a" stroke-width="2"/>
+  <text x="470" y="90" font-family="Arial" font-size="14" fill="#2b1a0e">Gestion</text>
+  <text x="470" y="110" font-family="Arial" font-size="12" fill="#7a5c45">Inventaires</text>
+</svg></div>
+      
+
+      <div class="divider"></div>
+
+      <!-- MACRO & GÉOPO -->
+      <div class="section">
+        <div class="section-label">Niveau 3 — Macro & Géopolitique</div>
+        <h2>L'impact de la restructuration de Volkswagen sur le marché automobile</h2>
+        <div class="section-content"><p>La restructuration de Volkswagen n'aura pas seulement un impact sur l'entreprise elle-même, mais également sur le marché automobile dans son ensemble. Les ventes potentielles de certaines filiales pourraient conduire à une augmentation de la concurrence sur le marché, ce qui pourrait avoir des conséquences sur les autres constructeurs automobiles.</p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin-top:20px;"><svg width="540" height="200" viewBox="0 0 540 200" xmlns="http://www.w3.org/2000/svg">
+  <rect x="50" y="50" width="120" height="100" fill="#fff3e8" stroke="#e85d1a" stroke-width="2" rx="5"/>
+  <rect x="320" y="50" width="120" height="100" fill="#fff3e8" stroke="#e85d1a" stroke-width="2" rx="5"/>
+  <text x="70" y="80" font-family="Arial" font-size="16" fill="#2b1a0e">Volkswagen</text>
+  <text x="340" y="80" font-family="Arial" font-size="16" fill="#2b1a0e">Marché Automobile</text>
+  <line x1="170" y1="100" x2="250" y2="100" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="250,90 260,100 250,110" fill="#f9a06b"/>
+  <text x="200" y="120" font-family="Arial" font-size="14" fill="#7a5c45">Restructuration</text>
+  <text x="200" y="140" font-family="Arial" font-size="14" fill="#7a5c45">Augmentation de la concurrence</text>
+</svg></div>
+      
+
+      <div class="divider"></div>
+
+      <!-- IA -->
+      
+
+      <!-- RAPPEL DE COURS -->
+      <div class="rappel-section">
+        <div class="section-label">Rappel de cours</div>
+        <h2>Les notions clés de ce numéro</h2>
+        <div class="section-content"><p>La comptabilisation des inventaires est un aspect important de la finance d'entreprise. Les méthodes de comptabilisation des inventaires telles que LIFO et FIFO peuvent avoir un impact significatif sur les résultats financiers d'une entreprise.</p><p><div class='term'><div class='term-name'>LIFO (Last-In, First-Out)</div>LIFO est une méthode de comptabilisation des inventaires qui suppose que les derniers articles entrés en stock sont les premiers à être vendus.</div></p><p><div class='term'><div class='term-name'>FIFO (First-In, First-Out)</div>FIFO est une méthode de comptabilisation des inventaires qui suppose que les premiers articles entrés en stock sont les premiers à être vendus.</div></p><p>La gestion des inventaires est cruciale pour les entreprises, car elle peut aider à minimiser les pertes et à maximiser les gains. Les entreprises doivent choisir la méthode de comptabilisation des inventaires qui leur convient le mieux en fonction de leurs besoins et de leurs objectifs.</p><p>En plus de LIFO et FIFO, il existe d'autres méthodes de comptabilisation des inventaires, telles que la méthode des coûts standard et la méthode de comptabilisation des inventaires en valeur réelle. Chaque méthode a ses avantages et ses inconvénients, et les entreprises doivent les évaluer soigneusement pour déterminer laquelle est la plus appropriée pour leurs besoins.</p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin: 0 -48px; padding: 24px 48px; background:#fff3e8; border-top:1px solid #fde0c5; border-bottom:1px solid #fde0c5;">
+        <svg width="540" height="180" viewBox="0 0 540 180">
+  <rect x="50" y="50" width="100" height="80" fill="#fff3e8" rx="5" />
+  <rect x="200" y="50" width="100" height="80" fill="#fff3e8" rx="5" />
+  <rect x="350" y="50" width="100" height="80" fill="#fff3e8" rx="5" />
+  <line x1="150" y1="100" x2="200" y2="100" stroke="#f9a06b" stroke-width="2" />
+  <polygon points="202,98 207,103 202,108" fill="#f9a06b" />
+  <line x1="300" y1="100" x2="350" y2="100" stroke="#f9a06b" stroke-width="2" />
+  <polygon points="352,98 357,103 352,108" fill="#f9a06b" />
+  <text x="75" y="80" font-family="Arial" font-size="16" fill="#2b1a0e">Inventaires</text>
+  <text x="225" y="80" font-family="Arial" font-size="16" fill="#2b1a0e">LIFO</text>
+  <text x="375" y="80" font-family="Arial" font-size="16" fill="#2b1a0e">FIFO</text>
+  <text x="75" y="120" font-family="Arial" font-size="14" fill="#7a5c45">Comptabilisation</text>
+  <text x="225" y="120" font-family="Arial" font-size="14" fill="#7a5c45">Résultats financiers</text>
+  <text x="375" y="120" font-family="Arial" font-size="14" fill="#7a5c45">Impact significatif</text>
+  <rect x="220" y="95" width="20" height="10" fill="#c94e0e" rx="2" />
+  <text x="225" y="110" font-family="Arial" font-size="12" fill="#2b1a0e">20%</text>
+</svg>
+      </div>
+      
+
+      <!-- QUESTION D'ENTRETIEN -->
+      <div class="interview-section">
+        <div class="section-label">🎯 Question d'entretien de la semaine</div>
+        <div class="interview-question">"Quelle est l'importance de la gestion des inventaires dans la restructuration de Volkswagen ?"</div>
+        <div class="interview-answer">
+          <p>La gestion des inventaires est importante dans la restructuration de Volkswagen pour plusieurs raisons :</p><ul><li>Minimiser les pertes : une gestion efficace des inventaires peut aider Volkswagen à minimiser les pertes liées à la vente de ses filiales.</li><li>Maximiser les gains : une gestion efficace des inventaires peut également aider Volkswagen à maximiser les gains liés à la vente de ses filiales.</li><li>Améliorer la flexibilité : une gestion efficace des inventaires peut aider Volkswagen à être plus flexible et à répondre rapidement aux changements du marché.</li></ul>
+        </div>
+      </div>
+
+      <!-- OUTILS D'APPRENTISSAGE -->
+      <div class="tools-section">
+        <a class="tool-card" href="https://abarisan.github.io/newsletter-mna/quiz/quiz_2026-06-29.html" target="_blank">
+          <span class="icon">❓</span>
+          <span class="tool-title">Quiz ce numéro</span>
+          <span class="tool-desc">4 questions pour vérifier que tu as compris</span>
+        </a>
+        <a class="tool-card" href="https://claude.ai/new" target="_blank">
+          <span class="icon">🤖</span>
+          <span class="tool-title">Poser une question</span>
+          <span class="tool-desc">Ouvre ton Claude Project M&A pour aller plus loin</span>
+        </a>
+      </div>
+
+      <!-- SOURCES PAR NIVEAU -->
+      <div class="sources-section">
+        <div class="section-label">Sources</div>
+        <ul>
+          <li>[N1] Financial Times - Volkswagen's brutal jobs cull sparks prospect of sale of crown jewels</li>
+<li>[N2] Mergermarket - Volkswagen's restructuring plans</li>
+<li>[N3] The Wall Street Journal - The new AI-based world order</li>
+<li>[N4] Dealogic - Volkswagen's debt structure</li>
+        </ul>
+        <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:6px; font-family:'Helvetica Neue',Arial,sans-serif; font-size:10px;">
+          <span style="background:#fff3e8;border:1px solid #e85d1a;color:#c94e0e;padding:3px 8px;border-radius:20px;font-weight:700;">N1 · Bloomberg · FT · Capital Finance · CFNEWS · S&P</span>
+          <span style="background:#fff8f2;border:1px solid #f9a06b;color:#7a5c45;padding:3px 8px;border-radius:20px;">N2 · Mergermarket · Reuters · PitchBook</span>
+          <span style="background:#fdf6ee;border:1px solid #fde0c5;color:#9a7060;padding:3px 8px;border-radius:20px;">N3 · WSJ · The Economist</span>
+          <span style="background:#f9f9f9;border:1px solid #e0e0e0;color:#888;padding:3px 8px;border-radius:20px;">N4 · Dealogic · Preqin</span>
+        </div>
+      </div>
+
+    </div><!-- /body -->
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <p>
+        <span class="next">Deck Anki mis à jour en pièce jointe</span><br>
+        The Deal Brief · 5× par semaine · <a href="https://github.com/abarisan/newsletter-mna" style="color:#e85d1a;text-decoration:none;">Code source</a>
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>

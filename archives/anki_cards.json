@@ -610,5 +610,41 @@
     "verso": "Les projections financières sont utilisées pour évaluer les conséquences potentielles de différentes stratégies et décisions d’investissement. En analysant les projections de revenus, de coûts, et de flux de trésorerie, les entreprises peuvent prendre des décisions éclairées concernant les investissements, les expansions, ou les acquisitions, et ainsi optimiser leur performance financière à long terme.",
     "numero": "12",
     "id": 1974830714
+  },
+  {
+    "recto": "Qu'est-ce que le LIFO dans la comptabilisation des inventaires ?",
+    "verso": "Le LIFO (Last-In, First-Out) est une méthode de comptabilisation des inventaires qui suppose que les derniers articles entrés en stock sont les premiers à être vendus. Par exemple, si une entreprise achète 100 unités d'un produit à 10$ chacune, puis 100 unités du même produit à 15$ chacune, le LIFO supposerait que les 100 unités achetées à 15$ seront vendues en premier. Cela peut avoir un impact significatif sur les résultats financiers d'une entreprise, notamment en période d'inflation.",
+    "numero": "13",
+    "id": 1826366669
+  },
+  {
+    "recto": "Qu'est-ce que le FIFO dans la comptabilisation des inventaires ?",
+    "verso": "Le FIFO (First-In, First-Out) est une méthode de comptabilisation des inventaires qui suppose que les premiers articles entrés en stock sont les premiers à être vendus. Par exemple, si une entreprise achète 100 unités d'un produit à 10$ chacune, puis 100 unités du même produit à 15$ chacune, le FIFO supposerait que les 100 unités achetées à 10$ seront vendues en premier. Cela peut avoir un impact significatif sur les résultats financiers d'une entreprise, notamment en période de variation des prix.",
+    "numero": "13",
+    "id": 1488316461
+  },
+  {
+    "recto": "Comment le choix de la méthode de comptabilisation des inventaires affecte-t-il les résultats financiers d'une entreprise ?",
+    "verso": "Le choix de la méthode de comptabilisation des inventaires, tel que LIFO ou FIFO, peut avoir un impact significatif sur les résultats financiers d'une entreprise. En effet, la méthode choisie peut influencer le coût des biens vendus, les marges bénéficiaires et les impôts sur les bénéfices. Par exemple, en période d'inflation, le LIFO peut conduire à des coûts de production plus élevés et à des bénéfices plus faibles, tandis que le FIFO peut conduire à des coûts de production plus faibles et à des bénéfices plus élevés.",
+    "numero": "13",
+    "id": 1337341399
+  },
+  {
+    "recto": "Pourquoi les entreprises peuvent-elles avoir intérêt à vendre certaines de leurs filiales ?",
+    "verso": "Les entreprises peuvent avoir intérêt à vendre certaines de leurs filiales pour plusieurs raisons, notamment pour récolter des fonds et se concentrer sur leurs activités principales. La vente de filiales non stratégiques peut également permettre à l'entreprise de simplifier sa structure et de réduire ses coûts. De plus, la vente de filiales peut être une opportunité pour l'entreprise de se recentrer sur les marchés et les produits les plus rentables et les plus prometteurs.",
+    "numero": "13",
+    "id": 1570117237
+  },
+  {
+    "recto": "Qu'est-ce que la restructuration d'une entreprise et quels en sont les objectifs ?",
+    "verso": "La restructuration d'une entreprise désigne le processus de réorganisation et de réorientation de l'activité de l'entreprise pour améliorer sa performance et sa compétitivité. Les objectifs de la restructuration peuvent varier, mais ils incluent souvent la réduction des coûts, l'amélioration de l'efficacité, la mise en place d'une nouvelle stratégie et la préparation de l'entreprise à des changements dans son environnement. La restructuration peut également impliquer la vente de certaines filiales ou la suppression de postes.",
+    "numero": "13",
+    "id": 1781559127
+  },
+  {
+    "recto": "Comment la restructuration d'une entreprise peut-elle affecter le marché dans lequel elle opère ?",
+    "verso": "La restructuration d'une entreprise peut avoir des impacts significatifs sur le marché dans lequel elle opère. La vente de certaines filiales ou la suppression de postes peut conduire à une augmentation de la concurrence sur le marché, car les actifs et les compétences libérés peuvent être acquis par des concurrents. De plus, la restructuration peut également conduire à des changements dans les habitudes de consommation et les préférences des clients, ce qui peut avoir des impacts sur les autres entreprises du marché. Il est donc important pour les entreprises de considérer les conséquences potentielles de leur restructuration sur le marché et sur leurs concurrents.",
+    "numero": "13",
+    "id": 1554547925
   }
 ]
