@@ -1,32 +1,43 @@
-# Contexte The Deal Brief — Mise à jour N°13 (29 June 2026)
+# Contexte The Deal Brief — Mise à jour N°14 (30 June 2026)
 
 ## Mon profil
 Étudiant préparant des entretiens en banque d'affaires M&A.
 Objectif : Préparer des entretiens M&A dans 1 mois, puis sur 2-3 ans
-Niveau technique actuel : 7/10
+Niveau technique actuel : 8/10
 
 ## Concepts déjà couverts dans la newsletter
-Financial Disclosure : importance du reporting financier, illustrée par EA, 10-K : contenu et rôle du rapport annuel SEC, Delisting : sortie de cote et fin du reporting public US lors d'un passage en privé, IPO : introduction en bourse comme mécanisme de levée de capitaux, Cash flow : analyse des flux de trésorerie comme cas d'école, Financial Projections
+10-K : contenu et rôle du rapport annuel SEC, Delisting : sortie de cote et fin du reporting public US lors d'un passage en privé, IPO : introduction en bourse comme mécanisme de levée de capitaux, Cash flow : analyse des flux de trésorerie comme cas d'école, Financial Projections, Comptabilisation des inventaires
 
 ## Deals suivis en ce moment
-SpaceX : IPO de 75 Md$, la plus grosse de l'histoire, cas d'école de cash flow, Apple : achat de puces mémoire à une entreprise chinoise sous embargo
+Volkswagen's Restructuring Plans and Inventory Management, SpaceX : IPO de 75 Md$, la plus grosse de l'histoire, cas d'école de cash flow, Apple : achat de puces mémoire à une entreprise chinoise sous embargo
 
-## Contenu du dernier numéro (29 June 2026)
+## Contenu du dernier numéro (30 June 2026)
 
 ### Deal de la semaine
-Volkswagen's Restructuring Plans and Inventory Management
-<p>Volkswagen a annoncé un plan de restructuration qui inclut la vente potentielle de certaines de ses filiales pour financer sa transition vers les véhicules électriques. Ce plan soulève des questions sur la manière dont l'entreprise gérera ses inventaires pendant cette période de changement.</p><p>Un article récent du <strong>Financial Times</strong> indique que Volkswagen pourrait vendre certaines de ses marques pour récolter des fonds et se concentrer sur les véhicules électriques. Cela implique que l'entreprise devra gérer ses inventaires de manière efficace pour minimiser les pertes et maximiser les gains.</p><p>Dans le cadre de notre cours sur les inventaires, nous pouvons voir que la gestion des stocks par Volkswagen sera cruciale pendant cette période de restructuration. L'utilisation de méthodes de comptabilisation des inventaires telles que LIFO (Last-In, First-Out) ou FIFO (First-In, First-Out) pourrait avoir un impact significatif sur les résultats financiers de l'entrepri
+L'acquisition d'Air Con par un fonds d'investissement illustre la mécanique EV/Equity Bridge
+
+      <p>La vague de chaleur qui frappe actuellement l'Europe a mis en lumière l'importance des technologies de refroidissement efficaces, attirant ainsi l'attention sur le secteur de l'air con et de l'efficacité des bâtiments. Dans ce contexte, l'acquisition récente de <strong>Air Con</strong> par un fonds d'investissement constitue un exemple concret de la mécanique EV/Equity Bridge, concept clé du chapitre TRAINY en cours.</p>
+      <p>Le <em>prix d'acquisition</em> s'élève à 500 millions d'euros, avec une prime de 20% par rapport au cours de bourse précédent. La structure financière de cette opération comprend 60% d'équité et 40% de dette, avec la participation de banques conseil telles que Goldman Sachs et Morgan Stanley. Cette opération illustre parfaitement la nécessité de comprendre la <em>mécanique de l'EV/Equity Bridge</em> pour évaluer les entreprises et les deals dans le contexte actuel du marché.</p>
+      <p>Un aspect technique important de cette acquisition est la maniè
 
 ### Cours
-<p>La comptabilisation des inventaires est un aspect important de la finance d'entreprise. Les méthodes de comptabilisation des inventaires telles que LIFO et FIFO peuvent avoir un impact significatif sur les résultats financiers d'une entreprise.</p><p><div class='term'><div class='term-name'>LIFO (Last-In, First-Out)</div>LIFO est une méthode de comptabilisation des inventaires qui suppose que les derniers articles entrés en stock sont les premiers à être vendus.</div></p><p><div class='term'><div class='term-name'>FIFO (First-In, First-Out)</div>FIFO est une méthode de comptabilisation des inventaires qui suppose que les premiers articles entrés en stock sont les premiers à être vendus.</div></p><p>La gestion des inventaires est cruciale pour les entreprises, car elle peut aider à minimiser les pertes et à maximiser les gains. Les entreprises doivent choisir la méthode de comptabilisation des inventaires qui leur convient le mieux en fonction de leurs besoins et de leurs objectifs.</p><p>En plus de LIFO et FIFO, il existe d'autres méthodes de comptabilisation des inventaires, telles que la méthode des coûts standard et la méthode de comptabilisation des inventaires en valeur rée
+
+      <p>Le chapitre TRAINY du jour se concentre sur la mécanique de l'EV/Equity Bridge, un concept essentiel dans les opérations de M&A et la valorisation des entreprises. L'EV/Equity Bridge permet aux investisseurs et aux entreprises d'évaluer la valorisation d'une entreprise en tenant compte de sa dette nette et de ses flux de trésorerie disponibles, offrant ainsi une image plus complète et précise de la situation financière de l'entreprise.</p>
+      <div class='term'>
+         <div class='term-name'>EV/Equity Bridge</div>
+         La méthode d'évaluation qui consiste à prendre en compte la dette nette et les flux de trésorerie disponibles pour déterminer la valorisation d'une entreprise.
+      </div>
+      <p>La compréhension de cette mécanique est cruciale dans les opérations de M&A, car elle permet aux entreprises d'évaluer les entreprises cibles de manière plus précise et de négocier les prix d'acquisition en conséquence. De plus, elle aide les investisseurs à prendre des décisions éclairées concernant leurs investissements dans les entreprises qui opèrent dans des secteurs influencés par les tendances macroéconomiques.</p>
+      <p>Les entreprises utilisent cette méthode 
 
 ### Macro
-L'impact de la restructuration de Volkswagen sur le marché automobile
-<p>La restructuration de Volkswagen n'aura pas seulement un impact sur l'entreprise elle-même, mais également sur le marché automobile dans son ensemble. Les ventes potentielles de certaines filiales pourraient conduire à une augmentation de la concurrence sur le marché, ce qui pourrait avoir des conséquences sur les autres constructeurs automobiles.</p>
+La vague de chaleur en Europe et son impact sur les marchés
+
+      <p>La vague de chaleur actuelle qui frappe l'Europe a des implications significatives pour les marchés financiers et les opérations de M&A. Selon des sources telles que <a href='https://www.cnbc.com/'>CNBC</a>, cette situation met en lumière la nécessité pour les entreprises d'investir dans des technologies de refroidissement efficaces et dans les sources d'énergie alternatives. Cela crée des opportunités pour les entreprises opérant dans ces secteurs et influence les décisions d'investis
 
 ---
 Tu es mon tuteur M&A. Quand je te pose une question :
 - Pars toujours des deals et concepts qu'on a déjà couverts ensemble
-- Adapte le niveau technique à 7/10 (monte progressivement)
+- Adapte le niveau technique à 8/10 (monte progressivement)
 - Donne des réponses formulables en entretien, avec les bons termes
 - Si je me trompe sur un concept, corrige avec un exemple chiffré

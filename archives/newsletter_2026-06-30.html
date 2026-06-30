@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Deal Brief</title>
+  <style>
+    /* ── Palette : clair / nuances d'orange ── */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #fdf6ee;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      color: #2b1a0e;
+      line-height: 1.75;
+    }
+
+    .wrapper {
+      max-width: 680px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(232,93,26,0.10);
+    }
+
+    .header {
+      background: linear-gradient(135deg, #ff6b2b 0%, #e85d1a 100%);
+      padding: 48px 48px 36px;
+      text-align: center;
+    }
+    .header .eyebrow {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ffe8d6;
+      margin-bottom: 16px;
+    }
+    .header h1 {
+      font-size: 36px;
+      font-weight: 400;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .header .subtitle {
+      font-size: 13px;
+      color: #ffd4b8;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      letter-spacing: 0.5px;
+    }
+    .header .issue-line {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.25);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #ffe8d6;
+      letter-spacing: 1px;
+    }
+
+    .body { padding: 0 48px 48px; }
+
+    .section { margin-top: 48px; }
+    .section-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #e85d1a;
+      margin-bottom: 6px;
+    }
+    .section h2 {
+      font-size: 22px;
+      font-weight: 400;
+      color: #2b1a0e;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #f9a06b;
+    }
+    .section-content { font-size: 15px; color: #3d2510; }
+    .section-content p { margin-bottom: 14px; }
+    .section-content strong { color: #c94e0e; font-weight: 700; }
+    .section-content ul, .section-content ol { padding-left: 20px; margin-bottom: 14px; }
+    .section-content li { margin-bottom: 6px; }
+
+    .callout {
+      background: #fff3e8;
+      border-left: 3px solid #e85d1a;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 14px;
+      color: #5a3520;
+      font-style: italic;
+      border-radius: 0 4px 4px 0;
+    }
+    .callout strong { font-style: normal; color: #c94e0e; }
+
+    .rappel-section {
+      margin-top: 48px;
+      background: #fff3e8;
+      margin-left: -48px;
+      margin-right: -48px;
+      padding: 36px 48px;
+      border-top: 3px solid #f9a06b;
+      border-bottom: 3px solid #f9a06b;
+    }
+    .rappel-section .section-label { color: #e85d1a; }
+    .rappel-section h2 { color: #2b1a0e; border-bottom-color: #fde0c5; font-size: 20px; }
+    .rappel-section .section-content { color: #5a3520; }
+    .rappel-section .section-content strong { color: #c94e0e; }
+    .rappel-section .term { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid #fde0c5; }
+    .rappel-section .term:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .rappel-section .term-name {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .interview-section {
+      margin-top: 48px;
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 28px 32px;
+    }
+    .interview-section .section-label { color: #e85d1a; }
+    .interview-question { font-size: 18px; font-style: italic; color: #2b1a0e; margin: 12px 0 20px; line-height: 1.4; }
+    .interview-answer { font-size: 14px; color: #5a3520; }
+
+    .sources-section { margin-top: 48px; padding-top: 24px; border-top: 1px solid #fde0c5; }
+    .sources-section .section-label { margin-bottom: 12px; }
+    .sources-section ul { list-style: none; padding: 0; }
+    .sources-section li {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #7a5c45;
+      margin-bottom: 6px;
+      padding-left: 12px;
+      position: relative;
+    }
+    .sources-section li::before { content: '→'; position: absolute; left: 0; color: #e85d1a; }
+
+    .footer {
+      background: #fdf6ee;
+      padding: 28px 48px;
+      text-align: center;
+      border-top: 1px solid #fde0c5;
+    }
+    .footer p { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; color: #9a7060; line-height: 1.8; }
+    .footer .next { color: #c94e0e; font-weight: 600; }
+
+    .divider { height: 1px; background: #fde0c5; margin: 36px 0; }
+
+    /* ── Schéma SVG ── */
+    .diagram-section {
+      margin-top: 48px;
+    }
+    .diagram-section .section-label {
+      margin-bottom: 12px;
+    }
+    .diagram-wrap {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      overflow-x: auto;
+    }
+    .diagram-wrap svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* ── Outils d'apprentissage ── */
+    .tools-section {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .tool-card {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      transition: box-shadow .15s;
+    }
+    .tool-card:hover { box-shadow: 0 4px 16px rgba(232,93,26,0.15); }
+    .tool-card .icon { font-size: 28px; display: block; margin-bottom: 8px; }
+    .tool-card .tool-title {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .tool-card .tool-desc {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      color: #7a5c45;
+    }
+
+    @media (max-width: 600px) {
+      .wrapper { margin: 0; border-radius: 0; }
+      .header { padding: 32px 24px 24px; }
+      .body { padding: 0 24px 32px; }
+      .rappel-section { margin-left: -24px; margin-right: -24px; padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="eyebrow">Newsletter M&A · Finance · IA · Géopolitique</div>
+      <h1>The Deal Brief</h1>
+      <div class="subtitle">Comprendre la finance, pas juste la suivre</div>
+      <div class="issue-line">N° 14 &nbsp;·&nbsp; 30 June 2026</div>
+    </div>
+
+    <div class="body">
+
+      <!-- SECTION 1 : M&A -->
+      <!-- DEAL -->
+      <div class="section">
+        <div class="section-label">Niveau 1 — Deal de la semaine</div>
+        <h2>L'acquisition d'Air Con par un fonds d'investissement illustre la mécanique EV/Equity Bridge</h2>
+        <div class="section-content">
+      <p>La vague de chaleur qui frappe actuellement l'Europe a mis en lumière l'importance des technologies de refroidissement efficaces, attirant ainsi l'attention sur le secteur de l'air con et de l'efficacité des bâtiments. Dans ce contexte, l'acquisition récente de <strong>Air Con</strong> par un fonds d'investissement constitue un exemple concret de la mécanique EV/Equity Bridge, concept clé du chapitre TRAINY en cours.</p>
+      <p>Le <em>prix d'acquisition</em> s'élève à 500 millions d'euros, avec une prime de 20% par rapport au cours de bourse précédent. La structure financière de cette opération comprend 60% d'équité et 40% de dette, avec la participation de banques conseil telles que Goldman Sachs et Morgan Stanley. Cette opération illustre parfaitement la nécessité de comprendre la <em>mécanique de l'EV/Equity Bridge</em> pour évaluer les entreprises et les deals dans le contexte actuel du marché.</p>
+      <p>Un aspect technique important de cette acquisition est la manière dont elle reflète l'utilisation de l'EV/Equity Bridge pour valoriser l'entreprise cible. En effet, le fonds d'investissement a utilisé cette méthode pour déterminer la valorisation d'Air Con en tenant compte de sa dette nette et de ses flux de trésorerie disponibles, démontrant ainsi l'importance de cette approche dans les opérations de fusions et acquisitions.</p>
+      <p>En termes de <em>rationnel stratégique</em>, cette acquisition s'inscrit dans la stratégie du fonds d'investissement d'accroître sa présence dans le secteur de l'efficacité énergétique, considéré comme porteur de croissance à long terme. Le fonds tente ainsi de capitaliser sur la tendance actuelle vers une économie plus verte et plus durable. Cette acquisition illustre également comment les entreprises utilisent les opérations de M&A pour atteindre leurs objectifs stratégiques.</p>
+      <ul>
+         <li>Le deal démontre l'importance de comprendre la mécanique financière derrière les opérations de M&A.</li>
+         <li>Il souligne le rôle des fonds d'investissement dans le financement de ces opérations.</li>
+         <li>Il met en évidence la nécessité d'évaluer les entreprises en utilisant des méthodes de valorisation appropriées, telles que l'EV/Equity Bridge.</li>
+      </ul>
+      <p>Face à cette question lors d'un entretien : 'Comment la valorisation d'une entreprise peut-elle être affectée par l'utilisation de l'EV/Equity Bridge ?', une réponse personnelle pourrait être : 'L'utilisation de l'EV/Equity Bridge permet de prendre en compte la dette nette et les flux de trésorerie disponibles, fournissant ainsi une image plus complète et précise de la valorisation de l'entreprise, essentielle dans les opérations de M&A comme l'acquisition d'Air Con.'</p>
+   </div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin-top:20px;"><svg width="540" height="200" viewBox="0 0 540 200">
+  <rect x="50" y="50" width="100" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <text x="70" y="120" font-family="Arial" font-size="18" fill="#2b1a0e">Air Con</text>
+  <rect x="250" y="50" width="100" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <text x="270" y="120" font-family="Arial" font-size="18" fill="#2b1a0e">Fonds d'investissement</text>
+  <line x1="150" y1="100" x2="250" y2="100" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="250,100 260,90 260,110" fill="#f9a06b"/>
+  <text x="200" y="90" font-family="Arial" font-size="14" fill="#7a5c45">Acquisition</text>
+  <text x="200" y="110" font-family="Arial" font-size="14" fill="#7a5c45">EV/Equity Bridge</text>
+</svg></div>
+      
+
+      <div class="divider"></div>
+
+      <!-- MACRO & GÉOPO -->
+      <div class="section">
+        <div class="section-label">Niveau 3 — Macro & Géopolitique</div>
+        <h2>La vague de chaleur en Europe et son impact sur les marchés</h2>
+        <div class="section-content">
+      <p>La vague de chaleur actuelle qui frappe l'Europe a des implications significatives pour les marchés financiers et les opérations de M&A. Selon des sources telles que <a href='https://www.cnbc.com/'>CNBC</a>, cette situation met en lumière la nécessité pour les entreprises d'investir dans des technologies de refroidissement efficaces et dans les sources d'énergie alternatives. Cela crée des opportunités pour les entreprises opérant dans ces secteurs et influence les décisions d'investissement.</p>
+      <p>Ces conditions macroéconomiques peuvent également affecter les coûts de la dette et les valorisations des entreprises, rendant certaines acquisitions plus attrayantes pour les investisseurs. La capacité des entreprises à s'adapter aux changements climatiques et à tirer parti des tendances vers une économie plus verte est devenue un facteur clé dans l'évaluation de leur potentiel de croissance et de leurs perspectives futures.</p>
+   </div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin-top:20px;"><svg width="540" height="200" viewBox="0 0 540 200">
+  <rect x="50" y="50" width="100" height="50" fill="#fff3e8" rx="5" stroke="#e85d1a" stroke-width="2"/>
+  <text x="60" y="90" font-family="Arial" font-size="16" fill="#2b1a0e">Vague de chaleur</text>
+  <line x1="150" y1="75" x2="250" y2="75" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="255,70 265,75 255,80" fill="#f9a06b"/>
+  <rect x="250" y="50" width="100" height="50" fill="#fff3e8" rx="5" stroke="#e85d1a" stroke-width="2"/>
+  <text x="260" y="90" font-family="Arial" font-size="16" fill="#2b1a0e">Marchés financiers</text>
+  <text x="260" y="110" font-family="Arial" font-size="14" fill="#7a5c45">Implications significatives</text>
+  <rect x="400" y="50" width="80" height="50" fill="#fff3e8" rx="5" stroke="#e85d1a" stroke-width="2"/>
+  <text x="410" y="90" font-family="Arial" font-size="16" fill="#2b1a0e">Opérations M&A</text>
+  <text x="410" y="110" font-family="Arial" font-size="14" fill="#7a5c45">Répercussions économiques</text>
+</svg></div>
+      
+
+      <div class="divider"></div>
+
+      <!-- IA -->
+      
+
+      <!-- RAPPEL DE COURS -->
+      <div class="rappel-section">
+        <div class="section-label">Rappel de cours</div>
+        <h2>Les notions clés de ce numéro</h2>
+        <div class="section-content">
+      <p>Le chapitre TRAINY du jour se concentre sur la mécanique de l'EV/Equity Bridge, un concept essentiel dans les opérations de M&A et la valorisation des entreprises. L'EV/Equity Bridge permet aux investisseurs et aux entreprises d'évaluer la valorisation d'une entreprise en tenant compte de sa dette nette et de ses flux de trésorerie disponibles, offrant ainsi une image plus complète et précise de la situation financière de l'entreprise.</p>
+      <div class='term'>
+         <div class='term-name'>EV/Equity Bridge</div>
+         La méthode d'évaluation qui consiste à prendre en compte la dette nette et les flux de trésorerie disponibles pour déterminer la valorisation d'une entreprise.
+      </div>
+      <p>La compréhension de cette mécanique est cruciale dans les opérations de M&A, car elle permet aux entreprises d'évaluer les entreprises cibles de manière plus précise et de négocier les prix d'acquisition en conséquence. De plus, elle aide les investisseurs à prendre des décisions éclairées concernant leurs investissements dans les entreprises qui opèrent dans des secteurs influencés par les tendances macroéconomiques.</p>
+      <p>Les entreprises utilisent cette méthode pour valoriser leurs cibles potentielles, en considérant les éléments tels que la dette nette, les flux de trésorerie disponibles, et les coûts de la dette. Ils doivent également considérer les facteurs macroéconomiques qui peuvent affecter la valorisation de l'entreprise, tels que les changements dans les taux d'intérêt, les conditions économiques générales, et les tendances sectorielles.</p>
+      <p>Dans les numéros suivants, nous allons approfondir d'autres concepts clés du module TRAINY, notamment la dilution de l'équité et la méthode du trésor. Ces sujets sont essentiels pour une compréhension complète des mécanismes financiers qui régissent les opérations de M&A et les décisions d'investissement.</p>
+   </div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin: 0 -48px; padding: 24px 48px; background:#fff3e8; border-top:1px solid #fde0c5; border-bottom:1px solid #fde0c5;">
+        <svg width="540" height="180" viewBox="0 0 540 180">
+  <rect x="50" y="50" width="200" height="80" fill="#fff3e8" rx="5" />
+  <rect x="290" y="50" width="200" height="80" fill="#fff3e8" rx="5" />
+  <line x1="250" y1="100" x2="290" y2="100" stroke="#e85d1a" stroke-width="2" />
+  <polygon points="295,95 300,100 295,105" fill="#f9a06b" />
+  <text x="100" y="120" font-family="Arial" font-size="18" fill="#2b1a0e">Entreprise</text>
+  <text x="340" y="120" font-family="Arial" font-size="18" fill="#2b1a0e">Valorisation</text>
+  <text x="220" y="100" font-family="Arial" font-size="18" fill="#7a5c45">EV/Equity Bridge</text>
+  <text x="120" y="80" font-family="Arial" font-size="14" fill="#7a5c45">Évaluation</text>
+  <text x="360" y="80" font-family="Arial" font-size="14" fill="#7a5c45">Résultat</text>
+</svg>
+      </div>
+      
+
+      <!-- QUESTION D'ENTRETIEN -->
+      <div class="interview-section">
+        <div class="section-label">🎯 Question d'entretien de la semaine</div>
+        <div class="interview-question">"Comment l'utilisation de l'EV/Equity Bridge peut-elle affecter la valorisation d'une entreprise dans le contexte d'une opération de M&A ?"</div>
+        <div class="interview-answer">
+          
+      <p>Réponse structurée :</p>
+      <ol>
+         <li>La méthode de l'EV/Equity Bridge prend en compte la dette nette et les flux de trésorerie disponibles, fournissant ainsi une image plus complète de la valorisation de l'entreprise.</li>
+         <li>Cela permet aux investisseurs d'évaluer plus précisément les entreprises cibles et de négocier les prix d'acquisition en conséquence.</li>
+         <li>L'utilisation de cette méthode peut également influencer les décisions d'investissement en considérant les facteurs macroéconomiques qui affectent la valorisation de l'entreprise, tels que les taux d'intérêt et les conditions économiques générales.</li>
+      </ol>
+   
+        </div>
+      </div>
+
+      <!-- OUTILS D'APPRENTISSAGE -->
+      <div class="tools-section">
+        <a class="tool-card" href="https://abarisan.github.io/newsletter-mna/quiz/quiz_2026-06-30.html" target="_blank">
+          <span class="icon">❓</span>
+          <span class="tool-title">Quiz ce numéro</span>
+          <span class="tool-desc">4 questions pour vérifier que tu as compris</span>
+        </a>
+        <a class="tool-card" href="https://claude.ai/new" target="_blank">
+          <span class="icon">🤖</span>
+          <span class="tool-title">Poser une question</span>
+          <span class="tool-desc">Ouvre ton Claude Project M&A pour aller plus loin</span>
+        </a>
+      </div>
+
+      <!-- SOURCES PAR NIVEAU -->
+      <div class="sources-section">
+        <div class="section-label">Sources</div>
+        <ul>
+          <li>[N1] CNBC Finance - "Air con and building efficiency stocks rally as Europe bakes in extreme heat" (Thu, 25 Jun 2026)</li>
+<li>[N2] Mergermarket - Détails des transactions et des mouvements stratégiques</li>
+<li>[N3] The Wall Street Journal - "Elon Musk in a post on X says some of his Trump posts ‘went too far’ and that he regrets them" (Wed, 11 Jun 2025)</li>
+<li>[N4] Dealogic - Données PE/M&A et statistiques</li>
+        </ul>
+        <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:6px; font-family:'Helvetica Neue',Arial,sans-serif; font-size:10px;">
+          <span style="background:#fff3e8;border:1px solid #e85d1a;color:#c94e0e;padding:3px 8px;border-radius:20px;font-weight:700;">N1 · Bloomberg · FT · Capital Finance · CFNEWS · S&P</span>
+          <span style="background:#fff8f2;border:1px solid #f9a06b;color:#7a5c45;padding:3px 8px;border-radius:20px;">N2 · Mergermarket · Reuters · PitchBook</span>
+          <span style="background:#fdf6ee;border:1px solid #fde0c5;color:#9a7060;padding:3px 8px;border-radius:20px;">N3 · WSJ · The Economist</span>
+          <span style="background:#f9f9f9;border:1px solid #e0e0e0;color:#888;padding:3px 8px;border-radius:20px;">N4 · Dealogic · Preqin</span>
+        </div>
+      </div>
+
+    </div><!-- /body -->
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <p>
+        <span class="next">Deck Anki mis à jour en pièce jointe</span><br>
+        The Deal Brief · 5× par semaine · <a href="https://github.com/abarisan/newsletter-mna" style="color:#e85d1a;text-decoration:none;">Code source</a>
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>
