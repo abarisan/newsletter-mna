@@ -682,5 +682,41 @@
     "verso": "L'EV/Equity Bridge est utilisé dans les cas où la dette nette et les flux de trésorerie disponibles sont significatifs et peuvent avoir un impact important sur la valorisation de l'entreprise. Cela peut inclure les opérations de M&A, les fusions et les acquisitions, ainsi que les évaluations de la valorisation d'une entreprise pour les investisseurs et les entreprises. Par exemple, dans le cas de l'acquisition d'Air Con, l'EV/Equity Bridge a été utilisé pour évaluer la valorisation de l'entreprise en tenant compte de sa dette nette et de ses flux de trésorerie disponibles.",
     "numero": "14",
     "id": 1561108156
+  },
+  {
+    "recto": "Qu'est-ce que la valeur de l'action diluée (Diluted Equity Value) ?",
+    "verso": "La valeur de l'action diluée est la valeur de l'action après émission de nouvelles actions, reflétant la participation réduite des actionnaires existants. Elle prend en compte les actions émises lors d'une augmentation de capital. Par exemple, si une entreprise émet de nouvelles actions pour financer son expansion, la participation des actionnaires existants sera diluée.",
+    "numero": "15",
+    "id": 2136011195
+  },
+  {
+    "recto": "Qu'est-ce que la treasury stock method ?",
+    "verso": "La treasury stock method est une méthode utilisée pour évaluer la valeur réelle des actions en considérant les facteurs tels que les actions émises lors d'une augmentation de capital. Elle permet de calculer la valeur de l'action diluée en prenant en compte la participation réduite des actionnaires existants. Cette méthode est utilisée pour obtenir une vue plus précise de la valeur des actions.",
+    "numero": "15",
+    "id": 1303070701
+  },
+  {
+    "recto": "Comment la valeur de l'action diluée affecte-t-elle les actionnaires existants ?",
+    "verso": "La valeur de l'action diluée affecte les actionnaires existants en réduisant leur participation dans l'entreprise. Lorsqu'une entreprise émet de nouvelles actions, la valeur de chaque action diminue, ce qui signifie que les actionnaires existants détiennent une plus petite partie de l'entreprise. Cela peut avoir un impact sur leur pouvoir de vote et sur la valeur de leur investissement.",
+    "numero": "15",
+    "id": 1944624251
+  },
+  {
+    "recto": "Pourquoi les entreprises utilisent-elles la méthode du trésorier pour évaluer la valeur de leurs actions ?",
+    "verso": "Les entreprises utilisent la méthode du trésorier pour évaluer la valeur de leurs actions karena cela leur permet de prendre en compte les facteurs tels que les actions émises lors d'une augmentation de capital. Cette méthode leur donne une vue plus précise de la valeur de leurs actions et leur permet de mieux gérer leur capital et leur expansion.",
+    "numero": "15",
+    "id": 1929508135
+  },
+  {
+    "recto": "Dans quel cas la valeur de l'action diluée est-elle particulièrement importante ?",
+    "verso": "La valeur de l'action diluée est particulièrement importante lorsqu'une entreprise prévoit d'émettre de nouvelles actions pour financer son expansion. Dans ce cas, il est essentiel de prendre en compte l'impact de la dilution sur les actionnaires existants et de calculer la valeur de l'action diluée pour obtenir une vue plus précise de la valeur des actions.",
+    "numero": "15",
+    "id": 1876838008
+  },
+  {
+    "recto": "Pourquoi les entreprises doivent-elles considérer la résilience économique dans leur stratégie d'expansion ?",
+    "verso": "Les entreprises doivent considérer la résilience économique dans leur stratégie d'expansion car cela leur permet de mieux gérer les défis économiques et de s'assurer que leur expansion est durable à long terme. En prenant en compte les facteurs tels que la valeur de l'action diluée et la méthode du trésorier, les entreprises peuvent développer une stratégie d'expansion plus solide et plus résiliente.",
+    "numero": "15",
+    "id": 1472508394
   }
 ]
