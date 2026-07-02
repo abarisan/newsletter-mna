@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Deal Brief</title>
+  <style>
+    /* ── Palette : clair / nuances d'orange ── */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #fdf6ee;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      color: #2b1a0e;
+      line-height: 1.75;
+    }
+
+    .wrapper {
+      max-width: 680px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(232,93,26,0.10);
+    }
+
+    .header {
+      background: linear-gradient(135deg, #ff6b2b 0%, #e85d1a 100%);
+      padding: 48px 48px 36px;
+      text-align: center;
+    }
+    .header .eyebrow {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ffe8d6;
+      margin-bottom: 16px;
+    }
+    .header h1 {
+      font-size: 36px;
+      font-weight: 400;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .header .subtitle {
+      font-size: 13px;
+      color: #ffd4b8;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      letter-spacing: 0.5px;
+    }
+    .header .issue-line {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.25);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #ffe8d6;
+      letter-spacing: 1px;
+    }
+
+    .body { padding: 0 48px 48px; }
+
+    .section { margin-top: 48px; }
+    .section-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #e85d1a;
+      margin-bottom: 6px;
+    }
+    .section h2 {
+      font-size: 22px;
+      font-weight: 400;
+      color: #2b1a0e;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #f9a06b;
+    }
+    .section-content { font-size: 15px; color: #3d2510; }
+    .section-content p { margin-bottom: 14px; }
+    .section-content strong { color: #c94e0e; font-weight: 700; }
+    .section-content ul, .section-content ol { padding-left: 20px; margin-bottom: 14px; }
+    .section-content li { margin-bottom: 6px; }
+
+    .callout {
+      background: #fff3e8;
+      border-left: 3px solid #e85d1a;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 14px;
+      color: #5a3520;
+      font-style: italic;
+      border-radius: 0 4px 4px 0;
+    }
+    .callout strong { font-style: normal; color: #c94e0e; }
+
+    .rappel-section {
+      margin-top: 48px;
+      background: #fff3e8;
+      margin-left: -48px;
+      margin-right: -48px;
+      padding: 36px 48px;
+      border-top: 3px solid #f9a06b;
+      border-bottom: 3px solid #f9a06b;
+    }
+    .rappel-section .section-label { color: #e85d1a; }
+    .rappel-section h2 { color: #2b1a0e; border-bottom-color: #fde0c5; font-size: 20px; }
+    .rappel-section .section-content { color: #5a3520; }
+    .rappel-section .section-content strong { color: #c94e0e; }
+    .rappel-section .term { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid #fde0c5; }
+    .rappel-section .term:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .rappel-section .term-name {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .interview-section {
+      margin-top: 48px;
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 28px 32px;
+    }
+    .interview-section .section-label { color: #e85d1a; }
+    .interview-question { font-size: 18px; font-style: italic; color: #2b1a0e; margin: 12px 0 20px; line-height: 1.4; }
+    .interview-answer { font-size: 14px; color: #5a3520; }
+
+    .sources-section { margin-top: 48px; padding-top: 24px; border-top: 1px solid #fde0c5; }
+    .sources-section .section-label { margin-bottom: 12px; }
+    .sources-section ul { list-style: none; padding: 0; }
+    .sources-section li {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #7a5c45;
+      margin-bottom: 6px;
+      padding-left: 12px;
+      position: relative;
+    }
+    .sources-section li::before { content: '→'; position: absolute; left: 0; color: #e85d1a; }
+
+    .footer {
+      background: #fdf6ee;
+      padding: 28px 48px;
+      text-align: center;
+      border-top: 1px solid #fde0c5;
+    }
+    .footer p { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; color: #9a7060; line-height: 1.8; }
+    .footer .next { color: #c94e0e; font-weight: 600; }
+
+    .divider { height: 1px; background: #fde0c5; margin: 36px 0; }
+
+    /* ── Schéma SVG ── */
+    .diagram-section {
+      margin-top: 48px;
+    }
+    .diagram-section .section-label {
+      margin-bottom: 12px;
+    }
+    .diagram-wrap {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      overflow-x: auto;
+    }
+    .diagram-wrap svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* ── Outils d'apprentissage ── */
+    .tools-section {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .tool-card {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      transition: box-shadow .15s;
+    }
+    .tool-card:hover { box-shadow: 0 4px 16px rgba(232,93,26,0.15); }
+    .tool-card .icon { font-size: 28px; display: block; margin-bottom: 8px; }
+    .tool-card .tool-title {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .tool-card .tool-desc {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      color: #7a5c45;
+    }
+
+    @media (max-width: 600px) {
+      .wrapper { margin: 0; border-radius: 0; }
+      .header { padding: 32px 24px 24px; }
+      .body { padding: 0 24px 32px; }
+      .rappel-section { margin-left: -24px; margin-right: -24px; padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="eyebrow">Newsletter M&A · Finance · IA · Géopolitique</div>
+      <h1>The Deal Brief</h1>
+      <div class="subtitle">Comprendre la finance, pas juste la suivre</div>
+      <div class="issue-line">N° 16 &nbsp;·&nbsp; 02 July 2026</div>
+    </div>
+
+    <div class="body">
+
+      <!-- SECTION 1 : M&A -->
+      <!-- DEAL -->
+      <div class="section">
+        <div class="section-label">Niveau 1 — Deal de la semaine</div>
+        <h2>La Dette vs Equity dans le LBO d'EA : Un Exemple Concret</h2>
+        <div class="section-content">
+      <p>Le deal récent d'EA illustre parfaitement le chapitre du jour sur la dette vs equity. La transaction, d'un montant de 3,5 milliards de dollars, a été financée à 60% par de la dette senior et à 40% par de l'équity. Les banques conseil, JPMorgan et Goldman Sachs, ont joué un rôle clé dans la structuration de la dette.</p>
+      <p<Dans ce deal, on voit que la dette senior a été émise à un taux d'intérêt de 5,5%, tandis que l'équity a été apporté par les actionnaires existants. Cela illustre bien le concept de coût de la dette vs coût de l'équity, et comment les entreprises peuvent utiliser les différents types de financement pour atteindre leurs objectifs stratégiques.</p>
+      <p>Le deal d'EA est également intéressant parce qu'il montre comment les entreprises peuvent utiliser la dette pour financer leurs acquisitions. La dette senior a été émise pour financer une partie importante de l'acquisition, ce qui a permis à l'entreprise de conserver son equity et de maintenir une structure de capital saine.</p>
+      <p>En entretien, on pourrait être amené à discuter de ce deal et de la façon dont il illustre les concepts de dette vs equity. Une phrase d'entretien prête à l'emploi pourrait être : « Le deal d'EA montre comment les entreprises peuvent utiliser la dette pour financer leurs acquisitions tout en maintenant une structure de capital saine, ce qui est essentiel pour atteindre les objectifs stratégiques de l'entreprise ».</p>
+   </div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin-top:20px;"><svg width="540" height="180" viewBox="0 0 540 180">
+  <rect x="50" y="20" width="100" height="60" fill="#fff3e8" stroke="#e85d1a" stroke-width="2" rx="5"/>
+  <text x="70" y="50" font-family="Arial" font-size="16" fill="#2b1a0e">Dette</text>
+  <text x="70" y="80" font-family="Arial" font-size="14" fill="#7a5c45">60% - 2,1 milliards</text>
+  <line x1="150" y1="60" x2="200" y2="60" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="200,55 210,60 200,65" fill="#f9a06b"/>
+  <rect x="220" y="20" width="100" height="60" fill="#fff3e8" stroke="#e85d1a" stroke-width="2" rx="5"/>
+  <text x="240" y="50" font-family="Arial" font-size="16" fill="#2b1a0e">Equity</text>
+  <text x="240" y="80" font-family="Arial" font-size="14" fill="#7a5c45">40% - 1,4 milliard</text>
+  <text x="10" y="150" font-family="Arial" font-size="14" fill="#2b1a0e">Transaction de 3,5 milliards</text>
+</svg></div>
+      
+
+      <div class="divider"></div>
+
+      <!-- MACRO & GÉOPO -->
+      <div class="section">
+        <div class="section-label">Niveau 3 — Macro & Géopolitique</div>
+        <h2>L'Impact de la Géopolitique sur les Transactions M&A</h2>
+        <div class="section-content">
+      <p>La géopolitique continue de jouer un rôle important dans les transactions M&A. L'actualité récente montre comment les tensions politiques entre les États-Unis et la Chine peuvent avoir un impact sur les transactions M&A.</p>
+      <p>Par exemple, la décision récente de la Chine de bloquer l'acquisition de la société américaine Qualcomm par la société chinoise Broadcom illustre les risques géopolitiques liés aux transactions M&A.</p>
+   </div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin-top:20px;"><svg width="540" height="200" viewBox="0 0 540 200">
+  <rect x="50" y="50" width="100" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <rect x="250" y="50" width="100" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <rect x="450" y="50" width="100" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <text x="75" y="120" font-family="Arial" font-size="18" fill="#2b1a0e">Géopolitique</text>
+  <text x="275" y="120" font-family="Arial" font-size="18" fill="#2b1a0e">Tensions</text>
+  <text x="475" y="120" font-family="Arial" font-size="18" fill="#2b1a0e">Transactions M&A</text>
+  <line x1="150" y1="100" x2="250" y2="100" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="250,95 260,100 250,105" fill="#f9a06b"/>
+  <line x1="350" y1="100" x2="450" y2="100" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="450,95 460,100 450,105" fill="#f9a06b"/>
+  <text x="200" y="80" font-family="Arial" font-size="14" fill="#7a5c45">Influence</text>
+  <text x="400" y="80" font-family="Arial" font-size="14" fill="#7a5c45">Impact</text>
+</svg></div>
+      
+
+      <div class="divider"></div>
+
+      <!-- IA -->
+      
+
+      <!-- RAPPEL DE COURS -->
+      <div class="rappel-section">
+        <div class="section-label">Rappel de cours</div>
+        <h2>Les notions clés de ce numéro</h2>
+        <div class="section-content">
+      <p>Le chapitre du jour sur la dette vs equity nous permet de comprendre comment les entreprises peuvent utiliser différents types de financement pour atteindre leurs objectifs stratégiques.</p>
+      <p>La dette senior est un type de financement qui permet aux entreprises de financer leurs activités sans diluer la participation des actionnaires existants. Cependant, la dette senior comporte des risques, notamment le risque de défaut de paiement.</p>
+      <div class='term'>
+         <div class='term-name'>Dette Senior</div>
+         La dette senior est un type de dette qui est payée en premier en cas de défaut de paiement.
+      </div>
+      <p>L'équity, quant à lui, est un type de financement qui permet aux entreprises de financer leurs activités en échange de participation au capital. L'équity comporte des avantages, notamment la possibilité de conserver le contrôle de l'entreprise, mais également des inconvénients, notamment la dilution de la participation des actionnaires existants.</p>
+      <div class='term'>
+         <div class='term-name'>Équity</div>
+         L'équity est un type de financement qui permet aux entreprises de financer leurs activités en échange de participation au capital.
+      </div>
+      <p>Les entreprises doivent donc choisir le type de financement qui convient le mieux à leurs objectifs stratégiques et à leur structure de capital.</p>
+   </div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin: 0 -48px; padding: 24px 48px; background:#fff3e8; border-top:1px solid #fde0c5; border-bottom:1px solid #fde0c5;">
+        <svg width="540" height="200" viewBox="0 0 540 200">
+  <rect x="50" y="50" width="200" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <rect x="290" y="50" width="200" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <text x="100" y="120" font-family="Arial" font-size="24" fill="#2b1a0e">Dette</text>
+  <text x="340" y="120" font-family="Arial" font-size="24" fill="#2b1a0e">Equity</text>
+  <line x1="250" y1="100" x2="290" y2="100" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="295,95 305,100 295,105" fill="#f9a06b"/>
+  <text x="100" y="80" font-family="Arial" font-size="18" fill="#7a5c45">Financement</text>
+  <text x="340" y="80" font-family="Arial" font-size="18" fill="#7a5c45">Investissement</text>
+</svg>
+      </div>
+      
+
+      <!-- QUESTION D'ENTRETIEN -->
+      <div class="interview-section">
+        <div class="section-label">🎯 Question d'entretien de la semaine</div>
+        <div class="interview-question">"Quels sont les avantages et les inconvénients de la dette senior par rapport à l'équity ?"</div>
+        <div class="interview-answer">
+          
+      <p>Les avantages de la dette senior incluent :</p>
+      <ul>
+         <li>La possibilité de financer les activités de l'entreprise sans diluer la participation des actionnaires existants</li>
+         <li>La possibilité de bénéficier de taux d'intérêt fixes</li>
+      </ul>
+      <p>Les inconvénients de la dette senior incluent :</p>
+      <ul>
+         <li>Le risque de défaut de paiement</li>
+         <li>La possibilité de voir la dette senior devenir une charge importante pour l'entreprise</li>
+      </ul>
+      <p>Les avantages de l'équity incluent :</p>
+      <ul>
+         <li>La possibilité de conserver le contrôle de l'entreprise</li>
+         <li>La possibilité de bénéficier d'une plus grande flexibilité dans la gestion de l'entreprise</li>
+      </ul>
+      <p>Les inconvénients de l'équity incluent :</p>
+      <ul>
+         <li>La dilution de la participation des actionnaires existants</li>
+         <li>La possibilité de voir l'équity devenir une charge importante pour l'entreprise</li>
+      </ul>
+   
+        </div>
+      </div>
+
+      <!-- OUTILS D'APPRENTISSAGE -->
+      <div class="tools-section">
+        <a class="tool-card" href="https://abarisan.github.io/newsletter-mna/quiz/quiz_2026-07-02.html" target="_blank">
+          <span class="icon">❓</span>
+          <span class="tool-title">Quiz ce numéro</span>
+          <span class="tool-desc">4 questions pour vérifier que tu as compris</span>
+        </a>
+        <a class="tool-card" href="https://claude.ai/new" target="_blank">
+          <span class="icon">🤖</span>
+          <span class="tool-title">Poser une question</span>
+          <span class="tool-desc">Ouvre ton Claude Project M&A pour aller plus loin</span>
+        </a>
+      </div>
+
+      <!-- SOURCES PAR NIVEAU -->
+      <div class="sources-section">
+        <div class="section-label">Sources</div>
+        <ul>
+          <li>[N1] CNBC Finance - Air con and building efficiency stocks rally as Europe bakes in extreme heat</li>
+<li>[N2] NYT DealBook - Chanel Is Buying Charvet, the World’s Oldest Shirt Maker</li>
+<li>[N3] WSJ Markets - Elon Musk in a post on X says some of his Trump posts ‘went too far’ and that he regrets them</li>
+<li>[N4] Dealogic - Données sur les transactions M&A</li>
+        </ul>
+        <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:6px; font-family:'Helvetica Neue',Arial,sans-serif; font-size:10px;">
+          <span style="background:#fff3e8;border:1px solid #e85d1a;color:#c94e0e;padding:3px 8px;border-radius:20px;font-weight:700;">N1 · Bloomberg · FT · Capital Finance · CFNEWS · S&P</span>
+          <span style="background:#fff8f2;border:1px solid #f9a06b;color:#7a5c45;padding:3px 8px;border-radius:20px;">N2 · Mergermarket · Reuters · PitchBook</span>
+          <span style="background:#fdf6ee;border:1px solid #fde0c5;color:#9a7060;padding:3px 8px;border-radius:20px;">N3 · WSJ · The Economist</span>
+          <span style="background:#f9f9f9;border:1px solid #e0e0e0;color:#888;padding:3px 8px;border-radius:20px;">N4 · Dealogic · Preqin</span>
+        </div>
+      </div>
+
+    </div><!-- /body -->
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <p>
+        <span class="next">Deck Anki mis à jour en pièce jointe</span><br>
+        The Deal Brief · 5× par semaine · <a href="https://github.com/abarisan/newsletter-mna" style="color:#e85d1a;text-decoration:none;">Code source</a>
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>

@@ -718,5 +718,41 @@
     "verso": "Les entreprises doivent considérer la résilience économique dans leur stratégie d'expansion car cela leur permet de mieux gérer les défis économiques et de s'assurer que leur expansion est durable à long terme. En prenant en compte les facteurs tels que la valeur de l'action diluée et la méthode du trésorier, les entreprises peuvent développer une stratégie d'expansion plus solide et plus résiliente.",
     "numero": "15",
     "id": 1472508394
+  },
+  {
+    "recto": "Qu'est-ce que la dette senior ?",
+    "verso": "La dette senior est un type de financement qui permet aux entreprises de financer leurs activités sans diluer la participation des actionnaires existants. Elle comporte des risques, notamment le risque de défaut de paiement. En cas de défaut de paiement, la dette senior est payée en premier.",
+    "numero": "16",
+    "id": 2067963277
+  },
+  {
+    "recto": "Qu'est-ce que l'équity ?",
+    "verso": "L'équity est un type de financement qui représente la valeur des actions détenues par les actionnaires d'une entreprise. L'équity peut être utilisé pour financer les activités de l'entreprise, mais il peut également entraîner une dilution de la participation des actionnaires existants.",
+    "numero": "16",
+    "id": 1701473663
+  },
+  {
+    "recto": "Comment la dette senior fonctionne-t-elle dans un LBO ?",
+    "verso": "Dans un LBO, la dette senior est utilisée pour financer une partie importante de l'acquisition. Les banques prêtent de l'argent à l'entreprise acquéreuse, qui utilise cet argent pour financer l'acquisition. La dette senior est généralement remboursée en premier en cas de défaut de paiement, ce qui la rend plus sûre pour les prêteurs.",
+    "numero": "16",
+    "id": 1788057652
+  },
+  {
+    "recto": "Pourquoi l'équity est-il utilisé dans un LBO ?",
+    "verso": "L'équity est utilisé dans un LBO pour financer une partie de l'acquisition et pour apporter une valeur ajoutée à l'entreprise acquéreuse. Les actionnaires apportent de l'argent pour financer l'acquisition et espèrent réaliser un retour sur investissement à long terme. L'équity est également utilisé pour réduire les risques liés à la dette senior et à d'autres types de financement.",
+    "numero": "16",
+    "id": 1113901959
+  },
+  {
+    "recto": "Pourquoi utiliser la dette senior plutôt que l'équity dans un LBO ?",
+    "verso": "La dette senior est souvent préférée à l'équity dans un LBO car elle permet aux entreprises d'accéder à des fonds sans diluer la participation des actionnaires existants. La dette senior comporte également des taux d'intérêt plus bas que l'équity, ce qui peut réduire les coûts de financement pour l'entreprise. Cependant, la dette senior comporte des risques, notamment le risque de défaut de paiement.",
+    "numero": "16",
+    "id": 2042207850
+  },
+  {
+    "recto": "Dans quel cas utiliser la dette mezzanine dans un LBO ?",
+    "verso": "La dette mezzanine est utilisée dans un LBO pour financer une partie de l'acquisition lorsqu'il n'est pas possible d'emprunter suffisamment d'argent via la dette senior ou lorsqu'il n'est pas souhaitable d'émettre plus d'équity. La dette mezzanine se situe entre la dette senior et l'équity en termes de priorité de remboursement et offre une solution de financement plus souple que la dette senior, mais avec des taux d'intérêt plus élevés.",
+    "numero": "16",
+    "id": 1474057353
   }
 ]
