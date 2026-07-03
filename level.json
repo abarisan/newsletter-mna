@@ -1,6 +1,6 @@
 {
-  "numero": 16,
-  "depth": 11,
+  "numero": 17,
+  "depth": 12,
   "concepts_vus": [
     "LBO : achat d'une cible financé majoritairement par dette",
     "Modélisation LBO : comment la structure tient",
@@ -19,7 +19,8 @@
     "Comptabilisation des inventaires",
     "Mécanique de l'EV/Equity Bridge",
     "Diluted equity value",
-    "Dette vs Equity"
+    "Dette vs Equity",
+    "Méthodes de valorisation"
   ],
   "deals_ouverts": [
     "Volkswagen's Restructuring Plans and Inventory Management",
@@ -27,8 +28,9 @@
     "Apple : achat de puces mémoire à une entreprise chinoise sous embargo",
     "L'acquisition d'Air Con par un fonds d'investissement",
     "Uniqlo s'apprête à dominer le marché de la mode mondiale",
-    "La Dette vs Equity dans le LBO d'EA : Un Exemple Concret"
+    "La Dette vs Equity dans le LBO d'EA : Un Exemple Concret",
+    "Anthropic et la fermeture des failles pour limiter l'accès chinois à Claude"
   ],
   "objectif": "Préparer des entretiens M&A dans 1 mois, puis sur 2-3 ans",
-  "trainy_index": 15
+  "trainy_index": 16
 }

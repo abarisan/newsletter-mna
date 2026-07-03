@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Deal Brief</title>
+  <style>
+    /* ── Palette : clair / nuances d'orange ── */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #fdf6ee;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      color: #2b1a0e;
+      line-height: 1.75;
+    }
+
+    .wrapper {
+      max-width: 680px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(232,93,26,0.10);
+    }
+
+    .header {
+      background: linear-gradient(135deg, #ff6b2b 0%, #e85d1a 100%);
+      padding: 48px 48px 36px;
+      text-align: center;
+    }
+    .header .eyebrow {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ffe8d6;
+      margin-bottom: 16px;
+    }
+    .header h1 {
+      font-size: 36px;
+      font-weight: 400;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .header .subtitle {
+      font-size: 13px;
+      color: #ffd4b8;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      letter-spacing: 0.5px;
+    }
+    .header .issue-line {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.25);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #ffe8d6;
+      letter-spacing: 1px;
+    }
+
+    .body { padding: 0 48px 48px; }
+
+    .section { margin-top: 48px; }
+    .section-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #e85d1a;
+      margin-bottom: 6px;
+    }
+    .section h2 {
+      font-size: 22px;
+      font-weight: 400;
+      color: #2b1a0e;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #f9a06b;
+    }
+    .section-content { font-size: 15px; color: #3d2510; }
+    .section-content p { margin-bottom: 14px; }
+    .section-content strong { color: #c94e0e; font-weight: 700; }
+    .section-content ul, .section-content ol { padding-left: 20px; margin-bottom: 14px; }
+    .section-content li { margin-bottom: 6px; }
+
+    .callout {
+      background: #fff3e8;
+      border-left: 3px solid #e85d1a;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 14px;
+      color: #5a3520;
+      font-style: italic;
+      border-radius: 0 4px 4px 0;
+    }
+    .callout strong { font-style: normal; color: #c94e0e; }
+
+    .rappel-section {
+      margin-top: 48px;
+      background: #fff3e8;
+      margin-left: -48px;
+      margin-right: -48px;
+      padding: 36px 48px;
+      border-top: 3px solid #f9a06b;
+      border-bottom: 3px solid #f9a06b;
+    }
+    .rappel-section .section-label { color: #e85d1a; }
+    .rappel-section h2 { color: #2b1a0e; border-bottom-color: #fde0c5; font-size: 20px; }
+    .rappel-section .section-content { color: #5a3520; }
+    .rappel-section .section-content strong { color: #c94e0e; }
+    .rappel-section .term { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid #fde0c5; }
+    .rappel-section .term:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .rappel-section .term-name {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .interview-section {
+      margin-top: 48px;
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 28px 32px;
+    }
+    .interview-section .section-label { color: #e85d1a; }
+    .interview-question { font-size: 18px; font-style: italic; color: #2b1a0e; margin: 12px 0 20px; line-height: 1.4; }
+    .interview-answer { font-size: 14px; color: #5a3520; }
+
+    .sources-section { margin-top: 48px; padding-top: 24px; border-top: 1px solid #fde0c5; }
+    .sources-section .section-label { margin-bottom: 12px; }
+    .sources-section ul { list-style: none; padding: 0; }
+    .sources-section li {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #7a5c45;
+      margin-bottom: 6px;
+      padding-left: 12px;
+      position: relative;
+    }
+    .sources-section li::before { content: '→'; position: absolute; left: 0; color: #e85d1a; }
+
+    .footer {
+      background: #fdf6ee;
+      padding: 28px 48px;
+      text-align: center;
+      border-top: 1px solid #fde0c5;
+    }
+    .footer p { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; color: #9a7060; line-height: 1.8; }
+    .footer .next { color: #c94e0e; font-weight: 600; }
+
+    .divider { height: 1px; background: #fde0c5; margin: 36px 0; }
+
+    /* ── Schéma SVG ── */
+    .diagram-section {
+      margin-top: 48px;
+    }
+    .diagram-section .section-label {
+      margin-bottom: 12px;
+    }
+    .diagram-wrap {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      overflow-x: auto;
+    }
+    .diagram-wrap svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* ── Outils d'apprentissage ── */
+    .tools-section {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .tool-card {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      transition: box-shadow .15s;
+    }
+    .tool-card:hover { box-shadow: 0 4px 16px rgba(232,93,26,0.15); }
+    .tool-card .icon { font-size: 28px; display: block; margin-bottom: 8px; }
+    .tool-card .tool-title {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .tool-card .tool-desc {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      color: #7a5c45;
+    }
+
+    @media (max-width: 600px) {
+      .wrapper { margin: 0; border-radius: 0; }
+      .header { padding: 32px 24px 24px; }
+      .body { padding: 0 24px 32px; }
+      .rappel-section { margin-left: -24px; margin-right: -24px; padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="eyebrow">Newsletter M&A · Finance · IA · Géopolitique</div>
+      <h1>The Deal Brief</h1>
+      <div class="subtitle">Comprendre la finance, pas juste la suivre</div>
+      <div class="issue-line">N° 17 &nbsp;·&nbsp; 03 July 2026</div>
+    </div>
+
+    <div class="body">
+
+      <!-- SECTION 1 : M&A -->
+      <!-- DEAL -->
+      <div class="section">
+        <div class="section-label">Niveau 1 — Deal de la semaine</div>
+        <h2>Anthropic et la fermeture des failles pour limiter l'accès chinois à Claude</h2>
+        <div class="section-content">
+      <p>La start-up Anthropic annonce ce vendredi la fermeture des failles qui permettaient l'accès à son modèle d'intelligence artificielle Claude pour les utilisateurs chinois, comme le rapporte le <strong>Financial Times</strong>. Cette décision intervient après que des ingénieurs aient trouvé des moyens de contourner les restrictions pour utiliser le modèle malgré les limitations imposées.</p>
+      <p>Ce cas illustre la complexité de la valorisation des entreprises technologiques, notamment dans le domaine de l'IA. La méthode de valorisation par comparaison avec des entreprises similaires (<em>comparables</em>) doit prendre en compte les facteurs de risque liés à la géopolitique et aux réglementations spécifiques à chaque marché. La prime de risque pour les investissements dans des technologies sensibles comme l'IA doit être soigneusement évaluée.</p>
+      <p>Dans le contexte du chapitre sur les méthodes de valorisation, cet exemple montre l'importance de considérer les facteurs non financiers qui peuvent impacter la valorisation d'une entreprise. La décision d'Anthropic de fermer les failles pour limiter l'accès à Claude peut avoir des implications à la fois sur la valorisation de l'entreprise et sur sa position sur le marché.</p>
+      <p>En entretien, on pourrait être amené à discuter de la manière dont les facteurs géopolitiques influencent la valorisation des entreprises technologiques. Une phrase d'entretien prête à l'emploi pourrait être : « La valorisation d'une entreprise comme Anthropic doit prendre en compte les risques liés à la géopolitique et aux réglementations, car ces facteurs peuvent impacter significativement sa position sur le marché et sa croissance à long terme. »</p>
+   </div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin-top:20px;"><svg width="540" height="200" viewBox="0 0 540 200">
+  <rect x="50" y="50" width="200" height="100" fill="#fff3e8" rx="10" />
+  <rect x="290" y="50" width="200" height="100" fill="#fff3e8" rx="10" />
+  <line x1="250" y1="100" x2="290" y2="100" stroke="#f9a06b" stroke-width="2" />
+  <polygon points="290,90 300,100 290,110" fill="#f9a06b" />
+  <text x="100" y="120" font-family="Arial" font-size="18" fill="#2b1a0e">Anthropic</text>
+  <text x="100" y="80" font-family="Arial" font-size="14" fill="#7a5c45">Modèle d'IA Claude</text>
+  <text x="340" y="120" font-family="Arial" font-size="18" fill="#2b1a0e">Accès limité</text>
+  <text x="340" y="80" font-family="Arial" font-size="14" fill="#7a5c45">Chine</text>
+  <text x="250" y="60" font-family="Arial" font-size="14" fill="#e85d1a">Fermeture des failles</text>
+</svg></div>
+      
+
+      <div class="divider"></div>
+
+      <!-- MACRO & GÉOPO -->
+      <div class="section">
+        <div class="section-label">Niveau 3 — Macro & Géopolitique</div>
+        <h2>L'impact de la géopolitique sur les marchés financiers</h2>
+        <div class="section-content">
+      <p>Le marché financier est de plus en plus influencé par les facteurs géopolitiques. La décision de la Finlande de lever son interdiction des armes nucléaires, comme rapporté par <strong>CNBC Finance</strong>, ou les tensions entre verschillents pays, peuvent avoir des implications significatives sur les marchés financiers et la valorisation des entreprises.</p>
+      <p>Il est essentiel pour les investisseurs et les acteurs du marché de comprendre ces interactions et d'intégrer les facteurs de risque liés à la géopolitique dans leurs stratégies d'investissement.</p>
+   </div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin-top:20px;"><svg width="540" height="180" viewBox="0 0 540 180">
+  <rect x="50" y="50" width="100" height="80" fill="#fff3e8" rx="5" stroke="#e85d1a" stroke-width="2"/>
+  <rect x="390" y="50" width="100" height="80" fill="#fff3e8" rx="5" stroke="#e85d1a" stroke-width="2"/>
+  <text x="75" y="90" font-family="Arial" font-size="18" fill="#2b1a0e">Marchés Financiers</text>
+  <text x="415" y="90" font-family="Arial" font-size="18" fill="#2b1a0e">Géopolitique</text>
+  <line x1="150" y1="100" x2="240" y2="100" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="240,90 250,100 240,110" fill="#f9a06b"/>
+  <text x="195" y="120" font-family="Arial" font-size="14" fill="#7a5c45">Influence grandissante</text>
+  <text x="195" y="140" font-family="Arial" font-size="14" fill="#c94e0e">Ex : tensions internationales</text>
+</svg></div>
+      
+
+      <div class="divider"></div>
+
+      <!-- IA -->
+      
+
+      <!-- RAPPEL DE COURS -->
+      <div class="rappel-section">
+        <div class="section-label">Rappel de cours</div>
+        <h2>Les notions clés de ce numéro</h2>
+        <div class="section-content">
+      <p>Le chapitre en cours sur les méthodes de valorisation nous amène à considérer différentes approches pour évaluer la valeur d'une entreprise. La méthode de valorisation par comparaison avec des entreprises similaires (<em>comparables</em>) est une des méthodes les plus utilisées. Cependant, comme le montre l'exemple d'Anthropic, il est crucial de prendre en compte les facteurs spécifiques à chaque entreprise et à son environnement.</p>
+      <div class='term'>
+         <div class='term-name'>Valorisation par Comparaison</div>
+         Méthode de valorisation qui consiste à comparer la valeur d'une entreprise à celle d'entreprises similaires (<em>comparables</em>) pour estimer sa valeur.
+      </div>
+      <p>La progression de cette méthode implique de passer d'une analyse simple basée sur des multiples (comme le P/E) à une analyse plus complexe qui prend en compte les spécificités de chaque entreprise, y compris les facteurs de risque liés à la géopolitique et aux réglementations.</p>
+      <p>Demain, nous aborderons la méthode de valorisation par les flux de trésorerie actualisés (DFC), qui constitue une autre approche importante pour évaluer la valeur d'une entreprise.</p>
+   </div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin: 0 -48px; padding: 24px 48px; background:#fff3e8; border-top:1px solid #fde0c5; border-bottom:1px solid #fde0c5;">
+        <svg width="540" height="200" viewBox="0 0 540 200">
+  <rect x="50" y="50" width="100" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <rect x="250" y="50" width="100" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <rect x="450" y="50" width="100" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <text x="75" y="120" font-family="Arial" font-size="18" fill="#2b1a0e">Entreprise</text>
+  <text x="275" y="120" font-family="Arial" font-size="18" fill="#2b1a0e">Comparaibles</text>
+  <text x="475" y="120" font-family="Arial" font-size="18" fill="#2b1a0e">Valeur</text>
+  <line x1="150" y1="100" x2="250" y2="100" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="250,100 260,90 240,100" fill="#f9a06b"/>
+  <line x1="350" y1="100" x2="450" y2="100" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="450,100 460,90 440,100" fill="#f9a06b"/>
+  <text x="200" y="80" font-family="Arial" font-size="14" fill="#7a5c45">Méthode de valorisation</text>
+  <text x="400" y="80" font-family="Arial" font-size="14" fill="#7a5c45">par comparaison</text>
+</svg>
+      </div>
+      
+
+      <!-- QUESTION D'ENTRETIEN -->
+      <div class="interview-section">
+        <div class="section-label">🎯 Question d'entretien de la semaine</div>
+        <div class="interview-question">"Comment les facteurs géopolitiques peuvent-ils impacter la valorisation d'une entreprise technologique comme Anthropic?"</div>
+        <div class="interview-answer">
+          
+      <p>Les facteurs géopolitiques peuvent impacter la valorisation d'une entreprise technologique de plusieurs manières :
+         <ol>
+            <li>En influençant la demande pour ses produits ou services : Les décisions politiques et les tensions entre pays peuvent affecter la demande et donc les revenus de l'entreprise.</li>
+            <li>En affectant l'accès aux marchés et la concurrence : Les barrières commerciales et les restrictions d'accès à certains marchés peuvent limiter la capacité de l'entreprise à croître.</li>
+            <li>En modifiant le risque lié aux réglementations : Les changements dans les réglementations, notamment en ce qui concerne l'utilisation de certaines technologies, peuvent créer des risques ou des opportunités pour l'entreprise.</li>
+         </ol>
+      </p>
+   
+        </div>
+      </div>
+
+      <!-- OUTILS D'APPRENTISSAGE -->
+      <div class="tools-section">
+        <a class="tool-card" href="https://abarisan.github.io/newsletter-mna/quiz/quiz_2026-07-03.html" target="_blank">
+          <span class="icon">❓</span>
+          <span class="tool-title">Quiz ce numéro</span>
+          <span class="tool-desc">4 questions pour vérifier que tu as compris</span>
+        </a>
+        <a class="tool-card" href="https://claude.ai/new" target="_blank">
+          <span class="icon">🤖</span>
+          <span class="tool-title">Poser une question</span>
+          <span class="tool-desc">Ouvre ton Claude Project M&A pour aller plus loin</span>
+        </a>
+      </div>
+
+      <!-- SOURCES PAR NIVEAU -->
+      <div class="sources-section">
+        <div class="section-label">Sources</div>
+        <ul>
+          <li>[N1] Financial Times - Anthropic moves to close loopholes that allow Chinese access to Claude</li>
+<li>[N2] Mergermarket - Egg Producers to Pay $3.3 Million to Settle Federal Price-Fixing Lawsuit</li>
+<li>[N3] The Wall Street Journal - Elon Musk in a post on X says some of his Trump posts ‘went too far’ and that he regrets them</li>
+<li>[N4] Dealogic - Données sur les transactions et les valorisations dans le secteur technologique</li>
+        </ul>
+        <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:6px; font-family:'Helvetica Neue',Arial,sans-serif; font-size:10px;">
+          <span style="background:#fff3e8;border:1px solid #e85d1a;color:#c94e0e;padding:3px 8px;border-radius:20px;font-weight:700;">N1 · Bloomberg · FT · Capital Finance · CFNEWS · S&P</span>
+          <span style="background:#fff8f2;border:1px solid #f9a06b;color:#7a5c45;padding:3px 8px;border-radius:20px;">N2 · Mergermarket · Reuters · PitchBook</span>
+          <span style="background:#fdf6ee;border:1px solid #fde0c5;color:#9a7060;padding:3px 8px;border-radius:20px;">N3 · WSJ · The Economist</span>
+          <span style="background:#f9f9f9;border:1px solid #e0e0e0;color:#888;padding:3px 8px;border-radius:20px;">N4 · Dealogic · Preqin</span>
+        </div>
+      </div>
+
+    </div><!-- /body -->
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <p>
+        <span class="next">Deck Anki mis à jour en pièce jointe</span><br>
+        The Deal Brief · 5× par semaine · <a href="https://github.com/abarisan/newsletter-mna" style="color:#e85d1a;text-decoration:none;">Code source</a>
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>

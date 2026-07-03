@@ -754,5 +754,41 @@
     "verso": "La dette mezzanine est utilisée dans un LBO pour financer une partie de l'acquisition lorsqu'il n'est pas possible d'emprunter suffisamment d'argent via la dette senior ou lorsqu'il n'est pas souhaitable d'émettre plus d'équity. La dette mezzanine se situe entre la dette senior et l'équity en termes de priorité de remboursement et offre une solution de financement plus souple que la dette senior, mais avec des taux d'intérêt plus élevés.",
     "numero": "16",
     "id": 1474057353
+  },
+  {
+    "recto": "Qu'est-ce que la valorisation par comparaison ?",
+    "verso": "La valorisation par comparaison est une méthode de valorisation qui consiste à comparer la valeur d'une entreprise à celle d'entreprises similaires pour estimer sa valeur. Cette méthode repose sur l'idée que des entreprises similaires ont des caractéristiques et des performances similaires. Par exemple, on peut comparer la valeur d'une entreprise de technologie à celle d'autres entreprises du même secteur.",
+    "numero": "17",
+    "id": 1768638990
+  },
+  {
+    "recto": "Comment la geopolitique influence-t-elle le marché financier ?",
+    "verso": "La geopolitique peut influencer le marché financier de manière significative. Les tensions entre les pays, les changements de politique étrangère et les événements géopolitiques peuvent avoir des implications importantes pour les investisseurs et les entreprises. Par exemple, les tensions commerciales entre les pays peuvent affecter les exportations et les importations, ce qui peut avoir un impact sur la valeur des entreprises.",
+    "numero": "17",
+    "id": 1679027132
+  },
+  {
+    "recto": "Pourquoi est-il important de prendre en compte les facteurs spécifiques à chaque entreprise ?",
+    "verso": "Il est important de prendre en compte les facteurs spécifiques à chaque entreprise lors de la valorisation car chaque entreprise a ses propres caractéristiques et ses propres défis. Les facteurs tels que la réglementation, la concurrence, les tendances du marché et les ressources humaines peuvent tous avoir un impact sur la valeur de l'entreprise. Par exemple, une entreprise qui opère dans un secteur très réglementé peut avoir des coûts et des risques différents de ceux d'une entreprise qui opère dans un secteur moins réglementé.",
+    "numero": "17",
+    "id": 1795979969
+  },
+  {
+    "recto": "Qu'est-ce que le goodwill ?",
+    "verso": "Le goodwill est la différence entre la valeur de marché d'une entreprise et la valeur de ses actifs nets. Il représente la valeur des actifs non physiques tels que la réputation, les marques, les brevets et les relations avec les clients. Le goodwill est souvent pris en compte lors de la valorisation d'une entreprise, car il peut avoir un impact significatif sur la valeur de l'entreprise.",
+    "numero": "17",
+    "id": 1620687415
+  },
+  {
+    "recto": "Comment fonctionne la méthode de valorisation par comparaison ?",
+    "verso": "La méthode de valorisation par comparaison consiste à identifier des entreprises similaires à celle que l'on souhaite valoriser, puis à comparer leurs ratios financiers tels que le prix/chantier, le prix/bénéfice, etc. On peut ensuite utiliser ces ratios pour estimer la valeur de l'entreprise que l'on souhaite valoriser. Par exemple, si l'on veut valoriser une entreprise de technologie, on peut comparer ses ratios financiers à ceux d'autres entreprises de technologie similaires.",
+    "numero": "17",
+    "id": 1512161960
+  },
+  {
+    "recto": "Dans quel cas utiliser la valorisation par comparaison ?",
+    "verso": "La valorisation par comparaison est particulièrement utile lorsqu'il est difficile de déterminer la valeur d'une entreprise en utilisant d'autres méthodes de valorisation. Par exemple, lorsqu'une entreprise est jeune ou qu'elle opère dans un secteur en évolution rapide, il peut être difficile de déterminer sa valeur en utilisant la méthode de valorisation par flux de trésorerie disponible. Dans ces cas, la valorisation par comparaison peut fournir une estimation plus précise de la valeur de l'entreprise.",
+    "numero": "17",
+    "id": 1225316887
   }
 ]
