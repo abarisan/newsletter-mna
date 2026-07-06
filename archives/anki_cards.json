@@ -790,5 +790,41 @@
     "verso": "La valorisation par comparaison est particulièrement utile lorsqu'il est difficile de déterminer la valeur d'une entreprise en utilisant d'autres méthodes de valorisation. Par exemple, lorsqu'une entreprise est jeune ou qu'elle opère dans un secteur en évolution rapide, il peut être difficile de déterminer sa valeur en utilisant la méthode de valorisation par flux de trésorerie disponible. Dans ces cas, la valorisation par comparaison peut fournir une estimation plus précise de la valeur de l'entreprise.",
     "numero": "17",
     "id": 1225316887
+  },
+  {
+    "recto": "Qu'est-ce que le crédit privé ?",
+    "verso": "Le crédit privé se réfère à des investissements dans des dettes non cotées, généralement émises par des entreprises privées ou des sociétés non cotées. Ces investissements offrent souvent des rendements plus élevés que les obligations traditionnelles en raison du risque accru. Les investisseurs institutionnels, tels que les fonds de pension et les sociétés de gestion d'actifs, sont attirés par ces investissements en raison de leurs rendements potentiels supérieurs.",
+    "numero": "18",
+    "id": 1885184561
+  },
+  {
+    "recto": "Comment fonctionne la méthode des Trading Comparables ?",
+    "verso": "La méthode des Trading Comparables consiste à évaluer une entreprise en comparant ses multiples (tels que le prix/ventes, le prix/bénéfice, etc.) à ceux de ses pairs. La sélection des pairs est cruciale, car elle doit refléter les caractéristiques de l'entreprise évaluée. Par exemple, si l'entreprise X a un chiffre d'affaires de 100 millions de dollars et un multiple de prix/ventes de 2, alors sa valeur peut être estimée à 200 millions de dollars.",
+    "numero": "18",
+    "id": 1875904640
+  },
+  {
+    "recto": "Qu'est-ce que le goodwill ?",
+    "verso": "Le goodwill se réfère à la différence entre le prix d'acquisition d'une entreprise et la valeur de ses actifs nets. Il représente la valeur des éléments non physiques tels que la réputation, les marques, les brevets et les compétences de l'équipe de gestion. Le goodwill est souvent considéré comme un actif immatériel important dans l'évaluation d'une entreprise.",
+    "numero": "18",
+    "id": 1560984347
+  },
+  {
+    "recto": "Pourquoi les investisseurs utilisent-ils la méthode des Trading Comparables ?",
+    "verso": "Les investisseurs utilisent la méthode des Trading Comparables pour évaluer les entreprises car elle leur permet de comparer les multiples d'une entreprise à ceux de ses pairs. Cette approche aide les investisseurs à identifier les opportunités d'investissement et à évaluer les risques potentiels. Par exemple, si un multiple de prix/ventes est plus élevé que la moyenne de l'industrie, cela pourrait indiquer que l'entreprise est surévaluée.",
+    "numero": "18",
+    "id": 1842381949
+  },
+  {
+    "recto": "Comment les facteurs macroéconomiques affectent-ils les marchés financiers ?",
+    "verso": "Les facteurs macroéconomiques tels que l'inflation, les taux d'intérêt et les incertitudes géopolitiques peuvent avoir un impact significatif sur les marchés financiers. L'inflation peut entraîner une augmentation des taux d'intérêt, ce qui peut à son tour affecter les rendements des investissements. Les incertitudes géopolitiques peuvent également entraîner une volatilité accrue des marchés financiers.",
+    "numero": "18",
+    "id": 1635301383
+  },
+  {
+    "recto": "Quand utiliser la dette mezzanine ?",
+    "verso": "La dette mezzanine est souvent utilisée dans les situations où les banques traditionnelles ne sont pas disposées à prêter de l'argent. Elle peut être utilisée pour financer des projets à haut risque ou pour fournir des fonds de roulement à des entreprises en difficulté. La dette mezzanine offre souvent un rendement plus élevé que les prêts traditionnels, mais elle comporte également des risques plus élevés pour les investisseurs.",
+    "numero": "18",
+    "id": 2010078432
   }
 ]

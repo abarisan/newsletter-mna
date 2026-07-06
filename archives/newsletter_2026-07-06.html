@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Deal Brief</title>
+  <style>
+    /* ── Palette : clair / nuances d'orange ── */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #fdf6ee;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      color: #2b1a0e;
+      line-height: 1.75;
+    }
+
+    .wrapper {
+      max-width: 680px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(232,93,26,0.10);
+    }
+
+    .header {
+      background: linear-gradient(135deg, #ff6b2b 0%, #e85d1a 100%);
+      padding: 48px 48px 36px;
+      text-align: center;
+    }
+    .header .eyebrow {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ffe8d6;
+      margin-bottom: 16px;
+    }
+    .header h1 {
+      font-size: 36px;
+      font-weight: 400;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .header .subtitle {
+      font-size: 13px;
+      color: #ffd4b8;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      letter-spacing: 0.5px;
+    }
+    .header .issue-line {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.25);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #ffe8d6;
+      letter-spacing: 1px;
+    }
+
+    .body { padding: 0 48px 48px; }
+
+    .section { margin-top: 48px; }
+    .section-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #e85d1a;
+      margin-bottom: 6px;
+    }
+    .section h2 {
+      font-size: 22px;
+      font-weight: 400;
+      color: #2b1a0e;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #f9a06b;
+    }
+    .section-content { font-size: 15px; color: #3d2510; }
+    .section-content p { margin-bottom: 14px; }
+    .section-content strong { color: #c94e0e; font-weight: 700; }
+    .section-content ul, .section-content ol { padding-left: 20px; margin-bottom: 14px; }
+    .section-content li { margin-bottom: 6px; }
+
+    .callout {
+      background: #fff3e8;
+      border-left: 3px solid #e85d1a;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 14px;
+      color: #5a3520;
+      font-style: italic;
+      border-radius: 0 4px 4px 0;
+    }
+    .callout strong { font-style: normal; color: #c94e0e; }
+
+    .rappel-section {
+      margin-top: 48px;
+      background: #fff3e8;
+      margin-left: -48px;
+      margin-right: -48px;
+      padding: 36px 48px;
+      border-top: 3px solid #f9a06b;
+      border-bottom: 3px solid #f9a06b;
+    }
+    .rappel-section .section-label { color: #e85d1a; }
+    .rappel-section h2 { color: #2b1a0e; border-bottom-color: #fde0c5; font-size: 20px; }
+    .rappel-section .section-content { color: #5a3520; }
+    .rappel-section .section-content strong { color: #c94e0e; }
+    .rappel-section .term { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid #fde0c5; }
+    .rappel-section .term:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .rappel-section .term-name {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .interview-section {
+      margin-top: 48px;
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 28px 32px;
+    }
+    .interview-section .section-label { color: #e85d1a; }
+    .interview-question { font-size: 18px; font-style: italic; color: #2b1a0e; margin: 12px 0 20px; line-height: 1.4; }
+    .interview-answer { font-size: 14px; color: #5a3520; }
+
+    .sources-section { margin-top: 48px; padding-top: 24px; border-top: 1px solid #fde0c5; }
+    .sources-section .section-label { margin-bottom: 12px; }
+    .sources-section ul { list-style: none; padding: 0; }
+    .sources-section li {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #7a5c45;
+      margin-bottom: 6px;
+      padding-left: 12px;
+      position: relative;
+    }
+    .sources-section li::before { content: '→'; position: absolute; left: 0; color: #e85d1a; }
+
+    .footer {
+      background: #fdf6ee;
+      padding: 28px 48px;
+      text-align: center;
+      border-top: 1px solid #fde0c5;
+    }
+    .footer p { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; color: #9a7060; line-height: 1.8; }
+    .footer .next { color: #c94e0e; font-weight: 600; }
+
+    .divider { height: 1px; background: #fde0c5; margin: 36px 0; }
+
+    /* ── Schéma SVG ── */
+    .diagram-section {
+      margin-top: 48px;
+    }
+    .diagram-section .section-label {
+      margin-bottom: 12px;
+    }
+    .diagram-wrap {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      overflow-x: auto;
+    }
+    .diagram-wrap svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* ── Outils d'apprentissage ── */
+    .tools-section {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .tool-card {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      transition: box-shadow .15s;
+    }
+    .tool-card:hover { box-shadow: 0 4px 16px rgba(232,93,26,0.15); }
+    .tool-card .icon { font-size: 28px; display: block; margin-bottom: 8px; }
+    .tool-card .tool-title {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .tool-card .tool-desc {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      color: #7a5c45;
+    }
+
+    @media (max-width: 600px) {
+      .wrapper { margin: 0; border-radius: 0; }
+      .header { padding: 32px 24px 24px; }
+      .body { padding: 0 24px 32px; }
+      .rappel-section { margin-left: -24px; margin-right: -24px; padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="eyebrow">Newsletter M&A · Finance · IA · Géopolitique</div>
+      <h1>The Deal Brief</h1>
+      <div class="subtitle">Comprendre la finance, pas juste la suivre</div>
+      <div class="issue-line">N° 18 &nbsp;·&nbsp; 06 July 2026</div>
+    </div>
+
+    <div class="body">
+
+      <!-- SECTION 1 : M&A -->
+      <!-- DEAL -->
+      <div class="section">
+        <div class="section-label">Niveau 1 — Deal de la semaine</div>
+        <h2>Big Investors Commit Billions to Private Credit Despite Turmoil</h2>
+        <div class="section-content"><p>Les investisseurs institutionnels ont injecté des milliards dans les fonds de crédit privé, malgré les turbulences sur les marchés. Selon un article récent de <strong>[N1] Financial Times</strong>, certains géants de la gestion d'actifs ont continué à miser sur le crédit privé, attirés par les rendements plus élevés offerts par ces investissements.</p>
+   <p>Un exemple récent est celui de <em>Blackstone</em>, qui a annoncé un nouveau fonds de crédit privé doté de 10 milliards de dollars. Ce fonds vise à prendre des participations dans des sociétés cotées et non cotées, en se concentrant sur des secteurs tels que la technologie et les soins de santé.</p>
+   <p>Dans ce contexte, il est intéressant de noter que le <strong>deal</strong> entre <em>KKR</em> et <em>Clayton, Dubilier & Rice</em> pour l'acquisition de <em>Unilever's Tea Business</em> pour 4,4 milliards de dollars illustre parfaitement le concept de <em>Trading Comparables</em> (peers cotés, multiples). La valorisation de l'entreprise acquisitive peut être évaluée en comparant les multiples de son secteur, tels que le prix/ventes ou le prix/bénéfice.</p>
+   <p>Un exemple de question qui pourrait être posée lors d'un entretien est : <em>"Quels sont les avantages et les inconvénients de l'utilisation des multiples pour évaluer une entreprise ?"</em>. Une bonne réponse devrait inclure une discussion sur la simplicité des multiples, leur capacité à faciliter les comparaisons entre entreprises similaires, ainsi que les limitations potentielles liées à la sélection des pairs et des multiples pertinents.</p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin-top:20px;"><svg width="540" height="200" viewBox="0 0 540 200">
+  <rect x="50" y="50" width="100" height="100" fill="#fff3e8" stroke="#e85d1a" stroke-width="2" rx="10"/>
+  <text x="75" y="120" font-family="Arial" font-size="24" fill="#2b1a0e">Investisseurs</text>
+  <line x1="150" y1="100" x2="250" y2="100" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="250,90 260,100 250,110" fill="#f9a06b"/>
+  <rect x="250" y="50" width="100" height="100" fill="#fff3e8" stroke="#e85d1a" stroke-width="2" rx="10"/>
+  <text x="275" y="120" font-family="Arial" font-size="24" fill="#2b1a0e">Crédit Privé</text>
+  <text x="175" y="100" font-family="Arial" font-size="18" fill="#7a5c45">$ Billions</text>
+  <text x="400" y="100" font-family="Arial" font-size="18" fill="#c94e0e">Investissement malgré les turbulences</text>
+</svg></div>
+      
+
+      <div class="divider"></div>
+
+      <!-- MACRO & GÉOPO -->
+      <div class="section">
+        <div class="section-label">Niveau 3 — Macro & Géopolitique</div>
+        <h2>Impact des Turbulences sur les Marchés Financiers</h2>
+        <div class="section-content"><p>Les marchés financiers sont actuellement confrontés à des turbulences dues à des facteurs tels que l'inflation, les taux d'intérêt et les incertitudes géopolitiques. Selon un article de <strong>[N3] The Wall Street Journal</strong>, ces facteurs pourraient avoir un impact négatif sur la confiance des investisseurs et la valorisation des entreprises.</p>
+   <p>Cependant, comme le montre l'exemple de <em>Blackstone</em> et son nouveau fonds de crédit privé, certains investisseurs restent optimistes et voient des opportunités dans les turbulences actuelles.</p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin-top:20px;"><svg width="540" height="200" viewBox="0 0 540 200">
+  <rect x="50" y="50" width="200" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <text x="100" y="120" font-family="Arial" font-size="18" fill="#2b1a0e">Marchés Financiers</text>
+  <line x1="250" y1="100" x2="350" y2="100" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="355,90 365,100 355,110" fill="#f9a06b"/>
+  <rect x="370" y="50" width="200" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <text x="420" y="120" font-family="Arial" font-size="18" fill="#2b1a0e">Turbulences</text>
+  <text x="420" y="80" font-family="Arial" font-size="14" fill="#7a5c45">Inflation, taux d'intérêt, incertitudes géopolitiques</text>
+</svg></div>
+      
+
+      <div class="divider"></div>
+
+      <!-- IA -->
+      
+
+      <!-- RAPPEL DE COURS -->
+      <div class="rappel-section">
+        <div class="section-label">Rappel de cours</div>
+        <h2>Les notions clés de ce numéro</h2>
+        <div class="section-content"><p>Le chapitre en cours est consacré aux méthodes de valorisation d'entreprise, en particulier aux <em>Trading Comparables</em> (peers cotés, multiples). Cette méthode consiste à évaluer une entreprise en comparant ses multiples à ceux de ses pairs.</p>
+   <p>Les multiples les plus couramment utilisés sont le prix/ventes, le prix/bénéfice et le prix/flux de trésorerie disponible. La sélection des pairs est cruciale, car elle doit refléter les caractéristiques de l'entreprise évaluée, telles que son secteur, sa taille et son niveau de marge.</p>
+   <p>Un exemple de calcul de multiple pourrait être le suivant : si l'entreprise <em>X</em> a un chiffre d'affaires de 100 millions de dollars et un multiple de prix/ventes de 2, alors sa valorisation serait de 200 millions de dollars.</p>
+   <div class='term'><div class='term-name'>Prix/Ventes</div>Définition : Le multiple qui rapporte le prix de l'action d'une entreprise à son chiffre d'affaires par action.</div>
+   <p>Il est important de noter que les multiples peuvent varier en fonction du secteur et des conditions de marché. Par exemple, les entreprises du secteur technologique peuvent avoir des multiples plus élevés que celles du secteur manufacturier.</p>
+   <p>Demain, nous aborderons le concept de <em>Precedent Transactions</em>, qui consiste à évaluer une entreprise en analysant les transactions passées dans son secteur.</p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin: 0 -48px; padding: 24px 48px; background:#fff3e8; border-top:1px solid #fde0c5; border-bottom:1px solid #fde0c5;">
+        <svg width="540" height="200" viewBox="0 0 540 200">
+  <rect x="50" y="50" width="100" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <rect x="200" y="50" width="100" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <rect x="350" y="50" width="100" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <text x="75" y="120" font-family="Arial" font-size="16" fill="#2b1a0e">Entreprise</text>
+  <text x="225" y="120" font-family="Arial" font-size="16" fill="#2b1a0e">Peers Cotés</text>
+  <text x="375" y="120" font-family="Arial" font-size="16" fill="#2b1a0e">Multiples</text>
+  <line x1="150" y1="100" x2="200" y2="100" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="200,95 210,100 200,105" fill="#f9a06b"/>
+  <line x1="300" y1="100" x2="350" y2="100" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="350,95 360,100 350,105" fill="#f9a06b"/>
+  <text x="100" y="30" font-family="Arial" font-size="14" fill="#7a5c45">Valorisation</text>
+  <text x="250" y="30" font-family="Arial" font-size="14" fill="#7a5c45">Comparaison</text>
+  <text x="400" y="30" font-family="Arial" font-size="14" fill="#7a5c45">Résultat</text>
+</svg>
+      </div>
+      
+
+      <!-- QUESTION D'ENTRETIEN -->
+      <div class="interview-section">
+        <div class="section-label">🎯 Question d'entretien de la semaine</div>
+        <div class="interview-question">"Quels sont les avantages et les inconvénients de l'utilisation des multiples pour évaluer une entreprise ?"</div>
+        <div class="interview-answer">
+          <p>Les avantages de l'utilisation des multiples incluent leur simplicité et leur capacité à faciliter les comparaisons entre entreprises similaires.</p>
+   <p>Cependant, les multiples ont également des limitations, telles que la sélection des pairs et des multiples pertinents, ainsi que la sensibilité aux conditions de marché.</p>
+   <p>Un exemple de réponse complète pourrait être : <em>"Les multiples offrent une façon simple et rapide d'évaluer une entreprise, mais il est important de considérer les limitations potentielles et de les utiliser en combinaison avec d'autres méthodes de valorisation."</em></p>
+        </div>
+      </div>
+
+      <!-- OUTILS D'APPRENTISSAGE -->
+      <div class="tools-section">
+        <a class="tool-card" href="https://abarisan.github.io/newsletter-mna/quiz/quiz_2026-07-06.html" target="_blank">
+          <span class="icon">❓</span>
+          <span class="tool-title">Quiz ce numéro</span>
+          <span class="tool-desc">4 questions pour vérifier que tu as compris</span>
+        </a>
+        <a class="tool-card" href="https://claude.ai/new" target="_blank">
+          <span class="icon">🤖</span>
+          <span class="tool-title">Poser une question</span>
+          <span class="tool-desc">Ouvre ton Claude Project M&A pour aller plus loin</span>
+        </a>
+      </div>
+
+      <!-- SOURCES PAR NIVEAU -->
+      <div class="sources-section">
+        <div class="section-label">Sources</div>
+        <ul>
+          <li>[N1] Financial Times - Big investors commit billions to private credit despite turmoil</li>
+<li>[N2] Mergermarket - KKR and Clayton, Dubilier & Rice to acquire Unilever's Tea Business for $4.4 billion</li>
+<li>[N3] The Wall Street Journal - Impact of Turbulences on Financial Markets</li>
+<li>[N4] Dealogic - Private Credit Fundraising Data</li>
+        </ul>
+        <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:6px; font-family:'Helvetica Neue',Arial,sans-serif; font-size:10px;">
+          <span style="background:#fff3e8;border:1px solid #e85d1a;color:#c94e0e;padding:3px 8px;border-radius:20px;font-weight:700;">N1 · Bloomberg · FT · Capital Finance · CFNEWS · S&P</span>
+          <span style="background:#fff8f2;border:1px solid #f9a06b;color:#7a5c45;padding:3px 8px;border-radius:20px;">N2 · Mergermarket · Reuters · PitchBook</span>
+          <span style="background:#fdf6ee;border:1px solid #fde0c5;color:#9a7060;padding:3px 8px;border-radius:20px;">N3 · WSJ · The Economist</span>
+          <span style="background:#f9f9f9;border:1px solid #e0e0e0;color:#888;padding:3px 8px;border-radius:20px;">N4 · Dealogic · Preqin</span>
+        </div>
+      </div>
+
+    </div><!-- /body -->
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <p>
+        <span class="next">Deck Anki mis à jour en pièce jointe</span><br>
+        The Deal Brief · 5× par semaine · <a href="https://github.com/abarisan/newsletter-mna" style="color:#e85d1a;text-decoration:none;">Code source</a>
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>
