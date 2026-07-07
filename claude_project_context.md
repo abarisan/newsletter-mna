@@ -1,4 +1,4 @@
-# Contexte The Deal Brief — Mise à jour N°18 (06 July 2026)
+# Contexte The Deal Brief — Mise à jour N°19 (07 July 2026)
 
 ## Mon profil
 Étudiant préparant des entretiens en banque d'affaires M&A.
@@ -11,25 +11,24 @@ Financial Projections, Comptabilisation des inventaires, Mécanique de l'EV/Equi
 ## Deals suivis en ce moment
 Volkswagen's Restructuring Plans and Inventory Management, SpaceX : IPO de 75 Md$, la plus grosse de l'histoire, cas d'école de cash flow, Apple : achat de puces mémoire à une entreprise chinoise sous embargo, L'acquisition d'Air Con par un fonds d'investissement, Uniqlo s'apprête à dominer le marché de la mode mondiale, La Dette vs Equity dans le LBO d'EA : Un Exemple Concret, Anthropic et la fermeture des failles pour limiter l'accès chinois à Claude
 
-## Contenu du dernier numéro (06 July 2026)
+## Contenu du dernier numéro (07 July 2026)
 
 ### Deal de la semaine
-Big Investors Commit Billions to Private Credit Despite Turmoil
-<p>Les investisseurs institutionnels ont injecté des milliards dans les fonds de crédit privé, malgré les turbulences sur les marchés. Selon un article récent de <strong>[N1] Financial Times</strong>, certains géants de la gestion d'actifs ont continué à miser sur le crédit privé, attirés par les rendements plus élevés offerts par ces investissements.</p>
-   <p>Un exemple récent est celui de <em>Blackstone</em>, qui a annoncé un nouveau fonds de crédit privé doté de 10 milliards de dollars. Ce fonds vise à prendre des participations dans des sociétés cotées et non cotées, en se concentrant sur des secteurs tels que la technologie et les soins de santé.</p>
-   <p>Dans ce contexte, il est intéressant de noter que le <strong>deal</strong> entre <em>KKR</em> et <em>Clayton, Dubilier & Rice</em> pour l'acquisition de <em>Unilever's Tea Business</em> pour 4,4 milliards de dollars illustre parfaitement le concept de <em>Trading Comparables</em> (peers cotés, multiples). La valorisation de l'e
+La mécanique des Precedent Transactions dans le deal de Dynacom Tankers
+<p>Le deal récent de Dynacom Tankers, rapporté par <strong>[N1 · FT] Greek shipping companies made almost $4bn carrying Russian oil in past three years</strong>, illustre parfaitement le concept de Precedent Transactions. Dynacom Tankers, Stealth Maritime et Onassis Group ont augmenté leurs revenus en transportant du pétrole russe sous le régime de plafonnement des prix de la G7.</p>
+    <p>Les chiffres précis sont éloquents : près de 4 milliards de dollars générés en trois ans. Ce deal nous permet de voir comment la mécanique des Precedent Transactions s’applique dans un contexte de marché spécifique, où les valorisations sont influencées par des facteurs macro-économiques et géopolitiques.</p>
+    <p>Dans ce contexte, l’analyse des Precedent Transactions peut aider les investisseurs et les banques d’affaires à évaluer la raisonnablement de la valorisation proposée pour un deal. Par exemple, en considérant les multiples de valorisation appliqués dans des deals similaires récents, on p
 
 ### Cours
-<p>Le chapitre en cours est consacré aux méthodes de valorisation d'entreprise, en particulier aux <em>Trading Comparables</em> (peers cotés, multiples). Cette méthode consiste à évaluer une entreprise en comparant ses multiples à ceux de ses pairs.</p>
-   <p>Les multiples les plus couramment utilisés sont le prix/ventes, le prix/bénéfice et le prix/flux de trésorerie disponible. La sélection des pairs est cruciale, car elle doit refléter les caractéristiques de l'entreprise évaluée, telles que son secteur, sa taille et son niveau de marge.</p>
-   <p>Un exemple de calcul de multiple pourrait être le suivant : si l'entreprise <em>X</em> a un chiffre d'affaires de 100 millions de dollars et un multiple de prix/ventes de 2, alors sa valorisation serait de 200 millions de dollars.</p>
-   <div class='term'><div class='term-name'>Prix/Ventes</div>Définition : Le multiple qui rapporte le prix de l'action d'une entreprise à son chiffre d'affaires par action.</div>
-   <p>Il est important de noter que les multiples peuvent varier en fonction du secteur et des conditions de marché. Par exemple, les entreprises du secteur technologique peuvent avoir des multiples plus élevés que celles du sect
+<p>Le chapitre TRAINY du jour porte sur les Precedent Transactions, qui sont des transactions précédentes similaires utilisées comme référence pour évaluer la valorisation d’un deal. Cette approche permet de prendre en compte les tendances du marché et les facteurs macro-économiques qui influencent les valorisations.</p>
+    <div class='term'><div class='term-name'>Precedent Transactions</div>Les transactions précédentes similaires utilisées comme référence pour évaluer la valorisation d’un deal.</div>
+    <p>La mécanique des Precedent Transactions implique l’analyse de la valorisation des sociétés ciblées dans les deals précédents, en considérant les multiples de valorisation tels que l’EBITDA, les flux de trésorerie disponibles (Free Cash Flow) et d’autres indicateurs financiers pertinents.</p>
+    <p>Les avantages de cette approche incluent la capacité à établir une fourchette de valorisationacceptable pour le deal en question, en fonction des tendances du marché et des facteurs macro-économiques. Cependant, il est important de prendre en compte les limites potentielles, telles que la disponibilité et la qualité des données sur les transactions précédentes.</p>
+    <p>Dans le pr
 
 ### Macro
-Impact des Turbulences sur les Marchés Financiers
-<p>Les marchés financiers sont actuellement confrontés à des turbulences dues à des facteurs tels que l'inflation, les taux d'intérêt et les incertitudes géopolitiques. Selon un article de <strong>[N3] The Wall Street Journal</strong>, ces facteurs pourraient avoir un impact négatif sur la confiance des investisseurs et la valorisation des entreprises.</p>
-   <p>Cependant, comme le montre l'exemple de <em>Blackstone</em> et son nouveau fonds de crédit privé, certains investisseurs restent optimi
+L'impact de la géopolitique sur les marchés financiers
+<p>La situation géopolitique actuelle, avec des tensions entre l’Ukraine et la Russie, influencera probablement les marchés financiers et les décisions d’investissement. Selon <strong>[N3 · WSJ Markets] How Europe would fight without America</strong>, l’Europe commence à réfléchir à la manière de se défendre sans le soutien des États-Unis.</p>
 
 ---
 Tu es mon tuteur M&A. Quand je te pose une question :
