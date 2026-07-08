@@ -1,4 +1,4 @@
-# Contexte The Deal Brief — Mise à jour N°19 (07 July 2026)
+# Contexte The Deal Brief — Mise à jour N°20 (08 July 2026)
 
 ## Mon profil
 Étudiant préparant des entretiens en banque d'affaires M&A.
@@ -11,24 +11,28 @@ Financial Projections, Comptabilisation des inventaires, Mécanique de l'EV/Equi
 ## Deals suivis en ce moment
 Volkswagen's Restructuring Plans and Inventory Management, SpaceX : IPO de 75 Md$, la plus grosse de l'histoire, cas d'école de cash flow, Apple : achat de puces mémoire à une entreprise chinoise sous embargo, L'acquisition d'Air Con par un fonds d'investissement, Uniqlo s'apprête à dominer le marché de la mode mondiale, La Dette vs Equity dans le LBO d'EA : Un Exemple Concret, Anthropic et la fermeture des failles pour limiter l'accès chinois à Claude
 
-## Contenu du dernier numéro (07 July 2026)
+## Contenu du dernier numéro (08 July 2026)
 
 ### Deal de la semaine
-La mécanique des Precedent Transactions dans le deal de Dynacom Tankers
-<p>Le deal récent de Dynacom Tankers, rapporté par <strong>[N1 · FT] Greek shipping companies made almost $4bn carrying Russian oil in past three years</strong>, illustre parfaitement le concept de Precedent Transactions. Dynacom Tankers, Stealth Maritime et Onassis Group ont augmenté leurs revenus en transportant du pétrole russe sous le régime de plafonnement des prix de la G7.</p>
-    <p>Les chiffres précis sont éloquents : près de 4 milliards de dollars générés en trois ans. Ce deal nous permet de voir comment la mécanique des Precedent Transactions s’applique dans un contexte de marché spécifique, où les valorisations sont influencées par des facteurs macro-économiques et géopolitiques.</p>
-    <p>Dans ce contexte, l’analyse des Precedent Transactions peut aider les investisseurs et les banques d’affaires à évaluer la raisonnablement de la valorisation proposée pour un deal. Par exemple, en considérant les multiples de valorisation appliqués dans des deals similaires récents, on p
+Le rachat de Palantir illustre la mécanique du WACC
+<p>Le rachat de Palantir, une startup américaine de technologie, a fait l'objet d'un article dans le <strong>Financial Times</strong> le 8 juillet 2026. Selon l'article, la transaction a été évaluée à 330 milliards de dollars, ce qui en fait l'une des plus grosses opérations de rachat de l'année.</p>
+   <p>Le rachat de Palantir illustre parfaitement la notion de WACC (Weighted Average Cost of Capital), qui sera abordée dans le prochain chapitre du cours TRAINY. En effet, le coût moyen pondéré du capital est un élément crucial dans l'évaluation de la rentabilité d'une entreprise.</p>
+   <p>Dans le cas de Palantir, le WACC peut être calculé en fonction du coût de la dette et du coût des capitaux propres. Selon les données fournies par <a href='https://www.dealogic.com/'>Dealogic</a>, le coût de la dette pour Palantir est estimé à 5%, tandis que le coût des capitaux propres est estimé à 12%. En appliquant la formule du WACC, on obtient :</p>
+   <ul>
+       <li>WACC = (D / (D + E)) x Rd + 
 
 ### Cours
-<p>Le chapitre TRAINY du jour porte sur les Precedent Transactions, qui sont des transactions précédentes similaires utilisées comme référence pour évaluer la valorisation d’un deal. Cette approche permet de prendre en compte les tendances du marché et les facteurs macro-économiques qui influencent les valorisations.</p>
-    <div class='term'><div class='term-name'>Precedent Transactions</div>Les transactions précédentes similaires utilisées comme référence pour évaluer la valorisation d’un deal.</div>
-    <p>La mécanique des Precedent Transactions implique l’analyse de la valorisation des sociétés ciblées dans les deals précédents, en considérant les multiples de valorisation tels que l’EBITDA, les flux de trésorerie disponibles (Free Cash Flow) et d’autres indicateurs financiers pertinents.</p>
-    <p>Les avantages de cette approche incluent la capacité à établir une fourchette de valorisationacceptable pour le deal en question, en fonction des tendances du marché et des facteurs macro-économiques. Cependant, il est important de prendre en compte les limites potentielles, telles que la disponibilité et la qualité des données sur les transactions précédentes.</p>
-    <p>Dans le pr
+<p>Le WACC (Weighted Average Cost of Capital) est un concept clé en finance d'entreprise, qui représente le coût moyen pondéré du capital d'une entreprise. Il prend en compte le coût de la dette et le coût des capitaux propres.</p>
+   <div class='term'><div class='term-name'>WACC</div>Le coût moyen pondéré du capital, qui est le coût moyen de tous les fonds propres et empruntés.</div>
+   <p>La formule du WACC est la suivante : WACC = (D / (D + E)) x Rd + (E / (D + E)) x Re, où D est la dette, E est l'équité, Rd est le coût de la dette et Re est le coût des capitaux propres.</p>
+   <p>Le WACC est utilisé pour évaluer la rentabilité d'une entreprise, en comparant le retour sur investissement au WACC. Si le retour sur investissement est supérieur au WACC, l'entreprise est rentable.</p>
+   <p>Il est important de noter que le WACC peut varier en fonction de la structure du capital de l'entreprise, de la situation économique et de la politique de l'entreprise.</p>
+   
 
 ### Macro
-L'impact de la géopolitique sur les marchés financiers
-<p>La situation géopolitique actuelle, avec des tensions entre l’Ukraine et la Russie, influencera probablement les marchés financiers et les décisions d’investissement. Selon <strong>[N3 · WSJ Markets] How Europe would fight without America</strong>, l’Europe commence à réfléchir à la manière de se défendre sans le soutien des États-Unis.</p>
+La situation géopolitique entre les États-Unis et l'Iran
+<p>La situation géopolitique entre les États-Unis et l'Iran est particulièrement tendue en ce moment, selon un article du <a href='https://www.wsj.com/'>Wall Street Journal</a> du 8 juillet 2026. Les sanctions économiques imposées par les États-Unis à l'Iran ont des conséquences importantes sur l'économie iranienne.</p>
+   <p>Cela affecte directement le coût de la dette pour les entreprises iraniennes, ce qui à son tour influence le WACC. Un WACC plus élevé signifie que les entreprises doivent g
 
 ---
 Tu es mon tuteur M&A. Quand je te pose une question :

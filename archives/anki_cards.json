@@ -862,5 +862,41 @@
     "verso": "Les Precedent Transactions sont particulièrement utiles lorsqu'il est nécessaire d'évaluer la valorisation d'une entreprise dans un secteur en évolution rapide ou avec des tendances du marché fluctuantes. Elles peuvent également être utiles lorsqu'il est difficile de déterminer la valorisation d'une entreprise en raison d'un manque de données ou de transparence. Dans ces cas, les Precedent Transactions peuvent fournir une référence précieuse pour évaluer la valorisation de l'entreprise.",
     "numero": "19",
     "id": 1906715592
+  },
+  {
+    "recto": "Qu'est-ce que le WACC ?",
+    "verso": "Le WACC représente le coût moyen pondéré du capital d'une entreprise, prenant en compte le coût de la dette et le coût des capitaux propres. Il est calculé à l'aide de la formule WACC = (D / (D + E)) x Rd + (E / (D + E)) x Re. C'est un concept clé en finance d'entreprise pour évaluer la rentabilité.",
+    "numero": "20",
+    "id": 2104984249
+  },
+  {
+    "recto": "Pourquoi le WACC est-il important en finance d'entreprise ?",
+    "verso": "Le WACC est important car il permet de comparer le retour sur investissement d'une entreprise à son coût de capital. Cela aide les investisseurs et les dirigeants à évaluer la rentabilité d'une entreprise et à prendre des décisions éclairées concernant les investissements et la stratégie financière.",
+    "numero": "20",
+    "id": 1134495812
+  },
+  {
+    "recto": "Comment fonctionne le WACC dans l'évaluation d'une entreprise ?",
+    "verso": "Le WACC est utilisé pour évaluer la rentabilité d'une entreprise en comparant le retour sur investissement à son coût de capital. Par exemple, si le retour sur investissement d'une entreprise est supérieur à son WACC, cela signifie que l'entreprise génère des rendements supérieurs à son coût de capital, ce qui est un indicateur de bonne performance financière.",
+    "numero": "20",
+    "id": 1752424989
+  },
+  {
+    "recto": "Qu'est-ce que le rôle de la dette dans le calcul du WACC ?",
+    "verso": "La dette est un élément important dans le calcul du WACC, car elle représente le coût de la dette pour l'entreprise. Le coût de la dette est généralement inférieur au coût des capitaux propres, ce qui peut avoir un impact sur le WACC et la rentabilité de l'entreprise.",
+    "numero": "20",
+    "id": 1230803966
+  },
+  {
+    "recto": "Pourquoi utiliser le WACC pour évaluer la rentabilité d'une entreprise ?",
+    "verso": "Le WACC est utilisé pour évaluer la rentabilité d'une entreprise car il prend en compte les deux principales sources de financement : la dette et les capitaux propres. Cela permet de mieux comprendre les coûts et les rendements de l'entreprise et de prendre des décisions éclairées concernant la stratégie financière.",
+    "numero": "20",
+    "id": 1755625537
+  },
+  {
+    "recto": "Comment le WACC affecte-t-il la décision d'investissement dans une entreprise ?",
+    "verso": "Le WACC affecte la décision d'investissement dans une entreprise car il détermine le seuil de rentabilité minimum requis pour justifier un investissement. Si le retour sur investissement attendu est supérieur au WACC, l'investissement est jugé rentable et peut être retenu. Sinon, il peut être rejeté ou nécessiter une réévaluation.",
+    "numero": "20",
+    "id": 1570777625
   }
 ]
