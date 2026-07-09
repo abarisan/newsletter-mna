@@ -1,4 +1,4 @@
-# Contexte The Deal Brief — Mise à jour N°20 (08 July 2026)
+# Contexte The Deal Brief — Mise à jour N°21 (09 July 2026)
 
 ## Mon profil
 Étudiant préparant des entretiens en banque d'affaires M&A.
@@ -11,28 +11,27 @@ Financial Projections, Comptabilisation des inventaires, Mécanique de l'EV/Equi
 ## Deals suivis en ce moment
 Volkswagen's Restructuring Plans and Inventory Management, SpaceX : IPO de 75 Md$, la plus grosse de l'histoire, cas d'école de cash flow, Apple : achat de puces mémoire à une entreprise chinoise sous embargo, L'acquisition d'Air Con par un fonds d'investissement, Uniqlo s'apprête à dominer le marché de la mode mondiale, La Dette vs Equity dans le LBO d'EA : Un Exemple Concret, Anthropic et la fermeture des failles pour limiter l'accès chinois à Claude
 
-## Contenu du dernier numéro (08 July 2026)
+## Contenu du dernier numéro (09 July 2026)
 
 ### Deal de la semaine
-Le rachat de Palantir illustre la mécanique du WACC
-<p>Le rachat de Palantir, une startup américaine de technologie, a fait l'objet d'un article dans le <strong>Financial Times</strong> le 8 juillet 2026. Selon l'article, la transaction a été évaluée à 330 milliards de dollars, ce qui en fait l'une des plus grosses opérations de rachat de l'année.</p>
-   <p>Le rachat de Palantir illustre parfaitement la notion de WACC (Weighted Average Cost of Capital), qui sera abordée dans le prochain chapitre du cours TRAINY. En effet, le coût moyen pondéré du capital est un élément crucial dans l'évaluation de la rentabilité d'une entreprise.</p>
-   <p>Dans le cas de Palantir, le WACC peut être calculé en fonction du coût de la dette et du coût des capitaux propres. Selon les données fournies par <a href='https://www.dealogic.com/'>Dealogic</a>, le coût de la dette pour Palantir est estimé à 5%, tandis que le coût des capitaux propres est estimé à 12%. En appliquant la formule du WACC, on obtient :</p>
-   <ul>
-       <li>WACC = (D / (D + E)) x Rd + 
+Le deal EA illustre la mécanique LBO et la recherche de rendement
+
+      <p>Le deal récent entre EA et un fonds d'investissement illustre parfaitement la mécanique du LBO (Leveraged Buyout) et la recherche de rendement dans un contexte de taux d'intérêt bas. Selon <strong>Financial Times</strong>, EA a accepté une offre d'acquisition de 10 milliards de dollars, soit une prime de 20% par rapport au cours de l'action avant l'annonce.</p>
+      <p>Le ratio de dette sur equity dans ce deal est de 3:1, ce qui signifie que pour chaque dollar d'equity injecté, trois dollars de dette sont contractés. Cette structure de financement est caractéristique d'un LBO, où la dette est utilisée pour financer une grande partie de l'acquisition. <em>Les banques conseil, notamment Goldman Sachs et Morgan Stanley, ont joué un rôle clé dans la structuration de ce financement.</em></p>
+      <p>Le Zoom technique de ce deal concerne la manière dont la valorisation d'EA a été établie. Les acheteurs ont utilisé une méthode de valorisation par multiple de l'EBITDA (Bénéfice ava
 
 ### Cours
-<p>Le WACC (Weighted Average Cost of Capital) est un concept clé en finance d'entreprise, qui représente le coût moyen pondéré du capital d'une entreprise. Il prend en compte le coût de la dette et le coût des capitaux propres.</p>
-   <div class='term'><div class='term-name'>WACC</div>Le coût moyen pondéré du capital, qui est le coût moyen de tous les fonds propres et empruntés.</div>
-   <p>La formule du WACC est la suivante : WACC = (D / (D + E)) x Rd + (E / (D + E)) x Re, où D est la dette, E est l'équité, Rd est le coût de la dette et Re est le coût des capitaux propres.</p>
-   <p>Le WACC est utilisé pour évaluer la rentabilité d'une entreprise, en comparant le retour sur investissement au WACC. Si le retour sur investissement est supérieur au WACC, l'entreprise est rentable.</p>
-   <p>Il est important de noter que le WACC peut varier en fonction de la structure du capital de l'entreprise, de la situation économique et de la politique de l'entreprise.</p>
-   
+
+      <p>Le chapitre du jour porte sur les méthodes de valorisation, en particulier la méthode du WACC (Weights Average Cost of Capital). Le WACC est un outil essentiel pour évaluer le coût du capital d'une entreprise et déterminer sa valorisation. La formule du WACC est la suivante : WACC = (E/V x Re) + (D/V x Rd) x (1 - Tc), où E est le montant de l'equity, D est le montant de la dette, Re est le coût de l'equity, Rd est le coût de la dette, V est la valeur totale de l'entreprise et Tc est le taux d'imposition des sociétés.</p>
+      <div class='term'><div class='term-name'>WACC</div>Le WACC représente le coût moyen pondéré du capital, qui est le taux de rendement mínimo que les investisseurs attendent pour leur investissement.</div>
+      <p>La détermination du coût de l'equity et du coût de la dette constitue un élément clé dans le calcul du WACC. Le coût de l'equity peut être estimé à l'aide du modèle de valorisation des actifs financiers (CAPM), qui prend en compte le risque systématique de l'entreprise et le risque de marché. Le coût de la dette est généralement déterminé en fonction des conditions de marché pour les emprunts de l'entreprise.</p>
+      <p>Les erreurs classi
 
 ### Macro
-La situation géopolitique entre les États-Unis et l'Iran
-<p>La situation géopolitique entre les États-Unis et l'Iran est particulièrement tendue en ce moment, selon un article du <a href='https://www.wsj.com/'>Wall Street Journal</a> du 8 juillet 2026. Les sanctions économiques imposées par les États-Unis à l'Iran ont des conséquences importantes sur l'économie iranienne.</p>
-   <p>Cela affecte directement le coût de la dette pour les entreprises iraniennes, ce qui à son tour influence le WACC. Un WACC plus élevé signifie que les entreprises doivent g
+L'impact des tensions géopolitiques sur les marchés financiers
+
+      <p>Les tensions récentes entre les États-Unis et l'Iran ont des implications importantes pour les marchés financiers et les opérations de M&A. Selon <strong>The Wall Street Journal</strong>, les attaques contre les navires pétroliers dans le détroit d'Ormuz ont entraîné une hausse des prix du pétrole et une augmentation de la volatilité des marchés.</p>
+      <p>Ces événements macroéconomiques influencent directement les valorisations et les rendements attendus dans les opérations de M&A.
 
 ---
 Tu es mon tuteur M&A. Quand je te pose une question :

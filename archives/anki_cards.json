@@ -898,5 +898,41 @@
     "verso": "Le WACC affecte la décision d'investissement dans une entreprise car il détermine le seuil de rentabilité minimum requis pour justifier un investissement. Si le retour sur investissement attendu est supérieur au WACC, l'investissement est jugé rentable et peut être retenu. Sinon, il peut être rejeté ou nécessiter une réévaluation.",
     "numero": "20",
     "id": 1570777625
+  },
+  {
+    "recto": "Qu'est-ce que le WACC ?",
+    "verso": "Le WACC (Weighted Average Cost of Capital) est un outil utilisé pour évaluer le coût du capital d'une entreprise. Il représente le taux de rendement minimum que les investisseurs attendent. La formule du WACC prend en compte le coût de l'equity, le coût de la dette, le montant de l'equity et de la dette, ainsi que le taux d'imposition des sociétés.",
+    "numero": "21",
+    "id": 1528856030
+  },
+  {
+    "recto": "Qu'est-ce que le LBO ?",
+    "verso": "Le LBO (Leveraged Buyout) est une stratégie d'acquisition qui consiste à utiliser une grande quantité de dette pour financer l'acquisition d'une entreprise. Le LBO permet d'amplifier le rendement des fonds propres en utilisant la dette pour financer une partie de l'acquisition.",
+    "numero": "21",
+    "id": 1546351526
+  },
+  {
+    "recto": "Comment fonctionne le WACC dans la valorisation d'une entreprise ?",
+    "verso": "Le WACC est utilisé pour évaluer le coût du capital d'une entreprise. Il permet de déterminer la valeur de l'entreprise en fonction de son coût de capital. La formule du WACC prend en compte les différentes sources de financement de l'entreprise, telles que l'equity et la dette, et permet de calculer le coût moyen pondéré du capital.",
+    "numero": "21",
+    "id": 1813166661
+  },
+  {
+    "recto": "Pourquoi le LBO amplifie-t-il le rendement des fonds propres ?",
+    "verso": "Le LBO amplifie le rendement des fonds propres car il permet d'utiliser la dette pour financer une partie de l'acquisition. Cela signifie que les actionnaires n'ont pas à fournir autant de fonds propres, ce qui peut augmenter leur retour sur investissement. Par exemple, si une entreprise est acquise pour 100 avec 20 de fonds propres et 80 de dette, les actionnaires n'ont à fournir que 20, mais ils peuvent bénéficier de l'ensemble de l'acquisition.",
+    "numero": "21",
+    "id": 1282733238
+  },
+  {
+    "recto": "Dans quel cas utiliserait-on une dette mezzanine ?",
+    "verso": "Une dette mezzanine est utilisée lorsque les autres sources de financement, telles que la dette bancaire ou les fonds propres, sont limitées. La dette mezzanine offre une solution intermédiaire entre la dette senior et les fonds propres, en offrant un taux d'intérêt plus élevé que la dette senior, mais avec un niveau de risque plus élevé.",
+    "numero": "21",
+    "id": 1746462527
+  },
+  {
+    "recto": "Pourquoi le coût du capital est-il important dans l'évaluation d'une entreprise ?",
+    "verso": "Le coût du capital est important dans l'évaluation d'une entreprise car il détermine le taux de rendement minimum que les investisseurs attendent. Si le coût du capital est trop élevé, cela peut rendre l'entreprise moins attractrice pour les investisseurs. Le coût du capital est également utilisé pour évaluer les projets d'investissement et déterminer si ils sont rentables.",
+    "numero": "21",
+    "id": 1365274478
   }
 ]
