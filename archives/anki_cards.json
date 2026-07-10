@@ -934,5 +934,41 @@
     "verso": "Le coût du capital est important dans l'évaluation d'une entreprise car il détermine le taux de rendement minimum que les investisseurs attendent. Si le coût du capital est trop élevé, cela peut rendre l'entreprise moins attractrice pour les investisseurs. Le coût du capital est également utilisé pour évaluer les projets d'investissement et déterminer si ils sont rentables.",
     "numero": "21",
     "id": 1365274478
+  },
+  {
+    "recto": "Qu'est-ce que la méthode LBO ?",
+    "verso": "La méthode LBO (Leveraged Buy-Out) implique l'acquisition d'une entreprise en utilisant une combinaison de capitaux propres et de dette. L'objectif est de maximiser les rendements pour les actionnaires en minimisant l'apport en capitaux propres. Cette méthode permet aux investisseurs d'augmenter leur retour sur investissement en utilisant la dette pour financer une partie de l'acquisition.",
+    "numero": "22",
+    "id": 1595914747
+  },
+  {
+    "recto": "Qu'est-ce que le levier financier dans le contexte d'un LBO ?",
+    "verso": "Le levier financier se réfère à l'utilisation de la dette pour augmenter les rendements sur investissement dans le cadre d'un LBO. Cette stratégie permet aux investisseurs d'amplifier leurs gains potentiels, mais elle augmente également le risque en cas de difficultés financières pour la société acquise.",
+    "numero": "22",
+    "id": 1115800983
+  },
+  {
+    "recto": "Comment fonctionne le processus de LBO pour amplifier les rendements des fonds propres ?",
+    "verso": "Le processus de LBO implique l'utilisation de la dette pour financer une partie importante de l'acquisition, ce qui réduit le montant de capitaux propres nécessaires. En conséquence, les rendements sur les fonds propres sont amplifiés car les bénéfices sont calculés sur un montant de capitaux propres plus faible. Par exemple, si une acquisition de 100 est financée à 20% par des fonds propres et à 80% par de la dette, les rendements sur les fonds propres seront plus élevés que si l'acquisition était financée intégralement par des fonds propres.",
+    "numero": "22",
+    "id": 2062407236
+  },
+  {
+    "recto": "Pourquoi le levier financier est-il crucial dans les opérations LBO ?",
+    "verso": "Le levier financier est crucial dans les opérations LBO car il permet aux investisseurs d'augmenter leur retour sur investissement tout en minimisant l'apport en capitaux propres. Cela signifie que les investisseurs peuvent générer des rendements plus élevés avec moins de capital, ce qui constitue un avantage majeur de la méthode LBO. Cependant, cela nécessite une gestion prudente de la dette pour éviter les risques de défaut de paiement.",
+    "numero": "22",
+    "id": 1732765543
+  },
+  {
+    "recto": "Dans quel cas utiliser une dette mezzanine dans le cadre d'un LBO ?",
+    "verso": "Une dette mezzanine est souvent utilisée dans le cadre d'un LBO lorsque les investisseurs cherchent à combiner les avantages de la dette senior et de l'équité. La dette mezzanine offre une solution intermédiaire qui combine des caractéristiques de la dette (paiement régulier d'intérêts) et de l'équité (possibilité de conversion en actions), ce qui peut être avantageux pour financer des acquisitions lorsque les flux de trésorerie de la société ciblée sont incertains ou lorsque les investisseurs cherchent à partager les risques avec d'autres parties prenantes.",
+    "numero": "22",
+    "id": 1983436573
+  },
+  {
+    "recto": "Pourquoi un LBO amplifie-t-il le rendement des fonds propres ?",
+    "verso": "Un LBO amplifie le rendement des fonds propres car il permet aux investisseurs d'utiliser la dette pour financer une partie de l'acquisition, réduisant ainsi le montant de capitaux propres nécessaires. En conséquence, les bénéfices générés par l'entreprise acquise sont répartis sur un montant de capitaux propres plus faible, ce qui augmente mécaniquement le rendement sur les fonds propres. C'est pourquoi les investisseurs sont attirés par les LBO, car ils offrent la possibilité de générer des rendements élevés avec un apport en capitaux propres limité.",
+    "numero": "22",
+    "id": 1423415577
   }
 ]
