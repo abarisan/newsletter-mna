@@ -1,4 +1,4 @@
-# Contexte The Deal Brief — Mise à jour N°22 (10 July 2026)
+# Contexte The Deal Brief — Mise à jour N°23 (13 July 2026)
 
 ## Mon profil
 Étudiant préparant des entretiens en banque d'affaires M&A.
@@ -11,23 +11,28 @@ Financial Projections, Comptabilisation des inventaires, Mécanique de l'EV/Equi
 ## Deals suivis en ce moment
 Volkswagen's Restructuring Plans and Inventory Management, SpaceX : IPO de 75 Md$, la plus grosse de l'histoire, cas d'école de cash flow, Apple : achat de puces mémoire à une entreprise chinoise sous embargo, L'acquisition d'Air Con par un fonds d'investissement, Uniqlo s'apprête à dominer le marché de la mode mondiale, La Dette vs Equity dans le LBO d'EA : Un Exemple Concret, Anthropic et la fermeture des failles pour limiter l'accès chinois à Claude
 
-## Contenu du dernier numéro (10 July 2026)
+## Contenu du dernier numéro (13 July 2026)
 
 ### Deal de la semaine
-Tencent leads deal to unwind Meta’s $2bn Manus acquisition
-<p>Le groupe chinois Tencent a annoncé son intention de racheter la majorité des parts de l'entreprise Meta dans le cadre d'un accord de restructuration, selon des sources proches du dossier citées par le <strong>Financial Times</strong>. Cette opération, qui s'élève à 2 milliards de dollars, illustre parfaitement les étapes complètes de la méthode LBO (Leveraged Buy-Out) que nous étudions en ce moment dans le chapitre TRAINY.</p>
-   <p>Dans ce deal, on voit que la structure de la dette joue un rôle crucial. Meta avait initialement acquis Manus pour 2 milliards de dollars, mais suite à des problèmes réglementaires, l'entreprise a décidé de réévaluer son investissement. L'intervention de Tencent dans cette affaire démontre l'intérêt grandissant des entreprises chinoises pour les technologies de pointe, notamment dans le domaine de l'intelligence artificielle.</p>
-   <p>Le deal nous permet également de comprendre l'importance de la prime payée dans le cadre d'une acquisition. Ici, la pri
+L'acquisition de Warner Bros. par Paramount dans le viseur des autorités
+
+      <p>La semaine dernière, nous avons abordé les méthodes de valuation dans le contexte des fusions et acquisitions. Aujourd'hui, nous nous penchons sur le deal récent entre Paramount et Warner Bros., valorisé à 111 milliards de dollars, qui pourrait être bloqué par les autorités américaines.</p>
+      <p>Comme indiqué par <strong>[N2] NYT DealBook</strong> dans l'article « States Prepare Lawsuit to Block Paramount’s Merger With Warner Bros. », les autorités américaines sont prêtes à déposer une plainte pour empêcher cette acquisition, citant des problèmes de concurrence. Ce deal illustre parfaitement le concept de synergies dans les opérations de fusions et acquisitions, où les deux entreprises visent à créer de la valeur en combinant leurs ressources.</p>
+      <p>D'après <strong>[N1] CNBC Finance</strong>, la décision des autorités américaines pourrait avoir un impact significatif sur l'industrie cinématographique. Le deal entre Paramount et Warner Bros. pourrait conduire à des 
 
 ### Cours
-<p>La méthode LBO implique l'acquisition d'une entreprise en utilisant une combinaison de capitaux propres et de dette. L'objectif est de maximiser les rendements pour les actionnaires en minimisant l'apport en capitaux propres. Le processus LBO implique plusieurs étapes clés, incluant l'identification de la cible, la structuration de la transaction, la levée de fonds (y compris l'émission d'obligations ou la souscription de prêts bancaires), et la gestion post-acquisition.</p>
-   <p>Un concept clé dans la méthode LBO est la notion de « levier ». Le levier financier se réfère à l'utilisation de la dette pour augmenter les rendements sur investissement. Cependant, cela augmente également le risque pour l'entreprise, car les remboursements de la dette deviendront une priorité.</p>
-   <div class='term'><div class='term-name'>WACC (Weighted Average Cost of Capital)</div>Le WACC représente le coût moyen pondéré du capital d'une entreprise et est utilisé pour évaluer les performances d'un investissement. Dans le contexte d'un LBO, le WACC est crucial pour déterminer si l'acquisition sera rentable.</div>
-   <p>Demain, nous explorerons plus en détail le concept de modélisation LBO et comme
+
+      <p>Le chapitre du jour porte sur les méthodes de valuation dans les opérations de fusions et acquisitions. La valorisation d'une entreprise dans ce contexte implique de comprendre les différents méthodes de valorisation, notamment la méthode des flux de trésorerie disponible (FCF), la méthode du multiple de l'EBITDA, et la méthode du discounted cash flow (DCF).</p>
+      <div class='term'><div class='term-name'>Synergies</div>Les avantages qui résultent de la combinaison de deux entreprises, tels que la réduction des coûts, l'augmentation des revenus, ou l'amélioration de l'efficacité.</div>
+      <p>La valorisation par multiple de l'EBITDA prend en compte le ratio entre le prix d'acquisition et l'EBITDA de l'entreprise cible. Ce multiple peut varier en fonction de l'industrie et des conditions de marché.</p>
+      <p>Dans le contexte du deal entre Paramount et Warner Bros., il est important de considérer les synergies potentielles issues de cette acquisition. Les économies d'échelle, la réduction des coûts de production, et l'accès à de nouveaux marchés sont autant de facteurs qui pourraient améliorer la valorisation de l'entreprise issue de la fusion.</p>
+      <p>Demain, 
 
 ### Macro
-Les tensions géopolitiques et leurs impacts sur le M&A
-<p>Les récents développements dans la relation entre les États-Unis et la Chine, ainsi que les tensions au Moyen-Orient, ont un impact significatif sur les marchés financiers et les stratégies d'entreprise. Selon un article récent du <strong>Wall Street Journal</strong>, ces tensions pourraient influencer les décisions d'investissement, en particulier dans les secteurs stratégiques comme la technologie et l'énergie.</p>
+Tension dans le Golfe : Impact sur les marchés financiers
+
+      <p>La situation géopolitique dans le Golfe, avec les tensions croissantes entre les États-Unis et l'Iran, a un impact direct sur les marchés financiers. Les prix du pétrole ont augmenté en raison des craintes concernant la sécurité de l'approvisionnement énergétique.</p>
+      <p>Selon <strong>[N3] WSJ Markets</strong>, l'escalade des tensions dans la région du Golfe pourrait avoir des conséquences significatives sur les marchés financiers mondiaux, notamment en ce qui concerne les prix d
 
 ---
 Tu es mon tuteur M&A. Quand je te pose une question :

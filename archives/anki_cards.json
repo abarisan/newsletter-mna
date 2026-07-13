@@ -970,5 +970,41 @@
     "verso": "Un LBO amplifie le rendement des fonds propres car il permet aux investisseurs d'utiliser la dette pour financer une partie de l'acquisition, réduisant ainsi le montant de capitaux propres nécessaires. En conséquence, les bénéfices générés par l'entreprise acquise sont répartis sur un montant de capitaux propres plus faible, ce qui augmente mécaniquement le rendement sur les fonds propres. C'est pourquoi les investisseurs sont attirés par les LBO, car ils offrent la possibilité de générer des rendements élevés avec un apport en capitaux propres limité.",
     "numero": "22",
     "id": 1423415577
+  },
+  {
+    "recto": "Qu'est-ce que le goodwill ?",
+    "verso": "Le goodwill est la différence entre le prix d'acquisition d'une entreprise et la valeur de ses actifs identifiables. Il représente la valeur des actifs intangibles tels que la réputation, les marques et les compétences. Le goodwill est souvent considéré comme un actif qui peut générer des revenus futurs pour l'entreprise.",
+    "numero": "23",
+    "id": 2132501118
+  },
+  {
+    "recto": "Comment fonctionne la méthode du multiple de l'EBITDA pour la valorisation d'une entreprise ?",
+    "verso": "La méthode du multiple de l'EBITDA consiste à multiplier l'EBITDA (bénéfice avant intérêts, impôts, dépréciation et amortissement) de l'entreprise par un multiple qui reflète la valorisation du marché. Ce multiple est souvent déterminé en comparant les valorisations de sociétés similaires dans le même secteur. Par exemple, si l'EBITDA d'une entreprise est de 10 millions d'euros et que le multiple du secteur est de 15, la valorisation de l'entreprise serait de 150 millions d'euros.",
+    "numero": "23",
+    "id": 2061162715
+  },
+  {
+    "recto": "Qu'est-ce que des synergies dans le contexte des fusions et acquisitions ?",
+    "verso": "Des synergies sont les avantages qui résultent de la combinaison de deux entreprises, tels que la réduction des coûts, l'augmentation des revenus ou l'amélioration de l'efficacité. Ces synergies peuvent être réalisées grâce à l'élimination des dédoublements, à la mise en commun des ressources ou à la création de nouvelles opportunités de marché. Les synergies sont souvent prises en compte lors de l'évaluation de la valorisation d'une entreprise dans le contexte d'une fusion ou acquisition.",
+    "numero": "23",
+    "id": 1117064958
+  },
+  {
+    "recto": "Pourquoi utiliser la méthode du discounted cash flow (DCF) pour la valorisation d'une entreprise ?",
+    "verso": "La méthode du discounted cash flow (DCF) est utilisée pour évaluer la valorisation d'une entreprise en estimant la valeur actuelle des flux de trésorerie futurs attendus. Cette méthode prend en compte le coût du capital et les risques associés à l'entreprise, permettant ainsi d'obtenir une évaluation plus précise de la valorisation de l'entreprise. Le DCF est souvent utilisé pour les entreprises qui ont des flux de trésorerie prévisibles et stables.",
+    "numero": "23",
+    "id": 2048776777
+  },
+  {
+    "recto": "Comment les synergies peuvent-elles impacter la valorisation d'une entreprise dans le contexte d'une fusion ou acquisition ?",
+    "verso": "Les synergies peuvent avoir un impact significatif sur la valorisation d'une entreprise dans le contexte d'une fusion ou acquisition. En effet, les synergies peuvent générer des économies de coûts, accroître les revenus ou améliorer l'efficacité de l'entreprise, ce qui peut se traduire par une augmentation de la valorisation de l'entreprise. Les investisseurs et les acheteurs potentiels prennent souvent en compte les synergies potentielles lors de l'évaluation de la valorisation d'une entreprise cible.",
+    "numero": "23",
+    "id": 1908141520
+  },
+  {
+    "recto": "Pourquoi la situation géopolitique peut-elle avoir un impact sur les marchés financiers et la valorisation des entreprises ?",
+    "verso": "La situation géopolitique peut avoir un impact significatif sur les marchés financiers et la valorisation des entreprises en raison des incertitudes et des risques qu'elle génère. Les tensions géopolitiques peuvent affecter les prix des matières premières, les taux de change, les taux d'intérêt et les décisions d'investissement, ce qui peut se traduire par des variations de la valorisation des entreprises. Les entreprises qui sont exposées à des risques géopolitiques spécifiques peuvent voir leur valorisation ajustée en conséquence.",
+    "numero": "23",
+    "id": 1700145972
   }
 ]
