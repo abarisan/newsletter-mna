@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz — The Deal Brief N°24</title>
+  <style>
+    body { font-family: 'Helvetica Neue', Arial, sans-serif; background: #fdf6ee; color: #2b1a0e;
+           margin: 0; padding: 40px 20px; }
+    .container { max-width: 640px; margin: 0 auto; }
+    h1 { font-size: 24px; color: #e85d1a; margin-bottom: 4px; }
+    .subtitle { color: #7a5c45; font-size: 13px; margin-bottom: 40px; }
+    .question { background: #fff; border-radius: 8px; padding: 24px; margin-bottom: 20px;
+                 box-shadow: 0 2px 8px rgba(232,93,26,0.08); }
+    .question h3 { font-size: 16px; margin-bottom: 16px; line-height: 1.5; }
+    .option { display: block; width: 100%; text-align: left; background: #fff8f2;
+               border: 1px solid #fde0c5; border-radius: 6px; padding: 12px 16px;
+               margin-bottom: 8px; cursor: pointer; font-size: 14px; transition: all .15s; }
+    .option:hover { background: #fff3e8; border-color: #f9a06b; }
+    .option.correct { background: #e6f9ec; border-color: #2ecc71; color: #1a6b3a; }
+    .option.wrong   { background: #fdecea; border-color: #e74c3c; color: #7b1c1c; }
+    .explanation { display: none; margin-top: 12px; padding: 12px 16px; background: #fff3e8;
+                    border-left: 3px solid #e85d1a; font-size: 13px; color: #5a3520;
+                    border-radius: 0 6px 6px 0; line-height: 1.6; }
+    .score { display: none; text-align: center; padding: 32px; background: #fff;
+              border-radius: 8px; box-shadow: 0 2px 8px rgba(232,93,26,0.08); }
+    .score h2 { font-size: 28px; color: #e85d1a; }
+    .score p { color: #5a3520; }
+    #submit { display: block; width: 100%; padding: 16px; background: #e85d1a; color: #fff;
+               border: none; border-radius: 8px; font-size: 16px; cursor: pointer; margin-top: 8px; }
+    #submit:hover { background: #c94e0e; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Quiz — N°24</h1>
+  <p class="subtitle">The Deal Brief · 14 July 2026 · 4 questions</p>
+  <div id="quiz"></div>
+  <button id="submit" onclick="submitQuiz()">Voir mes résultats</button>
+  <div class="score" id="score"></div>
+</div>
+<script>
+const questions = [{"question": "Quel est l'objectif principal de la fusion entre Paramount et Warner Bros. ?", "options": ["A. Réduire les coûts de production", "B. Renforcer la position des deux entreprises dans l’industrie du divertissement", "C. Augmenter les salaires des employés", "D. Réduire la concurrence sur le marché"], "correct": 1, "explanation": "Selon l'article, la fusion entre Paramount et Warner Bros. vise à renforcer la position des deux entreprises dans l’industrie du divertissement. Les autres options ne sont pas mentionnées comme objectifs principaux de la fusion."}, {"question": "Qu'est-ce que les synergies opérationnelles dans les opérations de M&A ?", "options": ["A. L’augmentation des revenus grâce à de nouvelles opportunités de marché", "B. Les économies d’échelle et la réduction des coûts qui résultent de la combinaison de deux entreprises", "C. L’amélioration de la qualité des produits", "D. La réduction de la concurrence sur le marché"], "correct": 1, "explanation": "Selon le cours, les synergies opérationnelles se réfèrent aux économies d’échelle et à la réduction des coûts qui résultent de la combinaison de deux entreprises. Cela inclut la consolidation des fonctions, la réduction de la duplication des efforts et l’amélioration de l’efficacité opérationnelle."}, {"question": "Quel est l'impact de la croissance économique chinoise sur les marchés mondiaux ?", "options": ["A. Une réduction des exportations chinoises", "B. Une augmentation des importations chinoises", "C. Une influence significative sur les marchés mondiaux", "D. Une stagnation de la croissance économique"], "correct": 2, "explanation": "Selon l'article, la Chine exerce une influence significative sur les marchés mondiaux en raison de sa croissance économique continue. Les exportations chinoises de voitures ont dépassé pour la première fois le million d’unités par mois, ce qui reflète la capacité de production croissante de la Chine et son rôle de plus en plus important dans le commerce mondial."}, {"question": "Qu'est-ce que les synergies dans les opérations de M&A peuvent inclure ?", "options": ["A. Seulement la réduction des coûts", "B. Seulement l’amélioration de l’efficacité", "C. La réduction des coûts, l’amélioration de l’efficacité et l’augmentation des revenus", "D. Seulement l’augmentation des salaires"], "correct": 2, "explanation": "Selon le cours, les synergies dans les opérations de M&A peuvent inclure des aspects tels que la réduction des coûts, l’amélioration de l’efficacité et l’augmentation des revenus. Cela peut être de nature opérationnelle, financière ou commerciale."}];
+let answered = {};
+
+function buildQuiz() {
+  const quiz = document.getElementById('quiz');
+  questions.forEach((q, qi) => {
+    const div = document.createElement('div');
+    div.className = 'question';
+    div.innerHTML = `<h3>${qi+1}. ${q.question}</h3>` +
+      q.options.map((o, oi) =>
+        `<button class="option" id="q${qi}_${oi}" onclick="answer(${qi},${oi},${q.correct})">${o}</button>`
+      ).join('') +
+      `<div class="explanation" id="exp${qi}">${q.explanation}</div>`;
+    quiz.appendChild(div);
+  });
+}
+
+function answer(qi, oi, correct) {
+  if (answered[qi] !== undefined) return;
+  answered[qi] = oi;
+  const btn = document.getElementById(`q${qi}_${oi}`);
+  const correctBtn = document.getElementById(`q${qi}_${correct}`);
+  btn.classList.add(oi === correct ? 'correct' : 'wrong');
+  if (oi !== correct) correctBtn.classList.add('correct');
+  document.getElementById(`exp${qi}`).style.display = 'block';
+}
+
+function submitQuiz() {
+  const score = Object.values(answered).filter((a, i) => a === questions[i].correct).length;
+  const total = questions.length;
+  const msg = score === total ? "🏆 Parfait ! Tu maîtrises ce numéro." :
+              score >= total/2 ? "👍 Bien, relis les explications des questions ratées." :
+              "📖 Relis le cours — ces notions vont revenir en entretien.";
+  document.getElementById('score').innerHTML =
+    `<h2>${score} / ${total}</h2><p>${msg}</p>`;
+  document.getElementById('score').style.display = 'block';
+  document.getElementById('submit').style.display = 'none';
+  window.scrollTo(0, document.getElementById('score').offsetTop - 20);
+}
+
+buildQuiz();
+</script>
+</body>
+</html>

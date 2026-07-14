@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Deal Brief</title>
+  <style>
+    /* ── Palette : clair / nuances d'orange ── */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #fdf6ee;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      color: #2b1a0e;
+      line-height: 1.75;
+    }
+
+    .wrapper {
+      max-width: 680px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(232,93,26,0.10);
+    }
+
+    .header {
+      background: linear-gradient(135deg, #ff6b2b 0%, #e85d1a 100%);
+      padding: 48px 48px 36px;
+      text-align: center;
+    }
+    .header .eyebrow {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ffe8d6;
+      margin-bottom: 16px;
+    }
+    .header h1 {
+      font-size: 36px;
+      font-weight: 400;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .header .subtitle {
+      font-size: 13px;
+      color: #ffd4b8;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      letter-spacing: 0.5px;
+    }
+    .header .issue-line {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.25);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #ffe8d6;
+      letter-spacing: 1px;
+    }
+
+    .body { padding: 0 48px 48px; }
+
+    .section { margin-top: 48px; }
+    .section-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #e85d1a;
+      margin-bottom: 6px;
+    }
+    .section h2 {
+      font-size: 22px;
+      font-weight: 400;
+      color: #2b1a0e;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #f9a06b;
+    }
+    .section-content { font-size: 15px; color: #3d2510; }
+    .section-content p { margin-bottom: 14px; }
+    .section-content strong { color: #c94e0e; font-weight: 700; }
+    .section-content ul, .section-content ol { padding-left: 20px; margin-bottom: 14px; }
+    .section-content li { margin-bottom: 6px; }
+
+    .callout {
+      background: #fff3e8;
+      border-left: 3px solid #e85d1a;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 14px;
+      color: #5a3520;
+      font-style: italic;
+      border-radius: 0 4px 4px 0;
+    }
+    .callout strong { font-style: normal; color: #c94e0e; }
+
+    .rappel-section {
+      margin-top: 48px;
+      background: #fff3e8;
+      margin-left: -48px;
+      margin-right: -48px;
+      padding: 36px 48px;
+      border-top: 3px solid #f9a06b;
+      border-bottom: 3px solid #f9a06b;
+    }
+    .rappel-section .section-label { color: #e85d1a; }
+    .rappel-section h2 { color: #2b1a0e; border-bottom-color: #fde0c5; font-size: 20px; }
+    .rappel-section .section-content { color: #5a3520; }
+    .rappel-section .section-content strong { color: #c94e0e; }
+    .rappel-section .term { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid #fde0c5; }
+    .rappel-section .term:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .rappel-section .term-name {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .interview-section {
+      margin-top: 48px;
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 28px 32px;
+    }
+    .interview-section .section-label { color: #e85d1a; }
+    .interview-question { font-size: 18px; font-style: italic; color: #2b1a0e; margin: 12px 0 20px; line-height: 1.4; }
+    .interview-answer { font-size: 14px; color: #5a3520; }
+
+    .sources-section { margin-top: 48px; padding-top: 24px; border-top: 1px solid #fde0c5; }
+    .sources-section .section-label { margin-bottom: 12px; }
+    .sources-section ul { list-style: none; padding: 0; }
+    .sources-section li {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #7a5c45;
+      margin-bottom: 6px;
+      padding-left: 12px;
+      position: relative;
+    }
+    .sources-section li::before { content: '→'; position: absolute; left: 0; color: #e85d1a; }
+
+    .footer {
+      background: #fdf6ee;
+      padding: 28px 48px;
+      text-align: center;
+      border-top: 1px solid #fde0c5;
+    }
+    .footer p { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; color: #9a7060; line-height: 1.8; }
+    .footer .next { color: #c94e0e; font-weight: 600; }
+
+    .divider { height: 1px; background: #fde0c5; margin: 36px 0; }
+
+    /* ── Schéma SVG ── */
+    .diagram-section {
+      margin-top: 48px;
+    }
+    .diagram-section .section-label {
+      margin-bottom: 12px;
+    }
+    .diagram-wrap {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      overflow-x: auto;
+    }
+    .diagram-wrap svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* ── Outils d'apprentissage ── */
+    .tools-section {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .tool-card {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      transition: box-shadow .15s;
+    }
+    .tool-card:hover { box-shadow: 0 4px 16px rgba(232,93,26,0.15); }
+    .tool-card .icon { font-size: 28px; display: block; margin-bottom: 8px; }
+    .tool-card .tool-title {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .tool-card .tool-desc {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      color: #7a5c45;
+    }
+
+    @media (max-width: 600px) {
+      .wrapper { margin: 0; border-radius: 0; }
+      .header { padding: 32px 24px 24px; }
+      .body { padding: 0 24px 32px; }
+      .rappel-section { margin-left: -24px; margin-right: -24px; padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="eyebrow">Newsletter M&A · Finance · IA · Géopolitique</div>
+      <h1>The Deal Brief</h1>
+      <div class="subtitle">Comprendre la finance, pas juste la suivre</div>
+      <div class="issue-line">N° 24 &nbsp;·&nbsp; 14 July 2026</div>
+    </div>
+
+    <div class="body">
+
+      <!-- SECTION 1 : M&A -->
+      <!-- DEAL -->
+      <div class="section">
+        <div class="section-label">Niveau 1 — Deal de la semaine</div>
+        <h2>Paramount-Warner Bros. Merger: Une Illustration des Synergies dans les Opérations de M&A</h2>
+        <div class="section-content">
+      <p>Le deal entre Paramount et Warner Bros., récemment contesté en justice par la Californie et 11 autres États, nous offre un exemple concret pour explorer les synergies dans les opérations de M&A. Selon <strong>[N2 · NYT DealBook]</strong>, cette fusion vise à renforcer la position des deux entreprises dans l’industrie du divertissement, mais soulève également des inquiétudes quant à son impact sur les salles de cinéma et l’industrie américaine du divertissement.</p>
+      <p>Les chiffres précis nous montrent que cette fusion représente un montant considérable, avec une prime significative pour les actionnaires de Warner Bros. La structure du deal, avec une composante equity et dette, est conseillée par des banques d’affaires de premier plan. Le rationnel stratégique derrière cette opération est clair : renforcer la compétitivité des deux entreprises sur un marché en constante évolution.</p>
+      <p>Dans ce contexte, le zoom technique sur les synergies est crucial. Les économies d’échelle, la réduction des coûts et l’amélioration de l’offre de contenu sont autant d’aspects clés qui illustrent les synergies attendues de cette fusion. La phrase d’entretien pourrait être : « Cette fusion nous permet de mieux comprendre comment les synergies opérationnelles peuvent créer de la valeur pour les actionnaires, mais elle pose également la question de la régulation et de l’impact sur la concurrence dans le marché du divertissement. »</p>
+      <p>En suivant l’évolution de ce deal, nous pouvons observer comment les synergies sont mises en œuvre et quelles sont les réactions du marché et des autorités de régulation. Cela nous donne une occasion unique de voir les principes du cours en action, notamment dans le contexte des opérations de M&A et de leur impact sur l’industrie du divertissement.</p>
+   </div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin-top:20px;"><svg width="540" height="200" viewBox="0 0 540 200">
+  <rect x="50" y="50" width="100" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <rect x="250" y="50" width="100" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <text x="75" y="120" font-family="Arial" font-size="18" fill="#2b1a0e">Paramount</text>
+  <text x="275" y="120" font-family="Arial" font-size="18" fill="#2b1a0e">Warner Bros.</text>
+  <line x1="150" y1="100" x2="250" y2="100" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="250,95 260,100 250,105" fill="#f9a06b"/>
+  <text x="200" y="90" font-family="Arial" font-size="18" fill="#c94e0e">Synergies</text>
+  <text x="200" y="110" font-family="Arial" font-size="14" fill="#7a5c45">$x亿美元</text>
+</svg></div>
+      
+
+      <div class="divider"></div>
+
+      <!-- MACRO & GÉOPO -->
+      <div class="section">
+        <div class="section-label">Niveau 3 — Macro & Géopolitique</div>
+        <h2>La Croissance Économique Chinoise : Un Impact sur les Marchés Mondiaux</h2>
+        <div class="section-content">
+      <p>La Chine, avec sa croissance économique continue, exerce une influence significative sur les marchés mondiaux. Selon <strong>[N1 · FT]</strong>, les exportations chinoises de voitures ont dépassé pour la première fois le million d’unités par mois. Cela reflète non seulement la capacité de production croissante de la Chine mais également son rôle de plus en plus important dans le commerce international.</p>
+      <p>Cette tendance soulève des questions sur la façon dont les autres pays, notamment ceux having des économies avancées, peuvent réagir à cette montée en puissance. Les implications pour les échanges commerciaux, l’investissement et la politique économique sont conséquentes. L’évolution de la situation géopolitique et les décisions prises par les gouvernements et les entreprises seront cruciales pour comprendre les futurs mouvements des marchés.</p>
+   </div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin-top:20px;"><svg width="540" height="180" viewBox="0 0 540 180">
+  <rect x="20" y="20" width="200" height="140" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <rect x="320" y="20" width="200" height="140" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <text x="60" y="60" font-family="Arial" font-size="24" fill="#2b1a0e">Croissance Économique Chinoise</text>
+  <text x="360" y="60" font-family="Arial" font-size="24" fill="#2b1a0e">Marchés Mondiaux</text>
+  <line x1="220" y1="90" x2="320" y2="90" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="320,85 330,90 320,95" fill="#f9a06b"/>
+  <text x="240" y="120" font-family="Arial" font-size="18" fill="#7a5c45">+1 million d'unités</text>
+  <text x="240" y="150" font-family="Arial" font-size="18" fill="#7a5c45">exportées en [N1 · FT]</text>
+</svg></div>
+      
+
+      <div class="divider"></div>
+
+      <!-- IA -->
+      
+
+      <!-- RAPPEL DE COURS -->
+      <div class="rappel-section">
+        <div class="section-label">Rappel de cours</div>
+        <h2>Les notions clés de ce numéro</h2>
+        <div class="section-content">
+      <p>Le chapitre sur les opérations de M&A, notamment les synergies, nous amène à réfléchir sur la manière dont les entreprises peuvent créer de la valeur à travers des fusions et acquisitions. Les synergies peuvent être de nature opérationnelle, financière ou commerciale, et comprennent des aspects tels que la réduction des coûts, l’amélioration de l’efficacité et l’augmentation des revenus.</p>
+      <p><div class='term'><div class='term-name'>Synergies Opérationnelles</div> se réfèrent aux économies d’échelle et à la réduction des coûts qui résultent de la combinaison de deux entreprises. Cela peut inclure la consolidation des fonctions, la réduction de la duplication des efforts et l’amélioration de l’efficacité opérationnelle.</p>
+      <p>Les <div class='term'><div class='term-name'>Synergies Financières</div> concernent les avantages financiers qui découlent de la fusion, tels que l’amélioration du levier financier, la réduction du coût du capital et l’augmentation de la capacité d’emprunt.</p>
+      <p>Enfin, les <div class='term'><div class='term-name'>Synergies Commerciales</div> se concentrent sur les opportunités de croissance des revenus qui résultent de la combinaison des forces commerciales des deux entreprises, notamment en termes de part de marché, de portefeuille de produits et de canaux de distribution.</p>
+      <p>Comprendre ces synergies est essentiel pour évaluer la viabilité d’une opération de M&A et pour mettre en œuvre avec succès une stratégie post-fusion. Les exemples concrets, tels que le deal Paramount-Warner Bros., nous offrent une occasion de voir ces principes en action.</p>
+      <p>Demain, nous allons explorer en détail le processus de buy-side et sell-side dans les opérations de M&A, en examinant les étapes clés, les rôles des conseillers et les défis potentiels dans ces processus.</p>
+   </div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin: 0 -48px; padding: 24px 48px; background:#fff3e8; border-top:1px solid #fde0c5; border-bottom:1px solid #fde0c5;">
+        <svg width="540" height="200" viewBox="0 0 540 200">
+  <rect x="50" y="50" width="100" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <rect x="200" y="50" width="100" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <rect x="350" y="50" width="100" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <line x1="150" y1="100" x2="200" y2="100" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="200,95 210,100 200,105" fill="#f9a06b"/>
+  <line x1="300" y1="100" x2="350" y2="100" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="350,95 360,100 350,105" fill="#f9a06b"/>
+  <text x="75" y="120" font-family="Arial" font-size="16" fill="#2b1a0e">Entreprise 1</text>
+  <text x="225" y="120" font-family="Arial" font-size="16" fill="#2b1a0e">Fusion</text>
+  <text x="375" y="120" font-family="Arial" font-size="16" fill="#2b1a0e">Synergies</text>
+  <text x="250" y="150" font-family="Arial" font-size="14" fill="#7a5c45">Opérationnelle, financière, commerciale</text>
+  <text x="360" y="90" font-family="Arial" font-size="18" fill="#c94e0e">Valeur ajoutée</text>
+</svg>
+      </div>
+      
+
+      <!-- QUESTION D'ENTRETIEN -->
+      <div class="interview-section">
+        <div class="section-label">🎯 Question d'entretien de la semaine</div>
+        <div class="interview-question">"Quels sont les principaux types de synergies qui peuvent être créés à travers une opération de M&A, et comment ces synergies peuvent-elles contribuer à la création de valeur pour les actionnaires ?"</div>
+        <div class="interview-answer">
+          
+      <p>Les synergies dans une opération de M&A peuvent être classées en trois catégories principales :</p>
+      <ul>
+         <li><strong>Synergies Opérationnelles</strong> : Ces synergies sont réalisées à travers la réduction des coûts, l’amélioration de l’efficacité et la consolidation des fonctions. Elles sont souvent les plus tangibles et les plus faciles à quantifier.</li>
+         <li><strong>Synergies Financières</strong> : Ces synergies concernent les avantages financiers de la fusion, tels que l’amélioration du levier financier, la réduction du coût du capital et l’augmentation de la capacité d’emprunt.</li>
+         <li><strong>Synergies Commerciales</strong> : Ces synergies se concentrent sur les opportunités de croissance des revenus issues de la combinaison des forces commerciales des deux entreprises, notamment en termes de part de marché, de portefeuille de produits et de canaux de distribution.</li>
+      </ul>
+      <p>Ces synergies peuvent contribuer à la création de valeur pour les actionnaires en augmentant les revenus, en réduisant les coûts, en améliorant l’efficacité opérationnelle et en renforçant la position concurrentielle de l’entreprise issue de la fusion.</p>
+   
+        </div>
+      </div>
+
+      <!-- OUTILS D'APPRENTISSAGE -->
+      <div class="tools-section">
+        <a class="tool-card" href="https://abarisan.github.io/newsletter-mna/quiz/quiz_2026-07-14.html" target="_blank">
+          <span class="icon">❓</span>
+          <span class="tool-title">Quiz ce numéro</span>
+          <span class="tool-desc">4 questions pour vérifier que tu as compris</span>
+        </a>
+        <a class="tool-card" href="https://claude.ai/new" target="_blank">
+          <span class="icon">🤖</span>
+          <span class="tool-title">Poser une question</span>
+          <span class="tool-desc">Ouvre ton Claude Project M&A pour aller plus loin</span>
+        </a>
+      </div>
+
+      <!-- SOURCES PAR NIVEAU -->
+      <div class="sources-section">
+        <div class="section-label">Sources</div>
+        <ul>
+          <li>[N1 · FT] China’s monthly car exports surge past 1mn for first time</li>
+<li>[N2 · NYT DealBook] Paramount-Warner Bros. Merger Is Challenged in Court by California and 11 Other States</li>
+<li>[N3 · WSJ Markets] Elon Musk in a post on X says some of his Trump posts ‘went too far’ and that he regrets them</li>
+<li>[N4 · Dealogic] Données sur les fusions et acquisitions dans le secteur du divertissement</li>
+        </ul>
+        <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:6px; font-family:'Helvetica Neue',Arial,sans-serif; font-size:10px;">
+          <span style="background:#fff3e8;border:1px solid #e85d1a;color:#c94e0e;padding:3px 8px;border-radius:20px;font-weight:700;">N1 · Bloomberg · FT · Capital Finance · CFNEWS · S&P</span>
+          <span style="background:#fff8f2;border:1px solid #f9a06b;color:#7a5c45;padding:3px 8px;border-radius:20px;">N2 · Mergermarket · Reuters · PitchBook</span>
+          <span style="background:#fdf6ee;border:1px solid #fde0c5;color:#9a7060;padding:3px 8px;border-radius:20px;">N3 · WSJ · The Economist</span>
+          <span style="background:#f9f9f9;border:1px solid #e0e0e0;color:#888;padding:3px 8px;border-radius:20px;">N4 · Dealogic · Preqin</span>
+        </div>
+      </div>
+
+    </div><!-- /body -->
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <p>
+        <span class="next">Deck Anki mis à jour en pièce jointe</span><br>
+        The Deal Brief · 5× par semaine · <a href="https://github.com/abarisan/newsletter-mna" style="color:#e85d1a;text-decoration:none;">Code source</a>
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>
