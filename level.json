@@ -1,5 +1,5 @@
 {
-  "numero": 24,
+  "numero": 25,
   "depth": 12,
   "concepts_vus": [
     "LBO : achat d'une cible financé majoritairement par dette",
@@ -32,5 +32,5 @@
     "Anthropic et la fermeture des failles pour limiter l'accès chinois à Claude"
   ],
   "objectif": "Préparer des entretiens M&A dans 1 mois, puis sur 2-3 ans",
-  "trainy_index": 23
+  "trainy_index": 24
 }

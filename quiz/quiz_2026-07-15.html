@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz — The Deal Brief N°25</title>
+  <style>
+    body { font-family: 'Helvetica Neue', Arial, sans-serif; background: #fdf6ee; color: #2b1a0e;
+           margin: 0; padding: 40px 20px; }
+    .container { max-width: 640px; margin: 0 auto; }
+    h1 { font-size: 24px; color: #e85d1a; margin-bottom: 4px; }
+    .subtitle { color: #7a5c45; font-size: 13px; margin-bottom: 40px; }
+    .question { background: #fff; border-radius: 8px; padding: 24px; margin-bottom: 20px;
+                 box-shadow: 0 2px 8px rgba(232,93,26,0.08); }
+    .question h3 { font-size: 16px; margin-bottom: 16px; line-height: 1.5; }
+    .option { display: block; width: 100%; text-align: left; background: #fff8f2;
+               border: 1px solid #fde0c5; border-radius: 6px; padding: 12px 16px;
+               margin-bottom: 8px; cursor: pointer; font-size: 14px; transition: all .15s; }
+    .option:hover { background: #fff3e8; border-color: #f9a06b; }
+    .option.correct { background: #e6f9ec; border-color: #2ecc71; color: #1a6b3a; }
+    .option.wrong   { background: #fdecea; border-color: #e74c3c; color: #7b1c1c; }
+    .explanation { display: none; margin-top: 12px; padding: 12px 16px; background: #fff3e8;
+                    border-left: 3px solid #e85d1a; font-size: 13px; color: #5a3520;
+                    border-radius: 0 6px 6px 0; line-height: 1.6; }
+    .score { display: none; text-align: center; padding: 32px; background: #fff;
+              border-radius: 8px; box-shadow: 0 2px 8px rgba(232,93,26,0.08); }
+    .score h2 { font-size: 28px; color: #e85d1a; }
+    .score p { color: #5a3520; }
+    #submit { display: block; width: 100%; padding: 16px; background: #e85d1a; color: #fff;
+               border: none; border-radius: 8px; font-size: 16px; cursor: pointer; margin-top: 8px; }
+    #submit:hover { background: #c94e0e; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Quiz — N°25</h1>
+  <p class="subtitle">The Deal Brief · 15 July 2026 · 4 questions</p>
+  <div id="quiz"></div>
+  <button id="submit" onclick="submitQuiz()">Voir mes résultats</button>
+  <div class="score" id="score"></div>
+</div>
+<script>
+const questions = [{"question": "Qu'est-ce que le processus Buy-Side dans les opérations M&A?", "options": ["A. Le processus par lequel une entreprise est vendue à une autre entreprise", "B. Le processus par lequel une entreprise identifie, évalue et acquiert une autre entreprise ou des actifs", "C. Le processus de financement d'une acquisition", "D. Le processus de négociation d'un prix d'acquisition"], "correct": 1, "explanation": "Le processus Buy-Side est défini comme le processus par lequel une entreprise identifie, évalue et acquiert une autre entreprise ou des actifs. Cela implique une analyse approfondie de la cible potentielle, y compris son historique financier, sa position sur le marché et ses stratégies de croissance."}, {"question": "Quel est le rôle des banques d'investissement dans le processus Buy-Side?", "options": ["A. De conseiller les vendeurs sur la structuration de la vente", "B. De conseiller les acheteurs sur la structuration de l'acquisition, l'évaluation de la cible et la négociation du prix d'acquisition", "C. De fournir des financements pour l'acquisition", "D. De gérer les relations publiques pour l'acquisition"], "correct": 1, "explanation": "Les banques d'investissement jouent un rôle crucial dans le processus Buy-Side en conseillant les acheteurs sur la structuration de l'acquisition, l'évaluation de la cible et la négociation du prix d'acquisition."}, {"question": "Quels sont les principaux facteurs à considérer lors d'une acquisition?", "options": ["A. Le montant de l'acquisition, la structure de financement et les synergies attendues", "B. Le prix d'acquisition, la valeur des actions et les frais de transaction", "C. La position sur le marché, les stratégies de croissance et les investissements étrangers", "D. La valorisation de l'entreprise, les financements disponibles et les relations avec les actionnaires"], "correct": 0, "explanation": "Les principaux facteurs à considérer lors d'une acquisition incluent le montant de l'acquisition, la structure de financement et les synergies attendues. Ces facteurs sont essentiels pour déterminer la valeur de l'acquisition et les avantages potentiels pour l'entreprise acheteuse."}, {"question": "Quel est l'impact potentiel de la croissance économique chinoise en ralentissement sur les opérations M&A?", "options": ["A. Une augmentation des investissements étrangers en Chine", "B. Une diminution des investissements étrangers en Chine et une influence potentielle sur les stratégies d'expansion des entreprises chinoises à l'étranger", "C. Une stabilisation des opérations M&A dans la région", "D. Une augmentation des fusions et acquisitions entre entreprises chinoises"], "correct": 1, "explanation": "La croissance économique chinoise en ralentissement pourrait affecter les investissements étrangers en Chine ainsi que les stratégies d'expansion des entreprises chinoises à l'étranger, influençant potentiellement les opérations M&A dans la région."}];
+let answered = {};
+
+function buildQuiz() {
+  const quiz = document.getElementById('quiz');
+  questions.forEach((q, qi) => {
+    const div = document.createElement('div');
+    div.className = 'question';
+    div.innerHTML = `<h3>${qi+1}. ${q.question}</h3>` +
+      q.options.map((o, oi) =>
+        `<button class="option" id="q${qi}_${oi}" onclick="answer(${qi},${oi},${q.correct})">${o}</button>`
+      ).join('') +
+      `<div class="explanation" id="exp${qi}">${q.explanation}</div>`;
+    quiz.appendChild(div);
+  });
+}
+
+function answer(qi, oi, correct) {
+  if (answered[qi] !== undefined) return;
+  answered[qi] = oi;
+  const btn = document.getElementById(`q${qi}_${oi}`);
+  const correctBtn = document.getElementById(`q${qi}_${correct}`);
+  btn.classList.add(oi === correct ? 'correct' : 'wrong');
+  if (oi !== correct) correctBtn.classList.add('correct');
+  document.getElementById(`exp${qi}`).style.display = 'block';
+}
+
+function submitQuiz() {
+  const score = Object.values(answered).filter((a, i) => a === questions[i].correct).length;
+  const total = questions.length;
+  const msg = score === total ? "🏆 Parfait ! Tu maîtrises ce numéro." :
+              score >= total/2 ? "👍 Bien, relis les explications des questions ratées." :
+              "📖 Relis le cours — ces notions vont revenir en entretien.";
+  document.getElementById('score').innerHTML =
+    `<h2>${score} / ${total}</h2><p>${msg}</p>`;
+  document.getElementById('score').style.display = 'block';
+  document.getElementById('submit').style.display = 'none';
+  window.scrollTo(0, document.getElementById('score').offsetTop - 20);
+}
+
+buildQuiz();
+</script>
+</body>
+</html>
