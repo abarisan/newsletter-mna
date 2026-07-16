@@ -1,4 +1,4 @@
-# Contexte The Deal Brief — Mise à jour N°25 (15 July 2026)
+# Contexte The Deal Brief — Mise à jour N°26 (16 July 2026)
 
 ## Mon profil
 Étudiant préparant des entretiens en banque d'affaires M&A.
@@ -11,24 +11,18 @@ Financial Projections, Comptabilisation des inventaires, Mécanique de l'EV/Equi
 ## Deals suivis en ce moment
 Volkswagen's Restructuring Plans and Inventory Management, SpaceX : IPO de 75 Md$, la plus grosse de l'histoire, cas d'école de cash flow, Apple : achat de puces mémoire à une entreprise chinoise sous embargo, L'acquisition d'Air Con par un fonds d'investissement, Uniqlo s'apprête à dominer le marché de la mode mondiale, La Dette vs Equity dans le LBO d'EA : Un Exemple Concret, Anthropic et la fermeture des failles pour limiter l'accès chinois à Claude
 
-## Contenu du dernier numéro (15 July 2026)
+## Contenu du dernier numéro (16 July 2026)
 
 ### Deal de la semaine
-Le rachat de Buy Buy Baby par Beyond : Illustration du processus Buy-Side dans les opérations M&A
-<p>Le secteur de la vente au détail est en constante évolution, avec des entreprises cherchant à étendre leurs portefeuilles de marques pour améliorer leur part de marché. Le rachat récent de Buy Buy Baby par Beyond illustre parfaitement ce concept, ainsi que le processus Buy-Side dans les opérations M&A.</p>
-   <p>Le montant de l'acquisition n'a pas été divulgué, mais d'après des sources proches du dossier, il est estimé à plusieurs centaines de millions de dollars. <strong>Ceci représente une prime significative par rapport à la valorisation antérieure de Buy Buy Baby</strong>, démontrant l'intérêt que porte Beyond à cette acquisition. Les banques conseil pour cette transaction incluent <em>Goldman Sachs</em> pour Beyond et <em>Morgan Stanley</em> pour Buy Buy Baby.</p>
-   <p>Le rationnel stratégique derrière cette acquisition est clair : en intégrant Buy Buy Baby, Beyond cherche à <strong>renforcer son offre dans le secteur de la puériculture et de la décoration pour la maison</stro
+NextEra et Dominion: un géant de l'énergie en formation
+<p>Le marché de l'énergie est en pleine mutation avec la création d'un géant de l'énergie par la fusion de NextEra et Dominion. Cette opération, d'un montant de 70 milliards de dollars, créera un groupe avec 10 millions de clients dans le sud-est des États-Unis.</p><p>Le prix d'acquisition de 120 dollars par action représente une prime de 20% par rapport au cours de bourse de Dominion avant l'annonce. Cette transaction est financée à 60% par des actions et à 40% par de la dette.</p><p>Le rationnel stratégique de cette opération est de créer un groupe plus solide et plus diversifié pour faire face à la concurrence croissante dans le secteur de l'énergie. Cette acquisition permettra à NextEra de renforcer sa position sur le marché et d'augmenter son offre de services.</p><p>Dans ce contexte, la question qui se pose est : quels sont les facteurs clés pour réussir une telle opération de fusion-acquisition dans le secteur de l'énergie ?</p>
 
 ### Cours
-<p>Le processus Buy-Side dans les opérations M&A implique une analyse approfondie de la cible potentielle, y compris son historique financier, sa position sur le marché, et ses stratégies de croissance. <strong>Les banques d'investissement</strong> jouent un rôle crucial dans ce processus en conseillant les acheteurs sur la structuration de l'acquisition, l'évaluation de la cible, et la négociation du prix d'acquisition.</p>
-   <div class='term'><div class='term-name'>Processus Buy-Side</div>Le processus par lequel une entreprise identifie, évalue, et acquiert une autre entreprise ou des actifs.</div>
-   <p>Les principaux facteurs à considérer lors d'une acquisition incluent le <em>montant de l'acquisition</em>, la <strong>structure de financement</strong>, et les <em>synergies attendues</em> de l'intégration des deux entreprises. La réussite d'une acquisition dépend de la capacité de l'acheteur à <strong>intégrer les opérations</strong> de la cible de manière efficace et à réaliser les synergies promises.</p>
-   <p>Les erreurs courantes lors des acquisitions incluent <strong>la surestimation des synergies</strong>, la <em>sous-estimation des défis d'intégration</em>, et le <strong
+<p>Le chapitre du jour porte sur les brainteasers et le market sizing. Il est essentiel de comprendre comment aborder ces questions pour les entretiens de banque d'affaires.</p><p>Un brainteaser est une question qui nécessite une réflexion logique et créative pour résoudre un problème. Les exemples de brainteasers incluent des questions comme : « Combien de personnes utilizent les transports en commun dans une ville ? » ou « Quel est le chiffre d'affaires annuel d'une entreprise de vente de glaces ? »</p><p>Le market sizing est une technique utilisée pour estimer la taille d'un marché. Il s'agit de décomposer le marché en segments plus petits et d'estimer la part de marché de chaque segment.</p><p>Les étapes pour résoudre un brainteaser ou effectuer un market sizing sont les suivantes :</p><ul><li>Comprendre la question et clarifier les hypothèses</li><li>Décomposer le problème en étapes plus petites</li><li>Utiliser des chiffres et des données pour étayer les estimations</li><li>Présenter les résultats de manière claire et concise</li></ul><div class='term'><div class='term-name'>Brainteaser</div>Définition : un type de question qui nécessite une réflexion logique et créative pour
 
 ### Macro
-L'économie chinoise en ralentissement : Quels impacts potentiels sur les opérations M&A ?
-<p>La croissance économique de la Chine au deuxième trimestre a été de 4,3%, ce qui est l'un des taux les plus bas enregistrés ces dernières années. <strong>Ceci pourrait affecter les investissements étrangers en Chine</strong> ainsi que les stratégies d'expansion des entreprises chinoises à l'étranger, influençant potentiellement les opérations M&A dans la région.</p>
-   <p>Les entreprises étrangères pourraient <em>réévaluer leurs stratégies d'investissement</em> en Chine, ce qui pourrait ralen
+La situation géopolitique et son impact sur le marché de l'énergie
+<p>La situation géopolitique actuelle, marquée par des tensions entre les États-Unis et l'Iran, a un impact significatif sur le marché de l'énergie. Les sanctions économiques et les menaces de conflit poussent les prix de l'énergie à la hausse.</p><p> Selon un article du Wall Street Journal, les États-Unis ont imposé de nouvelles sanctions à l'Iran, ce qui a entraîné une augmentation des prix du pétrole.</p>
 
 ---
 Tu es mon tuteur M&A. Quand je te pose une question :

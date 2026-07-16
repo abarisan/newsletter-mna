@@ -1078,5 +1078,41 @@
     "verso": "Les entreprises effectuent des acquisitions pour diverses raisons, notamment pour accroître leur part de marché, améliorer leur efficacité opérationnelle, acquérir de nouvelles technologies ou compétences, ou simplement pour éliminer la concurrence. Les acquisitions peuvent également offrir des opportunités de croissance et de diversification pour les entreprises.",
     "numero": "25",
     "id": 2041311671
+  },
+  {
+    "recto": "Qu'est-ce que le goodwill ?",
+    "verso": "Le goodwill est la différence entre le prix d'acquisition d'une entreprise et la valeur de ses actifs nets. Il représente la valeur des actifs immatériels tels que la réputation, les marques et les relations avec les clients. Par exemple, si une entreprise est acquise pour 100 millions de dollars et que ses actifs nets valent 80 millions de dollars, le goodwill serait de 20 millions de dollars.",
+    "numero": "26",
+    "id": 1775335202
+  },
+  {
+    "recto": "Qu'est-ce que le market sizing ?",
+    "verso": "Le market sizing est une technique utilisée pour estimer la taille d'un marché. Elle consiste à décomposer le marché en segments plus petits et à estimer la part de marché de chaque segment. Cela permet de faire une estimation réaliste de la taille du marché et de prendre des décisions éclairées. Par exemple, pour estimer le marché de la vente de glaces, on pourrait décomposer le marché en segments tels que les glaces vendues dans les supermarchés, les glaces vendues dans les magasins spécialisés et les glaces vendues sur les marchés de rue.",
+    "numero": "26",
+    "id": 1727948056
+  },
+  {
+    "recto": "Comment fonctionne un brainteaser dans un entretien de banque d'affaires ?",
+    "verso": "Un brainteaser est une question qui nécessite une réflexion logique et créative pour résoudre un problème. Dans un entretien de banque d'affaires, les brainteasers sont utilisés pour tester les compétences en résolution de problèmes et en pensée critique du candidat. Par exemple, on pourrait demander au candidat d'estimer le nombre de personnes utilisant les transports en commun dans une ville, ou de calculer le chiffre d'affaires annuel d'une entreprise de vente de glaces. Le but est de voir comment le candidat aborde le problème, plutôt que d'obtenir une réponse exacte.",
+    "numero": "26",
+    "id": 1591845435
+  },
+  {
+    "recto": "Pourquoi est-il important de prendre en compte les facteurs géopolitiques dans l'analyse de marché ?",
+    "verso": "Les facteurs géopolitiques peuvent avoir un impact significatif sur les marchés et les entreprises. Les tensions entre les pays, les sanctions économiques et les conflits peuvent influencer les prix des matières premières, les taux de change et les décisions d'investissement. Par exemple, les tensions entre les États-Unis et l'Iran peuvent pousser les prix de l'énergie à la hausse, ce qui peut avoir des répercussions sur les entreprises du secteur de l'énergie. Il est donc important de prendre en compte ces facteurs pour faire des prévisions et des décisions éclairées.",
+    "numero": "26",
+    "id": 1186118029
+  },
+  {
+    "recto": "Qu'est-ce que la différence entre la valeur entreprise (EV) et la valeur d'équité ?",
+    "verso": "La valeur entreprise (EV) est la valeur totale d'une entreprise, comprenant la valeur de ses actions, de sa dette et de ses autres passifs. La valeur d'équité, en revanche, représente la valeur des actions détenues par les actionnaires. La différence entre les deux est que la valeur d'équité ne prend pas en compte la dette et les autres passifs de l'entreprise. Par exemple, si une entreprise a une valeur d'équité de 100 millions de dollars et une dette de 50 millions de dollars, sa valeur entreprise serait de 150 millions de dollars.",
+    "numero": "26",
+    "id": 1324451438
+  },
+  {
+    "recto": "Pourquoi utiliser une dette mezzanine dans une opération de financement ?",
+    "verso": "La dette mezzanine est un type de financement qui combine les caractéristiques de la dette et de l'équité. Elle est utilisée pour financer des opérations qui nécessitent un niveau de risque plus élevé que la dette classique, mais qui ne permettent pas de diluer la propriété des actionnaires. La dette mezzanine est souvent utilisée dans les opérations de LBO (leveraged buy-out) ou de réstructuration d'entreprise, où il est nécessaire de financer des projets avec un niveau de risque élevé. Elle offre une solution de financement plus flexible que la dette classique, tout en permettant aux actionnaires de conserver le contrôle de l'entreprise.",
+    "numero": "26",
+    "id": 1371475584
   }
 ]
