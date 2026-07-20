@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Deal Brief</title>
+  <style>
+    /* ── Palette : clair / nuances d'orange ── */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #fdf6ee;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      color: #2b1a0e;
+      line-height: 1.75;
+    }
+
+    .wrapper {
+      max-width: 680px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(232,93,26,0.10);
+    }
+
+    .header {
+      background: linear-gradient(135deg, #ff6b2b 0%, #e85d1a 100%);
+      padding: 48px 48px 36px;
+      text-align: center;
+    }
+    .header .eyebrow {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ffe8d6;
+      margin-bottom: 16px;
+    }
+    .header h1 {
+      font-size: 36px;
+      font-weight: 400;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .header .subtitle {
+      font-size: 13px;
+      color: #ffd4b8;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      letter-spacing: 0.5px;
+    }
+    .header .issue-line {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.25);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #ffe8d6;
+      letter-spacing: 1px;
+    }
+
+    .body { padding: 0 48px 48px; }
+
+    .section { margin-top: 48px; }
+    .section-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #e85d1a;
+      margin-bottom: 6px;
+    }
+    .section h2 {
+      font-size: 22px;
+      font-weight: 400;
+      color: #2b1a0e;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #f9a06b;
+    }
+    .section-content { font-size: 15px; color: #3d2510; }
+    .section-content p { margin-bottom: 14px; }
+    .section-content strong { color: #c94e0e; font-weight: 700; }
+    .section-content ul, .section-content ol { padding-left: 20px; margin-bottom: 14px; }
+    .section-content li { margin-bottom: 6px; }
+
+    .callout {
+      background: #fff3e8;
+      border-left: 3px solid #e85d1a;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 14px;
+      color: #5a3520;
+      font-style: italic;
+      border-radius: 0 4px 4px 0;
+    }
+    .callout strong { font-style: normal; color: #c94e0e; }
+
+    .rappel-section {
+      margin-top: 48px;
+      background: #fff3e8;
+      margin-left: -48px;
+      margin-right: -48px;
+      padding: 36px 48px;
+      border-top: 3px solid #f9a06b;
+      border-bottom: 3px solid #f9a06b;
+    }
+    .rappel-section .section-label { color: #e85d1a; }
+    .rappel-section h2 { color: #2b1a0e; border-bottom-color: #fde0c5; font-size: 20px; }
+    .rappel-section .section-content { color: #5a3520; }
+    .rappel-section .section-content strong { color: #c94e0e; }
+    .rappel-section .term { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid #fde0c5; }
+    .rappel-section .term:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .rappel-section .term-name {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .interview-section {
+      margin-top: 48px;
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 28px 32px;
+    }
+    .interview-section .section-label { color: #e85d1a; }
+    .interview-question { font-size: 18px; font-style: italic; color: #2b1a0e; margin: 12px 0 20px; line-height: 1.4; }
+    .interview-answer { font-size: 14px; color: #5a3520; }
+
+    .sources-section { margin-top: 48px; padding-top: 24px; border-top: 1px solid #fde0c5; }
+    .sources-section .section-label { margin-bottom: 12px; }
+    .sources-section ul { list-style: none; padding: 0; }
+    .sources-section li {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #7a5c45;
+      margin-bottom: 6px;
+      padding-left: 12px;
+      position: relative;
+    }
+    .sources-section li::before { content: '→'; position: absolute; left: 0; color: #e85d1a; }
+
+    .footer {
+      background: #fdf6ee;
+      padding: 28px 48px;
+      text-align: center;
+      border-top: 1px solid #fde0c5;
+    }
+    .footer p { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; color: #9a7060; line-height: 1.8; }
+    .footer .next { color: #c94e0e; font-weight: 600; }
+
+    .divider { height: 1px; background: #fde0c5; margin: 36px 0; }
+
+    /* ── Schéma SVG ── */
+    .diagram-section {
+      margin-top: 48px;
+    }
+    .diagram-section .section-label {
+      margin-bottom: 12px;
+    }
+    .diagram-wrap {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      overflow-x: auto;
+    }
+    .diagram-wrap svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* ── Outils d'apprentissage ── */
+    .tools-section {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .tool-card {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      transition: box-shadow .15s;
+    }
+    .tool-card:hover { box-shadow: 0 4px 16px rgba(232,93,26,0.15); }
+    .tool-card .icon { font-size: 28px; display: block; margin-bottom: 8px; }
+    .tool-card .tool-title {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .tool-card .tool-desc {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      color: #7a5c45;
+    }
+
+    @media (max-width: 600px) {
+      .wrapper { margin: 0; border-radius: 0; }
+      .header { padding: 32px 24px 24px; }
+      .body { padding: 0 24px 32px; }
+      .rappel-section { margin-left: -24px; margin-right: -24px; padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="eyebrow">Newsletter M&A · Finance · IA · Géopolitique</div>
+      <h1>The Deal Brief</h1>
+      <div class="subtitle">Comprendre la finance, pas juste la suivre</div>
+      <div class="issue-line">N° 28 &nbsp;·&nbsp; 20 July 2026</div>
+    </div>
+
+    <div class="body">
+
+      <!-- SECTION 1 : M&A -->
+      <!-- DEAL -->
+      <div class="section">
+        <div class="section-label">Niveau 1 — Deal de la semaine</div>
+        <h2>L'impact de la crise irano-américaine sur les cours de l'or noir</h2>
+        <div class="section-content"><p>Le cours du pétrole a dépassé les 90 dollars le baril en raison de la crise irano-américaine, selon un article du <em>Financial Times</em> intitulé « Oil back above $90 as Iran hits tankers ».</p><p>Ce contexte de tensions géopolitiques affecte directement les valorisations des entreprises du secteur énergétique, avec des conséquences sur les fusions-acquisitions. Par exemple, le cours de l'action de TotalEnergies a augmenté de 2% suite à l'annonce de la reprise des hostilités.</p><p>En termes de structure financière, les entreprises du secteur énergétique pourraient bénéficier d'une prime de risque plus élevée, ce qui pourrait les inciter à se refinancer à des taux plus attractifs.</p><p>Un exemple récent est l'émission obligataire de 1 milliard d'euros réalisée par Enel, avec un taux d'intérêt de 2,5% sur 10 ans, comme rapporté par <strong>Reuters</strong> dans « Enel successfully places €1 billion bond ».</p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin-top:20px;"><svg width="540" height="180" viewBox="0 0 540 180">
+  <rect x="50" y="50" width="100" height="80" fill="#fff3e8" stroke="#e85d1a" stroke-width="2"/>
+  <text x="60" y="80" font-family="Arial" font-size="16" fill="#2b1a0e">Crise irano-américaine</text>
+  <line x1="150" y1="90" x2="250" y2="90" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="250,85 260,90 250,95" fill="#f9a06b"/>
+  <rect x="260" y="50" width="100" height="80" fill="#fff3e8" stroke="#e85d1a" stroke-width="2"/>
+  <text x="270" y="80" font-family="Arial" font-size="16" fill="#2b1a0e">Cours du pétrole</text>
+  <text x="270" y="110" font-family="Arial" font-size="14" fill="#7a5c45">$90+/baril</text>
+  <line x1="360" y1="90" x2="460" y2="90" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="460,85 470,90 460,95" fill="#f9a06b"/>
+  <rect x="470" y="50" width="100" height="80" fill="#fff3e8" stroke="#e85d1a" stroke-width="2"/>
+  <text x="480" y="80" font-family="Arial" font-size="16" fill="#2b1a0e">Valorisation des entreprises</text>
+  <text x="480" y="110" font-family="Arial" font-size="14" fill="#7a5c45">Impact négatif</text>
+</svg></div>
+      
+
+      <div class="divider"></div>
+
+      <!-- MACRO & GÉOPO -->
+      <div class="section">
+        <div class="section-label">Niveau 3 — Macro & Géopolitique</div>
+        <h2>Les conséquences de la crise irano-américaine sur l'économie mondiale</h2>
+        <div class="section-content"><p>La crise irano-américaine a des répercussions sur l'économie mondiale, notamment en raison de l'impact sur les prix de l'énergie. Selon un article du <em>Wall Street Journal</em> intitulé « Global Oil Price Crosses $90 a Barrel as U.S.-Iran Conflict Widens », les prix de l'or noir pourraient augmenter encore, ce qui pourrait freiner la croissance économique.</p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin-top:20px;"><svg width="540" height="200" viewBox="0 0 540 200">
+  <rect x="50" y="50" width="100" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <rect x="250" y="50" width="100" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <rect x="450" y="50" width="100" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <line x1="150" y1="100" x2="250" y2="100" stroke="#f9a06b" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="350" y1="100" x2="450" y2="100" stroke="#f9a06b" stroke-width="2" marker-end="url(#arrow)"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f9a06b"/>
+    </marker>
+  </defs>
+  <text x="75" y="80" font-family="Arial" font-size="18" fill="#2b1a0e">Crise irano-américaine</text>
+  <text x="275" y="80" font-family="Arial" font-size="18" fill="#2b1a0e">Prix de l'énergie</text>
+  <text x="475" y="80" font-family="Arial" font-size="18" fill="#2b1a0e">Économie mondiale</text>
+  <text x="150" y="120" font-family="Arial" font-size="14" fill="#7a5c45">Impact</text>
+  <text x="350" y="120" font-family="Arial" font-size="14" fill="#7a5c45">Répercussions</text>
+  <text x="450" y="150" font-family="Arial" font-size="14" fill="#c94e0e">$90/baril</text>
+</svg></div>
+      
+
+      <div class="divider"></div>
+
+      <!-- IA -->
+      
+
+      <!-- RAPPEL DE COURS -->
+      <div class="rappel-section">
+        <div class="section-label">Rappel de cours</div>
+        <h2>Les notions clés de ce numéro</h2>
+        <div class="section-content"><p>Le chapitre de la semaine porte sur les <strong>Financial Disclosure</strong> (US vs Europe), qui sont essentielles pour les investisseurs et les entreprises. Les <div class='term'><div class='term-name'>IFRS</div> (International Financial Reporting Standards) sont utilisés dans de nombreux pays, y compris en Europe, alors que les <div class='term'><div class='term-name'>GAAP</div> (Generally Accepted Accounting Principles) sont utilisés aux États-Unis.</div></p><p>Il est important de comprendre les différences entre ces deux systèmes comptables pour analyser les états financiers des entreprises et prendre des décisions éclairées.</p><p>Par exemple, les IFRS utilisent une approche plus <em>principes-based</em>, tandis que les GAAP utilisent une approche plus <em>rules-based</em>. Cela peut avoir des implications importantes pour les entreprises qui opèrent à la fois en Europe et aux États-Unis.</p><p>Un autre point important est la <div class='term'><div class='term-name'>consolidation</div> des états financiers, qui peut varier selon les règles comptables utilisées. Les IFRS et les GAAP ont des règles différentes pour la consolidation des filiales et des co-entreprises.</p><p>Enfin, il est essentiel de comprendre les implications fiscales des différences entre les IFRS et les GAAP. Les entreprises doivent être en mesure de gérer les complexités fiscales liées à l'utilisation de systèmes comptables différents dans différentes juridictions.</p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin: 0 -48px; padding: 24px 48px; background:#fff3e8; border-top:1px solid #fde0c5; border-bottom:1px solid #fde0c5;">
+        <svg width="540" height="180" viewBox="0 0 540 180">
+  <rect x="20" y="20" width="200" height="60" fill="#fff3e8" rx="5" />
+  <rect x="320" y="20" width="200" height="60" fill="#fff3e8" rx="5" />
+  <text x="50" y="50" font-family="Arial" font-size="16" fill="#2b1a0e">US</text>
+  <text x="350" y="50" font-family="Arial" font-size="16" fill="#2b1a0e">Europe</text>
+  <text x="50" y="80" font-family="Arial" font-size="14" fill="#7a5c45">Financial Disclosure</text>
+  <text x="350" y="80" font-family="Arial" font-size="14" fill="#7a5c45">IFRS</text>
+  <line x1="220" y1="60" x2="320" y2="60" stroke="#f9a06b" stroke-width="2" />
+  <polygon points="320,55 330,60 320,65" fill="#f9a06b" />
+  <text x="240" y="70" font-family="Arial" font-size="14" fill="#c94e0e">Essentielles pour les investisseurs</text>
+</svg>
+      </div>
+      
+
+      <!-- QUESTION D'ENTRETIEN -->
+      <div class="interview-section">
+        <div class="section-label">🎯 Question d'entretien de la semaine</div>
+        <div class="interview-question">"« Quelles sont les principales différences entre les IFRS et les GAAP en termes de consolidation des états financiers ? »"</div>
+        <div class="interview-answer">
+          <p>Les principales différences entre les IFRS et les GAAP en termes de consolidation des états financiers sont les suivantes :</p><ul><li>Les IFRS utilisent une approche plus <em>principes-based</em> pour la consolidation, tandis que les GAAP utilisent une approche plus <em>rules-based</em>.</li><li>Les IFRS exigent la consolidation des filiales et des co-entreprises si l'entité mère a un contrôle significatif sur celles-ci, tandis que les GAAP exigent la consolidation si l'entité mère a un contrôle de 50% ou plus.</li><li>Les IFRS permettent une plus grande flexibilité dans la consolidation des états financiers, tandis que les GAAP sont plus prescriptifs.</li></ul>
+        </div>
+      </div>
+
+      <!-- OUTILS D'APPRENTISSAGE -->
+      <div class="tools-section">
+        <a class="tool-card" href="https://abarisan.github.io/newsletter-mna/quiz/quiz_2026-07-20.html" target="_blank">
+          <span class="icon">❓</span>
+          <span class="tool-title">Quiz ce numéro</span>
+          <span class="tool-desc">4 questions pour vérifier que tu as compris</span>
+        </a>
+        <a class="tool-card" href="https://claude.ai/new" target="_blank">
+          <span class="icon">🤖</span>
+          <span class="tool-title">Poser une question</span>
+          <span class="tool-desc">Ouvre ton Claude Project M&A pour aller plus loin</span>
+        </a>
+      </div>
+
+      <!-- SOURCES PAR NIVEAU -->
+      <div class="sources-section">
+        <div class="section-label">Sources</div>
+        <ul>
+          <li>[N1] Financial Times — Oil back above $90 as Iran hits tankers</li>
+<li>[N2] Reuters — Enel successfully places €1 billion bond</li>
+<li>[N3] Wall Street Journal — Global Oil Price Crosses $90 a Barrel as U.S.-Iran Conflict Widens</li>
+<li>[N4] Dealogic — données sur les émissions obligataires</li>
+        </ul>
+        <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:6px; font-family:'Helvetica Neue',Arial,sans-serif; font-size:10px;">
+          <span style="background:#fff3e8;border:1px solid #e85d1a;color:#c94e0e;padding:3px 8px;border-radius:20px;font-weight:700;">N1 · Bloomberg · FT · Capital Finance · CFNEWS · S&P</span>
+          <span style="background:#fff8f2;border:1px solid #f9a06b;color:#7a5c45;padding:3px 8px;border-radius:20px;">N2 · Mergermarket · Reuters · PitchBook</span>
+          <span style="background:#fdf6ee;border:1px solid #fde0c5;color:#9a7060;padding:3px 8px;border-radius:20px;">N3 · WSJ · The Economist</span>
+          <span style="background:#f9f9f9;border:1px solid #e0e0e0;color:#888;padding:3px 8px;border-radius:20px;">N4 · Dealogic · Preqin</span>
+        </div>
+      </div>
+
+    </div><!-- /body -->
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <p>
+        <span class="next">Deck Anki mis à jour en pièce jointe</span><br>
+        The Deal Brief · 5× par semaine · <a href="https://github.com/abarisan/newsletter-mna" style="color:#e85d1a;text-decoration:none;">Code source</a>
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>
