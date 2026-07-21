@@ -1186,5 +1186,41 @@
     "verso": "Les facteurs géopolitiques, tels que les tensions entre les pays, les conflits et les événements politiques, peuvent avoir un impact significatif sur les marchés financiers. Il est donc important de prendre en compte ces facteurs dans l'analyse des marchés financiers pour anticiper les risques et les opportunités potentiels. Les investisseurs et les entreprises doivent être conscients de ces facteurs pour prendre des décisions éclairées et minimiser les risques.",
     "numero": "28",
     "id": 1543938982
+  },
+  {
+    "recto": "Qu'est-ce que l'EBITDA ?",
+    "verso": "L'EBITDA signifie Bénéfice avant Intérêts, Taxes, Dépréciation et Amortissement. Il s'agit d'un indicateur financier qui évalue la rentabilité d'une entreprise en considérant son bénéfice avant les intérêts, les taxes, la dépréciation et l'amortissement. C'est une mesure utile pour comparer la performance de différentes entreprises. Par exemple, dans le contexte d'une acquisition, l'EBITDA peut aider à évaluer la santé financière de l'entreprise cible.",
+    "numero": "29",
+    "id": 1470853971
+  },
+  {
+    "recto": "Pourquoi l'analyse de rentabilité est-elle importante dans les fusions-acquisitions ?",
+    "verso": "L'analyse de rentabilité est cruciale dans les fusions-acquisitions car elle permet d'évaluer la santé financière et le potentiel de croissance de l'entreprise cible. Cette analyse inclut l'examen des états financiers, comme le compte de résultat, pour identifier les domaines où des économies ou des améliorations pourraient être réalisées. Elle aide également à déterminer la capacité de l'entreprise à générer des flux de trésorerie, ce qui est essentiel pour les investisseurs.",
+    "numero": "29",
+    "id": 1770860680
+  },
+  {
+    "recto": "Comment la politique monétaire des banques centrales impacte-t-elle les décisions d'investissement ?",
+    "verso": "La politique monétaire des banques centrales a un impact significatif sur les marchés financiers et les décisions d'investissement. Les taux d'intérêt fixés par les banques centrales influencent les coûts d'emprunt et les rendements attendus des investissements. Par exemple, des taux d'intérêt bas peuvent rendre les emprunts moins chers et inciter les entreprises à investir, tandis que des taux d'intérêt élevés peuvent les dissuader de le faire.",
+    "numero": "29",
+    "id": 2120376926
+  },
+  {
+    "recto": "Qu'est-ce que le goodwill ?",
+    "verso": "Le goodwill représente la différence entre le prix d'acquisition d'une entreprise et la valeur de ses actifs nets. Il s'agit de l'écart entre le coût d'acquisition et la valeur comptable des actifs, qui peut inclure des éléments tels que la réputation de l'entreprise, les relations avec les clients, ou les avantages compétitifs. Le goodwill est considéré comme un actif immatériel et est souvent amorti sur plusieurs années.",
+    "numero": "29",
+    "id": 1108828986
+  },
+  {
+    "recto": "Pourquoi utiliser une dette mezzanine ?",
+    "verso": "La dette mezzanine est utilisée pour combiner les caractéristiques de la dette et de l'action, offrant ainsi une solution pour les entreprises qui nécessitent un financement supplémentaire sans diluer la participation des actionnaires existants. La dette mezzanine est souvent utilisée dans les opérations de fusions-acquisitions ou de restructuration, car elle fournit un accès à des fonds à long terme avec des conditions de remboursement flexibles.",
+    "numero": "29",
+    "id": 1423625679
+  },
+  {
+    "recto": "Différence entre EV et equity value ?",
+    "verso": "La valeur d'entreprise (EV) représente la valeur totale de l'entreprise, y compris la dette et les capitaux propres. La valeur des capitaux propres (equity value) représente la valeur des actions détenues par les actionnaires. La principale différence entre les deux est que l'EV prend en compte la dette de l'entreprise, tandis que l'équity value se concentre uniquement sur la valeur des actions. Par exemple, si une entreprise a une dette de 100 millions et une valeur des capitaux propres de 500 millions, son EV serait de 600 millions.",
+    "numero": "29",
+    "id": 1489461917
   }
 ]

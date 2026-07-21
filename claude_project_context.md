@@ -1,4 +1,4 @@
-# Contexte The Deal Brief — Mise à jour N°28 (20 July 2026)
+# Contexte The Deal Brief — Mise à jour N°29 (21 July 2026)
 
 ## Mon profil
 Étudiant préparant des entretiens en banque d'affaires M&A.
@@ -11,18 +11,24 @@ Financial Projections, Comptabilisation des inventaires, Mécanique de l'EV/Equi
 ## Deals suivis en ce moment
 Volkswagen's Restructuring Plans and Inventory Management, SpaceX : IPO de 75 Md$, la plus grosse de l'histoire, cas d'école de cash flow, Apple : achat de puces mémoire à une entreprise chinoise sous embargo, L'acquisition d'Air Con par un fonds d'investissement, Uniqlo s'apprête à dominer le marché de la mode mondiale, La Dette vs Equity dans le LBO d'EA : Un Exemple Concret, Anthropic et la fermeture des failles pour limiter l'accès chinois à Claude
 
-## Contenu du dernier numéro (20 July 2026)
+## Contenu du dernier numéro (21 July 2026)
 
 ### Deal de la semaine
-L'impact de la crise irano-américaine sur les cours de l'or noir
-<p>Le cours du pétrole a dépassé les 90 dollars le baril en raison de la crise irano-américaine, selon un article du <em>Financial Times</em> intitulé « Oil back above $90 as Iran hits tankers ».</p><p>Ce contexte de tensions géopolitiques affecte directement les valorisations des entreprises du secteur énergétique, avec des conséquences sur les fusions-acquisitions. Par exemple, le cours de l'action de TotalEnergies a augmenté de 2% suite à l'annonce de la reprise des hostilités.</p><p>En termes de structure financière, les entreprises du secteur énergétique pourraient bénéficier d'une prime de risque plus élevée, ce qui pourrait les inciter à se refinancer à des taux plus attractifs.</p><p>Un exemple récent est l'émission obligataire de 1 milliard d'euros réalisée par Enel, avec un taux d'intérêt de 2,5% sur 10 ans, comme rapporté par <strong>Reuters</strong> dans « Enel successfully places €1 billion bond ».</p>
+L'acquisition de Beyond Meat par une société rivale : Un exemple d'analyse de rentabilité
+
+      <p>L'actualité récente du marché des viandes alternatives nous apporte un exemple intéressant d'analyse de rentabilité dans le contexte d'une acquisition. Beyond Meat, l'un des leaders du marché, a fait l'objet d'une offre d'acquisition de la part d'une société rivale, <strong>conduite par un groupe d'investisseurs privés</strong>. Cette transaction, d'un montant de <em>10 milliards de dollars</em>, représente une prime de <em>20%</em> par rapport au cours de l'action avant l'annonce.</p>
+      <p>Le rationnel stratégique derrière cette acquisition est <strong>double</strong> : d'une part, renforcer la position du groupe acquéreur sur le marché en croissance des viandes alternatives, et d'autre part, bénéficier des <em>synergies opérationnelles</em> potentielles liées à l'intégration de Beyond Meat. Cette acquisition illustre parfaitement le concept d'<em>analyse de rentabilité</em> dans le cadre d'une opération de fusion-acquisition, où l'analyse financière et la création de va
 
 ### Cours
-<p>Le chapitre de la semaine porte sur les <strong>Financial Disclosure</strong> (US vs Europe), qui sont essentielles pour les investisseurs et les entreprises. Les <div class='term'><div class='term-name'>IFRS</div> (International Financial Reporting Standards) sont utilisés dans de nombreux pays, y compris en Europe, alors que les <div class='term'><div class='term-name'>GAAP</div> (Generally Accepted Accounting Principles) sont utilisés aux États-Unis.</div></p><p>Il est important de comprendre les différences entre ces deux systèmes comptables pour analyser les états financiers des entreprises et prendre des décisions éclairées.</p><p>Par exemple, les IFRS utilisent une approche plus <em>principes-based</em>, tandis que les GAAP utilisent une approche plus <em>rules-based</em>. Cela peut avoir des implications importantes pour les entreprises qui opèrent à la fois en Europe et aux États-Unis.</p><p>Un autre point important est la <div class='term'><div class='term-name'>consolidation</div> des états financiers, qui peut varier selon les règles comptables utilisées. Les IFRS et les GAAP ont des règles différentes pour la consolidation des filiales et des co-entreprises.</p><p>E
+
+      <p>L'analyse de rentabilité est un processus essentiel dans le contexte des fusions-acquisitions. Elle inclut l'examen des états financiers de l'entreprise cible, notamment le compte de résultat (P&L), pour évaluer sa santé financière et son potentiel de croissance. Le compte de résultat fournit une vue d'ensemble complète des revenus et des dépenses de l'entreprise, aide à identifier les domaines où des économies ou des améliorations pourraient être réalisées, et permet de déterminer la capacité de l'entreprise à générer des flux de trésorerie.</p>
+      <div class='term'><div class='term-name'>EBITDA</div>Le Bénéfice avant Intérêts, Taxes, Dépréciation et Amortissement (EBITDA) est un indicateur clé de la rentabilité d'une entreprise. Il est obtenu en ajoutant la dépréciation et l'amortissement au bénéfice net avant intérêts et taxes. Cet indicateur est crucial pour évaluer la capacité d'une entreprise à générer des bénéfices à partir de ses activités opérationnelles, indépendamment du coût du capital et des politiques fiscales.</div>
+      <p>En plus de l'analyse financière, comprendre les facteurs macro-économiques et leur impact sur les marchés et les industries est ess
 
 ### Macro
-Les conséquences de la crise irano-américaine sur l'économie mondiale
-<p>La crise irano-américaine a des répercussions sur l'économie mondiale, notamment en raison de l'impact sur les prix de l'énergie. Selon un article du <em>Wall Street Journal</em> intitulé « Global Oil Price Crosses $90 a Barrel as U.S.-Iran Conflict Widens », les prix de l'or noir pourraient augmenter encore, ce qui pourrait freiner la croissance économique.</p>
+Influence de la politique monétaire sur les marchés
+
+      <p>La politique monétaire des banques centrales a un impact significatif sur les marchés financiers et, par extension, sur les décisions d'investissement et les opérations de fusion-acquisition. La récente décision de la Banque Centrale Européenne de maintenir ses taux d'intérêt à des niveaux historiquement bas a contribué à <em>réduire le coût de la dette</em> pour les entreprises, rendant ainsi les acquisitions plus attrayantes pour les sociétés disposant d'une bonne santé financière.</
 
 ---
 Tu es mon tuteur M&A. Quand je te pose une question :
