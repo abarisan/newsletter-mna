@@ -1222,5 +1222,41 @@
     "verso": "La valeur d'entreprise (EV) représente la valeur totale de l'entreprise, y compris la dette et les capitaux propres. La valeur des capitaux propres (equity value) représente la valeur des actions détenues par les actionnaires. La principale différence entre les deux est que l'EV prend en compte la dette de l'entreprise, tandis que l'équity value se concentre uniquement sur la valeur des actions. Par exemple, si une entreprise a une dette de 100 millions et une valeur des capitaux propres de 500 millions, son EV serait de 600 millions.",
     "numero": "29",
     "id": 1489461917
+  },
+  {
+    "recto": "Qu'est-ce qu'un état de flux de trésorerie ?",
+    "verso": "Un état de flux de trésorerie est un outil essentiel pour comprendre la santé financière d'une entreprise. Il divise les flux de trésorerie en trois catégories : les activités d'exploitation, les activités d'investissement et les activités de financement. Cela permet de comprendre d'où proviennent les revenus et les dépenses de l'entreprise.",
+    "numero": "30",
+    "id": 1722211274
+  },
+  {
+    "recto": "Pourquoi les états de flux de trésorerie sont-ils importants dans les fusions et acquisitions ?",
+    "verso": "Les états de flux de trésorerie sont importants dans les fusions et acquisitions car ils permettent de comprendre la santé financière de l'entreprise cible et de prendre des décisions éclairées concernant l'acquisition. Ils aident également à identifier les opportunités de création de valeur et les risques potentiels.",
+    "numero": "30",
+    "id": 2016159607
+  },
+  {
+    "recto": "Qu'est-ce que les activités d'exploitation dans un état de flux de trésorerie ?",
+    "verso": "Les activités d'exploitation dans un état de flux de trésorerie proviennent des opérations courantes de l'entreprise, telles que la vente de produits ou services. Elles englobent les paiements et les encaissements liés à ces activités, comme les revenus générés par la vente de produits ou les coûts associés à la production.",
+    "numero": "30",
+    "id": 1368882379
+  },
+  {
+    "recto": "Comment les règles bancaires peuvent-elles impacter la rentabilité du secteur bancaire ?",
+    "verso": "Les règles bancaires peuvent impacter la rentabilité du secteur bancaire en réduisant ou en augmentant les barrières réglementaires. Une révision des règles bancaires qui vise à réduire les barrières réglementaires peut permettre aux banques de compétir plus efficacement et d'augmenter leur rentabilité, tandis qu'une augmentation des barrières réglementaires peut les contraindre à être plus prudentes et réduire leur rentabilité.",
+    "numero": "30",
+    "id": 1535698209
+  },
+  {
+    "recto": "Qu'est-ce que les activités d'investissement dans un état de flux de trésorerie ?",
+    "verso": "Les activités d'investissement dans un état de flux de trésorerie concernent les investissements dans les actifs de l'entreprise, tels que les immobilisations corporelles ou les participations dans d'autres entreprises. Elles peuvent inclure les dépenses en immobilisations, les acquisitions d'entreprises ou les investissements dans des projets de recherche et développement.",
+    "numero": "30",
+    "id": 1544300429
+  },
+  {
+    "recto": "Pourquoi les banques ont-elles intérêt à une révision des règles bancaires qui réduit les barrières réglementaires ?",
+    "verso": "Les banques ont intérêt à une révision des règles bancaires qui réduit les barrières réglementaires car cela leur permet de compétir plus efficacement et d'augmenter leur rentabilité. Une réduction des barrières réglementaires peut leur permettre de prendre plus de risques, d'innover et de proposer de nouveaux produits et services, ce qui peut les aider à augmenter leur part de marché et leurs revenus.",
+    "numero": "30",
+    "id": 1994518714
   }
 ]

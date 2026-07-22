@@ -1,4 +1,4 @@
-# Contexte The Deal Brief — Mise à jour N°29 (21 July 2026)
+# Contexte The Deal Brief — Mise à jour N°30 (22 July 2026)
 
 ## Mon profil
 Étudiant préparant des entretiens en banque d'affaires M&A.
@@ -11,24 +11,23 @@ Financial Projections, Comptabilisation des inventaires, Mécanique de l'EV/Equi
 ## Deals suivis en ce moment
 Volkswagen's Restructuring Plans and Inventory Management, SpaceX : IPO de 75 Md$, la plus grosse de l'histoire, cas d'école de cash flow, Apple : achat de puces mémoire à une entreprise chinoise sous embargo, L'acquisition d'Air Con par un fonds d'investissement, Uniqlo s'apprête à dominer le marché de la mode mondiale, La Dette vs Equity dans le LBO d'EA : Un Exemple Concret, Anthropic et la fermeture des failles pour limiter l'accès chinois à Claude
 
-## Contenu du dernier numéro (21 July 2026)
+## Contenu du dernier numéro (22 July 2026)
 
 ### Deal de la semaine
-L'acquisition de Beyond Meat par une société rivale : Un exemple d'analyse de rentabilité
-
-      <p>L'actualité récente du marché des viandes alternatives nous apporte un exemple intéressant d'analyse de rentabilité dans le contexte d'une acquisition. Beyond Meat, l'un des leaders du marché, a fait l'objet d'une offre d'acquisition de la part d'une société rivale, <strong>conduite par un groupe d'investisseurs privés</strong>. Cette transaction, d'un montant de <em>10 milliards de dollars</em>, représente une prime de <em>20%</em> par rapport au cours de l'action avant l'annonce.</p>
-      <p>Le rationnel stratégique derrière cette acquisition est <strong>double</strong> : d'une part, renforcer la position du groupe acquéreur sur le marché en croissance des viandes alternatives, et d'autre part, bénéficier des <em>synergies opérationnelles</em> potentielles liées à l'intégration de Beyond Meat. Cette acquisition illustre parfaitement le concept d'<em>analyse de rentabilité</em> dans le cadre d'une opération de fusion-acquisition, où l'analyse financière et la création de va
+L'acquisition de Buy Buy Baby par Beyond : Un exemple de Cash Flow Statement
+<p>La semaine dernière, Beyond a annoncé l'acquisition des droits de la marque Buy Buy Baby pour la somme de 200 millions de dollars, conformément à <strong>[N1 · MarketWatch]</strong>. Cet accord, qui vise à réunir Buy Buy Baby avec Bed Bath & Beyond, illustre parfaitement l'importance de la gestion des flux de trésorerie dans les opérations de fusions et acquisitions.</p>
+   <p>Le prix d'acquisition de 200 millions de dollars, avec une prime de 20% par rapport à la valeur marchande actuelle, démontre l'intérêt stratégique de Beyond pour cette marque. L'opération sera financée à hauteur de 60% par de la dette et à 40% par des fonds propres, comme indiqué dans l'article de <strong>[N2 · NYT DealBook]</strong>.</p>
+   <p>Sur le plan technique, cette acquisition soulève des questions intéressantes quant à la mécanique du Cash Flow Statement, notamment en ce qui concerne les flux de trésorerie liés aux activités d'exploitation, d'investissement et de financement. Dans ce contexte, il est 
 
 ### Cours
-
-      <p>L'analyse de rentabilité est un processus essentiel dans le contexte des fusions-acquisitions. Elle inclut l'examen des états financiers de l'entreprise cible, notamment le compte de résultat (P&L), pour évaluer sa santé financière et son potentiel de croissance. Le compte de résultat fournit une vue d'ensemble complète des revenus et des dépenses de l'entreprise, aide à identifier les domaines où des économies ou des améliorations pourraient être réalisées, et permet de déterminer la capacité de l'entreprise à générer des flux de trésorerie.</p>
-      <div class='term'><div class='term-name'>EBITDA</div>Le Bénéfice avant Intérêts, Taxes, Dépréciation et Amortissement (EBITDA) est un indicateur clé de la rentabilité d'une entreprise. Il est obtenu en ajoutant la dépréciation et l'amortissement au bénéfice net avant intérêts et taxes. Cet indicateur est crucial pour évaluer la capacité d'une entreprise à générer des bénéfices à partir de ses activités opérationnelles, indépendamment du coût du capital et des politiques fiscales.</div>
-      <p>En plus de l'analyse financière, comprendre les facteurs macro-économiques et leur impact sur les marchés et les industries est ess
+<p>Le chapitre du jour portait sur les états de flux de trésorerie, qui sont des outils essentiels pour comprendre la santé financière d'une entreprise. Les états de flux de trésorerie divisent les flux de trésorerie en trois catégories : les activités d'exploitation, les activités d'investissement et les activités de financement.</p>
+   <p>Les flux de trésorerie liés aux activités d'exploitation proviennent des opérations courantes de l'entreprise, telles que la vente de produits ou services, et englobent les paiements et les encaissements liés à ces activités. Les flux de trésorerie liés aux activités d'investissement concernent les investissements dans les actifs de l'entreprise, tels que les biens immobiliers ou les équipements, ainsi que les ventes de ces actifs. Enfin, les flux de trésorerie liés aux activités de financement proviennent de l'émission ou du remboursement de dettes et de capitaux propres.</p>
+   <div class='term'><div class='term-name'>Cash Flow Statement</div>Un document financier qui présente les mouvements de trésorerie d'une entreprise sur une période donnée, divisés en trois catégories : activités d'exploitation, activités d'investissement et activités de 
 
 ### Macro
-Influence de la politique monétaire sur les marchés
-
-      <p>La politique monétaire des banques centrales a un impact significatif sur les marchés financiers et, par extension, sur les décisions d'investissement et les opérations de fusion-acquisition. La récente décision de la Banque Centrale Européenne de maintenir ses taux d'intérêt à des niveaux historiquement bas a contribué à <em>réduire le coût de la dette</em> pour les entreprises, rendant ainsi les acquisitions plus attrayantes pour les sociétés disposant d'une bonne santé financière.</
+La révision des règles bancaires en Europe : Une opportunité pour le secteur bancaire
+<p>Comme le rapporte <strong>[N1 · CNBC Finance]</strong>, la révision des règles bancaires en Europe pourrait offrir un boom de profits pour le secteur bancaire. Cette révision, qui vise à réduire les barrières réglementaires, pourrait permettre aux banques européennes de compétir plus efficacement avec leurs homologues américaines.</p>
+   <p>Cela pourrait avoir un impact significatif sur le marché des fusions et acquisitions, car les banques européennes pourraient disposer de plus de ressource
 
 ---
 Tu es mon tuteur M&A. Quand je te pose une question :
