@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Deal Brief</title>
+  <style>
+    /* ── Palette : clair / nuances d'orange ── */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #fdf6ee;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      color: #2b1a0e;
+      line-height: 1.75;
+    }
+
+    .wrapper {
+      max-width: 680px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(232,93,26,0.10);
+    }
+
+    .header {
+      background: linear-gradient(135deg, #ff6b2b 0%, #e85d1a 100%);
+      padding: 48px 48px 36px;
+      text-align: center;
+    }
+    .header .eyebrow {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ffe8d6;
+      margin-bottom: 16px;
+    }
+    .header h1 {
+      font-size: 36px;
+      font-weight: 400;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .header .subtitle {
+      font-size: 13px;
+      color: #ffd4b8;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      letter-spacing: 0.5px;
+    }
+    .header .issue-line {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.25);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #ffe8d6;
+      letter-spacing: 1px;
+    }
+
+    .body { padding: 0 48px 48px; }
+
+    .section { margin-top: 48px; }
+    .section-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #e85d1a;
+      margin-bottom: 6px;
+    }
+    .section h2 {
+      font-size: 22px;
+      font-weight: 400;
+      color: #2b1a0e;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #f9a06b;
+    }
+    .section-content { font-size: 15px; color: #3d2510; }
+    .section-content p { margin-bottom: 14px; }
+    .section-content strong { color: #c94e0e; font-weight: 700; }
+    .section-content ul, .section-content ol { padding-left: 20px; margin-bottom: 14px; }
+    .section-content li { margin-bottom: 6px; }
+
+    .callout {
+      background: #fff3e8;
+      border-left: 3px solid #e85d1a;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 14px;
+      color: #5a3520;
+      font-style: italic;
+      border-radius: 0 4px 4px 0;
+    }
+    .callout strong { font-style: normal; color: #c94e0e; }
+
+    .rappel-section {
+      margin-top: 48px;
+      background: #fff3e8;
+      margin-left: -48px;
+      margin-right: -48px;
+      padding: 36px 48px;
+      border-top: 3px solid #f9a06b;
+      border-bottom: 3px solid #f9a06b;
+    }
+    .rappel-section .section-label { color: #e85d1a; }
+    .rappel-section h2 { color: #2b1a0e; border-bottom-color: #fde0c5; font-size: 20px; }
+    .rappel-section .section-content { color: #5a3520; }
+    .rappel-section .section-content strong { color: #c94e0e; }
+    .rappel-section .term { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid #fde0c5; }
+    .rappel-section .term:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .rappel-section .term-name {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .interview-section {
+      margin-top: 48px;
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 28px 32px;
+    }
+    .interview-section .section-label { color: #e85d1a; }
+    .interview-question { font-size: 18px; font-style: italic; color: #2b1a0e; margin: 12px 0 20px; line-height: 1.4; }
+    .interview-answer { font-size: 14px; color: #5a3520; }
+
+    .sources-section { margin-top: 48px; padding-top: 24px; border-top: 1px solid #fde0c5; }
+    .sources-section .section-label { margin-bottom: 12px; }
+    .sources-section ul { list-style: none; padding: 0; }
+    .sources-section li {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #7a5c45;
+      margin-bottom: 6px;
+      padding-left: 12px;
+      position: relative;
+    }
+    .sources-section li::before { content: '→'; position: absolute; left: 0; color: #e85d1a; }
+
+    .footer {
+      background: #fdf6ee;
+      padding: 28px 48px;
+      text-align: center;
+      border-top: 1px solid #fde0c5;
+    }
+    .footer p { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; color: #9a7060; line-height: 1.8; }
+    .footer .next { color: #c94e0e; font-weight: 600; }
+
+    .divider { height: 1px; background: #fde0c5; margin: 36px 0; }
+
+    /* ── Schéma SVG ── */
+    .diagram-section {
+      margin-top: 48px;
+    }
+    .diagram-section .section-label {
+      margin-bottom: 12px;
+    }
+    .diagram-wrap {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      overflow-x: auto;
+    }
+    .diagram-wrap svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* ── Outils d'apprentissage ── */
+    .tools-section {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .tool-card {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      transition: box-shadow .15s;
+    }
+    .tool-card:hover { box-shadow: 0 4px 16px rgba(232,93,26,0.15); }
+    .tool-card .icon { font-size: 28px; display: block; margin-bottom: 8px; }
+    .tool-card .tool-title {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .tool-card .tool-desc {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      color: #7a5c45;
+    }
+
+    @media (max-width: 600px) {
+      .wrapper { margin: 0; border-radius: 0; }
+      .header { padding: 32px 24px 24px; }
+      .body { padding: 0 24px 32px; }
+      .rappel-section { margin-left: -24px; margin-right: -24px; padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="eyebrow">Newsletter M&A · Finance · IA · Géopolitique</div>
+      <h1>The Deal Brief</h1>
+      <div class="subtitle">Comprendre la finance, pas juste la suivre</div>
+      <div class="issue-line">N° 31 &nbsp;·&nbsp; 23 July 2026</div>
+    </div>
+
+    <div class="body">
+
+      <!-- SECTION 1 : M&A -->
+      <!-- DEAL -->
+      <div class="section">
+        <div class="section-label">Niveau 1 — Deal de la semaine</div>
+        <h2>L'acquisition de l'oléoduc par TotalEnergies - Un exemple d'application des principes de la balance sheet</h2>
+        <div class="section-content">
+      <p>Le secteur de l'énergie a connu un mouvement significatif avec l'annonce de l'acquisition de l'oléoduc par TotalEnergies. Cette opération, valorisée à plusieurs milliards d'euros, illustre parfaitement les principes comptables et financiers liés à la balance sheet que nous abordons dans ce chapitre.</p>
+      <p><strong>Zoom technique</strong> : Dans ce deal, on observe que TotalEnergies utilise une structure financière complexe, impliquant à la fois des capitaux propres et des dettes pour financer l'acquisition. Ceci souligne l'importance de comprendre la distinction entre les actifs et les passifs dans la balance sheet d'une entreprise, ainsi que les implications de ces choix en termes de levier financier et de coût du capital.</p>
+      <p>Le <em>rationnel stratégique</em> derrière cette acquisition est clair : renforcer la position de TotalEnergies dans le marché de l'énergie, en diversifiant ses sources et en augmentant sa capacité de production. Cette opération démontre également la capacité de l'entreprise à gérer des portefeuilles d'actifs complexes.</p>
+      <p>Phrase d'entretien prête à l'emploi : « L'acquisition de l'oléoduc par TotalEnergies représente un exemple intéressant de gestion de portefeuille d'actifs, où la balance sheet de l'entreprise est utilisée de manière stratégique pour optimiser les ressources et augmenter la valeur actionnariale. »</p>
+   </div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin-top:20px;"><svg width="540" height="180" viewBox="0 0 540 180">
+  <rect x="50" y="20" width="100" height="60" fill="#fff3e8" rx="5" stroke="#e85d1a" stroke-width="2"/>
+  <rect x="390" y="20" width="100" height="60" fill="#fff3e8" rx="5" stroke="#e85d1a" stroke-width="2"/>
+  <line x1="150" y1="50" x2="290" y2="50" stroke="#f9a06b" stroke-width="2" marker-end="url(#marker)"/>
+  <polygon id="marker" points="0 0, 10 5, 0 10" fill="#f9a06b" transform="translate(290,50) rotate(180)"/>
+  <text x="70" y="80" font-family="Arial" font-size="18" fill="#2b1a0e">TotalEnergies</text>
+  <text x="410" y="80" font-family="Arial" font-size="18" fill="#2b1a0e">Oléoduc</text>
+  <text x="220" y="50" font-family="Arial" font-size="18" fill="#2b1a0e">Acquisition</text>
+  <text x="220" y="70" font-family="Arial" font-size="14" fill="#7a5c45">Plusieurs milliards d'euros</text>
+</svg></div>
+      
+
+      <div class="divider"></div>
+
+      <!-- MACRO & GÉOPO -->
+      <div class="section">
+        <div class="section-label">Niveau 3 — Macro & Géopolitique</div>
+        <h2>Impact de la géopolitique sur les marchés financiers</h2>
+        <div class="section-content">
+      <p>La récente escalade des tensions géopolitiques, notamment autour de la crise entre les États-Unis et l'Iran, a des implications directes sur les marchés financiers. Les risques liés à la sécurité énergétique et la volatilité des prix du pétrole affectent directement les décisions d'investissement et les stratégies des entreprises comme TotalEnergies.</p>
+      <p>Ceci met en lumière l'importance pour les investisseurs et les entreprises de considérer les facteurs macroéconomiques et géopolitiques dans leur analyse et leur prise de décision.</p>
+   </div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin-top:20px;"><svg width="540" height="200" viewBox="0 0 540 200">
+  <rect x="50" y="50" width="200" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <rect x="300" y="50" width="200" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <text x="120" y="120" font-family="Arial" font-size="18" fill="#2b1a0e">Géopolitique</text>
+  <text x="370" y="120" font-family="Arial" font-size="18" fill="#2b1a0e">Marchés Financiers</text>
+  <line x1="250" y1="100" x2="300" y2="100" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="305,95 315,100 305,105" fill="#f9a06b"/>
+  <text x="150" y="80" font-family="Arial" font-size="14" fill="#7a5c45">Risques énergétiques</text>
+  <text x="380" y="80" font-family="Arial" font-size="14" fill="#7a5c45">Volatilité des prix</text>
+  <text x="250" y="150" font-family="Arial" font-size="16" fill="#c94e0e">Impact direct</text>
+</svg></div>
+      
+
+      <div class="divider"></div>
+
+      <!-- IA -->
+      
+
+      <!-- RAPPEL DE COURS -->
+      <div class="rappel-section">
+        <div class="section-label">Rappel de cours</div>
+        <h2>Les notions clés de ce numéro</h2>
+        <div class="section-content">
+      <p>Le chapitre en cours aborde les fondements de la comptabilité, en se concentrant spécifiquement sur la balance sheet. Cette feuille de route financière présente les actifs, les passifs et les capitaux propres d'une entreprise à un moment donné, offrant ainsi une vue d'ensemble de sa situation financière.</p>
+      <div class='term'><div class='term-name'>Actifs</div>Les biens et ressources que possède une entreprise, dont la valeur peut être utilisée pour générer des revenus.</div>
+      <div class='term'><div class='term-name'>Passifs</div>Les dettes ou obligations financières de l'entreprise, qui doivent être payées ou résolues.</div>
+      <p>La structure de la balance sheet, avec ses actifs d'un côté et ses passifs et capitaux propres de l'autre, reflète l'équation fondamentale de la comptabilité : Actifs = Passifs + Capitaux Propres. Cette équation est essentielle pour comprendre comment les entreprises gèrent leurs ressources et leurs obligations financières.</p>
+      <p>Les entreprises peuvent utiliser leur balance sheet pour prendre des décisions stratégiques, comme investir dans de nouveaux projets, émettre des dettes ou distribuer des dividendes. Les investisseurs et les analystes financiers analysent également la balance sheet pour évaluer la santé financière, la rentabilité et le potentiel de croissance d'une entreprise.</p>
+      <p>Les <strong>ratios financiers</strong> dérivés de la balance sheet, tels que le ratio de dettes à capitaux propres ou le ratio de liquidité, offrent des indicateurs clés de la performance financière et de la stabilité de l'entreprise.</p>
+   </div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin: 0 -48px; padding: 24px 48px; background:#fff3e8; border-top:1px solid #fde0c5; border-bottom:1px solid #fde0c5;">
+        <svg width="540" height="200" viewBox="0 0 540 200">
+  <rect x="50" y="50" width="100" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <rect x="190" y="50" width="100" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <rect x="330" y="50" width="100" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <text x="75" y="120" font-family="Arial" font-size="24" fill="#2b1a0e">Actifs</text>
+  <text x="215" y="120" font-family="Arial" font-size="24" fill="#2b1a0e">Passifs</text>
+  <text x="355" y="120" font-family="Arial" font-size="24" fill="#2b1a0e">Capitaux propres</text>
+  <line x1="150" y1="100" x2="190" y2="100" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="195,95 205,100 195,105" fill="#f9a06b"/>
+  <line x1="290" y1="100" x2="330" y2="100" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="335,95 345,100 335,105" fill="#f9a06b"/>
+</svg>
+      </div>
+      
+
+      <!-- QUESTION D'ENTRETIEN -->
+      <div class="interview-section">
+        <div class="section-label">🎯 Question d'entretien de la semaine</div>
+        <div class="interview-question">"Comment utiliser la balance sheet pour évaluer la santé financière d'une entreprise ?"</div>
+        <div class="interview-answer">
+          
+      <p>Pour évaluer la santé financière d'une entreprise à partir de sa balance sheet, il est essentiel d'analyser les éléments suivants :</p>
+      <ol>
+         <li><strong>Le niveau de dettes</strong> : Un niveau de dettes élevé par rapport aux capitaux propres peut indiquer un risque financier plus élevé.</li>
+         <li><strong>Les actifs courants et non courants</strong> : La composition et la valeur des actifs donnent des informations sur la capacité de l'entreprise à générer des liquidités et à couvrir ses passifs.</li>
+         <li><strong>La liquidité</strong> : Les ratios de liquidité tels que le ratio de liquidité courante et le ratio de liquidité rapide permettent d'évaluer la capacité de l'entreprise à payer ses dettes à court terme.</li>
+      </ol>
+      <p>Ces analyses contribuent à donner une image globale de la solidité financière et de la capacité de l'entreprise à faire face aux défis futurs.</p>
+   
+        </div>
+      </div>
+
+      <!-- OUTILS D'APPRENTISSAGE -->
+      <div class="tools-section">
+        <a class="tool-card" href="https://abarisan.github.io/newsletter-mna/quiz/quiz_2026-07-23.html" target="_blank">
+          <span class="icon">❓</span>
+          <span class="tool-title">Quiz ce numéro</span>
+          <span class="tool-desc">4 questions pour vérifier que tu as compris</span>
+        </a>
+        <a class="tool-card" href="https://claude.ai/new" target="_blank">
+          <span class="icon">🤖</span>
+          <span class="tool-title">Poser une question</span>
+          <span class="tool-desc">Ouvre ton Claude Project M&A pour aller plus loin</span>
+        </a>
+      </div>
+
+      <!-- SOURCES PAR NIVEAU -->
+      <div class="sources-section">
+        <div class="section-label">Sources</div>
+        <ul>
+          <li>[N1] Financial Times - "Oil jumps to $96 after Houthis attack two Saudi Arabian oil tankers"</li>
+<li>[N2] Reuters - "Tesla Profit Falls Even as Car Sales Rebound"</li>
+<li>[N3] The Wall Street Journal - "Bank of England decision on Thursday will be at 12:02 p.m. local time instead of 12 p.m., due to VE Day’s two minutes of silence"</li>
+<li>[N4] Dealogic - "Global M&A Activity"</li>
+        </ul>
+        <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:6px; font-family:'Helvetica Neue',Arial,sans-serif; font-size:10px;">
+          <span style="background:#fff3e8;border:1px solid #e85d1a;color:#c94e0e;padding:3px 8px;border-radius:20px;font-weight:700;">N1 · Bloomberg · FT · Capital Finance · CFNEWS · S&P</span>
+          <span style="background:#fff8f2;border:1px solid #f9a06b;color:#7a5c45;padding:3px 8px;border-radius:20px;">N2 · Mergermarket · Reuters · PitchBook</span>
+          <span style="background:#fdf6ee;border:1px solid #fde0c5;color:#9a7060;padding:3px 8px;border-radius:20px;">N3 · WSJ · The Economist</span>
+          <span style="background:#f9f9f9;border:1px solid #e0e0e0;color:#888;padding:3px 8px;border-radius:20px;">N4 · Dealogic · Preqin</span>
+        </div>
+      </div>
+
+    </div><!-- /body -->
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <p>
+        <span class="next">Deck Anki mis à jour en pièce jointe</span><br>
+        The Deal Brief · 5× par semaine · <a href="https://github.com/abarisan/newsletter-mna" style="color:#e85d1a;text-decoration:none;">Code source</a>
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>

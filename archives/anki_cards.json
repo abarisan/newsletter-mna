@@ -1258,5 +1258,41 @@
     "verso": "Les banques ont intérêt à une révision des règles bancaires qui réduit les barrières réglementaires car cela leur permet de compétir plus efficacement et d'augmenter leur rentabilité. Une réduction des barrières réglementaires peut leur permettre de prendre plus de risques, d'innover et de proposer de nouveaux produits et services, ce qui peut les aider à augmenter leur part de marché et leurs revenus.",
     "numero": "30",
     "id": 1994518714
+  },
+  {
+    "recto": "Qu'est-ce que la balance sheet ?",
+    "verso": "La balance sheet, ou bilan, est un document financier qui présente les actifs, les passifs et les capitaux propres d'une entreprise à un moment donné, offrant ainsi une vue d'ensemble de sa situation financière. Elle permet de comprendre la structure financière de l'entreprise et ses capacités à générer des revenus. Par exemple, elle peut inclure des actifs tels que des biens immobiliers, des équipements, ou des liquidités.",
+    "numero": "31",
+    "id": 1085345505
+  },
+  {
+    "recto": "Qu'est-ce qu'un actif ?",
+    "verso": "Un actif est un bien ou une ressource que possède une entreprise et dont la valeur peut être utilisée pour générer des revenus. Les actifs peuvent être tangibles, tels que des biens immobiliers ou des équipements, ou intangibles, tels que des brevets ou des marques. Par exemple, une usine de production est un actif tangible qui peut générer des revenus en produisant des biens.",
+    "numero": "31",
+    "id": 1818796293
+  },
+  {
+    "recto": "Comment la dette affecte-t-elle la balance sheet ?",
+    "verso": "La dette est enregistrée dans la section des passifs de la balance sheet, car elle représente une obligation financière que l'entreprise doit payer ou résoudre. Lorsqu'une entreprise contracte de la dette, son passif augmente, ce qui peut affecter son ratio de dette sur capitaux propres. Par exemple, si une entreprise emprunte de l'argent pour financer une expansión, sa dette augmentera, ce qui peut impacter sa capacité à rembourser ses dettes à l'avenir.",
+    "numero": "31",
+    "id": 1558215259
+  },
+  {
+    "recto": "Pourquoi est-il important de comprendre la structure de la balance sheet ?",
+    "verso": "Comprendre la structure de la balance sheet est important car elle permet aux investisseurs et aux entreprises de prendre des décisions éclairées sur l'allocation des ressources et la gestion des risques. En analysant la balance sheet, les entreprises peuvent identifier les domaines où elles peuvent améliorer leur situation financière, par exemple en réduisant leur dette ou en augmentant leurs actifs. Par exemple, une entreprise qui a une forte dette peut décider de réduire ses dépenses ou d'augmenter ses revenus pour améliorer son ratio de dette sur capitaux propres.",
+    "numero": "31",
+    "id": 1649985723
+  },
+  {
+    "recto": "Dans quel cas utiliser une dette mezzanine ?",
+    "verso": "Une dette mezzanine est utilisée lorsque les entreprises ont besoin de financement et qu'elles ne peuvent pas ou ne veulent pas émettre de nouvellement d'actions ou de dettes classiques. La dette mezzanine offre une solution intermédiaire entre les deux, car elle combine les caractéristiques des deux. Elle peut être utilisée pour financer des projets spécifiques ou pour fournir des liquidités en cas de besoin. Par exemple, une entreprise qui a des difficultés à obtenir un prêt bancaire classique peut utiliser une dette mezzanine pour financer son expansión.",
+    "numero": "31",
+    "id": 2141604335
+  },
+  {
+    "recto": "Pourquoi la balance sheet est-elle affectée par les facteurs macro-économiques ?",
+    "verso": "La balance sheet est affectée par les facteurs macro-économiques tels que les changements dans les taux d'intérêt, les fluctuations des prix des matières premières ou les événements géopolitiques, car ces facteurs peuvent impacter les revenus et les coûts de l'entreprise. Par exemple, une augmentation des prix du pétrole peut impacter la rentabilité d'une entreprise qui dépend fortement de ce produit, ce qui peut se refléter dans sa balance sheet.",
+    "numero": "31",
+    "id": 1209318378
   }
 ]

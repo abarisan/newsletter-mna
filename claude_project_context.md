@@ -1,4 +1,4 @@
-# Contexte The Deal Brief — Mise à jour N°30 (22 July 2026)
+# Contexte The Deal Brief — Mise à jour N°31 (23 July 2026)
 
 ## Mon profil
 Étudiant préparant des entretiens en banque d'affaires M&A.
@@ -11,23 +11,28 @@ Financial Projections, Comptabilisation des inventaires, Mécanique de l'EV/Equi
 ## Deals suivis en ce moment
 Volkswagen's Restructuring Plans and Inventory Management, SpaceX : IPO de 75 Md$, la plus grosse de l'histoire, cas d'école de cash flow, Apple : achat de puces mémoire à une entreprise chinoise sous embargo, L'acquisition d'Air Con par un fonds d'investissement, Uniqlo s'apprête à dominer le marché de la mode mondiale, La Dette vs Equity dans le LBO d'EA : Un Exemple Concret, Anthropic et la fermeture des failles pour limiter l'accès chinois à Claude
 
-## Contenu du dernier numéro (22 July 2026)
+## Contenu du dernier numéro (23 July 2026)
 
 ### Deal de la semaine
-L'acquisition de Buy Buy Baby par Beyond : Un exemple de Cash Flow Statement
-<p>La semaine dernière, Beyond a annoncé l'acquisition des droits de la marque Buy Buy Baby pour la somme de 200 millions de dollars, conformément à <strong>[N1 · MarketWatch]</strong>. Cet accord, qui vise à réunir Buy Buy Baby avec Bed Bath & Beyond, illustre parfaitement l'importance de la gestion des flux de trésorerie dans les opérations de fusions et acquisitions.</p>
-   <p>Le prix d'acquisition de 200 millions de dollars, avec une prime de 20% par rapport à la valeur marchande actuelle, démontre l'intérêt stratégique de Beyond pour cette marque. L'opération sera financée à hauteur de 60% par de la dette et à 40% par des fonds propres, comme indiqué dans l'article de <strong>[N2 · NYT DealBook]</strong>.</p>
-   <p>Sur le plan technique, cette acquisition soulève des questions intéressantes quant à la mécanique du Cash Flow Statement, notamment en ce qui concerne les flux de trésorerie liés aux activités d'exploitation, d'investissement et de financement. Dans ce contexte, il est 
+L'acquisition de l'oléoduc par TotalEnergies - Un exemple d'application des principes de la balance sheet
+
+      <p>Le secteur de l'énergie a connu un mouvement significatif avec l'annonce de l'acquisition de l'oléoduc par TotalEnergies. Cette opération, valorisée à plusieurs milliards d'euros, illustre parfaitement les principes comptables et financiers liés à la balance sheet que nous abordons dans ce chapitre.</p>
+      <p><strong>Zoom technique</strong> : Dans ce deal, on observe que TotalEnergies utilise une structure financière complexe, impliquant à la fois des capitaux propres et des dettes pour financer l'acquisition. Ceci souligne l'importance de comprendre la distinction entre les actifs et les passifs dans la balance sheet d'une entreprise, ainsi que les implications de ces choix en termes de levier financier et de coût du capital.</p>
+      <p>Le <em>rationnel stratégique</em> derrière cette acquisition est clair : renforcer la position de TotalEnergies dans le marché de l'énergie, en diversifiant ses sources et en augmentant sa capacité de production. Cette opération démontre
 
 ### Cours
-<p>Le chapitre du jour portait sur les états de flux de trésorerie, qui sont des outils essentiels pour comprendre la santé financière d'une entreprise. Les états de flux de trésorerie divisent les flux de trésorerie en trois catégories : les activités d'exploitation, les activités d'investissement et les activités de financement.</p>
-   <p>Les flux de trésorerie liés aux activités d'exploitation proviennent des opérations courantes de l'entreprise, telles que la vente de produits ou services, et englobent les paiements et les encaissements liés à ces activités. Les flux de trésorerie liés aux activités d'investissement concernent les investissements dans les actifs de l'entreprise, tels que les biens immobiliers ou les équipements, ainsi que les ventes de ces actifs. Enfin, les flux de trésorerie liés aux activités de financement proviennent de l'émission ou du remboursement de dettes et de capitaux propres.</p>
-   <div class='term'><div class='term-name'>Cash Flow Statement</div>Un document financier qui présente les mouvements de trésorerie d'une entreprise sur une période donnée, divisés en trois catégories : activités d'exploitation, activités d'investissement et activités de 
+
+      <p>Le chapitre en cours aborde les fondements de la comptabilité, en se concentrant spécifiquement sur la balance sheet. Cette feuille de route financière présente les actifs, les passifs et les capitaux propres d'une entreprise à un moment donné, offrant ainsi une vue d'ensemble de sa situation financière.</p>
+      <div class='term'><div class='term-name'>Actifs</div>Les biens et ressources que possède une entreprise, dont la valeur peut être utilisée pour générer des revenus.</div>
+      <div class='term'><div class='term-name'>Passifs</div>Les dettes ou obligations financières de l'entreprise, qui doivent être payées ou résolues.</div>
+      <p>La structure de la balance sheet, avec ses actifs d'un côté et ses passifs et capitaux propres de l'autre, reflète l'équation fondamentale de la comptabilité : Actifs = Passifs + Capitaux Propres. Cette équation est essentielle pour comprendre comment les entreprises gèrent leurs ressources et leurs obligations financières.</p>
+      <p>Les entreprises peuvent utiliser leur balance sheet pour prendre des décisions stratégiques, comme investir dans de nouveaux projets, émettre des dettes ou distribuer des dividendes. Les investisse
 
 ### Macro
-La révision des règles bancaires en Europe : Une opportunité pour le secteur bancaire
-<p>Comme le rapporte <strong>[N1 · CNBC Finance]</strong>, la révision des règles bancaires en Europe pourrait offrir un boom de profits pour le secteur bancaire. Cette révision, qui vise à réduire les barrières réglementaires, pourrait permettre aux banques européennes de compétir plus efficacement avec leurs homologues américaines.</p>
-   <p>Cela pourrait avoir un impact significatif sur le marché des fusions et acquisitions, car les banques européennes pourraient disposer de plus de ressource
+Impact de la géopolitique sur les marchés financiers
+
+      <p>La récente escalade des tensions géopolitiques, notamment autour de la crise entre les États-Unis et l'Iran, a des implications directes sur les marchés financiers. Les risques liés à la sécurité énergétique et la volatilité des prix du pétrole affectent directement les décisions d'investissement et les stratégies des entreprises comme TotalEnergies.</p>
+      <p>Ceci met en lumière l'importance pour les investisseurs et les entreprises de considérer les facteurs macroéconomiques et gé
 
 ---
 Tu es mon tuteur M&A. Quand je te pose une question :
