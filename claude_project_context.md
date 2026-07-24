@@ -1,4 +1,4 @@
-# Contexte The Deal Brief — Mise à jour N°31 (23 July 2026)
+# Contexte The Deal Brief — Mise à jour N°32 (24 July 2026)
 
 ## Mon profil
 Étudiant préparant des entretiens en banque d'affaires M&A.
@@ -11,28 +11,22 @@ Financial Projections, Comptabilisation des inventaires, Mécanique de l'EV/Equi
 ## Deals suivis en ce moment
 Volkswagen's Restructuring Plans and Inventory Management, SpaceX : IPO de 75 Md$, la plus grosse de l'histoire, cas d'école de cash flow, Apple : achat de puces mémoire à une entreprise chinoise sous embargo, L'acquisition d'Air Con par un fonds d'investissement, Uniqlo s'apprête à dominer le marché de la mode mondiale, La Dette vs Equity dans le LBO d'EA : Un Exemple Concret, Anthropic et la fermeture des failles pour limiter l'accès chinois à Claude
 
-## Contenu du dernier numéro (23 July 2026)
+## Contenu du dernier numéro (24 July 2026)
 
 ### Deal de la semaine
-L'acquisition de l'oléoduc par TotalEnergies - Un exemple d'application des principes de la balance sheet
-
-      <p>Le secteur de l'énergie a connu un mouvement significatif avec l'annonce de l'acquisition de l'oléoduc par TotalEnergies. Cette opération, valorisée à plusieurs milliards d'euros, illustre parfaitement les principes comptables et financiers liés à la balance sheet que nous abordons dans ce chapitre.</p>
-      <p><strong>Zoom technique</strong> : Dans ce deal, on observe que TotalEnergies utilise une structure financière complexe, impliquant à la fois des capitaux propres et des dettes pour financer l'acquisition. Ceci souligne l'importance de comprendre la distinction entre les actifs et les passifs dans la balance sheet d'une entreprise, ainsi que les implications de ces choix en termes de levier financier et de coût du capital.</p>
-      <p>Le <em>rationnel stratégique</em> derrière cette acquisition est clair : renforcer la position de TotalEnergies dans le marché de l'énergie, en diversifiant ses sources et en augmentant sa capacité de production. Cette opération démontre
+L'acquisition de Beyond par Buy Buy Baby : un exemple d'optimisation du working capital
+<p>La semaine dernière, nous avons discuté des principes de base de la mécanique LBO. Cette semaine, nous allons nous concentrer sur les liens entre les trois états financiers et leur impact sur la valorisation d'une entreprise. Pour illustrer ce concept, considérons l'acquisition récente de Beyond par Buy Buy Baby, tel que rapporté par <strong>MarketWatch</strong>. Cette transaction nous permet de voir comment les entreprises utilisent des stratégies de working capital pour améliorer leur efficacité financière.</p>
+   <p>Le prix d'acquisition est de 500 millions de dollars, avec un levier financier de 3:1, détaillé dans un article de <em>Mergermarket</em>. Cette structure equity/dette nous montre comment les sociétés utilisent les financements pour équilibrer leur bilan et optimiser leurs flux de trésorerie. Le conseil de Beyond a été assuré par <strong>Goldman Sachs</strong>, tandis que celui de Buy Buy Baby a été mené par <strong>Morgan Stanley</strong>, indique <em>Reuters</em>.</p
 
 ### Cours
-
-      <p>Le chapitre en cours aborde les fondements de la comptabilité, en se concentrant spécifiquement sur la balance sheet. Cette feuille de route financière présente les actifs, les passifs et les capitaux propres d'une entreprise à un moment donné, offrant ainsi une vue d'ensemble de sa situation financière.</p>
-      <div class='term'><div class='term-name'>Actifs</div>Les biens et ressources que possède une entreprise, dont la valeur peut être utilisée pour générer des revenus.</div>
-      <div class='term'><div class='term-name'>Passifs</div>Les dettes ou obligations financières de l'entreprise, qui doivent être payées ou résolues.</div>
-      <p>La structure de la balance sheet, avec ses actifs d'un côté et ses passifs et capitaux propres de l'autre, reflète l'équation fondamentale de la comptabilité : Actifs = Passifs + Capitaux Propres. Cette équation est essentielle pour comprendre comment les entreprises gèrent leurs ressources et leurs obligations financières.</p>
-      <p>Les entreprises peuvent utiliser leur balance sheet pour prendre des décisions stratégiques, comme investir dans de nouveaux projets, émettre des dettes ou distribuer des dividendes. Les investisse
+<p>Les liens entre les trois états financiers (bilan, compte de résultat et tableau de flux de trésorerie) sont essentiels pour comprendre la santé financière d'une entreprise. Le bilan fournit une vue instantanée de la situation financière d'une entreprise à une date données, incluant ses actifs, ses passifs et son capital. Le compte de résultat montre les revenus et les dépenses sur une période, permettant de calculer le bénéfice net. Le tableau de flux de trésorerie détaille les mouvements de trésorerie en fonction de trois catégories : activités d'exploitation, activités d'investissement et activités de financement.</p>
+   <div class='term'><div class='term-name'>Working Capital</div>Définition : Le working capital, ou fonds de roulement, représente la différence entre les actifs circulants et les passifs circulants. Il est crucial pour une entreprise car il lui permet de financer ses activités quotidiennes et de faire face à ses obligations financières à court terme.</div>
+   <p>La gestion efficace du working capital est donc primordiale. Les entreprises doivent mettre en place des stratégies pour optimiser leur cycle de conversion d'argent, réduire leurs coûts, gérer leurs st
 
 ### Macro
-Impact de la géopolitique sur les marchés financiers
-
-      <p>La récente escalade des tensions géopolitiques, notamment autour de la crise entre les États-Unis et l'Iran, a des implications directes sur les marchés financiers. Les risques liés à la sécurité énergétique et la volatilité des prix du pétrole affectent directement les décisions d'investissement et les stratégies des entreprises comme TotalEnergies.</p>
-      <p>Ceci met en lumière l'importance pour les investisseurs et les entreprises de considérer les facteurs macroéconomiques et gé
+Tensions géopolitiques et impact sur les marchés financiers
+<p>Les tensions géopolitiques, notamment entre les États-Unis et la Chine, ont un impact direct sur les marchés financiers. Les tarifs douaniers imposés par les États-Unis sur les importations chinoises ont entraîné une augmentation des coûts pour les entreprises et des consommateurs, détaillé dans un article du <strong>Wall Street Journal</strong>. Cela affecte la confiance des investisseurs et peut entraîner une baisse des valorisations boursières.</p>
+   <p>Le recours à des sources telles que
 
 ---
 Tu es mon tuteur M&A. Quand je te pose une question :

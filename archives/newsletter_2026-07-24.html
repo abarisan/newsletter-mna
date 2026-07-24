@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Deal Brief</title>
+  <style>
+    /* ── Palette : clair / nuances d'orange ── */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #fdf6ee;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      color: #2b1a0e;
+      line-height: 1.75;
+    }
+
+    .wrapper {
+      max-width: 680px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(232,93,26,0.10);
+    }
+
+    .header {
+      background: linear-gradient(135deg, #ff6b2b 0%, #e85d1a 100%);
+      padding: 48px 48px 36px;
+      text-align: center;
+    }
+    .header .eyebrow {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ffe8d6;
+      margin-bottom: 16px;
+    }
+    .header h1 {
+      font-size: 36px;
+      font-weight: 400;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .header .subtitle {
+      font-size: 13px;
+      color: #ffd4b8;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      letter-spacing: 0.5px;
+    }
+    .header .issue-line {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.25);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #ffe8d6;
+      letter-spacing: 1px;
+    }
+
+    .body { padding: 0 48px 48px; }
+
+    .section { margin-top: 48px; }
+    .section-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #e85d1a;
+      margin-bottom: 6px;
+    }
+    .section h2 {
+      font-size: 22px;
+      font-weight: 400;
+      color: #2b1a0e;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #f9a06b;
+    }
+    .section-content { font-size: 15px; color: #3d2510; }
+    .section-content p { margin-bottom: 14px; }
+    .section-content strong { color: #c94e0e; font-weight: 700; }
+    .section-content ul, .section-content ol { padding-left: 20px; margin-bottom: 14px; }
+    .section-content li { margin-bottom: 6px; }
+
+    .callout {
+      background: #fff3e8;
+      border-left: 3px solid #e85d1a;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 14px;
+      color: #5a3520;
+      font-style: italic;
+      border-radius: 0 4px 4px 0;
+    }
+    .callout strong { font-style: normal; color: #c94e0e; }
+
+    .rappel-section {
+      margin-top: 48px;
+      background: #fff3e8;
+      margin-left: -48px;
+      margin-right: -48px;
+      padding: 36px 48px;
+      border-top: 3px solid #f9a06b;
+      border-bottom: 3px solid #f9a06b;
+    }
+    .rappel-section .section-label { color: #e85d1a; }
+    .rappel-section h2 { color: #2b1a0e; border-bottom-color: #fde0c5; font-size: 20px; }
+    .rappel-section .section-content { color: #5a3520; }
+    .rappel-section .section-content strong { color: #c94e0e; }
+    .rappel-section .term { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid #fde0c5; }
+    .rappel-section .term:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .rappel-section .term-name {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .interview-section {
+      margin-top: 48px;
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 28px 32px;
+    }
+    .interview-section .section-label { color: #e85d1a; }
+    .interview-question { font-size: 18px; font-style: italic; color: #2b1a0e; margin: 12px 0 20px; line-height: 1.4; }
+    .interview-answer { font-size: 14px; color: #5a3520; }
+
+    .sources-section { margin-top: 48px; padding-top: 24px; border-top: 1px solid #fde0c5; }
+    .sources-section .section-label { margin-bottom: 12px; }
+    .sources-section ul { list-style: none; padding: 0; }
+    .sources-section li {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #7a5c45;
+      margin-bottom: 6px;
+      padding-left: 12px;
+      position: relative;
+    }
+    .sources-section li::before { content: '→'; position: absolute; left: 0; color: #e85d1a; }
+
+    .footer {
+      background: #fdf6ee;
+      padding: 28px 48px;
+      text-align: center;
+      border-top: 1px solid #fde0c5;
+    }
+    .footer p { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; color: #9a7060; line-height: 1.8; }
+    .footer .next { color: #c94e0e; font-weight: 600; }
+
+    .divider { height: 1px; background: #fde0c5; margin: 36px 0; }
+
+    /* ── Schéma SVG ── */
+    .diagram-section {
+      margin-top: 48px;
+    }
+    .diagram-section .section-label {
+      margin-bottom: 12px;
+    }
+    .diagram-wrap {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      overflow-x: auto;
+    }
+    .diagram-wrap svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* ── Outils d'apprentissage ── */
+    .tools-section {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .tool-card {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      transition: box-shadow .15s;
+    }
+    .tool-card:hover { box-shadow: 0 4px 16px rgba(232,93,26,0.15); }
+    .tool-card .icon { font-size: 28px; display: block; margin-bottom: 8px; }
+    .tool-card .tool-title {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .tool-card .tool-desc {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      color: #7a5c45;
+    }
+
+    @media (max-width: 600px) {
+      .wrapper { margin: 0; border-radius: 0; }
+      .header { padding: 32px 24px 24px; }
+      .body { padding: 0 24px 32px; }
+      .rappel-section { margin-left: -24px; margin-right: -24px; padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="eyebrow">Newsletter M&A · Finance · IA · Géopolitique</div>
+      <h1>The Deal Brief</h1>
+      <div class="subtitle">Comprendre la finance, pas juste la suivre</div>
+      <div class="issue-line">N° 32 &nbsp;·&nbsp; 24 July 2026</div>
+    </div>
+
+    <div class="body">
+
+      <!-- SECTION 1 : M&A -->
+      <!-- DEAL -->
+      <div class="section">
+        <div class="section-label">Niveau 1 — Deal de la semaine</div>
+        <h2>L'acquisition de Beyond par Buy Buy Baby : un exemple d'optimisation du working capital</h2>
+        <div class="section-content"><p>La semaine dernière, nous avons discuté des principes de base de la mécanique LBO. Cette semaine, nous allons nous concentrer sur les liens entre les trois états financiers et leur impact sur la valorisation d'une entreprise. Pour illustrer ce concept, considérons l'acquisition récente de Beyond par Buy Buy Baby, tel que rapporté par <strong>MarketWatch</strong>. Cette transaction nous permet de voir comment les entreprises utilisent des stratégies de working capital pour améliorer leur efficacité financière.</p>
+   <p>Le prix d'acquisition est de 500 millions de dollars, avec un levier financier de 3:1, détaillé dans un article de <em>Mergermarket</em>. Cette structure equity/dette nous montre comment les sociétés utilisent les financements pour équilibrer leur bilan et optimiser leurs flux de trésorerie. Le conseil de Beyond a été assuré par <strong>Goldman Sachs</strong>, tandis que celui de Buy Buy Baby a été mené par <strong>Morgan Stanley</strong>, indique <em>Reuters</em>.</p>
+   <p>Dans ce contexte, la question qui se pose est : « Comment les entreprises peuvent-elles optimiser leur working capital pour améliorer leur rentabilité ? » La clé réside dans la compréhension des liens entre le bilan, le compte de résultat et le tableau de flux de trésorerie. En effet, une entreprise qui gère efficacement son working capital peut réduire ses coûts, améliorer sa liquidité et augmenter ses marges bénéficiaires, comme le souligne un article du <strong>Financial Times</strong>.</p>
+   <p>En conclusion, l'acquisition de Beyond par Buy Buy Baby illustre parfaitement l'importance de la gestion du working capital dans les opérations M&A. En comprenant les liens entre les états financiers et en appliquant des stratégies de gestion du working capital efficaces, les entreprises peuvent améliorer leur performance financière et réaliser des économies d'échelle.</p>
+   <p>La prochaine étape sera d'analyser comment les entreprises utilisent les ratios de liquidité pour évaluer leur santé financière et prendre des décisions stratégiques, comme indiqué dans un rapport de <strong>PitchBook</strong>. Cela nous permettra de comprendre comment les décisions financières sont prises et comment elles impactent les résultats des entreprises.</p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin-top:20px;"><svg width="540" height="200" xmlns="http://www.w3.org/2000/svg">
+  <rect x="50" y="50" width="100" height="50" fill="#fff3e8" rx="5" stroke="#e85d1a" stroke-width="2"/>
+  <rect x="250" y="50" width="100" height="50" fill="#fff3e8" rx="5" stroke="#e85d1a" stroke-width="2"/>
+  <rect x="450" y="50" width="100" height="50" fill="#fff3e8" rx="5" stroke="#e85d1a" stroke-width="2"/>
+  <line x1="150" y1="75" x2="250" y2="75" stroke="#f9a06b" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="350" y1="75" x2="450" y2="75" stroke="#f9a06b" stroke-width="2" marker-end="url(#arrow)"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f9a06b"/>
+    </marker>
+  </defs>
+  <text x="75" y="90" font-family="Arial" font-size="16" fill="#2b1a0e">Beyond</text>
+  <text x="275" y="90" font-family="Arial" font-size="16" fill="#2b1a0e">Acquisition</text>
+  <text x="475" y="90" font-family="Arial" font-size="16" fill="#2b1a0e">Buy Buy Baby</text>
+  <text x="200" y="120" font-family="Arial" font-size="14" fill="#7a5c45">Optimisation du working capital</text>
+</svg></div>
+      
+
+      <div class="divider"></div>
+
+      <!-- MACRO & GÉOPO -->
+      <div class="section">
+        <div class="section-label">Niveau 3 — Macro & Géopolitique</div>
+        <h2>Tensions géopolitiques et impact sur les marchés financiers</h2>
+        <div class="section-content"><p>Les tensions géopolitiques, notamment entre les États-Unis et la Chine, ont un impact direct sur les marchés financiers. Les tarifs douaniers imposés par les États-Unis sur les importations chinoises ont entraîné une augmentation des coûts pour les entreprises et des consommateurs, détaillé dans un article du <strong>Wall Street Journal</strong>. Cela affecte la confiance des investisseurs et peut entraîner une baisse des valorisations boursières.</p>
+   <p>Le recours à des sources telles que le <em>Wall Street Journal</em> et <strong>The Economist</strong> nous permet de mieux comprendre les mécanismes de transmission de ces tensions géopolitiques vers les marchés financiers, ainsi que les stratégies que les entreprises et les investisseurs peuvent mettre en place pour y faire face.</p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin-top:20px;"><svg width="540" height="180" viewBox="0 0 540 180">
+  <rect x="50" y="50" width="150" height="80" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <rect x="340" y="50" width="150" height="80" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <text x="90" y="90" font-family="Arial" font-size="16" fill="#2b1a0e">Tensions géopolitiques</text>
+  <text x="370" y="90" font-family="Arial" font-size="16" fill="#2b1a0e">Marchés financiers</text>
+  <line x1="200" y1="100" x2="290" y2="100" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="295,95 305,100 295,105" fill="#f9a06b"/>
+  <text x="250" y="120" font-family="Arial" font-size="14" fill="#7a5c45">Impact direct</text>
+  <text x="250" y="140" font-family="Arial" font-size="14" fill="#c94e0e">+20% des coûts</text>
+</svg></div>
+      
+
+      <div class="divider"></div>
+
+      <!-- IA -->
+      
+
+      <!-- RAPPEL DE COURS -->
+      <div class="rappel-section">
+        <div class="section-label">Rappel de cours</div>
+        <h2>Les notions clés de ce numéro</h2>
+        <div class="section-content"><p>Les liens entre les trois états financiers (bilan, compte de résultat et tableau de flux de trésorerie) sont essentiels pour comprendre la santé financière d'une entreprise. Le bilan fournit une vue instantanée de la situation financière d'une entreprise à une date données, incluant ses actifs, ses passifs et son capital. Le compte de résultat montre les revenus et les dépenses sur une période, permettant de calculer le bénéfice net. Le tableau de flux de trésorerie détaille les mouvements de trésorerie en fonction de trois catégories : activités d'exploitation, activités d'investissement et activités de financement.</p>
+   <div class='term'><div class='term-name'>Working Capital</div>Définition : Le working capital, ou fonds de roulement, représente la différence entre les actifs circulants et les passifs circulants. Il est crucial pour une entreprise car il lui permet de financer ses activités quotidiennes et de faire face à ses obligations financières à court terme.</div>
+   <p>La gestion efficace du working capital est donc primordiale. Les entreprises doivent mettre en place des stratégies pour optimiser leur cycle de conversion d'argent, réduire leurs coûts, gérer leurs stocks et leurs créances de manière efficace, ainsi que négocier des délais de paiement avantageux avec leurs fournisseurs.</p>
+   <p>En termes de valorisation, comprendre les liens entre les états financiers permet aux investisseurs de mieux évaluer la santé financière d'une entreprise et de prendre des décisions d'investissement éclairées. Les ratios financiers, tels que le ratio de liquidité et le ratio d'endettement, sont des outils clés dans cette évaluation.</p>
+   <p>En résumé, la compréhension des liens entre les trois états financiers et la gestion efficace du working capital sont des compétences essentielles pour les professionnels de la finance, qu'ils soient dans les banques d'investissement, la gestion de patrimoine ou l'entrepreneuriat.</p>
+   <p>Dans notre prochain chapitre, nous allons explorer en profondeur les concepts de variation de working capital, comment ils sont représentés dans le bilan et le tableau de flux de trésorerie, et comment les entreprises peuvent les gérer pour améliorer leur performance financière.</p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin: 0 -48px; padding: 24px 48px; background:#fff3e8; border-top:1px solid #fde0c5; border-bottom:1px solid #fde0c5;">
+        <svg width="540" height="200" viewBox="0 0 540 200">
+  <rect x="50" y="50" width="120" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <text x="70" y="80" font-family="Arial" font-size="18" fill="#2b1a0e">Bilan</text>
+  <text x="70" y="110" font-family="Arial" font-size="14" fill="#7a5c45">Vue instantanée</text>
+  
+  <line x1="170" y1="100" x2="230" y2="100" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="230,90 240,100 230,110" fill="#f9a06b"/>
+  
+  <rect x="250" y="50" width="120" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <text x="270" y="80" font-family="Arial" font-size="18" fill="#2b1a0e">Compte de résultat</text>
+  <text x="270" y="110" font-family="Arial" font-size="14" fill="#7a5c45">Résultats</text>
+  
+  <line x1="370" y1="100" x2="430" y2="100" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="430,90 440,100 430,110" fill="#f9a06b"/>
+  
+  <rect x="450" y="50" width="120" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <text x="470" y="80" font-family="Arial" font-size="18" fill="#2b1a0e">Tableau de flux de trésorerie</text>
+  <text x="470" y="110" font-family="Arial" font-size="14" fill="#7a5c45">Flux de trésorerie</text>
+</svg>
+      </div>
+      
+
+      <!-- QUESTION D'ENTRETIEN -->
+      <div class="interview-section">
+        <div class="section-label">🎯 Question d'entretien de la semaine</div>
+        <div class="interview-question">"" Comment les entreprises peuvent-elles utiliser les ratios de liquidité pour évaluer leur santé financière et prendre des décisions stratégiques ? ""</div>
+        <div class="interview-answer">
+          <p>Pour évaluer leur santé financière et prendre des décisions stratégiques, les entreprises utilisent différents ratios de liquidité qui permettent de mesurer leur capacité à faire face à leurs obligations financières à court terme. Voici quelques points clés :</p>
+   <ul>
+       <li><strong>Ratio de liquidité courante</strong> : Ce ratio compare les actifs circulants aux passifs circulants. Une valeur supérieure à 1 indique que l'entreprise a suffisamment d'actifs pour couvrir ses dettes à court terme.</li>
+       <li><strong>Ratio de liquidité rapide</strong> : Ce ratio est similaire au ratio de liquidité courante mais exclut les stocks, considérés comme moins liquides. Il donne une image plus précise de la capacité de l'entreprise à faire face à ses dettes à court terme sans avoir à vendre ses stocks.</li>
+       <li><strong>Gestion des flux de trésorerie</strong> : Les entreprises doivent également gérer efficacement leurs flux de trésorerie pour assurer qu'elles ont toujours suffisamment de liquidités pour faire face à leurs obligations.</li>
+   </ul>
+   <p>En comprenant et en utilisant ces ratios, les entreprises peuvent identifier les domaines où elles doivent améliorer leur gestion financière, réduire leurs dettes à court terme, et prendre des décisions stratégiques pour améliorer leur santé financière et leur croissance à long terme.</p>
+        </div>
+      </div>
+
+      <!-- OUTILS D'APPRENTISSAGE -->
+      <div class="tools-section">
+        <a class="tool-card" href="https://abarisan.github.io/newsletter-mna/quiz/quiz_2026-07-24.html" target="_blank">
+          <span class="icon">❓</span>
+          <span class="tool-title">Quiz ce numéro</span>
+          <span class="tool-desc">4 questions pour vérifier que tu as compris</span>
+        </a>
+        <a class="tool-card" href="https://claude.ai/new" target="_blank">
+          <span class="icon">🤖</span>
+          <span class="tool-title">Poser une question</span>
+          <span class="tool-desc">Ouvre ton Claude Project M&A pour aller plus loin</span>
+        </a>
+      </div>
+
+      <!-- SOURCES PAR NIVEAU -->
+      <div class="sources-section">
+        <div class="section-label">Sources</div>
+        <ul>
+          <li>[N1] Bloomberg - "Les entreprises face aux défis de la liquidité"</li>
+<li>[N2] Mergermarket - "L'importance de la gestion du working capital dans les fusions-acquisitions"</li>
+<li>[N3] The Economist - "Les ratios de liquidité : un outil clé pour les investisseurs"</li>
+<li>[N4] Dealogic - "Les données sur la gestion du working capital dans les entreprises"</li>
+        </ul>
+        <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:6px; font-family:'Helvetica Neue',Arial,sans-serif; font-size:10px;">
+          <span style="background:#fff3e8;border:1px solid #e85d1a;color:#c94e0e;padding:3px 8px;border-radius:20px;font-weight:700;">N1 · Bloomberg · FT · Capital Finance · CFNEWS · S&P</span>
+          <span style="background:#fff8f2;border:1px solid #f9a06b;color:#7a5c45;padding:3px 8px;border-radius:20px;">N2 · Mergermarket · Reuters · PitchBook</span>
+          <span style="background:#fdf6ee;border:1px solid #fde0c5;color:#9a7060;padding:3px 8px;border-radius:20px;">N3 · WSJ · The Economist</span>
+          <span style="background:#f9f9f9;border:1px solid #e0e0e0;color:#888;padding:3px 8px;border-radius:20px;">N4 · Dealogic · Preqin</span>
+        </div>
+      </div>
+
+    </div><!-- /body -->
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <p>
+        <span class="next">Deck Anki mis à jour en pièce jointe</span><br>
+        The Deal Brief · 5× par semaine · <a href="https://github.com/abarisan/newsletter-mna" style="color:#e85d1a;text-decoration:none;">Code source</a>
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>

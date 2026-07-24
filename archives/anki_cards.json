@@ -1294,5 +1294,41 @@
     "verso": "La balance sheet est affectée par les facteurs macro-économiques tels que les changements dans les taux d'intérêt, les fluctuations des prix des matières premières ou les événements géopolitiques, car ces facteurs peuvent impacter les revenus et les coûts de l'entreprise. Par exemple, une augmentation des prix du pétrole peut impacter la rentabilité d'une entreprise qui dépend fortement de ce produit, ce qui peut se refléter dans sa balance sheet.",
     "numero": "31",
     "id": 1209318378
+  },
+  {
+    "recto": "Qu'est-ce que le working capital ?",
+    "verso": "Le working capital représente les fonds dont dispose une entreprise pour financer ses activités quotidiennes. Il est calculé en soustrayant les passifs à court terme des actifs à court terme. Un working capital positif indique que l'entreprise a suffisamment de liquidités pour couvrir ses dettes à court terme.",
+    "numero": "32",
+    "id": 1505724426
+  },
+  {
+    "recto": "Comment les entreprises utilisent-elles des stratégies de working capital pour améliorer leur efficacité ?",
+    "verso": "Les entreprises utilisent des stratégies de working capital pour optimiser leur gestion de la trésorerie et réduire leurs coûts. Cela peut inclure la gestion de leurs stocks, la négociation de délais de paiement avec les fournisseurs et la réduction de leurs dettes à court terme. Une bonne gestion du working capital permet aux entreprises d'accroître leur liquidité et de réduire leur besoin de financement externe.",
+    "numero": "32",
+    "id": 1119420093
+  },
+  {
+    "recto": "Pourquoi les liens entre les trois états financiers sont-ils importants pour comprendre la santé financière d'une entreprise ?",
+    "verso": "Les liens entre les trois états financiers (bilan, compte de résultat et tableau de flux de trésorerie) sont essentiels pour comprendre la santé financière d'une entreprise. Le bilan fournit une vue instantanée de la situation financière, le compte de résultat montre les revenus et les dépenses, et le tableau de flux de trésorerie détaille les mouvements de trésorerie. En analysant ces états financiers, les investisseurs et les analystes peuvent évaluer la capacité de l'entreprise à générer des flux de trésorerie et à rembourser ses dettes.",
+    "numero": "32",
+    "id": 1152604618
+  },
+  {
+    "recto": "Qu'est-ce que le tableau de flux de trésorerie et à quoi sert-il ?",
+    "verso": "Le tableau de flux de trésorerie est un état financier qui détaille les mouvements de trésorerie d'une entreprise sur une période donnée. Il est divisé en trois catégories : activités d'exploitation, activités d'investissement et activités de financement. Le tableau de flux de trésorerie permet aux investisseurs et aux analystes d'évaluer la capacité de l'entreprise à générer des flux de trésorerie et à financer ses activités.",
+    "numero": "32",
+    "id": 1878897349
+  },
+  {
+    "recto": "Comment les tensions géopolitiques affectent-elles les marchés financiers ?",
+    "verso": "Les tensions géopolitiques, telles que les conflits commerciaux entre les États-Unis et la Chine, peuvent avoir un impact direct sur les marchés financiers. Les tarifs douaniers et les restrictions commerciales peuvent augmenter les coûts pour les entreprises et les consommateurs, ce qui peut affecter la croissance économique et les marchés financiers. Les investisseurs et les entreprises doivent prendre en compte ces facteurs pour évaluer les risques et les opportunités sur les marchés financiers.",
+    "numero": "32",
+    "id": 2147170622
+  },
+  {
+    "recto": "Pourquoi les entreprises doivent-elles gérer efficacement leur working capital en période de tensions géopolitiques ?",
+    "verso": "En période de tensions géopolitiques, les entreprises doivent gérer efficacement leur working capital pour faire face aux incertitudes et aux risques accrus. Une bonne gestion du working capital permet aux entreprises de maintenir leur liquidité, de réduire leur dépendance à l'égard du financement externe et de besser résister aux chocs économiques. Cela leur permet également de prendre des décisions stratégiques pour adapter leur activité aux nouvelles conditions du marché.",
+    "numero": "32",
+    "id": 1556186302
   }
 ]
