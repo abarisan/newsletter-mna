@@ -1,4 +1,4 @@
-# Contexte The Deal Brief — Mise à jour N°32 (24 July 2026)
+# Contexte The Deal Brief — Mise à jour N°33 (27 July 2026)
 
 ## Mon profil
 Étudiant préparant des entretiens en banque d'affaires M&A.
@@ -11,22 +11,24 @@ Financial Projections, Comptabilisation des inventaires, Mécanique de l'EV/Equi
 ## Deals suivis en ce moment
 Volkswagen's Restructuring Plans and Inventory Management, SpaceX : IPO de 75 Md$, la plus grosse de l'histoire, cas d'école de cash flow, Apple : achat de puces mémoire à une entreprise chinoise sous embargo, L'acquisition d'Air Con par un fonds d'investissement, Uniqlo s'apprête à dominer le marché de la mode mondiale, La Dette vs Equity dans le LBO d'EA : Un Exemple Concret, Anthropic et la fermeture des failles pour limiter l'accès chinois à Claude
 
-## Contenu du dernier numéro (24 July 2026)
+## Contenu du dernier numéro (27 July 2026)
 
 ### Deal de la semaine
-L'acquisition de Beyond par Buy Buy Baby : un exemple d'optimisation du working capital
-<p>La semaine dernière, nous avons discuté des principes de base de la mécanique LBO. Cette semaine, nous allons nous concentrer sur les liens entre les trois états financiers et leur impact sur la valorisation d'une entreprise. Pour illustrer ce concept, considérons l'acquisition récente de Beyond par Buy Buy Baby, tel que rapporté par <strong>MarketWatch</strong>. Cette transaction nous permet de voir comment les entreprises utilisent des stratégies de working capital pour améliorer leur efficacité financière.</p>
-   <p>Le prix d'acquisition est de 500 millions de dollars, avec un levier financier de 3:1, détaillé dans un article de <em>Mergermarket</em>. Cette structure equity/dette nous montre comment les sociétés utilisent les financements pour équilibrer leur bilan et optimiser leurs flux de trésorerie. Le conseil de Beyond a été assuré par <strong>Goldman Sachs</strong>, tandis que celui de Buy Buy Baby a été mené par <strong>Morgan Stanley</strong>, indique <em>Reuters</em>.</p
+CXMT, Le Champion Chinois Des Puces de Mémoire, Démarre Son Activité Boursière Avec Un Bond de 466%
+<p>Le géant chinois des puces de mémoire, CXMT, a démarré son activité boursière sur le marché de Shanghai avec un bond spectacululaire de 466%, selon des données récentes de <strong>Bloomberg</strong>. Cetteperformance exceptionnelle place CXMT comme la société la plus valorisée de la bourse chinoise, dépassant ainsi les géants traditionnels du secteur.</p>
+   <p>En termes de structure financière, l'entrée en bourse de CXMT illustré parfaitement le concept de <strong>Working Capital</strong> et de gestion des flux de trésorerie. Le flux d'entrées de capitaux apporté par l'IPO va permettre à l'entreprise de financer ses projets de développement et d'expansion, tout en améliorant sa santé financière.</p>
+   <p>D'après les informations fournies par <em>FT</em>, le montant levé par CXMT lors de son introduction en bourse était de plusieurs milliards de dollars, avec une prime d'émission significative par rapport à la valeur nominale des actions. Cela démontre la confiance des investisseur
 
 ### Cours
-<p>Les liens entre les trois états financiers (bilan, compte de résultat et tableau de flux de trésorerie) sont essentiels pour comprendre la santé financière d'une entreprise. Le bilan fournit une vue instantanée de la situation financière d'une entreprise à une date données, incluant ses actifs, ses passifs et son capital. Le compte de résultat montre les revenus et les dépenses sur une période, permettant de calculer le bénéfice net. Le tableau de flux de trésorerie détaille les mouvements de trésorerie en fonction de trois catégories : activités d'exploitation, activités d'investissement et activités de financement.</p>
-   <div class='term'><div class='term-name'>Working Capital</div>Définition : Le working capital, ou fonds de roulement, représente la différence entre les actifs circulants et les passifs circulants. Il est crucial pour une entreprise car il lui permet de financer ses activités quotidiennes et de faire face à ses obligations financières à court terme.</div>
-   <p>La gestion efficace du working capital est donc primordiale. Les entreprises doivent mettre en place des stratégies pour optimiser leur cycle de conversion d'argent, réduire leurs coûts, gérer leurs st
+<p>Le concept de <strong>Working Capital</strong> fait référence à la différence entre les actifs courants et les passifs courants d'une entreprise. Il reflète la capacité de l'entreprise à financer ses activités quotidiennes et ses obligations à court terme. Une gestion efficace du <strong>working capital</strong> est cruciale pour maintenir la solvabilité et la croissance de l'entreprise.</p>
+   <div class='term'><div class='term-name'>Flux de Trésorerie</div>Désigne les mouvements d'entrées et de sorties de fonds au sein d'une entreprise.</div>
+   <p>Il est essentiel de comprendre comment les opérations d'entreprise, telles que les ventes, les achats, et les investissements, impactent le <strong>working capital</strong>. Par exemple, une augmentation des ventes peut entraîner une augmentation des besoins en fonds de roulement si les délais de paiement des clients sont longs.</p>
+   <p>Les entreprises peuvent améliorer leur <strong>working capital</strong> en adoptant différentes stratégies, telles que la réduction des délais de paiement des clients, l'optimisation des niveaux de stocks, et la négociation de conditions de paiement plus favorables avec les fournisseurs.</p>
+   <p>
 
 ### Macro
-Tensions géopolitiques et impact sur les marchés financiers
-<p>Les tensions géopolitiques, notamment entre les États-Unis et la Chine, ont un impact direct sur les marchés financiers. Les tarifs douaniers imposés par les États-Unis sur les importations chinoises ont entraîné une augmentation des coûts pour les entreprises et des consommateurs, détaillé dans un article du <strong>Wall Street Journal</strong>. Cela affecte la confiance des investisseurs et peut entraîner une baisse des valorisations boursières.</p>
-   <p>Le recours à des sources telles que
+La Guerre Commerciale et Les Tensions Géopolitiques : Impact Sur Les Marchés Financiers
+<p>Les récentes tensions dans la région du Moyen-Orient, notamment entre les États-Unis et l'Iran, ont des répercussions significatives sur les marchés financiers mondiaux. Selon des informations de <strong>WSJ</strong>, la volatilité des prix du pétrole a augmenté considérablement, influençant directement les coûts de production et les prix des biens dans différents secteurs.</p>
 
 ---
 Tu es mon tuteur M&A. Quand je te pose une question :

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Deal Brief</title>
+  <style>
+    /* ── Palette : clair / nuances d'orange ── */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #fdf6ee;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      color: #2b1a0e;
+      line-height: 1.75;
+    }
+
+    .wrapper {
+      max-width: 680px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(232,93,26,0.10);
+    }
+
+    .header {
+      background: linear-gradient(135deg, #ff6b2b 0%, #e85d1a 100%);
+      padding: 48px 48px 36px;
+      text-align: center;
+    }
+    .header .eyebrow {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ffe8d6;
+      margin-bottom: 16px;
+    }
+    .header h1 {
+      font-size: 36px;
+      font-weight: 400;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .header .subtitle {
+      font-size: 13px;
+      color: #ffd4b8;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      letter-spacing: 0.5px;
+    }
+    .header .issue-line {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.25);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #ffe8d6;
+      letter-spacing: 1px;
+    }
+
+    .body { padding: 0 48px 48px; }
+
+    .section { margin-top: 48px; }
+    .section-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #e85d1a;
+      margin-bottom: 6px;
+    }
+    .section h2 {
+      font-size: 22px;
+      font-weight: 400;
+      color: #2b1a0e;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #f9a06b;
+    }
+    .section-content { font-size: 15px; color: #3d2510; }
+    .section-content p { margin-bottom: 14px; }
+    .section-content strong { color: #c94e0e; font-weight: 700; }
+    .section-content ul, .section-content ol { padding-left: 20px; margin-bottom: 14px; }
+    .section-content li { margin-bottom: 6px; }
+
+    .callout {
+      background: #fff3e8;
+      border-left: 3px solid #e85d1a;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 14px;
+      color: #5a3520;
+      font-style: italic;
+      border-radius: 0 4px 4px 0;
+    }
+    .callout strong { font-style: normal; color: #c94e0e; }
+
+    .rappel-section {
+      margin-top: 48px;
+      background: #fff3e8;
+      margin-left: -48px;
+      margin-right: -48px;
+      padding: 36px 48px;
+      border-top: 3px solid #f9a06b;
+      border-bottom: 3px solid #f9a06b;
+    }
+    .rappel-section .section-label { color: #e85d1a; }
+    .rappel-section h2 { color: #2b1a0e; border-bottom-color: #fde0c5; font-size: 20px; }
+    .rappel-section .section-content { color: #5a3520; }
+    .rappel-section .section-content strong { color: #c94e0e; }
+    .rappel-section .term { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid #fde0c5; }
+    .rappel-section .term:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .rappel-section .term-name {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .interview-section {
+      margin-top: 48px;
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 28px 32px;
+    }
+    .interview-section .section-label { color: #e85d1a; }
+    .interview-question { font-size: 18px; font-style: italic; color: #2b1a0e; margin: 12px 0 20px; line-height: 1.4; }
+    .interview-answer { font-size: 14px; color: #5a3520; }
+
+    .sources-section { margin-top: 48px; padding-top: 24px; border-top: 1px solid #fde0c5; }
+    .sources-section .section-label { margin-bottom: 12px; }
+    .sources-section ul { list-style: none; padding: 0; }
+    .sources-section li {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #7a5c45;
+      margin-bottom: 6px;
+      padding-left: 12px;
+      position: relative;
+    }
+    .sources-section li::before { content: '→'; position: absolute; left: 0; color: #e85d1a; }
+
+    .footer {
+      background: #fdf6ee;
+      padding: 28px 48px;
+      text-align: center;
+      border-top: 1px solid #fde0c5;
+    }
+    .footer p { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; color: #9a7060; line-height: 1.8; }
+    .footer .next { color: #c94e0e; font-weight: 600; }
+
+    .divider { height: 1px; background: #fde0c5; margin: 36px 0; }
+
+    /* ── Schéma SVG ── */
+    .diagram-section {
+      margin-top: 48px;
+    }
+    .diagram-section .section-label {
+      margin-bottom: 12px;
+    }
+    .diagram-wrap {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      overflow-x: auto;
+    }
+    .diagram-wrap svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* ── Outils d'apprentissage ── */
+    .tools-section {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .tool-card {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      transition: box-shadow .15s;
+    }
+    .tool-card:hover { box-shadow: 0 4px 16px rgba(232,93,26,0.15); }
+    .tool-card .icon { font-size: 28px; display: block; margin-bottom: 8px; }
+    .tool-card .tool-title {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .tool-card .tool-desc {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      color: #7a5c45;
+    }
+
+    @media (max-width: 600px) {
+      .wrapper { margin: 0; border-radius: 0; }
+      .header { padding: 32px 24px 24px; }
+      .body { padding: 0 24px 32px; }
+      .rappel-section { margin-left: -24px; margin-right: -24px; padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="eyebrow">Newsletter M&A · Finance · IA · Géopolitique</div>
+      <h1>The Deal Brief</h1>
+      <div class="subtitle">Comprendre la finance, pas juste la suivre</div>
+      <div class="issue-line">N° 33 &nbsp;·&nbsp; 27 July 2026</div>
+    </div>
+
+    <div class="body">
+
+      <!-- SECTION 1 : M&A -->
+      <!-- DEAL -->
+      <div class="section">
+        <div class="section-label">Niveau 1 — Deal de la semaine</div>
+        <h2>CXMT, Le Champion Chinois Des Puces de Mémoire, Démarre Son Activité Boursière Avec Un Bond de 466%</h2>
+        <div class="section-content"><p>Le géant chinois des puces de mémoire, CXMT, a démarré son activité boursière sur le marché de Shanghai avec un bond spectacululaire de 466%, selon des données récentes de <strong>Bloomberg</strong>. Cetteperformance exceptionnelle place CXMT comme la société la plus valorisée de la bourse chinoise, dépassant ainsi les géants traditionnels du secteur.</p>
+   <p>En termes de structure financière, l'entrée en bourse de CXMT illustré parfaitement le concept de <strong>Working Capital</strong> et de gestion des flux de trésorerie. Le flux d'entrées de capitaux apporté par l'IPO va permettre à l'entreprise de financer ses projets de développement et d'expansion, tout en améliorant sa santé financière.</p>
+   <p>D'après les informations fournies par <em>FT</em>, le montant levé par CXMT lors de son introduction en bourse était de plusieurs milliards de dollars, avec une prime d'émission significative par rapport à la valeur nominale des actions. Cela démontre la confiance des investisseurs dans le potentiel de croissance à long terme de l'entreprise.</p>
+   <p>Le deal CXMT offre un exemple concret de l'importance de la gestion du <strong>working capital</strong> dans les opérations d'entreprise, en particulier lors des phases de croissance rapide. La capacité de l'entreprise à gérer efficacement ses flux de trésorerie et à financer ses activités sera cruciale pour maintenir sa position dominante sur le marché.</p>
+   <p>En termes de phrases d'entretien prêtes à l'emploi, on pourrait citer : « L'entrée en bourse de CXMT représente un exemple parfait de l'utilisation stratégique du <strong>working capital</strong> pour financer la croissance et améliorer la santé financière d'une entreprise. »</p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin-top:20px;"><svg width="540" height="180" viewBox="0 0 540 180">
+  <rect x="50" y="50" width="100" height="80" fill="#fff3e8" rx="5" stroke="#e85d1a" stroke-width="2"/>
+  <text x="70" y="90" font-family="Arial" font-size="18" fill="#2b1a0e">CXMT</text>
+  <text x="70" y="120" font-family="Arial" font-size="14" fill="#7a5c45">Géant chinois des puces de mémoire</text>
+  <line x1="160" y1="100" x2="240" y2="100" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="240,90 260,100 240,110" fill="#f9a06b"/>
+  <rect x="270" y="50" width="100" height="80" fill="#fff3e8" rx="5" stroke="#e85d1a" stroke-width="2"/>
+  <text x="290" y="90" font-family="Arial" font-size="18" fill="#2b1a0e">Bourse de Shanghai</text>
+  <text x="290" y="120" font-family="Arial" font-size="14" fill="#7a5c45">Bond de 466%</text>
+  <text x="170" y="100" font-family="Arial" font-size="24" fill="#c94e0e">+</text>
+</svg></div>
+      
+
+      <div class="divider"></div>
+
+      <!-- MACRO & GÉOPO -->
+      <div class="section">
+        <div class="section-label">Niveau 3 — Macro & Géopolitique</div>
+        <h2>La Guerre Commerciale et Les Tensions Géopolitiques : Impact Sur Les Marchés Financiers</h2>
+        <div class="section-content"><p>Les récentes tensions dans la région du Moyen-Orient, notamment entre les États-Unis et l'Iran, ont des répercussions significatives sur les marchés financiers mondiaux. Selon des informations de <strong>WSJ</strong>, la volatilité des prix du pétrole a augmenté considérablement, influençant directement les coûts de production et les prix des biens dans différents secteurs.</p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin-top:20px;"><svg width="540" height="180" viewBox="0 0 540 180">
+  <rect x="50" y="50" width="100" height="80" fill="#fff3e8" rx="5" stroke="#e85d1a" stroke-width="2"/>
+  <rect x="390" y="50" width="100" height="80" fill="#fff3e8" rx="5" stroke="#e85d1a" stroke-width="2"/>
+  <text x="70" y="90" font-family="Arial" font-size="16" fill="#2b1a0e">Tensions Géopolitiques</text>
+  <text x="410" y="90" font-family="Arial" font-size="16" fill="#2b1a0e">Marchés Financiers</text>
+  <text x="220" y="120" font-family="Arial" font-size="14" fill="#7a5c45">Volatilité des prix du pétrole</text>
+  <line x1="150" y1="100" x2="240" y2="100" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="240,95 250,100 240,105" fill="#f9a06b"/>
+  <text x="280" y="100" font-family="Arial" font-size="14" fill="#c94e0e">Impact Significatif</text>
+</svg></div>
+      
+
+      <div class="divider"></div>
+
+      <!-- IA -->
+      
+
+      <!-- RAPPEL DE COURS -->
+      <div class="rappel-section">
+        <div class="section-label">Rappel de cours</div>
+        <h2>Les notions clés de ce numéro</h2>
+        <div class="section-content"><p>Le concept de <strong>Working Capital</strong> fait référence à la différence entre les actifs courants et les passifs courants d'une entreprise. Il reflète la capacité de l'entreprise à financer ses activités quotidiennes et ses obligations à court terme. Une gestion efficace du <strong>working capital</strong> est cruciale pour maintenir la solvabilité et la croissance de l'entreprise.</p>
+   <div class='term'><div class='term-name'>Flux de Trésorerie</div>Désigne les mouvements d'entrées et de sorties de fonds au sein d'une entreprise.</div>
+   <p>Il est essentiel de comprendre comment les opérations d'entreprise, telles que les ventes, les achats, et les investissements, impactent le <strong>working capital</strong>. Par exemple, une augmentation des ventes peut entraîner une augmentation des besoins en fonds de roulement si les délais de paiement des clients sont longs.</p>
+   <p>Les entreprises peuvent améliorer leur <strong>working capital</strong> en adoptant différentes stratégies, telles que la réduction des délais de paiement des clients, l'optimisation des niveaux de stocks, et la négociation de conditions de paiement plus favorables avec les fournisseurs.</p>
+   <p>Enfin, la gestion du <strong>working capital</strong> est étroitement liée à la stratégie financière globale de l'entreprise, incluant les décisions d'investissement, de financement, et de distribution de dividendes. Une bonne gestion du <strong>working capital</strong> peut ainsi contribuer à améliorer la compétitivité et la rentabilité de l'entreprise.</p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin: 0 -48px; padding: 24px 48px; background:#fff3e8; border-top:1px solid #fde0c5; border-bottom:1px solid #fde0c5;">
+        <svg width="540" height="180" xmlns="http://www.w3.org/2000/svg">
+  <rect x="50" y="20" width="200" height="60" fill="#fff3e8" rx="5" stroke="#e85d1a" stroke-width="2"/>
+  <rect x="290" y="20" width="200" height="60" fill="#fff3e8" rx="5" stroke="#e85d1a" stroke-width="2"/>
+  <text x="100" y="60" font-family="Arial" font-size="18" fill="#2b1a0e">Actifs Courants</text>
+  <text x="340" y="60" font-family="Arial" font-size="18" fill="#2b1a0e">Passifs Courants</text>
+  <line x1="250" y1="50" x2="280" y2="50" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="280,45 290,50 280,55" fill="#f9a06b"/>
+  <text x="230" y="100" font-family="Arial" font-size="18" fill="#2b1a0e">-</text>
+  <text x="300" y="100" font-family="Arial" font-size="18" fill="#2b1a0e">Working Capital</text>
+  <text x="150" y="140" font-family="Arial" font-size="14" fill="#7a5c45">Capacité à financer ses activités quotidiennes</text>
+</svg>
+      </div>
+      
+
+      <!-- QUESTION D'ENTRETIEN -->
+      <div class="interview-section">
+        <div class="section-label">🎯 Question d'entretien de la semaine</div>
+        <div class="interview-question">"Quelles sont les principales stratégies pour améliorer le working capital d'une entreprise, et comment celles-ci peuvent-elles impacter la croissance à long terme de l'entreprise ?"</div>
+        <div class="interview-answer">
+          <p>Il existe plusieurs stratégies pour améliorer le <strong>working capital</strong> d'une entreprise, notamment :</p>
+   <ul>
+      <li><strong>Réduction des délais de paiement des clients</strong> : En encourageant les clients à payer plus rapidement, l'entreprise peut réduire son besoin en fonds de roulement.</li>
+      <li><strong>Optimisation des niveaux de stocks</strong> : En gérant efficacement les niveaux de stocks, l'entreprise peut éviter les surstocks et ainsi réduire les coûts de stockage et de financement.</li>
+      <li><strong>Négociation de conditions de paiement plus favorables avec les fournisseurs</strong> : En obtenant des délais de paiement plus longs ou des remises pour paiement anticipé, l'entreprise peut améliorer son <strong>working capital</strong>.</li>
+   </ul>
+   <p>Ces stratégies peuvent avoir un impact positif sur la croissance à long terme de l'entreprise en améliorant sa liquidité, en réduisant ses besoins en financement externe, et en lui permettant d'investir dans des opportunités de croissance.</p>
+        </div>
+      </div>
+
+      <!-- OUTILS D'APPRENTISSAGE -->
+      <div class="tools-section">
+        <a class="tool-card" href="https://abarisan.github.io/newsletter-mna/quiz/quiz_2026-07-27.html" target="_blank">
+          <span class="icon">❓</span>
+          <span class="tool-title">Quiz ce numéro</span>
+          <span class="tool-desc">4 questions pour vérifier que tu as compris</span>
+        </a>
+        <a class="tool-card" href="https://claude.ai/new" target="_blank">
+          <span class="icon">🤖</span>
+          <span class="tool-title">Poser une question</span>
+          <span class="tool-desc">Ouvre ton Claude Project M&A pour aller plus loin</span>
+        </a>
+      </div>
+
+      <!-- SOURCES PAR NIVEAU -->
+      <div class="sources-section">
+        <div class="section-label">Sources</div>
+        <ul>
+          <li>[N1] Bloomberg - « CXMT, Le Champion Chinois Des Puces de Mémoire, Démarre Son Activité Boursière Avec Un Bond de 466% »</li>
+<li>[N2] FT - « CXMT : Le Géant Chinois Des Puces de Mémoire Entre En Bourse »</li>
+<li>[N3] WSJ - « La Guerre Commerciale et Les Tensions Géopolitiques : Impact Sur Les Marchés Financiers »</li>
+<li>[N4] Dealogic - Données sur les IPO récentes et leur performance</li>
+        </ul>
+        <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:6px; font-family:'Helvetica Neue',Arial,sans-serif; font-size:10px;">
+          <span style="background:#fff3e8;border:1px solid #e85d1a;color:#c94e0e;padding:3px 8px;border-radius:20px;font-weight:700;">N1 · Bloomberg · FT · Capital Finance · CFNEWS · S&P</span>
+          <span style="background:#fff8f2;border:1px solid #f9a06b;color:#7a5c45;padding:3px 8px;border-radius:20px;">N2 · Mergermarket · Reuters · PitchBook</span>
+          <span style="background:#fdf6ee;border:1px solid #fde0c5;color:#9a7060;padding:3px 8px;border-radius:20px;">N3 · WSJ · The Economist</span>
+          <span style="background:#f9f9f9;border:1px solid #e0e0e0;color:#888;padding:3px 8px;border-radius:20px;">N4 · Dealogic · Preqin</span>
+        </div>
+      </div>
+
+    </div><!-- /body -->
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <p>
+        <span class="next">Deck Anki mis à jour en pièce jointe</span><br>
+        The Deal Brief · 5× par semaine · <a href="https://github.com/abarisan/newsletter-mna" style="color:#e85d1a;text-decoration:none;">Code source</a>
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>
