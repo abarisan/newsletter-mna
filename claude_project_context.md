@@ -1,4 +1,4 @@
-# Contexte The Deal Brief — Mise à jour N°33 (27 July 2026)
+# Contexte The Deal Brief — Mise à jour N°34 (28 July 2026)
 
 ## Mon profil
 Étudiant préparant des entretiens en banque d'affaires M&A.
@@ -11,24 +11,18 @@ Financial Projections, Comptabilisation des inventaires, Mécanique de l'EV/Equi
 ## Deals suivis en ce moment
 Volkswagen's Restructuring Plans and Inventory Management, SpaceX : IPO de 75 Md$, la plus grosse de l'histoire, cas d'école de cash flow, Apple : achat de puces mémoire à une entreprise chinoise sous embargo, L'acquisition d'Air Con par un fonds d'investissement, Uniqlo s'apprête à dominer le marché de la mode mondiale, La Dette vs Equity dans le LBO d'EA : Un Exemple Concret, Anthropic et la fermeture des failles pour limiter l'accès chinois à Claude
 
-## Contenu du dernier numéro (27 July 2026)
+## Contenu du dernier numéro (28 July 2026)
 
 ### Deal de la semaine
-CXMT, Le Champion Chinois Des Puces de Mémoire, Démarre Son Activité Boursière Avec Un Bond de 466%
-<p>Le géant chinois des puces de mémoire, CXMT, a démarré son activité boursière sur le marché de Shanghai avec un bond spectacululaire de 466%, selon des données récentes de <strong>Bloomberg</strong>. Cetteperformance exceptionnelle place CXMT comme la société la plus valorisée de la bourse chinoise, dépassant ainsi les géants traditionnels du secteur.</p>
-   <p>En termes de structure financière, l'entrée en bourse de CXMT illustré parfaitement le concept de <strong>Working Capital</strong> et de gestion des flux de trésorerie. Le flux d'entrées de capitaux apporté par l'IPO va permettre à l'entreprise de financer ses projets de développement et d'expansion, tout en améliorant sa santé financière.</p>
-   <p>D'après les informations fournies par <em>FT</em>, le montant levé par CXMT lors de son introduction en bourse était de plusieurs milliards de dollars, avec une prime d'émission significative par rapport à la valeur nominale des actions. Cela démontre la confiance des investisseur
+Beyond acquiert les droits de la marque Buy Buy Baby
+<p>Le groupe Beyond a annoncé l'acquisition des droits de la marque Buy Buy Baby, une enseigne de détail spécialisée dans les produits pour enfants, pour un montant de 130 millions de dollars, selon <strong>Bloomberg</strong>. Cette acquisition s'inscrit dans la stratégie de diversification de Beyond, qui souhaite renforcer sa présence dans le marché des produits pour la maison et les enfants.</p><p>Le prix d'acquisition représente une prime de 20% par rapport à la valeur de marché de la marque. La transaction devrait être financée à hauteur de 60% par des fonds propres et à 40% par une dette senior non garantie, avec un taux d'intérêt de 6%, comme indiqué dans le <em>communiqué de presse</em> de l'entreprise.</p><p>Cette opération illustre parfaitement le concept de <strong>Goodwill</strong> abordé dans notre chapitre TRAINY du jour, puisque la valeur de la marque Buy Buy Baby dépasse nettement la somme des actifs tangibles qu'elle possède. Ce surplus de valeur est justement le Goodwi
 
 ### Cours
-<p>Le concept de <strong>Working Capital</strong> fait référence à la différence entre les actifs courants et les passifs courants d'une entreprise. Il reflète la capacité de l'entreprise à financer ses activités quotidiennes et ses obligations à court terme. Une gestion efficace du <strong>working capital</strong> est cruciale pour maintenir la solvabilité et la croissance de l'entreprise.</p>
-   <div class='term'><div class='term-name'>Flux de Trésorerie</div>Désigne les mouvements d'entrées et de sorties de fonds au sein d'une entreprise.</div>
-   <p>Il est essentiel de comprendre comment les opérations d'entreprise, telles que les ventes, les achats, et les investissements, impactent le <strong>working capital</strong>. Par exemple, une augmentation des ventes peut entraîner une augmentation des besoins en fonds de roulement si les délais de paiement des clients sont longs.</p>
-   <p>Les entreprises peuvent améliorer leur <strong>working capital</strong> en adoptant différentes stratégies, telles que la réduction des délais de paiement des clients, l'optimisation des niveaux de stocks, et la négociation de conditions de paiement plus favorables avec les fournisseurs.</p>
-   <p>
+<p>Le concept de Goodwill est fondamental en comptabilité et en finance d'entreprise, particulièrement dans le contexte des fusions-acquisitions. Le Goodwill représente la différence entre le prix d'acquisition payé pour une entreprise et la valeur comptable de ses actifs nets. Il s'agit essentiellement de la valeur des actifs immatériels tels que la reconnaissance de la marque, les droits de propriété intellectuelle, et les relations avec les clients et les fournisseurs.</p><p>La comptabilisation du Goodwill Suit à la norme IFRS (International Financial Reporting Standards) ou aux principes comptables généralement admis (GAAP) aux États-Unis. Lorsqu'une entreprise acquiert une autre entreprise, le Goodwill est enregistré comme un actif à l'actif du bilan, et il est amorti sur une période déterminée, généralement de 5 à 20 ans, selon la nature de l'actif immatériel.</p><div class='term'><div class='term-name'>Goodwill</div>Représente la valeur des actifs immatériels d'une entreprise, tels que la reconnaissance de la marque et les relations avec les clients, qui sont acquis lors d'une acquisition.</div><p>Il est important de tester régulièrement la valeur du Goodwill pour détecter t
 
 ### Macro
-La Guerre Commerciale et Les Tensions Géopolitiques : Impact Sur Les Marchés Financiers
-<p>Les récentes tensions dans la région du Moyen-Orient, notamment entre les États-Unis et l'Iran, ont des répercussions significatives sur les marchés financiers mondiaux. Selon des informations de <strong>WSJ</strong>, la volatilité des prix du pétrole a augmenté considérablement, influençant directement les coûts de production et les prix des biens dans différents secteurs.</p>
+Impact des Taux d'Intérêt sur les Fusions-Acquisitions
+<p>Les taux d'intérêt, tels que décidés par la Fed, ont un impact significatif sur l'appétit des entreprises pour les fusions-acquisitions. Selon un article récent du <strong>Wall Street Journal</strong>, une baisse des taux d'intérêt peut rendre les emprunts moins chers pour les entreprises, encourageant ainsi les acquisitions financées par l'endettement. Cependant, une Hausse des taux peut réduire l'appétit d'acquisition en augmentant le coût de la dette.</p>
 
 ---
 Tu es mon tuteur M&A. Quand je te pose une question :
