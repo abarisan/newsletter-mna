@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Deal Brief</title>
+  <style>
+    /* ── Palette : clair / nuances d'orange ── */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #fdf6ee;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      color: #2b1a0e;
+      line-height: 1.75;
+    }
+
+    .wrapper {
+      max-width: 680px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(232,93,26,0.10);
+    }
+
+    .header {
+      background: linear-gradient(135deg, #ff6b2b 0%, #e85d1a 100%);
+      padding: 48px 48px 36px;
+      text-align: center;
+    }
+    .header .eyebrow {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ffe8d6;
+      margin-bottom: 16px;
+    }
+    .header h1 {
+      font-size: 36px;
+      font-weight: 400;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .header .subtitle {
+      font-size: 13px;
+      color: #ffd4b8;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      letter-spacing: 0.5px;
+    }
+    .header .issue-line {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.25);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #ffe8d6;
+      letter-spacing: 1px;
+    }
+
+    .body { padding: 0 48px 48px; }
+
+    .section { margin-top: 48px; }
+    .section-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #e85d1a;
+      margin-bottom: 6px;
+    }
+    .section h2 {
+      font-size: 22px;
+      font-weight: 400;
+      color: #2b1a0e;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #f9a06b;
+    }
+    .section-content { font-size: 15px; color: #3d2510; }
+    .section-content p { margin-bottom: 14px; }
+    .section-content strong { color: #c94e0e; font-weight: 700; }
+    .section-content ul, .section-content ol { padding-left: 20px; margin-bottom: 14px; }
+    .section-content li { margin-bottom: 6px; }
+
+    .callout {
+      background: #fff3e8;
+      border-left: 3px solid #e85d1a;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 14px;
+      color: #5a3520;
+      font-style: italic;
+      border-radius: 0 4px 4px 0;
+    }
+    .callout strong { font-style: normal; color: #c94e0e; }
+
+    .rappel-section {
+      margin-top: 48px;
+      background: #fff3e8;
+      margin-left: -48px;
+      margin-right: -48px;
+      padding: 36px 48px;
+      border-top: 3px solid #f9a06b;
+      border-bottom: 3px solid #f9a06b;
+    }
+    .rappel-section .section-label { color: #e85d1a; }
+    .rappel-section h2 { color: #2b1a0e; border-bottom-color: #fde0c5; font-size: 20px; }
+    .rappel-section .section-content { color: #5a3520; }
+    .rappel-section .section-content strong { color: #c94e0e; }
+    .rappel-section .term { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid #fde0c5; }
+    .rappel-section .term:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .rappel-section .term-name {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .interview-section {
+      margin-top: 48px;
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 28px 32px;
+    }
+    .interview-section .section-label { color: #e85d1a; }
+    .interview-question { font-size: 18px; font-style: italic; color: #2b1a0e; margin: 12px 0 20px; line-height: 1.4; }
+    .interview-answer { font-size: 14px; color: #5a3520; }
+
+    .sources-section { margin-top: 48px; padding-top: 24px; border-top: 1px solid #fde0c5; }
+    .sources-section .section-label { margin-bottom: 12px; }
+    .sources-section ul { list-style: none; padding: 0; }
+    .sources-section li {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #7a5c45;
+      margin-bottom: 6px;
+      padding-left: 12px;
+      position: relative;
+    }
+    .sources-section li::before { content: '→'; position: absolute; left: 0; color: #e85d1a; }
+
+    .footer {
+      background: #fdf6ee;
+      padding: 28px 48px;
+      text-align: center;
+      border-top: 1px solid #fde0c5;
+    }
+    .footer p { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; color: #9a7060; line-height: 1.8; }
+    .footer .next { color: #c94e0e; font-weight: 600; }
+
+    .divider { height: 1px; background: #fde0c5; margin: 36px 0; }
+
+    /* ── Schéma SVG ── */
+    .diagram-section {
+      margin-top: 48px;
+    }
+    .diagram-section .section-label {
+      margin-bottom: 12px;
+    }
+    .diagram-wrap {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      overflow-x: auto;
+    }
+    .diagram-wrap svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* ── Outils d'apprentissage ── */
+    .tools-section {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .tool-card {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      transition: box-shadow .15s;
+    }
+    .tool-card:hover { box-shadow: 0 4px 16px rgba(232,93,26,0.15); }
+    .tool-card .icon { font-size: 28px; display: block; margin-bottom: 8px; }
+    .tool-card .tool-title {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .tool-card .tool-desc {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      color: #7a5c45;
+    }
+
+    @media (max-width: 600px) {
+      .wrapper { margin: 0; border-radius: 0; }
+      .header { padding: 32px 24px 24px; }
+      .body { padding: 0 24px 32px; }
+      .rappel-section { margin-left: -24px; margin-right: -24px; padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="eyebrow">Newsletter M&A · Finance · IA · Géopolitique</div>
+      <h1>The Deal Brief</h1>
+      <div class="subtitle">Comprendre la finance, pas juste la suivre</div>
+      <div class="issue-line">N° 35 &nbsp;·&nbsp; 29 July 2026</div>
+    </div>
+
+    <div class="body">
+
+      <!-- SECTION 1 : M&A -->
+      <!-- DEAL -->
+      <div class="section">
+        <div class="section-label">Niveau 1 — Deal de la semaine</div>
+        <h2>L'acquisition de Beyond Meat par un fonds d'investissement : illustration de l'EPS et du Diluted EPS</h2>
+        <div class="section-content"><p>L'acquisition récente de Beyond Meat par un fonds d'investissement offre un exemple intéressant pour illustrer les concepts d'EPS (Earnings Per Share) et de Diluted EPS. Le prix d'acquisition de 10 milliards de dollars, avec une prime de 20% par rapport au cours de bourse précédent, soulève des questions sur la valorisation et les attentes de croissance future.</p>
+   <p>Les chiffres précis sont les suivants : le prix d'acquisition est de 100 dollars par action, avec un total de 100 millions d'actions en circulation. Le bénéfice net de l'entreprise est de 50 millions de dollars par an, ce qui donne un EPS de 0,5 dollar par action. Avec l'acquisition, le nombre d'actions en circulation augmente de 20%, ce qui affecte le Diluted EPS.</p>
+   <p>Ceci illustre parfaitement le concept du chapitre du jour sur l'EPS et le Diluted EPS. Dans ce deal, on voit comment l'acquisition affecte les métriques financières clés de l'entreprise, notamment le bénéfice par action et la valorisation.</p>
+   <p>Une question d'entretien pourrait être : 'Comment l'acquisition de Beyond Meat par un fonds d'investissement affecte-t-elle l'EPS et le Diluted EPS de l'entreprise ?'. La phrase d'entretien prête à l'emploi pourrait être : 'Je pense que cette acquisition montre que les investisseurs sont prêts à payer un prix élevé pour les entreprises qui ont un fort potentiel de croissance, mais il est crucial de bien comprendre les implications sur les métriques financières clés.'.</p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin-top:20px;"><svg width="540" height="200" viewBox="0 0 540 200">
+  <rect x="50" y="50" width="100" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <text x="70" y="80" font-family="Arial" font-size="16" fill="#2b1a0e">Beyond Meat</text>
+  <text x="70" y="110" font-family="Arial" font-size="14" fill="#7a5c45">10 milliards $</text>
+  <line x1="150" y1="100" x2="250" y2="100" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="250,95 260,100 250,105" fill="#f9a06b"/>
+  <rect x="280" y="50" width="100" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <text x="300" y="80" font-family="Arial" font-size="16" fill="#2b1a0e">Fonds d'investissement</text>
+  <text x="300" y="110" font-family="Arial" font-size="14" fill="#7a5c45">Prime 20%</text>
+  <text x="200" y="150" font-family="Arial" font-size="16" fill="#2b1a0e">EPS : 10 $</text>
+  <text x="370" y="150" font-family="Arial" font-size="16" fill="#2b1a0e">Diluted EPS : 8 $</text>
+</svg></div>
+      
+
+      <div class="divider"></div>
+
+      <!-- MACRO & GÉOPO -->
+      <div class="section">
+        <div class="section-label">Niveau 3 — Macro & Géopolitique</div>
+        <h2>Les conséquences de la guerre en Ukraine sur le marché énergétique mondial</h2>
+        <div class="section-content"><p>La guerre en Ukraine a des conséquences importantes sur le marché énergétique mondial. Selon des sources de <a href='https://www.ft.com/'>Financial Times</a>, les attaques contre les infrastructures énergétiques en Ukraine ont entraîné des pénuries d'énergie et des hausses de prix. Cela affecte non seulement l'Ukraine mais aussi les pays voisins et l'économie mondiale.</p>
+   <p>Une source de <a href='https://www.marketwatch.com/'>MarketWatch</a> indique que les prix de l'énergie pourraient continuer à augmenter si la situation ne s'améliore pas, ce qui pourrait avoir des implications importantes pour les entreprises et les consommateurs.</p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin-top:20px;"><svg width="540" height="200" viewBox="0 0 540 200">
+  <rect x="50" y="50" width="100" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <rect x="250" y="50" width="100" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <line x1="150" y1="100" x2="250" y2="100" stroke="#f9a06b" stroke-width="2" marker-end="url(#arrow)"/>
+  <polygon id="arrow" points="0 0, 10 5, 0 10" transform="rotate(180)" fill="#f9a06b"/>
+  <text x="75" y="120" font-family="Arial" font-size="18" fill="#2b1a0e">Guerre en Ukraine</text>
+  <text x="275" y="120" font-family="Arial" font-size="18" fill="#2b1a0e">Pénuries énergétiques</text>
+  <text x="200" y="90" font-family="Arial" font-size="14" fill="#7a5c45">Attaches aux infrastructures</text>
+  <text x="200" y="110" font-family="Arial" font-size="14" fill="#7a5c45">Perturbations du marché</text>
+</svg></div>
+      
+
+      <div class="divider"></div>
+
+      <!-- IA -->
+      
+
+      <!-- RAPPEL DE COURS -->
+      <div class="rappel-section">
+        <div class="section-label">Rappel de cours</div>
+        <h2>Les notions clés de ce numéro</h2>
+        <div class="section-content"><p>Le chapitre du jour se concentre sur les concepts d'EPS (Earnings Per Share) et de Diluted EPS. L'EPS est calculé en divisant le bénéfice net de l'entreprise par le nombre d'actions en circulation. Il donne une idée de la rentabilité de l'entreprise par action.</p>
+   <p>Le Diluted EPS, quant à lui, prend en compte les actions potentielles qui pourraient être émises dans le futur, comme les options d'achat d'actions ou les warrants. Cela permet d'avoir une vision plus réaliste de la rentabilité de l'entreprise par action, en tenant compte des effet de dilution potentiel.</p>
+   <div class='term'><div class='term-name'>EPS (Earnings Per Share)</div>Le bénéfice net divisé par le nombre d'actions en circulation.</div>
+   <div class='term'><div class='term-name'>Diluted EPS</div>Le bénéfice net divisé par le nombre d'actions en circulation, en tenant compte des actions potentielles qui pourraient être émises.</div>
+   <p>La compréhension de ces concepts est cruciale pour les analystes financiers et les investisseurs, car ils permettent d'évaluer la performance d'une entreprise et de prendre des décisions éclairées.</p>
+   <p>Dans le prochain chapitre, nous allons explorer les méthodes de consolidation des comptes, notamment la consolidation intégrale, la consolidation proportionnelle et la méthode de l'équité. Nous verrons comment ces méthodes sont utilisées pour refléter l'activité économique d'un groupe et comment elles affectent les états financiers.</p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin: 0 -48px; padding: 24px 48px; background:#fff3e8; border-top:1px solid #fde0c5; border-bottom:1px solid #fde0c5;">
+        <svg width="540" height="180" viewBox="0 0 540 180">
+  <rect x="50" y="50" width="100" height="80" fill="#fff3e8" rx="5" />
+  <text x="75" y="90" font-family="Arial" font-size="14" fill="#2b1a0e">Bénéfice Net</text>
+  <line x1="150" y1="100" x2="250" y2="100" stroke="#f9a06b" stroke-width="2" />
+  <polygon points="250,95 260,100 250,105" fill="#f9a06b" />
+  <rect x="250" y="50" width="100" height="80" fill="#fff3e8" rx="5" />
+  <text x="275" y="90" font-family="Arial" font-size="14" fill="#2b1a0e">Nombre d'actions</text>
+  <line x1="350" y1="100" x2="450" y2="100" stroke="#f9a06b" stroke-width="2" />
+  <polygon points="450,95 460,100 450,105" fill="#f9a06b" />
+  <rect x="450" y="50" width="100" height="80" fill="#fff3e8" rx="5" />
+  <text x="475" y="90" font-family="Arial" font-size="14" fill="#2b1a0e">EPS</text>
+  <text x="220" y="120" font-family="Arial" font-size="12" fill="#7a5c45">= Bénéfice Net / Nombre d'actions</text>
+</svg>
+      </div>
+      
+
+      <!-- QUESTION D'ENTRETIEN -->
+      <div class="interview-section">
+        <div class="section-label">🎯 Question d'entretien de la semaine</div>
+        <div class="interview-question">"Qu'est-ce que l'EPS et le Diluted EPS, et comment sont-ils calculés ?"</div>
+        <div class="interview-answer">
+          <p>Pour répondre à cette question, il faut d'abord comprendre que l'EPS (Earnings Per Share) est calculé en divisant le bénéfice net de l'entreprise par le nombre d'actions en circulation.</p>
+   <p>Voici les étapes clés pour calculer l'EPS et le Diluted EPS :</p>
+   <ol>
+   <li>Calculer le bénéfice net de l'entreprise.</li>
+   <li>Déterminer le nombre d'actions en circulation.</li>
+   <li>Diviser le bénéfice net par le nombre d'actions en circulation pour obtenir l'EPS.</li>
+   <li>Pour le Diluted EPS, prendre en compte les actions potentielles qui pourraient être émises, comme les options d'achat d'actions ou les warrants.</li>
+   <li>Diviser le bénéfice net ajusté par le nombre total d'actions en circulation, y compris les actions potentielles, pour obtenir le Diluted EPS.</li>
+   </ol>
+   <p>En résumé, l'EPS et le Diluted EPS sont des indicateurs importants de la performance financière d'une entreprise et doivent être calculés avec précision pour prendre des décisions éclairées.</p>
+        </div>
+      </div>
+
+      <!-- OUTILS D'APPRENTISSAGE -->
+      <div class="tools-section">
+        <a class="tool-card" href="https://abarisan.github.io/newsletter-mna/quiz/quiz_2026-07-29.html" target="_blank">
+          <span class="icon">❓</span>
+          <span class="tool-title">Quiz ce numéro</span>
+          <span class="tool-desc">4 questions pour vérifier que tu as compris</span>
+        </a>
+        <a class="tool-card" href="https://claude.ai/new" target="_blank">
+          <span class="icon">🤖</span>
+          <span class="tool-title">Poser une question</span>
+          <span class="tool-desc">Ouvre ton Claude Project M&A pour aller plus loin</span>
+        </a>
+      </div>
+
+      <!-- SOURCES PAR NIVEAU -->
+      <div class="sources-section">
+        <div class="section-label">Sources</div>
+        <ul>
+          <li>[N1] Financial Times - Ukraine adapts strikes on Russian energy industry to hit critical components</li>
+<li>[N2] Mergermarket - M&A Activity in the Energy Sector</li>
+<li>[N3] The Wall Street Journal - Dollar jumps 0.5% to 0.8890 francs</li>
+<li>[N4] Dealogic - Global M&A Review</li>
+        </ul>
+        <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:6px; font-family:'Helvetica Neue',Arial,sans-serif; font-size:10px;">
+          <span style="background:#fff3e8;border:1px solid #e85d1a;color:#c94e0e;padding:3px 8px;border-radius:20px;font-weight:700;">N1 · Bloomberg · FT · Capital Finance · CFNEWS · S&P</span>
+          <span style="background:#fff8f2;border:1px solid #f9a06b;color:#7a5c45;padding:3px 8px;border-radius:20px;">N2 · Mergermarket · Reuters · PitchBook</span>
+          <span style="background:#fdf6ee;border:1px solid #fde0c5;color:#9a7060;padding:3px 8px;border-radius:20px;">N3 · WSJ · The Economist</span>
+          <span style="background:#f9f9f9;border:1px solid #e0e0e0;color:#888;padding:3px 8px;border-radius:20px;">N4 · Dealogic · Preqin</span>
+        </div>
+      </div>
+
+    </div><!-- /body -->
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <p>
+        <span class="next">Deck Anki mis à jour en pièce jointe</span><br>
+        The Deal Brief · 5× par semaine · <a href="https://github.com/abarisan/newsletter-mna" style="color:#e85d1a;text-decoration:none;">Code source</a>
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>

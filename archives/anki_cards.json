@@ -1402,5 +1402,41 @@
     "verso": "L'EV (Enterprise Value) représente la valeur totale de l'entreprise, incluant la dette et les capitaux propres. L'equity value, en revanche, représente uniquement la valeur des capitaux propres. La différence entre les deux concerne essentiellement le traitement de la dette dans l'évaluation de l'entreprise.",
     "numero": "34",
     "id": 1418071548
+  },
+  {
+    "recto": "Qu'est-ce que l'EPS (Earnings Per Share) ?",
+    "verso": "L'EPS est calculé en divisant le bénéfice net de l'entreprise par le nombre d'actions en circulation. Il donne une idée de la rentabilité de l'entreprise par action. Par exemple, si une entreprise a un bénéfice net de 100 millions et 10 millions d'actions en circulation, son EPS serait de 10.",
+    "numero": "35",
+    "id": 2027244146
+  },
+  {
+    "recto": "Qu'est-ce que le Diluted EPS ?",
+    "verso": "Le Diluted EPS prend en compte les actions potentielles qui pourraient être émises dans le futur, comme les options d'achat d'actions ou les warrants. Cela permet d'avoir une vision plus réaliste de la rentabilité de l'entreprise par action, en tenant compte des effets de dilution potentiels. Par exemple, si une entreprise a des options d'achat d'actions qui pourraient être exercées dans le futur, son Diluted EPS serait inférieur à son EPS.",
+    "numero": "35",
+    "id": 1853904302
+  },
+  {
+    "recto": "Comment l'EPS est-il affecté par une acquisition ?",
+    "verso": "Lorsqu'une entreprise est acquise, le prix d'acquisition peut avoir un impact sur l'EPS. Si le prix d'acquisition est élevé, l'EPS peut diminuer, car le bénéfice net de l'entreprise est divisé par un plus grand nombre d'actions. Par exemple, si une entreprise est acquise pour 10 milliards de dollars et que le prix d'acquisition par action est de 100 dollars, le nombre d'actions en circulation augmentera, ce qui peut diluer l'EPS.",
+    "numero": "35",
+    "id": 1552068567
+  },
+  {
+    "recto": "Pourquoi est-il important de prendre en compte le Diluted EPS dans l'analyse financière ?",
+    "verso": "Il est important de prendre en compte le Diluted EPS pour avoir une vision plus réaliste de la rentabilité de l'entreprise par action. Le Diluted EPS peut aider les investisseurs à comprendre les effets potentiels de la dilution des actions sur la rentabilité de l'entreprise. Par exemple, si une entreprise a des options d'achat d'actions qui pourraient être exercées dans le futur, son Diluted EPS peut être inférieur à son EPS, ce qui peut affecter la décision d'investissement.",
+    "numero": "35",
+    "id": 1785664982
+  },
+  {
+    "recto": "Quand est-il utile de comparer l'EPS et le Diluted EPS ?",
+    "verso": "Il est utile de comparer l'EPS et le Diluted EPS lorsque l'entreprise a des instruments dilutifs, tels que des options d'achat d'actions ou des warrants. La comparaison entre les deux peut aider les investisseurs à comprendre les effets potentiels de la dilution des actions sur la rentabilité de l'entreprise. Par exemple, si l'EPS est de 10 et que le Diluted EPS est de 8, cela peut indiquer que les instruments dilutifs ont un impact significatif sur la rentabilité de l'entreprise.",
+    "numero": "35",
+    "id": 1127595674
+  },
+  {
+    "recto": "Pourquoi l'EPS et le Diluted EPS sont-ils importants pour les investisseurs ?",
+    "verso": "L'EPS et le Diluted EPS sont importants pour les investisseurs car ils leur permettent d'évaluer la rentabilité de l'entreprise par action. Ces indicateurs peuvent aider les investisseurs à prendre des décisions éclairées sur l'achat ou la vente d'actions. Par exemple, si l'EPS et le Diluted EPS d'une entreprise sont élevés, cela peut indiquer que l'entreprise est rentable et que les actions pourraient être une bonne opportunité d'investissement.",
+    "numero": "35",
+    "id": 2022366135
   }
 ]
