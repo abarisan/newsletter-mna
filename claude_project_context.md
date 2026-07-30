@@ -1,4 +1,4 @@
-# Contexte The Deal Brief — Mise à jour N°35 (29 July 2026)
+# Contexte The Deal Brief — Mise à jour N°36 (30 July 2026)
 
 ## Mon profil
 Étudiant préparant des entretiens en banque d'affaires M&A.
@@ -11,27 +11,25 @@ Financial Projections, Comptabilisation des inventaires, Mécanique de l'EV/Equi
 ## Deals suivis en ce moment
 Volkswagen's Restructuring Plans and Inventory Management, SpaceX : IPO de 75 Md$, la plus grosse de l'histoire, cas d'école de cash flow, Apple : achat de puces mémoire à une entreprise chinoise sous embargo, L'acquisition d'Air Con par un fonds d'investissement, Uniqlo s'apprête à dominer le marché de la mode mondiale, La Dette vs Equity dans le LBO d'EA : Un Exemple Concret, Anthropic et la fermeture des failles pour limiter l'accès chinois à Claude
 
-## Contenu du dernier numéro (29 July 2026)
+## Contenu du dernier numéro (30 July 2026)
 
 ### Deal de la semaine
-L'acquisition de Beyond Meat par un fonds d'investissement : illustration de l'EPS et du Diluted EPS
-<p>L'acquisition récente de Beyond Meat par un fonds d'investissement offre un exemple intéressant pour illustrer les concepts d'EPS (Earnings Per Share) et de Diluted EPS. Le prix d'acquisition de 10 milliards de dollars, avec une prime de 20% par rapport au cours de bourse précédent, soulève des questions sur la valorisation et les attentes de croissance future.</p>
-   <p>Les chiffres précis sont les suivants : le prix d'acquisition est de 100 dollars par action, avec un total de 100 millions d'actions en circulation. Le bénéfice net de l'entreprise est de 50 millions de dollars par an, ce qui donne un EPS de 0,5 dollar par action. Avec l'acquisition, le nombre d'actions en circulation augmente de 20%, ce qui affecte le Diluted EPS.</p>
-   <p>Ceci illustre parfaitement le concept du chapitre du jour sur l'EPS et le Diluted EPS. Dans ce deal, on voit comment l'acquisition affecte les métriques financières clés de l'entreprise, notamment le bénéfice par action et la valorisation.</p>
- 
+ByteDance’s plan to dominate AI: Le cas d'une consolidation
+
+      <p>Le groupe derrière TikTok, ByteDance, a récemment annoncé son plan pour dominer le marché de l'intelligence artificielle. Cette décision s'inscrit dans le contexte de la consolidation du marché technologique, où les acteurs majeurs cherchent à renforcer leur positionnement face à la concurrence accrue.</p>
+      <p>Le deal en question implique une stratégie de consolidation, avec ByteDance cherchant à acquérir et intégrer des sociétés spécialisées dans l'AI pour accroître sa capacité à innover et à offrir des services plus personnalisés à ses utilisateurs. Selon <strong>[N1 · FT] ByteDance’s plan to dominate AI</strong>, cette approche vise à donner à l'entreprise un avantage compétitif sur le marché en pleine croissance de l'AI.</p>
+      <p>D'un point de vue technique, cette stratégie illustre parfaitement le concept de consolidation qui est au cœur du chapitre TRAINY du jour. La consolidation permet à une entreprise d'étendre son portefeuille de produits ou services, de ré
 
 ### Cours
-<p>Le chapitre du jour se concentre sur les concepts d'EPS (Earnings Per Share) et de Diluted EPS. L'EPS est calculé en divisant le bénéfice net de l'entreprise par le nombre d'actions en circulation. Il donne une idée de la rentabilité de l'entreprise par action.</p>
-   <p>Le Diluted EPS, quant à lui, prend en compte les actions potentielles qui pourraient être émises dans le futur, comme les options d'achat d'actions ou les warrants. Cela permet d'avoir une vision plus réaliste de la rentabilité de l'entreprise par action, en tenant compte des effet de dilution potentiel.</p>
-   <div class='term'><div class='term-name'>EPS (Earnings Per Share)</div>Le bénéfice net divisé par le nombre d'actions en circulation.</div>
-   <div class='term'><div class='term-name'>Diluted EPS</div>Le bénéfice net divisé par le nombre d'actions en circulation, en tenant compte des actions potentielles qui pourraient être émises.</div>
-   <p>La compréhension de ces concepts est cruciale pour les analystes financiers et les investisseurs, car ils permettent d'évaluer la performance d'une entreprise et de prendre des décisions éclairées.</p>
-   <p>Dans le prochain chapitre, nous allons explorer les méthod
+
+      <p>Le chapitre TRAINY du jour se concentre sur les méthodes de consolidation et les comptes de groupe. La consolidation est le processus par lequel une entreprise mère combine les états financiers de ses filiales pour présenter un tableau financier global de l’ensemble du groupe.</p>
+      <div class='term'><div class='term-name'>Méthode de consolidation</div>La méthode de consolidation utilisée dépend de la nature de la relation entre la société mère et ses filiales. Les méthodes couramment utilisées incluent la consolidation globale, la consolidation proportionnelle et la méthode de l’investissement.</div>
+      <p>La consolidation implique de combiner tous les comptes du groupe, en éliminant les transactions internes entre les sociétés du groupe. Cela nécessite d’identifier et d’éliminer les comptes internes, tels que les ventes et les achats entre les sociétés du groupe, pour ne laisser que les transactions avec des tiers.</p>
+      <p>La comptabilité de consolidation est cruciale pour les investisseurs et les analystes financiers car elle fournit une image plus précise de la performance financière globale d’un groupe. En comprenant les principes de consolidation, les en
 
 ### Macro
-Les conséquences de la guerre en Ukraine sur le marché énergétique mondial
-<p>La guerre en Ukraine a des conséquences importantes sur le marché énergétique mondial. Selon des sources de <a href='https://www.ft.com/'>Financial Times</a>, les attaques contre les infrastructures énergétiques en Ukraine ont entraîné des pénuries d'énergie et des hausses de prix. Cela affecte non seulement l'Ukraine mais aussi les pays voisins et l'économie mondiale.</p>
-   <p>Une source de <a href='https://www.marketwatch.com/'>MarketWatch</a> indique que les prix de l'énergie pourraient c
+Fed Rate Decision and Its Impact on M&A
+<p>La décision récente de la Fed de maintenir les taux d'intérêt malgré les inquiétudes sur l'inflation a un impact significatif sur les marchés financiers et, par extension, sur le paysage des fusions et acquisitions. Selon <strong>[N1 · FT] US borrowing costs hit 19-year high as Fed defies inflation fears</strong>, cette décision a entraîné une augmentation des coûts d'emprunt pour les entreprises, ce qui pourrait freiner l'activité M&A dans les prochains mois.</p>
 
 ---
 Tu es mon tuteur M&A. Quand je te pose une question :
