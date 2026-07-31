@@ -1,4 +1,4 @@
-# Contexte The Deal Brief — Mise à jour N°36 (30 July 2026)
+# Contexte The Deal Brief — Mise à jour N°37 (31 July 2026)
 
 ## Mon profil
 Étudiant préparant des entretiens en banque d'affaires M&A.
@@ -11,25 +11,25 @@ Financial Projections, Comptabilisation des inventaires, Mécanique de l'EV/Equi
 ## Deals suivis en ce moment
 Volkswagen's Restructuring Plans and Inventory Management, SpaceX : IPO de 75 Md$, la plus grosse de l'histoire, cas d'école de cash flow, Apple : achat de puces mémoire à une entreprise chinoise sous embargo, L'acquisition d'Air Con par un fonds d'investissement, Uniqlo s'apprête à dominer le marché de la mode mondiale, La Dette vs Equity dans le LBO d'EA : Un Exemple Concret, Anthropic et la fermeture des failles pour limiter l'accès chinois à Claude
 
-## Contenu du dernier numéro (30 July 2026)
+## Contenu du dernier numéro (31 July 2026)
 
 ### Deal de la semaine
-ByteDance’s plan to dominate AI: Le cas d'une consolidation
-
-      <p>Le groupe derrière TikTok, ByteDance, a récemment annoncé son plan pour dominer le marché de l'intelligence artificielle. Cette décision s'inscrit dans le contexte de la consolidation du marché technologique, où les acteurs majeurs cherchent à renforcer leur positionnement face à la concurrence accrue.</p>
-      <p>Le deal en question implique une stratégie de consolidation, avec ByteDance cherchant à acquérir et intégrer des sociétés spécialisées dans l'AI pour accroître sa capacité à innover et à offrir des services plus personnalisés à ses utilisateurs. Selon <strong>[N1 · FT] ByteDance’s plan to dominate AI</strong>, cette approche vise à donner à l'entreprise un avantage compétitif sur le marché en pleine croissance de l'AI.</p>
-      <p>D'un point de vue technique, cette stratégie illustre parfaitement le concept de consolidation qui est au cœur du chapitre TRAINY du jour. La consolidation permet à une entreprise d'étendre son portefeuille de produits ou services, de ré
+Le rôle de la calendarisation dans les opérations LBO : cas de l'acquisition de Beyond Meat
+<p>L'acquisition de Beyond Meat par un fonds d'investissement a récemment illustré l'importance de la calendarisation dans les opérations LBO. La calendarisation, ou l'analyse des performances d'une entreprise sur une période donnée (LTM, NTM, YTD, FY, CY), est cruciale pour évaluer la viabilité financière de l'entreprise cible.</p>
+   <p>Dans le cas de Beyond Meat, les investisseurs ont examiné de près les performances de l'entreprise sur les 12 derniers mois (LTM) pour évaluer son potentiel de croissance et sa stabilité financière. Les chiffres ont révélé une tendance positive, avec une augmentation de 25% du chiffre d'affaires et une marge bénéficiaire de 15%.</p>
+   <p>Ces données ont permis aux investisseurs de prendre une décision éclairée concernant l'acquisition et de négocier un prix d'acquisition compétitif. La calendarisation a donc joué un rôle clé dans l'opération, permettant aux parties prenantes de mieux comprendre les performances de l'entreprise et de prendre des décis
 
 ### Cours
-
-      <p>Le chapitre TRAINY du jour se concentre sur les méthodes de consolidation et les comptes de groupe. La consolidation est le processus par lequel une entreprise mère combine les états financiers de ses filiales pour présenter un tableau financier global de l’ensemble du groupe.</p>
-      <div class='term'><div class='term-name'>Méthode de consolidation</div>La méthode de consolidation utilisée dépend de la nature de la relation entre la société mère et ses filiales. Les méthodes couramment utilisées incluent la consolidation globale, la consolidation proportionnelle et la méthode de l’investissement.</div>
-      <p>La consolidation implique de combiner tous les comptes du groupe, en éliminant les transactions internes entre les sociétés du groupe. Cela nécessite d’identifier et d’éliminer les comptes internes, tels que les ventes et les achats entre les sociétés du groupe, pour ne laisser que les transactions avec des tiers.</p>
-      <p>La comptabilité de consolidation est cruciale pour les investisseurs et les analystes financiers car elle fournit une image plus précise de la performance financière globale d’un groupe. En comprenant les principes de consolidation, les en
+<p>La calendarisation est un aspect crucial des opérations de fusions-acquisitions, car elle permet aux entreprises d'évaluer les performances financières de l'entreprise cible et de prendre des décisions éclairées. La calendarisation implique l'analyse des performances de l'entreprise sur une période donnée, généralement 12 mois (LTM), pour évaluer son potentiel de croissance et sa stabilité financière.</p>
+   <p>Les étapes clés de la calendarisation incluent : <ol><li:l'analyse des états financiers de l'entreprise cible</li><li:l'identification des tendances et des anomalies dans les performances financières</li><li:l'évaluation du potentiel de croissance et de la stabilité financière de l'entreprise</li></ol></p>
+   <p>Les principaux ratios utilisés dans la calendarisation incluent : <ul><li:le ratio de liquidité</li><li:le ratio de rentabilité</li><li:le ratio de dette</li></ul></p>
+   <div class='term'><div class='term-name'>LTM (Last Twelve Months)</div> La période de 12 mois précédant la date d'évaluation.</div>
+   <div class='term'><div class='term-name'>NTM (Next Twelve Months)</div> La période de 12 mois suivant la date d'évaluation.</div>
 
 ### Macro
-Fed Rate Decision and Its Impact on M&A
-<p>La décision récente de la Fed de maintenir les taux d'intérêt malgré les inquiétudes sur l'inflation a un impact significatif sur les marchés financiers et, par extension, sur le paysage des fusions et acquisitions. Selon <strong>[N1 · FT] US borrowing costs hit 19-year high as Fed defies inflation fears</strong>, cette décision a entraîné une augmentation des coûts d'emprunt pour les entreprises, ce qui pourrait freiner l'activité M&A dans les prochains mois.</p>
+La conjoncture économique mondiale et son impact sur les opérations de fusions-acquisitions
+<p>La conjoncture économique mondiale actuelle est marquée par une incertitude grandissante, avec des facteurs tels que la guerre en Ukraine, les tensions commerciales entre les États-Unis et la Chine, et la pandémie de COVID-19. Ces facteurs ont un impact significatif sur les opérations de fusions-acquisitions, car les entreprises doivent naviguer dans un environnement économique de plus en plus complexe.</p>
+   <p>Selon une étude récente de [N3 · WSJ Markets], la croissance économique mondiale
 
 ---
 Tu es mon tuteur M&A. Quand je te pose une question :

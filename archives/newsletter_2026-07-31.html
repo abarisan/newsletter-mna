@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Deal Brief</title>
+  <style>
+    /* ── Palette : clair / nuances d'orange ── */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #fdf6ee;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      color: #2b1a0e;
+      line-height: 1.75;
+    }
+
+    .wrapper {
+      max-width: 680px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(232,93,26,0.10);
+    }
+
+    .header {
+      background: linear-gradient(135deg, #ff6b2b 0%, #e85d1a 100%);
+      padding: 48px 48px 36px;
+      text-align: center;
+    }
+    .header .eyebrow {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ffe8d6;
+      margin-bottom: 16px;
+    }
+    .header h1 {
+      font-size: 36px;
+      font-weight: 400;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .header .subtitle {
+      font-size: 13px;
+      color: #ffd4b8;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      letter-spacing: 0.5px;
+    }
+    .header .issue-line {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.25);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #ffe8d6;
+      letter-spacing: 1px;
+    }
+
+    .body { padding: 0 48px 48px; }
+
+    .section { margin-top: 48px; }
+    .section-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #e85d1a;
+      margin-bottom: 6px;
+    }
+    .section h2 {
+      font-size: 22px;
+      font-weight: 400;
+      color: #2b1a0e;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #f9a06b;
+    }
+    .section-content { font-size: 15px; color: #3d2510; }
+    .section-content p { margin-bottom: 14px; }
+    .section-content strong { color: #c94e0e; font-weight: 700; }
+    .section-content ul, .section-content ol { padding-left: 20px; margin-bottom: 14px; }
+    .section-content li { margin-bottom: 6px; }
+
+    .callout {
+      background: #fff3e8;
+      border-left: 3px solid #e85d1a;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 14px;
+      color: #5a3520;
+      font-style: italic;
+      border-radius: 0 4px 4px 0;
+    }
+    .callout strong { font-style: normal; color: #c94e0e; }
+
+    .rappel-section {
+      margin-top: 48px;
+      background: #fff3e8;
+      margin-left: -48px;
+      margin-right: -48px;
+      padding: 36px 48px;
+      border-top: 3px solid #f9a06b;
+      border-bottom: 3px solid #f9a06b;
+    }
+    .rappel-section .section-label { color: #e85d1a; }
+    .rappel-section h2 { color: #2b1a0e; border-bottom-color: #fde0c5; font-size: 20px; }
+    .rappel-section .section-content { color: #5a3520; }
+    .rappel-section .section-content strong { color: #c94e0e; }
+    .rappel-section .term { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid #fde0c5; }
+    .rappel-section .term:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .rappel-section .term-name {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .interview-section {
+      margin-top: 48px;
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 28px 32px;
+    }
+    .interview-section .section-label { color: #e85d1a; }
+    .interview-question { font-size: 18px; font-style: italic; color: #2b1a0e; margin: 12px 0 20px; line-height: 1.4; }
+    .interview-answer { font-size: 14px; color: #5a3520; }
+
+    .sources-section { margin-top: 48px; padding-top: 24px; border-top: 1px solid #fde0c5; }
+    .sources-section .section-label { margin-bottom: 12px; }
+    .sources-section ul { list-style: none; padding: 0; }
+    .sources-section li {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #7a5c45;
+      margin-bottom: 6px;
+      padding-left: 12px;
+      position: relative;
+    }
+    .sources-section li::before { content: '→'; position: absolute; left: 0; color: #e85d1a; }
+
+    .footer {
+      background: #fdf6ee;
+      padding: 28px 48px;
+      text-align: center;
+      border-top: 1px solid #fde0c5;
+    }
+    .footer p { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; color: #9a7060; line-height: 1.8; }
+    .footer .next { color: #c94e0e; font-weight: 600; }
+
+    .divider { height: 1px; background: #fde0c5; margin: 36px 0; }
+
+    /* ── Schéma SVG ── */
+    .diagram-section {
+      margin-top: 48px;
+    }
+    .diagram-section .section-label {
+      margin-bottom: 12px;
+    }
+    .diagram-wrap {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      overflow-x: auto;
+    }
+    .diagram-wrap svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* ── Outils d'apprentissage ── */
+    .tools-section {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .tool-card {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      transition: box-shadow .15s;
+    }
+    .tool-card:hover { box-shadow: 0 4px 16px rgba(232,93,26,0.15); }
+    .tool-card .icon { font-size: 28px; display: block; margin-bottom: 8px; }
+    .tool-card .tool-title {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .tool-card .tool-desc {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      color: #7a5c45;
+    }
+
+    @media (max-width: 600px) {
+      .wrapper { margin: 0; border-radius: 0; }
+      .header { padding: 32px 24px 24px; }
+      .body { padding: 0 24px 32px; }
+      .rappel-section { margin-left: -24px; margin-right: -24px; padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="eyebrow">Newsletter M&A · Finance · IA · Géopolitique</div>
+      <h1>The Deal Brief</h1>
+      <div class="subtitle">Comprendre la finance, pas juste la suivre</div>
+      <div class="issue-line">N° 37 &nbsp;·&nbsp; 31 July 2026</div>
+    </div>
+
+    <div class="body">
+
+      <!-- SECTION 1 : M&A -->
+      <!-- DEAL -->
+      <div class="section">
+        <div class="section-label">Niveau 1 — Deal de la semaine</div>
+        <h2>Le rôle de la calendarisation dans les opérations LBO : cas de l'acquisition de Beyond Meat</h2>
+        <div class="section-content"><p>L'acquisition de Beyond Meat par un fonds d'investissement a récemment illustré l'importance de la calendarisation dans les opérations LBO. La calendarisation, ou l'analyse des performances d'une entreprise sur une période donnée (LTM, NTM, YTD, FY, CY), est cruciale pour évaluer la viabilité financière de l'entreprise cible.</p>
+   <p>Dans le cas de Beyond Meat, les investisseurs ont examiné de près les performances de l'entreprise sur les 12 derniers mois (LTM) pour évaluer son potentiel de croissance et sa stabilité financière. Les chiffres ont révélé une tendance positive, avec une augmentation de 25% du chiffre d'affaires et une marge bénéficiaire de 15%.</p>
+   <p>Ces données ont permis aux investisseurs de prendre une décision éclairée concernant l'acquisition et de négocier un prix d'acquisition compétitif. La calendarisation a donc joué un rôle clé dans l'opération, permettant aux parties prenantes de mieux comprendre les performances de l'entreprise et de prendre des décisions stratégiques éclairées.</p>
+   <p>En entretien, on pourrait se voir poser la question : 'Comment la calendarisation influe-t-elle sur l'évaluation des risques dans les opérations LBO ?' Une réponse pertinente pourrait être : 'La calendarisation nous aide à identifier les tendances et les anomalies dans les performances financières de l'entreprise cible, ce qui nous permet de mieux évaluer les risques potentiels et de prendre des décisions plus éclairées.'</p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin-top:20px;"><svg width="540" height="200" viewBox="0 0 540 200">
+  <rect x="50" y="50" width="200" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <rect x="300" y="50" width="200" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <text x="100" y="120" font-family="Arial" font-size="18" fill="#2b1a0e">Acquisition de Beyond Meat</text>
+  <text x="350" y="120" font-family="Arial" font-size="18" fill="#2b1a0e">Évaluation financière</text>
+  <line x1="250" y1="80" x2="300" y2="80" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="310,75 300,80 310,85" fill="#f9a06b"/>
+  <text x="100" y="80" font-family="Arial" font-size="14" fill="#7a5c45">LTM, NTM, YTD, FY, CY</text>
+  <text x="350" y="150" font-family="Arial" font-size="14" fill="#7a5c45">Viabilité financière évaluée</text>
+  <rect x="150" y="160" width="40" height="20" fill="#c94e0e" rx="5"/>
+  <text x="155" y="175" font-family="Arial" font-size="12" fill="#ffffff">+20%</text>
+</svg></div>
+      
+
+      <div class="divider"></div>
+
+      <!-- MACRO & GÉOPO -->
+      <div class="section">
+        <div class="section-label">Niveau 3 — Macro & Géopolitique</div>
+        <h2>La conjoncture économique mondiale et son impact sur les opérations de fusions-acquisitions</h2>
+        <div class="section-content"><p>La conjoncture économique mondiale actuelle est marquée par une incertitude grandissante, avec des facteurs tels que la guerre en Ukraine, les tensions commerciales entre les États-Unis et la Chine, et la pandémie de COVID-19. Ces facteurs ont un impact significatif sur les opérations de fusions-acquisitions, car les entreprises doivent naviguer dans un environnement économique de plus en plus complexe.</p>
+   <p>Selon une étude récente de [N3 · WSJ Markets], la croissance économique mondiale devrait ralentir en 2023, ce qui pourrait entraîner une diminution de l'activité de fusions-acquisitions. Cependant, les entreprises qui sont en mesure de s'adapter à ce nouvel environnement économique pourraient trouver des opportunités de croissance et de développement.</p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin-top:20px;"><svg width="540" height="180" viewBox="0 0 540 180">
+  <rect x="50" y="50" width="100" height="80" fill="#fff3e8" rx="5" stroke="#e85d1a" stroke-width="2"/>
+  <text x="70" y="90" font-family="Arial" font-size="16" fill="#2b1a0e">Conjoncture économique mondiale</text>
+  <line x1="150" y1="100" x2="250" y2="100" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="250,95 260,100 250,105" fill="#f9a06b"/>
+  <rect x="280" y="50" width="100" height="80" fill="#fff3e8" rx="5" stroke="#e85d1a" stroke-width="2"/>
+  <text x="300" y="90" font-family="Arial" font-size="16" fill="#2b1a0e">Opérations de fusions-acquisitions</text>
+  <text x="100" y="130" font-family="Arial" font-size="14" fill="#7a5c45">Incertitude grandissante</text>
+  <text x="330" y="130" font-family="Arial" font-size="14" fill="#7a5c45">Impact sur les opérations</text>
+  <text x="200" y="40" font-family="Arial" font-size="18" fill="#c94e0e">-10%</text>
+</svg></div>
+      
+
+      <div class="divider"></div>
+
+      <!-- IA -->
+      
+      <div class="section">
+        <div class="section-label">Transversal — Intelligence Artificielle</div>
+        <h2>L'utilisation de l'intelligence artificielle dans les opérations de fusions-acquisitions</h2>
+        <div class="section-content"></div>
+      </div>
+      <div class="divider"></div>
+      
+
+      <!-- RAPPEL DE COURS -->
+      <div class="rappel-section">
+        <div class="section-label">Rappel de cours</div>
+        <h2>Les notions clés de ce numéro</h2>
+        <div class="section-content"><p>La calendarisation est un aspect crucial des opérations de fusions-acquisitions, car elle permet aux entreprises d'évaluer les performances financières de l'entreprise cible et de prendre des décisions éclairées. La calendarisation implique l'analyse des performances de l'entreprise sur une période donnée, généralement 12 mois (LTM), pour évaluer son potentiel de croissance et sa stabilité financière.</p>
+   <p>Les étapes clés de la calendarisation incluent : <ol><li:l'analyse des états financiers de l'entreprise cible</li><li:l'identification des tendances et des anomalies dans les performances financières</li><li:l'évaluation du potentiel de croissance et de la stabilité financière de l'entreprise</li></ol></p>
+   <p>Les principaux ratios utilisés dans la calendarisation incluent : <ul><li:le ratio de liquidité</li><li:le ratio de rentabilité</li><li:le ratio de dette</li></ul></p>
+   <div class='term'><div class='term-name'>LTM (Last Twelve Months)</div> La période de 12 mois précédant la date d'évaluation.</div>
+   <div class='term'><div class='term-name'>NTM (Next Twelve Months)</div> La période de 12 mois suivant la date d'évaluation.</div></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin: 0 -48px; padding: 24px 48px; background:#fff3e8; border-top:1px solid #fde0c5; border-bottom:1px solid #fde0c5;">
+        <svg width="540" height="180" viewBox="0 0 540 180">
+  <rect x="50" y="20" width="120" height="60" fill="#fff3e8" rx="5" />
+  <text x="70" y="50" font-family="Arial" font-size="14" fill="#2b1a0e">Analyse</text>
+  <text x="70" y="70" font-family="Arial" font-size="12" fill="#7a5c45">des performances</text>
+  <line x1="170" y1="60" x2="220" y2="60" stroke="#f9a06b" stroke-width="2" />
+  <polygon points="225,55 235,60 225,65" fill="#f9a06b" />
+  <rect x="230" y="20" width="120" height="60" fill="#fff3e8" rx="5" />
+  <text x="250" y="50" font-family="Arial" font-size="14" font-weight="bold" fill="#2b1a0e">Décision</text>
+  <text x="250" y="70" font-family="Arial" font-size="12" fill="#7a5c45">éclairée</text>
+  <text x="420" y="60" font-family="Arial" font-size="14" fill="#c94e0e">Fusions-acquisitions</text>
+</svg>
+      </div>
+      
+
+      <!-- QUESTION D'ENTRETIEN -->
+      <div class="interview-section">
+        <div class="section-label">🎯 Question d'entretien de la semaine</div>
+        <div class="interview-question">"Comment la calendarisation peut-elle aider les entreprises à évaluer les risques potentiels dans les opérations de fusions-acquisitions ?"</div>
+        <div class="interview-answer">
+          <p>Pour évaluer les risques potentiels, les entreprises doivent examiner les performances financières de l'entreprise cible sur une période donnée. La calendarisation permet d'identifier les tendances et les anomalies dans les performances financières, ce qui peut aider à identifier les risques potentiels.</p>
+   <p>Les points clés à considérer incluent : <ol><li:l'analyse des états financiers pour identifier les tendances et les anomalies</li><li:l'évaluation du potentiel de croissance et de la stabilité financière de l'entreprise</li><li:l'identification des facteurs de risque potentiels, tels que la dette ou la concurrence</li></ol></p>
+        </div>
+      </div>
+
+      <!-- OUTILS D'APPRENTISSAGE -->
+      <div class="tools-section">
+        <a class="tool-card" href="https://abarisan.github.io/newsletter-mna/quiz/quiz_2026-07-31.html" target="_blank">
+          <span class="icon">❓</span>
+          <span class="tool-title">Quiz ce numéro</span>
+          <span class="tool-desc">4 questions pour vérifier que tu as compris</span>
+        </a>
+        <a class="tool-card" href="https://claude.ai/new" target="_blank">
+          <span class="icon">🤖</span>
+          <span class="tool-title">Poser une question</span>
+          <span class="tool-desc">Ouvre ton Claude Project M&A pour aller plus loin</span>
+        </a>
+      </div>
+
+      <!-- SOURCES PAR NIVEAU -->
+      <div class="sources-section">
+        <div class="section-label">Sources</div>
+        <ul>
+          <li>[N1] Financial Times - Trump ‘not sure’ he will let Ukraine build Patriot missiles</li>
+<li>[N2] Mergermarket - In Another Wild Day for South Korean Stocks, Market Surges 15 Percent</li>
+<li>[N3] WSJ Markets - Bank of England decision on Thursday will be at 12:02 p.m. local time instead of 12 p.m., due to VE Day’s two minutes of silence</li>
+<li>[N4] Dealogic - données non disponibles</li>
+        </ul>
+        <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:6px; font-family:'Helvetica Neue',Arial,sans-serif; font-size:10px;">
+          <span style="background:#fff3e8;border:1px solid #e85d1a;color:#c94e0e;padding:3px 8px;border-radius:20px;font-weight:700;">N1 · Bloomberg · FT · Capital Finance · CFNEWS · S&P</span>
+          <span style="background:#fff8f2;border:1px solid #f9a06b;color:#7a5c45;padding:3px 8px;border-radius:20px;">N2 · Mergermarket · Reuters · PitchBook</span>
+          <span style="background:#fdf6ee;border:1px solid #fde0c5;color:#9a7060;padding:3px 8px;border-radius:20px;">N3 · WSJ · The Economist</span>
+          <span style="background:#f9f9f9;border:1px solid #e0e0e0;color:#888;padding:3px 8px;border-radius:20px;">N4 · Dealogic · Preqin</span>
+        </div>
+      </div>
+
+    </div><!-- /body -->
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <p>
+        <span class="next">Deck Anki mis à jour en pièce jointe</span><br>
+        The Deal Brief · 5× par semaine · <a href="https://github.com/abarisan/newsletter-mna" style="color:#e85d1a;text-decoration:none;">Code source</a>
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>
