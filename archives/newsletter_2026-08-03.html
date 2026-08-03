@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Deal Brief</title>
+  <style>
+    /* ── Palette : clair / nuances d'orange ── */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #fdf6ee;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      color: #2b1a0e;
+      line-height: 1.75;
+    }
+
+    .wrapper {
+      max-width: 680px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(232,93,26,0.10);
+    }
+
+    .header {
+      background: linear-gradient(135deg, #ff6b2b 0%, #e85d1a 100%);
+      padding: 48px 48px 36px;
+      text-align: center;
+    }
+    .header .eyebrow {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ffe8d6;
+      margin-bottom: 16px;
+    }
+    .header h1 {
+      font-size: 36px;
+      font-weight: 400;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .header .subtitle {
+      font-size: 13px;
+      color: #ffd4b8;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      letter-spacing: 0.5px;
+    }
+    .header .issue-line {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.25);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #ffe8d6;
+      letter-spacing: 1px;
+    }
+
+    .body { padding: 0 48px 48px; }
+
+    .section { margin-top: 48px; }
+    .section-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #e85d1a;
+      margin-bottom: 6px;
+    }
+    .section h2 {
+      font-size: 22px;
+      font-weight: 400;
+      color: #2b1a0e;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #f9a06b;
+    }
+    .section-content { font-size: 15px; color: #3d2510; }
+    .section-content p { margin-bottom: 14px; }
+    .section-content strong { color: #c94e0e; font-weight: 700; }
+    .section-content ul, .section-content ol { padding-left: 20px; margin-bottom: 14px; }
+    .section-content li { margin-bottom: 6px; }
+
+    .callout {
+      background: #fff3e8;
+      border-left: 3px solid #e85d1a;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 14px;
+      color: #5a3520;
+      font-style: italic;
+      border-radius: 0 4px 4px 0;
+    }
+    .callout strong { font-style: normal; color: #c94e0e; }
+
+    .rappel-section {
+      margin-top: 48px;
+      background: #fff3e8;
+      margin-left: -48px;
+      margin-right: -48px;
+      padding: 36px 48px;
+      border-top: 3px solid #f9a06b;
+      border-bottom: 3px solid #f9a06b;
+    }
+    .rappel-section .section-label { color: #e85d1a; }
+    .rappel-section h2 { color: #2b1a0e; border-bottom-color: #fde0c5; font-size: 20px; }
+    .rappel-section .section-content { color: #5a3520; }
+    .rappel-section .section-content strong { color: #c94e0e; }
+    .rappel-section .term { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid #fde0c5; }
+    .rappel-section .term:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .rappel-section .term-name {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .interview-section {
+      margin-top: 48px;
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 28px 32px;
+    }
+    .interview-section .section-label { color: #e85d1a; }
+    .interview-question { font-size: 18px; font-style: italic; color: #2b1a0e; margin: 12px 0 20px; line-height: 1.4; }
+    .interview-answer { font-size: 14px; color: #5a3520; }
+
+    .sources-section { margin-top: 48px; padding-top: 24px; border-top: 1px solid #fde0c5; }
+    .sources-section .section-label { margin-bottom: 12px; }
+    .sources-section ul { list-style: none; padding: 0; }
+    .sources-section li {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #7a5c45;
+      margin-bottom: 6px;
+      padding-left: 12px;
+      position: relative;
+    }
+    .sources-section li::before { content: '→'; position: absolute; left: 0; color: #e85d1a; }
+
+    .footer {
+      background: #fdf6ee;
+      padding: 28px 48px;
+      text-align: center;
+      border-top: 1px solid #fde0c5;
+    }
+    .footer p { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; color: #9a7060; line-height: 1.8; }
+    .footer .next { color: #c94e0e; font-weight: 600; }
+
+    .divider { height: 1px; background: #fde0c5; margin: 36px 0; }
+
+    /* ── Schéma SVG ── */
+    .diagram-section {
+      margin-top: 48px;
+    }
+    .diagram-section .section-label {
+      margin-bottom: 12px;
+    }
+    .diagram-wrap {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      overflow-x: auto;
+    }
+    .diagram-wrap svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* ── Outils d'apprentissage ── */
+    .tools-section {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .tool-card {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      transition: box-shadow .15s;
+    }
+    .tool-card:hover { box-shadow: 0 4px 16px rgba(232,93,26,0.15); }
+    .tool-card .icon { font-size: 28px; display: block; margin-bottom: 8px; }
+    .tool-card .tool-title {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .tool-card .tool-desc {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      color: #7a5c45;
+    }
+
+    @media (max-width: 600px) {
+      .wrapper { margin: 0; border-radius: 0; }
+      .header { padding: 32px 24px 24px; }
+      .body { padding: 0 24px 32px; }
+      .rappel-section { margin-left: -24px; margin-right: -24px; padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="eyebrow">Newsletter M&A · Finance · IA · Géopolitique</div>
+      <h1>The Deal Brief</h1>
+      <div class="subtitle">Comprendre la finance, pas juste la suivre</div>
+      <div class="issue-line">N° 38 &nbsp;·&nbsp; 03 August 2026</div>
+    </div>
+
+    <div class="body">
+
+      <!-- SECTION 1 : M&A -->
+      <!-- DEAL -->
+      <div class="section">
+        <div class="section-label">Niveau 1 — Deal de la semaine</div>
+        <h2>AstraZeneca et Bristol Myers Squibb : Un tie-up de 400 milliards pour consolider le marché pharmaceutique</h2>
+        <div class="section-content"><p>Le secteur pharmaceutique voit émerger un nouveau géant avec les discussions entre AstraZeneca et Bristol Myers Squibb en vue d'un tie-up d'une valeur de 400 milliards de dollars. Ce rapprochement, si réalisé, permettrait de créer le quatrième plus grand laboratoire pharmaceutique en termes de valeur de marché, <em>selon des sources proches du dossier</em> citées par le <strong>Financial Times</strong>.</p>
+   <p>Il est intéressant de noter que ce deal illustre parfaitement la notion de <strong>synergies</strong> dans les opérations de fusions-acquisitions. Les deux entreprises pourraient tirer parti de leurs portefeuilles de produits complémentaires pour renforcer leur position sur le marché. De plus, la réalisation de ce tie-up soulève des questions sur la manière dont les deux entreprises gèreront leur <strong>structure de la dette</strong> et leur <strong>équilibre financier</strong> dans le contexte de cette transaction massive.</p>
+   <p>Un aspect clé à considérer dans cette opération est la manière dont les entreprises vont <strong>modéliser leurs projections financières</strong> pour soutenir ce rapprochement. Cela implique de bien comprendre les <strong>drivers</strong> de leurs business plans respectifs et comment ils vont s'intégrer pour former une nouvelle entité plus solide. Les <em>investisseurs</em> et les <em>analystes</em> seront particulièrement intéressés par la façon dont cette opération contribuera à la <strong>croissance</strong> à long terme de l'entité issue de la fusion.</p>
+   <p>Dans un entretien, je dirais : « Le deal entre AstraZeneca et Bristol Myers Squibb représente une approche stratégique visant à consolider le marché pharmaceutique à travers des synergies et une meilleure positionnement compétitif. Cependant, il sera crucial de surveiller comment les entreprises gèrent leur structure de dette et leur équilibre financier pour garantir la réussite de cette opération à long terme ».</p>
+   <p>Enfin, il est essentiel de considérer l'impact potentiel de ce rapprochement sur l'économie globale et le marché des fusions-acquisitions. Les <a href='https://www.cnbc.com/2026/08/01/europe-heat-wave-infrastructure.html'>récents articles</a> sur les défis liés aux infrastructures en Europe dues aux vagues de chaleur et aux conséquences des changements climatiques mettent en évidence l'importance de la durabilité et de la résilience dans les stratégies d'entreprise.</p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin-top:20px;"><svg width="540" height="180" viewBox="0 0 540 180">
+  <rect x="50" y="50" width="200" height="80" fill="#fff3e8" rx="5" stroke="#e85d1a" stroke-width="2"/>
+  <rect x="290" y="50" width="200" height="80" fill="#fff3e8" rx="5" stroke="#e85d1a" stroke-width="2"/>
+  <text x="120" y="100" font-family="Arial" font-size="18" fill="#2b1a0e">AstraZeneca</text>
+  <text x="360" y="100" font-family="Arial" font-size="18" fill="#2b1a0e">Bristol Myers Squibb</text>
+  <line x1="250" y1="90" x2="280" y2="90" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="280,85 290,90 280,95" fill="#f9a06b"/>
+  <text x="240" y="120" font-family="Arial" font-size="14" fill="#7a5c45">Tie-up : 400 milliards</text>
+  <text x="180" y="140" font-family="Arial" font-size="14" fill="#7a5c45">Création du 4ème plus grand laboratoire</text>
+  <text x="320" y="140" font-family="Arial" font-size="14" fill="#7a5c45">pharmaceutique</text>
+</svg></div>
+      
+
+      <div class="divider"></div>
+
+      <!-- MACRO & GÉOPO -->
+      <div class="section">
+        <div class="section-label">Niveau 3 — Macro & Géopolitique</div>
+        <h2>Tendances Macro-Économiques</h2>
+        <div class="section-content"><p>Le contexte macro-économique actuel est marqué par des défis liés aux changements climatiques et à la stabilité économique. Les entreprises doivent adapter leurs stratégies pour tenir compte de ces facteurs. Dans le secteur pharmaceutique, l'innovation et la consolidation sont clés pour faire face à ces défis.</p>
+   <p>Un article récent du <a href='https://www.ft.com/content/343fbd22-0f3c-4c95-8f7a-1c9fbdc5e4d5'>Financial Times</a> met en lumière l'importance de la résilience des infrastructures face aux catastrophes naturelles. Cela souligne la nécessité pour les entreprises de développer des stratégies robustes pour gérer ces risques et assurer leur continuité d'exploitation.</p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin-top:20px;"><svg width="540" height="200" viewBox="0 0 540 200">
+  <rect x="50" y="50" width="120" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <rect x="370" y="50" width="120" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <text x="80" y="90" font-family="Arial" font-size="18" fill="#2b1a0e">Défis Climatiques</text>
+  <text x="400" y="90" font-family="Arial" font-size="18" fill="#2b1a0e">Stabilité Économique</text>
+  <line x1="220" y1="100" x2="250" y2="100" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="250,95 260,100 250,105" fill="#f9a06b"/>
+  <text x="220" y="120" font-family="Arial" font-size="14" fill="#7a5c45">Impact sur les entreprises</text>
+  <text x="260" y="120" font-family="Arial" font-size="14" fill="#7a5c45">et innovations</text>
+</svg></div>
+      
+
+      <div class="divider"></div>
+
+      <!-- IA -->
+      
+
+      <!-- RAPPEL DE COURS -->
+      <div class="rappel-section">
+        <div class="section-label">Rappel de cours</div>
+        <h2>Les notions clés de ce numéro</h2>
+        <div class="section-content"><p>Le chapitre du jour concerne les projections financières et les business plans dans les opérations de fusions-acquisitions. Il est essentiel de comprendre comment les entreprises élaborent ces projections pour soutenir leurs stratégies de croissance.</p>
+   <p><div class='term'><div class='term-name'>Synergies</div>Les synergies désignent les avantages qui résultent de la combinaison de deux ou plusieurs entreprises, ce qui peut inclure des économies d'échelle, une réduction des coûts, ou une amélioration de la compétitivité.</div></p>
+   <p>Les <strong>drivers</strong> d'un business plan sont les facteurs clés qui influencent la croissance et la performance financière d'une entreprise. Dans le contexte d'une fusion, comprendre ces drivers est crucial pour anticiper les résultats de l'opération et identifier les domaines où des synergies peuvent être réalisées.</p>
+   <p>Enfin, la gestion de la <strong>structure de la dette</strong> est un aspect vital dans les fusions-acquisitions. Les entreprises doivent évaluer leur capacité à rembourser les dettes et à maintenir un équilibre financier sain pour assurer la réussite de l'opération à long terme.</p>
+   <p>Les <em>investisseurs</em> et les <em>analystes</em> examinent de près ces facteurs pour évaluer les opportunités et les risques liés à une fusion.</p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin: 0 -48px; padding: 24px 48px; background:#fff3e8; border-top:1px solid #fde0c5; border-bottom:1px solid #fde0c5;">
+        <svg width="540" height="180" viewBox="0 0 540 180">
+  <rect x="50" y="50" width="100" height="80" fill="#fff3e8" rx="5" />
+  <rect x="220" y="50" width="100" height="80" fill="#fff3e8" rx="5" />
+  <rect x="390" y="50" width="100" height="80" fill="#fff3e8" rx="5" />
+  <line x1="150" y1="100" x2="220" y2="100" stroke="#f9a06b" stroke-width="2" />
+  <polygon points="220,95 230,100 220,105" fill="#f9a06b" />
+  <line x1="320" y1="100" x2="390" y2="100" stroke="#f9a06b" stroke-width="2" />
+  <polygon points="390,95 400,100 390,105" fill="#f9a06b" />
+  <text x="75" y="90" font-family="Arial" font-size="16" fill="#2b1a0e">Projections</text>
+  <text x="245" y="90" font-family="Arial" font-size="16" fill="#2b1a0e">Business Plans</text>
+  <text x="415" y="90" font-family="Arial" font-size="16" fill="#2b1a0e">Stratégies</text>
+  <text x="75" y="120" font-family="Arial" font-size="14" fill="#7a5c45">Financières</text>
+  <text x="245" y="120" font-family="Arial" font-size="14" fill="#7a5c45">de Croissance</text>
+  <text x="415" y="120" font-family="Arial" font-size="14" fill="#7a5c45">d'Entreprise</text>
+</svg>
+      </div>
+      
+
+      <!-- QUESTION D'ENTRETIEN -->
+      <div class="interview-section">
+        <div class="section-label">🎯 Question d'entretien de la semaine</div>
+        <div class="interview-question">"Quelles sont les principales considérations stratégiques et financières pour AstraZeneca et Bristol Myers Squibb dans le contexte de leur éventuel tie-up ?"</div>
+        <div class="interview-answer">
+          <p>Pour répondre à cette question, il faudrait considérer les points suivants :</p>
+   <ol>
+   <li><strong>Objectifs stratégiques</strong> : Les deux entreprises doivent aligner leurs objectifs stratégiques pour créer une entité plus forte et plus compétitive.</li>
+   <li><strong>Intégration des opérations</strong> : L'intégration efficace des opérations, y compris la gestion de la chaîne d'approvisionnement, la recherche et développement, et les ventes, est essentielle pour réaliser des synergies.</li>
+   <li><strong>Gestion financière</strong> : La gestion de la structure de la dette, le maintien d'un équilibre financier sain, et la planification pour des projections financières solides sont cruciaux pour assurer la réussite de l'opération à long terme.</li>
+   </ol>
+        </div>
+      </div>
+
+      <!-- OUTILS D'APPRENTISSAGE -->
+      <div class="tools-section">
+        <a class="tool-card" href="https://abarisan.github.io/newsletter-mna/quiz/quiz_2026-08-03.html" target="_blank">
+          <span class="icon">❓</span>
+          <span class="tool-title">Quiz ce numéro</span>
+          <span class="tool-desc">4 questions pour vérifier que tu as compris</span>
+        </a>
+        <a class="tool-card" href="https://claude.ai/new" target="_blank">
+          <span class="icon">🤖</span>
+          <span class="tool-title">Poser une question</span>
+          <span class="tool-desc">Ouvre ton Claude Project M&A pour aller plus loin</span>
+        </a>
+      </div>
+
+      <!-- SOURCES PAR NIVEAU -->
+      <div class="sources-section">
+        <div class="section-label">Sources</div>
+        <ul>
+          <li>[N1] Financial Times - AstraZeneca holds talks with Bristol Myers Squibb over $400bn tie-up</li>
+<li>[N2] Mergermarket - AstraZeneca and Bristol Myers Squibb Discuss Potential Merger</li>
+<li>[N3] The Wall Street Journal - AstraZeneca, Bristol Myers Squibb Weigh Merger</li>
+<li>[N4] Dealogic - M&A Activity in the Pharmaceutical Sector</li>
+        </ul>
+        <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:6px; font-family:'Helvetica Neue',Arial,sans-serif; font-size:10px;">
+          <span style="background:#fff3e8;border:1px solid #e85d1a;color:#c94e0e;padding:3px 8px;border-radius:20px;font-weight:700;">N1 · Bloomberg · FT · Capital Finance · CFNEWS · S&P</span>
+          <span style="background:#fff8f2;border:1px solid #f9a06b;color:#7a5c45;padding:3px 8px;border-radius:20px;">N2 · Mergermarket · Reuters · PitchBook</span>
+          <span style="background:#fdf6ee;border:1px solid #fde0c5;color:#9a7060;padding:3px 8px;border-radius:20px;">N3 · WSJ · The Economist</span>
+          <span style="background:#f9f9f9;border:1px solid #e0e0e0;color:#888;padding:3px 8px;border-radius:20px;">N4 · Dealogic · Preqin</span>
+        </div>
+      </div>
+
+    </div><!-- /body -->
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <p>
+        <span class="next">Deck Anki mis à jour en pièce jointe</span><br>
+        The Deal Brief · 5× par semaine · <a href="https://github.com/abarisan/newsletter-mna" style="color:#e85d1a;text-decoration:none;">Code source</a>
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>

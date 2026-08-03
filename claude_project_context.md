@@ -1,4 +1,4 @@
-# Contexte The Deal Brief — Mise à jour N°37 (31 July 2026)
+# Contexte The Deal Brief — Mise à jour N°38 (03 August 2026)
 
 ## Mon profil
 Étudiant préparant des entretiens en banque d'affaires M&A.
@@ -11,25 +11,25 @@ Financial Projections, Comptabilisation des inventaires, Mécanique de l'EV/Equi
 ## Deals suivis en ce moment
 Volkswagen's Restructuring Plans and Inventory Management, SpaceX : IPO de 75 Md$, la plus grosse de l'histoire, cas d'école de cash flow, Apple : achat de puces mémoire à une entreprise chinoise sous embargo, L'acquisition d'Air Con par un fonds d'investissement, Uniqlo s'apprête à dominer le marché de la mode mondiale, La Dette vs Equity dans le LBO d'EA : Un Exemple Concret, Anthropic et la fermeture des failles pour limiter l'accès chinois à Claude
 
-## Contenu du dernier numéro (31 July 2026)
+## Contenu du dernier numéro (03 August 2026)
 
 ### Deal de la semaine
-Le rôle de la calendarisation dans les opérations LBO : cas de l'acquisition de Beyond Meat
-<p>L'acquisition de Beyond Meat par un fonds d'investissement a récemment illustré l'importance de la calendarisation dans les opérations LBO. La calendarisation, ou l'analyse des performances d'une entreprise sur une période donnée (LTM, NTM, YTD, FY, CY), est cruciale pour évaluer la viabilité financière de l'entreprise cible.</p>
-   <p>Dans le cas de Beyond Meat, les investisseurs ont examiné de près les performances de l'entreprise sur les 12 derniers mois (LTM) pour évaluer son potentiel de croissance et sa stabilité financière. Les chiffres ont révélé une tendance positive, avec une augmentation de 25% du chiffre d'affaires et une marge bénéficiaire de 15%.</p>
-   <p>Ces données ont permis aux investisseurs de prendre une décision éclairée concernant l'acquisition et de négocier un prix d'acquisition compétitif. La calendarisation a donc joué un rôle clé dans l'opération, permettant aux parties prenantes de mieux comprendre les performances de l'entreprise et de prendre des décis
+AstraZeneca et Bristol Myers Squibb : Un tie-up de 400 milliards pour consolider le marché pharmaceutique
+<p>Le secteur pharmaceutique voit émerger un nouveau géant avec les discussions entre AstraZeneca et Bristol Myers Squibb en vue d'un tie-up d'une valeur de 400 milliards de dollars. Ce rapprochement, si réalisé, permettrait de créer le quatrième plus grand laboratoire pharmaceutique en termes de valeur de marché, <em>selon des sources proches du dossier</em> citées par le <strong>Financial Times</strong>.</p>
+   <p>Il est intéressant de noter que ce deal illustre parfaitement la notion de <strong>synergies</strong> dans les opérations de fusions-acquisitions. Les deux entreprises pourraient tirer parti de leurs portefeuilles de produits complémentaires pour renforcer leur position sur le marché. De plus, la réalisation de ce tie-up soulève des questions sur la manière dont les deux entreprises gèreront leur <strong>structure de la dette</strong> et leur <strong>équilibre financier</strong> dans le contexte de cette transaction massive.</p>
+   <p>Un aspect clé à considérer dans cette o
 
 ### Cours
-<p>La calendarisation est un aspect crucial des opérations de fusions-acquisitions, car elle permet aux entreprises d'évaluer les performances financières de l'entreprise cible et de prendre des décisions éclairées. La calendarisation implique l'analyse des performances de l'entreprise sur une période donnée, généralement 12 mois (LTM), pour évaluer son potentiel de croissance et sa stabilité financière.</p>
-   <p>Les étapes clés de la calendarisation incluent : <ol><li:l'analyse des états financiers de l'entreprise cible</li><li:l'identification des tendances et des anomalies dans les performances financières</li><li:l'évaluation du potentiel de croissance et de la stabilité financière de l'entreprise</li></ol></p>
-   <p>Les principaux ratios utilisés dans la calendarisation incluent : <ul><li:le ratio de liquidité</li><li:le ratio de rentabilité</li><li:le ratio de dette</li></ul></p>
-   <div class='term'><div class='term-name'>LTM (Last Twelve Months)</div> La période de 12 mois précédant la date d'évaluation.</div>
-   <div class='term'><div class='term-name'>NTM (Next Twelve Months)</div> La période de 12 mois suivant la date d'évaluation.</div>
+<p>Le chapitre du jour concerne les projections financières et les business plans dans les opérations de fusions-acquisitions. Il est essentiel de comprendre comment les entreprises élaborent ces projections pour soutenir leurs stratégies de croissance.</p>
+   <p><div class='term'><div class='term-name'>Synergies</div>Les synergies désignent les avantages qui résultent de la combinaison de deux ou plusieurs entreprises, ce qui peut inclure des économies d'échelle, une réduction des coûts, ou une amélioration de la compétitivité.</div></p>
+   <p>Les <strong>drivers</strong> d'un business plan sont les facteurs clés qui influencent la croissance et la performance financière d'une entreprise. Dans le contexte d'une fusion, comprendre ces drivers est crucial pour anticiper les résultats de l'opération et identifier les domaines où des synergies peuvent être réalisées.</p>
+   <p>Enfin, la gestion de la <strong>structure de la dette</strong> est un aspect vital dans les fusions-acquisitions. Les entreprises doivent évaluer leur capacité à rembourser les dettes et à maintenir un équilibre financier sain pour assurer la réussite de l'opération à long terme.</p>
+   <p>Les <em>investisseurs<
 
 ### Macro
-La conjoncture économique mondiale et son impact sur les opérations de fusions-acquisitions
-<p>La conjoncture économique mondiale actuelle est marquée par une incertitude grandissante, avec des facteurs tels que la guerre en Ukraine, les tensions commerciales entre les États-Unis et la Chine, et la pandémie de COVID-19. Ces facteurs ont un impact significatif sur les opérations de fusions-acquisitions, car les entreprises doivent naviguer dans un environnement économique de plus en plus complexe.</p>
-   <p>Selon une étude récente de [N3 · WSJ Markets], la croissance économique mondiale
+Tendances Macro-Économiques
+<p>Le contexte macro-économique actuel est marqué par des défis liés aux changements climatiques et à la stabilité économique. Les entreprises doivent adapter leurs stratégies pour tenir compte de ces facteurs. Dans le secteur pharmaceutique, l'innovation et la consolidation sont clés pour faire face à ces défis.</p>
+   <p>Un article récent du <a href='https://www.ft.com/content/343fbd22-0f3c-4c95-8f7a-1c9fbdc5e4d5'>Financial Times</a> met en lumière l'importance de la résilience des infrastruct
 
 ---
 Tu es mon tuteur M&A. Quand je te pose une question :
