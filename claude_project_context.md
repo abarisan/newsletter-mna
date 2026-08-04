@@ -1,4 +1,4 @@
-# Contexte The Deal Brief — Mise à jour N°38 (03 August 2026)
+# Contexte The Deal Brief — Mise à jour N°39 (04 August 2026)
 
 ## Mon profil
 Étudiant préparant des entretiens en banque d'affaires M&A.
@@ -11,25 +11,18 @@ Financial Projections, Comptabilisation des inventaires, Mécanique de l'EV/Equi
 ## Deals suivis en ce moment
 Volkswagen's Restructuring Plans and Inventory Management, SpaceX : IPO de 75 Md$, la plus grosse de l'histoire, cas d'école de cash flow, Apple : achat de puces mémoire à une entreprise chinoise sous embargo, L'acquisition d'Air Con par un fonds d'investissement, Uniqlo s'apprête à dominer le marché de la mode mondiale, La Dette vs Equity dans le LBO d'EA : Un Exemple Concret, Anthropic et la fermeture des failles pour limiter l'accès chinois à Claude
 
-## Contenu du dernier numéro (03 August 2026)
+## Contenu du dernier numéro (04 August 2026)
 
 ### Deal de la semaine
-AstraZeneca et Bristol Myers Squibb : Un tie-up de 400 milliards pour consolider le marché pharmaceutique
-<p>Le secteur pharmaceutique voit émerger un nouveau géant avec les discussions entre AstraZeneca et Bristol Myers Squibb en vue d'un tie-up d'une valeur de 400 milliards de dollars. Ce rapprochement, si réalisé, permettrait de créer le quatrième plus grand laboratoire pharmaceutique en termes de valeur de marché, <em>selon des sources proches du dossier</em> citées par le <strong>Financial Times</strong>.</p>
-   <p>Il est intéressant de noter que ce deal illustre parfaitement la notion de <strong>synergies</strong> dans les opérations de fusions-acquisitions. Les deux entreprises pourraient tirer parti de leurs portefeuilles de produits complémentaires pour renforcer leur position sur le marché. De plus, la réalisation de ce tie-up soulève des questions sur la manière dont les deux entreprises gèreront leur <strong>structure de la dette</strong> et leur <strong>équilibre financier</strong> dans le contexte de cette transaction massive.</p>
-   <p>Un aspect clé à considérer dans cette o
+Google et l'avenir de la finance pour Anthropic
+<p>La news récente selon laquelle Google a investi dans Anthropic via un modèle de finance innovant illustre parfaitement le concept de <strong>financement de projet</strong> et ses différentes applications. Ce deal, révélé par <a href='https://www.ft.com/' class='callout'>FT</a>, met en lumière la créativité avec laquelle les géants de la tech abordent les défis financiers.</p><p>Le deal en question implique un investissement de <strong>200 milliards de dollars</strong> dans Anthropic, société spécialisée dans l'intelligence artificielle. Cet investissement est significatif non seulement en raison de son montant mais également pour la structure innovante utilisée, qui combine <em>prêts à taux fixes, garanties de données et contrats de location de serveurs</em>. Cette approche démontre la capacité de Google à adapter son modèle économique pour soutenir la croissance de l'IA.</p><p>Dans ce contexte, il est intéressant de noter que cette stratégie peut être considérée comme un exemple de
 
 ### Cours
-<p>Le chapitre du jour concerne les projections financières et les business plans dans les opérations de fusions-acquisitions. Il est essentiel de comprendre comment les entreprises élaborent ces projections pour soutenir leurs stratégies de croissance.</p>
-   <p><div class='term'><div class='term-name'>Synergies</div>Les synergies désignent les avantages qui résultent de la combinaison de deux ou plusieurs entreprises, ce qui peut inclure des économies d'échelle, une réduction des coûts, ou une amélioration de la compétitivité.</div></p>
-   <p>Les <strong>drivers</strong> d'un business plan sont les facteurs clés qui influencent la croissance et la performance financière d'une entreprise. Dans le contexte d'une fusion, comprendre ces drivers est crucial pour anticiper les résultats de l'opération et identifier les domaines où des synergies peuvent être réalisées.</p>
-   <p>Enfin, la gestion de la <strong>structure de la dette</strong> est un aspect vital dans les fusions-acquisitions. Les entreprises doivent évaluer leur capacité à rembourser les dettes et à maintenir un équilibre financier sain pour assurer la réussite de l'opération à long terme.</p>
-   <p>Les <em>investisseurs<
+<p>Le chapitre en cours porte sur les <strong>Inventaires (LIFO, FIFO, WAC)</strong> dans le contexte de la comptabilité financière. La compréhension de ces méthodes est cruciale pour évaluer la santé financière d'une entreprise et prendre des décisions éclairées concernant la gestion des stocks et la planification de la production.</p><p><div class='term'><div class='term-name'>LIFO (Last-In, First-Out)</div>signifie que les articles les plus récemment ajoutés aux stocks sont les premiers à être vendus ou utilisés. Cette méthode peut être bénéfique dans les périodes d'inflation, car elle permet de reporter les coûts plus élevés associés aux articles plus récents aux périodes ultérieures.</p><p><div class='term'><div class='term-name'>FIFO (First-In, First-Out)</div>implique que les articles ajoutés aux stocks en premier sont les premiers à être vendus ou utilisés. Le FIFO est souvent préféré pour sa simplicité et sa représentation plus réaliste du flux de stocks dans la plupart des entreprises.</p><p><div class='term'><div class='term-name'>WAC (Weighted Average Cost)</div>est une méthode qui calcule le coût moyen pondéré de tous les articles en stock. Le WAC offre une approche éq
 
 ### Macro
-Tendances Macro-Économiques
-<p>Le contexte macro-économique actuel est marqué par des défis liés aux changements climatiques et à la stabilité économique. Les entreprises doivent adapter leurs stratégies pour tenir compte de ces facteurs. Dans le secteur pharmaceutique, l'innovation et la consolidation sont clés pour faire face à ces défis.</p>
-   <p>Un article récent du <a href='https://www.ft.com/content/343fbd22-0f3c-4c95-8f7a-1c9fbdc5e4d5'>Financial Times</a> met en lumière l'importance de la résilience des infrastruct
+L'évolution de la géopolitique financière
+<p>Alors que le paysage financier mondial continue d'évoluer, des interventions comme celle de Bessent pour soutenir le yen japonais, ainsi que les efforts de l'UEA pour investir en Afrique, montrent une volonté croissante d'influencer les marchés financiers et les échanges commerciaux à l'échelle mondiale. Ces actions ont des implications significatives pour les investisseurs et les entreprises, qui doivent naviguer dans un environnement où les frontières entre la finance, la politique et la gé
 
 ---
 Tu es mon tuteur M&A. Quand je te pose une question :
