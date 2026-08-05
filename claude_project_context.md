@@ -1,4 +1,4 @@
-# Contexte The Deal Brief — Mise à jour N°39 (04 August 2026)
+# Contexte The Deal Brief — Mise à jour N°40 (05 August 2026)
 
 ## Mon profil
 Étudiant préparant des entretiens en banque d'affaires M&A.
@@ -11,18 +11,29 @@ Financial Projections, Comptabilisation des inventaires, Mécanique de l'EV/Equi
 ## Deals suivis en ce moment
 Volkswagen's Restructuring Plans and Inventory Management, SpaceX : IPO de 75 Md$, la plus grosse de l'histoire, cas d'école de cash flow, Apple : achat de puces mémoire à une entreprise chinoise sous embargo, L'acquisition d'Air Con par un fonds d'investissement, Uniqlo s'apprête à dominer le marché de la mode mondiale, La Dette vs Equity dans le LBO d'EA : Un Exemple Concret, Anthropic et la fermeture des failles pour limiter l'accès chinois à Claude
 
-## Contenu du dernier numéro (04 August 2026)
+## Contenu du dernier numéro (05 August 2026)
 
 ### Deal de la semaine
-Google et l'avenir de la finance pour Anthropic
-<p>La news récente selon laquelle Google a investi dans Anthropic via un modèle de finance innovant illustre parfaitement le concept de <strong>financement de projet</strong> et ses différentes applications. Ce deal, révélé par <a href='https://www.ft.com/' class='callout'>FT</a>, met en lumière la créativité avec laquelle les géants de la tech abordent les défis financiers.</p><p>Le deal en question implique un investissement de <strong>200 milliards de dollars</strong> dans Anthropic, société spécialisée dans l'intelligence artificielle. Cet investissement est significatif non seulement en raison de son montant mais également pour la structure innovante utilisée, qui combine <em>prêts à taux fixes, garanties de données et contrats de location de serveurs</em>. Cette approche démontre la capacité de Google à adapter son modèle économique pour soutenir la croissance de l'IA.</p><p>Dans ce contexte, il est intéressant de noter que cette stratégie peut être considérée comme un exemple de
+L'acquisition de Warner Bros. par Paramount : Un exemple d'application de l'EV/Equity Bridge
+
+      <p>Paramount a récemment annoncé son intention d'acquérir Warner Bros. pour un montant de 111 milliards de dollars. Cette acquisition constitue un exemple parfait pour illustrer le concept d'EV/Equity Bridge, qui sera détaillé dans ce numéro.</p>
+      <p><strong>Le deal en question</strong> : L'acquisition de Warner Bros. par Paramount fait l'objet d'un examen approfondi par les autorités de la concurrence. Le montant de l'acquisition, établi à 111 milliards de dollars, représente une prime significative par rapport à la valorisation actuelle de Warner Bros.</p>
+      <p>Les <strong>chiffres précis</strong> de cette acquisition sont les suivants : le prix d'acquisition est de 111 milliards de dollars, ce qui représente une prime de 25% par rapport au cours de clôture de Warner Bros. avant l'annonce de l'acquisition. Le múltipile d'acquisition (EV/EBITDA) est estimé à 15 fois l'EBITDA de Warner Bros. pour l'exercice en cours.</p>
+      <p>Le <strong>rationnel stratégique</strong
 
 ### Cours
-<p>Le chapitre en cours porte sur les <strong>Inventaires (LIFO, FIFO, WAC)</strong> dans le contexte de la comptabilité financière. La compréhension de ces méthodes est cruciale pour évaluer la santé financière d'une entreprise et prendre des décisions éclairées concernant la gestion des stocks et la planification de la production.</p><p><div class='term'><div class='term-name'>LIFO (Last-In, First-Out)</div>signifie que les articles les plus récemment ajoutés aux stocks sont les premiers à être vendus ou utilisés. Cette méthode peut être bénéfique dans les périodes d'inflation, car elle permet de reporter les coûts plus élevés associés aux articles plus récents aux périodes ultérieures.</p><p><div class='term'><div class='term-name'>FIFO (First-In, First-Out)</div>implique que les articles ajoutés aux stocks en premier sont les premiers à être vendus ou utilisés. Le FIFO est souvent préféré pour sa simplicité et sa représentation plus réaliste du flux de stocks dans la plupart des entreprises.</p><p><div class='term'><div class='term-name'>WAC (Weighted Average Cost)</div>est une méthode qui calcule le coût moyen pondéré de tous les articles en stock. Le WAC offre une approche éq
+
+      <p>Le chapitre du jour est consacré à l'EV/Equity Bridge, qui constitue un concept essentiel dans les fusions et acquisitions. L'EV/Equity Bridge représente la relation entre la valeur d'entreprise (EV) et la valeur des capitaux propres d'une entreprise.</p>
+      <p><div class='term'><div class='term-name'>Valeur d'entreprise (EV)</div>La valeur totale d'une entreprise, comprenant la dette financière et les capitaux propres.</div> La valeur d'entreprise est calculée en additionnant la dette financière et les capitaux propres d'une entreprise.</p>
+      <p><div class='term'><div class='term-name'>Valeur des capitaux propres</div>La valeur actuelle des actions en circulation d'une entreprise.</div> La valeur des capitaux propres est déterminée par le cours boursier actuel de l'entreprise et le nombre d'actions en circulation.</p>
+      <p>L'EV/Equity Bridge est utilisé pour déterminer la valorisation d'une entreprise en fonction de sa valeur d'entreprise et de sa valeur des capitaux propres. Ce concept est essentiel dans les fusions et acquisitions, car il permet aux investisseurs et aux entreprises d'évaluer la valorisation d'une cible potentiale.</p>
+      <p>En appliquant 
 
 ### Macro
-L'évolution de la géopolitique financière
-<p>Alors que le paysage financier mondial continue d'évoluer, des interventions comme celle de Bessent pour soutenir le yen japonais, ainsi que les efforts de l'UEA pour investir en Afrique, montrent une volonté croissante d'influencer les marchés financiers et les échanges commerciaux à l'échelle mondiale. Ces actions ont des implications significatives pour les investisseurs et les entreprises, qui doivent naviguer dans un environnement où les frontières entre la finance, la politique et la gé
+Impact de la sécheresse sur l'économie européenne
+
+      <p>La sécheresse actuelle en Europe a des conséquences importantes sur l'économie, notamment en termes d'énergie et de fret. Selon un article récent de <a href='https://www.cnbc.com/'>CNBC</a>, la sécheresse a déjà commencé à affecter les niveaux d'eau des grands fleuves européens comme le Rhin et le Danube, ce qui pourrait perturber les chaînes d'approvisionnement et avoir un impact négatif sur la croissance économique.</p>
+   
 
 ---
 Tu es mon tuteur M&A. Quand je te pose une question :

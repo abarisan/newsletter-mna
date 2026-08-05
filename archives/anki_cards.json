@@ -1582,5 +1582,41 @@
     "verso": "Les entreprises préfèrent souvent utiliser la méthode LIFO plutôt que la méthode FIFO dans les périodes d'inflation, où les coûts des marchandises peuvent augmenter rapidement. La méthode LIFO permet de reporter les coûts plus élevés associés aux articles plus récents aux périodes ultérieures, ce qui peut aider à réduire les impôts et à améliorer les résultats financiers. Cependant, les entreprises doivent également considérer les implications à long terme de leur choix de méthode de gestion des stocks.",
     "numero": "39",
     "id": 1164775471
+  },
+  {
+    "recto": "Qu'est-ce que l'EV/Equity Bridge ?",
+    "verso": "L'EV/Equity Bridge représente la relation entre la valeur d'entreprise (EV) et la valeur des capitaux propres d'une entreprise. Il permet de comprendre comment la valeur d'entreprise se traduit en valeur pour les actionnaires. C'est un concept essentiel dans les fusions et acquisitions.",
+    "numero": "40",
+    "id": 1087214283
+  },
+  {
+    "recto": " Comment fonctionne l'EV/Equity Bridge dans une acquisition ?",
+    "verso": "L'EV/Equity Bridge est utilisé pour calculer la valeur des capitaux propres d'une entreprise cible dans le cadre d'une acquisition. Il permet de déterminer la valeur que les actionnaires de l'entreprise cible peuvent espérer recevoir dans le cadre de l'acquisition. Cela dépend de la valeur d'entreprise de l'entreprise cible et de la structure de sa dette et de ses capitaux propres.",
+    "numero": "40",
+    "id": 2133543729
+  },
+  {
+    "recto": "Qu'est-ce que la valeur d'entreprise (EV) ?",
+    "verso": "La valeur d'entreprise (EV) est la valeur totale d'une entreprise, comprenant la dette financière et les capitaux propres. Elle est calculée en additionnant la dette financière et les capitaux propres d'une entreprise, et représente la valeur totale de l'entreprise pour les investisseurs et les créanciers.",
+    "numero": "40",
+    "id": 2049936105
+  },
+  {
+    "recto": "Pourquoi est-il important de considérer l'EV/Equity Bridge dans les fusions et acquisitions ?",
+    "verso": "Il est important de considérer l'EV/Equity Bridge dans les fusions et acquisitions car il permet aux entreprises d'évaluer la valeur de l'entreprise cible de manière plus précise. Cela permet également de comprendre comment la valeur d'entreprise se traduit en valeur pour les actionnaires, et de prendre des décisions éclairées concernant la structure de l'acquisition.",
+    "numero": "40",
+    "id": 2090175548
+  },
+  {
+    "recto": "Qu'est-ce que la valeur des capitaux propres ?",
+    "verso": "La valeur des capitaux propres est la valeur actuelle des actions en circulation d'une entreprise. Elle représente la valeur que les actionnaires peuvent espérer recevoir si l'entreprise était liquidée ou acquise. La valeur des capitaux propres est un indicateur clé de la santé financière d'une entreprise et de sa capacité à créer de la valeur pour ses actionnaires.",
+    "numero": "40",
+    "id": 2135978496
+  },
+  {
+    "recto": "Dans quel cas utiliser l'EV/Equity Bridge ?",
+    "verso": "L'EV/Equity Bridge est particulièrement utile dans les situations de fusions et acquisitions, où il est nécessaire de déterminer la valeur de l'entreprise cible et de comprendre comment la valeur d'entreprise se traduit en valeur pour les actionnaires. Il peut également être utilisé pour évaluer la performance d'une entreprise et identifier les opportunités de création de valeur pour les actionnaires.",
+    "numero": "40",
+    "id": 1139005679
   }
 ]
