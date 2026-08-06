@@ -1618,5 +1618,41 @@
     "verso": "L'EV/Equity Bridge est particulièrement utile dans les situations de fusions et acquisitions, où il est nécessaire de déterminer la valeur de l'entreprise cible et de comprendre comment la valeur d'entreprise se traduit en valeur pour les actionnaires. Il peut également être utilisé pour évaluer la performance d'une entreprise et identifier les opportunités de création de valeur pour les actionnaires.",
     "numero": "40",
     "id": 1139005679
+  },
+  {
+    "recto": "Qu'est-ce que le LBO ?",
+    "verso": "Un LBO (Leverage Buy-Out) est une opération financière dans laquelle un acheteur utilise une grande partie d'emprunt pour financer l'acquisition d'une entreprise. Cela peut offrir des rendements élevés mais également présente des risques significatifs. Par exemple, un investisseur peut utiliser un emprunt pour financer 70% de l'acquisition, réduisant ainsi son investissement initial en capitaux propres.",
+    "numero": "41",
+    "id": 1917692849
+  },
+  {
+    "recto": "Différence entre actionnariat et propriété dans une entreprise ?",
+    "verso": "L'actionnariat fait référence à la détention de parts d'une entreprise, représentées par des actions. La propriété, en revanche, fait référence au contrôle effectif et à la responsabilité d'une entreprise. Dans le contexte d'un LBO, la dilution de l'actionnariat peut se produire lorsque de nouvelles actions sont émises pour financer une acquisition, modifiant ainsi la répartition de la propriété.",
+    "numero": "41",
+    "id": 1574289372
+  },
+  {
+    "recto": "Comment fonctionne la dilution de l'actionnariat dans les opérations de fusions-acquisitions ?",
+    "verso": "La dilution de l'actionnariat se produit lorsque de nouvelles actions sont émises pour financer une acquisition. Cela peut réduire la part de propriété des actionnaires existants, car le nombre total d'actions en circulation augmente. Par exemple, si une entreprise émet de nouvelles actions pour financer l'acquisition d'une autre entreprise, les actionnaires existants pourraient voir leur pourcentage de propriété diminuer.",
+    "numero": "41",
+    "id": 1224770855
+  },
+  {
+    "recto": "Pourquoi les sociétés de conseil en stratégie cherchent à diversifier leur base de propriété ?",
+    "verso": "Les sociétés de conseil en stratégie cherchent à diversifier leur base de propriété pour accroître leur compétitivité et leurs ressources financières. En attirant des investisseurs externes, elles peuvent accéder à de nouvelles sources de financement, réduire leur dépendance à l'égard de leurs propriétaires actuels et améliorer leur capacité à investir dans de nouveaux marchés et technologies.",
+    "numero": "41",
+    "id": 1703665391
+  },
+  {
+    "recto": "Qu'est-ce que le goodwill dans une opération de fusions-acquisitions ?",
+    "verso": "Le goodwill représente la différence entre le prix d'acquisition d'une entreprise et la valeur de ses actifs nets. Il s'agit essentiellement de la valeur des éléments intangibles tels que la réputation, les relations avec les clients et les compétences du personnel. Le goodwill est généralement comptabilisé comme un actif sur le bilan de l'entreprise acquéreuse.",
+    "numero": "41",
+    "id": 1567936378
+  },
+  {
+    "recto": "Pourquoi un LBO peut-il amplifier le rendement des fonds propres ?",
+    "verso": "Un LBO peut amplifier le rendement des fonds propres car l'emprunt utilisé pour financer l'acquisition peut être remboursé avec les flux de trésorerie générés par l'entreprise acquise. Cela signifie que les actionnaires peuvent bénéficier de rendements élevés sur leur investissement initial, même si la valeur de l'entreprise acquise n'augmente pas significativement. Cependant, cela présente également des risques, car les investisseurs doivent être en mesure de rembourser l'emprunt pour éviter les pertes.",
+    "numero": "41",
+    "id": 1894058295
   }
 ]

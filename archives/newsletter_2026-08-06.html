@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Deal Brief</title>
+  <style>
+    /* ── Palette : clair / nuances d'orange ── */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #fdf6ee;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      color: #2b1a0e;
+      line-height: 1.75;
+    }
+
+    .wrapper {
+      max-width: 680px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(232,93,26,0.10);
+    }
+
+    .header {
+      background: linear-gradient(135deg, #ff6b2b 0%, #e85d1a 100%);
+      padding: 48px 48px 36px;
+      text-align: center;
+    }
+    .header .eyebrow {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ffe8d6;
+      margin-bottom: 16px;
+    }
+    .header h1 {
+      font-size: 36px;
+      font-weight: 400;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .header .subtitle {
+      font-size: 13px;
+      color: #ffd4b8;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      letter-spacing: 0.5px;
+    }
+    .header .issue-line {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.25);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #ffe8d6;
+      letter-spacing: 1px;
+    }
+
+    .body { padding: 0 48px 48px; }
+
+    .section { margin-top: 48px; }
+    .section-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #e85d1a;
+      margin-bottom: 6px;
+    }
+    .section h2 {
+      font-size: 22px;
+      font-weight: 400;
+      color: #2b1a0e;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #f9a06b;
+    }
+    .section-content { font-size: 15px; color: #3d2510; }
+    .section-content p { margin-bottom: 14px; }
+    .section-content strong { color: #c94e0e; font-weight: 700; }
+    .section-content ul, .section-content ol { padding-left: 20px; margin-bottom: 14px; }
+    .section-content li { margin-bottom: 6px; }
+
+    .callout {
+      background: #fff3e8;
+      border-left: 3px solid #e85d1a;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 14px;
+      color: #5a3520;
+      font-style: italic;
+      border-radius: 0 4px 4px 0;
+    }
+    .callout strong { font-style: normal; color: #c94e0e; }
+
+    .rappel-section {
+      margin-top: 48px;
+      background: #fff3e8;
+      margin-left: -48px;
+      margin-right: -48px;
+      padding: 36px 48px;
+      border-top: 3px solid #f9a06b;
+      border-bottom: 3px solid #f9a06b;
+    }
+    .rappel-section .section-label { color: #e85d1a; }
+    .rappel-section h2 { color: #2b1a0e; border-bottom-color: #fde0c5; font-size: 20px; }
+    .rappel-section .section-content { color: #5a3520; }
+    .rappel-section .section-content strong { color: #c94e0e; }
+    .rappel-section .term { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid #fde0c5; }
+    .rappel-section .term:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .rappel-section .term-name {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .interview-section {
+      margin-top: 48px;
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 28px 32px;
+    }
+    .interview-section .section-label { color: #e85d1a; }
+    .interview-question { font-size: 18px; font-style: italic; color: #2b1a0e; margin: 12px 0 20px; line-height: 1.4; }
+    .interview-answer { font-size: 14px; color: #5a3520; }
+
+    .sources-section { margin-top: 48px; padding-top: 24px; border-top: 1px solid #fde0c5; }
+    .sources-section .section-label { margin-bottom: 12px; }
+    .sources-section ul { list-style: none; padding: 0; }
+    .sources-section li {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #7a5c45;
+      margin-bottom: 6px;
+      padding-left: 12px;
+      position: relative;
+    }
+    .sources-section li::before { content: '→'; position: absolute; left: 0; color: #e85d1a; }
+
+    .footer {
+      background: #fdf6ee;
+      padding: 28px 48px;
+      text-align: center;
+      border-top: 1px solid #fde0c5;
+    }
+    .footer p { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; color: #9a7060; line-height: 1.8; }
+    .footer .next { color: #c94e0e; font-weight: 600; }
+
+    .divider { height: 1px; background: #fde0c5; margin: 36px 0; }
+
+    /* ── Schéma SVG ── */
+    .diagram-section {
+      margin-top: 48px;
+    }
+    .diagram-section .section-label {
+      margin-bottom: 12px;
+    }
+    .diagram-wrap {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      overflow-x: auto;
+    }
+    .diagram-wrap svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* ── Outils d'apprentissage ── */
+    .tools-section {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .tool-card {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      transition: box-shadow .15s;
+    }
+    .tool-card:hover { box-shadow: 0 4px 16px rgba(232,93,26,0.15); }
+    .tool-card .icon { font-size: 28px; display: block; margin-bottom: 8px; }
+    .tool-card .tool-title {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .tool-card .tool-desc {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      color: #7a5c45;
+    }
+
+    @media (max-width: 600px) {
+      .wrapper { margin: 0; border-radius: 0; }
+      .header { padding: 32px 24px 24px; }
+      .body { padding: 0 24px 32px; }
+      .rappel-section { margin-left: -24px; margin-right: -24px; padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="eyebrow">Newsletter M&A · Finance · IA · Géopolitique</div>
+      <h1>The Deal Brief</h1>
+      <div class="subtitle">Comprendre la finance, pas juste la suivre</div>
+      <div class="issue-line">N° 41 &nbsp;·&nbsp; 06 August 2026</div>
+    </div>
+
+    <div class="body">
+
+      <!-- SECTION 1 : M&A -->
+      <!-- DEAL -->
+      <div class="section">
+        <div class="section-label">Niveau 1 — Deal de la semaine</div>
+        <h2>LBO sur les sociétés de conseil en stratégie : le deal de Paul Weiss</h2>
+        <div class="section-content"><p>Le marché des fusions-acquisitions (M&A) a connu un développement intéressant avec l'annonce par <strong>Bloomberg</strong> que les cabinets d'avocats américains, dont Paul Weiss, exploreraient la possibilité de vendre des parts à des sociétés de capital-investissement. Ce mouvement s'inscrit dans un contexte où les sociétés de conseil en stratégie cherchent à diversifier leur base de propriété pour accroître leur compétitivité et leurs ressources financières.</p>
+   <p>Le <em>deal</em> concernant Paul Weiss illustre parfaitement le chapitre du jour sur le <strong>Leveraged Buyout (LBO)</strong>, où une société utilise une partie importante d'emprunt pour financer l'acquisition d'une autre société. Dans ce cas, la décision de Paul Weiss de potentiellement vendre des parts à des investisseurs privés peut être vue comme une stratégie pour renforcer sa position financière et accélérer sa croissance.</p>
+   <p>Les <strong>chiffres précis</strong> nous indiquent que les Cabinets comme Paul Weiss, Quinn Emanuel et Proskauer ont eu des discussions avec des sociétés de capital-investissement pour des transactions potentielles. Selon <strong>Financial Times</strong>, ces transactions pourraient impliquer des structures complexes de propriété et des accords de partenariat.</p>
+   <p>Dans le contexte d'un entretien, si on me demandait <em>« Qu'est-ce que vous pensez de la tendance des cabinets d'avocats à vendre des parts à des sociétés de capital-investissement ? »</em>, je répondrais : <em>« Je pense que c'est une stratégie intelligente pour accroître la compétitivité et la solidité financière, bien que cela nécessite une évaluation minutieuse des risques et des avantages potentiels. »</em></p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin-top:20px;"><svg width="540" height="180" viewBox="0 0 540 180">
+  <rect x="50" y="50" width="100" height="80" fill="#fff3e8" rx="5" stroke="#e85d1a" stroke-width="2"/>
+  <text x="70" y="90" font-family="Arial" font-size="16" fill="#2b1a0e">Cabinets d'avocats</text>
+  <text x="70" y="120" font-family="Arial" font-size="14" fill="#7a5c45">Paul Weiss, etc.</text>
+  <line x1="150" y1="100" x2="250" y2="100" stroke="#f9a06b" stroke-width="2" marker-end="<polygon points='5,0 0,5 0,-5' fill='#f9a06b'/>"/>
+  <rect x="250" y="50" width="100" height="80" fill="#fff3e8" rx="5" stroke="#e85d1a" stroke-width="2"/>
+  <text x="270" y="90" font-family="Arial" font-size="16" fill="#2b1a0e">Sociétés de capital-investissement</text>
+  <text x="270" y="120" font-family="Arial" font-size="14" fill="#7a5c45">Parts minoritaires</text>
+  <text x="200" y="60" font-family="Arial" font-size="18" fill="#c94e0e">LBO</text>
+</svg></div>
+      
+
+      <div class="divider"></div>
+
+      <!-- MACRO & GÉOPO -->
+      <div class="section">
+        <div class="section-label">Niveau 3 — Macro & Géopolitique</div>
+        <h2>Impact des tendances macro-économiques sur les décisions d'investissement</h2>
+        <div class="section-content"><p>Les tendances macro-économiques actuelles, telles que la croissance économique modérée et les taux d'intérêt relativement bas, influencent les décisions d'investissement dans le secteur des services professionnels. Selon <strong>The Wall Street Journal</strong>, les investisseurs sont de plus en plus à la recherche de rendements attractifs dans des secteurs traditionnellement stables comme les services juridiques.</p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin-top:20px;"><svg width="540" height="180" viewBox="0 0 540 180">
+  <rect x="50" y="20" width="120" height="80" fill="#fff3e8" rx="5" stroke="#e85d1a" stroke-width="2" />
+  <rect x="370" y="20" width="120" height="80" fill="#fff3e8" rx="5" stroke="#e85d1a" stroke-width="2" />
+  <line x1="170" y1="70" x2="250" y2="70" stroke="#f9a06b" stroke-width="2" marker-end="url(#arrowhead)" />
+  <polygon points="250,65 260,70 250,75" fill="#f9a06b" id="arrowhead" />
+  <text x="80" y="50" font-family="Arial" font-size="16" fill="#2b1a0e">Tendances macro-économiques</text>
+  <text x="400" y="50" font-family="Arial" font-size="16" fill="#2b1a0e">Décisions d'investissement</text>
+  <text x="80" y="90" font-family="Arial" font-size="14" fill="#7a5c45">Croissance économique modérée</text>
+  <text x="80" y="110" font-family="Arial" font-size="14" fill="#7a5c45">Taux d'intérêt relativement bas</text>
+  <text x="400" y="90" font-family="Arial" font-size="14" fill="#7a5c45">Investissement dans les services professionnels</text>
+</svg></div>
+      
+
+      <div class="divider"></div>
+
+      <!-- IA -->
+      
+
+      <!-- RAPPEL DE COURS -->
+      <div class="rappel-section">
+        <div class="section-label">Rappel de cours</div>
+        <h2>Les notions clés de ce numéro</h2>
+        <div class="section-content"><p>Le chapitre du jour sur le LBO et la dilution de l'actionnariat est crucial pour comprendre les mécanismes financiers complexes impliqués dans les transactions M&A. Un LBO implique que l'acheteur utilise une grande partie d'emprunt pour financer l'acquisition, ce qui peut offrir des rendements élevés mais également présente des risques significatifs.</p>
+   <p>La <strong>dilution de l'actionnariat</strong> se produit lorsque de nouvelles actions sont émises pour financer une acquisition, potentiellement réduisant la part de propriété des actionnaires existants. C'est un aspect clé à considérer dans les transactions impliquant des cabinets d'avocats ou des sociétés de conseil en stratégie, car cela peut affecter la structure de propriété et la capacité de l'entreprise à attirer et à retenir les talents.</p>
+   <div class='term'><div class='term-name'>Diluted Equity Value</div>La valeur diluée de l'action, qui reflète la valeur de l'entreprise après prise en compte de l'impact de la dilution.</div>
+   <p>Les étudiants doivent comprendre ces concepts pour évaluer les implications financières des transactions M&A et prendre des décisions éclairées en tant qu'acteurs du marché financier.</p>
+   <p>Dans le prochain chapitre, nous allons explorer plus en détail les différences entre la dette et les capitaux propres, y compris les coûts, les types, la séniorité et les conséquences en cas de faillite.</p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin: 0 -48px; padding: 24px 48px; background:#fff3e8; border-top:1px solid #fde0c5; border-bottom:1px solid #fde0c5;">
+        <svg width="540" height="200" viewBox="0 0 540 200">
+  <rect x="50" y="50" width="100" height="100" fill="#fff3e8" rx="10" />
+  <rect x="230" y="50" width="100" height="100" fill="#fff3e8" rx="10" />
+  <rect x="410" y="50" width="100" height="100" fill="#fff3e8" rx="10" />
+  <line x1="150" y1="100" x2="230" y2="100" stroke="#f9a06b" stroke-width="2" />
+  <polygon points="230,95 240,100 230,105" fill="#f9a06b" />
+  <line x1="330" y1="100" x2="410" y2="100" stroke="#f9a06b" stroke-width="2" />
+  <polygon points="410,95 420,100 410,105" fill="#f9a06b" />
+  <text x="75" y="120" font-family="Arial" font-size="18" fill="#2b1a0e">LBO</text>
+  <text x="255" y="120" font-family="Arial" font-size="18" fill="#2b1a0e">Emprunt</text>
+  <text x="435" y="120" font-family="Arial" font-size="18" fill="#2b1a0e">Rendement</text>
+  <text x="120" y="80" font-family="Arial" font-size="14" fill="#7a5c45">Acheteur</text>
+  <text x="280" y="80" font-family="Arial" font-size="14" fill="#7a5c45">Financement</text>
+  <text x="450" y="80" font-family="Arial" font-size="14" fill="#7a5c45">Résultat</text>
+  <rect x="140" y="95" width="20" height="10" fill="#c94e0e" rx="5" />
+  <text x="145" y="105" font-family="Arial" font-size="12" fill="#ffffff">60%</text>
+  <rect x="320" y="95" width="20" height="10" fill="#c94e0e" rx="5" />
+  <text x="325" y="105" font-family="Arial" font-size="12" fill="#ffffff">30%</text>
+</svg>
+      </div>
+      
+
+      <!-- QUESTION D'ENTRETIEN -->
+      <div class="interview-section">
+        <div class="section-label">🎯 Question d'entretien de la semaine</div>
+        <div class="interview-question">"Qu'est-ce que le LBO et comment affecte-t-il la structure de propriété d'une entreprise ?"</div>
+        <div class="interview-answer">
+          <p>Un LBO est une acquisition financée principalement par de l'emprunt. Les étapes clés incluent : </p>
+   <ol>
+   <li>L'identification d'une cible d'acquisition avec un potentiel de croissance solide.</li>
+   <li>La structuration de l'acquisition, avec un mélange de dette et d'apollo (ou d'autres formes de financement).</li>
+   <li>La gestion post-acquisition, incluant la réduction de la dette et l'amélioration de la performance financière.</li>
+   </ol>
+   <p>Cela peut impliquer la dilution de l'actionnariat existant et présente des risques de surendettement si la société cible ne génère pas suffisamment de flux de trésorerie pour servir la dette.</p>
+        </div>
+      </div>
+
+      <!-- OUTILS D'APPRENTISSAGE -->
+      <div class="tools-section">
+        <a class="tool-card" href="https://abarisan.github.io/newsletter-mna/quiz/quiz_2026-08-06.html" target="_blank">
+          <span class="icon">❓</span>
+          <span class="tool-title">Quiz ce numéro</span>
+          <span class="tool-desc">4 questions pour vérifier que tu as compris</span>
+        </a>
+        <a class="tool-card" href="https://claude.ai/new" target="_blank">
+          <span class="icon">🤖</span>
+          <span class="tool-title">Poser une question</span>
+          <span class="tool-desc">Ouvre ton Claude Project M&A pour aller plus loin</span>
+        </a>
+      </div>
+
+      <!-- SOURCES PAR NIVEAU -->
+      <div class="sources-section">
+        <div class="section-label">Sources</div>
+        <ul>
+          <li>[N1] Financial Times - Biggest US law firms explore selling stakes to private equity</li>
+<li>[N2] Mergermarket - Law firms consider private equity investments</li>
+<li>[N3] The Wall Street Journal - Economy’s Sluggish Growth Lifts Appeal of Dividend Stocks</li>
+<li>[N4] Dealogic - M&A Activity in Professional Services Sector</li>
+        </ul>
+        <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:6px; font-family:'Helvetica Neue',Arial,sans-serif; font-size:10px;">
+          <span style="background:#fff3e8;border:1px solid #e85d1a;color:#c94e0e;padding:3px 8px;border-radius:20px;font-weight:700;">N1 · Bloomberg · FT · Capital Finance · CFNEWS · S&P</span>
+          <span style="background:#fff8f2;border:1px solid #f9a06b;color:#7a5c45;padding:3px 8px;border-radius:20px;">N2 · Mergermarket · Reuters · PitchBook</span>
+          <span style="background:#fdf6ee;border:1px solid #fde0c5;color:#9a7060;padding:3px 8px;border-radius:20px;">N3 · WSJ · The Economist</span>
+          <span style="background:#f9f9f9;border:1px solid #e0e0e0;color:#888;padding:3px 8px;border-radius:20px;">N4 · Dealogic · Preqin</span>
+        </div>
+      </div>
+
+    </div><!-- /body -->
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <p>
+        <span class="next">Deck Anki mis à jour en pièce jointe</span><br>
+        The Deal Brief · 5× par semaine · <a href="https://github.com/abarisan/newsletter-mna" style="color:#e85d1a;text-decoration:none;">Code source</a>
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>

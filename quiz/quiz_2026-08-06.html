@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz — The Deal Brief N°41</title>
+  <style>
+    body { font-family: 'Helvetica Neue', Arial, sans-serif; background: #fdf6ee; color: #2b1a0e;
+           margin: 0; padding: 40px 20px; }
+    .container { max-width: 640px; margin: 0 auto; }
+    h1 { font-size: 24px; color: #e85d1a; margin-bottom: 4px; }
+    .subtitle { color: #7a5c45; font-size: 13px; margin-bottom: 40px; }
+    .question { background: #fff; border-radius: 8px; padding: 24px; margin-bottom: 20px;
+                 box-shadow: 0 2px 8px rgba(232,93,26,0.08); }
+    .question h3 { font-size: 16px; margin-bottom: 16px; line-height: 1.5; }
+    .option { display: block; width: 100%; text-align: left; background: #fff8f2;
+               border: 1px solid #fde0c5; border-radius: 6px; padding: 12px 16px;
+               margin-bottom: 8px; cursor: pointer; font-size: 14px; transition: all .15s; }
+    .option:hover { background: #fff3e8; border-color: #f9a06b; }
+    .option.correct { background: #e6f9ec; border-color: #2ecc71; color: #1a6b3a; }
+    .option.wrong   { background: #fdecea; border-color: #e74c3c; color: #7b1c1c; }
+    .explanation { display: none; margin-top: 12px; padding: 12px 16px; background: #fff3e8;
+                    border-left: 3px solid #e85d1a; font-size: 13px; color: #5a3520;
+                    border-radius: 0 6px 6px 0; line-height: 1.6; }
+    .score { display: none; text-align: center; padding: 32px; background: #fff;
+              border-radius: 8px; box-shadow: 0 2px 8px rgba(232,93,26,0.08); }
+    .score h2 { font-size: 28px; color: #e85d1a; }
+    .score p { color: #5a3520; }
+    #submit { display: block; width: 100%; padding: 16px; background: #e85d1a; color: #fff;
+               border: none; border-radius: 8px; font-size: 16px; cursor: pointer; margin-top: 8px; }
+    #submit:hover { background: #c94e0e; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Quiz — N°41</h1>
+  <p class="subtitle">The Deal Brief · 06 August 2026 · 4 questions</p>
+  <div id="quiz"></div>
+  <button id="submit" onclick="submitQuiz()">Voir mes résultats</button>
+  <div class="score" id="score"></div>
+</div>
+<script>
+const questions = [{"question": "Quel est le type de transaction financier qui consiste à utiliser une grande partie d'emprunt pour financer l'acquisition d'une entreprise ?", "options": ["A. Fusion-acquisition", "B. Leveraged Buyout (LBO)", "C. Dilution de l'actionnariat", "D. Investissement direct"], "correct": 1, "explanation": "La bonne réponse est B. Leveraged Buyout (LBO), car c'est un type de transaction financier qui consiste à utiliser une grande partie d'emprunt pour financer l'acquisition d'une entreprise. Les autres options sont incorrectes car la fusion-acquisition est un type de transaction différent, la dilution de l'actionnariat est un phénomène qui peut se produire lors d'une acquisition, et l'investissement direct est un type d'investissement qui ne consiste pas nécessairement à utiliser de l'emprunt."}, {"question": "Qu'est-ce que la dilution de l'actionnariat et comment peut-elle affecter les actionnaires existants ?", "options": ["A. La dilution de l'actionnariat est une augmentation de la part de propriété des actionnaires existants", "B. La dilution de l'actionnariat est une réduction de la part de propriété des actionnaires existants due à l'émission de nouvelles actions", "C. La dilution de l'actionnariat est une transaction financière qui consiste à échanger des actions contre des obligations", "D. La dilution de l'actionnariat est un type de fusion-acquisition"], "correct": 1, "explanation": "La bonne réponse est B. La dilution de l'actionnariat est une réduction de la part de propriété des actionnaires existants due à l'émission de nouvelles actions. Cela se produit lorsque de nouvelles actions sont émises pour financer une acquisition, ce qui peut réduire la part de propriété des actionnaires existants. Les autres options sont incorrectes car la dilution de l'actionnariat ne consiste pas à augmenter la part de propriété des actionnaires existants, ni à échanger des actions contre des obligations, ni à être un type de fusion-acquisition."}, {"question": "Quel est l'impact des tendances macro-économiques sur les décisions d'investissement dans le secteur des services professionnels ?", "options": ["A. Les tendances macro-économiques n'ont aucun impact sur les décisions d'investissement dans le secteur des services professionnels", "B. Les tendances macro-économiques influencent les décisions d'investissement dans le secteur des services professionnels en favorisant les investissements à haut risque", "C. Les tendances macro-économiques influencent les décisions d'investissement dans le secteur des services professionnels en favorisant les investissements dans des secteurs traditionnellement stables", "D. Les tendances macro-économiques déterminent entièrement les décisions d'investissement dans le secteur des services professionnels"], "correct": 2, "explanation": "La bonne réponse est C. Les tendances macro-économiques influencent les décisions d'investissement dans le secteur des services professionnels en favorisant les investissements dans des secteurs traditionnellement stables. En effet, les investisseurs sont de plus en plus à la recherche de rendements attractifs dans des secteurs stables comme les services professionnels, compte tenu de la croissance économique modérée et des taux d'intérêt relativement bas. Les autres options sont incorrectes car les tendances macro-économiques ont bien un impact sur les décisions d'investissement, mais elles ne favorisent pas nécessairement les investissements à haut risque, et elles n'en déterminent pas entièrement les décisions d'investissement."}, {"question": "Quel est le contexte dans lequel les cabinets d'avocats américains, tels que Paul Weiss, exploreraient la possibilité de vendre des parts à des sociétés de capital-investissement ?", "options": ["A. Le contexte d'une crise économique mondiale", "B. Le contexte d'une croissance économique rapide et de taux d'intérêt élevés", "C. Le contexte d'une croissance économique modérée et de taux d'intérêt relativement bas", "D. Le contexte d'une récession économique profonde"], "correct": 2, "explanation": "La bonne réponse est C. Le contexte d'une croissance économique modérée et de taux d'intérêt relativement bas. En effet, les cabinets d'avocats américains, tels que Paul Weiss, exploreraient la possibilité de vendre des parts à des sociétés de capital-investissement dans un contexte où la croissance économique est modérée et les taux d'intérêt sont relativement bas, ce qui les incite à chercher des rendements attractifs dans des secteurs stables comme les services professionnels. Les autres options sont incorrectes car elles ne correspondent pas au contexte économique actuel."}];
+let answered = {};
+
+function buildQuiz() {
+  const quiz = document.getElementById('quiz');
+  questions.forEach((q, qi) => {
+    const div = document.createElement('div');
+    div.className = 'question';
+    div.innerHTML = `<h3>${qi+1}. ${q.question}</h3>` +
+      q.options.map((o, oi) =>
+        `<button class="option" id="q${qi}_${oi}" onclick="answer(${qi},${oi},${q.correct})">${o}</button>`
+      ).join('') +
+      `<div class="explanation" id="exp${qi}">${q.explanation}</div>`;
+    quiz.appendChild(div);
+  });
+}
+
+function answer(qi, oi, correct) {
+  if (answered[qi] !== undefined) return;
+  answered[qi] = oi;
+  const btn = document.getElementById(`q${qi}_${oi}`);
+  const correctBtn = document.getElementById(`q${qi}_${correct}`);
+  btn.classList.add(oi === correct ? 'correct' : 'wrong');
+  if (oi !== correct) correctBtn.classList.add('correct');
+  document.getElementById(`exp${qi}`).style.display = 'block';
+}
+
+function submitQuiz() {
+  const score = Object.values(answered).filter((a, i) => a === questions[i].correct).length;
+  const total = questions.length;
+  const msg = score === total ? "🏆 Parfait ! Tu maîtrises ce numéro." :
+              score >= total/2 ? "👍 Bien, relis les explications des questions ratées." :
+              "📖 Relis le cours — ces notions vont revenir en entretien.";
+  document.getElementById('score').innerHTML =
+    `<h2>${score} / ${total}</h2><p>${msg}</p>`;
+  document.getElementById('score').style.display = 'block';
+  document.getElementById('submit').style.display = 'none';
+  window.scrollTo(0, document.getElementById('score').offsetTop - 20);
+}
+
+buildQuiz();
+</script>
+</body>
+</html>
