@@ -1654,5 +1654,41 @@
     "verso": "Un LBO peut amplifier le rendement des fonds propres car l'emprunt utilisé pour financer l'acquisition peut être remboursé avec les flux de trésorerie générés par l'entreprise acquise. Cela signifie que les actionnaires peuvent bénéficier de rendements élevés sur leur investissement initial, même si la valeur de l'entreprise acquise n'augmente pas significativement. Cependant, cela présente également des risques, car les investisseurs doivent être en mesure de rembourser l'emprunt pour éviter les pertes.",
     "numero": "41",
     "id": 1894058295
+  },
+  {
+    "recto": "Qu'est-ce que la dette sénior ?",
+    "verso": "La dette sénior est une classe de dette qui a la priorité sur les autres types de dette en cas de défaut de l’entreprise. Elle est généralement plus sécurisée et comporte un taux d’intérêt inférieur. Par exemple, dans une situation de défaut, les créanciers détenant de la dette sénior sont payés en premier.",
+    "numero": "42",
+    "id": 1395353890
+  },
+  {
+    "recto": "Qu'est-ce que la dette subordonnée ?",
+    "verso": "La dette subordonnée est une classe de dette qui a une priorité inférieure à celle de la dette sénior en cas de défaut de l’entreprise. Cela signifie que les créanciers détenant de la dette subordonnée sont payés après les créanciers détenant de la dette sénior. La dette subordonnée comporte généralement un taux d’intérêt plus élevé en raison de son risque accrû.",
+    "numero": "42",
+    "id": 1916859584
+  },
+  {
+    "recto": "Comment fonctionne la gestion de la structure de capital d'une entreprise ?",
+    "verso": "La gestion de la structure de capital d'une entreprise consiste à équilibrer la dette et les capitaux propres pour minimiser les coûts et maximiser la valeur de l’entreprise. Cela implique de choisir la combinaison optimale de dette sénior, dette subordonnée et capitaux propres en fonction des objectifs de l’entreprise et de son profil de risque. Par exemple, une entreprise peut choisir d’émettre de la dette sénior pour financer un projet à faible risque, tandis que les projets plus risqués peuvent être financés par des capitaux propres ou de la dette subordonnée.",
+    "numero": "42",
+    "id": 1968568159
+  },
+  {
+    "recto": "Pourquoi la différence entre la dette et les capitaux propres est-elle importante ?",
+    "verso": "La différence entre la dette et les capitaux propres est importante car elle affecte le coût de financement et le risque de l’entreprise. La dette peut être moins chère que les capitaux propres, mais elle comporte également des risques de défaut et de liquidité. Les capitaux propres, en revanche, sont généralement plus chers, mais ils offrent une plus grande flexibilité et une réduction du risque de défaut. Comprendre ces différences est essentiel pour évaluer la structure de capital d’une entreprise et prendre des décisions éclairées en matière de financement.",
+    "numero": "42",
+    "id": 1890438119
+  },
+  {
+    "recto": "Quels sont les facteurs clés à considérer lors de l'évaluation de la structure de capital d'une entreprise ?",
+    "verso": "Lors de l’évaluation de la structure de capital d’une entreprise, il est important de considérer les facteurs tels que le coût de la dette, le coût des capitaux propres, le risque de défaut, la liquidité et la flexibilité. Il est également important de prendre en compte les objectifs de l’entreprise, son profil de risque et les conditions du marché. Par exemple, une entreprise qui opère dans un secteur à forte intensité de capital peut nécessiter une structure de capital plus lourde en dette pour financer ses activités.",
+    "numero": "42",
+    "id": 1263321059
+  },
+  {
+    "recto": "Pourquoi la gestion de la dette est-elle importante pour une entreprise ?",
+    "verso": "La gestion de la dette est importante pour une entreprise car elle peut affecter sa capacité à financer ses activités, à investir dans de nouveaux projets et à faire face aux chocs économiques. Une gestion efficace de la dette peut aider une entreprise à réduire ses coûts, à améliorer sa liquidité et à minimiser son risque de défaut. Par exemple, une entreprise qui gère efficacement sa dette peut être en mesure de négocier des taux d’intérêt plus bas avec ses créanciers, ce qui peut réduire ses coûts de financement et améliorer sa rentabilité.",
+    "numero": "42",
+    "id": 1582845583
   }
 ]
