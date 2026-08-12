@@ -1762,5 +1762,41 @@
     "verso": "Les comparables sont utiles dans l'évaluation d'entreprises car ils permettent de comparer la valorisation d'une entreprise à celle de ses pairs. En analysant les ratios et les multiples de ces entreprises, les investisseurs et les parties prenantes peuvent évaluer la raisonnablement de la valorisation d'une entreprise et identifier les opportunités de croissance ou de consolidation.",
     "numero": "44",
     "id": 1700954252
+  },
+  {
+    "recto": "Qu'est-ce que les précédents transactions ?",
+    "verso": "Les précédents transactions sont une méthode de valorisation qui consiste à analyser les acquisitions récentes dans le même secteur pour déterminer la valorisation d'une entreprise cible. Cette approche repose sur l'hypothèse que les transactions passées peuvent fournir des indications sur la valorisation future des entreprises similaires. Elle implique de sélectionner des transactions récentes et comparables, d'estimer les multiples de valorisation de ces transactions, et d'appliquer ces multiples à la cible.",
+    "numero": "45",
+    "id": 1803324655
+  },
+  {
+    "recto": "Comment fonctionne la méthode des précédents transactions ?",
+    "verso": "La méthode des précédents transactions fonctionne en sélectionnant des transactions récentes et comparables à l'entreprise cible, en estimant les multiples de valorisation de ces transactions, tels que le prix/ventes ou le prix/bénéfice, et en appliquant ces multiples à la cible pour estimer sa valorisation. Cela nécessite d'analyser les caractéristiques des transactions sélectionnées, telles que les secteurs, les tailles et les performances des entreprises impliquées.",
+    "numero": "45",
+    "id": 1772973048
+  },
+  {
+    "recto": "Qu'est-ce que la valorisation d'entreprise ?",
+    "verso": "La valorisation d'entreprise est le processus d'estimation de la valeur d'une entreprise, qui prend en compte divers facteurs tels que les bénéfices, les ventes, les actifs, les dettes et les perspectives de croissance. Elle peut être réalisée à l'aide de différentes méthodes, notamment les précédents transactions, la méthode des flux de trésorerie actualisés (DFC) et la méthode du prix/éarnings (P/E).",
+    "numero": "45",
+    "id": 1413149027
+  },
+  {
+    "recto": "Pourquoi utiliser les précédents transactions pour la valorisation ?",
+    "verso": "Les précédents transactions sont utilisés pour la valorisation parce qu'ils fournissent des indications sur la valorisation des entreprises similaires dans le même secteur. Cette approche peut être utile pour estimer la valorisation d'une entreprise cible, en particulier lorsque les données financières historiques sont limitées ou lorsque l'entreprise opère dans un secteur en évolution rapide. De plus, les précédents transactions peuvent aider à identifier les tendances et les normes de valorisation dans l'industrie.",
+    "numero": "45",
+    "id": 1850899509
+  },
+  {
+    "recto": "Comment les facteurs macro-économiques influencent-ils la valorisation des entreprises ?",
+    "verso": "Les facteurs macro-économiques, tels que les taux d'intérêt, l'inflation, la croissance économique et les événements géopolitiques, peuvent influencer la valorisation des entreprises. Par exemple, une augmentation des taux d'intérêt peut réduire la valorisation des entreprises en augmentant leur coût de capital, tandis qu'une croissance économique forte peut accroître la valorisation des entreprises en améliorant leurs perspectives de bénéfice.",
+    "numero": "45",
+    "id": 1120628662
+  },
+  {
+    "recto": "Dans quel cas utiliser la méthode des précédents transactions pour la valorisation ?",
+    "verso": "La méthode des précédents transactions est particulièrement utile lorsque l'entreprise cible opère dans un secteur avec des transactions récentes et comparables, et lorsque les données financières historiques sont limitées ou peu fiables. Elle peut également être utilisée pour valider les estimations de valorisation obtenues à l'aide d'autres méthodes, telles que la méthode des flux de trésorerie actualisés (DFC). Cependant, il est important de sélectionner des transactions réellement comparables et de prendre en compte les spécificités de l'entreprise cible.",
+    "numero": "45",
+    "id": 1572090419
   }
 ]
