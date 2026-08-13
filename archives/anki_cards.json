@@ -1798,5 +1798,41 @@
     "verso": "La méthode des précédents transactions est particulièrement utile lorsque l'entreprise cible opère dans un secteur avec des transactions récentes et comparables, et lorsque les données financières historiques sont limitées ou peu fiables. Elle peut également être utilisée pour valider les estimations de valorisation obtenues à l'aide d'autres méthodes, telles que la méthode des flux de trésorerie actualisés (DFC). Cependant, il est important de sélectionner des transactions réellement comparables et de prendre en compte les spécificités de l'entreprise cible.",
     "numero": "45",
     "id": 1572090419
+  },
+  {
+    "recto": "Qu'est-ce que la méthode DCF ?",
+    "verso": "La méthode DCF (Discounted Cash Flow) est une technique de valorisation qui consiste à estimer la valeur actuelle des flux de trésorerie futurs d'une entreprise en utilisant un taux d'actualisation. Cette méthode prend en compte le coût du capital et le risque associé à l'investissement. Elle permet de calculer la valeur actuelle des flux de trésorerie futurs en utilisant la formule : Valeur actuelle = Σ (Flux de trésorerie / (1 + Taux d'actualisation)^Période).",
+    "numero": "46",
+    "id": 1766876119
+  },
+  {
+    "recto": "Comment fonctionne le multiple de vente dans la valorisation d'une entreprise ?",
+    "verso": "Le multiple de vente est un ratio qui rapporte la valorisation de l'entreprise à un indicateur financier, comme le chiffre d'affaires ou le bénéfice net. Un multiple de vente élevé indique que les investisseurs ont une grande confiance dans la capacité de l'entreprise à générer des flux de trésorerie futurs. Cela peut être justifié par une forte croissance attendue, une position dominante sur le marché ou des barrières à l'entrée élevées.",
+    "numero": "46",
+    "id": 1304101461
+  },
+  {
+    "recto": "Pourquoi la situation géopolitique influence-t-elle les activités de fusions et acquisitions ?",
+    "verso": "La situation géopolitique peut influencer les activités de fusions et acquisitions en modifiant les conditions de marché et le niveau de risque perçu par les investisseurs. Des tensions entre les pays peuvent entraîner une diminution de la confiance des investisseurs, une augmentation des coûts de transaction et une réduction de la liquidité des marchés. Cela peut ralentir les activités de fusions et acquisitions, car les entreprises et les investisseurs deviennent plus prudents dans leurs décisions d'investissement.",
+    "numero": "46",
+    "id": 2023027527
+  },
+  {
+    "recto": "Qu'est-ce que l'actualisation dans la valorisation d'une entreprise ?",
+    "verso": "L'actualisation est un processus qui consiste à ramener la valeur des flux de trésorerie futurs à leur valeur actuelle en utilisant un taux d'actualisation. Ce taux reflète le coût du capital et le risque associé à l'investissement. L'actualisation permet de comparer les flux de trésorerie de différentes périodes et de prendre des décisions d'investissement en fonction de la valeur actuelle des flux de trésorerie attendus.",
+    "numero": "46",
+    "id": 1388462404
+  },
+  {
+    "recto": "Comment le taux d'actualisation affecte-t-il la valorisation d'une entreprise ?",
+    "verso": "Le taux d'actualisation affecte la valorisation d'une entreprise en modifiant la valeur actuelle des flux de trésorerie futurs. Un taux d'actualisation élevé réduit la valeur actuelle des flux de trésorerie futurs, tandis qu'un taux faible les augmente. Cela signifie que si le taux d'actualisation augmente, la valorisation de l'entreprise diminuera, et vice versa. Il est donc important de choisir un taux d'actualisation approprié pour refléter le coût du capital et le risque associé à l'investissement.",
+    "numero": "46",
+    "id": 1251565093
+  },
+  {
+    "recto": "Dans quel cas utiliser la méthode DCF pour valoriser une entreprise ?",
+    "verso": "La méthode DCF est particulièrement utile pour valoriser les entreprises qui génèrent des flux de trésorerie prévisibles et stables, telles que les entreprises de services publics ou les entreprises de biens de consommation. Elle est également appropriée pour les entreprises qui ont un plan de développement clair et des prévisions financières solides. Cependant, la méthode DCF peut être moins appropriée pour les entreprises qui ont des flux de trésorerie volatils ou imprévisibles, telles que les entreprises de technologie ou les entreprises en démarrage.",
+    "numero": "46",
+    "id": 1377990342
   }
 ]

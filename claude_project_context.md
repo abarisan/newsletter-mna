@@ -1,4 +1,4 @@
-# Contexte The Deal Brief — Mise à jour N°45 (12 August 2026)
+# Contexte The Deal Brief — Mise à jour N°46 (13 August 2026)
 
 ## Mon profil
 Étudiant préparant des entretiens en banque d'affaires M&A.
@@ -11,18 +11,25 @@ Financial Projections, Comptabilisation des inventaires, Mécanique de l'EV/Equi
 ## Deals suivis en ce moment
 Volkswagen's Restructuring Plans and Inventory Management, SpaceX : IPO de 75 Md$, la plus grosse de l'histoire, cas d'école de cash flow, Apple : achat de puces mémoire à une entreprise chinoise sous embargo, L'acquisition d'Air Con par un fonds d'investissement, Uniqlo s'apprête à dominer le marché de la mode mondiale, La Dette vs Equity dans le LBO d'EA : Un Exemple Concret, Anthropic et la fermeture des failles pour limiter l'accès chinois à Claude
 
-## Contenu du dernier numéro (12 August 2026)
+## Contenu du dernier numéro (13 August 2026)
 
 ### Deal de la semaine
-L'acquisition de Fire Point par les forces ukrainiennes, une illustration parfaite des précédents transactions
-<p>L'acquisition de Fire Point, un fabricant de drones, par les forces ukrainiennes, est un exemple récent qui illustre parfaitement le concept de précédents transactions. Selon une source de <strong>Capital Finance</strong>, le montant de l'acquisition est estimé à 100 millions de dollars, avec une prime de 20% par rapport à la valorisation précédente.</p><p>Le deal est conseillé par <em>Goldman Sachs</em> pour le côté Ukrainien et <em>Morgan Stanley</em> pour Fire Point. La structure de l'acquisition implique 60% d'equity et 40% de dette, avec un levier de 2,5 fois l'EBITDA. Cette opération stratégique vise à renforcer les capacités militaires de l'Ukraine grâce à l'intégration de la technologie de drone de Fire Point.</p><p>Un aspect technique important de ce deal est la manière dont les précédents transactions ont été utilisés pour déterminer la valorisation de Fire Point. Les banques conseil ont analysé les acquisitions récentes dans le secteur de la technologie militaire pour éta
+Deal d'Anthropic : vers une valorisation de 2 000 milliards de dollars ?
+<p>Le deal d'Anthropic pourrait être l'un des plus importants de l'année, avec une valorisation Potentielle de 2 000 milliards de dollars. Selon <strong>Financial Times</strong>, les investisseurs misent sur le succès futur de l'entreprise et sa capacité à surmonter les défis liés à l'intelligence artificielle.</p>
+   <p>Le <em>deal</em> illustre parfaitement le concept de valorisation d'une entreprise à forte croissance, avec un <strong>multiple de vente</strong> élevé. Dans ce cas, les investisseurs sont prêts à payer un prix élevé pour une part de l'entreprise en raison de son potentiel de croissance à long terme.</p>
+   <p>Le zoom technique sur ce deal nous permet de voir comment les investisseurs utilisent des <strong>méthodes de valorisation</strong> pour évaluer le potentiel d'une entreprise. Ici, la méthode de <strong>DCF</strong> (Discounted Cash Flow) est utilisée pour estimer la valeur actuelle des flux de trésorerie futurs de l'entreprise.</p>
+   <p>En entretien, je dirais 
 
 ### Cours
-<p>Le chapitre du jour se concentre sur les précédents transactions, une méthode de valorisation qui consiste à analyser les acquisitions récentes dans le même secteur pour déterminer la valorisation d'une entreprise cible. Cette approche repose sur l'hypothèse que les transactions passées peuvent fournir des indications sur la valorisation future des entreprises similaires.</p><p><div class='term'><div class='term-name'>Précédents transactions</div>La méthode de valorisation basée sur l'analyse des précédents transactions, qui implique de sélectionner des transactions récentes et comparables, d'estimer les multiples de valorisation de ces transactions, et d'appliquer ces multiples à la cible pour estimer sa valorisation.</div></p><p>Les avantages de cette méthode incluent la possibilité de refléter les conditions actuelles du marché et de prendre en compte les spécificités du secteur d'activité de l'entreprise. Cependant, elle peut être limitée par la disponibilité de transactions comparables et la nécessité d'ajustements pour refléter les différences entre les entreprises.</p><p>Demain, nous aborderons la méthode de valorisation par flux de trésorerie actualisés (DCF), qui est un
+<p>Le chapitre du jour est consacré à la méthode de valorisation <strong>DCF</strong> (Discounted Cash Flow). Cette méthode est utilisée pour estimer la valeur actuelle des flux de trésorerie futurs d'une entreprise.</p>
+   <p>La <strong>méthode DCF</strong> consiste à calculer la valeur actuelle des flux de trésorerie futurs en utilisant un taux d'actualisation. Le taux d'actualisation reflète le coût du capital et le risque associé à l'investissement.</p>
+   <p>La formule de base de la méthode DCF est la suivante : <strong>Valeur actuelle = Σ (Flux de trésorerie / (1 + Taux d'actualisation)^Période)</strong>. Cette formule nous permet de calculer la valeur actuelle des flux de trésorerie futurs en fonction du taux d'actualisation et de la période de temps.</p>
+   <p>Il est important de noter que la <strong>méthode DCF</strong> nécessite des hypothèses sur les flux de trésorerie futurs et le taux d'actualisation. Ces hypothèses doivent être fondées sur des données réelles et des prévisions raisonnables.</p>
+   <div class='term'><div class='term-name'>Taux d'actualisation</div>Le taux d'actualisation est le taux qui reflète le coût du capital et le risque associé à l'investissement
 
 ### Macro
-L'impact de la sécheresse sur les économies européennes
-<p>La sécheresse actuelle en Europe a des implications significatives pour les économies du continent, notamment en termes de coûts de production et de chaînes d'approvisionnement. Selon <em>Financial Times</em>, la réduction des niveaux d'eau dans les rivières comme le Rhin et le Danube entraîne des coûts supplémentaires pour le transport de marchandises et affecte la production d'énergie.</p>
+La géopolitique et le marché des M&A
+<p>La situation géopolitique actuelle, avec des tensions entre les pays, peut avoir un impact sur le marché des M&A. Selon <strong>The Wall Street Journal</strong>, les tensions entre les États-Unis et la Chine pourraient ralentir les activités de fusions et acquisitions.</p>
 
 ---
 Tu es mon tuteur M&A. Quand je te pose une question :

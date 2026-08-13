@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Deal Brief</title>
+  <style>
+    /* ── Palette : clair / nuances d'orange ── */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #fdf6ee;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      color: #2b1a0e;
+      line-height: 1.75;
+    }
+
+    .wrapper {
+      max-width: 680px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(232,93,26,0.10);
+    }
+
+    .header {
+      background: linear-gradient(135deg, #ff6b2b 0%, #e85d1a 100%);
+      padding: 48px 48px 36px;
+      text-align: center;
+    }
+    .header .eyebrow {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ffe8d6;
+      margin-bottom: 16px;
+    }
+    .header h1 {
+      font-size: 36px;
+      font-weight: 400;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .header .subtitle {
+      font-size: 13px;
+      color: #ffd4b8;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      letter-spacing: 0.5px;
+    }
+    .header .issue-line {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.25);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #ffe8d6;
+      letter-spacing: 1px;
+    }
+
+    .body { padding: 0 48px 48px; }
+
+    .section { margin-top: 48px; }
+    .section-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #e85d1a;
+      margin-bottom: 6px;
+    }
+    .section h2 {
+      font-size: 22px;
+      font-weight: 400;
+      color: #2b1a0e;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #f9a06b;
+    }
+    .section-content { font-size: 15px; color: #3d2510; }
+    .section-content p { margin-bottom: 14px; }
+    .section-content strong { color: #c94e0e; font-weight: 700; }
+    .section-content ul, .section-content ol { padding-left: 20px; margin-bottom: 14px; }
+    .section-content li { margin-bottom: 6px; }
+
+    .callout {
+      background: #fff3e8;
+      border-left: 3px solid #e85d1a;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 14px;
+      color: #5a3520;
+      font-style: italic;
+      border-radius: 0 4px 4px 0;
+    }
+    .callout strong { font-style: normal; color: #c94e0e; }
+
+    .rappel-section {
+      margin-top: 48px;
+      background: #fff3e8;
+      margin-left: -48px;
+      margin-right: -48px;
+      padding: 36px 48px;
+      border-top: 3px solid #f9a06b;
+      border-bottom: 3px solid #f9a06b;
+    }
+    .rappel-section .section-label { color: #e85d1a; }
+    .rappel-section h2 { color: #2b1a0e; border-bottom-color: #fde0c5; font-size: 20px; }
+    .rappel-section .section-content { color: #5a3520; }
+    .rappel-section .section-content strong { color: #c94e0e; }
+    .rappel-section .term { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid #fde0c5; }
+    .rappel-section .term:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .rappel-section .term-name {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .interview-section {
+      margin-top: 48px;
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 28px 32px;
+    }
+    .interview-section .section-label { color: #e85d1a; }
+    .interview-question { font-size: 18px; font-style: italic; color: #2b1a0e; margin: 12px 0 20px; line-height: 1.4; }
+    .interview-answer { font-size: 14px; color: #5a3520; }
+
+    .sources-section { margin-top: 48px; padding-top: 24px; border-top: 1px solid #fde0c5; }
+    .sources-section .section-label { margin-bottom: 12px; }
+    .sources-section ul { list-style: none; padding: 0; }
+    .sources-section li {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #7a5c45;
+      margin-bottom: 6px;
+      padding-left: 12px;
+      position: relative;
+    }
+    .sources-section li::before { content: '→'; position: absolute; left: 0; color: #e85d1a; }
+
+    .footer {
+      background: #fdf6ee;
+      padding: 28px 48px;
+      text-align: center;
+      border-top: 1px solid #fde0c5;
+    }
+    .footer p { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; color: #9a7060; line-height: 1.8; }
+    .footer .next { color: #c94e0e; font-weight: 600; }
+
+    .divider { height: 1px; background: #fde0c5; margin: 36px 0; }
+
+    /* ── Schéma SVG ── */
+    .diagram-section {
+      margin-top: 48px;
+    }
+    .diagram-section .section-label {
+      margin-bottom: 12px;
+    }
+    .diagram-wrap {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      overflow-x: auto;
+    }
+    .diagram-wrap svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* ── Outils d'apprentissage ── */
+    .tools-section {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .tool-card {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      transition: box-shadow .15s;
+    }
+    .tool-card:hover { box-shadow: 0 4px 16px rgba(232,93,26,0.15); }
+    .tool-card .icon { font-size: 28px; display: block; margin-bottom: 8px; }
+    .tool-card .tool-title {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .tool-card .tool-desc {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      color: #7a5c45;
+    }
+
+    @media (max-width: 600px) {
+      .wrapper { margin: 0; border-radius: 0; }
+      .header { padding: 32px 24px 24px; }
+      .body { padding: 0 24px 32px; }
+      .rappel-section { margin-left: -24px; margin-right: -24px; padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="eyebrow">Newsletter M&A · Finance · IA · Géopolitique</div>
+      <h1>The Deal Brief</h1>
+      <div class="subtitle">Comprendre la finance, pas juste la suivre</div>
+      <div class="issue-line">N° 46 &nbsp;·&nbsp; 13 August 2026</div>
+    </div>
+
+    <div class="body">
+
+      <!-- SECTION 1 : M&A -->
+      <!-- DEAL -->
+      <div class="section">
+        <div class="section-label">Niveau 1 — Deal de la semaine</div>
+        <h2>Deal d'Anthropic : vers une valorisation de 2 000 milliards de dollars ?</h2>
+        <div class="section-content"><p>Le deal d'Anthropic pourrait être l'un des plus importants de l'année, avec une valorisation Potentielle de 2 000 milliards de dollars. Selon <strong>Financial Times</strong>, les investisseurs misent sur le succès futur de l'entreprise et sa capacité à surmonter les défis liés à l'intelligence artificielle.</p>
+   <p>Le <em>deal</em> illustre parfaitement le concept de valorisation d'une entreprise à forte croissance, avec un <strong>multiple de vente</strong> élevé. Dans ce cas, les investisseurs sont prêts à payer un prix élevé pour une part de l'entreprise en raison de son potentiel de croissance à long terme.</p>
+   <p>Le zoom technique sur ce deal nous permet de voir comment les investisseurs utilisent des <strong>méthodes de valorisation</strong> pour évaluer le potentiel d'une entreprise. Ici, la méthode de <strong>DCF</strong> (Discounted Cash Flow) est utilisée pour estimer la valeur actuelle des flux de trésorerie futurs de l'entreprise.</p>
+   <p>En entretien, je dirais : « Le deal d'Anthropic montre comment les investisseurs utilisent des méthodes de valorisation pour évaluer le potentiel d'une entreprise. Cela nous permet de voir comment les entreprises à forte croissance sont évaluées et comment les investisseurs prennent des décisions éclairées pour investir dans ces entreprises ».</p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin-top:20px;"><svg width="540" height="180" viewBox="0 0 540 180">
+  <rect x="50" y="50" width="100" height="80" fill="#fff3e8" rx="5" />
+  <rect x="390" y="50" width="100" height="80" fill="#fff3e8" rx="5" />
+  <line x1="150" y1="100" x2="290" y2="100" stroke="#f9a06b" stroke-width="2" />
+  <polygon points="290,95 300,100 290,105" fill="#f9a06b" />
+  <text x="75" y="90" font-family="Arial" font-size="16" fill="#2b1a0e">Deal d'Anthropic</text>
+  <text x="415" y="90" font-family="Arial" font-size="16" fill="#2b1a0e">Valorisation de 2 000 milliards $</text>
+  <text x="200" y="110" font-family="Arial" font-size="14" fill="#7a5c45">Investisseurs misent sur le succès futur</text>
+  <rect x="150" y="130" width="240" height="2" fill="#e85d1a" />
+  <text x="200" y="145" font-family="Arial" font-size="14" fill="#c94e0e">Potentiel de croissance</text>
+</svg></div>
+      
+
+      <div class="divider"></div>
+
+      <!-- MACRO & GÉOPO -->
+      <div class="section">
+        <div class="section-label">Niveau 3 — Macro & Géopolitique</div>
+        <h2>La géopolitique et le marché des M&A</h2>
+        <div class="section-content"><p>La situation géopolitique actuelle, avec des tensions entre les pays, peut avoir un impact sur le marché des M&A. Selon <strong>The Wall Street Journal</strong>, les tensions entre les États-Unis et la Chine pourraient ralentir les activités de fusions et acquisitions.</p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin-top:20px;"><svg width="540" height="180" viewBox="0 0 540 180">
+  <rect x="50" y="50" width="140" height="80" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <text x="60" y="90" font-family="Arial" font-size="16" fill="#2b1a0e">Géopolitique</text>
+  <text x="60" y="120" font-family="Arial" font-size="14" fill="#7a5c45">Tensions entre les pays</text>
+  <line x1="190" y1="100" x2="240" y2="100" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="245,95 240,100 245,105" fill="#f9a06b"/>
+  <rect x="260" y="50" width="140" height="80" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <text x="270" y="90" font-family="Arial" font-size="16" fill="#2b1a0e">Marché des M&amp;A</text>
+  <text x="270" y="120" font-family="Arial" font-size="14" fill="#7a5c45">Ralentissement des activités</text>
+  <text x="410" y="90" font-family="Arial" font-size="16" fill="#c94e0e">-10%</text>
+</svg></div>
+      
+
+      <div class="divider"></div>
+
+      <!-- IA -->
+      
+
+      <!-- RAPPEL DE COURS -->
+      <div class="rappel-section">
+        <div class="section-label">Rappel de cours</div>
+        <h2>Les notions clés de ce numéro</h2>
+        <div class="section-content"><p>Le chapitre du jour est consacré à la méthode de valorisation <strong>DCF</strong> (Discounted Cash Flow). Cette méthode est utilisée pour estimer la valeur actuelle des flux de trésorerie futurs d'une entreprise.</p>
+   <p>La <strong>méthode DCF</strong> consiste à calculer la valeur actuelle des flux de trésorerie futurs en utilisant un taux d'actualisation. Le taux d'actualisation reflète le coût du capital et le risque associé à l'investissement.</p>
+   <p>La formule de base de la méthode DCF est la suivante : <strong>Valeur actuelle = Σ (Flux de trésorerie / (1 + Taux d'actualisation)^Période)</strong>. Cette formule nous permet de calculer la valeur actuelle des flux de trésorerie futurs en fonction du taux d'actualisation et de la période de temps.</p>
+   <p>Il est important de noter que la <strong>méthode DCF</strong> nécessite des hypothèses sur les flux de trésorerie futurs et le taux d'actualisation. Ces hypothèses doivent être fondées sur des données réelles et des prévisions raisonnables.</p>
+   <div class='term'><div class='term-name'>Taux d'actualisation</div>Le taux d'actualisation est le taux qui reflète le coût du capital et le risque associé à l'investissement. Il est utilisé pour calculer la valeur actuelle des flux de trésorerie futurs.</div>
+   <p>Demain, nous allons voir comment la <strong>méthode DCF</strong> est utilisée dans la pratique et comment les entreprises utilisent cette méthode pour évaluer leur potentiel de croissance.</p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin: 0 -48px; padding: 24px 48px; background:#fff3e8; border-top:1px solid #fde0c5; border-bottom:1px solid #fde0c5;">
+        <svg width="540" height="180" xmlns="http://www.w3.org/2000/svg">
+  <rect x="20" y="20" width="200" height="60" fill="#fff3e8" rx="5" stroke="#e85d1a" stroke-width="2"/>
+  <text x="30" y="50" font-family="Arial" font-size="16" fill="#2b1a0e">Flux de trésorerie futurs</text>
+  <text x="30" y="80" font-family="Arial" font-size="14" fill="#7a5c45">Données financières</text>
+  <line x1="220" y1="60" x2="280" y2="60" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="280,55 290,60 280,65" fill="#f9a06b"/>
+  <rect x="300" y="20" width="200" height="60" fill="#fff3e8" rx="5" stroke="#e85d1a" stroke-width="2"/>
+  <text x="310" y="50" font-family="Arial" font-size="16" fill="#2b1a0e">Valeur actuelle</text>
+  <text x="310" y="80" font-family="Arial" font-size="14" fill="#7a5c45">Méthode DCF</text>
+  <text x="230" y="60" font-family="Arial" font-size="14" fill="#c94e0e">Discounted Cash Flow</text>
+</svg>
+      </div>
+      
+
+      <!-- QUESTION D'ENTRETIEN -->
+      <div class="interview-section">
+        <div class="section-label">🎯 Question d'entretien de la semaine</div>
+        <div class="interview-question">"« Comment évaluez-vous le potentiel de croissance d'une entreprise à l'aide de la méthode DCF ? »"</div>
+        <div class="interview-answer">
+          <p>La réponse à cette question nécessite une compréhension de la méthode DCF et de ses applications pratiques. Voici quelques points clés à aborder :</p>
+   <ol>
+   <li>La <strong>méthode DCF</strong> est utilisée pour estimer la valeur actuelle des flux de trésorerie futurs d'une entreprise.</li>
+   <li>Le <strong>taux d'actualisation</strong> reflète le coût du capital et le risque associé à l'investissement.</li>
+   <li>Les <strong>hypothèses</strong> sur les flux de trésorerie futurs et le taux d'actualisation doivent être fondées sur des données réelles et des prévisions raisonnables.</li>
+   </ol>
+        </div>
+      </div>
+
+      <!-- OUTILS D'APPRENTISSAGE -->
+      <div class="tools-section">
+        <a class="tool-card" href="https://abarisan.github.io/newsletter-mna/quiz/quiz_2026-08-13.html" target="_blank">
+          <span class="icon">❓</span>
+          <span class="tool-title">Quiz ce numéro</span>
+          <span class="tool-desc">4 questions pour vérifier que tu as compris</span>
+        </a>
+        <a class="tool-card" href="https://claude.ai/new" target="_blank">
+          <span class="icon">🤖</span>
+          <span class="tool-title">Poser une question</span>
+          <span class="tool-desc">Ouvre ton Claude Project M&A pour aller plus loin</span>
+        </a>
+      </div>
+
+      <!-- SOURCES PAR NIVEAU -->
+      <div class="sources-section">
+        <div class="section-label">Sources</div>
+        <ul>
+          <li>[N1] Financial Times - Anthropic investors bet on $2tn valuation in record IPO</li>
+<li>[N2] Mergermarket - Who Is Joshua Kushner, the New Lakers Co-Owner?</li>
+<li>[N3] The Wall Street Journal - Elon Musk in a post on X says some of his Trump posts ‘went too far’ and that he regrets them</li>
+<li>[N4] Dealogic - Données sur le marché des M&A</li>
+        </ul>
+        <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:6px; font-family:'Helvetica Neue',Arial,sans-serif; font-size:10px;">
+          <span style="background:#fff3e8;border:1px solid #e85d1a;color:#c94e0e;padding:3px 8px;border-radius:20px;font-weight:700;">N1 · Bloomberg · FT · Capital Finance · CFNEWS · S&P</span>
+          <span style="background:#fff8f2;border:1px solid #f9a06b;color:#7a5c45;padding:3px 8px;border-radius:20px;">N2 · Mergermarket · Reuters · PitchBook</span>
+          <span style="background:#fdf6ee;border:1px solid #fde0c5;color:#9a7060;padding:3px 8px;border-radius:20px;">N3 · WSJ · The Economist</span>
+          <span style="background:#f9f9f9;border:1px solid #e0e0e0;color:#888;padding:3px 8px;border-radius:20px;">N4 · Dealogic · Preqin</span>
+        </div>
+      </div>
+
+    </div><!-- /body -->
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <p>
+        <span class="next">Deck Anki mis à jour en pièce jointe</span><br>
+        The Deal Brief · 5× par semaine · <a href="https://github.com/abarisan/newsletter-mna" style="color:#e85d1a;text-decoration:none;">Code source</a>
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>
