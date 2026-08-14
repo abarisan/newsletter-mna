@@ -1,4 +1,4 @@
-# Contexte The Deal Brief — Mise à jour N°46 (13 August 2026)
+# Contexte The Deal Brief — Mise à jour N°47 (14 August 2026)
 
 ## Mon profil
 Étudiant préparant des entretiens en banque d'affaires M&A.
@@ -11,25 +11,24 @@ Financial Projections, Comptabilisation des inventaires, Mécanique de l'EV/Equi
 ## Deals suivis en ce moment
 Volkswagen's Restructuring Plans and Inventory Management, SpaceX : IPO de 75 Md$, la plus grosse de l'histoire, cas d'école de cash flow, Apple : achat de puces mémoire à une entreprise chinoise sous embargo, L'acquisition d'Air Con par un fonds d'investissement, Uniqlo s'apprête à dominer le marché de la mode mondiale, La Dette vs Equity dans le LBO d'EA : Un Exemple Concret, Anthropic et la fermeture des failles pour limiter l'accès chinois à Claude
 
-## Contenu du dernier numéro (13 August 2026)
+## Contenu du dernier numéro (14 August 2026)
 
 ### Deal de la semaine
-Deal d'Anthropic : vers une valorisation de 2 000 milliards de dollars ?
-<p>Le deal d'Anthropic pourrait être l'un des plus importants de l'année, avec une valorisation Potentielle de 2 000 milliards de dollars. Selon <strong>Financial Times</strong>, les investisseurs misent sur le succès futur de l'entreprise et sa capacité à surmonter les défis liés à l'intelligence artificielle.</p>
-   <p>Le <em>deal</em> illustre parfaitement le concept de valorisation d'une entreprise à forte croissance, avec un <strong>multiple de vente</strong> élevé. Dans ce cas, les investisseurs sont prêts à payer un prix élevé pour une part de l'entreprise en raison de son potentiel de croissance à long terme.</p>
-   <p>Le zoom technique sur ce deal nous permet de voir comment les investisseurs utilisent des <strong>méthodes de valorisation</strong> pour évaluer le potentiel d'une entreprise. Ici, la méthode de <strong>DCF</strong> (Discounted Cash Flow) est utilisée pour estimer la valeur actuelle des flux de trésorerie futurs de l'entreprise.</p>
-   <p>En entretien, je dirais 
+La valorisation des entreprises par le WACC : le cas de JPMorgan et Polymarket
+<p>La semaine dernière, nous avons couvert les bases de la mécanique LBO. Cette semaine, nous allons plus loin en explorant le concept de WACC (Weighted Average Cost of Capital) et son application concrète dans le cas de JPMorgan et Polymarket. Le deal récent où JPMorgan a débancarisé Polymarket illustre parfaitement l'importance du WACC dans la prise de décision financière.</p>
+   <p>Le WACC est essentiel pour évaluer la rentabilité d'un projet ou d'une entreprise, car il intègre à la fois le coût de la dette et le coût des capitaux propres. Dans le cas de JPMorgan et Polymarket, le WACC a joué un rôle clé dans la décision de financement. <strong>Polymarket</strong>, en cherchant à atteindre une valorisation de 20 milliards de dollars, a dû convaincre les investisseurs de son potentiel de croissance. Cependant, les préoccupations réglementaires ont amené JPMorgan à reconsidérer sa relation avec Polymarket, démontrant ainsi l'impact du WACC sur les décisions financières.</p>
+   <p>Le <
 
 ### Cours
-<p>Le chapitre du jour est consacré à la méthode de valorisation <strong>DCF</strong> (Discounted Cash Flow). Cette méthode est utilisée pour estimer la valeur actuelle des flux de trésorerie futurs d'une entreprise.</p>
-   <p>La <strong>méthode DCF</strong> consiste à calculer la valeur actuelle des flux de trésorerie futurs en utilisant un taux d'actualisation. Le taux d'actualisation reflète le coût du capital et le risque associé à l'investissement.</p>
-   <p>La formule de base de la méthode DCF est la suivante : <strong>Valeur actuelle = Σ (Flux de trésorerie / (1 + Taux d'actualisation)^Période)</strong>. Cette formule nous permet de calculer la valeur actuelle des flux de trésorerie futurs en fonction du taux d'actualisation et de la période de temps.</p>
-   <p>Il est important de noter que la <strong>méthode DCF</strong> nécessite des hypothèses sur les flux de trésorerie futurs et le taux d'actualisation. Ces hypothèses doivent être fondées sur des données réelles et des prévisions raisonnables.</p>
-   <div class='term'><div class='term-name'>Taux d'actualisation</div>Le taux d'actualisation est le taux qui reflète le coût du capital et le risque associé à l'investissement
+<p>Le WACC, ou coût moyen pondéré du capital, est une mesure qui combine le coût de la dette et le coût des capitaux propres d'une entreprise. Il est utilisé pour évaluer si un projet ou une entreprise est rentable en comparant son taux de rendement attendu au WACC. Le WACC est calculé en pondérant le coût de la dette et le coût des capitaux propres par leur proportion dans la structure de financement de l'entreprise.</p>
+   <div class='term'><div class='term-name'>Coût de la dette</div>Le coût de la dette reflète le taux d'intérêt que l'entreprise doit payer sur ses emprunts. Il est généralement exprimé en pourcentage.</div>
+   <p>Le coût des capitaux propres, quant à lui, représente le rendement exigé par les actionnaires. Il peut être estimé à l'aide de modèles comme le Modèle d'évaluation des actifs financiers (CAPM), qui prend en compte le rendement sans risque, la prime de risque de marché et le bêta de l'entreprise.</p>
+   <div class='term'><div class='term-name'>Prime de risque</div>La prime de risque représente la différence entre le rendement attendu d'un actif risqué et le rendement sans risque. Elle est fonction du niveau de risque perçu.</div>
+   <p>Enfin, la formule d
 
 ### Macro
-La géopolitique et le marché des M&A
-<p>La situation géopolitique actuelle, avec des tensions entre les pays, peut avoir un impact sur le marché des M&A. Selon <strong>The Wall Street Journal</strong>, les tensions entre les États-Unis et la Chine pourraient ralentir les activités de fusions et acquisitions.</p>
+L'impact de la réglementation sur les décisions de financement
+<p>La réglementation financière joue un rôle majeur dans la façon dont les entreprises comme JPMorgan évaluent et gèrent les risques. Les changements dans la réglementation, comme ceux concernant les prédictions et les marchés, peuvent avoir un impact significatif sur les décisions de financement et les stratégies d'investissement. Cela souligne l'importance de prendre en compte les facteurs macro-économiques et réglementaires dans l'analyse du WACC et la valorisation des entreprises.</p>
 
 ---
 Tu es mon tuteur M&A. Quand je te pose une question :

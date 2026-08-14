@@ -1834,5 +1834,41 @@
     "verso": "La méthode DCF est particulièrement utile pour valoriser les entreprises qui génèrent des flux de trésorerie prévisibles et stables, telles que les entreprises de services publics ou les entreprises de biens de consommation. Elle est également appropriée pour les entreprises qui ont un plan de développement clair et des prévisions financières solides. Cependant, la méthode DCF peut être moins appropriée pour les entreprises qui ont des flux de trésorerie volatils ou imprévisibles, telles que les entreprises de technologie ou les entreprises en démarrage.",
     "numero": "46",
     "id": 1377990342
+  },
+  {
+    "recto": "Qu'est-ce que le WACC ?",
+    "verso": "Le WACC, ou coût moyen pondéré du capital, est une mesure qui combine le coût de la dette et le coût des capitaux propres d'une entreprise. Il est utilisé pour évaluer si un projet ou une entreprise est rentable. Le WACC est calculé en pondérant le coût de la dette et le coût des capitaux propres par leur proportion dans la structure de financement de l'entreprise.",
+    "numero": "47",
+    "id": 1410119828
+  },
+  {
+    "recto": "Qu'est-ce que le coût de la dette ?",
+    "verso": "Le coût de la dette reflète le taux d'intérêt que l'entreprise doit payer sur ses emprunts. Il est généralement exprimé en pourcentage. Par exemple, si une entreprise emprunte 100 000 euros à un taux d'intérêt de 5%, son coût de la dette pour cet emprunt est de 5 000 euros par an.",
+    "numero": "47",
+    "id": 1770909034
+  },
+  {
+    "recto": "Comment fonctionne le WACC dans l'évaluation d'un projet ?",
+    "verso": "Le WACC est utilisé pour évaluer si un projet ou une entreprise est rentable en comparant son taux de rendement attendu au WACC. Si le taux de rendement attendu est supérieur au WACC, le projet est considéré comme rentable. Le WACC prend en compte à la fois le coût de la dette et le coût des capitaux propres, permettant ainsi une évaluation plus complète de la rentabilité du projet.",
+    "numero": "47",
+    "id": 1181752169
+  },
+  {
+    "recto": "Pourquoi le WACC est-il important dans la prise de décision financière ?",
+    "verso": "Le WACC est important car il permet aux entreprises de comparer les coûts et les bénéfices potentiels d'un projet ou d'une entreprise. En évaluant le WACC, les entreprises peuvent déterminer si un projet est rentable et si les returns attendus sont supérieurs aux coûts de financement. Cela aide les entreprises à prendre des décisions éclairées concernant les investissements et la structure de financement.",
+    "numero": "47",
+    "id": 1459015510
+  },
+  {
+    "recto": "Dans quel cas utilise-t-on le WACC pour évaluer la rentabilité d'une entreprise ?",
+    "verso": "On utilise le WACC pour évaluer la rentabilité d'une entreprise lorsque l'on souhaite comparer son taux de rendement attendu à ses coûts de financement. Cela est particulièrement utile lors de l'évaluation d'un projet d'investissement ou lors de la prise de décision concernant la structure de financement d'une entreprise. Le WACC permet de prendre en compte à la fois le coût de la dette et le coût des capitaux propres, offrant une vue complète de la rentabilité de l'entreprise.",
+    "numero": "47",
+    "id": 1462859826
+  },
+  {
+    "recto": "Pourquoi la réglementation financière affecte-t-elle l'utilisation du WACC ?",
+    "verso": "La réglementation financière peut affecter l'utilisation du WACC en modifiant les coûts de financement et les exigences de capitaux propres pour les entreprises. Les changements dans la réglementation peuvent ainsi impacter le coût de la dette et le coût des capitaux propres, ce qui à son tour affecte le WACC. Par conséquent, les entreprises doivent prendre en compte la réglementation financière lors de l'évaluation de leur WACC et de leurs décisions financières.",
+    "numero": "47",
+    "id": 1352503027
   }
 ]

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Deal Brief</title>
+  <style>
+    /* ── Palette : clair / nuances d'orange ── */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #fdf6ee;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      color: #2b1a0e;
+      line-height: 1.75;
+    }
+
+    .wrapper {
+      max-width: 680px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(232,93,26,0.10);
+    }
+
+    .header {
+      background: linear-gradient(135deg, #ff6b2b 0%, #e85d1a 100%);
+      padding: 48px 48px 36px;
+      text-align: center;
+    }
+    .header .eyebrow {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ffe8d6;
+      margin-bottom: 16px;
+    }
+    .header h1 {
+      font-size: 36px;
+      font-weight: 400;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .header .subtitle {
+      font-size: 13px;
+      color: #ffd4b8;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      letter-spacing: 0.5px;
+    }
+    .header .issue-line {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.25);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #ffe8d6;
+      letter-spacing: 1px;
+    }
+
+    .body { padding: 0 48px 48px; }
+
+    .section { margin-top: 48px; }
+    .section-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #e85d1a;
+      margin-bottom: 6px;
+    }
+    .section h2 {
+      font-size: 22px;
+      font-weight: 400;
+      color: #2b1a0e;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #f9a06b;
+    }
+    .section-content { font-size: 15px; color: #3d2510; }
+    .section-content p { margin-bottom: 14px; }
+    .section-content strong { color: #c94e0e; font-weight: 700; }
+    .section-content ul, .section-content ol { padding-left: 20px; margin-bottom: 14px; }
+    .section-content li { margin-bottom: 6px; }
+
+    .callout {
+      background: #fff3e8;
+      border-left: 3px solid #e85d1a;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 14px;
+      color: #5a3520;
+      font-style: italic;
+      border-radius: 0 4px 4px 0;
+    }
+    .callout strong { font-style: normal; color: #c94e0e; }
+
+    .rappel-section {
+      margin-top: 48px;
+      background: #fff3e8;
+      margin-left: -48px;
+      margin-right: -48px;
+      padding: 36px 48px;
+      border-top: 3px solid #f9a06b;
+      border-bottom: 3px solid #f9a06b;
+    }
+    .rappel-section .section-label { color: #e85d1a; }
+    .rappel-section h2 { color: #2b1a0e; border-bottom-color: #fde0c5; font-size: 20px; }
+    .rappel-section .section-content { color: #5a3520; }
+    .rappel-section .section-content strong { color: #c94e0e; }
+    .rappel-section .term { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid #fde0c5; }
+    .rappel-section .term:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .rappel-section .term-name {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .interview-section {
+      margin-top: 48px;
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 28px 32px;
+    }
+    .interview-section .section-label { color: #e85d1a; }
+    .interview-question { font-size: 18px; font-style: italic; color: #2b1a0e; margin: 12px 0 20px; line-height: 1.4; }
+    .interview-answer { font-size: 14px; color: #5a3520; }
+
+    .sources-section { margin-top: 48px; padding-top: 24px; border-top: 1px solid #fde0c5; }
+    .sources-section .section-label { margin-bottom: 12px; }
+    .sources-section ul { list-style: none; padding: 0; }
+    .sources-section li {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #7a5c45;
+      margin-bottom: 6px;
+      padding-left: 12px;
+      position: relative;
+    }
+    .sources-section li::before { content: '→'; position: absolute; left: 0; color: #e85d1a; }
+
+    .footer {
+      background: #fdf6ee;
+      padding: 28px 48px;
+      text-align: center;
+      border-top: 1px solid #fde0c5;
+    }
+    .footer p { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; color: #9a7060; line-height: 1.8; }
+    .footer .next { color: #c94e0e; font-weight: 600; }
+
+    .divider { height: 1px; background: #fde0c5; margin: 36px 0; }
+
+    /* ── Schéma SVG ── */
+    .diagram-section {
+      margin-top: 48px;
+    }
+    .diagram-section .section-label {
+      margin-bottom: 12px;
+    }
+    .diagram-wrap {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      overflow-x: auto;
+    }
+    .diagram-wrap svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* ── Outils d'apprentissage ── */
+    .tools-section {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .tool-card {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      transition: box-shadow .15s;
+    }
+    .tool-card:hover { box-shadow: 0 4px 16px rgba(232,93,26,0.15); }
+    .tool-card .icon { font-size: 28px; display: block; margin-bottom: 8px; }
+    .tool-card .tool-title {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .tool-card .tool-desc {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      color: #7a5c45;
+    }
+
+    @media (max-width: 600px) {
+      .wrapper { margin: 0; border-radius: 0; }
+      .header { padding: 32px 24px 24px; }
+      .body { padding: 0 24px 32px; }
+      .rappel-section { margin-left: -24px; margin-right: -24px; padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="eyebrow">Newsletter M&A · Finance · IA · Géopolitique</div>
+      <h1>The Deal Brief</h1>
+      <div class="subtitle">Comprendre la finance, pas juste la suivre</div>
+      <div class="issue-line">N° 47 &nbsp;·&nbsp; 14 August 2026</div>
+    </div>
+
+    <div class="body">
+
+      <!-- SECTION 1 : M&A -->
+      <!-- DEAL -->
+      <div class="section">
+        <div class="section-label">Niveau 1 — Deal de la semaine</div>
+        <h2>La valorisation des entreprises par le WACC : le cas de JPMorgan et Polymarket</h2>
+        <div class="section-content"><p>La semaine dernière, nous avons couvert les bases de la mécanique LBO. Cette semaine, nous allons plus loin en explorant le concept de WACC (Weighted Average Cost of Capital) et son application concrète dans le cas de JPMorgan et Polymarket. Le deal récent où JPMorgan a débancarisé Polymarket illustre parfaitement l'importance du WACC dans la prise de décision financière.</p>
+   <p>Le WACC est essentiel pour évaluer la rentabilité d'un projet ou d'une entreprise, car il intègre à la fois le coût de la dette et le coût des capitaux propres. Dans le cas de JPMorgan et Polymarket, le WACC a joué un rôle clé dans la décision de financement. <strong>Polymarket</strong>, en cherchant à atteindre une valorisation de 20 milliards de dollars, a dû convaincre les investisseurs de son potentiel de croissance. Cependant, les préoccupations réglementaires ont amené JPMorgan à reconsidérer sa relation avec Polymarket, démontrant ainsi l'impact du WACC sur les décisions financières.</p>
+   <p>Le <em>rationnel stratégique</em> derrière cette décision peut être lié à la prime de risque associée aux investissements dans des entreprises comme Polymarket. Le WACC permet de prendre en compte cette prime de risque en ajustant le coût des capitaux propres en fonction du niveau de risque perçu. Dans ce cas, la valorisation de Polymarket et les exigences réglementaires ont probablement contribué à une réévaluation du WACC, influençant la décision de financement.</p>
+   <p>Une phrase d'entretien qui pourrait être utilisée à propos de ce deal est : « Le WACC est un outil crucial dans l'évaluation des opportunités d'investissement, especially dans les cas où le risque réglementaire est élevé, comme pour Polymarket. »</p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin-top:20px;"><svg width="540" height="200" viewBox="0 0 540 200">
+  <rect x="50" y="50" width="100" height="100" fill="#fff3e8" rx="10" />
+  <rect x="200" y="50" width="100" height="100" fill="#fff3e8" rx="10" />
+  <rect x="350" y="50" width="100" height="100" fill="#fff3e8" rx="10" />
+  <line x1="150" y1="100" x2="200" y2="100" stroke="#f9a06b" stroke-width="2" />
+  <polygon points="200,90 220,100 200,110" fill="#f9a06b" />
+  <line x1="300" y1="100" x2="350" y2="100" stroke="#f9a06b" stroke-width="2" />
+  <polygon points="350,90 370,100 350,110" fill="#f9a06b" />
+  <text x="75" y="120" font-family="Arial" font-size="16" fill="#2b1a0e">JPMorgan</text>
+  <text x="225" y="120" font-family="Arial" font-size="16" fill="#2b1a0e">WACC</text>
+  <text x="375" y="120" font-family="Arial" font-size="16" fill="#2b1a0e">Polymarket</text>
+  <text x="260" y="80" font-family="Arial" font-size="14" fill="#7a5c45">Débancarisation</text>
+  <text x="410" y="80" font-family="Arial" font-size="14" fill="#7a5c45">Deal</text>
+  <text x="120" y="150" font-family="Arial" font-size="14" fill="#c94e0e">Valorisation</text>
+  <text x="320" y="150" font-family="Arial" font-size="14" fill="#c94e0e">Résultat</text>
+  <rect x="0" y="0" width="540" height="200" fill="none" stroke="#e85d1a" stroke-width="1" rx="10" />
+</svg></div>
+      
+
+      <div class="divider"></div>
+
+      <!-- MACRO & GÉOPO -->
+      <div class="section">
+        <div class="section-label">Niveau 3 — Macro & Géopolitique</div>
+        <h2>L'impact de la réglementation sur les décisions de financement</h2>
+        <div class="section-content"><p>La réglementation financière joue un rôle majeur dans la façon dont les entreprises comme JPMorgan évaluent et gèrent les risques. Les changements dans la réglementation, comme ceux concernant les prédictions et les marchés, peuvent avoir un impact significatif sur les décisions de financement et les stratégies d'investissement. Cela souligne l'importance de prendre en compte les facteurs macro-économiques et réglementaires dans l'analyse du WACC et la valorisation des entreprises.</p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin-top:20px;"><svg width="540" height="200" viewBox="0 0 540 200" xmlns="http://www.w3.org/2000/svg">
+  <rect x="50" y="50" width="200" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <rect x="290" y="50" width="200" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <text x="100" y="120" font-family="Arial" font-size="20" fill="#2b1a0e">Réglementation</text>
+  <text x="340" y="120" font-family="Arial" font-size="20" fill="#2b1a0e">Décisions de financement</text>
+  <line x1="250" y1="100" x2="280" y2="100" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="280,90 290,100 280,110" fill="#f9a06b"/>
+  <text x="150" y="80" font-family="Arial" font-size="18" fill="#7a5c45">Changements dans la réglementation</text>
+  <text x="310" y="80" font-family="Arial" font-size="18" fill="#7a5c45">Gestion des risques</text>
+  <rect x="120" y="60" width="20" height="20" fill="#c94e0e" rx="5"/>
+  <text x="140" y="75" font-family="Arial" font-size="14" fill="#2b1a0e">Impact majeur</text>
+</svg></div>
+      
+
+      <div class="divider"></div>
+
+      <!-- IA -->
+      
+
+      <!-- RAPPEL DE COURS -->
+      <div class="rappel-section">
+        <div class="section-label">Rappel de cours</div>
+        <h2>Les notions clés de ce numéro</h2>
+        <div class="section-content"><p>Le WACC, ou coût moyen pondéré du capital, est une mesure qui combine le coût de la dette et le coût des capitaux propres d'une entreprise. Il est utilisé pour évaluer si un projet ou une entreprise est rentable en comparant son taux de rendement attendu au WACC. Le WACC est calculé en pondérant le coût de la dette et le coût des capitaux propres par leur proportion dans la structure de financement de l'entreprise.</p>
+   <div class='term'><div class='term-name'>Coût de la dette</div>Le coût de la dette reflète le taux d'intérêt que l'entreprise doit payer sur ses emprunts. Il est généralement exprimé en pourcentage.</div>
+   <p>Le coût des capitaux propres, quant à lui, représente le rendement exigé par les actionnaires. Il peut être estimé à l'aide de modèles comme le Modèle d'évaluation des actifs financiers (CAPM), qui prend en compte le rendement sans risque, la prime de risque de marché et le bêta de l'entreprise.</p>
+   <div class='term'><div class='term-name'>Prime de risque</div>La prime de risque représente la différence entre le rendement attendu d'un actif risqué et le rendement sans risque. Elle est fonction du niveau de risque perçu.</div>
+   <p>Enfin, la formule du WACC combine ces éléments : WACC = (Proportion de dette * Coût de la dette) + (Proportion de capitaux propres * Coût des capitaux propres). Cette formule permet d'obtenir un coût moyen pondéré du capital qui reflète la structure de financement de l'entreprise et les coûts associés à chaque source de financement.</p>
+   <p>Dans le prochain chapitre, nous allons explorer plus en profondeur le modèle LBO et les différentes étapes impliquées dans une opération de leveraged buyout.</p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin: 0 -48px; padding: 24px 48px; background:#fff3e8; border-top:1px solid #fde0c5; border-bottom:1px solid #fde0c5;">
+        <svg width="540" height="200" viewBox="0 0 540 200">
+  <rect x="50" y="50" width="100" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <text x="70" y="120" font-family="Arial" font-size="24" fill="#2b1a0e">Coût de la dette</text>
+  <rect x="220" y="50" width="100" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <text x="240" y="120" font-family="Arial" font-size="24" fill="#2b1a0e">Coût des capitaux propres</text>
+  <line x1="150" y1="100" x2="220" y2="100" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="220,90 230,100 220,110" fill="#f9a06b"/>
+  <rect x="390" y="50" width="100" height="100" fill="#fff3e8" rx="10" stroke="#e85d1a" stroke-width="2"/>
+  <text x="410" y="120" font-family="Arial" font-size="24" fill="#2b1a0e">WACC</text>
+  <line x1="320" y1="100" x2="390" y2="100" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="390,90 400,100 390,110" fill="#f9a06b"/>
+  <text x="100" y="180" font-family="Arial" font-size="18" fill="#7a5c45">Combinaison du coût de la dette et des capitaux propres</text>
+</svg>
+      </div>
+      
+
+      <!-- QUESTION D'ENTRETIEN -->
+      <div class="interview-section">
+        <div class="section-label">🎯 Question d'entretien de la semaine</div>
+        <div class="interview-question">"Qu'est-ce que le WACC et comment est-il utilisé dans l'évaluation des projets d'investissement ?"</div>
+        <div class="interview-answer">
+          <p>Le WACC, ou coût moyen pondéré du capital, est une mesure financière utilisée pour évaluer la rentabilité d'un projet ou d'une entreprise. Il combine le coût de la dette et le coût des capitaux propres, en les pondérant par leur proportion dans la structure de financement.</p>
+   <ol>
+      <li><strong>Définition et importance</strong> : Le WACC est essentiel pour comparer le taux de rendement attendu d'un projet avec son coût de capital, déterminant ainsi si le projet est rentable.</li>
+      <li><strong>Calcul</strong> : Le WACC est calculé à l'aide de la formule WACC = (D / (D + E)) * Rd + (E / (D + E)) * Re, où D est la dette, E les capitaux propres, Rd le coût de la dette et Re le coût des capitaux propres.</li>
+      <li><strong>Application dans les décisions d'investissement</strong> : Le WACC est utilisé pour évaluer si le taux de rendement attendu d'un projet dépasse le coût de capital, rendant le projet attractif pour les investisseurs.</li>
+   </ol>
+        </div>
+      </div>
+
+      <!-- OUTILS D'APPRENTISSAGE -->
+      <div class="tools-section">
+        <a class="tool-card" href="https://abarisan.github.io/newsletter-mna/quiz/quiz_2026-08-14.html" target="_blank">
+          <span class="icon">❓</span>
+          <span class="tool-title">Quiz ce numéro</span>
+          <span class="tool-desc">4 questions pour vérifier que tu as compris</span>
+        </a>
+        <a class="tool-card" href="https://claude.ai/new" target="_blank">
+          <span class="icon">🤖</span>
+          <span class="tool-title">Poser une question</span>
+          <span class="tool-desc">Ouvre ton Claude Project M&A pour aller plus loin</span>
+        </a>
+      </div>
+
+      <!-- SOURCES PAR NIVEAU -->
+      <div class="sources-section">
+        <div class="section-label">Sources</div>
+        <ul>
+          <li>[N1] CNBC Finance - JPMorgan debanked Polymarket over regulatory concerns</li>
+<li>[N2] Mergermarket - Polymarket seeks $20bn valuation</li>
+<li>[N3] The Wall Street Journal - Bank of England decision on Thursday</li>
+<li>[N4] Dealogic - Données sur les valorisations des entreprises de technologie</li>
+        </ul>
+        <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:6px; font-family:'Helvetica Neue',Arial,sans-serif; font-size:10px;">
+          <span style="background:#fff3e8;border:1px solid #e85d1a;color:#c94e0e;padding:3px 8px;border-radius:20px;font-weight:700;">N1 · Bloomberg · FT · Capital Finance · CFNEWS · S&P</span>
+          <span style="background:#fff8f2;border:1px solid #f9a06b;color:#7a5c45;padding:3px 8px;border-radius:20px;">N2 · Mergermarket · Reuters · PitchBook</span>
+          <span style="background:#fdf6ee;border:1px solid #fde0c5;color:#9a7060;padding:3px 8px;border-radius:20px;">N3 · WSJ · The Economist</span>
+          <span style="background:#f9f9f9;border:1px solid #e0e0e0;color:#888;padding:3px 8px;border-radius:20px;">N4 · Dealogic · Preqin</span>
+        </div>
+      </div>
+
+    </div><!-- /body -->
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <p>
+        <span class="next">Deck Anki mis à jour en pièce jointe</span><br>
+        The Deal Brief · 5× par semaine · <a href="https://github.com/abarisan/newsletter-mna" style="color:#e85d1a;text-decoration:none;">Code source</a>
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>

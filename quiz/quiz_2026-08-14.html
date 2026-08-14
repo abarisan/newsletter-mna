@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz — The Deal Brief N°47</title>
+  <style>
+    body { font-family: 'Helvetica Neue', Arial, sans-serif; background: #fdf6ee; color: #2b1a0e;
+           margin: 0; padding: 40px 20px; }
+    .container { max-width: 640px; margin: 0 auto; }
+    h1 { font-size: 24px; color: #e85d1a; margin-bottom: 4px; }
+    .subtitle { color: #7a5c45; font-size: 13px; margin-bottom: 40px; }
+    .question { background: #fff; border-radius: 8px; padding: 24px; margin-bottom: 20px;
+                 box-shadow: 0 2px 8px rgba(232,93,26,0.08); }
+    .question h3 { font-size: 16px; margin-bottom: 16px; line-height: 1.5; }
+    .option { display: block; width: 100%; text-align: left; background: #fff8f2;
+               border: 1px solid #fde0c5; border-radius: 6px; padding: 12px 16px;
+               margin-bottom: 8px; cursor: pointer; font-size: 14px; transition: all .15s; }
+    .option:hover { background: #fff3e8; border-color: #f9a06b; }
+    .option.correct { background: #e6f9ec; border-color: #2ecc71; color: #1a6b3a; }
+    .option.wrong   { background: #fdecea; border-color: #e74c3c; color: #7b1c1c; }
+    .explanation { display: none; margin-top: 12px; padding: 12px 16px; background: #fff3e8;
+                    border-left: 3px solid #e85d1a; font-size: 13px; color: #5a3520;
+                    border-radius: 0 6px 6px 0; line-height: 1.6; }
+    .score { display: none; text-align: center; padding: 32px; background: #fff;
+              border-radius: 8px; box-shadow: 0 2px 8px rgba(232,93,26,0.08); }
+    .score h2 { font-size: 28px; color: #e85d1a; }
+    .score p { color: #5a3520; }
+    #submit { display: block; width: 100%; padding: 16px; background: #e85d1a; color: #fff;
+               border: none; border-radius: 8px; font-size: 16px; cursor: pointer; margin-top: 8px; }
+    #submit:hover { background: #c94e0e; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Quiz — N°47</h1>
+  <p class="subtitle">The Deal Brief · 14 August 2026 · 4 questions</p>
+  <div id="quiz"></div>
+  <button id="submit" onclick="submitQuiz()">Voir mes résultats</button>
+  <div class="score" id="score"></div>
+</div>
+<script>
+const questions = [{"question": "Qu'est-ce que le WACC (Weighted Average Cost of Capital) et à quoi sert-il ?", "options": ["A. Le WACC est un taux d'intérêt que les banques proposent à leurs clients", "B. Le WACC est une mesure qui combine le coût de la dette et le coût des capitaux propres pour évaluer la rentabilité d'un projet ou d'une entreprise", "C. Le WACC est un modèle de prédiction des marchés financiers", "D. Le WACC est un indicateur de la santé financière d'une entreprise"], "correct": 1, "explanation": "Le WACC est une mesure qui combine le coût de la dette et le coût des capitaux propres pour évaluer si un projet ou une entreprise est rentable en comparant son taux de rendement attendu au WACC. C'est une notion clé en finance pour prendre des décisions éclairées."}, {"question": "Qu'est-ce que le coût de la dette et comment est-il calculé ?", "options": ["A. Le coût de la dette est le taux de rendement attendu par les actionnaires", "B. Le coût de la dette est le taux d'intérêt que l'entreprise doit payer sur ses emprunts", "C. Le coût de la dette est la somme des intérêts payés sur les emprunts", "D. Le coût de la dette est la différence entre le taux d'intérêt et le taux de rendement attendu"], "correct": 1, "explanation": "Le coût de la dette reflète le taux d'intérêt que l'entreprise doit payer sur ses emprunts. Il est généralement exprimé en pourcentage. Il s'agit d'un élément important pour calculer le WACC."}, {"question": "Quel est l'impact de la réglementation financière sur les décisions de financement des entreprises ?", "options": ["A. La réglementation financière n'a pas d'impact sur les décisions de financement", "B. La réglementation financière réduit les coûts de financement pour les entreprises", "C. La réglementation financière augmente les coûts de financement pour les entreprises", "D. La réglementation financière joue un rôle majeur dans la façon dont les entreprises évaluent et gèrent les risques et peuvent avoir un impact significatif sur les décisions de financement"], "correct": 3, "explanation": "La réglementation financière joue un rôle majeur dans la façon dont les entreprises évaluent et gèrent les risques. Les changements dans la réglementation peuvent avoir un impact significatif sur les décisions de financement et les stratégies d'investissement. C'est pourquoi il est important de prendre en compte les facteurs macroéconomiques et réglementaires dans les décisions financières."}, {"question": "Pourquoi le WACC est-il important pour évaluer la rentabilité d'un projet ou d'une entreprise ?", "options": ["A. Le WACC est important parce qu'il reflète le taux de rendement attendu par les actionnaires", "B. Le WACC est important parce qu'il intègre à la fois le coût de la dette et le coût des capitaux propres", "C. Le WACC est important parce qu'il est un indicateur de la santé financière d'une entreprise", "D. Le WACC est important parce qu'il est un taux d'intérêt que les banques proposent à leurs clients"], "correct": 1, "explanation": "Le WACC est important parce qu'il intègre à la fois le coût de la dette et le coût des capitaux propres. Cela permet d'évaluer si un projet ou une entreprise est rentable en comparant son taux de rendement attendu au WACC. Le WACC fournit ainsi une vision complète de la structure de financement de l'entreprise et aide à prendre des décisions éclairées."}];
+let answered = {};
+
+function buildQuiz() {
+  const quiz = document.getElementById('quiz');
+  questions.forEach((q, qi) => {
+    const div = document.createElement('div');
+    div.className = 'question';
+    div.innerHTML = `<h3>${qi+1}. ${q.question}</h3>` +
+      q.options.map((o, oi) =>
+        `<button class="option" id="q${qi}_${oi}" onclick="answer(${qi},${oi},${q.correct})">${o}</button>`
+      ).join('') +
+      `<div class="explanation" id="exp${qi}">${q.explanation}</div>`;
+    quiz.appendChild(div);
+  });
+}
+
+function answer(qi, oi, correct) {
+  if (answered[qi] !== undefined) return;
+  answered[qi] = oi;
+  const btn = document.getElementById(`q${qi}_${oi}`);
+  const correctBtn = document.getElementById(`q${qi}_${correct}`);
+  btn.classList.add(oi === correct ? 'correct' : 'wrong');
+  if (oi !== correct) correctBtn.classList.add('correct');
+  document.getElementById(`exp${qi}`).style.display = 'block';
+}
+
+function submitQuiz() {
+  const score = Object.values(answered).filter((a, i) => a === questions[i].correct).length;
+  const total = questions.length;
+  const msg = score === total ? "🏆 Parfait ! Tu maîtrises ce numéro." :
+              score >= total/2 ? "👍 Bien, relis les explications des questions ratées." :
+              "📖 Relis le cours — ces notions vont revenir en entretien.";
+  document.getElementById('score').innerHTML =
+    `<h2>${score} / ${total}</h2><p>${msg}</p>`;
+  document.getElementById('score').style.display = 'block';
+  document.getElementById('submit').style.display = 'none';
+  window.scrollTo(0, document.getElementById('score').offsetTop - 20);
+}
+
+buildQuiz();
+</script>
+</body>
+</html>
