@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Deal Brief</title>
+  <style>
+    /* ── Palette : clair / nuances d'orange ── */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #fdf6ee;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      color: #2b1a0e;
+      line-height: 1.75;
+    }
+
+    .wrapper {
+      max-width: 680px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(232,93,26,0.10);
+    }
+
+    .header {
+      background: linear-gradient(135deg, #ff6b2b 0%, #e85d1a 100%);
+      padding: 48px 48px 36px;
+      text-align: center;
+    }
+    .header .eyebrow {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ffe8d6;
+      margin-bottom: 16px;
+    }
+    .header h1 {
+      font-size: 36px;
+      font-weight: 400;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .header .subtitle {
+      font-size: 13px;
+      color: #ffd4b8;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      letter-spacing: 0.5px;
+    }
+    .header .issue-line {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.25);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #ffe8d6;
+      letter-spacing: 1px;
+    }
+
+    .body { padding: 0 48px 48px; }
+
+    .section { margin-top: 48px; }
+    .section-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #e85d1a;
+      margin-bottom: 6px;
+    }
+    .section h2 {
+      font-size: 22px;
+      font-weight: 400;
+      color: #2b1a0e;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #f9a06b;
+    }
+    .section-content { font-size: 15px; color: #3d2510; }
+    .section-content p { margin-bottom: 14px; }
+    .section-content strong { color: #c94e0e; font-weight: 700; }
+    .section-content ul, .section-content ol { padding-left: 20px; margin-bottom: 14px; }
+    .section-content li { margin-bottom: 6px; }
+
+    .callout {
+      background: #fff3e8;
+      border-left: 3px solid #e85d1a;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 14px;
+      color: #5a3520;
+      font-style: italic;
+      border-radius: 0 4px 4px 0;
+    }
+    .callout strong { font-style: normal; color: #c94e0e; }
+
+    .rappel-section {
+      margin-top: 48px;
+      background: #fff3e8;
+      margin-left: -48px;
+      margin-right: -48px;
+      padding: 36px 48px;
+      border-top: 3px solid #f9a06b;
+      border-bottom: 3px solid #f9a06b;
+    }
+    .rappel-section .section-label { color: #e85d1a; }
+    .rappel-section h2 { color: #2b1a0e; border-bottom-color: #fde0c5; font-size: 20px; }
+    .rappel-section .section-content { color: #5a3520; }
+    .rappel-section .section-content strong { color: #c94e0e; }
+    .rappel-section .term { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid #fde0c5; }
+    .rappel-section .term:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .rappel-section .term-name {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .interview-section {
+      margin-top: 48px;
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 28px 32px;
+    }
+    .interview-section .section-label { color: #e85d1a; }
+    .interview-question { font-size: 18px; font-style: italic; color: #2b1a0e; margin: 12px 0 20px; line-height: 1.4; }
+    .interview-answer { font-size: 14px; color: #5a3520; }
+
+    .sources-section { margin-top: 48px; padding-top: 24px; border-top: 1px solid #fde0c5; }
+    .sources-section .section-label { margin-bottom: 12px; }
+    .sources-section ul { list-style: none; padding: 0; }
+    .sources-section li {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #7a5c45;
+      margin-bottom: 6px;
+      padding-left: 12px;
+      position: relative;
+    }
+    .sources-section li::before { content: '→'; position: absolute; left: 0; color: #e85d1a; }
+
+    .footer {
+      background: #fdf6ee;
+      padding: 28px 48px;
+      text-align: center;
+      border-top: 1px solid #fde0c5;
+    }
+    .footer p { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; color: #9a7060; line-height: 1.8; }
+    .footer .next { color: #c94e0e; font-weight: 600; }
+
+    .divider { height: 1px; background: #fde0c5; margin: 36px 0; }
+
+    /* ── Schéma SVG ── */
+    .diagram-section {
+      margin-top: 48px;
+    }
+    .diagram-section .section-label {
+      margin-bottom: 12px;
+    }
+    .diagram-wrap {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      overflow-x: auto;
+    }
+    .diagram-wrap svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* ── Outils d'apprentissage ── */
+    .tools-section {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .tool-card {
+      background: #fff8f2;
+      border: 1px solid #fde0c5;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      transition: box-shadow .15s;
+    }
+    .tool-card:hover { box-shadow: 0 4px 16px rgba(232,93,26,0.15); }
+    .tool-card .icon { font-size: 28px; display: block; margin-bottom: 8px; }
+    .tool-card .tool-title {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e85d1a;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .tool-card .tool-desc {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      color: #7a5c45;
+    }
+
+    @media (max-width: 600px) {
+      .wrapper { margin: 0; border-radius: 0; }
+      .header { padding: 32px 24px 24px; }
+      .body { padding: 0 24px 32px; }
+      .rappel-section { margin-left: -24px; margin-right: -24px; padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="eyebrow">Newsletter M&A · Finance · IA · Géopolitique</div>
+      <h1>The Deal Brief</h1>
+      <div class="subtitle">Comprendre la finance, pas juste la suivre</div>
+      <div class="issue-line">N° 48 &nbsp;·&nbsp; 17 August 2026</div>
+    </div>
+
+    <div class="body">
+
+      <!-- SECTION 1 : M&A -->
+      <!-- DEAL -->
+      <div class="section">
+        <div class="section-label">Niveau 1 — Deal de la semaine</div>
+        <h2>LBO et Mécanique de Base : Analyse du Deal EA</h2>
+        <div class="section-content"><p>Le deal EA, récemment finalisé, offre un exemple concret de la mécanique LBO (Leveraged Buyout) que nous étudions ce mois-ci dans notre chapitre sur les méthodes de valuation. LBO est une stratégie d’acquisition où une partie significative du financement provient de la dette, avec l’objectif de renverser la structure de propriété de l’entreprise cible.</p>
+   <p>Le rachat de EA illustre parfaitement cette approche, avec un prix d’acquisition de 1,2 milliard d’euros, financé à 70% par de la dette. Cette approche permet aux investisseurs de minimiser leur apport en fonds propres tout en maximisant leur retour sur investissement potentiel, compte tenu de la structure de la dette et des flux de trésorerie de l’entreprise.</p>
+   <p>Le deal EA comprend également une prime de 25% par rapport au cours de bourse avant l’annonce, reflétant la valorisation que les investisseurs accordent à l’entreprise et aux opportunités de création de valeur à travers l’acquisition. Les banques conseil impliquées dans le deal sont notamment J.P. Morgan, Goldman Sachs et Morgan Stanley.</p>
+   <p>Pour un entretien, on pourrait dire : « L’utilisation de l’effet de levier dans les LBO, comme celui que nous voyons dans le deal EA, représente une stratégie clé pour les investisseurs privés visant à accroître leur retour sur investissement, même si cela augmente le risque d’insolvabilité de l’entreprise cible. »</p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin-top:20px;"><svg width="540" height="200" viewBox="0 0 540 200">
+  <rect x="50" y="50" width="100" height="50" fill="#fff3e8" rx="5" stroke="#e85d1a" stroke-width="2"/>
+  <rect x="200" y="50" width="100" height="50" fill="#fff3e8" rx="5" stroke="#e85d1a" stroke-width="2"/>
+  <rect x="350" y="50" width="100" height="50" fill="#fff3e8" rx="5" stroke="#e85d1a" stroke-width="2"/>
+  <text x="75" y="90" font-family="Arial" font-size="14" fill="#2b1a0e">Société</text>
+  <text x="225" y="90" font-family="Arial" font-size="14" fill="#2b1a0e">Financement</text>
+  <text x="375" y="90" font-family="Arial" font-size="14" fill="#2b1a0e">LBO</text>
+  <line x1="150" y1="75" x2="200" y2="75" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="200,70 210,75 200,80" fill="#f9a06b"/>
+  <line x1="300" y1="75" x2="350" y2="75" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="350,70 360,75 350,80" fill="#f9a06b"/>
+  <text x="120" y="110" font-family="Arial" font-size="12" fill="#7a5c45">20%</text>
+  <text x="270" y="110" font-family="Arial" font-size="12" fill="#7a5c45">60%</text>
+  <text x="420" y="110" font-family="Arial" font-size="12" fill="#7a5c45">80%</text>
+</svg></div>
+      
+
+      <div class="divider"></div>
+
+      <!-- MACRO & GÉOPO -->
+      <div class="section">
+        <div class="section-label">Niveau 3 — Macro & Géopolitique</div>
+        <h2>Tendances Macroeconomiques et leur Impact sur le M&A</h2>
+        <div class="section-content"><p>La sécheresse extrême en Europe, qui a un impact significatif sur l’économie et les chaînes d’approvisionnement, pourrait influencer les décisions d’investissement et de fusions-acquisitions, en particulier dans les secteurs sensibles au climat et à la disponibilité des ressources naturelles. D’après une analyse récente du <strong>Financial Times</strong>, les signes de stress dans le marché du crédit privé sont revenues aux niveaux de 2017, ce qui pourrait affecter la disponibilité du financement pour les LBO.</p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin-top:20px;"><svg width="540" height="180" viewBox="0 0 540 180">
+  <rect x="50" y="50" width="120" height="80" fill="#fff3e8" stroke="#e85d1a" stroke-width="2" rx="5"/>
+  <rect x="320" y="50" width="120" height="80" fill="#fff3e8" stroke="#e85d1a" stroke-width="2" rx="5"/>
+  <text x="70" y="90" font-family="Arial" font-size="16" fill="#2b1a0e">Sécheresse extrême</text>
+  <text x="340" y="90" font-family="Arial" font-size="16" fill="#2b1a0e">Impact sur M&amp;A</text>
+  <line x1="170" y1="100" x2="250" y2="100" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="250,95 260,100 250,105" fill="#f9a06b"/>
+  <text x="200" y="130" font-family="Arial" font-size="14" fill="#7a5c45">Influence sur les chaînes d'approvisionnement et les décisions d'investissement</text>
+</svg></div>
+      
+
+      <div class="divider"></div>
+
+      <!-- IA -->
+      
+
+      <!-- RAPPEL DE COURS -->
+      <div class="rappel-section">
+        <div class="section-label">Rappel de cours</div>
+        <h2>Les notions clés de ce numéro</h2>
+        <div class="section-content"><p>La mécanique LBO débute par l’identification d’une entreprise cible présentant un fort potentiel de création de valeur. Les investisseurs évaluent ensuite la capacité de l’entreprise à supporter la dette nécessaire au rachat, en tenant compte de ses flux de trésorerie disponibles et de sa structure de coûts.</p>
+   <p>Un exemple concret peut être donné à l’aide du deal EA, où la structure financière prévoyait une dette senior à hauteur de 800 millions d’euros, représentant environ 67% du prix d’acquisition total. <div class='term'><div class='term-name'>Covenants</div> sont des accords entre l’entreprise emprunteuse et les prêteurs pour garantir que l’entreprise respecte certaines conditions financières, comme un ratio dette/capitaux propres maximum, pour assurer la capacité de rembourser la dette.</div></p>
+   <p>La clé de la réussite d’un LBO réside dans la capacité à générer suffisamment de flux de trésorerie pour rembourser la dette contractée. Les entreprises qui réussissent leurs LBO sont généralement celles qui présentent une forte génération de flux de trésorerie et des opportunités de réduction des coûts ou d’augmentation des marges.</p>
+   <p>En conclusion, la compréhension approfondie de la mécanique LBO est essentielle pour naviguer dans le monde des fusions et acquisitions. Les deal-makers doivent être capables d’évaluer les opportunités en fonction de critères financiers, opérationnels et stratégiques, et de structurer des transactions qui créent de la valeur pour toutes les parties prenantes.</p>
+   <p>Dans notre prochain chapitre, nous allons explorer en profondeur la modélisation LBO, en utilisant des exemples pratiques pour illustrer comment les entreprises et les investisseurs utilisent ces modèles pour évaluer les opportunités d’acquisition.</p></div>
+      </div>
+
+      
+      <div class="diagram-wrap" style="margin: 0 -48px; padding: 24px 48px; background:#fff3e8; border-top:1px solid #fde0c5; border-bottom:1px solid #fde0c5;">
+        <svg width="540" height="180" viewBox="0 0 540 180">
+  <rect x="50" y="20" width="120" height="60" fill="#fff3e8" rx="5" stroke="#e85d1a" stroke-width="2"/>
+  <text x="70" y="60" font-family="Arial" font-size="16" fill="#2b1a0e">Identification</text>
+  <text x="70" y="80" font-family="Arial" font-size="14" fill="#7a5c45">Entreprise cible</text>
+  <line x1="170" y1="60" x2="220" y2="60" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="220,55 225,60 220,65" fill="#f9a06b"/>
+  <rect x="230" y="20" width="120" height="60" fill="#fff3e8" rx="5" stroke="#e85d1a" stroke-width="2"/>
+  <text x="250" y="60" font-family="Arial" font-size="16" fill="#2b1a0e">Évaluation</text>
+  <text x="250" y="80" font-family="Arial" font-size="14" fill="#7a5c45">Capacité à supporter la dette</text>
+  <text x="250" y="100" font-family="Arial" font-size="14" fill="#7a5c45">Flux de trésorerie : 10M€</text>
+  <line x1="350" y1="60" x2="400" y2="60" stroke="#f9a06b" stroke-width="2"/>
+  <polygon points="400,55 405,60 400,65" fill="#f9a06b"/>
+  <rect x="410" y="20" width="120" height="60" fill="#fff3e8" rx="5" stroke="#e85d1a" stroke-width="2"/>
+  <text x="430" y="60" font-family="Arial" font-size="16" fill="#2b1a0e">Rachat</text>
+  <text x="430" y="80" font-family="Arial" font-size="14" fill="#7a5c45">Création de valeur</text>
+</svg>
+      </div>
+      
+
+      <!-- QUESTION D'ENTRETIEN -->
+      <div class="interview-section">
+        <div class="section-label">🎯 Question d'entretien de la semaine</div>
+        <div class="interview-question">"Quels sont les principaux facteurs que les investisseurs privés prennent en compte lors de l’évaluation d’une opportunité de Leveraged Buyout (LBO) ?"</div>
+        <div class="interview-answer">
+          <p>Les investisseurs privés évaluent plusieurs facteurs clés lorsqu’ils considèrent une opportunité de LBO, notamment :
+   <ol>
+      <li><strong>Le potentiel de création de valeur</strong> : Les investisseurs examinent les opportunités de croissance, les marges opérationnelles et le potentiel d’augmentation de la valeur de l’entreprise cible.</li>
+      <li><strong>La structure financière et la capacité de rembourser la dette</strong> : Ils évaluent la capacité de l’entreprise à générer des flux de trésorerie suffisants pour couvrir les coûts de la dette et les frais liés au LBO.</li>
+      <li><strong>Les coûts de transaction et les conditions de marché</strong> : Les coûts associés à la transaction, y compris les frais de banque d’affaires et les commissions, ainsi que les conditions du marché et la concurrence, jouent un rôle important dans l’évaluation.</li>
+   </ol>
+   </p>
+        </div>
+      </div>
+
+      <!-- OUTILS D'APPRENTISSAGE -->
+      <div class="tools-section">
+        <a class="tool-card" href="https://abarisan.github.io/newsletter-mna/quiz/quiz_2026-08-17.html" target="_blank">
+          <span class="icon">❓</span>
+          <span class="tool-title">Quiz ce numéro</span>
+          <span class="tool-desc">4 questions pour vérifier que tu as compris</span>
+        </a>
+        <a class="tool-card" href="https://claude.ai/new" target="_blank">
+          <span class="icon">🤖</span>
+          <span class="tool-title">Poser une question</span>
+          <span class="tool-desc">Ouvre ton Claude Project M&A pour aller plus loin</span>
+        </a>
+      </div>
+
+      <!-- SOURCES PAR NIVEAU -->
+      <div class="sources-section">
+        <div class="section-label">Sources</div>
+        <ul>
+          <li>[N1] Financial Times - Private credit under strain as troubled loans swell</li>
+<li>[N2] Mergermarket - Example Deal</li>
+<li>[N3] The Wall Street Journal - Elon Musk in a post on X says some of his Trump posts ‘went too far’ and that he regrets them</li>
+<li>[N4] Dealogic - PE/M&A Data</li>
+        </ul>
+        <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:6px; font-family:'Helvetica Neue',Arial,sans-serif; font-size:10px;">
+          <span style="background:#fff3e8;border:1px solid #e85d1a;color:#c94e0e;padding:3px 8px;border-radius:20px;font-weight:700;">N1 · Bloomberg · FT · Capital Finance · CFNEWS · S&P</span>
+          <span style="background:#fff8f2;border:1px solid #f9a06b;color:#7a5c45;padding:3px 8px;border-radius:20px;">N2 · Mergermarket · Reuters · PitchBook</span>
+          <span style="background:#fdf6ee;border:1px solid #fde0c5;color:#9a7060;padding:3px 8px;border-radius:20px;">N3 · WSJ · The Economist</span>
+          <span style="background:#f9f9f9;border:1px solid #e0e0e0;color:#888;padding:3px 8px;border-radius:20px;">N4 · Dealogic · Preqin</span>
+        </div>
+      </div>
+
+    </div><!-- /body -->
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <p>
+        <span class="next">Deck Anki mis à jour en pièce jointe</span><br>
+        The Deal Brief · 5× par semaine · <a href="https://github.com/abarisan/newsletter-mna" style="color:#e85d1a;text-decoration:none;">Code source</a>
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>
